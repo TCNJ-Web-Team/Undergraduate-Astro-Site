@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { wpquery } from "../data/wordpress";
+import { useState } from "react";
+// import { wpquery } from "../data/wordpress";
 
 export default function ProgramList({ data }) {
   const [newData, setData] = useState(data);
@@ -21,7 +21,7 @@ export default function ProgramList({ data }) {
           // console.log(title);
           return (
             <div className="program-card" id={slug} key={slug + index}>
-              <a className="program-link" href={`/` + slug}>
+              <a className="program-link" href={`./` + slug}>
                 <p>{title}</p>
                 <hr />
                 <div className="icon-container">
