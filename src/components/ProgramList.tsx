@@ -19,6 +19,9 @@ const ProgramList: React.FC<MyComponentProps> = ({ data }) => {
   return (
     <div className="program-wrapper">
       <p>Test</p>
+      {programs.map((program: any) => {
+        return <p>{program.title}</p>;
+      })}
     </div>
   );
 };
