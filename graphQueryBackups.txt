@@ -1,0 +1,29 @@
+query NewQuery {
+  programs {
+    nodes {
+      program {
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        programAtAGlance
+        learnMoreList {
+          title
+          slug
+        }
+      }
+    }
+  }
+}
+
+query NewQueryTwo {
+  page(id: "24", idType: DATABASE_ID) {
+    program {
+      additionalOptions
+      degreeType
+      programOptions
+      school
+    }
+  }
+}
