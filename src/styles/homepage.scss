@@ -1,0 +1,39 @@
+.program-wrapper {
+  display: grid;
+  grid-gap: 40px 3.5%;
+  gap: 40px 3.5%;
+  grid-template-columns: 31% 31% 31%;
+  list-style: none;
+  .program-card {
+    border: 1px solid #bcbcbc;
+    background-color: #fff;
+    padding: 0;
+    min-height: 248px;
+    position: relative;
+    transition: all 0.25s;
+    pointer-events: none;
+    .program-link {
+      pointer-events: all;
+      font-family: Domine, serif;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 30px;
+      text-align: left;
+      color: #2e2e2e;
+      text-decoration: none;
+      padding: 50px 50px 0;
+      display: block;
+      height: calc(100% - 50px);
+      p {
+        margin-top: 0;
+      }
+      hr {
+        pointer-events: none;
+        display: block;
+        border: 0;
+        border-top: 1px solid #d3d3d3;
+        margin: 25px 0;
+      }
+    }
+  }
+}

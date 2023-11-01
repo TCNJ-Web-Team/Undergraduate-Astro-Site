@@ -53,18 +53,27 @@ export default function ProgramList() {
             learnMoreList,
           } = program.program;
           const { title } = program;
-          console.log(title);
+          // console.log(title);
           return (
-            <a
-              href={`/` + slug}
-              className="program-card"
-              id={slug}
-              key={slug + index}
-            >
-              <p>{title}</p>
-              <p>{degreeType}</p>
+            <div className="program-card" id={slug} key={slug + index}>
+              <a className="program-link" href={`/` + slug}>
+                <p>{title}</p>
+                <hr />
+                <div className="icon-container">
+                  {programOptions &&
+                    programOptions.map((option, index) => {
+                      // console.log(option);
+                      return <p key={index}>{option}</p>;
+                    })}
+                  {additionalOptions &&
+                    additionalOptions.map((option, index) => {
+                      // console.log(option);
+                      return <p key={index}>{option}</p>;
+                    })}
+                </div>
+              </a>
               {/* Access other fields here directly */}
-            </a>
+            </div>
           );
         })}
     </div>
