@@ -1,21 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import { wpquery } from "../data/wordpress";
+import { wpquery } from "../data/wordpress";
 import ProgramList from "../components/ProgramList";
 import "../styles/homepage.scss";
-// const data = await wpquery({
-//   query: `query NewQuery {
-//   programs {
-// 	nodes {
-// 	  programId
-// 	  slug
-// 	  title
-// 	}
-//   }
-// }`,
-// });
-// console.log(data);
-// console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
+const data = await wpquery({
+  query: ` query ProgramsListing {
+              programs {
+                nodes {
+                  program {
+                    degreeType
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+                    programAtAGlance
+                    learnMoreList {
+                      title
+                      slug
+                    }
+                  }
+                  title
+                }
+              }
+            }`,
+});
+console.log(data);
+console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
 ---
 
 <!-- 
@@ -31,11 +41,6 @@ query NewQuery {
 <Layout title="Undergraduate Programs at TCNJ">
   <main>
     <p>Testing one two three</p>
-    <ProgramList client:load />
+    <ProgramList data={data} client:load />
   </main>
 </Layout>
-
-<script>
-  console.log("hello world");
-  //   console.log(data);
-</script>
