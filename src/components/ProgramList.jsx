@@ -5,7 +5,7 @@ export default function ProgramList({ data }) {
   const [newData, setData] = useState(data);
 
   return (
-    <div className="program-wrapper">
+    <div className="program-wrapper inner-width">
       {newData &&
         newData.programs.nodes.map((program, index) => {
           const {
