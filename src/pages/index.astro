@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { wpquery } from "../data/wordpress";
+import ProgramList from "../components/ProgramList";
 const data = await wpquery({
   query: `query NewQuery {
   programs {
@@ -35,6 +36,7 @@ query NewQuery {
       })
     }
     <p>Testing one two three</p>
+    <ProgramList data={data} client:load />
   </main>
 </Layout>
 
