@@ -25,8 +25,29 @@ const data = await wpquery({
               }
             }`,
 });
-console.log(data);
-console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
+const programOptions = await wpquery({
+  query: ` query FullOptionsListing {
+  page(id: "24", idType: DATABASE_ID) {
+    program {
+      additionalOptions
+      degreeType
+      programOptions
+      school
+    }
+  }
+}`,
+});
+// console.log(programOptions);
+// console.log(data);
+// console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
+// console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
+
+const areaOfStudy = programOptions.page.program.school;
+// console.log(areaOfStudy);
+const programOptionsClean = programOptions.page.program.programOptions;
+// console.log(programOptionsClean);
+const additionalOptions = programOptions.page.program.additionalOptions;
+// console.log(additionalOptions);
 ---
 
 <!-- 
@@ -45,7 +66,7 @@ query NewQuery {
   </header>
   <main>
     <div class="yellow-border">
-      <ProgramList data={data} client:load />
+      <ProgramList data={data} areaOfStudy={areaOfStudy} client:load />
     </div>
   </main>
 </Layout>

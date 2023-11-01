@@ -1,9 +1,10 @@
 import { useState } from "react";
 // import { wpquery } from "../data/wordpress";
 
-export default function ProgramList({ data }) {
+export default function ProgramList({ data, areaOfStudy }) {
   const [newData, setData] = useState(data);
-
+  const [newAreaOfStudy, setAreaOfStudy] = useState(areaOfStudy);
+  // console.log(newAreaOfStudy);
   return (
     <div className="program-wrapper inner-width">
       {newData &&
