@@ -1,4 +1,4 @@
-query NewQuery {
+query ProgramsListing {
   programs {
     nodes {
       program {
@@ -17,7 +17,7 @@ query NewQuery {
   }
 }
 
-query NewQueryTwo {
+query FullOptionsListing {
   page(id: "24", idType: DATABASE_ID) {
     program {
       additionalOptions

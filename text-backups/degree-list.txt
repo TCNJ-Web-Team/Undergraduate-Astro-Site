@@ -1,0 +1,11 @@
+BA : Bachelor of Arts
+BFA : Bachelor of Fine Arts
+BS : Bachelor of Science
+BS/MAT : Bachelor of Science with Masters
+BSBME : Bachelor of Science in Biomedical Engineering
+BSCE : Bachelor of Science in Civil Engineering
+BSCoE : Bachelor of Science in Computer Engineering
+BSEE : Bachelor of Science in Electrical Engineering
+BSES : Bachelor of Science in Engineering Science
+BSME : Bachelor of Science in Mechanical Engineering
+BSN : Bachelor of Science in Nursing
