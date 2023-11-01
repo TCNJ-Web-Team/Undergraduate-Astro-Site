@@ -1,8 +1,0 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Create 3 columns with equal width */
-  gap: 20px; /* Adjust the gap between items as needed */
-  max-width: 1200px; /* Set a maximum width for the grid */
-  margin: 0 auto; /* Center the grid horizontally on the page */
-  padding: 20px; /* Add some spacing around the grid */
-}

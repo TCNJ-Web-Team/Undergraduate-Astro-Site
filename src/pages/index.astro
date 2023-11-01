@@ -1,20 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import { wpquery } from "../data/wordpress";
+import { wpquery } from "../data/wordpress";
+import Intro from "../components/Intro.astro";
 import ProgramList from "../components/ProgramList";
-// const data = await wpquery({
-//   query: `query NewQuery {
-//   programs {
-// 	nodes {
-// 	  programId
-// 	  slug
-// 	  title
-// 	}
-//   }
-// }`,
-// });
+import "../styles/homepage.scss";
+const data = await wpquery({
+  query: ` query ProgramsListing {
+              programs {
+                nodes {
+                  program {
+                    degreeType
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+                    programAtAGlance
+                    learnMoreList {
+                      title
+                      slug
+                    }
+                  }
+                  title
+                }
+              }
+            }`,
+});
+const programOptions = await wpquery({
+  query: ` query FullOptionsListing {
+  page(id: "24", idType: DATABASE_ID) {
+    program {
+      additionalOptions
+      degreeType
+      programOptions
+      school
+    }
+  }
+}`,
+});
+// console.log(programOptions);
 // console.log(data);
 // console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
+// console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
+
+const areaOfStudy = programOptions.page.program.school;
+// console.log(areaOfStudy);
+const programOptionsClean = programOptions.page.program.programOptions;
+// console.log(programOptionsClean);
+const additionalOptions = programOptions.page.program.additionalOptions;
+// console.log(additionalOptions);
 ---
 
 <!-- 
@@ -28,13 +61,12 @@ query NewQuery {
   }
 } -->
 <Layout title="Undergraduate Programs at TCNJ">
+  <header>
+    <Intro />
+  </header>
   <main>
-    <p>Testing one two three</p>
-    <ProgramList client:load />
+    <div class="yellow-border">
+      <ProgramList data={data} areaOfStudy={areaOfStudy} client:load />
+    </div>
   </main>
 </Layout>
-
-<script>
-  console.log("hello world");
-  //   console.log(data);
-</script>
