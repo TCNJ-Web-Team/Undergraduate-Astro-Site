@@ -5,18 +5,25 @@ export default function ProgramList({
   data,
   areaOfStudy,
   programOptionsClean,
+  additionalOptions,
 }) {
   const [filteredData, setFilteredData] = useState(data.programs.nodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
     useState([]);
+  const [selectedAdditionalOptionFilters, setSelectedAdditionalOptionFilters] =
+    useState([]);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     filterData();
-  }, [selectedSchoolFilters, selectedProgramOptionFilters, searchText]);
+  }, [
+    selectedSchoolFilters,
+    selectedProgramOptionFilters,
+    selectedAdditionalOptionFilters,
+    searchText,
+  ]);
 
-  // Filter data based on applied filters
   const filterData = () => {
     let newData = data.programs.nodes.filter(filterByText);
 
@@ -28,10 +35,13 @@ export default function ProgramList({
       newData = newData.filter(filterBySelectedProgramOptions);
     }
 
+    if (selectedAdditionalOptionFilters.length > 0) {
+      newData = newData.filter(filterBySelectedAdditionalOptions);
+    }
+
     setFilteredData(newData);
   };
 
-  // Filter by text input in title or school
   const filterByText = (program) => {
     const lowerCaseText = searchText.toLowerCase();
     return (
@@ -40,17 +50,19 @@ export default function ProgramList({
     );
   };
 
-  // Filter by selected school filters
   const filterBySelectedSchools = (program) =>
     selectedSchoolFilters.includes(program.program.school.toString());
 
-  // Filter by selected program option filters
   const filterBySelectedProgramOptions = (program) =>
     selectedProgramOptionFilters.some((filter) =>
       program.program.programOptions.includes(filter)
     );
 
-  // Handle checkbox change for schools and program options
+  const filterBySelectedAdditionalOptions = (program) =>
+    selectedAdditionalOptionFilters.some((filter) =>
+      program.program.additionalOptions.includes(filter)
+    );
+
   const handleSchoolCheckboxChange = (event) =>
     updateSelectedFilters(
       event.target.value,
@@ -65,7 +77,13 @@ export default function ProgramList({
       selectedProgramOptionFilters
     );
 
-  // Update selected filters based on checkbox change
+  const handleAdditionalOptionCheckboxChange = (event) =>
+    updateSelectedFilters(
+      event.target.value,
+      setSelectedAdditionalOptionFilters,
+      selectedAdditionalOptionFilters
+    );
+
   const updateSelectedFilters = (
     value,
     setSelectedFilters,
@@ -82,12 +100,10 @@ export default function ProgramList({
     setSelectedFilters(updatedFilters);
   };
 
-  // Handle text input change
   const handleFilterChange = (event) => {
     setSearchText(event.target.value);
   };
 
-  // Render checkboxes for area of study or program options
   const renderCheckboxes = (options, onChangeHandler) =>
     options.map((option, index) => (
       <label
@@ -113,6 +129,11 @@ export default function ProgramList({
       {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
       {/* Render checkboxes for program options */}
       {renderCheckboxes(programOptionsClean, handleProgramOptionCheckboxChange)}
+      {/* Render checkboxes for additional options */}
+      {renderCheckboxes(
+        additionalOptions,
+        handleAdditionalOptionCheckboxChange
+      )}
       {/* Display filtered data */}
       {filteredData &&
         filteredData.map((program, index) => (
