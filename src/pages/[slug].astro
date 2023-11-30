@@ -14,6 +14,10 @@ export async function getStaticPaths() {
                     programOptions
                     additionalOptions
                     programAtAGlance
+                    department {
+                        deptTitle
+                        deptUrl
+                    }
                     learnMoreList {
                       title
                       slug
@@ -40,13 +44,23 @@ export async function getStaticPaths() {
         atAGlance: program.program.programAtAGlance,
         degreeType: program.program.degreeType,
         school: program.program.school,
+        department: program.program.department,
       },
     })
   );
   return paths;
 }
-const { title, body, slug, atAGlance, degreeType, school } = Astro.props;
-// console.log(Astro.props);
+const {
+  title,
+  body,
+  slug,
+  atAGlance,
+  degreeType,
+  school,
+  department,
+  content,
+} = Astro.props;
+// console.log(department);
 ---
 
 <Layout title={title}>
@@ -66,6 +80,15 @@ const { title, body, slug, atAGlance, degreeType, school } = Astro.props;
       <div>
         <h3>School</h3>
         <p set:html={school} />
+      </div>
+
+      <div>
+        <h3>Department</h3>
+        <p>
+          <a href={(department as { deptUrl: string }).deptUrl}>
+            {department && (department as { deptTitle: string }).deptTitle}
+          </a>
+        </p>
       </div>
     </div>
     <p></p>
