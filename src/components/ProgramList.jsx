@@ -125,11 +125,8 @@ export default function ProgramList({
         onChange={handleFilterChange}
         placeholder="Filter by title or school"
       />
-      {/* Render checkboxes for area of study */}
       {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
-      {/* Render checkboxes for program options */}
       {renderCheckboxes(programOptionsClean, handleProgramOptionCheckboxChange)}
-      {/* Render checkboxes for additional options */}
       {renderCheckboxes(
         additionalOptions,
         handleAdditionalOptionCheckboxChange
