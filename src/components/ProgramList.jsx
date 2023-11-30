@@ -16,66 +16,90 @@ export default function ProgramList({
     filterData();
   }, [selectedSchoolFilters, selectedProgramOptionFilters, searchText]);
 
+  // Filter data based on applied filters
   const filterData = () => {
-    let newData = data.programs.nodes.filter(
-      (program) =>
-        program.title.toLowerCase().includes(searchText.toLowerCase()) ||
-        program.program.school
-          .toString()
-          .toLowerCase()
-          .includes(searchText.toLowerCase())
-    );
+    let newData = data.programs.nodes.filter(filterByText);
 
     if (selectedSchoolFilters.length > 0) {
-      newData = newData.filter((program) =>
-        selectedSchoolFilters.includes(program.program.school.toString())
-      );
+      newData = newData.filter(filterBySelectedSchools);
     }
 
     if (selectedProgramOptionFilters.length > 0) {
-      newData = newData.filter((program) =>
-        selectedProgramOptionFilters.some((filter) =>
-          program.program.programOptions.includes(filter)
-        )
-      );
+      newData = newData.filter(filterBySelectedProgramOptions);
     }
 
     setFilteredData(newData);
   };
 
-  const handleSchoolCheckboxChange = (event) => {
-    const value = event.target.value;
-    let updatedSchoolFilters = [...selectedSchoolFilters];
-
-    if (event.target.checked) {
-      updatedSchoolFilters.push(value);
-    } else {
-      updatedSchoolFilters = updatedSchoolFilters.filter(
-        (filter) => filter !== value
-      );
-    }
-
-    setSelectedSchoolFilters(updatedSchoolFilters);
+  // Filter by text input in title or school
+  const filterByText = (program) => {
+    const lowerCaseText = searchText.toLowerCase();
+    return (
+      program.title.toLowerCase().includes(lowerCaseText) ||
+      program.program.school.toString().toLowerCase().includes(lowerCaseText)
+    );
   };
 
-  const handleProgramOptionCheckboxChange = (event) => {
-    const value = event.target.value;
-    let updatedProgramOptionFilters = [...selectedProgramOptionFilters];
+  // Filter by selected school filters
+  const filterBySelectedSchools = (program) =>
+    selectedSchoolFilters.includes(program.program.school.toString());
 
-    if (event.target.checked) {
-      updatedProgramOptionFilters.push(value);
+  // Filter by selected program option filters
+  const filterBySelectedProgramOptions = (program) =>
+    selectedProgramOptionFilters.some((filter) =>
+      program.program.programOptions.includes(filter)
+    );
+
+  // Handle checkbox change for schools and program options
+  const handleSchoolCheckboxChange = (event) =>
+    updateSelectedFilters(
+      event.target.value,
+      setSelectedSchoolFilters,
+      selectedSchoolFilters
+    );
+
+  const handleProgramOptionCheckboxChange = (event) =>
+    updateSelectedFilters(
+      event.target.value,
+      setSelectedProgramOptionFilters,
+      selectedProgramOptionFilters
+    );
+
+  // Update selected filters based on checkbox change
+  const updateSelectedFilters = (
+    value,
+    setSelectedFilters,
+    selectedFilters
+  ) => {
+    let updatedFilters = [...selectedFilters];
+
+    if (updatedFilters.includes(value)) {
+      updatedFilters = updatedFilters.filter((filter) => filter !== value);
     } else {
-      updatedProgramOptionFilters = updatedProgramOptionFilters.filter(
-        (filter) => filter !== value
-      );
+      updatedFilters.push(value);
     }
 
-    setSelectedProgramOptionFilters(updatedProgramOptionFilters);
+    setSelectedFilters(updatedFilters);
   };
 
+  // Handle text input change
   const handleFilterChange = (event) => {
     setSearchText(event.target.value);
   };
+
+  // Render checkboxes for area of study or program options
+  const renderCheckboxes = (options, onChangeHandler) =>
+    options.map((option, index) => (
+      <label
+        className={`${onChangeHandler.name}-filter`}
+        id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
+        htmlFor={option}
+        key={option + index}
+      >
+        {option}
+        <input type="checkbox" value={option} onChange={onChangeHandler} />
+      </label>
+    ));
 
   return (
     <div className="program-wrapper inner-width">
@@ -86,41 +110,9 @@ export default function ProgramList({
         placeholder="Filter by title or school"
       />
       {/* Render checkboxes for area of study */}
-      {areaOfStudy &&
-        areaOfStudy.length > 0 &&
-        areaOfStudy.map((area, index) => (
-          <label
-            className="area-of-study-filter"
-            id={`${area.replace(/\s+/g, "-").toLowerCase()}-filter`}
-            htmlFor={area}
-            key={area + index}
-          >
-            {area}
-            <input
-              type="checkbox"
-              value={area}
-              onChange={handleSchoolCheckboxChange}
-            />
-          </label>
-        ))}
+      {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
       {/* Render checkboxes for program options */}
-      {programOptionsClean &&
-        programOptionsClean.length > 0 &&
-        programOptionsClean.map((option, index) => (
-          <label
-            className="program-options-filter"
-            id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
-            htmlFor={option}
-            key={option + index}
-          >
-            {option}
-            <input
-              type="checkbox"
-              value={option}
-              onChange={handleProgramOptionCheckboxChange}
-            />
-          </label>
-        ))}
+      {renderCheckboxes(programOptionsClean, handleProgramOptionCheckboxChange)}
       {/* Display filtered data */}
       {filteredData &&
         filteredData.map((program, index) => (
