@@ -24,22 +24,50 @@ export async function getStaticPaths() {
               }
             }`,
   });
-  console.log(data.programs);
   const paths = data.programs.nodes.map(
-    (program: { program: { slug: any }; title: any }) => ({
+    (program: {
+      program: {
+        [x: string]: any;
+        slug: any;
+      };
+      title: any;
+    }) => ({
       params: { slug: program.program.slug },
       props: {
         content: program.program,
         slug: program.program.slug,
         title: program.title,
+        atAGlance: program.program.programAtAGlance,
+        degreeType: program.program.degreeType,
+        school: program.program.school,
       },
     })
   );
   return paths;
 }
-const { title, body, slug } = Astro.props;
+const { title, body, slug, atAGlance, degreeType, school } = Astro.props;
+// console.log(Astro.props);
 ---
 
 <Layout title={title}>
-  <main>{slug}</main>
+  <main>
+    <h1>
+      {title}
+    </h1>
+    <div id="program-at-a-glance">
+      <h2>Program at a Glance</h2>
+      <div set:html={atAGlance} />
+    </div>
+    <div id="degree-school-department">
+      <div>
+        <h3>Degree</h3>
+        <p>{degreeType} in {title}</p>
+      </div>
+      <div>
+        <h3>School</h3>
+        <p set:html={school} />
+      </div>
+    </div>
+    <p></p>
+  </main>
 </Layout>
