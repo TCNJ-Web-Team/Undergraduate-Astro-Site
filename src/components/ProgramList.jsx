@@ -1,19 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 
-export default function ProgramList({ data, areaOfStudy }) {
-  const [newData, setData] = useState(data);
+export default function ProgramList({
+  data,
+  areaOfStudy,
+  programOptionsClean,
+}) {
+  const [filteredData, setFilteredData] = useState(data.programs.nodes);
   const [newAreaOfStudy, setAreaOfStudy] = useState(areaOfStudy);
+  const [newProgramOptionsClean, setProgramOptionsClean] =
+    useState(programOptionsClean);
   const [selectedFilters, setSelectedFilters] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  // console.log(newAreaOfStudy);
+  useEffect(() => {
+    filterData();
+  }, [selectedFilters, searchText]);
+
+  const filterData = () => {
+    let newData = data.programs.nodes;
+
+    // Filter by title or school text input
+    newData = newData.filter(
+      (program) =>
+        program.title.toLowerCase().includes(searchText.toLowerCase()) ||
+        program.program.school
+          .toString()
+          .toLowerCase()
+          .includes(searchText.toLowerCase())
+    );
+
+    // Filter by selected area of study checkboxes
+    if (selectedFilters.length > 0) {
+      newData = newData.filter(
+        (program) =>
+          selectedFilters.includes(program.program.school.toString()) ||
+          selectedFilters.some((filter) =>
+            program.program.programOptions.includes(filter)
+          )
+      );
+    }
+
+    setFilteredData(newData);
+  };
 
   const handleFilterChange = (event) => {
-    const searchText = event.target.value.toLowerCase();
-    const filteredData = data.programs.nodes.filter(
-      (program) =>
-        program.title.toLowerCase().includes(searchText) ||
-        program.program.school.toString().toLowerCase().includes(searchText)
-    );
-    setData({ programs: { nodes: filteredData } });
+    setSearchText(event.target.value);
   };
 
   const handleCheckboxChange = (event) => {
@@ -27,20 +59,6 @@ export default function ProgramList({ data, areaOfStudy }) {
     }
 
     setSelectedFilters(updatedFilters);
-    filterDataByAreaOfStudy(updatedFilters);
-  };
-
-  const filterDataByAreaOfStudy = (filters) => {
-    if (filters.length === 0) {
-      setData(data); // Reset to original data if no filters selected
-      return;
-    }
-
-    const filteredData = data.programs.nodes.filter((program) =>
-      filters.includes(program.program.school.toString())
-    );
-
-    setData({ programs: { nodes: filteredData } });
   };
 
   return (
@@ -49,7 +67,7 @@ export default function ProgramList({ data, areaOfStudy }) {
         type="text"
         id="text-filter"
         onChange={handleFilterChange}
-        placeholder="Filter by title"
+        placeholder="Filter by title or school"
       />
       {newAreaOfStudy &&
         newAreaOfStudy.length > 0 &&
@@ -70,8 +88,27 @@ export default function ProgramList({ data, areaOfStudy }) {
             </label>
           );
         })}
-      {newData &&
-        newData.programs.nodes.map((program, index) => (
+      {newProgramOptionsClean &&
+        newProgramOptionsClean.length > 0 &&
+        newProgramOptionsClean.map((option, index) => {
+          return (
+            <label
+              className="program-options-filter"
+              id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
+              htmlFor={option}
+              key={option + index}
+            >
+              {option}
+              <input
+                type="checkbox"
+                value={option}
+                onChange={handleCheckboxChange}
+              />
+            </label>
+          );
+        })}
+      {filteredData &&
+        filteredData.map((program, index) => (
           <ProgramCard program={program} key={program.program.slug + index} />
         ))}
     </div>
