@@ -1,24 +1,25 @@
 query ProgramsListing {
-  programs {
-    nodes {
-      program {
-        degreeType
-        slug
-        school
-        programOptions
-        additionalOptions
-        programAtAGlance
-        learnMoreList {
-          title
-          slug
-        }
-      }
-    }
-  }
-}
+              programs {
+                nodes {
+                  program {
+                    degreeType
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+                    programAtAGlance
+                    learnMoreList {
+                      title
+                      slug
+                    }
+                  }
+                  title
+                }
+              }
+            }
 
 query FullOptionsListing {
-  page(id: "24", idType: DATABASE_ID) {
+  page(id: "249", idType: DATABASE_ID) {
     program {
       additionalOptions
       degreeType

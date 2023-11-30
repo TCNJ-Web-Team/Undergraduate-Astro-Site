@@ -56,7 +56,13 @@ const additionalOptions = programOptions.page.program.additionalOptions;
   </header>
   <main>
     <div class="yellow-border">
-      <ProgramList data={data} areaOfStudy={areaOfStudy} />
+      <ProgramList
+        data={data}
+        areaOfStudy={areaOfStudy}
+        programOptionsClean={programOptionsClean}
+        additionalOptions={additionalOptions}
+        client:load
+      />
     </div>
   </main>
 </Layout>

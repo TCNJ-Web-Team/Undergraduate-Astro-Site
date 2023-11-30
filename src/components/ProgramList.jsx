@@ -1,47 +1,79 @@
 import { useState } from "react";
-// import { wpquery } from "../data/wordpress";
+import ProgramCard from "./ProgramCard"; // Import the new component
 
 export default function ProgramList({ data, areaOfStudy }) {
   const [newData, setData] = useState(data);
   const [newAreaOfStudy, setAreaOfStudy] = useState(areaOfStudy);
-  // console.log(newAreaOfStudy);
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
+  const handleFilterChange = (event) => {
+    const searchText = event.target.value.toLowerCase();
+    const filteredData = data.programs.nodes.filter(
+      (program) =>
+        program.title.toLowerCase().includes(searchText) ||
+        program.program.school.toString().toLowerCase().includes(searchText)
+    );
+    setData({ programs: { nodes: filteredData } });
+  };
+
+  const handleCheckboxChange = (event) => {
+    const value = event.target.value;
+    let updatedFilters = [...selectedFilters];
+
+    if (event.target.checked) {
+      updatedFilters.push(value);
+    } else {
+      updatedFilters = updatedFilters.filter((filter) => filter !== value);
+    }
+
+    setSelectedFilters(updatedFilters);
+    filterDataByAreaOfStudy(updatedFilters);
+  };
+
+  const filterDataByAreaOfStudy = (filters) => {
+    if (filters.length === 0) {
+      setData(data); // Reset to original data if no filters selected
+      return;
+    }
+
+    const filteredData = data.programs.nodes.filter((program) =>
+      filters.includes(program.program.school.toString())
+    );
+
+    setData({ programs: { nodes: filteredData } });
+  };
+
   return (
     <div className="program-wrapper inner-width">
-      {newData &&
-        newData.programs.nodes.map((program, index) => {
-          const {
-            degreeType,
-            slug,
-            school,
-            programOptions,
-            additionalOptions,
-            programAtAGlance,
-            learnMoreList,
-          } = program.program;
-          const { title } = program;
-          // console.log(title);
+      <input
+        type="text"
+        id="text-filter"
+        onChange={handleFilterChange}
+        placeholder="Filter by title"
+      />
+      {newAreaOfStudy &&
+        newAreaOfStudy.length > 0 &&
+        newAreaOfStudy.map((area, index) => {
           return (
-            <div className="program-card" id={slug} key={slug + index}>
-              <a className="program-link" href={`./` + slug}>
-                <p>{title}</p>
-                <hr />
-                <div className="icon-container">
-                  {programOptions &&
-                    programOptions.map((option, index) => {
-                      // console.log(option);
-                      return <p key={index}>{option}</p>;
-                    })}
-                  {additionalOptions &&
-                    additionalOptions.map((option, index) => {
-                      // console.log(option);
-                      return <p key={index}>{option}</p>;
-                    })}
-                </div>
-              </a>
-              {/* Access other fields here directly */}
-            </div>
+            <label
+              className="area-of-study-filter"
+              id={`${area.replace(/\s+/g, "-").toLowerCase()}-filter`}
+              htmlFor={area}
+              key={area + index}
+            >
+              {area}
+              <input
+                type="checkbox"
+                value={area}
+                onChange={handleCheckboxChange}
+              />
+            </label>
           );
         })}
+      {newData &&
+        newData.programs.nodes.map((program, index) => (
+          <ProgramCard program={program} key={program.program.slug + index} />
+        ))}
     </div>
   );
 }
