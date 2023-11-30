@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { wpquery } from "../data/wordpress";
+
+export async function getStaticPaths() {
+  const data = await wpquery({
+    query: ` query ProgramsListing {
+              programs {
+                nodes {
+                  program {
+                    degreeType
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+                    programAtAGlance
+                    learnMoreList {
+                      title
+                      slug
+                    }
+                  }
+                  title
+                }
+              }
+            }`,
+  });
+  console.log(data.programs);
+  const paths = data.programs.nodes.map(
+    (program: { program: { slug: any }; title: any }) => ({
+      params: { slug: program.program.slug },
+      props: {
+        content: program.program,
+        slug: program.program.slug,
+        title: program.title,
+      },
+    })
+  );
+  return paths;
+}
+const { title, body, slug } = Astro.props;
+---
+
+<Layout title={title}>
+  <main>{slug}</main>
+</Layout>
