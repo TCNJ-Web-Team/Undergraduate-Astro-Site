@@ -18,6 +18,11 @@ export async function getStaticPaths() {
                         deptTitle
                         deptUrl
                     }
+                    careers{
+                        left
+                        right
+                        body
+                    }
                     learnMoreList {
                       title
                       slug
@@ -45,6 +50,7 @@ export async function getStaticPaths() {
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.department,
+        careers: program.program.careers,
       },
     })
   );
@@ -59,6 +65,7 @@ const {
   school,
   department,
   content,
+  careers,
 } = Astro.props;
 // console.log(department);
 ---
@@ -91,6 +98,12 @@ const {
         </p>
       </div>
     </div>
-    <p></p>
+    <div id="careers">
+      <h2>Careers</h2>
+
+      <div set:html={careers.left} />
+      <div set:html={careers.right} />
+      <div set:html={careers.body} />
+    </div>
   </main>
 </Layout>
