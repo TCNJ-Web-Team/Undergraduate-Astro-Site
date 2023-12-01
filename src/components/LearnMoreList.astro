@@ -1,0 +1,24 @@
+---
+type Props = {
+  learnMoreList: {
+    title: string;
+    slug: string;
+  }[];
+};
+
+const { learnMoreList } = Astro.props;
+---
+
+<div id="learn-more-list">
+  {
+    learnMoreList.map((content) => {
+      return (
+        <div id={content.title.replace(/\s+/g, "-").toLowerCase()}>
+          <a href={content.slug}>
+            <p>{content.title}</p>
+          </a>
+        </div>
+      );
+    })
+  }
+</div>

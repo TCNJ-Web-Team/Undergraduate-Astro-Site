@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
+import BodyCopy from "../components/BodyCopy.astro";
+import LowerContent from "../components/LowerContent.astro";
+import LearnMoreList from "../components/LearnMoreList.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -23,6 +26,15 @@ export async function getStaticPaths() {
                         right
                         body
                     }
+                    programOfStudy{
+                      left
+                      right
+                      body
+                    }
+                    lowerContent{
+                      title
+                      body
+                    }
                     learnMoreList {
                       title
                       slug
@@ -36,21 +48,32 @@ export async function getStaticPaths() {
   const paths = data.programs.nodes.map(
     (program: {
       program: {
-        [x: string]: any;
-        slug: any;
+        title: string;
+        programAtAGlance: string;
+        degreeType: string;
+        school: string;
+        department: string;
+        careers: string;
+        programOfStudy: string;
+        lowerContent: [];
+        learnMoreList: [];
+        slug: string;
       };
-      title: any;
+      title: string;
     }) => ({
       params: { slug: program.program.slug },
       props: {
-        content: program.program,
         slug: program.program.slug,
         title: program.title,
-        atAGlance: program.program.programAtAGlance,
+        programAtAGlance: program.program.programAtAGlance,
+
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.department,
         careers: program.program.careers,
+        programOfStudy: program.program.programOfStudy,
+        lowerContent: program.program.lowerContent,
+        learnMoreList: program.program.learnMoreList,
       },
     })
   );
@@ -60,14 +83,21 @@ const {
   title,
   body,
   slug,
-  atAGlance,
+  programAtAGlance,
   degreeType,
   school,
-  department,
+  department: { deptUrl, deptTitle },
   content,
-  careers,
+  careers: { left: careersLeft, right: careersRight, body: careersBody },
+  programOfStudy: {
+    left: programOfStudyLeft,
+    right: programOfStudyRight,
+    body: programOfStudyBody,
+  },
+  lowerContent,
+  learnMoreList,
 } = Astro.props;
-// console.log(department);
+// console.log(typeof lowerContent);
 ---
 
 <Layout title={title}>
@@ -77,7 +107,7 @@ const {
     </h1>
     <div id="program-at-a-glance">
       <h2>Program at a Glance</h2>
-      <div set:html={atAGlance} />
+      <div set:html={programAtAGlance} />
     </div>
     <div id="degree-school-department">
       <div>
@@ -92,18 +122,25 @@ const {
       <div>
         <h3>Department</h3>
         <p>
-          <a href={(department as { deptUrl: string }).deptUrl}>
-            {department && (department as { deptTitle: string }).deptTitle}
+          <a href={deptUrl}>
+            {deptTitle}
           </a>
         </p>
       </div>
     </div>
-    <div id="careers">
-      <h2>Careers</h2>
-
-      <div set:html={careers.left} />
-      <div set:html={careers.right} />
-      <div set:html={careers.body} />
-    </div>
+    <BodyCopy
+      heading="Careers"
+      left={careersLeft}
+      right={careersRight}
+      body={careersBody}
+    />
+    <BodyCopy
+      heading="Programs of Study"
+      left={programOfStudyLeft}
+      right={programOfStudyRight}
+      body={programOfStudyBody}
+    />
+    {lowerContent && <LowerContent lowerContent={lowerContent} />}
+    {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
   </main>
 </Layout>
