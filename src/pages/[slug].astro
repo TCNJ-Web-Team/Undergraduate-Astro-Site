@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
-import LowerContent from "../components/LowerContent.astro";
+import LowerContent from "../components/LowerContent.jsx";
 
 export async function getStaticPaths() {
   const data = await wpquery({
