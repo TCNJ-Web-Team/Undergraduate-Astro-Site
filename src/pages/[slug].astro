@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
-import LowerContent from "../components/LowerContent.jsx";
+import LowerContent from "../components/LowerContent.astro";
+import LearnMoreList from "../components/LearnMoreList.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -54,7 +55,8 @@ export async function getStaticPaths() {
         department: string;
         careers: string;
         programOfStudy: string;
-        lowerContent: any;
+        lowerContent: [];
+        learnMoreList: [];
         slug: string;
       };
       title: string;
@@ -71,6 +73,7 @@ export async function getStaticPaths() {
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
+        learnMoreList: program.program.learnMoreList,
       },
     })
   );
@@ -92,8 +95,9 @@ const {
     body: programOfStudyBody,
   },
   lowerContent,
+  learnMoreList,
 } = Astro.props;
-// console.log(lowerContent);
+console.log(learnMoreList);
 // console.log(typeof lowerContent);
 ---
 
@@ -138,5 +142,6 @@ const {
       body={programOfStudyBody}
     />
     {lowerContent && <LowerContent lowerContent={lowerContent} />}
+    {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
   </main>
 </Layout>
