@@ -54,7 +54,7 @@ export async function getStaticPaths() {
         department: string;
         careers: string;
         programOfStudy: string;
-        lowerContent: Array<{ title: string; body: string }>;
+        lowerContent: any;
         slug: string;
       };
       title: string;
@@ -137,7 +137,6 @@ const {
       right={programOfStudyRight}
       body={programOfStudyBody}
     />
-
-    <LowerContent lowerContent={lowerContent} />
+    {lowerContent && <LowerContent lowerContent={lowerContent} />}
   </main>
 </Layout>
