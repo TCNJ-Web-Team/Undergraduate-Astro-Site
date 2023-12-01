@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
+import BodyCopy from "../components/BodyCopy.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -63,7 +64,7 @@ const {
   atAGlance,
   degreeType,
   school,
-  department,
+  department: { deptUrl, deptTitle },
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
 } = Astro.props;
@@ -92,18 +93,17 @@ const {
       <div>
         <h3>Department</h3>
         <p>
-          <a href={(department as { deptUrl: string }).deptUrl}>
-            {department && (department as { deptTitle: string }).deptTitle}
+          <a href={deptUrl}>
+            {deptTitle}
           </a>
         </p>
       </div>
     </div>
-    <div id="careers">
-      <h2>Careers</h2>
-
-      <div set:html={careersLeft} />
-      <div set:html={careersRight} />
-      <div set:html={careersBody} />
-    </div>
+    <BodyCopy
+      heading="Careers"
+      left={careersLeft}
+      right={careersRight}
+      body={careersBody}
+    />
   </main>
 </Layout>
