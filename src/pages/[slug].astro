@@ -65,7 +65,7 @@ const {
   school,
   department,
   content,
-  careers,
+  careers: { left: careersLeft, right: careersRight, body: careersBody },
 } = Astro.props;
 // console.log(department);
 ---
@@ -101,9 +101,9 @@ const {
     <div id="careers">
       <h2>Careers</h2>
 
-      <div set:html={careers.left} />
-      <div set:html={careers.right} />
-      <div set:html={careers.body} />
+      <div set:html={careersLeft} />
+      <div set:html={careersRight} />
+      <div set:html={careersBody} />
     </div>
   </main>
 </Layout>
