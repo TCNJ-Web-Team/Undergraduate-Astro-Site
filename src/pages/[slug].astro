@@ -24,6 +24,15 @@ export async function getStaticPaths() {
                         right
                         body
                     }
+                    programOfStudy{
+                      left
+                      right
+                      body
+                    }
+                    lowerContent{
+                      title
+                      body
+                    }
                     learnMoreList {
                       title
                       slug
@@ -37,14 +46,20 @@ export async function getStaticPaths() {
   const paths = data.programs.nodes.map(
     (program: {
       program: {
-        [x: string]: any;
-        slug: any;
+        title: string;
+        atAGlance: string;
+        degreeType: string;
+        school: string;
+        department: string;
+        careers: string;
+        programOfStudy: string;
+        lowerContent: Array<{ title: string; body: string }>;
+        slug: string;
       };
-      title: any;
+      title: string;
     }) => ({
       params: { slug: program.program.slug },
       props: {
-        content: program.program,
         slug: program.program.slug,
         title: program.title,
         atAGlance: program.program.programAtAGlance,
@@ -52,6 +67,8 @@ export async function getStaticPaths() {
         school: program.program.school,
         department: program.program.department,
         careers: program.program.careers,
+        programOfStudy: program.program.programOfStudy,
+        lowerContent: program.program.lowerContent,
       },
     })
   );
@@ -67,8 +84,14 @@ const {
   department: { deptUrl, deptTitle },
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
+  programOfStudy: {
+    left: programOfStudyLeft,
+    right: programOfStudyRight,
+    body: programOfStudyBody,
+  },
+  lowerContent,
 } = Astro.props;
-// console.log(department);
+console.log(lowerContent);
 ---
 
 <Layout title={title}>
@@ -104,6 +127,12 @@ const {
       left={careersLeft}
       right={careersRight}
       body={careersBody}
+    />
+    <BodyCopy
+      heading="Programs of Study"
+      left={programOfStudyLeft}
+      right={programOfStudyRight}
+      body={programOfStudyBody}
     />
   </main>
 </Layout>
