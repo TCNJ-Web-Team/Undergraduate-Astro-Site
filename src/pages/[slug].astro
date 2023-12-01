@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
+import LowerContent from "../components/LowerContent.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -47,7 +48,7 @@ export async function getStaticPaths() {
     (program: {
       program: {
         title: string;
-        atAGlance: string;
+        programAtAGlance: string;
         degreeType: string;
         school: string;
         department: string;
@@ -62,7 +63,8 @@ export async function getStaticPaths() {
       props: {
         slug: program.program.slug,
         title: program.title,
-        atAGlance: program.program.programAtAGlance,
+        programAtAGlance: program.program.programAtAGlance,
+
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.department,
@@ -78,7 +80,7 @@ const {
   title,
   body,
   slug,
-  atAGlance,
+  programAtAGlance,
   degreeType,
   school,
   department: { deptUrl, deptTitle },
@@ -91,7 +93,8 @@ const {
   },
   lowerContent,
 } = Astro.props;
-console.log(lowerContent);
+// console.log(lowerContent);
+// console.log(typeof lowerContent);
 ---
 
 <Layout title={title}>
@@ -101,7 +104,7 @@ console.log(lowerContent);
     </h1>
     <div id="program-at-a-glance">
       <h2>Program at a Glance</h2>
-      <div set:html={atAGlance} />
+      <div set:html={programAtAGlance} />
     </div>
     <div id="degree-school-department">
       <div>
@@ -134,5 +137,7 @@ console.log(lowerContent);
       right={programOfStudyRight}
       body={programOfStudyBody}
     />
+
+    <LowerContent lowerContent={lowerContent} />
   </main>
 </Layout>

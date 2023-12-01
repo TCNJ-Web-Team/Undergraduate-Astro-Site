@@ -1,0 +1,19 @@
+---
+type Props = {
+  lowerContent: [];
+};
+
+const { lowerContent } = Astro.props;
+
+---
+
+    <div id="lower-content">
+      {lowerContent.map((content, index) => {
+        return (
+          <div key={index} id={content.title.replace(/\s+/g, "-").toLowerCase()}>
+            <h3>{content.title}</h3>
+            <div set:html={content.body } />
+          </div>
+        );
+      })}
+    </div>
