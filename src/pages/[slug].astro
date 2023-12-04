@@ -152,22 +152,24 @@ const {
         </div>
       </div>
     </div>
-    <div class="w-auto">
-      <div class="max-w-[70.5rem] m-auto">
-        <BodyCopy
-          heading="Careers"
-          left={careersLeft}
-          right={careersRight}
-          body={careersBody}
-        />
-        <BodyCopy
-          heading="Programs of Study"
-          left={programOfStudyLeft}
-          right={programOfStudyRight}
-          body={programOfStudyBody}
-        />
-        {lowerContent && <LowerContent lowerContent={lowerContent} />}
-        {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+    <div class="px-[25px] w-auto bg-tcnjyellow">
+      <div class="m-auto bg-white">
+        <div class="max-w-[70.5rem] m-auto bg-white">
+          <BodyCopy
+            heading="Careers"
+            left={careersLeft}
+            right={careersRight}
+            body={careersBody}
+          />
+          <BodyCopy
+            heading="Programs of Study"
+            left={programOfStudyLeft}
+            right={programOfStudyRight}
+            body={programOfStudyBody}
+          />
+          {lowerContent && <LowerContent lowerContent={lowerContent} />}
+          {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+        </div>
       </div>
     </div>
   </main>

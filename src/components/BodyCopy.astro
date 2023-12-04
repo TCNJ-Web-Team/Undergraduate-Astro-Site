@@ -12,14 +12,14 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 
 <div id={headingLower}>
   <h2 class="text-[1.875rem] font-chunkfive text-tcnjblue">{heading}</h2>
-  <div class="flex gap-[50px]">
+  <div class="flex gap-[50px] text-[1.438rem]">
     {left && <div id={`${headingLower}-left`} set:html={left} />}
     <div id={`${headingLower}-right`} set:html={right} />
   </div>
   {
     body && (
       <div
-        class="mt-[50px] mb-[75px]"
+        class="text-[1.438rem] mb-[75px]"
         id={`${headingLower}-body`}
         set:html={body}
       />
