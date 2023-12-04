@@ -1,8 +1,12 @@
 ---
 type Props = {
   heading: string;
-  children: React.Node;
 };
 
-const { heading, children } = Astro.props;
+const { heading } = Astro.props;
 ---
+
+<div>
+  <h3>{heading}</h3>
+  <slot />
+</div>

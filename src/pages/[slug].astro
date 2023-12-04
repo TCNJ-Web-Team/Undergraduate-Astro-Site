@@ -4,6 +4,7 @@ import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
+import TopOption from "../components/TopOption.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -114,10 +115,10 @@ const {
           id="degree-school-department"
           class="flex text-lg flex-row flex-nowrap items-center justify-between"
         >
-          <div>
-            <h3>Degree</h3>
+          <TopOption heading="Degree">
             <p>{degreeType} in {title}</p>
-          </div>
+          </TopOption>
+
           <div>
             <h3>School</h3>
             <p set:html={school} />
