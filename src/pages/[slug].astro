@@ -106,7 +106,7 @@ const {
     <div class="bg-lightgrey w-auto">
       <div class="max-w-[70.5rem] m-auto">
         <h1
-          class="font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
+          class="mb-[500px] font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
         >
           {title}
         </h1>
@@ -118,33 +118,43 @@ const {
           <TopOption heading="Degree">
             <p>{degreeType} in {title}</p>
           </TopOption>
-
-          <div>
-            <h3>School</h3>
+          <TopOption heading="School">
             <p set:html={school} />
+            <p>{degreeType} in {title}</p>
+          </TopOption>
+          <TopOption heading="Department">
+            {deptTitle}
+            <p>{degreeType} in {title}</p>
+          </TopOption>
+
+          <!-- <div>
+            <h3>School</h3>
           </div>
 
           <div>
-            <h3>Department</h3>
+            <h3></h3>
             <p>
               <a href={deptUrl}>
-                {deptTitle}
               </a>
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <div class="bg-tcnjyellow w-auto">
       <div class="max-w-[70.5rem] m-auto">
-        <div id="program-at-a-glance">
+        <div id="program-at-a-glance" class="text-center mb-[100px] p-[100px]">
           <h2
             class="text-[4.375rem] font-chunkfive leading-[5rem] text-tcnjblue"
           >
             Program at a Glance
           </h2>
-          <div set:html={programAtAGlance} />
+          <div class="text-[1.75rem]" set:html={programAtAGlance} />
         </div>
+      </div>
+    </div>
+    <div class="w-auto">
+      <div class="max-w-[70.5rem] m-auto">
         <BodyCopy
           heading="Careers"
           left={careersLeft}
@@ -157,9 +167,9 @@ const {
           right={programOfStudyRight}
           body={programOfStudyBody}
         />
+        {lowerContent && <LowerContent lowerContent={lowerContent} />}
+        {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
       </div>
     </div>
-    {lowerContent && <LowerContent lowerContent={lowerContent} />}
-    {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
   </main>
 </Layout>
