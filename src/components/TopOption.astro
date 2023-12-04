@@ -1,0 +1,12 @@
+---
+type Props = {
+  heading: string;
+};
+
+const { heading } = Astro.props;
+---
+
+<div>
+  <h3 class="font-opensans not-italic uppercase font-bold">{heading}</h3>
+  <slot />
+</div>

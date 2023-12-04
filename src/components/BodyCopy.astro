@@ -11,9 +11,18 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 ---
 
 <div id={headingLower}>
-  <h2>{heading}</h2>
-
-  <div id={`${headingLower}-left`} set:html={left} />
-  <div id={`${headingLower}-right`} set:html={right} />
-  {body && <div id={`${headingLower}-body`} set:html={body} />}
+  <h2 class="text-[1.875rem] font-chunkfive text-tcnjblue">{heading}</h2>
+  <div class="flex gap-[50px]">
+    {left && <div id={`${headingLower}-left`} set:html={left} />}
+    <div id={`${headingLower}-right`} set:html={right} />
+  </div>
+  {
+    body && (
+      <div
+        class="mt-[50px] mb-[75px]"
+        id={`${headingLower}-body`}
+        set:html={body}
+      />
+    )
+  }
 </div>

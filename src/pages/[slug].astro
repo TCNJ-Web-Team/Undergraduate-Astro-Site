@@ -4,6 +4,7 @@ import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
+import TopOption from "../components/TopOption.astro";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -101,46 +102,73 @@ const {
 ---
 
 <Layout title={title}>
-  <main>
-    <h1>
-      {title}
-    </h1>
-    <div id="program-at-a-glance">
-      <h2>Program at a Glance</h2>
-      <div set:html={programAtAGlance} />
-    </div>
-    <div id="degree-school-department">
-      <div>
-        <h3>Degree</h3>
-        <p>{degreeType} in {title}</p>
-      </div>
-      <div>
-        <h3>School</h3>
-        <p set:html={school} />
-      </div>
+  <main class="font-bitter text-darkgrey">
+    <div class="bg-lightgrey w-auto">
+      <div class="max-w-[70.5rem] m-auto">
+        <a href="/">← Back to Programs</a>
+        <h1
+          class="mb-[500px] font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
+        >
+          {title}
+        </h1>
 
-      <div>
-        <h3>Department</h3>
-        <p>
-          <a href={deptUrl}>
+        <div
+          id="degree-school-department"
+          class="flex text-lg flex-row flex-nowrap items-center justify-between"
+        >
+          <TopOption heading="Degree">
+            <p>{degreeType} in {title}</p>
+          </TopOption>
+          <TopOption heading="School">
+            <p set:html={school} />
+          </TopOption>
+          <TopOption heading="Department">
             {deptTitle}
-          </a>
-        </p>
+          </TopOption>
+
+          <!-- <div>
+            <h3>School</h3>
+          </div>
+
+          <div>
+            <h3></h3>
+            <p>
+              <a href={deptUrl}>
+              </a>
+            </p>
+          </div> -->
+        </div>
       </div>
     </div>
-    <BodyCopy
-      heading="Careers"
-      left={careersLeft}
-      right={careersRight}
-      body={careersBody}
-    />
-    <BodyCopy
-      heading="Programs of Study"
-      left={programOfStudyLeft}
-      right={programOfStudyRight}
-      body={programOfStudyBody}
-    />
-    {lowerContent && <LowerContent lowerContent={lowerContent} />}
-    {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+    <div class="bg-tcnjyellow w-auto">
+      <div class="max-w-[70.5rem] m-auto">
+        <div id="program-at-a-glance" class="text-center mb-[100px] p-[100px]">
+          <h2
+            class="text-[4.375rem] font-chunkfive leading-[5rem] text-tcnjblue"
+          >
+            Program at a Glance
+          </h2>
+          <div class="text-[1.75rem]" set:html={programAtAGlance} />
+        </div>
+      </div>
+    </div>
+    <div class="w-auto">
+      <div class="max-w-[70.5rem] m-auto">
+        <BodyCopy
+          heading="Careers"
+          left={careersLeft}
+          right={careersRight}
+          body={careersBody}
+        />
+        <BodyCopy
+          heading="Programs of Study"
+          left={programOfStudyLeft}
+          right={programOfStudyRight}
+          body={programOfStudyBody}
+        />
+        {lowerContent && <LowerContent lowerContent={lowerContent} />}
+        {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+      </div>
+    </div>
   </main>
 </Layout>
