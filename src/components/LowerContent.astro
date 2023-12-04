@@ -13,9 +13,12 @@ const { lowerContent } = Astro.props;
   {
     lowerContent.map((content) => {
       return (
-        <div id={content.title.replace(/\s+/g, "-").toLowerCase()}>
-          <h3>{content.title}</h3>
-          <div set:html={content.body} />
+        <div
+          class="border-y border-black mb-[25px]"
+          id={content.title.replace(/\s+/g, "-").toLowerCase()}
+        >
+          <h3 class="font-bold pt-[25px]">{content.title}</h3>
+          <div class="pb-[25px]" set:html={content.body} />
         </div>
       );
     })
