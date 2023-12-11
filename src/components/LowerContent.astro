@@ -1,4 +1,6 @@
 ---
+import Accordion from "./Accordion";
+
 type Props = {
   lowerContent: {
     title: string;
@@ -14,11 +16,17 @@ const { lowerContent } = Astro.props;
     lowerContent.map((content) => {
       return (
         <div
-          class="border-y border-black mb-[25px]"
+          class="border-b border-black mb-[25px] "
           id={content.title.replace(/\s+/g, "-").toLowerCase()}
         >
-          <h3 class="font-bold pt-[25px]">{content.title}</h3>
-          <div class="pb-[25px]" set:html={content.body} />
+          <Accordion
+            startOpen={false}
+            header={content.title}
+            idName={content.title}
+            client:load
+          >
+            <div class="pb-[25px]" set:html={content.body} />
+          </Accordion>
         </div>
       );
     })
