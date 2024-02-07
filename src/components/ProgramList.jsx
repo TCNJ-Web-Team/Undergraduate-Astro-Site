@@ -7,6 +7,7 @@ export default function ProgramList({
   programOptionsClean,
   additionalOptions,
 }) {
+  // console.log(data.programs.nodes);
   const [filteredData, setFilteredData] = useState(data.programs.nodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
@@ -51,16 +52,19 @@ export default function ProgramList({
   };
 
   const filterBySelectedSchools = (program) =>
-    selectedSchoolFilters.includes(program.program.school.toString());
+    // selectedSchoolFilters.includes(program.program.school.toString());
+    (selectedSchoolFilters ?? []).includes(program.program.school.toString());
 
   const filterBySelectedProgramOptions = (program) =>
     selectedProgramOptionFilters.some((filter) =>
-      program.program.programOptions.includes(filter)
+      // program.program.programOptions.includes(filter)
+      (program.program.programOptions ?? []).includes(filter)
     );
 
   const filterBySelectedAdditionalOptions = (program) =>
     selectedAdditionalOptionFilters.some((filter) =>
-      program.program.additionalOptions.includes(filter)
+      // program.program.additionalOptions.includes(filter)
+      (program.program.additionalOptions ?? []).includes(filter)
     );
 
   const handleSchoolCheckboxChange = (event) =>
