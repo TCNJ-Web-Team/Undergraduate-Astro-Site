@@ -111,14 +111,16 @@ const {
 <Layout title={title}>
   <main class="font-bitter text-darkgrey">
     <div class="bg-lightgrey w-auto">
-      {sourceUrl && <img src={sourceUrl} alt={title} />}
       <div class="max-w-[70.5rem] m-auto">
-        <a href="/">← Back to Programs</a>
+        <a href="/">Breadcrumbs Go Here</a>
         <h1
           class="font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
         >
           {title}
         </h1>
+      </div>
+      {sourceUrl && <img src={sourceUrl} alt={title} />}
+      <div class="max-w-[70.5rem] m-auto">
         <div
           id="degree-school-department"
           class="flex text-lg flex-row flex-nowrap items-center justify-between"
@@ -137,13 +139,18 @@ const {
     </div>
     <div class="bg-tcnjyellow w-auto">
       <div class="max-w-[70.5rem] m-auto">
-        <div id="program-at-a-glance" class="text-center p-[100px]">
+        <div id="program-at-a-glance" class="text-left pt-[100px]">
           <h2
             class="text-[4.375rem] font-chunkfive leading-[5rem] text-tcnjblue"
           >
             Program at a Glance
           </h2>
           <div class="text-[1.75rem]" set:html={programAtAGlance} />
+          <div class="flex pb-[100px] mt-[75px]">
+            <a href="" class=""></a>
+            <button class="text">Apply</button>
+            <button>Request Info</button>
+          </div>
         </div>
       </div>
     </div>
