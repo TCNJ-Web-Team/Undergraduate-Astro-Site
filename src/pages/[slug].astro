@@ -18,6 +18,9 @@ export async function getStaticPaths() {
                     programOptions
                     additionalOptions
                     programAtAGlance
+                    heroImgDesktop {
+                      sourceUrl
+                    }
                     department {
                         deptTitle
                         deptUrl
@@ -46,6 +49,7 @@ export async function getStaticPaths() {
               }
             }`,
   });
+  console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
   const paths = data.programs.nodes.map(
     (program: {
       program: {
@@ -54,6 +58,7 @@ export async function getStaticPaths() {
         degreeType: string;
         school: string;
         department: string;
+        heroImgDesktop: string;
         careers: string;
         programOfStudy: string;
         lowerContent: [];
@@ -71,6 +76,7 @@ export async function getStaticPaths() {
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.department,
+        heroImgDesktop: program.program.heroImgDesktop,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
@@ -88,6 +94,7 @@ const {
   degreeType,
   school,
   department: { deptUrl, deptTitle },
+  heroImgDesktop: { sourceUrl },
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
@@ -104,14 +111,14 @@ const {
 <Layout title={title}>
   <main class="font-bitter text-darkgrey">
     <div class="bg-lightgrey w-auto">
+      {sourceUrl && <img src={sourceUrl} alt={title} />}
       <div class="max-w-[70.5rem] m-auto">
         <a href="/">← Back to Programs</a>
         <h1
-          class="mb-[500px] font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
+          class="font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
         >
           {title}
         </h1>
-
         <div
           id="degree-school-department"
           class="flex text-lg flex-row flex-nowrap items-center justify-between"
@@ -125,18 +132,6 @@ const {
           <TopOption heading="Department">
             {deptTitle}
           </TopOption>
-
-          <!-- <div>
-            <h3>School</h3>
-          </div>
-
-          <div>
-            <h3></h3>
-            <p>
-              <a href={deptUrl}>
-              </a>
-            </p>
-          </div> -->
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ export default {
         transparent: "transparent",
         // TEXT AND BG
         tcnjyellow: "#FDD700",
-        tcnjblue: "#464E7D",
+        tcnjblue: "#293F6F",
         // BG COLORS
         lightgrey: "#F1F1F1",
         darkgrey: "#C8DAE6",
