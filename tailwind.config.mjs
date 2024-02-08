@@ -6,9 +6,14 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      backgroundImage: {
+        yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
+      },
+
       fontFamily: {
         bitter: ["Bitter", ...defaultTheme.fontFamily.sans],
-        chunkfive: ["Chunk Five", ...defaultTheme.fontFamily.sans],
+        chunkfive: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
+        alfaslab: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         opensans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {

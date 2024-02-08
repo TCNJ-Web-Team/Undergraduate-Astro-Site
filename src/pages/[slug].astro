@@ -5,6 +5,7 @@ import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
 import TopOption from "../components/TopOption.astro";
+import "../styles/inner-body-copy.scss";
 
 export async function getStaticPaths() {
   const data = await wpquery({
@@ -110,19 +111,21 @@ const {
 
 <Layout title={title}>
   <main class="font-bitter text-darkgrey">
-    <div class="bg-lightgrey w-auto">
-      <div class="max-w-[70.5rem] m-auto">
+    <div class="bg-tcnjyellow w-auto">
+      <div class="max-w-[70.5rem] pt-[60px] m-auto">
         <a href="/">Breadcrumbs Go Here</a>
         <h1
-          class="font-chunkfive text-tcnjyellow text-custom-16.25 leading-[4.688rem]"
+          class="font-chunkfive text-tcnjblue text-custom-16.25 leading-[4.688rem]"
         >
           {title}
         </h1>
       </div>
-      <div class="w-auto bg-tcnjyellow">
+      <div class="w-auto bg-yellowWhiteGradient mt-[50px]">
         {sourceUrl && <img src={sourceUrl} class="pl-[200px]" alt={title} />}
       </div>
-      <div class="max-w-[70.5rem] m-auto">
+    </div>
+    <div class="bg-white w-auto pt-[50px] pb-[50px]">
+      <div class="max-w-[70.5rem] bg-white m-auto">
         <div
           id="degree-school-department"
           class="flex text-lg flex-row flex-nowrap items-center justify-between"
@@ -141,35 +144,51 @@ const {
     </div>
     <div class="bg-tcnjyellow w-auto">
       <div class="max-w-[70.5rem] m-auto">
-        <div id="program-at-a-glance" class="text-left pt-[100px]">
+        <div id="program-at-a-glance" class="text-left pb-[200px] pt-[200px]">
           <h2
-            class="text-[4.375rem] font-chunkfive leading-[5rem] text-tcnjblue"
+            class="text-[4.375rem] font-chunkfive pb-[50px] leading-[5rem] text-tcnjblue"
           >
             Program at a Glance
           </h2>
           <div class="text-[1.75rem]" set:html={programAtAGlance} />
-          <div class="flex pb-[100px] mt-[75px]">
-            <a href="" class="p-4">Apply</a>
-            <a href="" class="p-4">Request Info</a>
+          <div class="flex mt-[75px] gap-5">
+            <a
+              href=""
+              class="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] min-w-[300px] text-center font-opensans uppercase text-tcnjblue font-semibold text-base"
+              >Apply</a
+            >
+            <a
+              href=""
+              class="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] min-w-[300px] text-center font-opensans uppercase text-tcnjblue font-semibold text-base"
+              >Request Info</a
+            >
           </div>
         </div>
       </div>
     </div>
     <div class="px-[25px] w-auto bg-tcnjyellow">
       <div class="m-auto bg-white">
-        <div class="max-w-[70.5rem] m-auto bg-white">
-          <BodyCopy
-            heading="Careers"
-            left={careersLeft}
-            right={careersRight}
-            body={careersBody}
-          />
+        <div class="max-w-[70.5rem] m-auto bg-white pt-[150px] pb-[150px]">
           <BodyCopy
             heading="Programs of Study"
             left={programOfStudyLeft}
             right={programOfStudyRight}
             body={programOfStudyBody}
           />
+        </div>
+      </div>
+      <div class="m-auto bg-tcnjyellow">
+        <div class="max-w-[70.5rem] m-auto pt-[150px]">
+          <BodyCopy
+            heading="Careers"
+            left={careersLeft}
+            right={careersRight}
+            body={careersBody}
+          />
+        </div>
+      </div>
+      <div class="m-auto bg-white">
+        <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
           {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
         </div>
