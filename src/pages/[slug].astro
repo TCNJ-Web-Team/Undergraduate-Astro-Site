@@ -119,7 +119,9 @@ const {
           {title}
         </h1>
       </div>
-      {sourceUrl && <img src={sourceUrl} alt={title} />}
+      <div class="w-auto bg-tcnjyellow">
+        {sourceUrl && <img src={sourceUrl} class="pl-[200px]" alt={title} />}
+      </div>
       <div class="max-w-[70.5rem] m-auto">
         <div
           id="degree-school-department"
@@ -147,9 +149,8 @@ const {
           </h2>
           <div class="text-[1.75rem]" set:html={programAtAGlance} />
           <div class="flex pb-[100px] mt-[75px]">
-            <a href="" class=""></a>
-            <button class="">Apply</button>
-            <button>Request Info</button>
+            <a href="" class="p-4">Apply</a>
+            <a href="" class="p-4">Request Info</a>
           </div>
         </div>
       </div>
