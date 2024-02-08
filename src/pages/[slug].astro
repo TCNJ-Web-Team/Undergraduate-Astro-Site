@@ -9,46 +9,49 @@ import "../styles/inner-body-copy.scss";
 
 export async function getStaticPaths() {
   const data = await wpquery({
-    query: ` query ProgramsListing {
-              programs {
-                nodes {
-                  program {
-                    degreeType
-                    slug
-                    school
-                    programOptions
-                    additionalOptions
-                    programAtAGlance
-                    heroImgDesktop {
-                      sourceUrl
-                    }
-                    department {
-                        deptTitle
-                        deptUrl
-                    }
-                    careers{
-                        left
-                        right
-                        body
-                    }
-                    programOfStudy{
-                      left
-                      right
-                      body
-                    }
-                    lowerContent{
-                      title
-                      body
-                    }
-                    learnMoreList {
-                      title
-                      slug
-                    }
-                  }
-                  title
-                }
-              }
-            }`,
+    query: `query ProgramsListing {
+  programs {
+    nodes {
+      program {
+        fullProgramTitle
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        programAtAGlance
+        heroImgDesktop {
+          sourceUrl
+        }
+        department {
+          deptTitle
+          deptUrl
+        }
+        careers {
+          left
+          right
+          body
+        }
+        programOfStudy {
+          left
+          rightImage {
+            sourceUrl
+          }
+          body
+        }
+        lowerContent {
+          title
+          body
+        }
+        learnMoreList {
+          title
+          slug
+        }
+      }
+      title
+    }
+  }
+}`,
   });
   console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
   const paths = data.programs.nodes.map(
@@ -100,7 +103,7 @@ const {
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
     left: programOfStudyLeft,
-    right: programOfStudyRight,
+    rightImage: { sourceUrl: programOfStudyRight },
     body: programOfStudyBody,
   },
   lowerContent,
@@ -167,12 +170,16 @@ const {
       </div>
     </div>
     <div class="px-[25px] w-auto bg-tcnjyellow">
-      <div class="m-auto bg-white">
+      <div class="m-auto bg-white relative">
+        <img
+          src={programOfStudyRight}
+          alt=""
+          class="absolute top-[-50px] right-[-25px] max-w-[1280px] h-[850px] object-cover max w-[55%] object-left"
+        />
         <div class="max-w-[70.5rem] m-auto bg-white pt-[150px] pb-[150px]">
           <BodyCopy
             heading="Programs of Study"
             left={programOfStudyLeft}
-            right={programOfStudyRight}
             body={programOfStudyBody}
           />
         </div>
