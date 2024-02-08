@@ -7,11 +7,11 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: "430px", // Custom size for extra-small screens
-        sm: "650px", // Custom size for small screens
-        md: "900px", // Custom size for medium screens
-        lg: "1250px", // Custom size for large screens
         xl: "1920px", // Custom size for extra-large screens
+        lg: "1250px", // Custom size for large screens
+        md: "900px", // Custom size for medium screens
+        sm: "650px", // Custom size for small screens
+        xs: "430px", // Custom size for extra-small screens
       },
       backgroundImage: {
         yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
