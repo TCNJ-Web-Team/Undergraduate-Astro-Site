@@ -11,12 +11,13 @@ type Props = {
 const { lowerContent } = Astro.props;
 ---
 
-<div id="lower-content">
+<div id="lower-content" class="pt-[150px] pb-[200px]">
+  <hr class="bg-[#BFBFBF] h-[1px] w-auto border-0" />
   {
     lowerContent.map((content) => {
       return (
         <div
-          class="border-b border-black mb-[25px] "
+          class="border-b border-[#BFBFBF]"
           id={content.title.replace(/\s+/g, "-").toLowerCase()}
         >
           <Accordion
@@ -25,7 +26,7 @@ const { lowerContent } = Astro.props;
             idName={content.title}
             client:load
           >
-            <div class="pb-[25px]" set:html={content.body} />
+            <div set:html={content.body} />
           </Accordion>
         </div>
       );

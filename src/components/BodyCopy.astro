@@ -10,19 +10,37 @@ const { left, right, body, heading } = Astro.props;
 const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 ---
 
-<div id={headingLower}>
-  <h2 class="text-[1.875rem] font-chunkfive text-tcnjblue">{heading}</h2>
-  <div class="flex gap-[50px] text-[1.438rem]">
-    {left && <div id={`${headingLower}-left`} set:html={left} />}
-    <div id={`${headingLower}-right`} set:html={right} />
-  </div>
+<div id={headingLower} class="relative">
   {
-    body && (
-      <div
-        class="text-[1.438rem] mb-[75px]"
-        id={`${headingLower}-body`}
-        set:html={body}
-      />
+    heading != `Careers` ? (
+      <h2 class="text-[30px] leading-[40px] pb-[2.188rem] font-chunkfive text-tcnjblue">
+        {heading}
+      </h2>
+    ) : (
+      <h2 class="text-[4.063rem] leading-[4.688rem] pb-[50px] font-chunkfive text-tcnjblue">
+        {heading}
+      </h2>
     )
   }
+  {
+    body && heading == `Careers` && (
+      <div class="" id={`${headingLower}-body`} set:html={body} />
+    )
+  }
+  <div class="flex gap-[100px] text-[1.438rem] inner-body-copy-white flex-col">
+    <div class={heading === "Careers" ? "flex pb-[200px] gap-[40px]" : ""}>
+      {left && <div id={`${headingLower}-left`} set:html={left} />}
+      {
+        heading == `Careers` && (
+          <div id={`${headingLower}-right`} set:html={right} />
+        )
+      }
+    </div>
+    {
+      body && heading != `Careers` && (
+        <div class="" id={`${headingLower}-body`} set:html={body} />
+      )
+    }
+  </div>
 </div>
+<style></style>

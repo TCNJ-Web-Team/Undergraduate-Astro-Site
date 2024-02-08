@@ -13,8 +13,19 @@ $raleway: "Raleway", sans-serif;
 .accordion {
   // border: 1px solid #ccc;
   // margin-bottom: 10px;
-
+  margin-bottom: 50px;
+  &.top-open {
+    // margin-bottom: 25px;
+    // transition: margin-bottom 0.05s ease-in;
+  }
   .accordion-header {
+    font-family: "Interstate Condensed";
+    font-weight: 900;
+    font-size: 23px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #000;
+    padding-top: 50px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -94,10 +105,13 @@ $raleway: "Raleway", sans-serif;
     p {
       // font-family: $raleway;
       // font-weight: normal;
-      font-size: 20px;
+      // transition: margin-bottom 0.5s ease-in-out;
+      font-size: 19px;
       line-height: 35px;
+      // margin-bottom: -25px;
       // text-align: center;
       // color: $off-white;
+      padding-top: 35px;
 
       a {
         // color: $off-white;

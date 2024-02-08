@@ -20,7 +20,7 @@ export default function Accodion({ children, header, idName, startOpen }) {
   };
 
   return (
-    <div className="accordion" id={idName}>
+    <div className={open ? "accordion top-open" : "accordion"} id={idName}>
       <h2
         className={`${
           open ? "accordion-header start-open active" : "accordion-header"
