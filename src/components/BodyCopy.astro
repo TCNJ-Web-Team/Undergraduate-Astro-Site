@@ -1,4 +1,7 @@
 ---
+import ProgramCareersHeading from "./ProgramCareersHeading";
+import ProgramGlanceCopy from "./ProgramGlanceCopy";
+
 type Props = {
   left?: string;
   right?: string;
@@ -17,14 +20,16 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
         {heading}
       </h2>
     ) : (
-      <h2 class="text-[4.063rem] leading-[4.688rem] pb-[50px] font-chunkfive text-tcnjblue">
-        {heading}
-      </h2>
+      <ProgramCareersHeading heading="Careers" />
+
+      // <h2 class="text-[4.063rem] leading-[4.688rem] pb-[50px] font-chunkfive text-tcnjblue">
+      //   {heading}
+      // </h2>
     )
   }
   {
     body && heading == `Careers` && (
-      <div class="" id={`${headingLower}-body`} set:html={body} />
+      <ProgramGlanceCopy id={`${headingLower}-body`} copy={body} />
     )
   }
   <div class="flex gap-[100px] text-[1.438rem] inner-body-copy-white flex-col">
@@ -43,4 +48,3 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
     }
   </div>
 </div>
-<style></style>
