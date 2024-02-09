@@ -7,7 +7,7 @@ type Props = {
 const { heading, imgSrc } = Astro.props;
 ---
 
-<div class="flex-row flex items-start gap-[18px]">
+<div class="flex-row flex items-start gap-[18px] md:gap-[15px]">
   <!-- <svg width={32} height={32} fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
     <use
       xlink:href={`https://tcnj.edu/custom/icon-library/micro/${imgSrc}.svg#${imgSrc}`}
@@ -20,14 +20,14 @@ const { heading, imgSrc } = Astro.props;
     src={`https://tcnj.edu/custom/icon-library/micro/` + imgSrc + `.svg`}
     alt={`${heading} icon`}
   />
-  <div class="flex-col flex">
+  <div class="flex-col flex md:gap-[5px]">
     <h3
-      class="text-[17px] leading-[23px]
+      class="text-[17px] leading-[23px] md:text-[20px] md:leading-[30px]
       font-interstate not-italic uppercase font-extrabold"
     >
       {heading}
     </h3>
-    <p class="text-[17px] leading-[23px]">
+    <p class="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
       <slot />
     </p>
   </div>

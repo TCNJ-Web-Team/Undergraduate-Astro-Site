@@ -153,7 +153,9 @@ const { sourceUrl } = heroImgDesktop ?? {
           class="text-[17px] leading-[26px] pb-[20px] font-bitter
         sm:text-[18px]"
         >
-          Academics Home / Explore Programs / <span class="font-bold">
+          <a href="/">Academics Home</a> / <a href="/">Explore Programs</a> / <span
+            class="font-bold"
+          >
             {title}
           </span>
         </p>
@@ -185,9 +187,13 @@ const { sourceUrl } = heroImgDesktop ?? {
               sm:h-[600px]
               object-cover
               pl-[35px]
-              lg:pl-[200px]
+
+              lg:pl-[100px]
               lg:w-[100%]
+              xl:pl-[200px]
+        
               "
+              id="hero-img"
               alt={title}
             />
           )
