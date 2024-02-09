@@ -160,7 +160,8 @@ const {
       class="bg-white
     w-auto
     pt-[35px]
-    pb-[35px]
+    pb-[45px]
+    sm:pb-[35px]
     pl-[35px]
     pr-[35px]
     lg:pt-[50px]
@@ -195,9 +196,18 @@ const {
     <div class="bg-tcnjyellow w-auto pl-[35px]
     pr-[35px]">
       <div class="max-w-[70.5rem] m-auto">
-        <div id="program-at-a-glance" class="text-left pb-[200px] pt-[200px]">
+        <div
+          id="program-at-a-glance"
+          class="text-left
+        pb-[100px]
+        pt-[100px]
+        md:pb-[200px]
+        md:pt-[200px]"
+        >
           <h2
-            class="text-[4.375rem] font-chunkfive pb-[50px] leading-[5rem] text-tcnjblue"
+            class="text-center
+            sm:text-left
+            text-[4.375rem] font-chunkfive pb-[50px] leading-[5rem] text-tcnjblue"
           >
             Program at a Glance
           </h2>
@@ -205,9 +215,9 @@ const {
           <div
             class="flex
           flex-col
-          sm:flex-row
+          md:flex-row
           mt-[75px]
-          sm:gap-5"
+          md:gap-5"
           >
             <a
               href=""
@@ -252,7 +262,15 @@ const {
           class="absolute top-[-50px] right-[-25px] xl:max-w-[1280px] xl:h-[750px] xl:w-[51%] object-cover xl:max w-[55%] object-left
           h-[650px]"
         />
-        <div class="max-w-[70.5rem] m-auto bg-white pt-[150px] pb-[150px]">
+        <div
+          class="max-w-[70.5rem]
+        m-auto
+        bg-white
+        pt-[100px]
+        pb-[100px]
+        md:pt-[150px]
+        md:pb-[150px]"
+        >
           <BodyCopy
             heading="Programs of Study"
             left={programOfStudyLeft}
