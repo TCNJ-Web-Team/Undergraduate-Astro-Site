@@ -13,10 +13,25 @@ $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
-
+#hero-img {
+  @media screen and (min-width: 1250px) and (max-width: 1375px) {
+    // width: 54%;
+    padding-left: 50px;
+  }
+}
 #prog-study-img {
   width: calc(100% + 35px);
 
+  @media screen and (min-width: $lg) {
+    width: 54%;
+  }
+  @media screen and (min-width: 1050px) and (max-width: $lg) {
+    width: 54%;
+  }
+  @media screen and (min-width: $md) and (max-width: 1050px) {
+    width: 46%;
+    // width: 46%;
+  }
   @media screen and (min-width: $sm) and (max-width: $md) {
     width: calc(100% + 82px);
   }
@@ -38,6 +53,9 @@ $sm: 550px;
     padding-top: 50px;
     &:first-of-type {
       padding-top: 0;
+    }
+    @media screen and (min-width: $md) {
+      padding-bottom: 0;
     }
     @media screen and (max-width: $sm) {
       padding-top: 30px;
@@ -87,6 +105,13 @@ $sm: 550px;
       text-align: left;
       color: #000;
       padding-bottom: 10px;
+      &:last-of-type {
+        padding-bottom: 0 !important;
+      }
+      @media screen and (min-width: $md) {
+        padding-bottom: 15px;
+        // padding-bottom: 0;
+      }
       @media screen and (max-width: $sm) {
         font-size: 18px;
         line-height: 25px;

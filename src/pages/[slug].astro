@@ -146,10 +146,16 @@ const { sourceUrl } = heroImgDesktop ?? {
       max-w-[70.5rem]
       pt-[35px]
       sm:pt-[50px]
+      md:pt-[58px]
       m-auto"
       >
-        <p class="text-[17px] leading-[26px] pb-[20px] font-bitter">
-          Academics Home / Explore Programs / <span class="font-bold">
+        <p
+          class="text-[17px] leading-[26px] pb-[20px] font-bitter
+        sm:text-[18px]"
+        >
+          <a href="/">Academics Home</a> / <a href="/">Explore Programs</a> / <span
+            class="font-bold"
+          >
             {title}
           </span>
         </p>
@@ -161,8 +167,8 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:text-[60px]
           sm:leading-[60px]
          
-          lg:text-custom-16.25
-          lg:leading-[4.688rem]"
+          md:text-custom-16.25
+          md:leading-[4.688rem]"
         >
           {title}
         </h1>
@@ -170,7 +176,7 @@ const { sourceUrl } = heroImgDesktop ?? {
       <div
         class="w-auto bg-yellowWhiteGradient
       mt-[35px]
-      lg:mt-[50px]"
+      md:mt-[50px]"
       >
         {
           sourceUrl && (
@@ -181,9 +187,13 @@ const { sourceUrl } = heroImgDesktop ?? {
               sm:h-[600px]
               object-cover
               pl-[35px]
-              lg:pl-[200px]
-              lg:h-auto
+
+              lg:pl-[100px]
+              lg:w-[100%]
+              xl:pl-[200px]
+        
               "
+              id="hero-img"
               alt={title}
             />
           )
@@ -199,8 +209,8 @@ const { sourceUrl } = heroImgDesktop ?? {
     sm:pb-[35px]
     pl-[35px]
     pr-[35px]
-    lg:pt-[50px]
-    lg:pb-[50px]"
+    md:pt-[50px]
+    md:pb-[50px]"
     >
       <div class="max-w-[70.5rem] bg-white m-auto">
         <div
@@ -214,7 +224,8 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:flex-row
           sm:flex-nowrap
           sm:items-center
-          sm:justify-between"
+          sm:justify-between
+          md:max-w-none"
         >
           <TopOption heading="Degree" imgSrc="ribbon">
             {degreeType} in {title}
@@ -233,7 +244,9 @@ const { sourceUrl } = heroImgDesktop ?? {
     pl-[35px]
     pr-[35px]
     sm:pl-[82px]
-    sm:pr-[82px]"
+    sm:pr-[82px]
+    md:pl-[35px]
+    md:pr-[35px]"
     >
       <div class="max-w-[70.5rem] m-auto">
         <div
@@ -276,12 +289,12 @@ const { sourceUrl } = heroImgDesktop ?? {
               pb-[40px]
               sm:w-[100%]
               
-              md:min-w-[300px]
               text-center
               font-opensans
               uppercase text-tcnjblue
               font-semibold
-              text-base"
+              text-base
+              md:max-w-[300px]"
               >Apply</a
             >
             <a
@@ -292,12 +305,13 @@ const { sourceUrl } = heroImgDesktop ?? {
               pt-[40px]
               pb-[40px]
               sm:w-[100%]
-              md:min-w-[300px]
+              
               text-center
               font-opensans
               uppercase text-tcnjblue
               font-semibold
-              text-base"
+              text-base
+              md:max-w-[300px]"
               >Request Info</a
             >
           </div>
@@ -323,15 +337,14 @@ const { sourceUrl } = heroImgDesktop ?? {
           object-left
           w-[100%]
           h-[400px]
-          sm:h-[550px]
-          sm:top-[-75px]
           max-w-none
-         
+          sm:h-[550px]
+          sm:top-[-50px]
+          
+      
+          md:right-[-35px]
           md:h-[650px]
-          md:absolute
-          lg:max-w-[1280px]
-          lg:h-[750px]
-          lg:w-[51%]"
+          md:absolute"
         />
         <div
           class="max-w-[70.5rem]
@@ -341,7 +354,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         sm:pt-[0]
         sm:pb-[15px]
         md:pt-[150px]
-        md:pb-[150px]"
+        md:pb-[75px]"
         >
           <BodyCopy
             heading="Programs of Study"
@@ -356,7 +369,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         class="max-w-[70.5rem] m-auto
       pt-[100px]
       sm:pt-[100px]
-      md:pt-[150px]"
+      md:pt-[200px]"
       >
         <BodyCopy
           heading="Careers"
