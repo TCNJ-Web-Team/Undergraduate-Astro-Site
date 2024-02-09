@@ -9,7 +9,11 @@ type Props = {
 const { learnMoreList } = Astro.props;
 ---
 
-<div id="learn-more-list" class="grid grid-cols-4 gap-5">
+<div
+  id="learn-more-list"
+  class="grid grid-cols-4 gap-5 sm:pl-[47px]
+sm:pr-[47px]"
+>
   {
     learnMoreList.map((content) => {
       return (

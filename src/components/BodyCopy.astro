@@ -13,7 +13,10 @@ const { left, right, body, heading } = Astro.props;
 const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 ---
 
-<div id={headingLower} class="relative">
+<div
+  id={headingLower}
+  className={`relative ${heading === "Careers" ? "sm:pl-[47px] sm:pr-[47px]" : ""}`}
+>
   {
     heading != `Careers` ? (
       <h2
