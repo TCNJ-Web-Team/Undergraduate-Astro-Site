@@ -2,7 +2,10 @@ $dark-blue: #293f6f;
 $off-white: #fffdf4;
 $domine: "Domine", sans-serif;
 $raleway: "Raleway", sans-serif;
-
+$xl: 1920px; // Custom size for extra-large screens
+$lg: 1250px; // Custom size for large screens
+$md: 900px;
+$sm: 550px;
 /**
  * The following styles get applied both on the front of your site
  * and in the editor.
@@ -30,19 +33,13 @@ $raleway: "Raleway", sans-serif;
     align-items: center;
     cursor: pointer;
     position: relative;
-    // font-size: 18px;
-    // line-height: 55px;
-    // margin-bottom: 0;
-
-    // font-family: $raleway;
-    // font-weight: 600;
-
-    // text-align: center;
-    // color: $off-white;
 
     display: block;
-    // padding-bottom: 5px;
-
+    @media screen and (max-width: $sm) {
+      font-size: 18px;
+      line-height: 25px;
+      // padding-top: 30px;
+    }
     .arrow {
       text-decoration: none;
     }
@@ -112,6 +109,11 @@ $raleway: "Raleway", sans-serif;
       // text-align: center;
       // color: $off-white;
       padding-top: 35px;
+      @media screen and (max-width: $sm) {
+        font-size: 18px;
+        line-height: 25px;
+        // padding-top: 30px;
+      }
 
       a {
         // color: $off-white;

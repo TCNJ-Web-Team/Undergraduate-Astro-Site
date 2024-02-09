@@ -262,7 +262,8 @@ const {
       </div>
     </div>
     <div class="px-[35px] w-auto sm:bg-tcnjyellow">
-      <div class="m-auto bg-white relative">
+      <div class="m-auto bg-white relative
+      pb-[75px]">
         <img
           src={programOfStudyRight}
           alt=""
@@ -298,16 +299,20 @@ const {
           />
         </div>
       </div>
-      <div class="m-auto bg-tcnjyellow">
-        <div class="max-w-[70.5rem] m-auto pt-[150px]">
-          <BodyCopy
-            heading="Careers"
-            left={careersLeft}
-            right={careersRight}
-            body={careersBody}
-          />
-        </div>
+    </div>
+    <div class="px-[35px] m-auto bg-tcnjyellow">
+      <div class="max-w-[70.5rem] m-auto
+      pt-[100px]
+      sm:pt-[150px]">
+        <BodyCopy
+          heading="Careers"
+          left={careersLeft}
+          right={careersRight}
+          body={careersBody}
+        />
       </div>
+    </div>
+    <div class="px-[35px] w-auto sm:bg-tcnjyellow">
       <div class="m-auto bg-white">
         <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
