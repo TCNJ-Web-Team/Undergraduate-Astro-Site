@@ -1,12 +1,34 @@
 ---
 type Props = {
   heading: string;
+  imgSrc: string;
 };
 
-const { heading } = Astro.props;
+const { heading, imgSrc } = Astro.props;
 ---
 
-<div>
-  <h3 class="font-opensans not-italic uppercase font-bold">{heading}</h3>
-  <slot />
+<div class="flex-row flex items-start gap-[18px]">
+  <!-- <svg width={32} height={32} fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+    <use
+      xlink:href={`https://tcnj.edu/custom/icon-library/micro/${imgSrc}.svg#${imgSrc}`}
+      href={`https://tcnj.edu/custom/icon-library/micro/${imgSrc}.svg#${imgSrc}`}
+    ></use>
+  </svg> -->
+
+  <img
+    class="w-[26px] h-auto mt-[3px]"
+    src={`https://tcnj.edu/custom/icon-library/micro/` + imgSrc + `.svg`}
+    alt={`${heading} icon`}
+  />
+  <div class="flex-col flex">
+    <h3
+      class="text-[17px] leading-[23px]
+      font-interstate not-italic uppercase font-extrabold"
+    >
+      {heading}
+    </h3>
+    <p class="text-[17px] leading-[23px]">
+      <slot />
+    </p>
+  </div>
 </div>

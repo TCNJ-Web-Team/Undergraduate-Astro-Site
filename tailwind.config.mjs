@@ -10,8 +10,8 @@ export default {
         xl: "1920px", // Custom size for extra-large screens
         lg: "1250px", // Custom size for large screens
         md: "900px", // Custom size for medium screens
-        sm: "650px", // Custom size for small screens
-        xs: "430px", // Custom size for extra-small screens
+        sm: "550px", // Custom size for small screens
+        // xs: "430px", // Custom size for extra-small screens
       },
       backgroundImage: {
         yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
@@ -22,6 +22,7 @@ export default {
         chunkfive: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         alfaslab: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         opensans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        interstate: ["Interstate Condensed", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         "custom-16.25": "4.063rem",

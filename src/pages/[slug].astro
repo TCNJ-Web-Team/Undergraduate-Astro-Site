@@ -5,6 +5,8 @@ import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
 import TopOption from "../components/TopOption.astro";
+import ProgramCareersHeading from "../components/ProgramCareersHeading";
+import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
 import "../styles/inner-body-copy.scss";
 
 export async function getStaticPaths() {
@@ -53,7 +55,7 @@ export async function getStaticPaths() {
   }
 }`,
   });
-  console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
+  // console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
   const paths = data.programs.nodes.map(
     (program: {
       program: {
@@ -119,10 +121,15 @@ const {
         class="pl-[35px]
       pr-[35px]
       max-w-[70.5rem]
-      pt-[60px]
+      pt-[35px]
+      sm:pt-[60px]
       m-auto"
       >
-        <a href="/">Breadcrumbs Go Here</a>
+        <p class="text-[17px] leading-[26px] pb-[20px]">
+          Academics Home / Explore Programs / <span class="font-bold">
+            {title}
+          </span>
+        </p>
         <h1
           class="font-chunkfive
           text-tcnjblue
@@ -159,8 +166,10 @@ const {
     <div
       class="bg-white
     w-auto
-    pt-[35px]
-    pb-[35px]
+    pt-[45px]
+    pb-[45px]
+    sm:pt-[35px]
+    sm:pb-[35px]
     pl-[35px]
     pr-[35px]
     lg:pt-[50px]
@@ -172,22 +181,20 @@ const {
           class="flex
           text-lg
           flex-col
-          
+          gap-[35px]
           sm:flex-row
           sm:flex-nowrap
           sm:items-center
           sm:justify-between"
         >
-          <TopOption heading="Degree">
-            <p class="text-[17px] leading-[23px]">{degreeType} in {title}</p>
+          <TopOption heading="Degree" imgSrc="ribbon">
+            {degreeType} in {title}
           </TopOption>
-          <TopOption heading="School">
-            <p class="text-[17px] leading-[23px]" set:html={school} />
+          <TopOption heading="School" imgSrc="building">
+            {school}
           </TopOption>
-          <TopOption heading="Department">
-            <p class="text-[17px] leading-[23px]">
-              {deptTitle}
-            </p>
+          <TopOption heading="Department" imgSrc="calendar">
+            {deptTitle}
           </TopOption>
         </div>
       </div>
@@ -195,37 +202,100 @@ const {
     <div class="bg-tcnjyellow w-auto pl-[35px]
     pr-[35px]">
       <div class="max-w-[70.5rem] m-auto">
-        <div id="program-at-a-glance" class="text-left pb-[200px] pt-[200px]">
-          <h2
-            class="text-[4.375rem] font-chunkfive pb-[50px] leading-[5rem] text-tcnjblue"
+        <div
+          id="program-at-a-glance"
+          class="text-left
+        pb-[150px]
+        pt-[100px]
+        md:pb-[200px]
+        md:pt-[200px]"
+        >
+          <ProgramCareersHeading heading="Program at a Glance" />
+          <!-- <h2>Program at a Glance</h2> -->
+          <ProgramGlanceCopy id="program-glance" copy={programAtAGlance} />
+          <!-- <div
+            class="text-[20px]
+          leading-[35px]
+          text-center
+          sm:text-left
+          md:text-[1.75rem]"
+            set:html={programAtAGlance}
+          /> -->
+          <div
+            class="flex
+          flex-col
+          md:flex-row
+          mt-[50px]
+          sm:mt-[75px]
+          gap-[20px]
+          sm:gap-5"
           >
-            Program at a Glance
-          </h2>
-          <div class="text-[1.75rem]" set:html={programAtAGlance} />
-          <div class="flex mt-[75px] gap-5">
             <a
               href=""
-              class="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] min-w-[300px] text-center font-opensans uppercase text-tcnjblue font-semibold text-base"
+              class="border-2
+              border-tcnjblue
+              p-4
+              pt-[40px]
+              pb-[40px]
+              
+              sm:min-w-[300px]
+              text-center
+              font-opensans
+              uppercase text-tcnjblue
+              font-semibold
+              text-base"
               >Apply</a
             >
             <a
               href=""
-              class="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] min-w-[300px] text-center font-opensans uppercase text-tcnjblue font-semibold text-base"
+              class="border-2
+              border-tcnjblue
+              p-4
+              pt-[40px]
+              pb-[40px]
+              lg:min-w-[300px]
+              text-center
+              font-opensans
+              uppercase text-tcnjblue
+              font-semibold
+              text-base"
               >Request Info</a
             >
           </div>
         </div>
       </div>
     </div>
-    <div class="px-[25px] w-auto bg-tcnjyellow">
-      <div class="m-auto bg-white relative">
+    <div class="px-[35px] w-auto sm:bg-tcnjyellow">
+      <div class="m-auto bg-white relative
+      pb-[75px]">
         <img
           src={programOfStudyRight}
           alt=""
-          class="absolute top-[-50px] right-[-25px] xl:max-w-[1280px] xl:h-[750px] xl:w-[51%] object-cover xl:max w-[55%] object-left
-          h-[650px]"
+          id="prog-study-img"
+          class="relative
+          top-[-50px]
+          sm:right-[-25px]
+          object-cover
+          object-left
+          w-[100%]
+          h-[400px]
+          max-w-none
+          md:h-[650px]
+          md:absolute
+          xl:max-w-[1280px]
+          xl:h-[750px]
+          xl:w-[51%]"
         />
-        <div class="max-w-[70.5rem] m-auto bg-white pt-[150px] pb-[150px]">
+        <div
+          class="max-w-[70.5rem]
+        m-auto
+        bg-white
+        pt-[0px]
+        sm:pt-[100px]
+        sm:pb-[100px]
+        md:pt-[150px]
+        md:pb-[150px]"
+        >
           <BodyCopy
             heading="Programs of Study"
             left={programOfStudyLeft}
@@ -233,16 +303,20 @@ const {
           />
         </div>
       </div>
-      <div class="m-auto bg-tcnjyellow">
-        <div class="max-w-[70.5rem] m-auto pt-[150px]">
-          <BodyCopy
-            heading="Careers"
-            left={careersLeft}
-            right={careersRight}
-            body={careersBody}
-          />
-        </div>
+    </div>
+    <div class="px-[35px] m-auto bg-tcnjyellow">
+      <div class="max-w-[70.5rem] m-auto
+      pt-[100px]
+      sm:pt-[150px]">
+        <BodyCopy
+          heading="Careers"
+          left={careersLeft}
+          right={careersRight}
+          body={careersBody}
+        />
       </div>
+    </div>
+    <div class="px-[35px] w-auto sm:bg-tcnjyellow">
       <div class="m-auto bg-white">
         <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
