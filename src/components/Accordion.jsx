@@ -33,7 +33,6 @@ export default function Accodion({ children, header, idName, startOpen }) {
             <img
               src="https://tcnj.edu/custom/icon-library/minus-dark.svg"
               alt="close"
-              style={{ marginBottom: "5px" }}
             />
           ) : (
             <img

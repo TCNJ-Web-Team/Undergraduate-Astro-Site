@@ -16,6 +16,10 @@ $sm: 550px;
 
 #prog-study-img {
   width: calc(100% + 35px);
+
+  @media screen and (min-width: $sm) and (max-width: $md) {
+    width: calc(100% + 82px);
+  }
 }
 .inner-body-copy-white {
   #careers-left,
@@ -45,6 +49,7 @@ $sm: 550px;
   h2 {
     font-family: "Alfa Slab One";
     font-weight: normal;
+
     font-size: 30px;
     line-height: 40px;
     text-align: left;

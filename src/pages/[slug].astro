@@ -100,18 +100,41 @@ const {
   degreeType,
   school,
   department: { deptUrl, deptTitle },
-  heroImgDesktop: { sourceUrl },
+  // heroImgDesktop: { sourceUrl },
+  // heroImgDesktop: { sourceUrl } = {
+  //   sourceUrl:
+  //     "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-hero-scaled.jpg",
+  // },
+  heroImgDesktop,
+
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
     left: programOfStudyLeft,
-    rightImage: { sourceUrl: programOfStudyRight },
+    // rightImage: { sourceUrl: programOfStudyRight },
+    rightImage: { sourceUrl: programOfStudyRight } = {
+      sourceUrl:
+        "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
+    },
     body: programOfStudyBody,
   },
+
   lowerContent,
   learnMoreList,
 } = Astro.props;
 // console.log(typeof lowerContent);
+const { sourceUrl } = heroImgDesktop ?? {
+  sourceUrl: "",
+};
+// const {programOfStudyLeft} = programOfStudy ?? {
+//   programOfStudyLeft: "",
+// };
+// const {programOfStudyRight} = programOfStudy ?? {
+//   sourceUrl: "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
+// };
+// const {programOfStudyBody} = programOfStudy ?? {
+//   programOfStudyBody: "",
+// };
 ---
 
 <Layout title={title}>
@@ -122,10 +145,10 @@ const {
       pr-[35px]
       max-w-[70.5rem]
       pt-[35px]
-      sm:pt-[60px]
+      sm:pt-[50px]
       m-auto"
       >
-        <p class="text-[17px] leading-[26px] pb-[20px]">
+        <p class="text-[17px] leading-[26px] pb-[20px] font-bitter">
           Academics Home / Explore Programs / <span class="font-bold">
             {title}
           </span>
@@ -135,6 +158,9 @@ const {
           text-tcnjblue
           text-[45px]
           leading-[50px]
+          sm:text-[60px]
+          sm:leading-[60px]
+         
           lg:text-custom-16.25
           lg:leading-[4.688rem]"
         >
@@ -152,6 +178,7 @@ const {
               src={sourceUrl}
               class="
               h-[450px]
+              sm:h-[600px]
               object-cover
               pl-[35px]
               lg:pl-[200px]
@@ -182,6 +209,8 @@ const {
           text-lg
           flex-col
           gap-[35px]
+          sm:max-w-[655px]
+          sm:m-auto
           sm:flex-row
           sm:flex-nowrap
           sm:items-center
@@ -199,14 +228,20 @@ const {
         </div>
       </div>
     </div>
-    <div class="bg-tcnjyellow w-auto pl-[35px]
-    pr-[35px]">
+    <div
+      class="bg-tcnjyellow w-auto
+    pl-[35px]
+    pr-[35px]
+    sm:pl-[82px]
+    sm:pr-[82px]"
+    >
       <div class="max-w-[70.5rem] m-auto">
         <div
           id="program-at-a-glance"
           class="text-left
         pb-[150px]
         pt-[100px]
+        sm:pb-[200px]
         md:pb-[200px]
         md:pt-[200px]"
         >
@@ -223,12 +258,14 @@ const {
           /> -->
           <div
             class="flex
-          flex-col
+            flex-col
+            gap-[20px]
+          sm:flex-row
+            sm:mt-[75px]
+          sm:gap-[28px]
+          md:gap-5
           md:flex-row
-          mt-[50px]
-          sm:mt-[75px]
-          gap-[20px]
-          sm:gap-5"
+          mt-[50px]"
           >
             <a
               href=""
@@ -237,8 +274,9 @@ const {
               p-4
               pt-[40px]
               pb-[40px]
+              sm:w-[100%]
               
-              sm:min-w-[300px]
+              md:min-w-[300px]
               text-center
               font-opensans
               uppercase text-tcnjblue
@@ -253,7 +291,8 @@ const {
               p-4
               pt-[40px]
               pb-[40px]
-              lg:min-w-[300px]
+              sm:w-[100%]
+              md:min-w-[300px]
               text-center
               font-opensans
               uppercase text-tcnjblue
@@ -266,33 +305,41 @@ const {
       </div>
     </div>
     <div class="px-[35px] w-auto sm:bg-tcnjyellow">
-      <div class="m-auto bg-white relative
-      pb-[75px]">
+      <div
+        class="m-auto
+      bg-white
+      relative
+      pb-[75px]
+      sm:pl-[47px]
+      sm:pr-[47px]"
+      >
         <img
           src={programOfStudyRight}
           alt=""
           id="prog-study-img"
           class="relative
           top-[-50px]
-          sm:right-[-25px]
           object-cover
           object-left
           w-[100%]
           h-[400px]
+          sm:h-[550px]
+          sm:top-[-75px]
           max-w-none
+         
           md:h-[650px]
           md:absolute
-          xl:max-w-[1280px]
-          xl:h-[750px]
-          xl:w-[51%]"
+          lg:max-w-[1280px]
+          lg:h-[750px]
+          lg:w-[51%]"
         />
         <div
           class="max-w-[70.5rem]
         m-auto
         bg-white
         pt-[0px]
-        sm:pt-[100px]
-        sm:pb-[100px]
+        sm:pt-[0]
+        sm:pb-[15px]
         md:pt-[150px]
         md:pb-[150px]"
         >
@@ -305,9 +352,12 @@ const {
       </div>
     </div>
     <div class="px-[35px] m-auto bg-tcnjyellow">
-      <div class="max-w-[70.5rem] m-auto
+      <div
+        class="max-w-[70.5rem] m-auto
       pt-[100px]
-      sm:pt-[150px]">
+      sm:pt-[100px]
+      md:pt-[150px]"
+      >
         <BodyCopy
           heading="Careers"
           left={careersLeft}
