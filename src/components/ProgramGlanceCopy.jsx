@@ -10,7 +10,7 @@ export default function ProgramGlanceCopy({ copy, id }) {
           sm:leading-[45px]
           sm:text-left
           md:text-[1.75rem]
-          ${id === "careers-body" ? "pb-[50px]" : ""}  
+          ${id === "careers-body" ? "pb-[50px] sm:pb-[75px]" : ""}  
 
           `}
       dangerouslySetInnerHTML={{ __html: copy }}

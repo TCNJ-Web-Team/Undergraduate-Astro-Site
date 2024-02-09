@@ -21,9 +21,9 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
       text-[23px] 
       leading-[33px] 
       pb-[20px]
-      sm:pb-[2.188rem] 
+      sm:pb-[25px] 
       sm:text-[30px] 
-      sm:leading-[40px] 
+      sm:leading-[60px] 
       font-chunkfive 
       text-tcnjblue"
       >
@@ -45,14 +45,15 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
   <div
     class="flex
   gap-[60px]
-  sm:gap-[100px]
+  sm:gap-[75px]
+  md:gap-[100px]
   text-[1.438rem]
   inner-body-copy-white
   flex-col"
   >
     <div
       class={heading === "Careers"
-        ? "flex flex-col sm:flex-row pb-[100px] sm:pb-[200px] gap-[50px] sm:gap-[40px]"
+        ? "flex flex-col sm:flex-row pb-[100px] sm:pb-[125px] md:pb-[200px] gap-[50px] sm:gap-[40px]"
         : ""}
     >
       {left && <div id={`${headingLower}-left`} set:html={left} />}
