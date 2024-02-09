@@ -9,7 +9,7 @@ export default function ProgramCareersHeading({ heading }) {
             md:leading-[5rem]
             font-chunkfive pb-[50px]
             text-tcnjblue
-            ${heading === "Careers" ? "pb-[100px]" : ""}
+            
             `}
     >
       {heading}
