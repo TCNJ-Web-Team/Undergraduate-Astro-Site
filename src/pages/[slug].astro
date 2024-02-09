@@ -169,7 +169,14 @@ const {
       <div class="max-w-[70.5rem] bg-white m-auto">
         <div
           id="degree-school-department"
-          class="flex text-lg flex-row flex-nowrap items-center justify-between"
+          class="flex
+          text-lg
+          flex-col
+          
+          sm:flex-row
+          sm:flex-nowrap
+          sm:items-center
+          sm:justify-between"
         >
           <TopOption heading="Degree">
             <p class="text-[17px] leading-[23px]">{degreeType} in {title}</p>
