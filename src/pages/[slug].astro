@@ -161,8 +161,9 @@ const {
     <div
       class="bg-white
     w-auto
-    pt-[35px]
+    pt-[45px]
     pb-[45px]
+    sm:pt-[35px]
     sm:pb-[35px]
     pl-[35px]
     pr-[35px]
@@ -181,28 +182,14 @@ const {
           sm:items-center
           sm:justify-between"
         >
-          <TopOption heading="Degree">
-            <img
-              src="https://tcnj.edu/custom/icon-library/micro/ribbon.svg"
-              alt="degree-icon"
-            />
-            <p class="text-[17px] leading-[23px]">{degreeType} in {title}</p>
+          <TopOption heading="Degree" imgSrc="ribbon">
+            {degreeType} in {title}
           </TopOption>
-          <TopOption heading="School">
-            <img
-              src="https://tcnj.edu/custom/icon-library/micro/building.svg"
-              alt="school-icon"
-            />
-            <p class="text-[17px] leading-[23px]" set:html={school} />
+          <TopOption heading="School" imgSrc="building">
+            {school}
           </TopOption>
-          <TopOption heading="Department">
-            <img
-              src="https://tcnj.edu/custom/icon-library/micro/calendar.svg"
-              alt="calendar-icon"
-            />
-            <p class="text-[17px] leading-[23px]">
-              {deptTitle}
-            </p>
+          <TopOption heading="Department" imgSrc="calendar">
+            {deptTitle}
           </TopOption>
         </div>
       </div>
