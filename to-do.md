@@ -1,10 +1,11 @@
-# Meeting Notes
-
 ## 2-8-24
 
 - load google fonts
 - load icons
 - apply/ request info buttons static or dynamic?
+- headers and footer
+
+# Meeting Notes
 
 ## Questions from Adam
 
