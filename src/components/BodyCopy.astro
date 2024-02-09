@@ -15,7 +15,7 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 
 <div
   id={headingLower}
-  className={`relative ${heading === "Careers" ? "sm:pl-[47px] sm:pr-[47px]" : ""}`}
+  class={`relative ${heading === "Careers" ? "sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]" : ""}`}
 >
   {
     heading != `Careers` ? (
@@ -27,6 +27,8 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
       sm:pb-[25px] 
       sm:text-[30px] 
       sm:leading-[60px] 
+      md:pb-[35px] 
+      md:leading-[40px]
       font-chunkfive 
       text-tcnjblue"
       >

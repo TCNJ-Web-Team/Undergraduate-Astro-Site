@@ -9,7 +9,9 @@ export default function ProgramGlanceCopy({ copy, id }) {
           sm:text-[23px]
           sm:leading-[45px]
           sm:text-left
-          md:text-[1.75rem]
+          md:text-[23px]
+          md:leading-[45px]
+          
           ${id === "careers-body" ? "pb-[50px] sm:pb-[75px]" : ""}  
 
           `}

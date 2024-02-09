@@ -11,9 +11,10 @@ export default function ProgramCareersHeading({ heading }) {
       sm:text-[60px]
       sm:leading-[70px]
       sm:text-left
-            md:text-[4.375rem]
-            md:leading-[5rem]
-            
+      md:text-[65px]
+      md:leading-[75px]
+
+      md:pb-[50px]
             `}
     >
       {heading}
