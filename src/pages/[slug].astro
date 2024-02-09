@@ -122,10 +122,10 @@ const {
       pr-[35px]
       max-w-[70.5rem]
       pt-[35px]
-      sm:pt-[60px]
+      sm:pt-[50px]
       m-auto"
       >
-        <p class="text-[17px] leading-[26px] pb-[20px]">
+        <p class="text-[17px] leading-[26px] pb-[20px] font-bitter">
           Academics Home / Explore Programs / <span class="font-bold">
             {title}
           </span>
@@ -135,6 +135,9 @@ const {
           text-tcnjblue
           text-[45px]
           leading-[50px]
+          sm:text-[60px]
+          sm:leading-[60px]
+         
           lg:text-custom-16.25
           lg:leading-[4.688rem]"
         >
@@ -152,6 +155,7 @@ const {
               src={sourceUrl}
               class="
               h-[450px]
+              sm:h-[600px]
               object-cover
               pl-[35px]
               lg:pl-[200px]
@@ -182,6 +186,8 @@ const {
           text-lg
           flex-col
           gap-[35px]
+          sm:max-w-[655px]
+          sm:m-auto
           sm:flex-row
           sm:flex-nowrap
           sm:items-center
@@ -199,8 +205,13 @@ const {
         </div>
       </div>
     </div>
-    <div class="bg-tcnjyellow w-auto pl-[35px]
-    pr-[35px]">
+    <div
+      class="bg-tcnjyellow w-auto
+    pl-[35px]
+    pr-[35px]
+    sm:pl-[82px]
+    sm:pr-[82px]"
+    >
       <div class="max-w-[70.5rem] m-auto">
         <div
           id="program-at-a-glance"
@@ -223,12 +234,14 @@ const {
           /> -->
           <div
             class="flex
-          flex-col
+            flex-col
+            gap-[20px]
+          sm:flex-row
+            sm:mt-[75px]
+          sm:gap-[28px]
+          md:gap-5
           md:flex-row
-          mt-[50px]
-          sm:mt-[75px]
-          gap-[20px]
-          sm:gap-5"
+          mt-[50px]"
           >
             <a
               href=""
@@ -237,8 +250,9 @@ const {
               p-4
               pt-[40px]
               pb-[40px]
+              sm:w-[100%]
               
-              sm:min-w-[300px]
+              md:min-w-[300px]
               text-center
               font-opensans
               uppercase text-tcnjblue
@@ -253,7 +267,8 @@ const {
               p-4
               pt-[40px]
               pb-[40px]
-              lg:min-w-[300px]
+              sm:w-[100%]
+              md:min-w-[300px]
               text-center
               font-opensans
               uppercase text-tcnjblue
@@ -266,8 +281,14 @@ const {
       </div>
     </div>
     <div class="px-[35px] w-auto sm:bg-tcnjyellow">
-      <div class="m-auto bg-white relative
-      pb-[75px]">
+      <div
+        class="m-auto
+      bg-white
+      relative
+      pb-[75px]
+      sm:pl-[47px]
+      sm:pr-[47px]"
+      >
         <img
           src={programOfStudyRight}
           alt=""
