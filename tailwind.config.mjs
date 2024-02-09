@@ -22,6 +22,7 @@ export default {
         chunkfive: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         alfaslab: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         opensans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        interstate: ["Interstate Condensed", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         "custom-16.25": "4.063rem",
