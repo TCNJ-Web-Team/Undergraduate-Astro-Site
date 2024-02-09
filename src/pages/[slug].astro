@@ -201,7 +201,7 @@ const {
         <div
           id="program-at-a-glance"
           class="text-left
-        pb-[100px]
+        pb-[150px]
         pt-[100px]
         md:pb-[200px]
         md:pt-[200px]"
@@ -221,8 +221,10 @@ const {
             class="flex
           flex-col
           md:flex-row
-          mt-[75px]
-          md:gap-5"
+          mt-[50px]
+          sm:mt-[75px]
+          gap-[20px]
+          sm:gap-5"
           >
             <a
               href=""
@@ -259,20 +261,33 @@ const {
         </div>
       </div>
     </div>
-    <div class="px-[25px] w-auto bg-tcnjyellow">
+    <div class="px-[35px] w-auto sm:bg-tcnjyellow">
       <div class="m-auto bg-white relative">
         <img
           src={programOfStudyRight}
           alt=""
-          class="absolute top-[-50px] right-[-25px] xl:max-w-[1280px] xl:h-[750px] xl:w-[51%] object-cover xl:max w-[55%] object-left
-          h-[650px]"
+          id="prog-study-img"
+          class="relative
+          top-[-50px]
+          sm:right-[-25px]
+          object-cover
+          object-left
+          w-[100%]
+          h-[400px]
+          max-w-none
+          md:h-[650px]
+          md:absolute
+          xl:max-w-[1280px]
+          xl:h-[750px]
+          xl:w-[51%]"
         />
         <div
           class="max-w-[70.5rem]
         m-auto
         bg-white
-        pt-[100px]
-        pb-[100px]
+        pt-[0px]
+        sm:pt-[100px]
+        sm:pb-[100px]
         md:pt-[150px]
         md:pb-[150px]"
         >
