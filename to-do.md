@@ -1,9 +1,27 @@
 ## 2-8-24
 
-- load google fonts
-- load icons
 - apply/ request info buttons static or dynamic?
 - headers and footer
+- develop pop-up window
+- in degree bar, if multiple degrees, and <br/>>
+  style related programs slider after final design
+  configure social images
+  configure meta data
+  add tablet and mobile hero images in wp editor and live site
+  code header, footer, nav, next steps footer
+  add apply/request info links
+  hover states
+  animation research
+
+Matt Questions
+
+Lauren Questions
+
+- code CALLOUT our QUOTE block
+  - wait for lauren's design
+- department icon, differences?
+- what is the popup design
+- Learn more about design?
 
 # Meeting Notes
 
