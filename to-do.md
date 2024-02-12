@@ -1,7 +1,9 @@
 ## 2-8-24
 
+- add links to degree-school-depart
 - apply/ request info buttons static or dynamic?
 - headers and footer
+- -add links to apply/request info
 - develop pop-up window
 - in degree bar, if multiple degrees, and <br/>>
   style related programs slider after final design

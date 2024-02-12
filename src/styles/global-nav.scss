@@ -28,8 +28,16 @@ $domine: "Domine", serif;
 .global-nav {
   background-color: $tcnj-blue;
   padding: 14px 0;
-  padding-right: var(--wp--style--root--padding-right);
-  padding-left: var(--wp--style--root--padding-left);
+
+  @media screen and (max-width: $lg) {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+  @media screen and (max-width: $md) {
+    .desktop-global-nav-item {
+      display: none;
+    }
+  }
   .inner {
     max-width: 1130px;
     margin-left: auto;
@@ -37,6 +45,15 @@ $domine: "Domine", serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (max-width: $sm) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      grid-gap: 14px;
+      gap: 14px;
+      margin: 15px 30px;
+    }
     #tcnj-logo {
       min-height: 42px;
     }
@@ -342,6 +359,10 @@ $domine: "Domine", serif;
     z-index: 2000;
     // pointer-events: none;
     cursor: pointer;
+    @media screen and (max-width: $sm) {
+      right: 0;
+      left: 20px;
+    }
   }
   // &:before {
   //   width: 25px;
@@ -371,6 +392,10 @@ $domine: "Domine", serif;
     min-width: 300px;
     font-weight: 400;
     font-family: $open-sans;
+    @media screen and (max-width: $sm) {
+      min-width: inherit;
+      width: 100%;
+    }
   }
   .flex-menu {
     width: 100%;
@@ -385,6 +410,9 @@ $domine: "Domine", serif;
       position: relative;
       text-align: center;
       line-height: 15px;
+      @media screen and (max-width: $sm) {
+        font-size: 15px !important;
+      }
     }
 
     a + a {
@@ -412,12 +440,19 @@ $domine: "Domine", serif;
     padding: 60px;
     transition: all 0.2s;
     transform: translateX(20%);
-
+    @media screen and (max-width: $sm) {
+      width: 80%;
+      padding: 30px 7.5%;
+      max-width: initial;
+    }
     #slider-nav {
       display: flex;
       flex-direction: column;
       a {
         color: white;
+        @media screen and (max-width: $sm) {
+          font-size: 18px;
+        }
         &:hover {
           // text-decoration: none;
           color: #9ccff0;
@@ -460,4 +495,7 @@ $domine: "Domine", serif;
 }
 .tcnj-global-search-panel {
   margin-bottom: 50px;
+  @media screen and (max-width: $sm) {
+    margin-bottom: 25px;
+  }
 }
