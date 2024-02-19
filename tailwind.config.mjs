@@ -13,6 +13,7 @@ export default {
         sm: "550px", // Custom size for small screens
         // xs: "430px", // Custom size for extra-small screens
       },
+
       backgroundImage: {
         yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
       },
