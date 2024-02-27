@@ -1,3 +1,17 @@
+## 2-19-24 Meeting w Matt & Alex
+
+- Department change to an array
+- Degree check for array
+- Program of study h3 or h2?
+- Careers - teaching career
+  - add new text field for title
+- Reltaed Programs - add school field
+- Bachelor of Arts
+  - only for engineering
+  - pull Degree from ACF not title of page
+
+Moclup to Kay comm studies
+
 ## 2-8-24
 
 - add links to degree-school-depart
