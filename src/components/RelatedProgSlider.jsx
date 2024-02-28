@@ -6,7 +6,7 @@ import "swiper/css";
 export default function RelatedProgSlider({ learnMoreList }) {
   //   console.log(learnMoreList);
   const learnMoreListRender = learnMoreList;
-  console.log(learnMoreListRender);
+  //   console.log(learnMoreListRender);
   return (
     <div
       id="learn-more-list"
@@ -20,7 +20,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
       >
-        {/* {learnMoreListRender.map((content) => {
+        {learnMoreListRender.map((content) => {
           return (
             <SwiperSlide
               className=" border border-[#BFBFBF]
@@ -41,11 +41,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
               </a>
             </SwiperSlide>
           );
-        })} */}
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        })}
       </Swiper>
     </div>
   );
