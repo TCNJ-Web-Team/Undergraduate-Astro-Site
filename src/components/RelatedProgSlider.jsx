@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { SwiperNavButtons } from "./SwiperNavButton";
+import "../styles/custom-swiper.scss";
 
 export default function RelatedProgSlider({ learnMoreList }) {
   const learnMoreListRender = learnMoreList;
@@ -55,10 +57,13 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         modules={[Navigation]}
         // slidesPerView={3.5}
         spaceBetween={20}
-        // onSlideChange={() => console.log("slide change")}
+        // onSlideChange={(swiper) => console.log(swiper)}
         // onSwiper={(swiper) => console.log(swiper)}
-        navigation={{ nextEl: nextEl.current, prevEl: prevEl.current }}
-
+        // navigation
+        navigation={{
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        }}
         // autoHeight={true}
       >
         {learnMoreListRender.map((content) => {
@@ -69,7 +74,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
               id={content.title.replace(/\s+/g, "-").toLowerCase()}
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
-              <a className="p-[35px] pb-[100px] block" href={content.slug}>
+              <a className="p-[35px] min-h-[237px] block" href={content.slug}>
                 <p className="font-bitter font-semibold text-[18px] leading-[28px] ">
                   {content.title}
                 </p>
@@ -87,6 +92,11 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
+        <div id="swiper-navigation">
+          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev"></div>
+        </div>
+        {/* <SwiperNavButtons /> */}
       </Swiper>
       {/* <div onClick={goPrev} ref={prevEl}>
         Previous
