@@ -4,6 +4,8 @@ import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
+import RelatedProgSlider from "../components/RelatedProgSlider";
+import NextStepFooter from "../components/NextStepFooter";
 import TopOption from "../components/TopOption.astro";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
@@ -48,6 +50,7 @@ export async function getStaticPaths() {
         learnMoreList {
           title
           slug
+          schoolOrAdditionalLabel
         }
       }
       title
@@ -386,9 +389,15 @@ const { sourceUrl } = heroImgDesktop ?? {
       <div class="m-auto bg-white">
         <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
-          {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+          <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+          {
+            learnMoreList && (
+              <RelatedProgSlider learnMoreList={learnMoreList} client:load />
+            )
+          }
         </div>
       </div>
     </div>
+    <NextStepFooter />
   </main>
 </Layout>
