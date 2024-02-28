@@ -3,7 +3,9 @@ type Props = {
   learnMoreList: {
     title: string;
     slug: string;
+    schoolOrAdditionalLabel?: string;
   }[];
+  // school: string;
 };
 
 const { learnMoreList } = Astro.props;
@@ -12,14 +14,23 @@ const { learnMoreList } = Astro.props;
 <div
   id="learn-more-list"
   class="grid grid-cols-4 gap-5 sm:pl-[47px]
-sm:pr-[47px]"
+sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
 >
   {
     learnMoreList.map((content) => {
       return (
-        <div id={content.title.replace(/\s+/g, "-").toLowerCase()}>
-          <a href={content.slug}>
-            <p>{content.title}</p>
+        <div
+          class=" border border-[#BFBFBF]"
+          id={content.title.replace(/\s+/g, "-").toLowerCase()}
+        >
+          <a class="p-[35px] pb-[100px] block" href={content.slug}>
+            <p class="font-bitter font-semibold text-[18px] leading-[28px] ">
+              {content.title}
+            </p>
+            <hr class="m-[25px] mr-0 ml-0" />
+            {content.schoolOrAdditionalLabel && (
+              <p class="font-opensans">{content.schoolOrAdditionalLabel}</p>
+            )}
           </a>
         </div>
       );
