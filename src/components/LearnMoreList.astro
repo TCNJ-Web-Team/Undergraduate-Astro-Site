@@ -13,14 +13,17 @@ const { learnMoreList } = Astro.props;
 
 <div
   id="learn-more-list"
-  class="grid grid-cols-4 gap-5 sm:pl-[47px]
+  class="grid grid-cols-4 gap-5
+  
+  sm:pl-[47px]
 sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
 >
   {
     learnMoreList.map((content) => {
       return (
         <div
-          class=" border border-[#BFBFBF]"
+          class=" border border-[#BFBFBF]
+          w-[280px]"
           id={content.title.replace(/\s+/g, "-").toLowerCase()}
         >
           <a class="p-[35px] pb-[100px] block" href={content.slug}>
