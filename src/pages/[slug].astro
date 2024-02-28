@@ -5,6 +5,7 @@ import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
 import RelatedProgSlider from "../components/RelatedProgSlider";
+import NextStepFooter from "../components/NextStepFooter";
 import TopOption from "../components/TopOption.astro";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
@@ -397,28 +398,6 @@ const { sourceUrl } = heroImgDesktop ?? {
         </div>
       </div>
     </div>
-    <div id="next-step-footer">
-      <h2>Take the Next Step</h2>
-      <div class="link-wrapper">
-        <a
-          class="program-next-step-button-gtm"
-          href="https://admissions.tcnj.edu/apply/"
-        >
-          Apply
-        </a>
-        <a
-          class="program-next-step-button-gtm"
-          href="https://graduate.tcnj.edu/costs-aid/"
-        >
-          Costs/Aid
-        </a>
-        <a
-          class="program-next-step-button-gtm"
-          href="https://connect.tcnj.edu/register/prospect"
-        >
-          Request Info
-        </a>
-      </div>
-    </div>
+    <NextStepFooter />
   </main>
 </Layout>
