@@ -1,17 +1,31 @@
-import { Navigation } from "swiper/modules";
+import React, { useRef } from "react";
 
+import { A11y, Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import "swiper/components/navigation/navigation.scss";
-
 export default function RelatedProgSlider({ learnMoreList }) {
-  //   console.log(learnMoreList);
   const learnMoreListRender = learnMoreList;
-  //   console.log(learnMoreListRender);
+  //   const swiperRef = useRef(null);
+
+  //   const nextEl = useRef(null);
+  //   const prevEl = useRef(null);
+
+  //   const goNext = () => {
+  //     console.log("go next");
+  //     if (swiperRef.current && swiperRef.current.swiper) {
+  //       swiperRef.current.swiper.slideNext();
+  //     }
+  //   };
+
+  //   const goPrev = () => {
+  //     if (swiperRef.current && swiperRef.current.swiper) {
+  //       swiperRef.current.swiper.slidePrev();
+  //     }
+  //   };
+
   return (
     <div
       id="learn-more-list"
@@ -23,19 +37,19 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
       <Swiper
         breakpoints={{
           // when window width is >= 320px
-          320: {
-            slidesPerView: 2,
+          250: {
+            slidesPerView: 1.25,
             spaceBetween: 20,
           },
           // when window width is >= 480px
-          480: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
           },
           // when window width is >= 640px
-          640: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 20,
           },
         }}
         modules={[Navigation]}
@@ -43,7 +57,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         spaceBetween={20}
         // onSlideChange={() => console.log("slide change")}
         // onSwiper={(swiper) => console.log(swiper)}
-        navigation
+        navigation={{ nextEl: nextEl.current, prevEl: prevEl.current }}
 
         // autoHeight={true}
       >
@@ -51,7 +65,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
           return (
             <SwiperSlide
               className=" border border-[#BFBFBF]
-          w-[280px]"
+          w-auto"
               id={content.title.replace(/\s+/g, "-").toLowerCase()}
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
@@ -74,6 +88,12 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
       </Swiper>
+      {/* <div onClick={goPrev} ref={prevEl}>
+        Previous
+      </div>
+      <div onClick={goNext} ref={nextEl}>
+        Next
+      </div> */}
     </div>
   );
 }
