@@ -389,11 +389,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
-          {
-            learnMoreList && (
-              <RelatedProgSlider learnMoreList={learnMoreList} client:load />
-            )
-          }
+          {learnMoreList && <RelatedProgSlider client:load />}
         </div>
       </div>
     </div>
