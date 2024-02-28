@@ -4,6 +4,7 @@ import { wpquery } from "../data/wordpress";
 import BodyCopy from "../components/BodyCopy.astro";
 import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
+import RelatedProgSlider from "../components/RelatedProgSlider";
 import TopOption from "../components/TopOption.astro";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
@@ -388,6 +389,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         <div class="max-w-[70.5rem] m-auto">
           {lowerContent && <LowerContent lowerContent={lowerContent} />}
           {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />}
+          {learnMoreList && <RelatedProgSlider />}
         </div>
       </div>
     </div>
