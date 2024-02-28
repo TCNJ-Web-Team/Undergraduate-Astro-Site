@@ -66,6 +66,9 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         }}
         // autoHeight={true}
       >
+        <h2 className="absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue">
+          Related programs
+        </h2>
         {learnMoreListRender.map((content) => {
           return (
             <SwiperSlide
@@ -88,10 +91,10 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
             </SwiperSlide>
           );
         })}
-        <SwiperSlide>Slide 1</SwiperSlide>
+        {/* <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide> */}
         <div id="swiper-navigation">
           <div className="swiper-button-next"></div>
           <div className="swiper-button-prev"></div>
