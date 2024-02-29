@@ -1,5 +1,5 @@
 export default function ProgramCareersHeading({ heading }) {
-  console.log(heading);
+  // console.log(heading);
   return (
     <h2
       className={`text-center

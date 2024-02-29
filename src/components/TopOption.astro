@@ -8,7 +8,7 @@ type Props = {
 let schoolLink: string;
 
 const { heading, imgSrc, school } = Astro.props;
-console.log(school);
+// console.log(school);
 
 // Check if school is an array and has at least one element
 if (Array.isArray(school) && school.length > 0) {
@@ -41,7 +41,7 @@ if (Array.isArray(school) && school.length > 0) {
   schoolLink = "https://tcnj.edu";
 }
 
-console.log(schoolLink);
+// console.log(schoolLink);
 ---
 
 <div
@@ -69,7 +69,7 @@ console.log(schoolLink);
     <p class="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
       {
         heading == "School" ? (
-          <a href={schoolLink}>
+          <a class="text-[#33739F] underline" href={schoolLink}>
             <slot />
           </a>
         ) : (
