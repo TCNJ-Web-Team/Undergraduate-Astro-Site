@@ -133,7 +133,7 @@ interface AstroProps {
   slug: string;
   programAtAGlance: string;
   degreeType: string[]; // Assuming degreeType is an array of strings
-  school: string;
+  school: string[];
   department: {
     deptUrl: string;
     deptTitle: string;
@@ -300,7 +300,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                 : { degreeType }
             }
           </TopOption>
-          <TopOption heading="School" imgSrc="building">
+          <TopOption school={school} heading="School" imgSrc="building">
             {school}
           </TopOption>
           <TopOption heading="Department" imgSrc="calendar">
