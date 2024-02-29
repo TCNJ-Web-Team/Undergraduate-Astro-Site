@@ -61,7 +61,15 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
         ? "flex flex-col sm:flex-row pb-[100px] sm:pb-[125px] md:pb-[200px] gap-[50px] sm:gap-[40px]"
         : ""}
     >
-      {left && <div id={`${headingLower}-left`} set:html={left} />}
+      {
+        left && (
+          <div
+            id={`${headingLower}-left`}
+            class="md:max-w-[45%] lg:max-w-[40%]"
+            set:html={left}
+          />
+        )
+      }
       {
         heading == `Careers` && (
           <div id={`${headingLower}-right`} set:html={right} />

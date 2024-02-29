@@ -1,14 +1,18 @@
 ## 2-19-24 Meeting w Matt & Alex
 
 - Department change to an array
-- Degree check for array
-- Program of study h3 or h2?
+  x Degree check for array
+  x Program of study h3 or h2?
 - Careers - teaching career
   - add new text field for title
-- Reltaed Programs - add school field
-- Bachelor of Arts
-  - only for engineering
-  - pull Degree from ACF not title of page
+    x Reltaed Programs - add school field
+    x Bachelor of Arts
+    x only for engineering
+    x pull Degree from ACF not title of page
+- develop pop-up window
+- finish styling footer
+  x fix max width on image section
+- user set position on hero image at diff resolutions
 
 Moclup to Kay comm studies
 
@@ -18,7 +22,6 @@ Moclup to Kay comm studies
 - apply/ request info buttons static or dynamic?
 - headers and footer
 - -add links to apply/request info
-- develop pop-up window
 - in degree bar, if multiple degrees, and <br/>>
   style related programs slider after final design
   configure social images
@@ -29,7 +32,7 @@ Moclup to Kay comm studies
   hover states
   animation research
 
-Matt Questions
+Matt Questions\
 
 Lauren Questions
 
