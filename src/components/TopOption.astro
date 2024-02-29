@@ -4,7 +4,36 @@ type Props = {
   imgSrc: string;
 };
 
+let schoolLink: string;
+
 const { heading, imgSrc } = Astro.props;
+console.log(heading);
+switch (heading) {
+  case "Arts and Communication":
+    schoolLink = "https://artscomm.tcnj.edu/";
+    break;
+  case "Business":
+    schoolLink = "https://business.tcnj.edu/";
+    break;
+  case "Education":
+    schoolLink = "https://education.tcnj.edu/";
+    break;
+  case "Engineering":
+    schoolLink = "https://engineering.tcnj.edu/";
+    break;
+  case "Humanities and Social Sciences":
+    schoolLink = "https://hss.tcnj.edu/";
+    break;
+  case "Nursing and Health Sciences":
+    schoolLink = "https://nhs.tcnj.edu/";
+    break;
+  case "Science":
+    schoolLink = "https://science.tcnj.edu/";
+    break;
+
+  default:
+    schoolLink = "https://tcnj.edu";
+}
 ---
 
 <div
@@ -30,6 +59,7 @@ const { heading, imgSrc } = Astro.props;
       {heading}
     </h3>
     <p class="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
+      {schoolLink}
       <slot />
     </p>
   </div>
