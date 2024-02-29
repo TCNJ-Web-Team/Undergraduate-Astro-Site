@@ -64,7 +64,7 @@ export async function getStaticPaths() {
       program: {
         title: string;
         programAtAGlance: string;
-        degreeType: string;
+        degreeType: string[];
         school: string;
         department: string;
         heroImgDesktop: string;
@@ -95,6 +95,70 @@ export async function getStaticPaths() {
   );
   return paths;
 }
+// const {
+//   title,
+//   body,
+//   slug,
+//   programAtAGlance,
+//   degreeType,
+//   school,
+//   department: { deptUrl, deptTitle },
+//   // heroImgDesktop: { sourceUrl },
+//   // heroImgDesktop: { sourceUrl } = {
+//   //   sourceUrl:
+//   //     "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-hero-scaled.jpg",
+//   // },
+//   heroImgDesktop,
+
+//   content,
+//   careers: { left: careersLeft, right: careersRight, body: careersBody },
+//   programOfStudy: {
+//     left: programOfStudyLeft,
+//     // rightImage: { sourceUrl: programOfStudyRight },
+//     rightImage: { sourceUrl: programOfStudyRight } = {
+//       sourceUrl:
+//         "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
+//     },
+//     body: programOfStudyBody,
+//   },
+
+//   lowerContent,
+//   learnMoreList,
+// } = Astro.props;
+
+// Define an interface for your props
+interface AstroProps {
+  title: string;
+  body: string;
+  slug: string;
+  programAtAGlance: string;
+  degreeType: string[]; // Assuming degreeType is an array of strings
+  school: string;
+  department: {
+    deptUrl: string;
+    deptTitle: string;
+  };
+  heroImgDesktop: {
+    sourceUrl: string;
+  };
+  content: string;
+  careers: {
+    left: string;
+    right: string;
+    body: string;
+  };
+  programOfStudy: {
+    left: string;
+    rightImage: {
+      sourceUrl: string;
+    };
+    body: string;
+  };
+  lowerContent: any;
+  learnMoreList: string;
+}
+
+// Destructure with the defined interface
 const {
   title,
   body,
@@ -103,28 +167,20 @@ const {
   degreeType,
   school,
   department: { deptUrl, deptTitle },
-  // heroImgDesktop: { sourceUrl },
-  // heroImgDesktop: { sourceUrl } = {
-  //   sourceUrl:
-  //     "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-hero-scaled.jpg",
-  // },
   heroImgDesktop,
-
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
     left: programOfStudyLeft,
-    // rightImage: { sourceUrl: programOfStudyRight },
     rightImage: { sourceUrl: programOfStudyRight } = {
       sourceUrl:
         "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
     },
     body: programOfStudyBody,
   },
-
   lowerContent,
   learnMoreList,
-} = Astro.props;
+} = Astro.props as AstroProps; // Add the type assertion here
 // console.log(typeof lowerContent);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -138,6 +194,8 @@ const { sourceUrl } = heroImgDesktop ?? {
 // const {programOfStudyBody} = programOfStudy ?? {
 //   programOfStudyBody: "",
 // };
+
+// console.log(degreeType);
 ---
 
 <Layout title={title}>
@@ -234,7 +292,13 @@ const { sourceUrl } = heroImgDesktop ?? {
           md:max-w-none"
         >
           <TopOption heading="Degree" imgSrc="ribbon">
-            {degreeType} in {title}
+            {
+              Array.isArray(degreeType)
+                ? degreeType.map((degree: string) => (
+                    <span class="block">{degree}</span>
+                  ))
+                : { degreeType }
+            }
           </TopOption>
           <TopOption heading="School" imgSrc="building">
             {school}
