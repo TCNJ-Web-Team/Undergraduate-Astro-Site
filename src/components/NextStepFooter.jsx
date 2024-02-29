@@ -1,7 +1,9 @@
+import "../styles/next-step-footer.scss";
+
 export default function NextStepFooter() {
   return (
     <div id="next-step-footer">
-      <h2>Take the Next Step</h2>
+      <h2>Take the next step</h2>
       <div className="link-wrapper">
         <a
           className="program-next-step-button-gtm"
@@ -11,9 +13,9 @@ export default function NextStepFooter() {
         </a>
         <a
           className="program-next-step-button-gtm"
-          href="https://graduate.tcnj.edu/costs-aid/"
+          href="https://admissions.tcnj.edu/visit/"
         >
-          Costs/Aid
+          Visit
         </a>
         <a
           className="program-next-step-button-gtm"
