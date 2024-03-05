@@ -39,7 +39,7 @@ export default function ProgramList({
     if (selectedAdditionalOptionFilters.length > 0) {
       newData = newData.filter(filterBySelectedAdditionalOptions);
     }
-
+    newData = newData.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredData(newData);
   };
 
