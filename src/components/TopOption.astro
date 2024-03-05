@@ -6,9 +6,9 @@ type Props = {
 };
 
 let schoolLink: string;
-
+let secondSchoolLink: string;
 const { heading, imgSrc, school } = Astro.props;
-// console.log(school);
+// console.log(school?.length);
 
 // Check if school is an array and has at least one element
 if (Array.isArray(school) && school.length > 0) {
@@ -40,8 +40,37 @@ if (Array.isArray(school) && school.length > 0) {
 } else {
   schoolLink = "https://tcnj.edu";
 }
+if (Array.isArray(school) && school.length === 2) {
+  switch (school[1]) {
+    case "Arts and Communication":
+      secondSchoolLink = "https://artscomm.tcnj.edu/";
+      break;
+    case "Business":
+      secondSchoolLink = "https://business.tcnj.edu/";
+      break;
+    case "Education":
+      secondSchoolLink = "https://education.tcnj.edu/";
+      break;
+    case "Engineering":
+      secondSchoolLink = "https://engineering.tcnj.edu/";
+      break;
+    case "Humanities and Social Sciences":
+      secondSchoolLink = "https://hss.tcnj.edu/";
+      break;
+    case "Nursing and Health Sciences":
+      secondSchoolLink = "https://nhs.tcnj.edu/";
+      break;
+    case "Science":
+      secondSchoolLink = "https://science.tcnj.edu/";
+      break;
+    default:
+      secondSchoolLink = "https://tcnj.edu";
+  }
+} else {
+  secondSchoolLink = "https://tcnj.edu";
+}
 
-// console.log(schoolLink);
+// console.log(secondSchoolLink);
 ---
 
 <div
@@ -68,10 +97,22 @@ if (Array.isArray(school) && school.length > 0) {
     </h3>
     <p class="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
       {
-        heading == "School" ? (
+        heading == "School" && school?.length == 1 ? (
           <a class="text-[#33739F] underline" href={schoolLink}>
             <slot />
           </a>
+        ) : heading == "School" && school?.length == 2 ? (
+          <>
+            <>
+              <a class="text-[#33739F] underline" href={schoolLink}>
+                {school[0]}
+              </a>
+              <br />
+            </>
+            <a class="text-[#33739F] underline" href={secondSchoolLink}>
+              {school[1]}
+            </a>
+          </>
         ) : (
           <slot />
         )

@@ -27,7 +27,7 @@ export async function getStaticPaths() {
         heroImgDesktop {
           sourceUrl
         }
-        department {
+        departmentRepeater {
           deptTitle
           deptUrl
         }
@@ -66,7 +66,7 @@ export async function getStaticPaths() {
         programAtAGlance: string;
         degreeType: string[];
         school: string;
-        department: string;
+        departmentRepeater: string[];
         heroImgDesktop: string;
         careers: string;
         programOfStudy: string;
@@ -84,7 +84,7 @@ export async function getStaticPaths() {
 
         degreeType: program.program.degreeType,
         school: program.program.school,
-        department: program.program.department,
+        department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
@@ -134,10 +134,7 @@ interface AstroProps {
   programAtAGlance: string;
   degreeType: string[]; // Assuming degreeType is an array of strings
   school: string[];
-  department: {
-    deptUrl: string;
-    deptTitle: string;
-  };
+  department: { deptUrl: string; deptTitle: string }[];
   heroImgDesktop: {
     sourceUrl: string;
   };
@@ -166,7 +163,7 @@ const {
   programAtAGlance,
   degreeType,
   school,
-  department: { deptUrl, deptTitle },
+  department,
   heroImgDesktop,
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
@@ -196,6 +193,8 @@ const { sourceUrl } = heroImgDesktop ?? {
 // };
 
 // console.log(degreeType);
+// console.log(school);
+// console.log(department);
 ---
 
 <Layout title={title}>
@@ -304,7 +303,17 @@ const { sourceUrl } = heroImgDesktop ?? {
             {school}
           </TopOption>
           <TopOption heading="Department" imgSrc="calendar">
-            {deptTitle}
+            <!-- {deptTitle}
+             -->
+            {
+              Array.isArray(department)
+                ? department.map((degree) => (
+                    <a class="text-[#33739F] underline" href={degree.deptUrl}>
+                      <span class="block">{degree.deptTitle}</span>
+                    </a>
+                  ))
+                : department
+            }
           </TopOption>
         </div>
       </div>
