@@ -1,8 +1,9 @@
 ## 2-19-24 Meeting w Matt & Alex
 
-- Department change to an array
-  x Degree check for array
-  x Program of study h3 or h2?
+X Department change to an array
+x Degree check for array
+x Program of study h3 or h2?
+
 - Careers - teaching career
   - add new text field for title
     x Reltaed Programs - add school field
@@ -14,7 +15,11 @@
   x fix max width on image section
 - user set position on hero image at diff resolutions
 
-Moclup to Kay comm studies
+### Animations
+
+- button hover states
+- dropshadow and icon hover related prog
+  Moclup to Kay comm studies
 
 ## 2-8-24
 
