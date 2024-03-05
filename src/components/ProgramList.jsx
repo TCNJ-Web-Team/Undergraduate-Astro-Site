@@ -39,7 +39,7 @@ export default function ProgramList({
     if (selectedAdditionalOptionFilters.length > 0) {
       newData = newData.filter(filterBySelectedAdditionalOptions);
     }
-
+    newData = newData.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredData(newData);
   };
 
@@ -123,18 +123,24 @@ export default function ProgramList({
 
   return (
     <div className="program-wrapper inner-width">
-      <input
-        type="text"
-        id="text-filter"
-        onChange={handleFilterChange}
-        placeholder="Filter by title or school"
-      />
-      {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
-      {renderCheckboxes(programOptionsClean, handleProgramOptionCheckboxChange)}
-      {renderCheckboxes(
-        additionalOptions,
-        handleAdditionalOptionCheckboxChange
-      )}
+      <div className="bg-lightgrey p-[35px]">
+        <input
+          type="text"
+          id="text-filter"
+          className="w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light"
+          onChange={handleFilterChange}
+          placeholder="Search by keyword"
+        />
+        {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
+        {renderCheckboxes(
+          programOptionsClean,
+          handleProgramOptionCheckboxChange
+        )}
+        {renderCheckboxes(
+          additionalOptions,
+          handleAdditionalOptionCheckboxChange
+        )}
+      </div>
       {/* Display filtered data */}
       {filteredData &&
         filteredData.map((program, index) => (
