@@ -1,0 +1,44 @@
+query ProgramsListing {
+  programs {
+    nodes {
+      program {
+        fullProgramTitle
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        programAtAGlance
+        heroImgDesktop {
+          sourceUrl
+        }
+         departmentRepeater{
+          deptTitle
+          deptUrl
+        }
+        careers {
+          left
+          right
+          body
+        }
+        programOfStudy {
+          left
+          rightImage {
+            sourceUrl
+          }
+          body
+        }
+        lowerContent {
+          title
+          body
+        }
+        learnMoreList {
+          title
+          slug
+          schoolOrAdditionalLabel
+        }
+      }
+      title
+    }
+  }
+}

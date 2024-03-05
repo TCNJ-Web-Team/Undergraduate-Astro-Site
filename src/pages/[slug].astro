@@ -196,6 +196,8 @@ const { sourceUrl } = heroImgDesktop ?? {
 // };
 
 // console.log(degreeType);
+// console.log(school);
+console.log(deptTitle);
 ---
 
 <Layout title={title}>
@@ -304,7 +306,15 @@ const { sourceUrl } = heroImgDesktop ?? {
             {school}
           </TopOption>
           <TopOption heading="Department" imgSrc="calendar">
-            {deptTitle}
+            <!-- {deptTitle}
+             -->
+            {
+              Array.isArray(deptTitle)
+                ? deptTitle.map((degree: string) => (
+                    <span class="block">{degree}</span>
+                  ))
+                : { deptTitle }
+            }
           </TopOption>
         </div>
       </div>
