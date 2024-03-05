@@ -1,9 +1,12 @@
 <div
   id="intro"
-  class="container lg:mx-auto h-[562px] relative"
+  class="w-[100%] h-[562px] relative overflow-hidden border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-[#FDD700]"
   style="background-image: url('path/to/your/image.jpg');"
 >
-  <div class="max-w-[1128px] mx-auto relative">
+  <div
+    class="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px]
+    text-center md:text-left"
+  >
     <div id="breadcrumbs" class="font-opensans">
       <a>Home</a> / Explore Undergraduate Programs
     </div>
@@ -14,6 +17,33 @@
       accelerated link and dual degrees . link
     </p>
   </div>
-  <div id="hero-image" class="absolute top-0 left-0"></div>
+
+  <picture id="hero-image" class="absolute top-0 left-0 z-0 w-[100%]">
+    <source
+      srcset="https://tcnj.edu/custom/undergraduate/img/hero-desktop.jpg"
+      type="image/jpeg"
+      media="(min-width: 901px)"
+    />
+    <source
+      srcset="
+                    https://tcnj.edu/custom/undergraduate/img/hero-tablet.jpg
+                  "
+      type="image/jpeg"
+      media="(min-width: 551px)"
+    />
+    <source
+      srcset="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg
+                  "
+      type="image/webp"
+    />
+    <img
+      src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg"
+      alt="TCNJ scenery"
+      class="w-[100%] h-[562px] object-cover"
+    />
+  </picture>
+  <div
+    class="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.25]"
+  >
+  </div>
 </div>
-<div class="overlay"></div>
