@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
+import DropDownAccordion from "./DropDownAccordion";
 
 export default function ProgramList({
   data,
@@ -131,11 +132,14 @@ export default function ProgramList({
           onChange={handleFilterChange}
           placeholder="Search by keyword"
         />
+        <DropDownAccordion />
         {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
+        <DropDownAccordion />
         {renderCheckboxes(
           programOptionsClean,
           handleProgramOptionCheckboxChange
         )}
+        <DropDownAccordion />
         {renderCheckboxes(
           additionalOptions,
           handleAdditionalOptionCheckboxChange
