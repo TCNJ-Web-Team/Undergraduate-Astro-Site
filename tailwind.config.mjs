@@ -19,6 +19,7 @@ export default {
 
       fontFamily: {
         bitter: ["Bitter", ...defaultTheme.fontFamily.sans],
+        domine: ["Domine", ...defaultTheme.fontFamily.sans],
         chunkfive: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         alfaslab: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
         opensans: ["Open Sans", ...defaultTheme.fontFamily.sans],

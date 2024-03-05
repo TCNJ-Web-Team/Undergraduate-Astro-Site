@@ -2,8 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
 import Intro from "../components/Intro.astro";
+import TitleAndNav from "../components/TitleAndNav";
 import ProgramList from "../components/ProgramList";
-import "../styles/homepage.scss";
+// import "../styles/homepage.scss";
 const data = await wpquery({
   query: ` query ProgramsListing {
               programs {
@@ -51,6 +52,7 @@ const additionalOptions = programOptions.page.program.additionalOptions;
 
 <Layout title="Undergraduate Programs at TCNJ">
   <header>
+    <TitleAndNav />
     <Intro />
   </header>
   <main>
