@@ -16,6 +16,11 @@ export default function ProgramList({
   const [selectedAdditionalOptionFilters, setSelectedAdditionalOptionFilters] =
     useState([]);
   const [searchText, setSearchText] = useState("");
+  const [openAccordion, setOpenAccordion] = useState(null);
+
+  const handleAccordionToggle = (index) => {
+    setOpenAccordion(openAccordion === index ? null : index);
+  };
 
   useEffect(() => {
     filterData();
@@ -132,18 +137,33 @@ export default function ProgramList({
           onChange={handleFilterChange}
           placeholder="Search by keyword"
         />
-        <DropDownAccordion />
-        {renderCheckboxes(areaOfStudy, handleSchoolCheckboxChange)}
-        <DropDownAccordion />
-        {renderCheckboxes(
-          programOptionsClean,
-          handleProgramOptionCheckboxChange
-        )}
-        <DropDownAccordion />
-        {renderCheckboxes(
-          additionalOptions,
-          handleAdditionalOptionCheckboxChange
-        )}
+        <DropDownAccordion
+          checkboxContent={renderCheckboxes(
+            areaOfStudy,
+            handleSchoolCheckboxChange
+          )}
+          title="School Filters"
+          isOpen={openAccordion === 0}
+          onToggle={() => handleAccordionToggle(0)}
+        />
+        <DropDownAccordion
+          checkboxContent={renderCheckboxes(
+            programOptionsClean,
+            handleProgramOptionCheckboxChange
+          )}
+          title="Program Option Filters"
+          isOpen={openAccordion === 1}
+          onToggle={() => handleAccordionToggle(1)}
+        />
+        <DropDownAccordion
+          checkboxContent={renderCheckboxes(
+            additionalOptions,
+            handleAdditionalOptionCheckboxChange
+          )}
+          title="Additional Option Filters"
+          isOpen={openAccordion === 2}
+          onToggle={() => handleAccordionToggle(2)}
+        />
       </div>
       {/* Display filtered data */}
       {filteredData &&
