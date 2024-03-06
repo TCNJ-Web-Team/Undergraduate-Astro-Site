@@ -129,41 +129,52 @@ export default function ProgramList({
 
   return (
     <div className="program-wrapper inner-width">
-      <div className="bg-lightgrey p-[35px]">
+      <div
+        id="input-and-filter-wrapper"
+        className="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
+        
+        md:bg-transparent"
+      >
         <input
           type="text"
           id="text-filter"
-          className="w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light"
+          className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
+        border-[#bcbcbc] "
           onChange={handleFilterChange}
           placeholder="Search by keyword"
         />
-        <DropDownAccordion
-          checkboxContent={renderCheckboxes(
-            areaOfStudy,
-            handleSchoolCheckboxChange
-          )}
-          title="School Filters"
-          isOpen={openAccordion === 0}
-          onToggle={() => handleAccordionToggle(0)}
-        />
-        <DropDownAccordion
-          checkboxContent={renderCheckboxes(
-            programOptionsClean,
-            handleProgramOptionCheckboxChange
-          )}
-          title="Program Option Filters"
-          isOpen={openAccordion === 1}
-          onToggle={() => handleAccordionToggle(1)}
-        />
-        <DropDownAccordion
-          checkboxContent={renderCheckboxes(
-            additionalOptions,
-            handleAdditionalOptionCheckboxChange
-          )}
-          title="Additional Option Filters"
-          isOpen={openAccordion === 2}
-          onToggle={() => handleAccordionToggle(2)}
-        />
+        <div
+          id="filter-wrapper"
+          className="flex flex-col gap-[20px] md:flex-row"
+        >
+          <DropDownAccordion
+            checkboxContent={renderCheckboxes(
+              areaOfStudy,
+              handleSchoolCheckboxChange
+            )}
+            title="Area of Study"
+            isOpen={openAccordion === 0}
+            onToggle={() => handleAccordionToggle(0)}
+          />
+          <DropDownAccordion
+            checkboxContent={renderCheckboxes(
+              programOptionsClean,
+              handleProgramOptionCheckboxChange
+            )}
+            title="Degree"
+            isOpen={openAccordion === 1}
+            onToggle={() => handleAccordionToggle(1)}
+          />
+          <DropDownAccordion
+            checkboxContent={renderCheckboxes(
+              additionalOptions,
+              handleAdditionalOptionCheckboxChange
+            )}
+            title="Options"
+            isOpen={openAccordion === 2}
+            onToggle={() => handleAccordionToggle(2)}
+          />
+        </div>
       </div>
       {/* Display filtered data */}
       {filteredData &&
