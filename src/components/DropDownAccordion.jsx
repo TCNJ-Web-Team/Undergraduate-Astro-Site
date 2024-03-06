@@ -32,7 +32,9 @@ export default function DropDownAccordion({
       <div className="input-list relative md:absolute">
         {isOpen &&
           checkboxContent.map((checkbox, index) => (
-            <div key={index}>{checkbox}</div>
+            <div key={index} className="dropdown-input">
+              {checkbox}
+            </div>
           ))}
       </div>
     </div>
