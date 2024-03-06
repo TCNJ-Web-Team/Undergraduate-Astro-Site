@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../styles/drop-down-item.scss";
 export default function DropDownAccordion({
   checkboxContent,
   title,
@@ -32,7 +32,7 @@ export default function DropDownAccordion({
       <div className="input-list relative md:absolute">
         {isOpen &&
           checkboxContent.map((checkbox, index) => (
-            <div key={index} className="dropdown-input">
+            <div key={index} className="drop-down-item">
               {checkbox}
             </div>
           ))}

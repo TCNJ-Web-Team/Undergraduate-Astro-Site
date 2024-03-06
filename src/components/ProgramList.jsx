@@ -117,13 +117,14 @@ export default function ProgramList({
   const renderCheckboxes = (options, onChangeHandler) =>
     options.map((option, index) => (
       <label
-        className={`${onChangeHandler.name}-filter`}
+        className={`${onChangeHandler.name}-filter input-container`}
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         htmlFor={option}
         key={option + index}
       >
         {option}
         <input type="checkbox" value={option} onChange={onChangeHandler} />
+        <span className="checkmark" />
       </label>
     ));
 
