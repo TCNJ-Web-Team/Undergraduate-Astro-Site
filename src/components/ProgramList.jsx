@@ -176,12 +176,19 @@ export default function ProgramList({
             onToggle={() => handleAccordionToggle(2)}
           />
         </div>
+        <hr />
+      </div>
+      <div
+        id="filtered-programs-wrapper"
+        className="grid grid-cols-1 gap-[20px] sm:grid-cols-2 md:grid-cols-3 sm:gap-[40px] p-[35px] max-w-[1128px] mx-auto
+        "
+      >
+        {filteredData &&
+          filteredData.map((program, index) => (
+            <ProgramCard program={program} key={program.program.slug + index} />
+          ))}
       </div>
       {/* Display filtered data */}
-      {filteredData &&
-        filteredData.map((program, index) => (
-          <ProgramCard program={program} key={program.program.slug + index} />
-        ))}
     </div>
   );
 }

@@ -1,3 +1,8 @@
+# Program finder
+
+- fix dropdowns change to css visibile, not react
+- add filter labels
+
 ## 2-19-24 Meeting w Matt & Alex
 
 X Department change to an array

@@ -29,7 +29,15 @@ export default function DropDownAccordion({
         {title}
       </h3>
 
-      <div className="input-list relative md:absolute">
+      <div
+        className={`input-list relative md:absolute 
+        ${
+          isOpen &&
+          `py-[30px] px-[50px] border-[1px] 
+        border-[#bcbcbc] border-t-0 bg-white`
+        }
+        `}
+      >
         {isOpen &&
           checkboxContent.map((checkbox, index) => (
             <div key={index} className="drop-down-item">
