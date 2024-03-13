@@ -8,7 +8,7 @@ import NextStepFooter from "../components/NextStepFooter";
 // import "../styles/homepage.scss";
 const data = await wpquery({
   query: ` query ProgramsListing {
-              programs {
+              programs(first:80) {
                 nodes {
                   program {
                     degreeType
