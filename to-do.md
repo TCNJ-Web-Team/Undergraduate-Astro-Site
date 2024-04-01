@@ -2,7 +2,7 @@
 
 - ERROR - closing dropdown clears active css tag on checkbox
 - fix dropdowns change to css visibile, not react
-- add filter labels
+- add filter labels to cancel filter
 - desktop styling for header
 
 ## 2-19-24 Meeting w Matt & Alex
