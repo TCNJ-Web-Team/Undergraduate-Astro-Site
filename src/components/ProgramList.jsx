@@ -127,7 +127,8 @@ export default function ProgramList({
         <span className="checkmark" />
       </label>
     ));
-
+  // console.log(filteredData);
+  console.log(selectedSchoolFilters);
   return (
     <div className="program-wrapper inner-width">
       <div
