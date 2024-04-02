@@ -117,13 +117,14 @@ export default function ProgramList({
   const renderCheckboxes = (options, onChangeHandler) =>
     options.map((option, index) => (
       <label
-        className={`${onChangeHandler.name}-filter`}
+        className={`${onChangeHandler.name}-filter input-container`}
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         htmlFor={option}
         key={option + index}
       >
         {option}
         <input type="checkbox" value={option} onChange={onChangeHandler} />
+        <span className="checkmark" />
       </label>
     ));
 
@@ -133,7 +134,8 @@ export default function ProgramList({
         id="input-and-filter-wrapper"
         className="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
         
-        md:bg-transparent"
+        md:bg-transparent
+        lg:px-0"
       >
         <input
           type="text"
@@ -145,7 +147,7 @@ export default function ProgramList({
         />
         <div
           id="filter-wrapper"
-          className="flex flex-col gap-[20px] md:flex-row"
+          className="flex flex-col gap-[30px] sm:gap-[40px] md:flex-row"
         >
           <DropDownAccordion
             checkboxContent={renderCheckboxes(
@@ -175,12 +177,22 @@ export default function ProgramList({
             onToggle={() => handleAccordionToggle(2)}
           />
         </div>
+        <hr />
+      </div>
+      <div
+        id="filtered-programs-wrapper"
+        className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-[30px] sm:gap-[40px] p-[35px] max-w-[1128px] mx-auto
+        pb-[50px]
+        lg:px-0
+        md:pb-[100px]
+        "
+      >
+        {filteredData &&
+          filteredData.map((program, index) => (
+            <ProgramCard program={program} key={program.program.slug + index} />
+          ))}
       </div>
       {/* Display filtered data */}
-      {filteredData &&
-        filteredData.map((program, index) => (
-          <ProgramCard program={program} key={program.program.slug + index} />
-        ))}
     </div>
   );
 }
