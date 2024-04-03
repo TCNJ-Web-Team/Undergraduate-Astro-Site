@@ -200,8 +200,14 @@ export default function ProgramList({
         </div>
         <hr />
         {/* Filter boxes go here */}
-        <div id="display-box-wrapper" className="flex flex-row">
-          <div id="left-content" className="flex flex-row">
+        <div
+          id="display-box-wrapper"
+          className="flex flex-row justify-between min-h-[50px]"
+        >
+          <div
+            id="left-content"
+            className="flex flex-row flex-wrap  gap-[10px]"
+          >
             <p>Filtered by: </p>
             <FilterDisplayBox
               boxId="area-of-study"
@@ -231,7 +237,7 @@ export default function ProgramList({
               )}
             />
           </div>
-          <div id="right-content" className="flex flex-row">
+          <div id="right-content" className="flex flex-row  ">
             <p>
               Displaying <strong>{filteredData.length} results</strong>
             </p>

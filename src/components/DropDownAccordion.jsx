@@ -33,12 +33,12 @@ export default function DropDownAccordion({
       <div
         className={`input-list relative md:absolute opacity-0  px-[50px] border-[1px] 
         border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
-        h-0 block-0 pointer-events-none
+        h-0 block-0 pointer-events-none z-20
 md:h-auto
 
         ${
           isOpen &&
-          `pointer-events-auto block opacity-100 z-20 py-[30px] h-[auto!important]`
+          `pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important]`
         }
         `}
       >

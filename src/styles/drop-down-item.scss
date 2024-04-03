@@ -164,6 +164,9 @@ $sm: 550px;
 #display-box-wrapper {
   .filtered-display-box {
     display: flex;
+    position: relative;
+    z-index: 1;
+    gap: 10px;
     .drop-down-item {
       p {
         background-color: $item-grey;
