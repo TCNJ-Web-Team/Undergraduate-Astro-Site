@@ -20,6 +20,17 @@
     &.active {
       color: red;
     }
+    &::after {
+      content: ""; // This is necessary for pseudo-elements
+      position: absolute;
+      top: 0;
+      right: 0; // Adjust this as per your design
+      width: 20px; // Adjust width and height as per your design
+      height: 20px; // Adjust width and height as per your design
+      border: 1px solid #ccc; // Adjust border styles as per your design
+      border-radius: 4px; // Adjust border-radius as per your design
+      background-color: #fff; // Adjust background-color as per your design
+    }
   }
 
   // /* Hide the browser's default checkbox */
