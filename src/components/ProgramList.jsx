@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 import DropDownAccordion from "./DropDownAccordion";
+import { FilterDisplayBox } from "./FilterDisplayBox";
 
 export default function ProgramList({
   data,
@@ -128,7 +129,7 @@ export default function ProgramList({
       </label>
     ));
   // console.log(filteredData);
-  console.log(selectedSchoolFilters);
+  // console.log(selectedSchoolFilters);
   return (
     <div className="program-wrapper inner-width">
       <div
@@ -179,6 +180,19 @@ export default function ProgramList({
           />
         </div>
         <hr />
+        {/* Filter boxes go here */}
+        <FilterDisplayBox
+          boxId="area-of-study"
+          filteredData={selectedSchoolFilters}
+        />
+        <FilterDisplayBox
+          boxId="degree"
+          filteredData={selectedProgramOptionFilters}
+        />
+        <FilterDisplayBox
+          boxId="options"
+          filteredData={selectedAdditionalOptionFilters}
+        />
       </div>
       <div
         id="filtered-programs-wrapper"
