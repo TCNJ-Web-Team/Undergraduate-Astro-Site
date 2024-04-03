@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 import DropDownAccordion from "./DropDownAccordion";
+import { FilterDisplayBox } from "./FilterDisplayBox";
 
 export default function ProgramList({
   data,
@@ -114,21 +115,35 @@ export default function ProgramList({
     setSearchText(event.target.value);
   };
 
-  const renderCheckboxes = (options, onChangeHandler) =>
+  // const renderCheckboxes = (options, onChangeHandler) =>
+  //   options.map((option, index) => (
+  //     <label
+  //       className={`${onChangeHandler.name}-filter input-container`}
+  //       id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
+  //       htmlFor={option}
+  //       key={option + index}
+  //     >
+  //       {option}
+  //       <input type="checkbox" value={option} onChange={onChangeHandler} />
+  //       <span className="checkmark" />
+  //     </label>
+  //   ));
+  const renderCheckboxes = (options, onClickHandler, selectedFilters) =>
     options.map((option, index) => (
-      <label
-        className={`${onChangeHandler.name}-filter input-container`}
+      <p
+        className={`${onClickHandler.name}-filter input-container ${
+          selectedFilters?.includes(option) ? "active" : ""
+        }`}
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
-        htmlFor={option}
         key={option + index}
+        onClick={() => onClickHandler({ target: { value: option } })}
       >
         {option}
-        <input type="checkbox" value={option} onChange={onChangeHandler} />
-        <span className="checkmark" />
-      </label>
+      </p>
     ));
+
   // console.log(filteredData);
-  console.log(selectedSchoolFilters);
+  // console.log(selectedSchoolFilters);
   return (
     <div className="program-wrapper inner-width">
       <div
@@ -153,16 +168,19 @@ export default function ProgramList({
           <DropDownAccordion
             checkboxContent={renderCheckboxes(
               areaOfStudy,
-              handleSchoolCheckboxChange
+              handleSchoolCheckboxChange,
+              selectedSchoolFilters
             )}
             title="Area of Study"
             isOpen={openAccordion === 0}
             onToggle={() => handleAccordionToggle(0)}
           />
+
           <DropDownAccordion
             checkboxContent={renderCheckboxes(
               programOptionsClean,
-              handleProgramOptionCheckboxChange
+              handleProgramOptionCheckboxChange,
+              selectedProgramOptionFilters
             )}
             title="Degree"
             isOpen={openAccordion === 1}
@@ -171,7 +189,8 @@ export default function ProgramList({
           <DropDownAccordion
             checkboxContent={renderCheckboxes(
               additionalOptions,
-              handleAdditionalOptionCheckboxChange
+              handleAdditionalOptionCheckboxChange,
+              selectedAdditionalOptionFilters
             )}
             title="Options"
             isOpen={openAccordion === 2}
@@ -179,6 +198,34 @@ export default function ProgramList({
           />
         </div>
         <hr />
+        {/* Filter boxes go here */}
+        <FilterDisplayBox
+          boxId="area-of-study"
+          // filteredData={selectedSchoolFilters}
+          checkboxContent={renderCheckboxes(
+            selectedSchoolFilters,
+            handleSchoolCheckboxChange,
+            selectedSchoolFilters
+          )}
+        />
+        <FilterDisplayBox
+          boxId="degree"
+          // filteredData={selectedProgramOptionFilters}
+          checkboxContent={renderCheckboxes(
+            selectedProgramOptionFilters,
+            handleProgramOptionCheckboxChange,
+            selectedProgramOptionFilters
+          )}
+        />
+        <FilterDisplayBox
+          boxId="options"
+          // filteredData={selectedAdditionalOptionFilters}
+          checkboxContent={renderCheckboxes(
+            selectedAdditionalOptionFilters,
+            handleAdditionalOptionCheckboxChange,
+            selectedAdditionalOptionFilters
+          )}
+        />
       </div>
       <div
         id="filtered-programs-wrapper"

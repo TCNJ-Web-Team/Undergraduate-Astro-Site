@@ -36,7 +36,7 @@ export default function DropDownAccordion({
         h-0
 md:h-auto
 
-        ${isOpen && ` opacity-100 z-10 py-[30px] h-[auto!important]`}
+        ${isOpen && ` opacity-100 z-20 py-[30px] h-[auto!important]`}
         `}
       >
         {checkboxContent.map((checkbox, index) => (
