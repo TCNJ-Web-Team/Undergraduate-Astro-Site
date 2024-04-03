@@ -23,6 +23,7 @@ export default function DropDownAccordion({
         bg-white border-[1px] 
         border-[#bcbcbc] 
      border-t-0
+     cursor-pointer
         ${isOpen ? "open" : ""}`}
         onClick={onToggle}
       >
@@ -30,20 +31,19 @@ export default function DropDownAccordion({
       </h3>
 
       <div
-        className={`input-list relative md:absolute 
-        ${
-          isOpen &&
-          `py-[30px] px-[50px] border-[1px] 
-        border-[#bcbcbc] border-t-0 bg-white`
-        }
+        className={`input-list relative md:absolute opacity-0  px-[50px] border-[1px] 
+        border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
+        h-0
+md:h-auto
+
+        ${isOpen && ` opacity-100 z-10 py-[30px] h-[auto!important]`}
         `}
       >
-        {isOpen &&
-          checkboxContent.map((checkbox, index) => (
-            <div key={index} className="drop-down-item">
-              {checkbox}
-            </div>
-          ))}
+        {checkboxContent.map((checkbox, index) => (
+          <div key={index} className="drop-down-item">
+            {checkbox}
+          </div>
+        ))}
       </div>
     </div>
   );
