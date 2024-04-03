@@ -139,9 +139,10 @@ export default function ProgramList({
         onClick={() => onClickHandler({ target: { value: option } })}
       >
         {option}
+        <img className="close-button" src="/close-item.svg" />
       </p>
     ));
-
+  // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
   return (
@@ -199,33 +200,43 @@ export default function ProgramList({
         </div>
         <hr />
         {/* Filter boxes go here */}
-        <FilterDisplayBox
-          boxId="area-of-study"
-          // filteredData={selectedSchoolFilters}
-          checkboxContent={renderCheckboxes(
-            selectedSchoolFilters,
-            handleSchoolCheckboxChange,
-            selectedSchoolFilters
-          )}
-        />
-        <FilterDisplayBox
-          boxId="degree"
-          // filteredData={selectedProgramOptionFilters}
-          checkboxContent={renderCheckboxes(
-            selectedProgramOptionFilters,
-            handleProgramOptionCheckboxChange,
-            selectedProgramOptionFilters
-          )}
-        />
-        <FilterDisplayBox
-          boxId="options"
-          // filteredData={selectedAdditionalOptionFilters}
-          checkboxContent={renderCheckboxes(
-            selectedAdditionalOptionFilters,
-            handleAdditionalOptionCheckboxChange,
-            selectedAdditionalOptionFilters
-          )}
-        />
+        <div id="display-box-wrapper" className="flex flex-row">
+          <div id="left-content" className="flex flex-row">
+            <p>Filtered by: </p>
+            <FilterDisplayBox
+              boxId="area-of-study"
+              // filteredData={selectedSchoolFilters}
+              checkboxContent={renderCheckboxes(
+                selectedSchoolFilters,
+                handleSchoolCheckboxChange,
+                selectedSchoolFilters
+              )}
+            />
+            <FilterDisplayBox
+              boxId="degree"
+              // filteredData={selectedProgramOptionFilters}
+              checkboxContent={renderCheckboxes(
+                selectedProgramOptionFilters,
+                handleProgramOptionCheckboxChange,
+                selectedProgramOptionFilters
+              )}
+            />
+            <FilterDisplayBox
+              boxId="options"
+              // filteredData={selectedAdditionalOptionFilters}
+              checkboxContent={renderCheckboxes(
+                selectedAdditionalOptionFilters,
+                handleAdditionalOptionCheckboxChange,
+                selectedAdditionalOptionFilters
+              )}
+            />
+          </div>
+          <div id="right-content" className="flex flex-row">
+            <p>
+              Displaying <strong>{filteredData.length} results</strong>
+            </p>
+          </div>
+        </div>
       </div>
       <div
         id="filtered-programs-wrapper"

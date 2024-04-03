@@ -33,10 +33,13 @@ export default function DropDownAccordion({
       <div
         className={`input-list relative md:absolute opacity-0  px-[50px] border-[1px] 
         border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
-        h-0
+        h-0 block-0 pointer-events-none
 md:h-auto
 
-        ${isOpen && ` opacity-100 z-20 py-[30px] h-[auto!important]`}
+        ${
+          isOpen &&
+          `pointer-events-auto block opacity-100 z-20 py-[30px] h-[auto!important]`
+        }
         `}
       >
         {checkboxContent.map((checkbox, index) => (
