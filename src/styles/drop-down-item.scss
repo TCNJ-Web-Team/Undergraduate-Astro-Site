@@ -1,34 +1,63 @@
-.drop-down-item {
-  // width: auto;
-  margin-bottom: 22px;
-  margin-bottom: 11px;
-  width: 100%;
-  display: inline-flex;
-  justify-content: space-between;
+.input-list {
+  .drop-down-item {
+    // width: auto;
+    margin-bottom: 22px;
+    margin-bottom: 11px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
 
-  position: relative;
-  .input-container {
-    // display: block;
-    // padding-left: 35px;
-    // margin-bottom: 12px;
-    cursor: pointer;
-    // font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    max-width: 215px;
-    // transition: all 1s;
-    &.active {
-      // color: red;
+    position: relative;
+    .input-container {
+      // display: block;
+      // padding-left: 35px;
+      // margin-bottom: 12px;
+      cursor: pointer;
+      // font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      max-width: 215px;
+      // transition: all 1s;
+      &.active {
+        // color: red;
+        &::after {
+          content: ""; // This is necessary for pseudo-elements
+          position: absolute;
+          top: 0;
+          right: 0; // Adjust this as per your design
+          width: 20px; // Adjust width and height as per your design
+          height: 20px; // Adjust width and height as per your design
+          background-image: url(/checkbox-selected.jpg);
+        }
+        &:hover {
+          &::after {
+            content: ""; // This is necessary for pseudo-elements
+            position: absolute;
+            top: 0;
+            right: 0; // Adjust this as per your design
+            width: 20px; // Adjust width and height as per your design
+            height: 20px; // Adjust width and height as per your design
+            border: 1px solid #ccc; // Adjust border styles as per your design
+            // border-radius: 4px; // Adjust border-radius as per your design
+            background-color: #293f6f; // Adjust background-color as per your design
+          }
+        }
+      }
       &::after {
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
         content: ""; // This is necessary for pseudo-elements
         position: absolute;
         top: 0;
         right: 0; // Adjust this as per your design
         width: 20px; // Adjust width and height as per your design
         height: 20px; // Adjust width and height as per your design
-        background-image: url(/checkbox-selected.jpg);
+        border: 1px solid #ccc; // Adjust border styles as per your design
+        // border-radius: 4px; // Adjust border-radius as per your design
+        background-color: #fff; // Adjust background-color as per your design
       }
       &:hover {
         &::after {
@@ -40,110 +69,85 @@
           height: 20px; // Adjust width and height as per your design
           border: 1px solid #ccc; // Adjust border styles as per your design
           // border-radius: 4px; // Adjust border-radius as per your design
-          background-color: #293f6f; // Adjust background-color as per your design
+          background-color: #c9c9c9; // Adjust background-color as per your design
         }
       }
     }
-    &::after {
-      transition-property: all;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-      content: ""; // This is necessary for pseudo-elements
-      position: absolute;
-      top: 0;
-      right: 0; // Adjust this as per your design
-      width: 20px; // Adjust width and height as per your design
-      height: 20px; // Adjust width and height as per your design
-      border: 1px solid #ccc; // Adjust border styles as per your design
-      // border-radius: 4px; // Adjust border-radius as per your design
-      background-color: #fff; // Adjust background-color as per your design
-    }
-    &:hover {
-      &::after {
-        content: ""; // This is necessary for pseudo-elements
-        position: absolute;
-        top: 0;
-        right: 0; // Adjust this as per your design
-        width: 20px; // Adjust width and height as per your design
-        height: 20px; // Adjust width and height as per your design
-        border: 1px solid #ccc; // Adjust border styles as per your design
-        // border-radius: 4px; // Adjust border-radius as per your design
-        background-color: #c9c9c9; // Adjust background-color as per your design
-      }
-    }
+
+    // /* Hide the browser's default checkbox */
+    // .input-container input {
+    //   position: absolute;
+    //   opacity: 0;
+    //   cursor: pointer;
+    //   height: 100%;
+    //   width: 100%;
+    //   left: 0;
+    //   z-index: 100;
+    // }
+
+    // /* Create a custom checkbox */
+    // .checkmark {
+    //   z-index: 1;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   height: 18px;
+    //   width: 18px;
+    //   background-color: rgb(255, 255, 255);
+    //   border: 1px solid #d3d3d3;
+    // }
+
+    // /* On mouse-over, add a grey background color */
+    // .input-container:hover input ~ .checkmark {
+    //   background-color: rgb(233, 233, 233);
+    // }
+
+    // /* When the checkbox is checked, add a blue background */
+    // .input-container input:checked ~ .checkmark {
+    //   background-color: #293f6f;
+    // }
+
+    // /* Create the checkmark/indicator (hidden when not checked) */
+    // .checkmark:after {
+    //   content: "";
+    //   position: absolute;
+    //   display: none;
+    // }
+
+    // /* Show the checkmark when checked */
+    // .input-container input:checked ~ .checkmark:after {
+    //   display: block;
+    // }
+
+    // /* Style the checkmark/indicator */
+    // .input-container .checkmark:after {
+    //   left: 5px;
+    //   top: 2px;
+    //   width: 6px;
+    //   height: 9px;
+    //   border: solid white;
+    //   border-width: 0 3px 3px 0;
+    //   -webkit-transform: rotate(45deg);
+    //   -ms-transform: rotate(45deg);
+    //   transform: rotate(45deg);
+    // }
+
+    // label {
+    //   font-family: "Open Sans", sans-serif;
+    //   font-weight: 500;
+    //   font-size: 13px;
+    //   line-height: 16px;
+    //   padding-left: 24px;
+    //   // line-height: 0px;
+    //   text-align: left;
+    //   color: #2e2e2e;
+    //   width: 100%;
+    //   // opacity: 0;
+    //   padding-right: 25px;
+    //   transition: 0.25s ease-in-out;
+    //   height: 18px;
+    // }
   }
-
-  // /* Hide the browser's default checkbox */
-  // .input-container input {
-  //   position: absolute;
-  //   opacity: 0;
-  //   cursor: pointer;
-  //   height: 100%;
-  //   width: 100%;
-  //   left: 0;
-  //   z-index: 100;
-  // }
-
-  // /* Create a custom checkbox */
-  // .checkmark {
-  //   z-index: 1;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   height: 18px;
-  //   width: 18px;
-  //   background-color: rgb(255, 255, 255);
-  //   border: 1px solid #d3d3d3;
-  // }
-
-  // /* On mouse-over, add a grey background color */
-  // .input-container:hover input ~ .checkmark {
-  //   background-color: rgb(233, 233, 233);
-  // }
-
-  // /* When the checkbox is checked, add a blue background */
-  // .input-container input:checked ~ .checkmark {
-  //   background-color: #293f6f;
-  // }
-
-  // /* Create the checkmark/indicator (hidden when not checked) */
-  // .checkmark:after {
-  //   content: "";
-  //   position: absolute;
-  //   display: none;
-  // }
-
-  // /* Show the checkmark when checked */
-  // .input-container input:checked ~ .checkmark:after {
-  //   display: block;
-  // }
-
-  // /* Style the checkmark/indicator */
-  // .input-container .checkmark:after {
-  //   left: 5px;
-  //   top: 2px;
-  //   width: 6px;
-  //   height: 9px;
-  //   border: solid white;
-  //   border-width: 0 3px 3px 0;
-  //   -webkit-transform: rotate(45deg);
-  //   -ms-transform: rotate(45deg);
-  //   transform: rotate(45deg);
-  // }
-
-  // label {
-  //   font-family: "Open Sans", sans-serif;
-  //   font-weight: 500;
-  //   font-size: 13px;
-  //   line-height: 16px;
-  //   padding-left: 24px;
-  //   // line-height: 0px;
-  //   text-align: left;
-  //   color: #2e2e2e;
-  //   width: 100%;
-  //   // opacity: 0;
-  //   padding-right: 25px;
-  //   transition: 0.25s ease-in-out;
-  //   height: 18px;
-  // }
+}
+.filtered-display-box {
 }
