@@ -167,6 +167,9 @@ $sm: 550px;
     position: relative;
     z-index: 1;
     gap: 10px;
+    max-width: 900px;
+    flex-wrap: wrap;
+    align-items: center;
     .drop-down-item {
       p {
         background-color: $item-grey;

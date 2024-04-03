@@ -114,7 +114,13 @@ export default function ProgramList({
   const handleFilterChange = (event) => {
     setSearchText(event.target.value);
   };
-
+  const clearSearchText = () => {
+    setSearchText("");
+    const textFilterInput = document.getElementById("text-filter");
+    if (textFilterInput) {
+      textFilterInput.value = "";
+    }
+  };
   // const renderCheckboxes = (options, onChangeHandler) =>
   //   options.map((option, index) => (
   //     <label
@@ -208,36 +214,49 @@ export default function ProgramList({
             id="left-content"
             className="flex flex-row flex-wrap  gap-[10px]"
           >
-            <p>Filtered by: </p>
-            <FilterDisplayBox
-              boxId="area-of-study"
-              // filteredData={selectedSchoolFilters}
-              checkboxContent={renderCheckboxes(
-                selectedSchoolFilters,
-                handleSchoolCheckboxChange,
-                selectedSchoolFilters
+            <div className="relative z-10 filtered-display-box">
+              <p>Filtered by: </p>
+              {searchText && (
+                <div className="drop-down-item">
+                  <p id="search-text-filter" onClick={clearSearchText}>
+                    {searchText}
+                    <img className="close-button" src="/close-item.svg" />
+                  </p>
+                </div>
               )}
-            />
-            <FilterDisplayBox
-              boxId="degree"
-              // filteredData={selectedProgramOptionFilters}
-              checkboxContent={renderCheckboxes(
-                selectedProgramOptionFilters,
-                handleProgramOptionCheckboxChange,
-                selectedProgramOptionFilters
-              )}
-            />
-            <FilterDisplayBox
-              boxId="options"
-              // filteredData={selectedAdditionalOptionFilters}
-              checkboxContent={renderCheckboxes(
-                selectedAdditionalOptionFilters,
-                handleAdditionalOptionCheckboxChange,
-                selectedAdditionalOptionFilters
-              )}
-            />
+              <FilterDisplayBox
+                boxId="area-of-study"
+                // filteredData={selectedSchoolFilters}
+                checkboxContent={renderCheckboxes(
+                  selectedSchoolFilters,
+                  handleSchoolCheckboxChange,
+                  selectedSchoolFilters
+                )}
+              />
+              <FilterDisplayBox
+                boxId="degree"
+                // filteredData={selectedProgramOptionFilters}
+                checkboxContent={renderCheckboxes(
+                  selectedProgramOptionFilters,
+                  handleProgramOptionCheckboxChange,
+                  selectedProgramOptionFilters
+                )}
+              />
+              <FilterDisplayBox
+                boxId="options"
+                // filteredData={selectedAdditionalOptionFilters}
+                checkboxContent={renderCheckboxes(
+                  selectedAdditionalOptionFilters,
+                  handleAdditionalOptionCheckboxChange,
+                  selectedAdditionalOptionFilters
+                )}
+              />
+            </div>
           </div>
-          <div id="right-content" className="flex flex-row  ">
+          <div
+            id="right-content"
+            className="flex flex-row h-[50px] items-center "
+          >
             <p>
               Displaying <strong>{filteredData.length} results</strong>
             </p>
