@@ -11,6 +11,7 @@
   x dropdown text styles
   x no results styling
 - mobile filter boxes, get white bg, column formatting
+- hover effects
 
 -x ERROR - closing dropdown clears active css tag on checkbox
 -x fix dropdowns change to css visibile, not react
