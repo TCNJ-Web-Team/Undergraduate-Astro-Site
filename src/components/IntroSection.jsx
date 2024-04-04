@@ -17,7 +17,7 @@ export default function IntroSection() {
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[55px] sm:leading-[55px] md:text-[60px] md:leading-[65px] md:pt-[85px]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25, ease: "easeOut", duration: 0.5 }}
+          transition={{ delay: 0.25, ease: "easeOut", duration: 0.35 }}
         >
           Explore Undergraduate Programs
         </motion.h1>
@@ -25,7 +25,7 @@ export default function IntroSection() {
           className="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.75, ease: "easeOut", duration: 0.5 }}
+          transition={{ delay: 0.75, ease: "easeOut", duration: 0.35 }}
         >
           Search by keyword or browse programs by selecting an area of study,
           degree type, and/ or format. TCNJ students also have an option to
