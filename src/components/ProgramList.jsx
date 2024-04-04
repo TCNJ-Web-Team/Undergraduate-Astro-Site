@@ -302,6 +302,19 @@ export default function ProgramList({
           filteredData.map((program, index) => (
             <ProgramCard program={program} key={program.program.slug + index} />
           ))}
+        {filteredData && filteredData.length === 0 && (
+          <div id="no-results">
+            <h3>Please try your search again</h3>
+            <p>Your search results do not match any available programs.</p>
+            <hr />
+            <p>
+              Need help finding a program? Contact
+              <a href="mailto:admiss@tcnj.edu">admiss@tcnj.edu</a>,
+              <a href="tel:1-609-771-2131">609.771.2131</a>, to get more
+              information.
+            </p>
+          </div>
+        )}
       </div>
       {/* Display filtered data */}
     </div>
