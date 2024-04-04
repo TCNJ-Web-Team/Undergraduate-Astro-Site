@@ -10,6 +10,7 @@ $sm: 550px;
 .dropdown-label {
   position: relative;
   // display: flex;
+  transition: all 0.3s;
   &::after {
     content: ""; // This is necessary for pseudo-elements
     position: absolute;
@@ -22,10 +23,18 @@ $sm: 550px;
     background-repeat: no-repeat;
     transition: all 0.3s;
   }
+  &:hover {
+    filter: drop-shadow(3px 8px 5px rgba(0, 0, 0, 0.025));
+  }
   &.open {
     &::after {
       transform: translateY(-50%) rotate(180deg);
     }
+  }
+}
+.open-drop {
+  .input-list {
+    filter: drop-shadow(3px 8px 5px rgba(0, 0, 0, 0.025));
   }
 }
 .input-list {
