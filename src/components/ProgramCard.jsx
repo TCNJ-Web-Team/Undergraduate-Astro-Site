@@ -13,10 +13,15 @@ const ProgramCard = ({ program }) => {
   const { title } = program;
 
   return (
-    <div className="program-card" id={slug}>
+    <div
+      className="program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white"
+      id={slug}
+    >
       <a
         className="program-link block border-[1px] 
-        border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]"
+        border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
+        
+        "
         href={`./${slug}`}
       >
         <h2 className="font-domine font-bold text-[19px] leading-[28px]">

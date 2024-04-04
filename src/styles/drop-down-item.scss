@@ -23,7 +23,8 @@ $sm: 550px;
     background-repeat: no-repeat;
     transition: all 0.3s;
   }
-  &:hover {
+  &:hover,
+  &:focus {
     filter: drop-shadow(3px 8px 5px rgba(0, 0, 0, 0.025));
   }
   &.open {
