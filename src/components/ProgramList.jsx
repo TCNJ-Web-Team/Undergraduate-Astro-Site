@@ -163,9 +163,9 @@ export default function ProgramList({
   const renderCheckboxes = (options, onClickHandler, selectedFilters) =>
     options.map((option, index) => (
       <p
-        className={`${onClickHandler.name}-filter input-container ${
-          selectedFilters?.includes(option) ? "active" : ""
-        }`}
+        className={`${onClickHandler.name}-filter input-container 
+        font-opensans text-[13px] text-[#2e2e2e] leading-[16px] font-medium
+        ${selectedFilters?.includes(option) ? "active" : ""}`}
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         key={option + index}
         onClick={() => onClickHandler({ target: { value: option } })}
@@ -177,6 +177,8 @@ export default function ProgramList({
   // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
+  console.log(selectedSchoolFilters);
+  console.log(selectedSchoolFilters.length);
   return (
     <div className="program-wrapper inner-width">
       <div
@@ -242,7 +244,21 @@ export default function ProgramList({
             className="flex flex-row flex-wrap  gap-[10px]"
           >
             <div className="relative z-10 filtered-display-box">
-              <p>Filtered by: </p>
+              <p className="font-bitter text-[17px] leading-[26px] font-normal pr-[15px]">
+                Filtered by:
+              </p>
+              {!searchText &&
+                selectedSchoolFilters.length == 0 &&
+                selectedProgramOptionFilters.length == 0 &&
+                selectedAdditionalOptionFilters.length == 0 && (
+                  <div className="drop-down-item">
+                    <p id="search-text-filter">
+                      All
+                      {/* <img className="close-button" src="/close-item.svg" /> */}
+                    </p>
+                  </div>
+                )}
+
               {searchText && (
                 <div className="drop-down-item">
                   <p id="search-text-filter" onClick={clearSearchText}>
@@ -284,7 +300,7 @@ export default function ProgramList({
             id="right-content"
             className="flex flex-row h-[50px] items-center "
           >
-            <p>
+            <p className="font-opensans font-normal text-[14px] leading-[26px]">
               Displaying <strong>{filteredData.length} results</strong>
             </p>
           </div>
