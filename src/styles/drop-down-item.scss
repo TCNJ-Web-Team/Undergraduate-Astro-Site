@@ -209,6 +209,18 @@ $sm: 550px;
         display: flex;
         align-items: center;
         gap: 9px;
+        transition: all 0.3s;
+        &:hover {
+          background-color: #e6e6e6;
+          scale: 0.975;
+        }
+        &#search-text-filter {
+          cursor: auto;
+          &:hover {
+            background-color: $item-grey;
+            scale: 1;
+          }
+        }
       }
     }
   }
