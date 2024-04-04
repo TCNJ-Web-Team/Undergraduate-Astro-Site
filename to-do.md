@@ -1,9 +1,21 @@
 # Program finder
 
-- ERROR - closing dropdown clears active css tag on checkbox
-- fix dropdowns change to css visibile, not react
-- add filter labels to cancel filter
-- desktop styling for header
+- list vs cell view
+- webteam: which icon setup are we using?
+- add icons
+- dropdown arrows
+- search icon
+- card hover effect
+- dropdown shadow effect
+- filter label text style
+  x dropdown text styles
+- no results styling
+- mobile filter boxes, get white bg, column formatting
+
+-x ERROR - closing dropdown clears active css tag on checkbox
+-x fix dropdowns change to css visibile, not react
+-x add filter labels to cancel filter
+-x desktop styling for header
 
 ## 2-19-24 Meeting w Matt & Alex
 
