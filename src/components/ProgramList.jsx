@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 import DropDownAccordion from "./DropDownAccordion";
 import { FilterDisplayBox } from "./FilterDisplayBox";
@@ -18,10 +18,36 @@ export default function ProgramList({
     useState([]);
   const [searchText, setSearchText] = useState("");
   const [openAccordion, setOpenAccordion] = useState(null);
+  const wrapperRef = useRef(null);
 
   const handleAccordionToggle = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
+
+  const handleClickOutside = (event) => {
+    if (
+      (event.type === "click" &&
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target)) ||
+      (event.type === "keydown" && event.key === "Escape")
+    ) {
+      setOpenAccordion(null);
+      const openList = document.getElementById("open-list");
+      if (openList) {
+        openList.removeAttribute("id");
+      }
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    document.addEventListener("keydown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener("keydown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     filterData();
@@ -169,6 +195,7 @@ export default function ProgramList({
           placeholder="Search by keyword"
         />
         <div
+          ref={wrapperRef}
           id="filter-wrapper"
           className="flex flex-col gap-[30px] sm:gap-[40px] md:flex-row"
         >

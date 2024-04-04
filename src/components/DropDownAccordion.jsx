@@ -41,6 +41,7 @@ md:h-auto
           `pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important]`
         }
         `}
+        id={`${isOpen ? "open-list" : ""}`}
       >
         {checkboxContent.map((checkbox, index) => (
           <div key={index} className="drop-down-item">
