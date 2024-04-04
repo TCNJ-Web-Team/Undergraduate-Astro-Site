@@ -13,7 +13,9 @@ export default function DropDownAccordion({
       }`}
     >
       <h3
-        className={`font-opensans 
+        className={`
+        dropdown-label
+        font-opensans 
         font-semibold 
         leading-[30px] 
         text-black 
@@ -31,7 +33,7 @@ export default function DropDownAccordion({
       </h3>
 
       <div
-        className={`input-list relative md:absolute opacity-0  px-[50px] border-[1px] 
+        className={`input-list relative md:absolute opacity-0  px-[34px] border-[1px]  w-[100%]
         border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
         h-0 block-0 pointer-events-none z-20
 md:h-auto
