@@ -10,7 +10,10 @@ import TopOption from "../components/TopOption.astro";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
 import "../styles/inner-body-copy.scss";
-
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/500.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/domine/700.css";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
