@@ -18,6 +18,9 @@
 -x add filter labels to cancel filter
 -x desktop styling for header
 
+- seo
+- social images
+
 ## 2-19-24 Meeting w Matt & Alex
 
 X Department change to an array
