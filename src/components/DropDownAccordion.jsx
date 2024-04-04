@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { motion } from "framer-motion";
 import "../styles/drop-down-item.scss";
 export default function DropDownAccordion({
   checkboxContent,
@@ -8,12 +8,22 @@ export default function DropDownAccordion({
 }) {
   return (
     <div
-      className={`relative before:content-[''] before:block before:w-full before:h-[10px] w-[100%] before:bg-tcnjyellow  ${
+      className={`z-50 relative w-[100%] 
+       
+      ${isOpen ? "open-drop" : ""}`}
+    >
+      {/* <div
+      className={`z-50 relative w-[100%] 
+      before:content-[''] before:block before:w-full before:h-[10px] before:bg-tcnjyellow  
+      ${
         isOpen ? "open-drop" : ""
       }`}
-    >
-      <h3
-        className={`
+    > */}
+      <motion.div whileTap={{ scale: 0.975 }}>
+        <div className="h-[10px] w-[100%] bg-tcnjyellow"></div>
+        <h3
+          className={`
+        
         dropdown-label
         font-opensans 
         font-semibold 
@@ -27,20 +37,21 @@ export default function DropDownAccordion({
      border-t-0
      cursor-pointer
         ${isOpen ? "open" : ""}`}
-        onClick={onToggle}
-      >
-        {title}
-      </h3>
-
+          onClick={onToggle}
+        >
+          {title}
+        </h3>
+      </motion.div>
       <div
         className={`input-list relative md:absolute opacity-0  px-[34px] border-[1px]  w-[100%]
         border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
         h-0 block-0 pointer-events-none z-20
 md:h-auto
+scale-[.975]
 
         ${
           isOpen &&
-          `pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important]`
+          `pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important] !scale-[1]`
         }
         `}
         id={`${isOpen ? "open-list" : ""}`}
