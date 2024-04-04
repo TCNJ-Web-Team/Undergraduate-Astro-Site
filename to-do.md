@@ -3,13 +3,13 @@
 - list vs cell view
 - webteam: which icon setup are we using?
 - add icons
-- dropdown arrows
+  x dropdown arrows
 - search icon
 - card hover effect
 - dropdown shadow effect
-- filter label text style
+  x filter label text style
   x dropdown text styles
-- no results styling
+  x no results styling
 - mobile filter boxes, get white bg, column formatting
 
 -x ERROR - closing dropdown clears active css tag on checkbox
