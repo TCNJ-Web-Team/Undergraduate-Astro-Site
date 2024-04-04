@@ -15,17 +15,22 @@ export default function IntroSection() {
         </div>
         <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[55px] sm:leading-[55px] md:text-[60px] md:leading-[65px] md:pt-[85px]"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15, ease: "easeOut", duration: 0.25 }}
+          transition={{ delay: 0.25, ease: "easeOut", duration: 0.5 }}
         >
           Explore Undergraduate Programs
         </motion.h1>
-        <p className="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal">
+        <motion.p
+          className="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal"
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.75, ease: "easeOut", duration: 0.5 }}
+        >
           Search by keyword or browse programs by selecting an area of study,
           degree type, and/ or format. TCNJ students also have an option to
           pursue accelerated programs and dual degrees.
-        </p>
+        </motion.p>
       </div>
 
       <picture id="hero-image" className="absolute top-0 left-0 z-0 w-[100%]">
