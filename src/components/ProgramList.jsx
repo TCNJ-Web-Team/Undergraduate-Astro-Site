@@ -177,8 +177,7 @@ export default function ProgramList({
   // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
-  console.log(selectedSchoolFilters);
-  console.log(selectedSchoolFilters.length);
+
   return (
     <div className="program-wrapper inner-width">
       <div
