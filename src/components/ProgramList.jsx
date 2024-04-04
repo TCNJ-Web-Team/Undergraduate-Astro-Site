@@ -290,6 +290,40 @@ export default function ProgramList({
           </div>
         </div>
       </div>
+      {filteredData && filteredData.length === 0 && (
+        <div
+          id="no-results"
+          className="bg-lightgrey max-w-[1128px] 
+          p-[40px] mx-[30px]  mt-[50px]
+          lg:mx-auto
+          md:py-[75px] md:px-[100px] "
+        >
+          <h3 className="font-domine font-[700] text-[21px] leading-[30px] md:mb-[15px]">
+            Please try your search again
+          </h3>
+          <p className="font-bitter font-normal leading-[35px] text-[18px] py-[18px]">
+            Your search results do not match any available programs.
+          </p>
+          <hr />
+          <p className="font-bitter font-normal leading-[35px] text-[18px] py-[18px]">
+            Need help finding a program? Contact{" "}
+            <a
+              className="underline text-primarylinkblue"
+              href="mailto:admiss@tcnj.edu"
+            >
+              admiss@tcnj.edu
+            </a>
+            ,{" "}
+            <a
+              className="underline text-primarylinkblue"
+              href="tel:1-609-771-2131"
+            >
+              609.771.2131
+            </a>
+            , to get more information.
+          </p>
+        </div>
+      )}
       <div
         id="filtered-programs-wrapper"
         className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-[30px] sm:gap-[40px] p-[35px] max-w-[1128px] mx-auto
@@ -302,19 +336,6 @@ export default function ProgramList({
           filteredData.map((program, index) => (
             <ProgramCard program={program} key={program.program.slug + index} />
           ))}
-        {filteredData && filteredData.length === 0 && (
-          <div id="no-results">
-            <h3>Please try your search again</h3>
-            <p>Your search results do not match any available programs.</p>
-            <hr />
-            <p>
-              Need help finding a program? Contact
-              <a href="mailto:admiss@tcnj.edu">admiss@tcnj.edu</a>,
-              <a href="tel:1-609-771-2131">609.771.2131</a>, to get more
-              information.
-            </p>
-          </div>
-        )}
       </div>
       {/* Display filtered data */}
     </div>
