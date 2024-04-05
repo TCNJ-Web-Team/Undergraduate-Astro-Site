@@ -40,29 +40,54 @@ const ProgramCard = ({ program, listType }) => {
           {title}
         </h2>
         <hr className={`my-[20px] ${listOnly && "md:hidden"}`} />
-        <div className="icon-container grid grid-cols-2 gap-x-[20px] gap-y-[10px]">
+        <div
+          className={`icon-container flex flex-wrap gap-x-[20px] gap-y-[10px]  ${
+            listOnly && "md:max-w-[260px]"
+          }`}
+        >
           {programOptions &&
             programOptions.map((option, index) => {
+              const formatOption = (option) => {
+                return option
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")
+                  .replace(/[^\w-]/g, "");
+              };
               return (
                 <p
                   key={index}
-                  className={`font-opensans text-[14px] leading-[25px] inline-block ${
+                  className={`font-opensans text-[14px] leading-[25px] inline-flex gap-x-[5px] ${
                     option.length > 15 && "col-span-full"
                   }`}
                 >
+                  <img
+                    src={`/card-icons/${formatOption(option)}.svg`}
+                    alt={option}
+                  />
                   {option}
                 </p>
               );
             })}
+
           {additionalOptions &&
             additionalOptions.map((option, index) => {
+              const formatOption = (option) => {
+                return option
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")
+                  .replace(/[^\w-]/g, "");
+              };
               return (
                 <p
                   key={index}
-                  className={`font-opensans text-[14px] leading-[25px] inline-block ${
+                  className={`font-opensans text-[14px] leading-[25px]  inline-flex gap-x-[5px] ${
                     option.length > 15 && "col-span-full"
                   }`}
                 >
+                  <img
+                    src={`/card-icons/${formatOption(option)}.svg`}
+                    alt={option}
+                  />
                   {option}
                   {/* {option.length} */}
                 </p>
