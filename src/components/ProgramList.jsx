@@ -303,6 +303,7 @@ export default function ProgramList({
             <p className="font-opensans font-normal text-[14px] leading-[26px]">
               Displaying <strong>{filteredData.length} results</strong>
             </p>
+            {/* Toggle Buttons go here */}
           </div>
         </div>
       </div>
