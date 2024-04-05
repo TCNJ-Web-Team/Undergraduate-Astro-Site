@@ -23,7 +23,7 @@ export default function DropDownAccordion({
         <div className="h-[10px] w-[100%] bg-tcnjyellow"></div>
         <h3
           className={`
-        
+        select-none
         dropdown-label
         font-opensans 
         font-semibold 
