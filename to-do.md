@@ -1,17 +1,17 @@
 # Program finder
 
 - updated program card styles
-- list vs cell view
-- add icons
+- x list vs cell view
+- x add icons
   x dropdown arrows
 - search icon
-- card hover effect
+- x card hover effect
 - x dropdown shadow effect
   x filter label text style
   x dropdown text styles
   x no results styling
 - mobile filter boxes, get white bg, column formatting
-- hover effects
+- x hover effects
 
 -x ERROR - closing dropdown clears active css tag on checkbox
 -x fix dropdowns change to css visibile, not react
@@ -21,6 +21,7 @@
 - seo
 - social images
 -
+- add inital "Skeleton" load content for program cards, then load in one by one
 
 ## Questions for Lauren
 
