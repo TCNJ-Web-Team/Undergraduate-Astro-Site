@@ -18,6 +18,7 @@ export default function ProgramList({
     useState([]);
   const [searchText, setSearchText] = useState("");
   const [openAccordion, setOpenAccordion] = useState(null);
+  const [programView, setProgramView] = useState(""); // ["grid", "list"
   const wrapperRef = useRef(null);
 
   const handleAccordionToggle = (index) => {
@@ -177,7 +178,7 @@ export default function ProgramList({
   // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
-
+  console.log(programView);
   return (
     <div className="program-wrapper inner-width">
       <div
@@ -303,6 +304,18 @@ export default function ProgramList({
             <p className="font-opensans font-normal text-[14px] leading-[26px]">
               Displaying <strong>{filteredData.length} results</strong>
             </p>
+            <img
+              src="/grid-icon.svg"
+              alt="Grid View"
+              className="hidden md:block h-[20px] w-auto ml-[25px] cursor-pointer"
+              onClick={() => setProgramView("")}
+            />
+            <img
+              src="/list-icon.svg"
+              alt="List View"
+              className="hidden md:block h-[20px] w-auto ml-[5px] cursor-pointer"
+              onClick={() => setProgramView("list")}
+            />
             {/* Toggle Buttons go here */}
           </div>
         </div>
@@ -343,15 +356,25 @@ export default function ProgramList({
       )}
       <div
         id="filtered-programs-wrapper"
-        className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 gap-[30px] sm:gap-[40px] p-[35px] max-w-[1128px] mx-auto
+        className={`${
+          programView === "list"
+            ? "list-view flex flex-col md:gap-[25px]"
+            : `grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 `
+        }
+        gap-[30px] sm:gap-[40px] 
+        p-[35px] max-w-[1128px] mx-auto
         pb-[50px]
         lg:px-0
         md:pb-[100px]
-        "
+        `}
       >
         {filteredData &&
           filteredData.map((program, index) => (
-            <ProgramCard program={program} key={program.program.slug + index} />
+            <ProgramCard
+              program={program}
+              key={program.program.slug + index}
+              listType={programView}
+            />
           ))}
       </div>
       {/* Display filtered data */}
