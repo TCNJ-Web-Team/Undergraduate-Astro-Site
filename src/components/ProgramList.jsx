@@ -382,6 +382,7 @@ export default function ProgramList({
               program={program}
               key={program.program.slug + index}
               listType={programView}
+              index={index}
             />
           ))}
       </div>

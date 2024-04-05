@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 import "../styles/program-card.scss";
-const ProgramCard = ({ program, listType }) => {
+const ProgramCard = ({ program, listType, index }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [pulsing, setPulsing] = useState(true);
 
   const listOnly = listType == "list" ? true : false;
-
+  useEffect(() => {
+    setTimeout(() => setPulsing(false), 1200);
+  });
   const {
     degreeType,
     slug,
@@ -16,17 +20,19 @@ const ProgramCard = ({ program, listType }) => {
     learnMoreList,
   } = program.program;
   const { title } = program;
-
+  // console.log(index);
   return (
     <div
-      className={`program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
+      className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300  ${
         isHovered ? "active-hover" : ""
-      }`}
+      }
+      ${pulsing ? "pulse" : ""}  
+      `}
       id={slug}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <a
+      <motion.a
         className={`program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          ${
@@ -35,6 +41,15 @@ const ProgramCard = ({ program, listType }) => {
          }
         `}
         href={`./${slug}`}
+        initial={{ opacity: 0, y: 5 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: (index + 0.5) * 0.25,
+          ease: "easeOut",
+          duration: 0.35,
+          // type: "spring",
+          // stiffness: 50,
+        }}
       >
         <h2 className="font-domine font-bold text-[19px] leading-[28px]">
           {title}
@@ -96,7 +111,7 @@ const ProgramCard = ({ program, listType }) => {
               );
             })}
         </div>
-      </a>
+      </motion.a>
       {/* Access other fields here directly */}
     </div>
   );
