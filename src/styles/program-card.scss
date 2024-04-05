@@ -3,6 +3,7 @@
     transition: all 0.3s;
     content: ""; // This is necessary for pseudo-elements
     opacity: 0;
+    pointer-events: none;
   }
   &.active-hover {
     transition: all 0.3s;
