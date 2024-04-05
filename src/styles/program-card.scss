@@ -1,15 +1,22 @@
-.hovered-item {
-  transition: all 0.3s;
-  padding-top: 1000px;
+.program-card {
   &::after {
+    transition: all 0.3s;
     content: ""; // This is necessary for pseudo-elements
-    position: absolute;
-    top: 20px; /* Position at the vertical center */
-    right: 18px; // Adjust this as per your design
-    width: 27px; // Adjust width and height as per your design
-    height: 27px; // Adjust width and height as per your design
-    background-image: url(/yellow-active-arrow.svg);
-    background-repeat: no-repeat;
-    // transition: all 0.3s;
+    opacity: 0;
+  }
+  &.active-hover {
+    transition: all 0.3s;
+    &::after {
+      opacity: 1;
+      content: ""; // This is necessary for pseudo-elements
+      position: absolute;
+      top: 20px; /* Position at the vertical center */
+      right: 18px; // Adjust this as per your design
+      width: 27px; // Adjust width and height as per your design
+      height: 27px; // Adjust width and height as per your design
+      background-image: url(/yellow-active-arrow.svg);
+      background-repeat: no-repeat;
+      // transition: all 0.3s;
+    }
   }
 }

@@ -1,5 +1,9 @@
+import React, { useState } from "react";
+
 import "../styles/program-card.scss";
 const ProgramCard = ({ program }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const {
     degreeType,
     slug,
@@ -13,8 +17,12 @@ const ProgramCard = ({ program }) => {
 
   return (
     <div
-      className="program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white hover:hovered-item"
+      className={`program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
+        isHovered ? "active-hover" : ""
+      }`}
       id={slug}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <a
         className="program-link block border-[1px] 
