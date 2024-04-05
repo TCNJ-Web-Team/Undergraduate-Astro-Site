@@ -23,7 +23,7 @@ const ProgramCard = ({ program, listType, index }) => {
   // console.log(index);
   return (
     <div
-      className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300  ${
+      className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
         isHovered ? "active-hover" : ""
       }
       ${pulsing ? "pulse" : ""}  
