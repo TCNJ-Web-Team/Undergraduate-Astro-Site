@@ -43,7 +43,7 @@ export default function DropDownAccordion({
         </h3>
       </motion.div>
       <div
-        className={`input-list relative md:absolute opacity-0  px-[34px] border-[1px]  w-[100%]
+        className={`input-list relative md:absolute opacity-0  px-[34px] border-[1px]  w-[99%] ml-[.5%]
         border-[#bcbcbc] border-t-0 bg-white  transition-all duration-300
         h-0 block-0 pointer-events-none z-20
 md:h-auto
@@ -51,7 +51,7 @@ scale-[.975]
 
         ${
           isOpen &&
-          `pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important] !scale-[1]`
+          `!ml-0 !w-[100%] pointer-events-auto block opacity-100 z-50 py-[30px] h-[auto!important] !scale-[1]`
         }
         `}
         id={`${isOpen ? "open-list" : ""}`}
