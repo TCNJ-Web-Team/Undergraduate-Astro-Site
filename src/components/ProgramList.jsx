@@ -370,7 +370,11 @@ export default function ProgramList({
       >
         {filteredData &&
           filteredData.map((program, index) => (
-            <ProgramCard program={program} key={program.program.slug + index} />
+            <ProgramCard
+              program={program}
+              key={program.program.slug + index}
+              listType={programView}
+            />
           ))}
       </div>
       {/* Display filtered data */}

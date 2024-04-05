@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 
 import "../styles/program-card.scss";
-const ProgramCard = ({ program }) => {
+const ProgramCard = ({ program, listType }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const listOnly = listType == "list" ? true : false;
 
   const {
     degreeType,
@@ -25,16 +27,19 @@ const ProgramCard = ({ program }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <a
-        className="program-link block border-[1px] 
+        className={`program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
-         
-        "
+         ${
+           listOnly &&
+           "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]"
+         }
+        `}
         href={`./${slug}`}
       >
         <h2 className="font-domine font-bold text-[19px] leading-[28px]">
           {title}
         </h2>
-        <hr className="my-[20px]" />
+        <hr className={`my-[20px] ${listOnly && "md:hidden"}`} />
         <div className="icon-container grid grid-cols-2 gap-x-[20px] gap-y-[10px]">
           {programOptions &&
             programOptions.map((option, index) => {
