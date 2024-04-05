@@ -1,5 +1,4 @@
-import React from "react";
-
+import "../styles/program-card.scss";
 const ProgramCard = ({ program }) => {
   const {
     degreeType,
@@ -14,13 +13,13 @@ const ProgramCard = ({ program }) => {
 
   return (
     <div
-      className="program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white"
+      className="program-card filter hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white hover:hovered-item"
       id={slug}
     >
       <a
         className="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
-        
+         
         "
         href={`./${slug}`}
       >
