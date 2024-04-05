@@ -25,7 +25,7 @@ $sm: 550px;
   }
   &:hover,
   &:focus {
-    filter: drop-shadow(3px 8px 5px rgba(0, 0, 0, 0.025));
+    filter: drop-shadow(3px -8px 5px rgba(0, 0, 0, 0.045));
   }
   &.open {
     &::after {
