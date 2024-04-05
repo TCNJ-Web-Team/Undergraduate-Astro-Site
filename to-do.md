@@ -1,12 +1,12 @@
 # Program finder
 
+- updated program card styles
 - list vs cell view
-- webteam: which icon setup are we using?
 - add icons
   x dropdown arrows
 - search icon
 - card hover effect
-- dropdown shadow effect
+- x dropdown shadow effect
   x filter label text style
   x dropdown text styles
   x no results styling
@@ -20,6 +20,11 @@
 
 - seo
 - social images
+-
+
+## Questions for Lauren
+
+- webteam: which icon setup are we using?
 
 ## 2-19-24 Meeting w Matt & Alex
 

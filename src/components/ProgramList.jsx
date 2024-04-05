@@ -183,7 +183,8 @@ export default function ProgramList({
       <div
         id="input-and-filter-wrapper"
         className="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
-        
+        sm:pt-[50px]
+        md:pt-[75px]
         md:bg-transparent
         lg:px-0"
       >
@@ -251,7 +252,7 @@ export default function ProgramList({
                 selectedProgramOptionFilters.length == 0 &&
                 selectedAdditionalOptionFilters.length == 0 && (
                   <div className="drop-down-item">
-                    <p id="search-text-filter">
+                    <p id="all-text-filter">
                       All
                       {/* <img className="close-button" src="/close-item.svg" /> */}
                     </p>
