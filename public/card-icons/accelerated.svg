@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23.658" height="15" viewBox="0 0 23.658 15">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_190" data-name="Rectangle 190" width="23.658" height="15" transform="translate(0 0)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Fast_clock" data-name="Fast clock" transform="translate(0 0)">
+    <g id="Group_200" data-name="Group 200" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_2292" data-name="Path 2292" d="M26.5,0a7.457,7.457,0,0,0-4.194,1.285H15.278a.592.592,0,0,0,0,1.183h5.666a7.487,7.487,0,0,0,.264,10.34H17.035a.592.592,0,1,0,0,1.183h5.717A7.5,7.5,0,1,0,26.5,0m0,13.817A6.317,6.317,0,1,1,32.817,7.5,6.324,6.324,0,0,1,26.5,13.817" transform="translate(-10.342 0)"/>
+      <path id="Path_2293" data-name="Path 2293" d="M54.895,14.414H52.7v-3.56a.592.592,0,0,0-1.183,0v4.151a.592.592,0,0,0,.592.592h2.79a.592.592,0,0,0,0-1.183" transform="translate(-36.276 -7.227)"/>
+      <path id="Path_2294" data-name="Path 2294" d="M12.151,35.3a.592.592,0,0,0-.592-.592H6.176a.592.592,0,1,0,0,1.183H11.56a.592.592,0,0,0,.592-.592" transform="translate(-3.932 -24.441)"/>
+      <path id="Path_2295" data-name="Path 2295" d="M7.918,13.738a.592.592,0,0,0-.592-.592H.592a.592.592,0,1,0,0,1.183H7.326a.592.592,0,0,0,.592-.592" transform="translate(0 -9.258)"/>
+      <path id="Path_2296" data-name="Path 2296" d="M9.834,23.356a.592.592,0,1,0,0,1.183h3.243a.592.592,0,1,0,0-1.183Z" transform="translate(-6.508 -16.448)"/>
+    </g>
+  </g>
+</svg>
