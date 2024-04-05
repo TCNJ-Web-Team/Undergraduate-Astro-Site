@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 import DropDownAccordion from "./DropDownAccordion";
 import { FilterDisplayBox } from "./FilterDisplayBox";
+import { motion } from "framer-motion";
 
 export default function ProgramList({
   data,
@@ -304,18 +305,25 @@ export default function ProgramList({
             <p className="font-opensans font-normal text-[14px] leading-[26px]">
               Displaying <strong>{filteredData.length} results</strong>
             </p>
-            <img
+            <motion.img
               src="/grid-icon.svg"
               alt="Grid View"
               className="hidden md:block h-[20px] w-auto ml-[25px] cursor-pointer"
               onClick={() => setProgramView("")}
+              whileHover={{ scale: 1.025, opacity: 1 }}
+              whileTap={{ scale: 0.9 }}
+              animate={{ opacity: programView != "list" ? 1 : 0.5 }}
             />
-            <img
+            <motion.img
               src="/list-icon.svg"
               alt="List View"
               className="hidden md:block h-[20px] w-auto ml-[5px] cursor-pointer"
               onClick={() => setProgramView("list")}
+              whileHover={{ scale: 1.025, opacity: 1 }}
+              whileTap={{ scale: 0.9 }}
+              animate={{ opacity: programView === "list" ? 1 : 0.5 }}
             />
+
             {/* Toggle Buttons go here */}
           </div>
         </div>
