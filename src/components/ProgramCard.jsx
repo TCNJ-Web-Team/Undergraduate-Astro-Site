@@ -44,9 +44,9 @@ const ProgramCard = ({ program, listType, index }) => {
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: (index + 0.5) * 0.25,
+          delay: (index + 0.25) * 0.15,
           ease: "easeOut",
-          duration: 0.35,
+          duration: 0.3,
           // type: "spring",
           // stiffness: 50,
         }}
