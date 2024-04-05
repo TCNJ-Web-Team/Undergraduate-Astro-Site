@@ -56,13 +56,14 @@ const ProgramCard = ({ program, listType }) => {
               return (
                 <p
                   key={index}
-                  className={`font-opensans text-[14px] leading-[25px] inline-flex gap-x-[5px] ${
+                  className={`font-opensans text-[14px] leading-[25px] inline-flex gap-x-[5px] items-center ${
                     option.length > 15 && "col-span-full"
                   }`}
                 >
                   <img
                     src={`/card-icons/${formatOption(option)}.svg`}
                     alt={option}
+                    className="max-h-[15px]"
                   />
                   {option}
                 </p>
@@ -80,13 +81,14 @@ const ProgramCard = ({ program, listType }) => {
               return (
                 <p
                   key={index}
-                  className={`font-opensans text-[14px] leading-[25px]  inline-flex gap-x-[5px] ${
+                  className={`font-opensans text-[14px] leading-[25px]  inline-flex gap-x-[5px] items-center ${
                     option.length > 15 && "col-span-full"
                   }`}
                 >
                   <img
                     src={`/card-icons/${formatOption(option)}.svg`}
                     alt={option}
+                    className="max-h-[15px]"
                   />
                   {option}
                   {/* {option.length} */}
