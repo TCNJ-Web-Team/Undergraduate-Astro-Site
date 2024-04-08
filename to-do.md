@@ -1,3 +1,7 @@
+Plan for hosting Undergradaute Program Explorer?
+
+- on undergrad.tcnj.edu as homepage? or on academics site?
+
 # Program Page Template
 
 - title and image fade-in
@@ -13,6 +17,9 @@
 - drop downs
   - add list styles
 - social images
+- related programs
+  - add hover effects
+  - add links
 
 # Program finder
 

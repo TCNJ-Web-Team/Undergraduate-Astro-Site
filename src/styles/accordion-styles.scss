@@ -100,7 +100,9 @@ $sm: 550px;
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    p {
+
+    p,
+    li {
       // font-family: $raleway;
       // font-weight: normal;
       // transition: margin-bottom 0.5s ease-in-out;
@@ -120,6 +122,13 @@ $sm: 550px;
         // color: $off-white;
         text-decoration: underline;
       }
+    }
+    li {
+      padding-top: 0;
+      list-style-type: disc;
+      list-style-position: outside;
+      margin-left: 20px;
+      margin-top: 10px;
     }
     .button-link {
       // text-align: center;
