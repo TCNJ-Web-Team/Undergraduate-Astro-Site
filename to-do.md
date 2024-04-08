@@ -1,6 +1,6 @@
 # Program finder
 
-- updated program card styles
+- x updated program card styles
 - x list vs cell view
 - x add icons
   x dropdown arrows

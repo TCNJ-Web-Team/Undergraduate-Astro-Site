@@ -51,7 +51,13 @@ const ProgramCard = ({ program, listType, index }) => {
           // stiffness: 50,
         }}
       >
-        <h2 className="font-domine font-bold text-[19px] leading-[28px]">
+        <h2
+          className="font-domine font-bold 
+        text-[19px] leading-[28px]
+        sm:text-[21px] sm:leading-[30px]
+
+        "
+        >
           {title}
         </h2>
         <hr className={`my-[20px] ${listOnly && "md:hidden"}`} />
@@ -71,7 +77,7 @@ const ProgramCard = ({ program, listType, index }) => {
               return (
                 <p
                   key={index}
-                  className={`font-opensans text-[14px] leading-[25px] inline-flex gap-x-[5px] items-center ${
+                  className={`font-opensans text-[14px] leading-[15px] md:leading-[25px] inline-flex gap-x-[5px] items-center ${
                     option.length > 15 && "col-span-full"
                   }`}
                 >
