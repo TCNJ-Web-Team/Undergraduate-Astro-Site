@@ -1,3 +1,19 @@
+# Program Page Template
+
+- title and image fade-in
+- allow wp option to set hero horizontal setting for
+  - desk
+  - tab
+  - mobile
+- Program at a glace
+
+  - add fade in animation
+  - hover states for buttons
+
+- drop downs
+  - add list styles
+- social images
+
 # Program finder
 
 - mobile filter boxes, get white bg, column formatting
