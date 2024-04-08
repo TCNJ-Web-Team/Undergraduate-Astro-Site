@@ -7,6 +7,24 @@ $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
+
+#text-filter {
+  // width: calc(100% - 103px);
+  background-color: #fff;
+  background-image: url(/search-icon.svg);
+  background-position-x: calc(100% - 34px);
+  background-position-y: center;
+  background-repeat: no-repeat;
+  // border: 1px solid #bcbcbc;
+  // padding: 24px 50px 21px;
+  // font-family: "Open Sans",sans-serif;
+  // text-transform: uppercase;
+  // font-weight: 400;
+  // font-size: 17px;
+  // line-height: 30px;
+  // text-align: left;
+  // margin: 70px 0 25px;
+}
 .dropdown-label {
   position: relative;
   // display: flex;
