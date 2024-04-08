@@ -1,16 +1,19 @@
 # Program finder
 
+- mobile filter boxes, get white bg, column formatting
+- seo
+- social images
+
 - x updated program card styles
 - x list vs cell view
 - x add icons
   x dropdown arrows
-- search icon
+- x search icon
 - x card hover effect
 - x dropdown shadow effect
   x filter label text style
   x dropdown text styles
   x no results styling
-- mobile filter boxes, get white bg, column formatting
 - x hover effects
 
 -x ERROR - closing dropdown clears active css tag on checkbox
@@ -18,8 +21,6 @@
 -x add filter labels to cancel filter
 -x desktop styling for header
 
-- seo
-- social images
 -
 - add inital "Skeleton" load content for program cards, then load in one by one
 
