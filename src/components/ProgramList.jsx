@@ -6,12 +6,30 @@ import { motion } from "framer-motion";
 
 export default function ProgramList({
   data,
+  redirectData,
   areaOfStudy,
   programOptionsClean,
   additionalOptions,
 }) {
+  // const combinedData = data.programs.nodes.concat(
+  //   redirectData.programRedirects.nodes.map(item => ({
+  //     program: item.redirectProgram
+  //   }))
+  // );
+  //   console.log(data);
+  //   console.log(combinedData);
+
   // console.log(data.programs.nodes);
-  const [filteredData, setFilteredData] = useState(data.programs.nodes);
+  const combinedData = data.programs.nodes.concat(
+    redirectData.programRedirects.nodes.map((item) => ({
+      program: item.redirectProgram,
+      title: item.title,
+    }))
+  );
+  // console.log(combinedData);
+  // console.log(redirectData.programRedirects.nodes);
+  const dataNodes = combinedData;
+  const [filteredData, setFilteredData] = useState(dataNodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
     useState([]);
@@ -61,7 +79,7 @@ export default function ProgramList({
   ]);
 
   const filterData = () => {
-    let newData = data.programs.nodes.filter(filterByText);
+    let newData = dataNodes.filter(filterByText);
 
     if (selectedSchoolFilters.length > 0) {
       newData = newData.filter(filterBySelectedSchools);
@@ -179,7 +197,7 @@ export default function ProgramList({
   // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
-  console.log(programView);
+  // console.log(programView);
   return (
     <div className="program-wrapper inner-width">
       <div

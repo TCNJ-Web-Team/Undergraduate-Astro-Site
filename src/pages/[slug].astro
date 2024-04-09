@@ -24,8 +24,6 @@ export async function getStaticPaths() {
         degreeType
         slug
         school
-        programOptions
-        additionalOptions
         programAtAGlance
         heroImgDesktop {
           sourceUrl
@@ -340,9 +338,17 @@ const { sourceUrl } = heroImgDesktop ?? {
         md:pb-[200px]
         md:pt-[200px]"
         >
-          <ProgramCareersHeading heading="Program at a Glance" />
-          <!-- <h2>Program at a Glance</h2> -->
-          <ProgramGlanceCopy id="program-glance" copy={programAtAGlance} />
+          {
+            programAtAGlance && (
+              <>
+                <ProgramCareersHeading heading="Program at a Glance" />
+                <ProgramGlanceCopy
+                  id="program-glance"
+                  copy={programAtAGlance}
+                />
+              </>
+            )
+          }
           <!-- <div
             class="text-[20px]
           leading-[35px]
@@ -412,11 +418,13 @@ const { sourceUrl } = heroImgDesktop ?? {
       sm:pl-[47px]
       sm:pr-[47px]"
       >
-        <img
-          src={programOfStudyRight}
-          alt=""
-          id="prog-study-img"
-          class="relative
+        {
+          programOfStudyRight && (
+            <img
+              src={programOfStudyRight}
+              alt=""
+              id="prog-study-img"
+              class="relative
           top-[-50px]
           object-cover
           object-left
@@ -430,7 +438,9 @@ const { sourceUrl } = heroImgDesktop ?? {
           md:right-[-35px]
           md:h-[650px]
           md:absolute"
-        />
+            />
+          )
+        }
         <div
           class="max-w-[70.5rem]
         m-auto

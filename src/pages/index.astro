@@ -20,17 +20,34 @@ const data = await wpquery({
                     school
                     programOptions
                     additionalOptions
-                    programAtAGlance
-                    learnMoreList {
-                      title
-                      slug
-                    }
+         
                   }
                   title
                 }
               }
             }`,
 });
+const redirectData = await wpquery({
+  query: `query RedirectList {
+            programRedirects {
+              nodes {
+                  redirectProgram {
+                    degreeType
+                    redirecturl
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+              
+                  }
+                  title
+                }
+            }
+          }`,
+});
+
+// console.log(data.programs.nodes);
+// console.log(redirectData.programRedirects.nodes);
 const programOptions = await wpquery({
   query: ` query FullOptionsListing {
   page(id: "249", idType: DATABASE_ID) {
@@ -43,6 +60,7 @@ const programOptions = await wpquery({
 }`,
 });
 // console.log(programOptions);
+// console.log(data);
 // console.log(data.programs.program);
 // console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
 // console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
@@ -53,6 +71,12 @@ const programOptionsClean = programOptions.page.program.programOptions;
 // console.log(programOptionsClean);
 const additionalOptions = programOptions.page.program.additionalOptions;
 // console.log(additionalOptions);
+const combinedData = {
+  ...data,
+  ...redirectData,
+};
+// console.log(combinedData.programs.nodes);
+// console.log(redirectData.programRedirects.nodes);
 ---
 
 <Layout title="Undergraduate Programs at TCNJ">
@@ -67,6 +91,7 @@ const additionalOptions = programOptions.page.program.additionalOptions;
     >
       <ProgramList
         data={data}
+        redirectData={redirectData}
         areaOfStudy={areaOfStudy}
         programOptionsClean={programOptionsClean}
         additionalOptions={additionalOptions}
