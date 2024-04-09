@@ -1,3 +1,7 @@
+# program redirects
+
+- need to have card visable on program list but redirect to a seperate url, not [slug]
+
 Plan for hosting Undergradaute Program Explorer?
 
 - on undergrad.tcnj.edu as homepage? or on academics site?

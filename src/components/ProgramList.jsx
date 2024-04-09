@@ -6,11 +6,21 @@ import { motion } from "framer-motion";
 
 export default function ProgramList({
   data,
+  redirectData,
   areaOfStudy,
   programOptionsClean,
   additionalOptions,
 }) {
-  // console.log(data.programs.nodes);
+  // const combinedData = data.programs.nodes.concat(
+  //   redirectData.programRedirects.nodes.map(item => ({
+  //     program: item.redirectProgram
+  //   }))
+  // );
+  //   console.log(data);
+  //   console.log(combinedData);
+
+  console.log(data.programs.nodes);
+  console.log(redirectData);
   const [filteredData, setFilteredData] = useState(data.programs.nodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
@@ -179,7 +189,7 @@ export default function ProgramList({
   // console.log(filteredData.length);
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
-  console.log(programView);
+  // console.log(programView);
   return (
     <div className="program-wrapper inner-width">
       <div

@@ -31,6 +31,30 @@ const data = await wpquery({
               }
             }`,
 });
+const redirectData = await wpquery({
+  query: `query RedirectList {
+            programRedirects {
+              nodes {
+                  redirectProgram {
+                    degreeType
+                    slug
+                    school
+                    programOptions
+                    additionalOptions
+                    programAtAGlance
+                    learnMoreList {
+                      title
+                      slug
+                    }
+                  }
+                  title
+                }
+            }
+          }`,
+});
+
+// console.log(data.programs.nodes);
+// console.log(redirectData.programRedirects.nodes);
 const programOptions = await wpquery({
   query: ` query FullOptionsListing {
   page(id: "249", idType: DATABASE_ID) {
@@ -54,6 +78,12 @@ const programOptionsClean = programOptions.page.program.programOptions;
 // console.log(programOptionsClean);
 const additionalOptions = programOptions.page.program.additionalOptions;
 // console.log(additionalOptions);
+const combinedData = {
+  ...data,
+  ...redirectData,
+};
+// console.log(combinedData.programs.nodes);
+// console.log(redirectData.programRedirects.nodes);
 ---
 
 <Layout title="Undergraduate Programs at TCNJ">
@@ -68,6 +98,7 @@ const additionalOptions = programOptions.page.program.additionalOptions;
     >
       <ProgramList
         data={data}
+        redirectData={redirectData}
         areaOfStudy={areaOfStudy}
         programOptionsClean={programOptionsClean}
         additionalOptions={additionalOptions}
