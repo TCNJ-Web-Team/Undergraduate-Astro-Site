@@ -10,17 +10,10 @@ const ProgramCard = ({ program, listType, index }) => {
   useEffect(() => {
     setTimeout(() => setPulsing(false), 1200);
   });
-  const {
-    degreeType,
-    slug,
-    school,
-    programOptions,
-    additionalOptions,
-    programAtAGlance,
-    learnMoreList,
-  } = program.program;
+  const { slug, redirecturl, programOptions, additionalOptions } =
+    program.program;
   const { title } = program;
-  // console.log(index);
+  // console.log(redirecturl);
   return (
     <div
       className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
@@ -40,7 +33,8 @@ const ProgramCard = ({ program, listType, index }) => {
            "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]"
          }
         `}
-        href={`./${slug}`}
+        href={redirecturl ? redirecturl : `./${slug}`}
+        target={redirecturl ? "_blank" : "_self"}
         initial={{ opacity: 0, y: 5 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{

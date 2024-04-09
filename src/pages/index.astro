@@ -20,11 +20,7 @@ const data = await wpquery({
                     school
                     programOptions
                     additionalOptions
-                    programAtAGlance
-                    learnMoreList {
-                      title
-                      slug
-                    }
+         
                   }
                   title
                 }
@@ -37,15 +33,12 @@ const redirectData = await wpquery({
               nodes {
                   redirectProgram {
                     degreeType
+                    redirecturl
                     slug
                     school
                     programOptions
                     additionalOptions
-                    programAtAGlance
-                    learnMoreList {
-                      title
-                      slug
-                    }
+              
                   }
                   title
                 }
