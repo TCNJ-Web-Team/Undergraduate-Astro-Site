@@ -17,7 +17,7 @@ import "@fontsource/domine/700.css";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
-  programs(first:80) {
+  programs(first:120) {
     nodes {
       program {
         fullProgramTitle

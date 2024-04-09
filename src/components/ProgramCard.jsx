@@ -57,7 +57,7 @@ const ProgramCard = ({ program, listType, index }) => {
         <hr className={`my-[20px] ${listOnly && "md:hidden"}`} />
         <div
           className={`icon-container flex flex-wrap gap-x-[20px] gap-y-[10px]  ${
-            listOnly && "md:max-w-[260px]"
+            listOnly && "md:max-w-[260px] md:w-[100%]"
           }`}
         >
           {programOptions &&
