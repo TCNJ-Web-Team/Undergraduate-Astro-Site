@@ -49,6 +49,8 @@ export async function getStaticPaths() {
           rightImage {
             sourceUrl
           }
+          rightImageHorizontalPosition
+          rightImageVerticalPosition
           body
         }
         lowerContent {
@@ -171,6 +173,8 @@ interface AstroProps {
     rightImage: {
       sourceUrl: string;
     };
+    rightImageHorizontalPosition: number;
+    rightImageVerticalPosition: number;
     body: string;
   };
   lowerContent: any;
@@ -198,12 +202,14 @@ const {
       sourceUrl:
         "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
     },
+    rightImageHorizontalPosition,
+    rightImageVerticalPosition,
     body: programOfStudyBody,
   },
   lowerContent,
   learnMoreList,
 } = Astro.props as AstroProps; // Add the type assertion here
-// console.log(typeof lowerContent);
+// console.log(rightImageHorizontalPosition, rightImageVerticalPosition);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
@@ -466,6 +472,9 @@ const { sourceUrl } = heroImgDesktop ?? {
             <img
               src={programOfStudyRight}
               alt=""
+              style={{
+                objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
+              }}
               id="prog-study-img"
               class="relative
           top-[-50px]
