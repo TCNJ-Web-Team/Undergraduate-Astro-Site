@@ -29,7 +29,7 @@ const data = await wpquery({
 });
 const redirectData = await wpquery({
   query: `query RedirectList {
-            programRedirects {
+            programRedirects(first:120) {
               nodes {
                   redirectProgram {
                     degreeType
