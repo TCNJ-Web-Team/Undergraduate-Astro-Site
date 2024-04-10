@@ -8,6 +8,7 @@ Plan for hosting Undergradaute Program Explorer?
 
 # Program Page Template
 
+- tablet and mobile hero images
 - title and image fade-in
 - allow wp option to set hero horizontal setting for
   - desk

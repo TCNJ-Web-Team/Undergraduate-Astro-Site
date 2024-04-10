@@ -28,6 +28,13 @@ export async function getStaticPaths() {
         heroImgDesktop {
           sourceUrl
         }
+        horizontalPositionDesktopHero
+        heroImgTablet{
+          sourceUrl
+        }
+        heroImgMobile{
+          sourceUrl
+        }
         departmentRepeater {
           deptTitle
           deptUrl
@@ -69,6 +76,10 @@ export async function getStaticPaths() {
         school: string;
         departmentRepeater: string[];
         heroImgDesktop: string;
+        horizontalPositionDesktopHero: number;
+        heroImgTablet: string;
+        heroImgMobile: string;
+
         careers: string;
         programOfStudy: string;
         lowerContent: [];
@@ -82,11 +93,14 @@ export async function getStaticPaths() {
         slug: program.program.slug,
         title: program.title,
         programAtAGlance: program.program.programAtAGlance,
-
+        horizontalPositionDesktopHero:
+          program.program.horizontalPositionDesktopHero,
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
+        heroImgTablet: program.program.heroImgTablet,
+        heroImgMobile: program.program.heroImgMobile,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
@@ -136,7 +150,14 @@ interface AstroProps {
   degreeType: string[]; // Assuming degreeType is an array of strings
   school: string[];
   department: { deptUrl: string; deptTitle: string }[];
+  horizontalPositionDesktopHero: number;
   heroImgDesktop: {
+    sourceUrl: string;
+  };
+  heroImgTablet: {
+    sourceUrl: string;
+  };
+  heroImgMobile: {
     sourceUrl: string;
   };
   content: string;
@@ -166,6 +187,9 @@ const {
   school,
   department,
   heroImgDesktop,
+  horizontalPositionDesktopHero,
+  heroImgTablet,
+  heroImgMobile,
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
@@ -183,6 +207,7 @@ const {
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+// console.log(heroImgTablet, heroImgMobile);
 // const {programOfStudyLeft} = programOfStudy ?? {
 //   programOfStudyLeft: "",
 // };
@@ -243,22 +268,40 @@ const { sourceUrl } = heroImgDesktop ?? {
       >
         {
           sourceUrl && (
-            <img
-              src={sourceUrl}
-              class="
-              h-[450px]
-              sm:h-[600px]
-              object-cover
-              pl-[35px]
-
-              lg:pl-[100px]
-              lg:w-[100%]
-              xl:pl-[200px]
-        
-              "
-              id="hero-img"
-              alt={title}
-            />
+            <picture>
+              {heroImgMobile && (
+                <source
+                  media="(max-width: 550px)"
+                  srcset={heroImgMobile.sourceUrl}
+                />
+              )}
+              {heroImgTablet && (
+                <source
+                  media="(max-width: 900px)"
+                  srcset={heroImgTablet.sourceUrl}
+                />
+              )}
+              <img
+                src={sourceUrl}
+                style={{
+                  objectPosition: `${horizontalPositionDesktopHero}%`,
+                }}
+                class="
+                w-[100%]
+          h-[450px]
+          sm:h-[600px]
+          object-cover
+          pl-[35px]
+          
+          lg:pl-[100px]
+          lg:w-[100%]
+          xl:pl-[200px]
+          
+          "
+                id="hero-img"
+                alt={title}
+              />
+            </picture>
           )
         }
       </div>
