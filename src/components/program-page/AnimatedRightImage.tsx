@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface AnimatedRightImageProps {
-  programOfStudyRight: string; // Assuming programOfStudyRight is a string representing the image source URL
-  rightImageHorizontalPosition: number; // Assuming these values are in percentage
+  programOfStudyRight: string;
+  rightImageHorizontalPosition: number;
   rightImageVerticalPosition: number;
 }
 
@@ -13,27 +14,28 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
   rightImageVerticalPosition,
 }) => {
   const fadeInAnimationVariant = {
-    initial: {
-      opacity: 0,
-      x: 25,
-    },
-    animate: {
+    hidden: { opacity: 0, x: 25 },
+    show: {
       opacity: 1,
       x: 0,
       transition: {
-        // Use either when or delay here.
-        // when: "afterChildren",
-        delay: 0.5,
+        // delay: 0.5,
         ease: "easeOut",
-        duration: 0.45,
-        // staggerChildren: 0.5,
+        duration: 0.75,
       },
     },
   };
+
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
+    threshold: 0.5, // 50% of the element is in view
+  });
+
   return (
     <div className="relative overflow-y-visible">
       {programOfStudyRight && (
         <motion.img
+          ref={ref}
           src={programOfStudyRight}
           alt=""
           style={{
@@ -55,9 +57,8 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           md:h-[650px]
           md:absolute"
           variants={fadeInAnimationVariant}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
         />
       )}
       <div
