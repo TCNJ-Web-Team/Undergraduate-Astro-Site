@@ -14,6 +14,8 @@ import "@fontsource/domine/400.css";
 import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
+import AnimatedTitle from "../components/program-page/AnimatedTitle";
+import AnimatedHero from "../components/program-page/AnimatedHero";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -253,7 +255,7 @@ const { sourceUrl } = heroImgDesktop ?? {
             {title}
           </span>
         </p>
-        <h1
+        <!-- <h1
           class="font-chunkfive
           text-tcnjblue
           text-[45px]
@@ -265,7 +267,8 @@ const { sourceUrl } = heroImgDesktop ?? {
           md:leading-[4.688rem]"
         >
           {title}
-        </h1>
+        </h1> -->
+        <AnimatedTitle title={title} client:load />
       </div>
       <div
         class="w-auto bg-yellowWhiteGradient
@@ -274,26 +277,28 @@ const { sourceUrl } = heroImgDesktop ?? {
       >
         {
           sourceUrl && (
-            <div class="relative w-[100%] overflow-hidden">
-              <picture>
-                {heroImgMobile && (
-                  <source
-                    media="(max-width: 550px)"
-                    srcset={heroImgMobile.sourceUrl}
-                  />
-                )}
-                {heroImgTablet && (
-                  <source
-                    media="(max-width: 900px)"
-                    srcset={heroImgTablet.sourceUrl}
-                  />
-                )}
-                <img
-                  src={sourceUrl}
-                  style={{
-                    objectPosition: `${horizontalPositionDesktopHero}%`,
-                  }}
-                  class="relative z-30
+            <>
+            <!--
+              <div class="relative w-[100%] overflow-hidden">
+                <picture>
+                  {heroImgMobile && (
+                    <source
+                      media="(max-width: 550px)"
+                      srcset={heroImgMobile.sourceUrl}
+                    />
+                  )}
+                  {heroImgTablet && (
+                    <source
+                      media="(max-width: 900px)"
+                      srcset={heroImgTablet.sourceUrl}
+                    />
+                  )}
+                  <img
+                    src={sourceUrl}
+                    style={{
+                      objectPosition: `${horizontalPositionDesktopHero}%`,
+                    }}
+                    class="relative z-30
                 w-[100%]
           h-[450px]
           sm:h-[600px]
@@ -305,12 +310,12 @@ const { sourceUrl } = heroImgDesktop ?? {
           xl:pl-[200px]
           
           "
-                  id="hero-img"
-                  alt={title}
-                />
-              </picture>
-              <div
-                class="absolute top-0 
+                    id="hero-img"
+                    alt={title}
+                  />
+                </picture>
+                <div
+                  class="absolute top-0 
                 bg-lightgrey
                 w-[100%]
           h-[450px]
@@ -322,8 +327,18 @@ const { sourceUrl } = heroImgDesktop ?? {
           xl:left-[200px]
           
           "
+                />
+              </div>
+               -->
+              <AnimatedHero
+                heroImgMobile={heroImgMobile}
+                heroImgTablet={heroImgTablet}
+                sourceUrl={sourceUrl}
+                horizontalPositionDesktopHero={horizontalPositionDesktopHero}
+                title={title}
+                client:load
               />
-            </div>
+            </>
           )
         }
       </div>
