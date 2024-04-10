@@ -202,7 +202,7 @@ const {
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
-console.log(heroImgTablet.sourceUrl, heroImgMobile.sourceUrl);
+// console.log(heroImgTablet, heroImgMobile);
 // const {programOfStudyLeft} = programOfStudy ?? {
 //   programOfStudyLeft: "",
 // };
@@ -264,9 +264,23 @@ console.log(heroImgTablet.sourceUrl, heroImgMobile.sourceUrl);
         {
           sourceUrl && (
             <picture>
+              {heroImgMobile && (
+                <source
+                  media="(max-width: 550px)"
+                  srcset={heroImgMobile.sourceUrl}
+                />
+              )}
+              {heroImgTablet && (
+                <source
+                  media="(max-width: 900px)"
+                  srcset={heroImgTablet.sourceUrl}
+                  class="w-[100%]"
+                />
+              )}
               <img
                 src={sourceUrl}
                 class="
+                w-[100%]
           h-[450px]
           sm:h-[600px]
           object-cover
