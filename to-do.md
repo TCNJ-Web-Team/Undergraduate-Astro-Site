@@ -1,6 +1,10 @@
+# Footer
+
+- fix mobile version
+
 # program redirects
 
-- need to have card visable on program list but redirect to a seperate url, not [slug]
+- x need to have card visable on program list but redirect to a seperate url, not [slug]
 
 Plan for hosting Undergradaute Program Explorer?
 
