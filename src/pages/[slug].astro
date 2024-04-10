@@ -16,6 +16,7 @@ import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
 import AnimatedTitle from "../components/program-page/AnimatedTitle";
 import AnimatedHero from "../components/program-page/AnimatedHero";
+import AnimatedBodyCopy from "../components/program-page/AnimatedBodyCopy";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -549,12 +550,18 @@ const { sourceUrl } = heroImgDesktop ?? {
       sm:pt-[100px]
       md:pt-[200px]"
       >
-        <BodyCopy
+        <!-- <BodyCopy
           heading="Careers"
           left={careersLeft}
           right={careersRight}
           body={careersBody}
-        />
+        /> -->
+        <AnimatedBodyCopy
+          heading="Careers"
+          left={careersLeft}
+          right={careersRight}
+          body={careersBody}
+          client:load/>
       </div>
     </div>
     <div
