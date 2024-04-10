@@ -28,6 +28,12 @@ export async function getStaticPaths() {
         heroImgDesktop {
           sourceUrl
         }
+        heroImgTablet{
+          sourceUrl
+        }
+        heroImgMobile{
+          sourceUrl
+        }
         departmentRepeater {
           deptTitle
           deptUrl
@@ -69,6 +75,9 @@ export async function getStaticPaths() {
         school: string;
         departmentRepeater: string[];
         heroImgDesktop: string;
+        heroImgTablet: string;
+        heroImgMobile: string;
+
         careers: string;
         programOfStudy: string;
         lowerContent: [];
@@ -87,6 +96,8 @@ export async function getStaticPaths() {
         school: program.program.school,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
+        heroImgTablet: program.program.heroImgTablet,
+        heroImgMobile: program.program.heroImgMobile,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
@@ -139,6 +150,12 @@ interface AstroProps {
   heroImgDesktop: {
     sourceUrl: string;
   };
+  heroImgTablet: {
+    sourceUrl: string;
+  };
+  heroImgMobile: {
+    sourceUrl: string;
+  };
   content: string;
   careers: {
     left: string;
@@ -166,6 +183,8 @@ const {
   school,
   department,
   heroImgDesktop,
+  heroImgTablet,
+  heroImgMobile,
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
   programOfStudy: {
@@ -183,6 +202,7 @@ const {
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+console.log(heroImgTablet.sourceUrl, heroImgMobile.sourceUrl);
 // const {programOfStudyLeft} = programOfStudy ?? {
 //   programOfStudyLeft: "",
 // };
@@ -243,22 +263,24 @@ const { sourceUrl } = heroImgDesktop ?? {
       >
         {
           sourceUrl && (
-            <img
-              src={sourceUrl}
-              class="
-              h-[450px]
-              sm:h-[600px]
-              object-cover
-              pl-[35px]
-
-              lg:pl-[100px]
-              lg:w-[100%]
-              xl:pl-[200px]
-        
-              "
-              id="hero-img"
-              alt={title}
-            />
+            <picture>
+              <img
+                src={sourceUrl}
+                class="
+          h-[450px]
+          sm:h-[600px]
+          object-cover
+          pl-[35px]
+          
+          lg:pl-[100px]
+          lg:w-[100%]
+          xl:pl-[200px]
+          
+          "
+                id="hero-img"
+                alt={title}
+              />
+            </picture>
           )
         }
       </div>
