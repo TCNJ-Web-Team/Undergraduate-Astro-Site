@@ -235,7 +235,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 ---
 
 <Layout title={title}>
-  <main class="font-bitter text-darkgrey">
+  <main class="font-bitter text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div
         class="pl-[35px]
@@ -417,7 +417,6 @@ const { sourceUrl } = heroImgDesktop ?? {
       </div>
     </div>
     <div
-    style="overflow-y: visible!important;overflow-x: hidden;"
       id="programs-of-study-container"
       class="px-[35px] w-auto sm:bg-tcnjyellow  
      "
@@ -429,7 +428,7 @@ const { sourceUrl } = heroImgDesktop ?? {
       pb-[75px]
       sm:pl-[47px]
       sm:pr-[47px]
-      overflow-y-visible"
+      "
       >
         {
           programOfStudyRight && (

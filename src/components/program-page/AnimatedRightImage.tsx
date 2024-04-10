@@ -17,18 +17,18 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
       opacity: 0,
       x: 25,
     },
-    animate: (delayNumber: number) => ({
+    animate: {
       opacity: 1,
       x: 0,
       transition: {
         // Use either when or delay here.
         // when: "afterChildren",
-        delay: delayNumber * 0.35,
+        delay: 0.5,
         ease: "easeOut",
         duration: 0.45,
         // staggerChildren: 0.5,
       },
-    }),
+    },
   };
   return (
     <div className="relative overflow-y-visible">
