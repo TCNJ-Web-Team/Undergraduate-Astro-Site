@@ -28,6 +28,7 @@ export async function getStaticPaths() {
         heroImgDesktop {
           sourceUrl
         }
+        horizontalPositionDesktopHero
         heroImgTablet{
           sourceUrl
         }
@@ -75,6 +76,7 @@ export async function getStaticPaths() {
         school: string;
         departmentRepeater: string[];
         heroImgDesktop: string;
+        horizontalPositionDesktopHero: number;
         heroImgTablet: string;
         heroImgMobile: string;
 
@@ -91,7 +93,8 @@ export async function getStaticPaths() {
         slug: program.program.slug,
         title: program.title,
         programAtAGlance: program.program.programAtAGlance,
-
+        horizontalPositionDesktopHero:
+          program.program.horizontalPositionDesktopHero,
         degreeType: program.program.degreeType,
         school: program.program.school,
         department: program.program.departmentRepeater,
@@ -147,6 +150,7 @@ interface AstroProps {
   degreeType: string[]; // Assuming degreeType is an array of strings
   school: string[];
   department: { deptUrl: string; deptTitle: string }[];
+  horizontalPositionDesktopHero: number;
   heroImgDesktop: {
     sourceUrl: string;
   };
@@ -183,6 +187,7 @@ const {
   school,
   department,
   heroImgDesktop,
+  horizontalPositionDesktopHero,
   heroImgTablet,
   heroImgMobile,
   content,
@@ -274,11 +279,13 @@ const { sourceUrl } = heroImgDesktop ?? {
                 <source
                   media="(max-width: 900px)"
                   srcset={heroImgTablet.sourceUrl}
-                  class="w-[100%]"
                 />
               )}
               <img
                 src={sourceUrl}
+                style={{
+                  objectPosition: `${horizontalPositionDesktopHero}%`,
+                }}
                 class="
                 w-[100%]
           h-[450px]
