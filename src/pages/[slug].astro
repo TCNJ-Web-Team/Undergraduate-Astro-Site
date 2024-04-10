@@ -18,6 +18,7 @@ import AnimatedTitle from "../components/program-page/AnimatedTitle";
 import AnimatedHero from "../components/program-page/AnimatedHero";
 import AnimatedBodyCopy from "../components/program-page/AnimatedBodyCopy";
 import AnimatedProgramAtAGlance from "../components/program-page/AnimatedProgramAtAGlance";
+import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -416,8 +417,10 @@ const { sourceUrl } = heroImgDesktop ?? {
       </div>
     </div>
     <div
+    style="overflow-y: visible!important;overflow-x: hidden;"
       id="programs-of-study-container"
-      class="px-[35px] w-auto sm:bg-tcnjyellow"
+      class="px-[35px] w-auto sm:bg-tcnjyellow  
+     "
     >
       <div
         class="m-auto
@@ -425,32 +428,36 @@ const { sourceUrl } = heroImgDesktop ?? {
       relative
       pb-[75px]
       sm:pl-[47px]
-      sm:pr-[47px]"
+      sm:pr-[47px]
+      overflow-y-visible"
       >
         {
           programOfStudyRight && (
-            <img
-              src={programOfStudyRight}
-              alt=""
-              style={{
-                objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
-              }}
-              id="prog-study-img"
-              class="relative
-          top-[-50px]
-          object-cover
-          object-left
-          w-[100%]
-          h-[400px]
-          max-w-none
-          sm:h-[550px]
-          sm:top-[-50px]
+          <AnimatedRightImage programOfStudyRight={programOfStudyRight}
+rightImageHorizontalPosition={rightImageHorizontalPosition} 
+rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
+          //   <img
+          //     src={programOfStudyRight}
+          //     alt=""
+          //     style={{
+          //       objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
+          //     }}
+          //     id="prog-study-img"
+          //     class="relative
+          // top-[-50px]
+          // object-cover
+          // object-left
+          // w-[100%]
+          // h-[400px]
+          // max-w-none
+          // sm:h-[550px]
+          // sm:top-[-50px]
           
       
-          md:right-[-35px]
-          md:h-[650px]
-          md:absolute"
-            />
+          // md:right-[-35px]
+          // md:h-[650px]
+          // md:absolute"
+          //   />
           )
         }
         <div

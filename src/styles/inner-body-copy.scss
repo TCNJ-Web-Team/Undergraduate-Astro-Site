@@ -19,17 +19,19 @@ $sm: 550px;
     padding-left: 50px;
   }
 }
-#prog-study-img {
+#prog-study-img,
+#prog-study-bg {
   width: calc(100% + 35px);
 
   @media screen and (min-width: $lg) {
-    width: 54%;
+    width: 57.5%;
+    max-width: 1335px;
   }
   @media screen and (min-width: 1050px) and (max-width: $lg) {
-    width: 54%;
+    width: 60%;
   }
   @media screen and (min-width: $md) and (max-width: 1050px) {
-    width: 46%;
+    width: 60%;
     // width: 46%;
   }
   @media screen and (min-width: $sm) and (max-width: $md) {
