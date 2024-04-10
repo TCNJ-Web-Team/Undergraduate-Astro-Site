@@ -37,9 +37,9 @@ function AnimatedHero({
           initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{
-            delay: 0.15,
+            delay: 0.05,
             ease: "easeInOut",
-            duration: 0.5,
+            duration: 0.45,
             // type: "spring",
             // stiffness: 50,
           }}

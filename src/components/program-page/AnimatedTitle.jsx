@@ -16,9 +16,9 @@ function AnimatedTitle({ title }) {
       initial={{ opacity: 0, y: -5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        delay: 0.05,
+        delay: 0.025,
         ease: "easeOut",
-        duration: 0.35,
+        duration: 0.45,
         // type: "spring",
         // stiffness: 50,
       }}
