@@ -1,6 +1,10 @@
+# Footer
+
+- fix mobile version
+
 # program redirects
 
-- need to have card visable on program list but redirect to a seperate url, not [slug]
+- x need to have card visable on program list but redirect to a seperate url, not [slug]
 
 Plan for hosting Undergradaute Program Explorer?
 
@@ -14,10 +18,10 @@ Plan for hosting Undergradaute Program Explorer?
   - x desk
   - x tab
   - x mobile
-- Program at a glace
+- x Program at a glace
 
-  - add fade in animation
-  - hover states for buttons
+  - x add fade in animation
+  - x hover states for buttons
 
 - x drop downs
   - x add list styles

@@ -43,6 +43,8 @@ function AnimatedHero({
             // type: "spring",
             // stiffness: 50,
           }}
+          whileInView="animate"
+          viewport={{ once: true }}
         />
       </picture>
       <div

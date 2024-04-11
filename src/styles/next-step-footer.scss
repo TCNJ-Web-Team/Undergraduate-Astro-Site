@@ -27,7 +27,7 @@ $sm: 550px;
     font-size: 70px;
     line-height: 80px;
     text-align: center;
-    color: #464e7e;
+    color: $tcnj-blue;
     margin: 50px 0;
     @media screen and (max-width: $sm) {
       font-size: 50px;
@@ -76,7 +76,7 @@ $sm: 550px;
       text-transform: uppercase;
       transition: all 0.25s;
       &:hover {
-        background: #474f7d;
+        background: $tcnj-blue;
         color: #fff;
       }
     }

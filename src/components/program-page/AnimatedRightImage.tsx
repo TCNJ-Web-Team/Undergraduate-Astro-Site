@@ -1,0 +1,75 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+interface AnimatedRightImageProps {
+  programOfStudyRight: string;
+  rightImageHorizontalPosition: number;
+  rightImageVerticalPosition: number;
+}
+
+const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
+  programOfStudyRight,
+  rightImageHorizontalPosition,
+  rightImageVerticalPosition,
+}) => {
+  const fadeInAnimationVariant = {
+    hidden: { opacity: 0, x: 25 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.25,
+        ease: "easeOut",
+        duration: 0.75,
+      },
+    },
+  };
+
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
+    threshold: 0.5, // 50% of the element is in view
+  });
+
+  return (
+    <div className="relative overflow-y-visible">
+      {programOfStudyRight && (
+        <motion.img
+          ref={ref}
+          src={programOfStudyRight}
+          alt=""
+          style={{
+            objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
+          }}
+          id="prog-study-img"
+          className="relative z-30 
+     top-[-50px]
+          object-cover
+          object-left
+          w-[100%]
+          h-[400px]
+          max-w-none
+          sm:h-[550px]
+          sm:top-[-50px]
+          
+      
+          md:right-[-82px]
+          md:h-[650px]
+          md:absolute"
+          variants={fadeInAnimationVariant}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+        />
+      )}
+      <div
+        id="prog-study-bg"
+        className="absolute 
+                bg-lightgrey
+                top-[-50px] object-cover object-left w-[100%] h-[400px] max-w-none sm:h-[550px] sm:top-[-50px] md:right-[-82px] md:h-[650px] md:absolute
+          "
+      />
+    </div>
+  );
+};
+
+export default AnimatedRightImage;

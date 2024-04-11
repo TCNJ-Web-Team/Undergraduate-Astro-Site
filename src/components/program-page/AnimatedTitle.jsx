@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 function AnimatedTitle({ title }) {
   return (
     <motion.h1
-      class="font-chunkfive
+      className="font-chunkfive
           text-tcnjblue
           text-[45px]
           leading-[50px]

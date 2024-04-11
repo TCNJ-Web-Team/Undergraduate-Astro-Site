@@ -16,6 +16,9 @@ import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
 import AnimatedTitle from "../components/program-page/AnimatedTitle";
 import AnimatedHero from "../components/program-page/AnimatedHero";
+import AnimatedBodyCopy from "../components/program-page/AnimatedBodyCopy";
+import AnimatedProgramAtAGlance from "../components/program-page/AnimatedProgramAtAGlance";
+import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -232,7 +235,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 ---
 
 <Layout title={title}>
-  <main class="font-bitter text-darkgrey">
+  <main class="font-bitter text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div
         class="pl-[35px]
@@ -320,7 +323,6 @@ const { sourceUrl } = heroImgDesktop ?? {
                 w-[100%]
           h-[450px]
           sm:h-[600px]
-    
           left-[35px]
           
           lg:left-[100px]
@@ -409,86 +411,15 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pr-[35px]"
     >
       <div class="max-w-[70.5rem] m-auto">
-        <div
-          id="program-at-a-glance"
-          class="text-left
-        pb-[150px]
-        pt-[100px]
-        sm:pb-[200px]
-        md:pb-[200px]
-        md:pt-[200px]"
-        >
-          {
-            programAtAGlance && (
-              <>
-                <ProgramCareersHeading heading="Program at a Glance" />
-                <ProgramGlanceCopy
-                  id="program-glance"
-                  copy={programAtAGlance}
-                />
-              </>
-            )
-          }
-          <!-- <div
-            class="text-[20px]
-          leading-[35px]
-          text-center
-          sm:text-left
-          md:text-[1.75rem]"
-            set:html={programAtAGlance}
-          /> -->
-          <div
-            class="flex
-            flex-col
-            gap-[20px]
-          sm:flex-row
-            sm:mt-[75px]
-          sm:gap-[28px]
-          md:gap-5
-          md:flex-row
-          mt-[50px]"
-          >
-            <a
-              href=""
-              class="border-2
-              border-tcnjblue
-              p-4
-              pt-[40px]
-              pb-[40px]
-              sm:w-[100%]
-              
-              text-center
-              font-opensans
-              uppercase text-tcnjblue
-              font-semibold
-              text-base
-              md:max-w-[300px]"
-              >Apply</a
-            >
-            <a
-              href=""
-              class="border-2
-              border-tcnjblue
-              p-4
-              pt-[40px]
-              pb-[40px]
-              sm:w-[100%]
-              
-              text-center
-              font-opensans
-              uppercase text-tcnjblue
-              font-semibold
-              text-base
-              md:max-w-[300px]"
-              >Request Info</a
-            >
-          </div>
-        </div>
+       
+            <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} client:load>
+
       </div>
     </div>
     <div
       id="programs-of-study-container"
-      class="px-[35px] w-auto sm:bg-tcnjyellow"
+      class="px-[35px] w-auto sm:bg-tcnjyellow  
+     "
     >
       <div
         class="m-auto
@@ -496,32 +427,36 @@ const { sourceUrl } = heroImgDesktop ?? {
       relative
       pb-[75px]
       sm:pl-[47px]
-      sm:pr-[47px]"
+      sm:pr-[47px]
+      "
       >
         {
           programOfStudyRight && (
-            <img
-              src={programOfStudyRight}
-              alt=""
-              style={{
-                objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
-              }}
-              id="prog-study-img"
-              class="relative
-          top-[-50px]
-          object-cover
-          object-left
-          w-[100%]
-          h-[400px]
-          max-w-none
-          sm:h-[550px]
-          sm:top-[-50px]
+          <AnimatedRightImage programOfStudyRight={programOfStudyRight}
+rightImageHorizontalPosition={rightImageHorizontalPosition} 
+rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
+          //   <img
+          //     src={programOfStudyRight}
+          //     alt=""
+          //     style={{
+          //       objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
+          //     }}
+          //     id="prog-study-img"
+          //     class="relative
+          // top-[-50px]
+          // object-cover
+          // object-left
+          // w-[100%]
+          // h-[400px]
+          // max-w-none
+          // sm:h-[550px]
+          // sm:top-[-50px]
           
       
-          md:right-[-35px]
-          md:h-[650px]
-          md:absolute"
-            />
+          // md:right-[-35px]
+          // md:h-[650px]
+          // md:absolute"
+          //   />
           )
         }
         <div
@@ -549,12 +484,18 @@ const { sourceUrl } = heroImgDesktop ?? {
       sm:pt-[100px]
       md:pt-[200px]"
       >
-        <BodyCopy
+        <!-- <BodyCopy
           heading="Careers"
           left={careersLeft}
           right={careersRight}
           body={careersBody}
-        />
+        /> -->
+        <AnimatedBodyCopy
+          heading="Careers"
+          left={careersLeft}
+          right={careersRight}
+          body={careersBody}
+          client:load/>
       </div>
     </div>
     <div
