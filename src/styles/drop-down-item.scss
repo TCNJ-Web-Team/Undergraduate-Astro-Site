@@ -29,6 +29,9 @@ $sm: 550px;
   position: relative;
   // display: flex;
   transition: all 0.3s;
+  @media screen and (min-width: $sm) and (max-width: 750px) {
+    // font-size: 15px;
+  }
   &::after {
     content: ""; // This is necessary for pseudo-elements
     position: absolute;
@@ -77,6 +80,9 @@ $sm: 550px;
       -ms-user-select: none;
       user-select: none;
       max-width: 215px;
+      @media screen and (min-width: $sm) and (max-width: 750px) {
+        max-width: 70%;
+      }
       width: 100%;
       .close-button {
         display: none;
