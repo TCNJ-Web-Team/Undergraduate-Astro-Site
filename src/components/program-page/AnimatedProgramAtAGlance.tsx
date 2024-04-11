@@ -1,5 +1,6 @@
 import React from "react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariant } from "../../animations/fadeInVariant";
 
 interface AnimatedProgramProps {
   programAtAGlance: string;
@@ -8,24 +9,24 @@ interface AnimatedProgramProps {
 const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
   programAtAGlance,
 }) => {
-  const fadeInAnimationVariant = {
-    initial: {
-      opacity: 0,
-      y: 40,
-    },
-    animate: (delayNumber: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        // Use either when or delay here.
-        // when: "afterChildren",
-        delay: delayNumber * 0.35,
-        ease: "easeOut",
-        duration: 0.45,
-        // staggerChildren: 0.5,
-      },
-    }),
-  };
+  // const fadeInAnimationVariant = {
+  //   initial: {
+  //     opacity: 0,
+  //     y: 40,
+  //   },
+  //   animate: (delayNumber: number) => ({
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       // Use either when or delay here.
+  //       // when: "afterChildren",
+  //       delay: delayNumber * 0.35,
+  //       ease: "easeOut",
+  //       duration: 0.45,
+  //       // staggerChildren: 0.5,
+  //     },
+  //   }),
+  // };
   return (
     <>
       <div

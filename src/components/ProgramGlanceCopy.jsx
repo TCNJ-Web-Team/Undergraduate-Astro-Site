@@ -1,6 +1,9 @@
+import { motion } from "framer-motion";
+import { fadeInAnimationVariant } from "../animations/fadeInVariant";
+
 export default function ProgramGlanceCopy({ copy, id }) {
   return (
-    <div
+    <motion.div
       id={id}
       className={`
       text-[20px]
@@ -16,6 +19,8 @@ export default function ProgramGlanceCopy({ copy, id }) {
 
           `}
       dangerouslySetInnerHTML={{ __html: copy }}
+      variants={fadeInAnimationVariant}
+      custom={2}
     />
   );
 }
