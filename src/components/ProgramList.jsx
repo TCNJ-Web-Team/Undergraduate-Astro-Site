@@ -234,6 +234,7 @@ export default function ProgramList({
             title="Area of Study"
             isOpen={openAccordion === 0}
             onToggle={() => handleAccordionToggle(0)}
+            index={0}
           />
 
           <DropDownAccordion
@@ -245,6 +246,7 @@ export default function ProgramList({
             title="Degree"
             isOpen={openAccordion === 1}
             onToggle={() => handleAccordionToggle(1)}
+            index={1}
           />
           <DropDownAccordion
             checkboxContent={renderCheckboxes(
@@ -255,6 +257,7 @@ export default function ProgramList({
             title="Options"
             isOpen={openAccordion === 2}
             onToggle={() => handleAccordionToggle(2)}
+            index={2}
           />
         </div>
         <hr />
