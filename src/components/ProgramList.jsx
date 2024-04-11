@@ -218,7 +218,8 @@ export default function ProgramList({
             type="text"
             id="text-filter"
             className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
-        border-[#bcbcbc] placeholder-[#000000]"
+        border-[#bcbcbc] placeholder-[#000000]
+        lg:px-[50px]"
             onChange={handleFilterChange}
             placeholder="Search by keyword"
           />
