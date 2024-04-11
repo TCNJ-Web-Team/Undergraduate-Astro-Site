@@ -29,6 +29,8 @@ export default function ProgramList({
   // console.log(combinedData);
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
+  const [animatedCards, setAnimatedCards] = useState(false);
+  // console.log(animatedCards);
   const [filteredData, setFilteredData] = useState(dataNodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
@@ -42,6 +44,7 @@ export default function ProgramList({
 
   const handleAccordionToggle = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
+    setAnimatedCards(true);
   };
 
   const handleClickOutside = (event) => {
@@ -159,6 +162,7 @@ export default function ProgramList({
 
   const handleFilterChange = (event) => {
     setSearchText(event.target.value);
+    setAnimatedCards(true);
   };
   const clearSearchText = () => {
     setSearchText("");
@@ -380,7 +384,7 @@ export default function ProgramList({
           </p>
         </div>
       )}
-      <div
+      <motion.div
         id="filtered-programs-wrapper"
         className={`${
           programView === "list"
@@ -393,6 +397,15 @@ export default function ProgramList({
         lg:px-0
         md:pb-[100px]
         `}
+        initial={!animatedCards ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.15,
+          ease: "easeOut",
+          duration: 0.3,
+          // type: "spring",
+          // stiffness: 50,
+        }}
       >
         {filteredData &&
           filteredData.map((program, index) => (
@@ -401,9 +414,10 @@ export default function ProgramList({
               key={program.program.slug + index}
               listType={programView}
               index={index}
+              animationState={animatedCards}
             />
           ))}
-      </div>
+      </motion.div>
       {/* Display filtered data */}
     </div>
   );

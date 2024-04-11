@@ -3,7 +3,7 @@
 </style></head><body data-astro-cid-sckkx6r4><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(c,o,i)=>o in c?b(c,o,{enumerable:!0,configurable:!0,writable:!0,value:i}):c[o]=i;var l=(c,o,i)=>(f(c,typeof o!="symbol"?o+"":o,i),i);var p;{let c={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},o=t=>{let[e,r]=t;return e in c?c[e](r):void 0},i=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,o(r)]));customElements.get("astro-island")||customElements.define("astro-island",(p=class extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var d;if(!this.hydrator||!this.isConnected)return;let e=(d=this.parentElement)==null?void 0:d.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),a={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let s=n.closest(this.tagName);s!=null&&s.isSameNode(this)&&(a[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let s=n.closest(this.tagName);s!=null&&s.isSameNode(this)&&(a[n.getAttribute("name")||"default"]=n.innerHTML)}let u;try{u=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let s=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(s+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,u,a,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),r.disconnect(),this.childrenConnectedCallback()},r=new MutationObserver(()=>{var a;((a=this.lastChild)==null?void 0:a.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});r.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let a=this.getAttribute("renderer-url"),[h,{default:u}]=await Promise.all([import(this.getAttribute("component-url")),a?import(a):()=>()=>{}]),d=this.getAttribute("component-export")||"default";if(!d.includes("."))this.Component=h[d];else{this.Component=h;for(let n of d.split("."))this.Component=this.Component[n]}return this.hydrator=u,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},l(p,"observedAttributes",["props"]),p))}})();</script><astro-island uid="Z1so9H" prefix="r4" component-url="/_astro/GlobalHeader.09be550c.js" component-export="default" renderer-url="/_astro/client.a5ffbec0.js" props="{&quot;data-astro-cid-sckkx6r4&quot;:[0,true]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;GlobalHeader&quot;,&quot;value&quot;:true}" await-children=""><div class="global-nav"><div id="slider-container" class=""><img id="close-button" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg"/><div id="nav-container"><div id="slider-nav"><div class="tcnj-global-search-panel" style="text-align:center"><form id="cse-search-box" action="//tcnj.edu/search/"><label class="visually-hidden" for="g-search">Search</label><input type="hidden" name="cx" value="016215932862171572185:xlzcmqlxfr0"/><input type="hidden" name="cof" value="FORID:10"/><input type="hidden" name="ie" value="UTF-8"/><input type="hidden" name="hq" value="-inurl:https"/><input id="g-search" type="text" name="q" class="search-icon" placeholder=""/><input id="SearchButton" type="submit" name="sa" value="submit"/></form></div><div class="global-nav-panel"><a href="https://www.tcnj.edu">TCNJ Home</a><a href="https://tcnj.edu/about/">About</a><a href="https://academics.tcnj.edu">Academics</a><a href="https://admissions.tcnj.edu/">Admissions</a><a href="https://www.tcnjathletics.com/">Athletics</a><a href="https://campuslife.tcnj.edu/">Campus Life</a><a href="https://library.tcnj.edu/">Library</a></div><div class="flex-menu"><a href="https://tcnj.edu/a-z/">A-Z</a><a href="https://www.tcnj.edu/directories">Directory</a><a href="https://tcnj.edu/about/campus-info/campus-map/">Map</a><a href="https://tcnj.edu/administration/">Offices</a></div><div id="social-icons" class="flex-menu"><a href="http://www.facebook.com/tcnjlions"><img width="24" height="24" alt="facebook icon" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/facebook-4-32.png"/></a><a href="http://twitter.com/tcnj"><img width="24" height="24" alt="twitter icon" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/twitter-4-32.png"/></a><a href="https://www.linkedin.com/school/the-college-of-new-jersey/"><img width="24" height="24" alt="linkedin icon" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/linkedin-4-32.png"/></a><a href="http://instagram.com/tcnj_official"><img width="24" height="24" alt="instagram icon" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/instagram-4-32.png"/></a><a href="http://www.youtube.com/tcnjvideo"><img width="24" height="24" alt="youtube icon" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/youtube-32-rev.png"/></a></div></div></div></div><div class="inner"><a style="display:flex" href="https://tcnj.edu/"><img id="tcnj-logo" src="https://graduate.tcnj.edu/explore-programs/_nuxt/img/tcnj-logo.3f4bf41.svg" alt="TCNJ"/></a><div class="nav-menu"><a href="https://admissions.tcnj.edu/apply/">Apply</a><a href="https://admissions.tcnj.edu/visit/">Visit</a><a href="https://give.tcnj.edu/">Give</a><span class="desktop-global-nav-item">|</span><a class="desktop-global-nav-item" href="https://alumni.tcnj.edu/">Alumni</a><a class="desktop-global-nav-item" href="https://parents.tcnj.edu/">Parents</a><a class="desktop-global-nav-item" href="https://tcnj.edu/administration/">Offices</a><a class="desktop-global-nav-item" href="https://today.tcnj.edu/">TCNJ Today</a><img id="open-sidebar-button" src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/menu-icon.svg" alt="Global Nav Menu"/></div></div></div><div id="site-header"><div id="site-title" class="inner"><a id="parent-site"></a></div><div id="site-nav"><div class="inner"></div></div></div><!--astro:end--></astro-island><header><div class="pt-[19px] pb-[19px] pl-[35px] pr-[35px]
       leading-[40px] md:max-w-[1128px] m-auto text-center
       lg:pl-0"><p class="font-domine text-[35px] content-center text-[#000]
-        sm:text-left ">Academics</p></div><div class="bg-[#F1F1F1] pt-[23px] pb-[23px] pl-[35px] pr-[35px]" id="menu"><p class="max-w-[1128px] mx-auto font-opensans text-[14px] leading-[34px] text-left uppercase">Menu</p></div><astro-island uid="2gQjec" prefix="r1" component-url="/_astro/IntroSection.99be28a7.js" component-export="default" renderer-url="/_astro/client.a5ffbec0.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;IntroSection&quot;,&quot;value&quot;:true}" await-children=""><div id="intro" class="w-[100%] h-[562px] relative overflow-hidden border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[485px]"><div class="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[67px] md:text-left lg:px-0"><div id="breadcrumbs" class="font-bitter text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"><a>Home</a> / Explore Undergraduate Programs</div><h1 class="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[55px] sm:leading-[55px] md:text-[60px] md:leading-[65px] md:pt-[85px]" style="opacity:0;transform:translateY(-5px) translateZ(0)">Explore Undergraduate Programs</h1><p class="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal" style="opacity:0;transform:translateY(-5px) translateZ(0)">Search by keyword or browse programs by selecting an area of study, degree type, and/ or format. TCNJ students also have an option to pursue accelerated programs and dual degrees.</p></div><picture id="hero-image" class="absolute top-0 left-0 z-0 w-[100%]"><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-desktop.jpg" type="image/jpeg" media="(min-width: 901px)"/><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-tablet.jpg" type="image/jpeg" media="(min-width: 551px)"/><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg" type="image/webp"/><img src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg" alt="TCNJ scenery" class="w-[100%] h-[562px] sm:h-[700px] md:h-[450px] object-cover"/></picture><div class="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.25]"></div></div><!--astro:end--></astro-island><!-- <Intro /> --></header><main><div class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"><astro-island uid="15u42S" prefix="r2" component-url="/_astro/ProgramList.935653ee.js" component-export="default" renderer-url="/_astro/client.a5ffbec0.js" props="{&quot;data&quot;:[0,{&quot;programs&quot;:[0,{&quot;nodes&quot;:[1,[[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;]]],&quot;slug&quot;:[0,&quot;public-health&quot;],&quot;school&quot;:[1,[[0,&quot;Nursing and Health Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Health&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;],[0,&quot;Master of Public Policy&quot;]]],&quot;slug&quot;:[0,&quot;public-policy&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Policy&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;],[0,&quot;Master of Arts in Teaching&quot;]]],&quot;slug&quot;:[0,&quot;urban-secondary-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Urban Secondary Education&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;world-languages-linguistics&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Certificate&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;World Languages and Linguistics&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;],[0,&quot;Master of Arts in Teaching&quot;]]],&quot;slug&quot;:[0,&quot;elementary-education-dhh&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Elementary Education of the Deaf and Hard of Hearing&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science in Business Administration&quot;]]],&quot;slug&quot;:[0,&quot;finance-business-administration&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Finance – Business Administration&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;art-education&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Art Education&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science in Biomedical Engineering&quot;]]],&quot;slug&quot;:[0,&quot;biomedical-engineering&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Biomedical Engineering&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;psychology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Psychology&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;],[0,&quot;Bachelor of Science&quot;]]],&quot;slug&quot;:[0,&quot;biology&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Biology&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;art-history&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Art History and Visual Culture&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;anthropology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Anthropology&quot;]}]]]}]}],&quot;redirectData&quot;:[0,{&quot;programRedirects&quot;:[0,{&quot;nodes&quot;:[1,[[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://education.tcnj.edu/academics/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://academics.tcnj.edu/undeclared-general/&quot;],&quot;slug&quot;:[0,&quot;undeclared&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;],[0,&quot;Business&quot;],[0,&quot;Education&quot;],[0,&quot;Engineering&quot;],[0,&quot;Humanities and Social Sciences&quot;],[0,&quot;Nursing and Health Sciences&quot;],[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – General Major&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://artscomm.tcnj.edu/academics/undeclared/ &quot;],&quot;slug&quot;:[0,&quot;undeclared-artscomm&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of the Arts and Communication&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://mathstat.tcnj.edu/school-information-and-academics/minors/actuarial-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;actuarial-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Actuarial Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/african-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;african-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;African Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://art.tcnj.edu/academics/minors/arts-administration-and-cultural-entrepreneurship-minor/&quot;],&quot;slug&quot;:[0,&quot;arts-administration-cultural-entrepreneurship&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Arts Administration and Cultural Entrepreneurship&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://journalism.tcnj.edu/minors/&quot;],&quot;slug&quot;:[0,&quot;broadcast-multimedia-journalism&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Broadcast and Multimedia Journalism&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/marketing-and-idb/interdisciplinary-business-overview/minor-in-business-and-society/&quot;],&quot;slug&quot;:[0,&quot;business-society&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Business and Society&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/central-eurasian-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;central-eurasian-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Central Eurasian Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://classicalstudies.tcnj.edu/programs/minor/&quot;],&quot;slug&quot;:[0,&quot;classical-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Classical Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://english.tcnj.edu/english-programs/offered-minors/comparative-literature-minor/&quot;],&quot;slug&quot;:[0,&quot;comparative-literature&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Comparative Literature&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://biology.tcnj.edu/academics/comp-math-bio-minor/&quot;],&quot;slug&quot;:[0,&quot;computational-mathematical-biology&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Computational and Mathematical Biology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://computerscience.tcnj.edu/requirements-for-computer-science-education-minor/ &quot;],&quot;slug&quot;:[0,&quot;computer-science-education&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Computer Science Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://specialeducation.tcnj.edu/programs/deaf-studies-minor-sppm/&quot;],&quot;slug&quot;:[0,&quot;deaf-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Deaf Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://envsus.tcnj.edu/&quot;],&quot;slug&quot;:[0,&quot;environmental-sustainability-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Environmental Sustainability Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/european-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;european-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;European Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://khs.tcnj.edu/health-and-wellness-minor/&quot;],&quot;slug&quot;:[0,&quot;health-wellness&quot;],&quot;school&quot;:[1,[[0,&quot;Nursing and Health Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Health and Wellness&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://hss.tcnj.edu/interdisciplinary-programs/hgs/&quot;],&quot;slug&quot;:[0,&quot;holocaust-genocide-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Holocaust and Genocide Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-in-human-resources-management/&quot;],&quot;slug&quot;:[0,&quot;human-resource-management&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Human Resource Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/academics/requirements-for-the-minor-in-information-systems-technology/ &quot;],&quot;slug&quot;:[0,&quot;information-systems-technology&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Information Systems and Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/economics/requirements-for-the-minor-in-international-business/&quot;],&quot;slug&quot;:[0,&quot;international-business&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;International Business&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/latin-american-and-caribbean-studies-minor/ &quot;],&quot;slug&quot;:[0,&quot;latin-american-caribbean-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Latin American and Caribbean Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://prelaw.tcnj.edu/politics-law-and-philosophy-minor/ &quot;],&quot;slug&quot;:[0,&quot;law-politics-philosophy&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Law, Politics, and Philosophy&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-inleadership/ &quot;],&quot;slug&quot;:[0,&quot;leadership&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Leadership&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://english.tcnj.edu/english-programs/related-minors/linguistics-minor/ &quot;],&quot;slug&quot;:[0,&quot;linguistics&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Linguistics&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/middle-east-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;middle-eastern-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Middle Eastern Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://dct.tcnj.edu/music-technology-minor/&quot;],&quot;slug&quot;:[0,&quot;music-technology&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Music Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/professional-selling-minor/&quot;],&quot;slug&quot;:[0,&quot;professional-selling&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Professional Selling&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://polisci.tcnj.edu/public-policy-analysis-and-management/&quot;],&quot;slug&quot;:[0,&quot;public-policy-analysis-management&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Policy Analysis and Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://criminology.tcnj.edu/quantitative-criminology-minor/&quot;],&quot;slug&quot;:[0,&quot;quantitative-criminology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Quantitative Criminology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://philos.tcnj.edu/programs/religion-minor/&quot;],&quot;slug&quot;:[0,&quot;religion&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Religion&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://wgs.tcnj.edu/curriculum/minors/&quot;],&quot;slug&quot;:[0,&quot;sexuality-queer-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Sexuality and Queer Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://african-americanstudies.tcnj.edu/academic-programs/social-justice-minor/&quot;],&quot;slug&quot;:[0,&quot;social-justice&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Social Justice&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://mathstat.tcnj.edu/school-information-and-academics/minors/statistics-minor/&quot;],&quot;slug&quot;:[0,&quot;statistics&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Statistics&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/resources/business-degree-programs/requirements-for-the-minor-in-supply-chain-management/&quot;],&quot;slug&quot;:[0,&quot;supply-chain-management&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Supply Chain Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://istem.tcnj.edu/about/academic-programs/minor/&quot;],&quot;slug&quot;:[0,&quot;technology&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://music.tcnj.edu/non-majors/&quot;],&quot;slug&quot;:[0,&quot;theater&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Theater&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/undeclared/ &quot;],&quot;slug&quot;:[0,&quot;undeclared-business&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Business&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://engineering.tcnj.edu/academic-programs/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-engineering&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Engineering&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://hss.tcnj.edu/interdisciplinary-programs/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-hss&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Humanities and Social Sciences&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://history.tcnj.edu/academic-programs/us-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;us-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;US Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/finance/requirements-for-the-minor-in-wealth-management-financial-planning/&quot;],&quot;slug&quot;:[0,&quot;wealth-management-and-financial-planning&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Wealth Management and Financial Planning&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://creativewriting.tcnj.edu/&quot;],&quot;slug&quot;:[0,&quot;creative-writing&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Creative Writing&quot;]}]]]}]}],&quot;areaOfStudy&quot;:[1,[[0,&quot;Arts and Communication&quot;],[0,&quot;Business&quot;],[0,&quot;Education&quot;],[0,&quot;Engineering&quot;],[0,&quot;Humanities and Social Sciences&quot;],[0,&quot;Nursing and Health Sciences&quot;],[0,&quot;Science&quot;]]],&quot;programOptionsClean&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Certificate&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;],[0,&quot;Undeclared Option&quot;]]]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;ProgramList&quot;,&quot;value&quot;:true}" await-children=""><div class="program-wrapper inner-width"><div id="input-and-filter-wrapper" class="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
+        sm:text-left ">Academics</p></div><div class="bg-[#F1F1F1] pt-[23px] pb-[23px] pl-[35px] pr-[35px]" id="menu"><p class="max-w-[1128px] mx-auto font-opensans text-[14px] leading-[34px] text-left uppercase">Menu</p></div><astro-island uid="2gQjec" prefix="r1" component-url="/_astro/IntroSection.99be28a7.js" component-export="default" renderer-url="/_astro/client.a5ffbec0.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;IntroSection&quot;,&quot;value&quot;:true}" await-children=""><div id="intro" class="w-[100%] h-[562px] relative overflow-hidden border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[485px]"><div class="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[67px] md:text-left lg:px-0"><div id="breadcrumbs" class="font-bitter text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"><a>Home</a> / Explore Undergraduate Programs</div><h1 class="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[55px] sm:leading-[55px] md:text-[60px] md:leading-[65px] md:pt-[85px]" style="opacity:0;transform:translateY(-5px) translateZ(0)">Explore Undergraduate Programs</h1><p class="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal" style="opacity:0;transform:translateY(-5px) translateZ(0)">Search by keyword or browse programs by selecting an area of study, degree type, and/ or format. TCNJ students also have an option to pursue accelerated programs and dual degrees.</p></div><picture id="hero-image" class="absolute top-0 left-0 z-0 w-[100%]"><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-desktop.jpg" type="image/jpeg" media="(min-width: 901px)"/><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-tablet.jpg" type="image/jpeg" media="(min-width: 551px)"/><source srcSet="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg" type="image/webp"/><img src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg" alt="TCNJ scenery" class="w-[100%] h-[562px] sm:h-[700px] md:h-[450px] object-cover"/></picture><div class="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.25]"></div></div><!--astro:end--></astro-island><!-- <Intro /> --></header><main><div class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"><astro-island uid="Z1Hspma" prefix="r2" component-url="/_astro/ProgramList.473bd29f.js" component-export="default" renderer-url="/_astro/client.a5ffbec0.js" props="{&quot;data&quot;:[0,{&quot;programs&quot;:[0,{&quot;nodes&quot;:[1,[[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;]]],&quot;slug&quot;:[0,&quot;public-health&quot;],&quot;school&quot;:[1,[[0,&quot;Nursing and Health Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Health&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;],[0,&quot;Master of Public Policy&quot;]]],&quot;slug&quot;:[0,&quot;public-policy&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Policy&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;],[0,&quot;Master of Arts in Teaching&quot;]]],&quot;slug&quot;:[0,&quot;urban-secondary-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Urban Secondary Education&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;world-languages-linguistics&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Certificate&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;World Languages and Linguistics&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science&quot;],[0,&quot;Master of Arts in Teaching&quot;]]],&quot;slug&quot;:[0,&quot;elementary-education-dhh&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Elementary Education of the Deaf and Hard of Hearing&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science in Business Administration&quot;]]],&quot;slug&quot;:[0,&quot;finance-business-administration&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Finance – Business Administration&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;art-education&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Art Education&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Science in Biomedical Engineering&quot;]]],&quot;slug&quot;:[0,&quot;biomedical-engineering&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Biomedical Engineering&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;psychology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Psychology&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;],[0,&quot;Bachelor of Science&quot;]]],&quot;slug&quot;:[0,&quot;biology&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;]]]}],&quot;title&quot;:[0,&quot;Biology&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;art-history&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Art History and Visual Culture&quot;]}],[0,{&quot;program&quot;:[0,{&quot;degreeType&quot;:[1,[[0,&quot;Bachelor of Arts&quot;]]],&quot;slug&quot;:[0,&quot;anthropology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Anthropology&quot;]}]]]}]}],&quot;redirectData&quot;:[0,{&quot;programRedirects&quot;:[0,{&quot;nodes&quot;:[1,[[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://education.tcnj.edu/academics/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://academics.tcnj.edu/undeclared-general/&quot;],&quot;slug&quot;:[0,&quot;undeclared&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;],[0,&quot;Business&quot;],[0,&quot;Education&quot;],[0,&quot;Engineering&quot;],[0,&quot;Humanities and Social Sciences&quot;],[0,&quot;Nursing and Health Sciences&quot;],[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – General Major&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://artscomm.tcnj.edu/academics/undeclared/ &quot;],&quot;slug&quot;:[0,&quot;undeclared-artscomm&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of the Arts and Communication&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://mathstat.tcnj.edu/school-information-and-academics/minors/actuarial-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;actuarial-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Actuarial Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/african-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;african-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;African Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://art.tcnj.edu/academics/minors/arts-administration-and-cultural-entrepreneurship-minor/&quot;],&quot;slug&quot;:[0,&quot;arts-administration-cultural-entrepreneurship&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Arts Administration and Cultural Entrepreneurship&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://journalism.tcnj.edu/minors/&quot;],&quot;slug&quot;:[0,&quot;broadcast-multimedia-journalism&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Broadcast and Multimedia Journalism&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/marketing-and-idb/interdisciplinary-business-overview/minor-in-business-and-society/&quot;],&quot;slug&quot;:[0,&quot;business-society&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Business and Society&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/central-eurasian-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;central-eurasian-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Central Eurasian Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://classicalstudies.tcnj.edu/programs/minor/&quot;],&quot;slug&quot;:[0,&quot;classical-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Classical Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://english.tcnj.edu/english-programs/offered-minors/comparative-literature-minor/&quot;],&quot;slug&quot;:[0,&quot;comparative-literature&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Comparative Literature&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://biology.tcnj.edu/academics/comp-math-bio-minor/&quot;],&quot;slug&quot;:[0,&quot;computational-mathematical-biology&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Computational and Mathematical Biology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://computerscience.tcnj.edu/requirements-for-computer-science-education-minor/ &quot;],&quot;slug&quot;:[0,&quot;computer-science-education&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Computer Science Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://specialeducation.tcnj.edu/programs/deaf-studies-minor-sppm/&quot;],&quot;slug&quot;:[0,&quot;deaf-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Deaf Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://envsus.tcnj.edu/&quot;],&quot;slug&quot;:[0,&quot;environmental-sustainability-education&quot;],&quot;school&quot;:[1,[[0,&quot;Education&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Environmental Sustainability Education&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/european-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;european-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;European Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://khs.tcnj.edu/health-and-wellness-minor/&quot;],&quot;slug&quot;:[0,&quot;health-wellness&quot;],&quot;school&quot;:[1,[[0,&quot;Nursing and Health Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Health and Wellness&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://hss.tcnj.edu/interdisciplinary-programs/hgs/&quot;],&quot;slug&quot;:[0,&quot;holocaust-genocide-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Holocaust and Genocide Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-in-human-resources-management/&quot;],&quot;slug&quot;:[0,&quot;human-resource-management&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Human Resource Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/academics/requirements-for-the-minor-in-information-systems-technology/ &quot;],&quot;slug&quot;:[0,&quot;information-systems-technology&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Information Systems and Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/economics/requirements-for-the-minor-in-international-business/&quot;],&quot;slug&quot;:[0,&quot;international-business&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;International Business&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/latin-american-and-caribbean-studies-minor/ &quot;],&quot;slug&quot;:[0,&quot;latin-american-caribbean-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Latin American and Caribbean Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://prelaw.tcnj.edu/politics-law-and-philosophy-minor/ &quot;],&quot;slug&quot;:[0,&quot;law-politics-philosophy&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Law, Politics, and Philosophy&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-inleadership/ &quot;],&quot;slug&quot;:[0,&quot;leadership&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Leadership&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://english.tcnj.edu/english-programs/related-minors/linguistics-minor/ &quot;],&quot;slug&quot;:[0,&quot;linguistics&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Linguistics&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://internationalstudies.tcnj.edu/minor/middle-east-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;middle-eastern-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Middle Eastern Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://dct.tcnj.edu/music-technology-minor/&quot;],&quot;slug&quot;:[0,&quot;music-technology&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Music Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/professional-selling-minor/&quot;],&quot;slug&quot;:[0,&quot;professional-selling&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Professional Selling&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://polisci.tcnj.edu/public-policy-analysis-and-management/&quot;],&quot;slug&quot;:[0,&quot;public-policy-analysis-management&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Public Policy Analysis and Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://criminology.tcnj.edu/quantitative-criminology-minor/&quot;],&quot;slug&quot;:[0,&quot;quantitative-criminology&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Quantitative Criminology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://philos.tcnj.edu/programs/religion-minor/&quot;],&quot;slug&quot;:[0,&quot;religion&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Religion&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://wgs.tcnj.edu/curriculum/minors/&quot;],&quot;slug&quot;:[0,&quot;sexuality-queer-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Sexuality and Queer Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://african-americanstudies.tcnj.edu/academic-programs/social-justice-minor/&quot;],&quot;slug&quot;:[0,&quot;social-justice&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Social Justice&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://mathstat.tcnj.edu/school-information-and-academics/minors/statistics-minor/&quot;],&quot;slug&quot;:[0,&quot;statistics&quot;],&quot;school&quot;:[1,[[0,&quot;Science&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Statistics&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/resources/business-degree-programs/requirements-for-the-minor-in-supply-chain-management/&quot;],&quot;slug&quot;:[0,&quot;supply-chain-management&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Supply Chain Management&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://istem.tcnj.edu/about/academic-programs/minor/&quot;],&quot;slug&quot;:[0,&quot;technology&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Technology&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://music.tcnj.edu/non-majors/&quot;],&quot;slug&quot;:[0,&quot;theater&quot;],&quot;school&quot;:[1,[[0,&quot;Arts and Communication&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Theater&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/undeclared/ &quot;],&quot;slug&quot;:[0,&quot;undeclared-business&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Business&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://engineering.tcnj.edu/academic-programs/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-engineering&quot;],&quot;school&quot;:[1,[[0,&quot;Engineering&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Engineering&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://hss.tcnj.edu/interdisciplinary-programs/undeclared/&quot;],&quot;slug&quot;:[0,&quot;undeclared-hss&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[0,null],&quot;additionalOptions&quot;:[1,[[0,&quot;Undeclared Option&quot;]]]}],&quot;title&quot;:[0,&quot;Undeclared – School of Humanities and Social Sciences&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://history.tcnj.edu/academic-programs/us-studies-minor/&quot;],&quot;slug&quot;:[0,&quot;us-studies&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;US Studies&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://business.tcnj.edu/departments-programs/finance/requirements-for-the-minor-in-wealth-management-financial-planning/&quot;],&quot;slug&quot;:[0,&quot;wealth-management-and-financial-planning&quot;],&quot;school&quot;:[1,[[0,&quot;Business&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Wealth Management and Financial Planning&quot;]}],[0,{&quot;redirectProgram&quot;:[0,{&quot;degreeType&quot;:[0,null],&quot;redirecturl&quot;:[0,&quot;https://creativewriting.tcnj.edu/&quot;],&quot;slug&quot;:[0,&quot;creative-writing&quot;],&quot;school&quot;:[1,[[0,&quot;Humanities and Social Sciences&quot;]]],&quot;programOptions&quot;:[1,[[0,&quot;Minor&quot;]]],&quot;additionalOptions&quot;:[0,null]}],&quot;title&quot;:[0,&quot;Creative Writing&quot;]}]]]}]}],&quot;areaOfStudy&quot;:[1,[[0,&quot;Arts and Communication&quot;],[0,&quot;Business&quot;],[0,&quot;Education&quot;],[0,&quot;Engineering&quot;],[0,&quot;Humanities and Social Sciences&quot;],[0,&quot;Nursing and Health Sciences&quot;],[0,&quot;Science&quot;]]],&quot;programOptionsClean&quot;:[1,[[0,&quot;Accelerated&quot;],[0,&quot;Certificate&quot;],[0,&quot;Dual Degree&quot;],[0,&quot;Major&quot;],[0,&quot;Minor&quot;],[0,&quot;Three-Year Bachelor&#39;s&quot;]]],&quot;additionalOptions&quot;:[1,[[0,&quot;Teacher Education&quot;],[0,&quot;Undeclared Option&quot;]]]}" ssr="" client="load" opts="{&quot;name&quot;:&quot;ProgramList&quot;,&quot;value&quot;:true}" await-children=""><div class="program-wrapper inner-width"><div id="input-and-filter-wrapper" class="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
         sm:pt-[50px]
         md:pt-[75px]
         md:bg-transparent
@@ -116,12 +116,12 @@ scale-[.975]
         pb-[50px]
         lg:px-0
         md:pb-[100px]
-        "><div class="program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white 
+        " style="opacity:0;transform:translateY(5px) translateZ(0)"><div class="program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white 
       pulse  
       " id="public-health"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./public-health" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./public-health" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -130,7 +130,7 @@ scale-[.975]
       " id="public-policy"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./public-policy" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./public-policy" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -139,7 +139,7 @@ scale-[.975]
       " id="urban-secondary-education"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./urban-secondary-education" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./urban-secondary-education" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -148,7 +148,7 @@ scale-[.975]
       " id="world-languages-linguistics"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./world-languages-linguistics" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./world-languages-linguistics" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -157,7 +157,7 @@ scale-[.975]
       " id="elementary-education-dhh"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./elementary-education-dhh" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./elementary-education-dhh" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -166,7 +166,7 @@ scale-[.975]
       " id="finance-business-administration"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./finance-business-administration" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./finance-business-administration" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -175,7 +175,7 @@ scale-[.975]
       " id="art-education"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./art-education" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./art-education" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -184,7 +184,7 @@ scale-[.975]
       " id="biomedical-engineering"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./biomedical-engineering" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./biomedical-engineering" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -193,7 +193,7 @@ scale-[.975]
       " id="psychology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./psychology" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./psychology" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -202,7 +202,7 @@ scale-[.975]
       " id="biology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./biology" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./biology" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -211,7 +211,7 @@ scale-[.975]
       " id="art-history"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./art-history" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./art-history" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -220,7 +220,7 @@ scale-[.975]
       " id="anthropology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="./anthropology" target="_self" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="./anthropology" target="_self" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -229,7 +229,7 @@ scale-[.975]
       " id="undeclared-education"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://education.tcnj.edu/academics/undeclared/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://education.tcnj.edu/academics/undeclared/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -238,7 +238,7 @@ scale-[.975]
       " id="undeclared"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://academics.tcnj.edu/undeclared-general/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://academics.tcnj.edu/undeclared-general/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -247,7 +247,7 @@ scale-[.975]
       " id="undeclared-artscomm"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://artscomm.tcnj.edu/academics/undeclared/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://artscomm.tcnj.edu/academics/undeclared/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -256,7 +256,7 @@ scale-[.975]
       " id="actuarial-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://mathstat.tcnj.edu/school-information-and-academics/minors/actuarial-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://mathstat.tcnj.edu/school-information-and-academics/minors/actuarial-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -265,7 +265,7 @@ scale-[.975]
       " id="african-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://internationalstudies.tcnj.edu/minor/african-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://internationalstudies.tcnj.edu/minor/african-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -274,7 +274,7 @@ scale-[.975]
       " id="arts-administration-cultural-entrepreneurship"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://art.tcnj.edu/academics/minors/arts-administration-and-cultural-entrepreneurship-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://art.tcnj.edu/academics/minors/arts-administration-and-cultural-entrepreneurship-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -283,7 +283,7 @@ scale-[.975]
       " id="broadcast-multimedia-journalism"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://journalism.tcnj.edu/minors/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://journalism.tcnj.edu/minors/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -292,7 +292,7 @@ scale-[.975]
       " id="business-society"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/marketing-and-idb/interdisciplinary-business-overview/minor-in-business-and-society/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/marketing-and-idb/interdisciplinary-business-overview/minor-in-business-and-society/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -301,7 +301,7 @@ scale-[.975]
       " id="central-eurasian-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://internationalstudies.tcnj.edu/minor/central-eurasian-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://internationalstudies.tcnj.edu/minor/central-eurasian-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -310,7 +310,7 @@ scale-[.975]
       " id="classical-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://classicalstudies.tcnj.edu/programs/minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://classicalstudies.tcnj.edu/programs/minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -319,7 +319,7 @@ scale-[.975]
       " id="comparative-literature"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://english.tcnj.edu/english-programs/offered-minors/comparative-literature-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://english.tcnj.edu/english-programs/offered-minors/comparative-literature-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -328,7 +328,7 @@ scale-[.975]
       " id="computational-mathematical-biology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://biology.tcnj.edu/academics/comp-math-bio-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://biology.tcnj.edu/academics/comp-math-bio-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -337,7 +337,7 @@ scale-[.975]
       " id="computer-science-education"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://computerscience.tcnj.edu/requirements-for-computer-science-education-minor/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://computerscience.tcnj.edu/requirements-for-computer-science-education-minor/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -346,7 +346,7 @@ scale-[.975]
       " id="deaf-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://specialeducation.tcnj.edu/programs/deaf-studies-minor-sppm/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://specialeducation.tcnj.edu/programs/deaf-studies-minor-sppm/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -355,7 +355,7 @@ scale-[.975]
       " id="environmental-sustainability-education"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://envsus.tcnj.edu/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://envsus.tcnj.edu/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -364,7 +364,7 @@ scale-[.975]
       " id="european-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://internationalstudies.tcnj.edu/minor/european-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://internationalstudies.tcnj.edu/minor/european-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -373,7 +373,7 @@ scale-[.975]
       " id="health-wellness"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://khs.tcnj.edu/health-and-wellness-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://khs.tcnj.edu/health-and-wellness-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -382,7 +382,7 @@ scale-[.975]
       " id="holocaust-genocide-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://hss.tcnj.edu/interdisciplinary-programs/hgs/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://hss.tcnj.edu/interdisciplinary-programs/hgs/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -391,7 +391,7 @@ scale-[.975]
       " id="human-resource-management"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-in-human-resources-management/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-in-human-resources-management/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -400,7 +400,7 @@ scale-[.975]
       " id="information-systems-technology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/academics/requirements-for-the-minor-in-information-systems-technology/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/academics/requirements-for-the-minor-in-information-systems-technology/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -409,7 +409,7 @@ scale-[.975]
       " id="international-business"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/economics/requirements-for-the-minor-in-international-business/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/economics/requirements-for-the-minor-in-international-business/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -418,7 +418,7 @@ scale-[.975]
       " id="latin-american-caribbean-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://internationalstudies.tcnj.edu/minor/latin-american-and-caribbean-studies-minor/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://internationalstudies.tcnj.edu/minor/latin-american-and-caribbean-studies-minor/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -427,7 +427,7 @@ scale-[.975]
       " id="law-politics-philosophy"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://prelaw.tcnj.edu/politics-law-and-philosophy-minor/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://prelaw.tcnj.edu/politics-law-and-philosophy-minor/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -436,7 +436,7 @@ scale-[.975]
       " id="leadership"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-inleadership/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/management/requirements-for-the-minor-inleadership/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -445,7 +445,7 @@ scale-[.975]
       " id="linguistics"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://english.tcnj.edu/english-programs/related-minors/linguistics-minor/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://english.tcnj.edu/english-programs/related-minors/linguistics-minor/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -454,7 +454,7 @@ scale-[.975]
       " id="middle-eastern-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://internationalstudies.tcnj.edu/minor/middle-east-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://internationalstudies.tcnj.edu/minor/middle-east-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -463,7 +463,7 @@ scale-[.975]
       " id="music-technology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://dct.tcnj.edu/music-technology-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://dct.tcnj.edu/music-technology-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -472,7 +472,7 @@ scale-[.975]
       " id="professional-selling"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/professional-selling-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/professional-selling-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -481,7 +481,7 @@ scale-[.975]
       " id="public-policy-analysis-management"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://polisci.tcnj.edu/public-policy-analysis-and-management/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://polisci.tcnj.edu/public-policy-analysis-and-management/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -490,7 +490,7 @@ scale-[.975]
       " id="quantitative-criminology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://criminology.tcnj.edu/quantitative-criminology-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://criminology.tcnj.edu/quantitative-criminology-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -499,7 +499,7 @@ scale-[.975]
       " id="religion"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://philos.tcnj.edu/programs/religion-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://philos.tcnj.edu/programs/religion-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -508,7 +508,7 @@ scale-[.975]
       " id="sexuality-queer-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://wgs.tcnj.edu/curriculum/minors/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://wgs.tcnj.edu/curriculum/minors/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -517,7 +517,7 @@ scale-[.975]
       " id="social-justice"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://african-americanstudies.tcnj.edu/academic-programs/social-justice-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://african-americanstudies.tcnj.edu/academic-programs/social-justice-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -526,7 +526,7 @@ scale-[.975]
       " id="statistics"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://mathstat.tcnj.edu/school-information-and-academics/minors/statistics-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://mathstat.tcnj.edu/school-information-and-academics/minors/statistics-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -535,7 +535,7 @@ scale-[.975]
       " id="supply-chain-management"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/resources/business-degree-programs/requirements-for-the-minor-in-supply-chain-management/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/resources/business-degree-programs/requirements-for-the-minor-in-supply-chain-management/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -544,7 +544,7 @@ scale-[.975]
       " id="technology"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://istem.tcnj.edu/about/academic-programs/minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://istem.tcnj.edu/about/academic-programs/minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -553,7 +553,7 @@ scale-[.975]
       " id="theater"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://music.tcnj.edu/non-majors/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://music.tcnj.edu/non-majors/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -562,7 +562,7 @@ scale-[.975]
       " id="undeclared-business"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/undeclared/ " target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/undeclared/ " target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -571,7 +571,7 @@ scale-[.975]
       " id="undeclared-engineering"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://engineering.tcnj.edu/academic-programs/undeclared/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://engineering.tcnj.edu/academic-programs/undeclared/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -580,7 +580,7 @@ scale-[.975]
       " id="undeclared-hss"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://hss.tcnj.edu/interdisciplinary-programs/undeclared/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://hss.tcnj.edu/interdisciplinary-programs/undeclared/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -589,7 +589,7 @@ scale-[.975]
       " id="us-studies"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://history.tcnj.edu/academic-programs/us-studies-minor/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://history.tcnj.edu/academic-programs/us-studies-minor/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -598,7 +598,7 @@ scale-[.975]
       " id="wealth-management-and-financial-planning"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://business.tcnj.edu/departments-programs/finance/requirements-for-the-minor-in-wealth-management-financial-planning/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://business.tcnj.edu/departments-programs/finance/requirements-for-the-minor-in-wealth-management-financial-planning/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 
@@ -607,7 +607,7 @@ scale-[.975]
       " id="creative-writing"><a class="program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          false
-        " href="https://creativewriting.tcnj.edu/" target="_blank" style="opacity:0;transform:translateY(5px) translateZ(0)"><h2 class="font-domine font-bold 
+        " href="https://creativewriting.tcnj.edu/" target="_blank" style="opacity:1;transform:none"><h2 class="font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
 

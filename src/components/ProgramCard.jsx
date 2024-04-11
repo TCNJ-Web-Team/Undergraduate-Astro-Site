@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import "../styles/program-card.scss";
-const ProgramCard = ({ program, listType, index }) => {
+const ProgramCard = ({ program, listType, index, animationState }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
 
@@ -13,6 +13,7 @@ const ProgramCard = ({ program, listType, index }) => {
   const { slug, redirecturl, programOptions, additionalOptions } =
     program.program;
   const { title } = program;
+  // console.log(animationState);
   // console.log(redirecturl);
   return (
     <div
@@ -35,7 +36,7 @@ const ProgramCard = ({ program, listType, index }) => {
         `}
         href={redirecturl ? redirecturl : `./${slug}`}
         target={redirecturl ? "_blank" : "_self"}
-        initial={{ opacity: 0, y: 5 }}
+        initial={animationState ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
           delay: (index + 0.25) * 0.15,
