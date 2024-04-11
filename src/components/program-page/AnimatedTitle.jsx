@@ -13,10 +13,10 @@ function AnimatedTitle({ title }) {
          
           md:text-custom-16.25
           md:leading-[4.688rem]"
-      initial={{ opacity: 0, y: -5 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        delay: 0.025,
+        // delay: 0.035,
         ease: "easeOut",
         duration: 0.45,
         // type: "spring",

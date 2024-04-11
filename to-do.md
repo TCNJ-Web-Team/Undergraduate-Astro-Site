@@ -1,3 +1,8 @@
+## Feedback
+
+- photo push from right with no
+- update title to animate same speed as program at a glace
+
 ## Up to date To Do's
 
 - fix mobile version
