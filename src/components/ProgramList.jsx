@@ -208,6 +208,7 @@ export default function ProgramList({
         <div
           id="filters-bg"
           className="bg-lightgrey sm:bg-transparent flex flex-col gap-[20px] p-[35px] max-w-[1128px] mx-auto
+          sm:gap-[25px]
         sm:pt-[50px]
         md:pt-[75px]
         
@@ -217,14 +218,17 @@ export default function ProgramList({
             type="text"
             id="text-filter"
             className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
-        border-[#bcbcbc] "
+        border-[#bcbcbc] placeholder-[#000000]"
             onChange={handleFilterChange}
             placeholder="Search by keyword"
           />
           <div
             ref={wrapperRef}
             id="filter-wrapper"
-            className="flex flex-col gap-[20px] sm:gap-[30px] md:gap-[40px] md:flex-row"
+            className="flex flex-col gap-[20px] sm:gap-[30px] 
+            sm:grid sm:grid-cols-2
+            md:flex
+            md:gap-[40px] md:flex-row"
           >
             <DropDownAccordion
               checkboxContent={renderCheckboxes(
@@ -261,7 +265,7 @@ export default function ProgramList({
               index={2}
             />
           </div>
-          <hr className="hidden sm:block" />
+          <hr className="hidden sm:block border-[#bcbcbc]" />
         </div>
         {/* Filter boxes go here */}
         <div
@@ -420,15 +424,15 @@ export default function ProgramList({
             : `grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 `
         }
         gap-[20px]
-        sm:gap-[30px]
-        max-w-[1128px] mx-auto
-        pb-[50px]
         
+           max-w-[1128px] mx-auto
+           pb-[50px]
         p-[35px]
         pt-0
         sm:p-[35px]
         sm:pt-[35px]
-        sm:gap-[40px]
+        sm:gap-[30px]
+        md:gap-[40px]
         md:pb-[100px]
         lg:px-0
         `}
