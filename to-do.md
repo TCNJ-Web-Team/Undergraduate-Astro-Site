@@ -18,10 +18,10 @@ Plan for hosting Undergradaute Program Explorer?
   - x desk
   - x tab
   - x mobile
-- Program at a glace
+- x Program at a glace
 
-  - add fade in animation
-  - hover states for buttons
+  - x add fade in animation
+  - x hover states for buttons
 
 - x drop downs
   - x add list styles
