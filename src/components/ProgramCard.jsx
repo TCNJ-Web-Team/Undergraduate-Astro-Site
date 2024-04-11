@@ -35,15 +35,15 @@ const ProgramCard = ({ program, listType, index }) => {
         `}
         href={redirecturl ? redirecturl : `./${slug}`}
         target={redirecturl ? "_blank" : "_self"}
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: (index + 0.25) * 0.15,
-          ease: "easeOut",
-          duration: 0.3,
-          // type: "spring",
-          // stiffness: 50,
-        }}
+        // initial={{ opacity: 0, y: 5 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{
+        //   delay: (index + 0.25) * 0.15,
+        //   ease: "easeOut",
+        //   duration: 0.3,
+        //   // type: "spring",
+        //   // stiffness: 50,
+        // }}
       >
         <h2
           className="font-domine font-bold 
