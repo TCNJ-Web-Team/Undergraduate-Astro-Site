@@ -79,6 +79,7 @@ export default function DropDownAccordion({
         border-[#bcbcbc] 
 
      cursor-pointer
+     lg:px-[50px]
         ${isOpen ? "open" : ""}`}
           onClick={onToggle}
         >
