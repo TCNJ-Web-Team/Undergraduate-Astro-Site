@@ -1,6 +1,8 @@
 import React from "react";
 import ProgramGlanceCopy from "../ProgramGlanceCopy";
 import ProgramCareersHeading from "../ProgramCareersHeading";
+import { motion } from "framer-motion";
+import { fadeInAnimationVariant } from "../../animations/fadeInVariant";
 
 type Props = {
   left?: string;
@@ -13,16 +15,20 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 
   return (
-    <div
+    <motion.div
       id={headingLower}
       className={`relative ${
         heading === "Careers"
           ? "sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]"
           : ""
       }`}
+      variants={fadeInAnimationVariant}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
     >
       {heading !== "Careers" ? (
-        <h2
+        <motion.h2
           className="
           text-[23px] 
           leading-[33px] 
@@ -34,11 +40,33 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           md:leading-[40px]
           font-chunkfive 
           text-tcnjblue"
+          variants={fadeInAnimationVariant}
+          custom={1}
         >
           {heading}
-        </h2>
+        </motion.h2>
       ) : (
-        <ProgramCareersHeading heading="Careers" />
+        <motion.h2
+          className={`text-center
+      font-chunkfive 
+      text-tcnjblue
+      text-[45px]
+      leading-[50px]
+      pb-[50px]
+      sm:pb-[20px]
+      sm:text-[60px]
+      sm:leading-[70px]
+      sm:text-left
+      md:text-[65px]
+      md:leading-[75px]
+
+      md:pb-[50px]
+            `}
+          variants={fadeInAnimationVariant}
+          custom={1}
+        >
+          Careers
+        </motion.h2>
       )}
       {body && heading === "Careers" && (
         <ProgramGlanceCopy id={`${headingLower}-body`} copy={body} />
@@ -60,16 +88,20 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           }
         >
           {left && (
-            <div
+            <motion.div
               id={`${headingLower}-left`}
               className="md:max-w-[45%] lg:max-w-[40%]"
               dangerouslySetInnerHTML={{ __html: left }}
+              variants={fadeInAnimationVariant}
+              custom={3}
             />
           )}
           {heading === "Careers" && (
-            <div
+            <motion.div
               id={`${headingLower}-right`}
               dangerouslySetInnerHTML={{ __html: right || "" }}
+              variants={fadeInAnimationVariant}
+              custom={4}
             />
           )}
         </div>
@@ -81,7 +113,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           />
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
