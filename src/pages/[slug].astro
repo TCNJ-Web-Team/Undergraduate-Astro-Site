@@ -19,6 +19,8 @@ import AnimatedHero from "../components/program-page/AnimatedHero";
 import AnimatedBodyCopy from "../components/program-page/AnimatedBodyCopy";
 import AnimatedProgramAtAGlance from "../components/program-page/AnimatedProgramAtAGlance";
 import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
+import TitleAndNav from "../components/TitleAndNav";
+import NavigationBar from "../components/NavigationBar";
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -235,6 +237,8 @@ const { sourceUrl } = heroImgDesktop ?? {
 ---
 
 <Layout title={title}>
+      <!-- <TitleAndNav /> -->
+<NavigationBar/>
   <main class="font-bitter text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div
