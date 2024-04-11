@@ -93,6 +93,7 @@ export default function DropDownAccordion({
         mt-[-5px]
 md:h-auto
 scale-[.975]
+lg:px-[50px]
 
         ${
           isOpen &&
