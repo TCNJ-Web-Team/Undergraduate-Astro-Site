@@ -25,6 +25,7 @@ Plan for hosting Undergradaute Program Explorer?
 
 - x drop downs
   - x add list styles
+- careers animation
 - social images
 - related programs
   - add hover effects
