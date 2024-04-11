@@ -28,7 +28,10 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
     >
       <motion.a
         className={`program-link block border-[1px] 
-        border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
+        border-[#bcbcbc] px-[30px] pt-[35px] pb-[40px] sm:min-h-[300px]
+        sm:px-[35px]
+        lg:px-[50px]
+        lg:pt-[48px]
          ${
            listOnly &&
            "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]"
@@ -55,7 +58,9 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
         >
           {title}
         </h2>
-        <hr className={`my-[20px] ${listOnly && "md:hidden"}`} />
+        <hr
+          className={`my-[20px] border-[#BCBCBC] ${listOnly && "md:hidden"}`}
+        />
         <div
           className={`icon-container flex flex-wrap gap-x-[20px] gap-y-[10px]  ${
             listOnly && "md:max-w-[260px] md:w-[100%]"

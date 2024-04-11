@@ -13,6 +13,9 @@ $sm: 550px;
   background-color: #fff;
   background-image: url(/search-icon.svg);
   background-position-x: calc(100% - 34px);
+  @media screen and (min-width: $lg) {
+    background-position-x: calc(100% - 50px);
+  }
   background-position-y: center;
   background-repeat: no-repeat;
   // border: 1px solid #bcbcbc;
@@ -29,12 +32,18 @@ $sm: 550px;
   position: relative;
   // display: flex;
   transition: all 0.3s;
+  @media screen and (min-width: $sm) and (max-width: 750px) {
+    // font-size: 15px;
+  }
   &::after {
     content: ""; // This is necessary for pseudo-elements
     position: absolute;
     top: 50%; /* Position at the vertical center */
     transform: translateY(-50%);
     right: 34px; // Adjust this as per your design
+    @media screen and (min-width: $lg) {
+      right: 50px;
+    }
     width: 14.58px; // Adjust width and height as per your design
     height: 9px; // Adjust width and height as per your design
     background-image: url(/filter-arrow.svg);
@@ -77,6 +86,9 @@ $sm: 550px;
       -ms-user-select: none;
       user-select: none;
       max-width: 215px;
+      @media screen and (min-width: $sm) and (max-width: 750px) {
+        max-width: 70%;
+      }
       width: 100%;
       .close-button {
         display: none;
