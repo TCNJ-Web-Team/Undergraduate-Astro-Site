@@ -204,74 +204,89 @@ export default function ProgramList({
   // console.log(programView);
   return (
     <div className="program-wrapper inner-width">
-      <div
-        id="input-and-filter-wrapper"
-        className="flex flex-col gap-[20px] bg-lightgrey p-[35px] max-w-[1128px] mx-auto
+      <div id="input-and-filter-wrapper" className="">
+        <div
+          id="filters-bg"
+          className="bg-lightgrey sm:bg-transparent flex flex-col gap-[20px] p-[35px] max-w-[1128px] mx-auto
         sm:pt-[50px]
         md:pt-[75px]
-        md:bg-transparent
+        
         lg:px-0"
-      >
-        <input
-          type="text"
-          id="text-filter"
-          className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
-        border-[#bcbcbc] "
-          onChange={handleFilterChange}
-          placeholder="Search by keyword"
-        />
-        <div
-          ref={wrapperRef}
-          id="filter-wrapper"
-          className="flex flex-col gap-[30px] sm:gap-[40px] md:flex-row"
         >
-          <DropDownAccordion
-            checkboxContent={renderCheckboxes(
-              areaOfStudy,
-              handleSchoolCheckboxChange,
-              selectedSchoolFilters
-            )}
-            title="Area of Study"
-            isOpen={openAccordion === 0}
-            onToggle={() => handleAccordionToggle(0)}
-            index={0}
+          <input
+            type="text"
+            id="text-filter"
+            className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
+        border-[#bcbcbc] "
+            onChange={handleFilterChange}
+            placeholder="Search by keyword"
           />
+          <div
+            ref={wrapperRef}
+            id="filter-wrapper"
+            className="flex flex-col gap-[20px] sm:gap-[30px] md:gap-[40px] md:flex-row"
+          >
+            <DropDownAccordion
+              checkboxContent={renderCheckboxes(
+                areaOfStudy,
+                handleSchoolCheckboxChange,
+                selectedSchoolFilters
+              )}
+              title="Area of Study"
+              isOpen={openAccordion === 0}
+              onToggle={() => handleAccordionToggle(0)}
+              index={0}
+            />
 
-          <DropDownAccordion
-            checkboxContent={renderCheckboxes(
-              programOptionsClean,
-              handleProgramOptionCheckboxChange,
-              selectedProgramOptionFilters
-            )}
-            title="Degree"
-            isOpen={openAccordion === 1}
-            onToggle={() => handleAccordionToggle(1)}
-            index={1}
-          />
-          <DropDownAccordion
-            checkboxContent={renderCheckboxes(
-              additionalOptions,
-              handleAdditionalOptionCheckboxChange,
-              selectedAdditionalOptionFilters
-            )}
-            title="Options"
-            isOpen={openAccordion === 2}
-            onToggle={() => handleAccordionToggle(2)}
-            index={2}
-          />
+            <DropDownAccordion
+              checkboxContent={renderCheckboxes(
+                programOptionsClean,
+                handleProgramOptionCheckboxChange,
+                selectedProgramOptionFilters
+              )}
+              title="Degree"
+              isOpen={openAccordion === 1}
+              onToggle={() => handleAccordionToggle(1)}
+              index={1}
+            />
+            <DropDownAccordion
+              checkboxContent={renderCheckboxes(
+                additionalOptions,
+                handleAdditionalOptionCheckboxChange,
+                selectedAdditionalOptionFilters
+              )}
+              title="Options"
+              isOpen={openAccordion === 2}
+              onToggle={() => handleAccordionToggle(2)}
+              index={2}
+            />
+          </div>
+          <hr className="hidden sm:block" />
         </div>
-        <hr />
         {/* Filter boxes go here */}
         <div
           id="display-box-wrapper"
-          className="flex flex-row justify-between min-h-[50px]"
+          className="flex flex-col sm:flex-row justify-between min-h-[50px]
+          max-w-[1128px] mx-auto px-[35px] lg:px-0
+
+          "
         >
           <div
             id="left-content"
             className="flex flex-row flex-wrap  gap-[10px]"
           >
             <div className="relative z-10 filtered-display-box">
-              <p className="font-bitter text-[17px] leading-[26px] font-normal pr-[15px]">
+              <p
+                className="
+              basis-[100%]
+              font-bitter 
+              text-[14px]
+              leading-[26px] font-normal pr-[15px]
+              pt-[25px]
+              sm:pt-0
+              sm:basis-auto
+              sm:text-[17px] "
+              >
                 Filtered by:
               </p>
               {!searchText &&
@@ -325,9 +340,17 @@ export default function ProgramList({
           </div>
           <div
             id="right-content"
-            className="flex flex-row h-[50px] items-center "
+            className="flex flex-row sm:h-[50px] items-center 
+     
+            "
           >
-            <p className="font-opensans font-normal text-[14px] leading-[26px]">
+            <p
+              className="font-opensans font-normal text-[14px] leading-[26px]
+                   pt-[40px]
+                   pb-[20px]
+                   sm:pb-0
+            sm:pt-0"
+            >
               Displaying <strong>{filteredData.length} results</strong>
             </p>
             <motion.img
@@ -357,7 +380,9 @@ export default function ProgramList({
         <div
           id="no-results"
           className="bg-lightgrey max-w-[1128px] 
-          p-[40px] mx-[30px]  mt-[50px]
+          p-[40px] mx-[30px]  
+          mt-0
+          sm:mt-[50px]
           lg:mx-auto
           md:py-[75px] md:px-[100px] "
         >
@@ -394,11 +419,18 @@ export default function ProgramList({
             ? "list-view flex flex-col md:gap-[25px]"
             : `grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 `
         }
-        gap-[30px] sm:gap-[40px] 
-        p-[35px] max-w-[1128px] mx-auto
+        gap-[20px]
+        sm:gap-[30px]
+        max-w-[1128px] mx-auto
         pb-[50px]
-        lg:px-0
+        
+        p-[35px]
+        pt-0
+        sm:p-[35px]
+        sm:pt-[35px]
+        sm:gap-[40px]
         md:pb-[100px]
+        lg:px-0
         `}
         initial={!animatedCards ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}

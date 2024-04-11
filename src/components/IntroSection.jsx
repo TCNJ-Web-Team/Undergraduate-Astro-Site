@@ -66,7 +66,7 @@ export default function IntroSection() {
           className="w-[100%] h-[562px] sm:h-[700px] md:h-[450px] object-cover"
         />
       </picture>
-      <div className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.25]"></div>
+      <div className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"></div>
     </div>
   );
 }
