@@ -5,7 +5,9 @@ export default function DropDownAccordion({
   title,
   isOpen,
   onToggle,
+  index,
 }) {
+  // console.log(index);
   return (
     <div
       className={`z-50 relative w-[100%] 
@@ -20,7 +22,46 @@ export default function DropDownAccordion({
       }`}
     > */}
       <motion.div whileTap={{ scale: 0.975 }} className="z-30 relative">
-        <div className="h-[10px] w-[100%] bg-tcnjyellow"></div>
+        <motion.div
+          className="h-[9px] w-[100%] bg-tcnjyellow origin-left"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{
+            delay: (index + 2) * 0.45,
+
+            // delay: index * 0.045,
+            // ease: "easeInOut",
+            // ease: [0.12, 0, 0.39, 0],
+            // ease: "easeInOut",
+            // duration: 0.55,
+            ease: [0.22, 0, 0.36, 1],
+
+            duration: 0.85,
+            // type: "spring",
+            // stiffness: 50,
+          }}
+        ></motion.div>
+        <motion.div
+          initial={{ "--background-color": "#bcbcbc" }}
+          animate={{ "--background-color": "#fdd700" }}
+          className="
+          transition-all
+          h-[1px] w-[100%] bg-[#bcbcbc] origin-left bg-[--background-color]"
+          transition={{
+            delay: (index + 2) * 0.45,
+
+            // delay: index * 0.045,
+            // ease: "easeInOut",
+            // ease: [0.12, 0, 0.39, 0],
+            // ease: "easeInOut",
+            // duration: 0.55,
+            ease: [0.22, 0, 0.36, 1],
+
+            duration: 0.85,
+            // type: "spring",
+            // stiffness: 50,
+          }}
+        ></motion.div>
         <h3
           className={`
         select-none
@@ -32,9 +73,11 @@ export default function DropDownAccordion({
         text-[17px] 
         uppercase 
         p-[34px] py-[24px] 
+        border-t-0
+        pt-[23px]
         bg-white border-[1px] 
         border-[#bcbcbc] 
-     border-t-0
+
      cursor-pointer
         ${isOpen ? "open" : ""}`}
           onClick={onToggle}

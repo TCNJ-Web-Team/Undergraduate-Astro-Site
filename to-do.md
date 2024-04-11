@@ -1,6 +1,21 @@
-# Footer
+## Up to date To Do's
 
 - fix mobile version
+- on undergrad.tcnj.edu as homepage? or on academics site?
+- social images
+- related programs
+  - add hover effects
+  - add links
+
+### Program finder
+
+- mobile filter boxes, get white bg, column formatting
+- seo
+- social images
+
+### Program Page
+
+- develop pop-up window
 
 # program redirects
 
@@ -8,12 +23,10 @@
 
 Plan for hosting Undergradaute Program Explorer?
 
-- on undergrad.tcnj.edu as homepage? or on academics site?
-
 # Program Page Template
 
 - x tablet and mobile hero images
-- title and image fade-in
+- x title and image fade-in
 - x allow wp option to set hero horizontal setting for
   - x desk
   - x tab
@@ -25,17 +38,9 @@ Plan for hosting Undergradaute Program Explorer?
 
 - x drop downs
   - x add list styles
-- careers animation
-- social images
-- related programs
-  - add hover effects
-  - add links
+- x careers animation
 
 # Program finder
-
-- mobile filter boxes, get white bg, column formatting
-- seo
-- social images
 
 - x updated program card styles
 - x list vs cell view
@@ -55,7 +60,7 @@ Plan for hosting Undergradaute Program Explorer?
 -x desktop styling for header
 
 -
-- add inital "Skeleton" load content for program cards, then load in one by one
+- x add inital "Skeleton" load content for program cards, then load in one by one
 
 ## Questions for Lauren
 
@@ -73,7 +78,6 @@ x Program of study h3 or h2?
     x Bachelor of Arts
     x only for engineering
     x pull Degree from ACF not title of page
-- develop pop-up window
 - finish styling footer
   x fix max width on image section
 - user set position on hero image at diff resolutions

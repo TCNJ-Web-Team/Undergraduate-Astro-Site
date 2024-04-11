@@ -238,6 +238,9 @@ $sm: 550px;
         align-items: center;
         gap: 9px;
         transition: all 0.3s;
+        @media screen and (max-width: $sm) {
+          line-height: 20px;
+        }
         &:hover {
           background-color: #e6e6e6;
           scale: 0.975;

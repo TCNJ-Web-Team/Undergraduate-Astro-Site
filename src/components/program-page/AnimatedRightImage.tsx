@@ -28,7 +28,7 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
 
   const { ref, inView } = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
-    threshold: 0.5, // 50% of the element is in view
+    threshold: 0.35, // 35% of the element is in view
   });
 
   return (
