@@ -29,6 +29,7 @@ export default function ProgramList({
   // console.log(combinedData);
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
+  const [cardAnimate, setCardAnimate] = useState(false);
   const [filteredData, setFilteredData] = useState(dataNodes);
   const [selectedSchoolFilters, setSelectedSchoolFilters] = useState([]);
   const [selectedProgramOptionFilters, setSelectedProgramOptionFilters] =
@@ -39,7 +40,19 @@ export default function ProgramList({
   const [openAccordion, setOpenAccordion] = useState(null);
   const [programView, setProgramView] = useState(""); // ["grid", "list"
   const wrapperRef = useRef(null);
-
+  const cardContainerVariants = {
+    initial: {
+      transition: {
+        delayChildren: 0.5,
+      },
+    },
+    animate: {
+      transition: {
+        staggerChildren: 0.9,
+        delayChildren: 0.5,
+      },
+    },
+  };
   const handleAccordionToggle = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
   };
@@ -380,7 +393,7 @@ export default function ProgramList({
           </p>
         </div>
       )}
-      <div
+      <motion.div
         id="filtered-programs-wrapper"
         className={`${
           programView === "list"
@@ -393,6 +406,9 @@ export default function ProgramList({
         lg:px-0
         md:pb-[100px]
         `}
+        variants={cardContainerVariants}
+        initial="initial"
+        animate="animate"
       >
         {filteredData &&
           filteredData.map((program, index) => (
@@ -403,7 +419,7 @@ export default function ProgramList({
               index={index}
             />
           ))}
-      </div>
+      </motion.div>
       {/* Display filtered data */}
     </div>
   );

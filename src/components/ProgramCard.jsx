@@ -14,8 +14,16 @@ const ProgramCard = ({ program, listType, index }) => {
     program.program;
   const { title } = program;
   // console.log(redirecturl);
+  const cardAnimationVars = {
+    initial: { opacity: 0 },
+    animate: (index) => ({
+      opacity: 1,
+      // transition: { duration: index * 0.35 },
+    }),
+  };
+
   return (
-    <div
+    <motion.div
       className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
         isHovered ? "active-hover" : ""
       }
@@ -24,8 +32,10 @@ const ProgramCard = ({ program, listType, index }) => {
       id={slug}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      variants={cardAnimationVars}
+      custom={index}
     >
-      <motion.a
+      <a
         className={`program-link block border-[1px] 
         border-[#bcbcbc] pl-[30px] pr-[45px] pt-[35px] pb-[40px] sm:min-h-[300px]
          ${
@@ -111,9 +121,9 @@ const ProgramCard = ({ program, listType, index }) => {
               );
             })}
         </div>
-      </motion.a>
+      </a>
       {/* Access other fields here directly */}
-    </div>
+    </motion.div>
   );
 };
 
