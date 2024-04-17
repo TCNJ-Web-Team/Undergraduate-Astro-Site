@@ -1,3 +1,8 @@
+## Browser Bugs
+
+- safari
+  - Card hover animation not working correctly
+
 ## Feedback
 
 - photo push from right with no
