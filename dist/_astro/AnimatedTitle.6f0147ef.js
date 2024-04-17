@@ -6,4 +6,4 @@ import{j as n}from"./jsx-runtime.b9e88e07.js";import"./index.03be2d59.js";import
           sm:leading-[60px]
          
           md:text-custom-16.25
-          md:leading-[4.688rem]`,initial:{opacity:0,y:-5},animate:{opacity:1,y:0},transition:{delay:.025,ease:"easeOut",duration:.45},children:t})}export{o as default};
+          md:leading-[4.688rem]`,initial:{opacity:0,y:40},animate:{opacity:1,y:0},transition:{ease:"easeOut",duration:.45},children:t})}export{o as default};
