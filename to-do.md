@@ -12,6 +12,8 @@
 
 ## Up to date To Do's
 
+- change Three Up Heading for "Degrees" and "Departments" when multiple items in list
+- change Department icons
 - fix mobile version
 - on undergrad.tcnj.edu as homepage? or on academics site?
 - social images
