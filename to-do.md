@@ -1,5 +1,19 @@
+## Browser Bugs
+
+- safari
+  - Card hover animation not working correctly
+
+## Feedback
+
+- photo push from right with no
+- update title to animate same speed as program at a glace
+
+-match title animation to program at a glance animation
+
 ## Up to date To Do's
 
+- change Three Up Heading for "Degrees" and "Departments" when multiple items in list
+- change Department icons
 - fix mobile version
 - on undergrad.tcnj.edu as homepage? or on academics site?
 - social images

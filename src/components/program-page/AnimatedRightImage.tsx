@@ -14,10 +14,10 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
   rightImageVerticalPosition,
 }) => {
   const fadeInAnimationVariant = {
-    hidden: { opacity: 0, x: 25 },
+    hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      x: 0,
+
       transition: {
         delay: 0.25,
         ease: "easeOut",
@@ -34,7 +34,7 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
   return (
     <div className="relative overflow-y-visible">
       {programOfStudyRight && (
-        <motion.img
+        <img
           ref={ref}
           src={programOfStudyRight}
           alt=""
@@ -56,18 +56,15 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           md:right-[-82px]
           md:h-[650px]
           md:absolute"
-          variants={fadeInAnimationVariant}
-          initial="hidden"
-          animate={inView ? "show" : "hidden"}
         />
       )}
-      <div
+      {/* <div
         id="prog-study-bg"
         className="absolute 
                 bg-lightgrey
                 top-[-50px] object-cover object-left w-[100%] h-[400px] max-w-none sm:h-[550px] sm:top-[-50px] md:right-[-82px] md:h-[650px] md:absolute
           "
-      />
+      /> */}
     </div>
   );
 };
