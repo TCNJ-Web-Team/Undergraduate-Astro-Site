@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 
 import { motion } from "framer-motion";
-
+import "../styles/intro-popup.scss";
 export default function IntroSection() {
   const [accellOpen, setAccellOpen] = useState(false);
   const [dualOpen, setDualOpen] = useState(false);
@@ -91,7 +91,7 @@ export default function IntroSection() {
             {accellOpen && (
               <div
                 ref={accellText}
-                className="absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
               >
                 <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
                   <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
@@ -113,7 +113,7 @@ export default function IntroSection() {
             {dualOpen && (
               <div
                 ref={dualText}
-                className="absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
               >
                 <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
                   Dual Text
