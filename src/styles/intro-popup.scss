@@ -1,0 +1,22 @@
+.top-arrow-popup {
+  top: 25px;
+  // color: blue;
+  //   position: relative;
+
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.16);
+
+  &::before {
+    position: absolute;
+    // top: -20px;
+    left: calc(50% - 10px);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: "";
+    height: 10px;
+    width: 10px;
+    top: -20px;
+    display: block;
+  }
+}

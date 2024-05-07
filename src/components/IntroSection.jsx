@@ -1,10 +1,59 @@
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
+import { motion } from "framer-motion";
+import "../styles/intro-popup.scss";
 export default function IntroSection() {
+  const [accellOpen, setAccellOpen] = useState(false);
+  const [dualOpen, setDualOpen] = useState(false);
+  const accellText = useRef(null);
+  const dualText = useRef(null);
+
+  const openAccellPop = (ref) => {
+    if (ref === accellText) {
+      setAccellOpen(!accellOpen);
+      setDualOpen(false);
+    } else if (ref === dualText) {
+      setDualOpen(!dualOpen);
+      setAccellOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (
+        (event.type === "click" &&
+          ((accellText.current &&
+            !accellText.current.contains(event.target) &&
+            event.target.className !==
+              "info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer") ||
+            (dualText.current &&
+              !dualText.current.contains(event.target) &&
+              event.target.className !==
+                "info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"))) ||
+        (event.type === "keydown" && event.key === "Escape")
+      ) {
+        setAccellOpen(false);
+        setDualOpen(false);
+      }
+    };
+
+    // Attach the event listener
+    document.addEventListener("click", handleKeyPress);
+    document.addEventListener("keydown", handleKeyPress);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener("click", handleKeyPress);
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [accellOpen, dualOpen]);
+
   return (
     <div
       id="intro"
-      className="w-[100%] h-[562px] relative overflow-hidden border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[485px]"
+      className="w-[100%] h-[562px] relative 
+      z-[1000]
+       border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[485px]"
     >
       <div className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[67px] md:text-left lg:px-0">
         <div
@@ -21,28 +70,63 @@ export default function IntroSection() {
             delay: 0.25,
             ease: "easeOut",
             duration: 0.35,
-            // type: "spring",
-            // stiffness: 50,
           }}
         >
           Explore Undergraduate Programs
         </motion.h1>
-        <motion.p
-          className="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] font-normal"
+        <motion.div
+          className="font-domine text-[20px] leading-[26px] sm:text-[25px] sm:leading-[35px] md:text-[23px] font-normal"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
             delay: 0.75,
             ease: "easeOut",
             duration: 0.35,
-            // type: "spring",
-            // stiffness: 50,
           }}
         >
           Search by keyword or browse programs by selecting an area of study,
-          degree type, and/ or format. TCNJ students also have an option to
-          pursue accelerated programs and dual degrees.
-        </motion.p>
+          degree type, and/or format. TCNJ students also have an option to
+          pursue accelerated programs
+          <span className="inline-block mr-[5px] ml-[-1px] relative">
+            {accellOpen && (
+              <div
+                ref={accellText}
+                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+              >
+                <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
+                  <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
+                  are available in business, counseling, English, public health,
+                  public policy, and teacher education. Admission into the
+                  program’s graduate portion is based on undergraduate
+                  performance.
+                </p>
+              </div>
+            )}
+            <img
+              className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
+              src="/info-icon.svg"
+              onClick={() => openAccellPop(accellText)}
+            />
+          </span>
+          and dual degrees.
+          <span className="inline-block mr-[5px] ml-[-2px] relative">
+            {dualOpen && (
+              <div
+                ref={dualText}
+                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+              >
+                <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
+                  Dual Text
+                </p>
+              </div>
+            )}
+            <img
+              className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
+              src="/info-icon.svg"
+              onClick={() => openAccellPop(dualText)}
+            />
+          </span>
+        </motion.div>
       </div>
 
       <picture id="hero-image" className="absolute top-0 left-0 z-0 w-[100%]">
@@ -63,7 +147,7 @@ export default function IntroSection() {
         <img
           src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg"
           alt="TCNJ scenery"
-          className="w-[100%] h-[562px] sm:h-[700px] md:h-[450px] object-cover"
+          className="w-[100%] h-[542px] sm:h-[665px] md:h-[450px] object-cover"
         />
       </picture>
       <div className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"></div>
