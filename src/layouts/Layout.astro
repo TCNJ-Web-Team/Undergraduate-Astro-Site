@@ -3,12 +3,14 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  metaTitle?: string;
 }
 
 const {
   title,
   description = "The College of New Jersey has the opportunity to build a new indoor/outdoor structure – the TCNJ Community Hub – that will serve as a setting for community engagement, music and drama rehearsals, visiting and faculty lecturers, competition presentations, and performances.",
   image = "https://brand.tcnj.edu/wp-content/uploads/sites/11/2016/03/site-brand-downloads-logo-horizontal-FINAL-546-160.png",
+  metaTitle,
 } = Astro.props;
 
 import "@fontsource/bitter/400.css";
@@ -36,7 +38,7 @@ import GlobalFooter from "../components/GlobalFooter.astro";
     <meta property="og:type" content="website" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={metaTitle} />
     <meta property="og:description" content={description} />
     <meta name="twitter:image" content={image} />
     <meta property="og:image" content={image} />
