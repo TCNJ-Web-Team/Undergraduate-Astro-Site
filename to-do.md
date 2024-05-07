@@ -1,13 +1,3 @@
-## Browser Bugs
-
-- x safari
-  - x Card hover animation not working correctly
-
-## Meta Tags and Social Fields
-
-- home, needs manual description and photos
-- custom fields added to program pages
-
 ## Structure of site
 
 - i still don understand structure of undergraduate site
@@ -22,6 +12,21 @@
 - update title to animate same speed as program at a glace
 
 -match title animation to program at a glance animation
+
+### Program Page
+
+- develop pop-up window
+  -fix global footer mobile and tablet
+
+## Browser Bugs
+
+- x safari
+  - x Card hover animation not working correctly
+
+## Meta Tags and Social Fields
+
+- home, needs manual description and photos
+- custom fields added to program pages
 
 ## Up to date To Do's
 
@@ -39,10 +44,6 @@
 - mobile filter boxes, get white bg, column formatting
 - seo
 - social images
-
-### Program Page
-
-- develop pop-up window
 
 # program redirects
 

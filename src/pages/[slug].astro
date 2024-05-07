@@ -378,7 +378,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
-          <TopOption heading={degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+          <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(degreeType)
                 ? degreeType.map((degree: string) => (
@@ -390,7 +390,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           <TopOption school={school} heading="School" imgSrc="building">
             {school}
           </TopOption>
-          <TopOption heading={department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+          <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             <!-- {deptTitle}
              -->
             {
