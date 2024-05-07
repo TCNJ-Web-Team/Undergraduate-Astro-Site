@@ -1,10 +1,22 @@
 ## Browser Bugs
 
-- safari
-  - Card hover animation not working correctly
+- x safari
+  - x Card hover animation not working correctly
+
+## Meta Tags and Social Fields
+
+- home
+
+## Structure of site
+
+- i still don understand structure of undergraduate site
+- needs sitemap
+- if homepage is custom, would be easier to build in astro, otherwise need to meet with brandon to see how we're sturcturing the urls
+-
 
 ## Feedback
 
+- fix card and grid hover blur
 - photo push from right with no
 - update title to animate same speed as program at a glace
 

@@ -5,7 +5,7 @@ import "../styles/program-card.scss";
 const ProgramCard = ({ program, listType, index, animationState }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
-
+  const activeHover = isHovered ? "active-hover" : "";
   const listOnly = listType == "list" ? true : false;
   useEffect(() => {
     setTimeout(() => setPulsing(false), 1200);
@@ -17,14 +17,12 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
   // console.log(redirecturl);
   return (
     <div
-      className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${
-        isHovered ? "active-hover" : ""
-      }
+      className={`program-card filter   drop-shadow-none transition-all duration-300 bg-white ${activeHover}
       ${pulsing ? "pulse" : ""}  
       `}
       id={slug}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
     >
       <motion.a
         className={`program-link block border-[1px] 
