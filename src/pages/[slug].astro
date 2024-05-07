@@ -234,6 +234,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(degreeType);
 // console.log(school);
 // console.log(department);
+// console.log(degreeType.length);
 ---
 
 <Layout title={title}>
@@ -377,7 +378,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
-          <TopOption heading="Degree" imgSrc="ribbon">
+          <TopOption heading={degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(degreeType)
                 ? degreeType.map((degree: string) => (
@@ -389,7 +390,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           <TopOption school={school} heading="School" imgSrc="building">
             {school}
           </TopOption>
-          <TopOption heading="Department" imgSrc="calendar">
+          <TopOption heading={department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             <!-- {deptTitle}
              -->
             {

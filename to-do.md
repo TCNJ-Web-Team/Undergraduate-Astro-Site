@@ -5,7 +5,8 @@
 
 ## Meta Tags and Social Fields
 
-- home
+- home, needs manual description and photos
+- custom fields added to program pages
 
 ## Structure of site
 
@@ -24,7 +25,7 @@
 
 ## Up to date To Do's
 
-- change Three Up Heading for "Degrees" and "Departments" when multiple items in list
+- x change Three Up Heading for "Degrees" and "Departments" when multiple items in list
 - change Department icons
 - fix mobile version
 - on undergrad.tcnj.edu as homepage? or on academics site?
