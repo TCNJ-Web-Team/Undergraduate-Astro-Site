@@ -17,12 +17,12 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
   // console.log(redirecturl);
   return (
     <div
-      className={`program-card filter  hover:drop-shadow-md drop-shadow-none transition-all duration-300 bg-white ${activeHover}
+      className={`program-card filter   drop-shadow-none transition-all duration-300 bg-white ${activeHover}
       ${pulsing ? "pulse" : ""}  
       `}
       id={slug}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      // onMouseEnter={() => setIsHovered(true)}
+      // onMouseLeave={() => setIsHovered(false)}
     >
       <motion.a
         className={`program-link block border-[1px] 
