@@ -1,7 +1,7 @@
 ## Browser Bugs
 
-- safari
-  - Card hover animation not working correctly
+- x safari
+  - x Card hover animation not working correctly
 
 ## Feedback
 
