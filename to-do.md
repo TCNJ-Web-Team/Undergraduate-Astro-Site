@@ -5,6 +5,27 @@
 - if homepage is custom, would be easier to build in astro, otherwise need to meet with brandon to see how we're sturcturing the urls
 -
 
+Change or to XD doc
+
+Intro Degree
+
+- max-width
+- finance
+
+Multiple schools
+
+Factoid - check xd doc above accordions
+
+Related Program arrows on phone
+
+Programs of study
+Dual degrees line - more spacing
+
+- margin bottom instead of line height 10 px?
+
+Careers
+margin below p tag
+
 ## Feedback
 
 - fix card and grid hover blur
@@ -13,9 +34,12 @@
 
 -match title animation to program at a glance animation
 
+- popup window for ? icons on program finder
+
 ### Program Page
 
 - develop pop-up window
+- pop up content example?
   -fix global footer mobile and tablet
 
 ## Browser Bugs
@@ -26,7 +50,7 @@
 ## Meta Tags and Social Fields
 
 - home, needs manual description and photos
-- custom fields added to program pages
+- x custom fields added to program pages
 
 ## Up to date To Do's
 
