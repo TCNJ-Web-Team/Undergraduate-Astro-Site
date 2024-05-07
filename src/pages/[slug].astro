@@ -69,6 +69,11 @@ export async function getStaticPaths() {
           slug
           schoolOrAdditionalLabel
         }
+        metaTitle
+        metaDescription
+        socialImage{
+          sourceUrl
+        }
       }
       title
     }
@@ -94,6 +99,9 @@ export async function getStaticPaths() {
         lowerContent: [];
         learnMoreList: [];
         slug: string;
+            metaTitle:string;
+        metaDescription:string;
+        socialImage:[];
       };
       title: string;
     }) => ({
@@ -114,6 +122,9 @@ export async function getStaticPaths() {
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
         learnMoreList: program.program.learnMoreList,
+              metaTitle:program.program.metaTitle,
+        metaDescription:program.program.metaDescription,
+        socialImage:program.program.socialImage,
       },
     })
   );
@@ -186,6 +197,11 @@ interface AstroProps {
   };
   lowerContent: any;
   learnMoreList: string;
+      metaTitle:string;
+        metaDescription:string;
+        socialImage:{
+          sourceUrl:string;
+        }
 }
 
 // Destructure with the defined interface
@@ -215,7 +231,16 @@ const {
   },
   lowerContent,
   learnMoreList,
+  metaTitle,
+metaDescription,
+    socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
+
+const socialSourceUrl = socialImage ? socialImage.sourceUrl : "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg";
+
+// console.log(metaTitle);
+// console.log(metaDescription);
+// console.log(socialSourceUrl);
 // console.log(rightImageHorizontalPosition, rightImageVerticalPosition);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -237,7 +262,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(degreeType.length);
 ---
 
-<Layout title={title}>
+<Layout title={title} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
       <!-- <TitleAndNav /> -->
 <NavigationBar/>
   <main class="font-bitter text-darkgrey overflow-hidden">
