@@ -1,3 +1,13 @@
+$dark-blue: #293f6f;
+$off-white: #fffdf4;
+$item-grey: #f1f1f1;
+$domine: "Domine", sans-serif;
+$raleway: "Raleway", sans-serif;
+$xl: 1920px; // Custom size for extra-large screens
+$lg: 1250px; // Custom size for large screens
+$md: 900px;
+$sm: 550px;
+
 #programs-of-study-left {
   p {
     font-size: 19px;
@@ -18,6 +28,23 @@
     margin-bottom: 15px;
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+}
+.inner-body-copy-white {
+  #careers-left,
+  #careers-right {
+    p {
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 15px;
+      margin-top: 5px;
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
