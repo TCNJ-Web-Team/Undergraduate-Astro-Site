@@ -40,8 +40,11 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         breakpoints={{
           // when window width is >= 320px
           250: {
+            // slidesPerView: "auto",
             slidesPerView: 1.5,
             spaceBetween: 20,
+            slidesOffsetAfter: 70,
+            // freeMode: true,
             // width: 350,
             // setWrapperSize: true,
           },
@@ -49,6 +52,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
           550: {
             slidesPerView: 2,
             spaceBetween: 20,
+            slidesOffsetAfter: 0,
             // setWrapperSize: false,
             // width: "auto",
           },
