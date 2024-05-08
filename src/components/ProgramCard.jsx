@@ -15,6 +15,21 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
   const { title } = program;
   // console.log(animationState);
   // console.log(redirecturl);
+  // console.log(programOptions);
+
+  const progOptionSort = {
+    Major: 1,
+    Minor: 2,
+    Certificate: 3,
+    "Three-Year Bachelor's": 4,
+    Accelerated: 5,
+    "Dual Degree": 6,
+    "Teacher Education": 7,
+    Undeclared: 8,
+    Prelaw: 9,
+    Premed: 10,
+  };
+
   return (
     <div
       className={`program-card filter   drop-shadow-none transition-all duration-300 bg-white ${activeHover}
@@ -65,29 +80,32 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
           }`}
         >
           {programOptions &&
-            programOptions.map((option, index) => {
-              const formatOption = (option) => {
-                return option
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")
-                  .replace(/[^\w-]/g, "");
-              };
-              return (
-                <p
-                  key={index}
-                  className={`font-opensans text-[14px] leading-[15px] md:leading-[25px] inline-flex gap-x-[5px] items-center ${
-                    option.length > 15 && "col-span-full"
-                  }`}
-                >
-                  <img
-                    src={`/card-icons/${formatOption(option)}.svg`}
-                    alt={option}
-                    className="max-h-[15px]"
-                  />
-                  {option}
-                </p>
-              );
-            })}
+            programOptions
+              .slice() // Create a shallow copy to avoid mutating the original array
+              .sort((a, b) => progOptionSort[a] - progOptionSort[b]) // Sort the array
+              .map((option, index) => {
+                const formatOption = (option) => {
+                  return option
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^\w-]/g, "");
+                };
+                return (
+                  <p
+                    key={index}
+                    className={`font-opensans text-[14px] leading-[15px] md:leading-[25px] inline-flex gap-x-[5px] items-center ${
+                      option.length > 15 && "col-span-full"
+                    }`}
+                  >
+                    <img
+                      src={`/card-icons/${formatOption(option)}.svg`}
+                      alt={option}
+                      className="max-h-[15px]"
+                    />
+                    {option}
+                  </p>
+                );
+              })}
 
           {additionalOptions &&
             additionalOptions.map((option, index) => {
