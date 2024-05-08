@@ -32,7 +32,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
     <div
       id="learn-more-list"
       className="
-  
+  pr-0
   sm:pl-[47px]
 sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
     >
