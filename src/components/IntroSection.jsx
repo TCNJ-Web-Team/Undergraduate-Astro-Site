@@ -137,7 +137,11 @@ export default function IntroSection() {
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
-                  Dual text
+                  <strong>Dual degrees</strong> from affiliated universities are
+                  available in law, medicine, optometry, pharmacy, physical
+                  therapy, social service, and speech-language pathology.
+                  Admission into the program's graduate portion is based on
+                  undergraduate performance.
                 </p>
 
                 <img
