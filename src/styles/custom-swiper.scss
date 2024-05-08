@@ -66,12 +66,33 @@ $sm: 550px;
       display: none;
     }
   }
-  // .swiper-slide {
-  //   @media screen and (max-width: $sm) {
-  //     &:last-child {
-  //       width: 300px !important;
-  //       margin-right: 200px !important;
-  //     }
-  //   }
-  // }
+  .swiper-slide {
+    position: relative;
+    transition: all 0.3s;
+    &::after {
+      transition: all 0.3s;
+      content: ""; // This is necessary for pseudo-elements
+      opacity: 0;
+      pointer-events: none;
+    }
+    &:hover {
+      transition: all 0.3s;
+      // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+      -webkit-box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.05);
+      -moz-box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.05);
+      box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.05);
+      &::after {
+        opacity: 1;
+        content: ""; // This is necessary for pseudo-elements
+        position: absolute;
+        top: 20px; /* Position at the vertical center */
+        right: 18px; // Adjust this as per your design
+        width: 27px; // Adjust width and height as per your design
+        height: 27px; // Adjust width and height as per your design
+        background-image: url(/yellow-active-arrow.svg);
+        background-repeat: no-repeat;
+        // transition: all 0.3s;
+      }
+    }
+  }
 }
