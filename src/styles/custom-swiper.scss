@@ -25,6 +25,17 @@ $sm: 550px;
   //   }
   .swiper-wrapper {
     padding-top: 70px;
+    @media screen and (max-width: $sm) {
+      // display: none;
+      padding-left: 35px;
+      // padding-right: 35px;
+      // &::after {
+      //   content: "";
+      //   display: block;
+      //   width: 35px;
+      // }
+      width: calc(100% - 35px);
+    }
   }
   #swiper-navigation {
     position: absolute;
@@ -55,4 +66,9 @@ $sm: 550px;
       display: none;
     }
   }
+  // .swiper-slide {
+  //   @media screen and (max-width: $sm) {
+  //     width: 300px !important;
+  //   }
+  // }
 }

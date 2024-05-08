@@ -32,7 +32,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
     <div
       id="learn-more-list"
       className="
-  pr-0
+ 
   sm:pl-[47px]
 sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
     >
@@ -42,11 +42,13 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
           250: {
             slidesPerView: 1.25,
             spaceBetween: 20,
+            width: 350,
           },
           // when window width is >= 480px
-          640: {
+          550: {
             slidesPerView: 2,
             spaceBetween: 20,
+            // width: "auto",
           },
           // when window width is >= 640px
           900: {
@@ -66,13 +68,20 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         }}
         // autoHeight={true}
       >
-        <h2 className="absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue">
+        <h2
+          className="
+        pl-[35px]
+  pr-[35px]
+  sm:pl-[0px]
+  sm:pr-[0px]
+        absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue"
+        >
           Related programs
         </h2>
         {learnMoreListRender.map((content) => {
           return (
             <SwiperSlide
-              className=" border border-[#BFBFBF]
+              className=" border border-[#BFBFBF] !last:mr-[35px]
           w-auto"
               id={content.title.replace(/\s+/g, "-").toLowerCase()}
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
@@ -88,9 +97,11 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
                   </p>
                 )}
               </a>
+              {/* <span slot="container-end">Container End</span> */}
             </SwiperSlide>
           );
         })}
+
         {/* <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
