@@ -15,6 +15,21 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
   const { title } = program;
   // console.log(animationState);
   // console.log(redirecturl);
+  // console.log(programOptions);
+
+  const progOptionSort = {
+    Major: 0,
+    Minor: 1,
+    Certificate: 2,
+    "Three-Year Bachelor's": 3,
+    Accelerated: 4,
+    "Dual Degree": 5,
+    "Teacher Education": 6,
+    Undeclared: 7,
+    Prelaw: 8,
+    Premed: 9,
+  };
+
   return (
     <div
       className={`program-card filter   drop-shadow-none transition-all duration-300 bg-white ${activeHover}
@@ -64,56 +79,33 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
             listOnly && "md:max-w-[260px] md:w-[100%]"
           }`}
         >
-          {programOptions &&
-            programOptions.map((option, index) => {
-              const formatOption = (option) => {
-                return option
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")
-                  .replace(/[^\w-]/g, "");
-              };
-              return (
-                <p
-                  key={index}
-                  className={`font-opensans text-[14px] leading-[15px] md:leading-[25px] inline-flex gap-x-[5px] items-center ${
-                    option.length > 15 && "col-span-full"
-                  }`}
-                >
-                  <img
-                    src={`/card-icons/${formatOption(option)}.svg`}
-                    alt={option}
-                    className="max-h-[15px]"
-                  />
-                  {option}
-                </p>
-              );
-            })}
-
-          {additionalOptions &&
-            additionalOptions.map((option, index) => {
-              const formatOption = (option) => {
-                return option
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")
-                  .replace(/[^\w-]/g, "");
-              };
-              return (
-                <p
-                  key={index}
-                  className={`font-opensans text-[14px] leading-[25px]  inline-flex gap-x-[5px] items-center ${
-                    option.length > 15 && "col-span-full"
-                  }`}
-                >
-                  <img
-                    src={`/card-icons/${formatOption(option)}.svg`}
-                    alt={option}
-                    className="max-h-[15px]"
-                  />
-                  {option}
-                  {/* {option.length} */}
-                </p>
-              );
-            })}
+          {(programOptions || additionalOptions) &&
+            [...(programOptions || []), ...(additionalOptions || [])] // Combine programOptions and additionalOptions
+              .slice() // Create a shallow copy to avoid mutating the original array
+              .sort((a, b) => progOptionSort[a] - progOptionSort[b]) // Sort the combined array
+              .map((option, index) => {
+                const formatOption = (option) => {
+                  return option
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^\w-]/g, "");
+                };
+                return (
+                  <p
+                    key={index}
+                    className={`font-opensans text-[14px] leading-[15px] md:leading-[25px] inline-flex gap-x-[5px] items-center ${
+                      option.length > 15 && "col-span-full"
+                    }`}
+                  >
+                    <img
+                      src={`/card-icons/${formatOption(option)}.svg`}
+                      alt={option}
+                      className="max-h-[15px]"
+                    />
+                    {option}
+                  </p>
+                );
+              })}
         </div>
       </motion.a>
       {/* Access other fields here directly */}
