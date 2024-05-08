@@ -7,7 +7,14 @@ $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
-
+p {
+  a {
+    transition: all 0.3s;
+    &:hover {
+      color: $dark-blue;
+    }
+  }
+}
 #programs-of-study-left {
   p {
     font-size: 19px;
