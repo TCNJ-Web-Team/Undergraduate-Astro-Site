@@ -132,15 +132,23 @@ $domine: "Domine", serif;
       @media screen and (min-width: $sm-md) {
         display: none;
       }
+      @media screen and (min-width: $lg) {
+        display: block;
+        width: 100%;
+        // max-width: 550px;
+      }
     }
     &.tablet-only {
       display: none;
-      @media screen and (max-width: $lg) {
+      @media screen and (max-width: $md) {
         width: 100%;
         max-width: 550px;
       }
       @media screen and (min-width: $sm-md) {
         display: block;
+      }
+      @media screen and (min-width: $lg) {
+        display: none;
       }
     }
   }
