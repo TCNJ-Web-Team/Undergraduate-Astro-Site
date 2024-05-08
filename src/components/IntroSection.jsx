@@ -48,6 +48,12 @@ export default function IntroSection() {
     };
   }, [accellOpen, dualOpen]);
 
+  // Function to handle click events inside the popup content
+  const handlePopupClick = (event) => {
+    // Prevent click event propagation
+    event.stopPropagation();
+  };
+
   return (
     <div
       id="intro"
@@ -95,10 +101,10 @@ export default function IntroSection() {
               <div
                 ref={accellText}
                 className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
-                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default
-                "
+                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
-                <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
+                <p className="accell-text-block py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
                   <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
                   are available in business, counseling, English, public health,
                   public policy, and teacher education. Admission into the
@@ -120,16 +126,27 @@ export default function IntroSection() {
           </span>
           and dual degrees.
           <span className="inline-block mr-[5px] ml-[-2px] relative">
-            {dualOpen && (
+            <div
+              className={`popup-container-two fixed top-0 left-0
+              bg-slate-600 w-[100%] h-[100%] ${dualOpen && "active"}`}
+            >
               <div
                 ref={dualText}
-                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+                className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
+                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
-                <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
-                  Dual Text
+                <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
+                  Dual text
                 </p>
+
+                <img
+                  className="close-button"
+                  src="/close-item.svg"
+                  onClick={() => setDualOpen(false)}
+                />
               </div>
-            )}
+            </div>
             <img
               className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
               src="/info-icon.svg"
