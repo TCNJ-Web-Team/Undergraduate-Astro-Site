@@ -87,13 +87,18 @@ export default function IntroSection() {
           Search by keyword or browse programs by selecting an area of study,
           degree type, and/or format. TCNJ students also have an option to
           pursue accelerated programs
-          <span className="inline-block mr-[5px] ml-[-1px] relative">
-            {accellOpen && (
+          <span className="inline-block mr-[5px] ml-[-1px]">
+            <div
+              className={`popup-container fixed top-0 left-0
+              bg-slate-600 w-[100%] h-[100%] ${accellOpen && "active"}`}
+            >
               <div
                 ref={accellText}
-                className="top-arrow-popup absolute z-[1000] left-[50%] translate-x-[-50%] bg-white w-[410px]"
+                className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
+                max-w-[1128px] mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default
+                "
               >
-                <p className="py-[30px] px-[35px] font-opensans text-[14px] leading-[24px] text-black">
+                <p className="py-[45px] px-[45px] font-opensans text-[16px] leading-[24px] text-black">
                   <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
                   are available in business, counseling, English, public health,
                   public policy, and teacher education. Admission into the
@@ -101,7 +106,7 @@ export default function IntroSection() {
                   performance.
                 </p>
               </div>
-            )}
+            </div>
             <img
               className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
               src="/info-icon.svg"
