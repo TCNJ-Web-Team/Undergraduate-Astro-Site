@@ -40,7 +40,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         breakpoints={{
           // when window width is >= 320px
           250: {
-            slidesPerView: 1.25,
+            slidesPerView: 1.5,
             spaceBetween: 20,
             // width: 350,
             // setWrapperSize: true,
@@ -83,7 +83,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
         {learnMoreListRender.map((content) => {
           return (
             <SwiperSlide
-              className=" border border-[#BFBFBF] !last:mr-[35px]
+              className=" border border-[#BFBFBF]
           w-auto"
               id={content.title.replace(/\s+/g, "-").toLowerCase()}
               key={content.title.replace(/\s+/g, "-").toLowerCase()}

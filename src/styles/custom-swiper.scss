@@ -66,12 +66,12 @@ $sm: 550px;
       display: none;
     }
   }
-  .swiper-slide {
-    @media screen and (max-width: $sm) {
-      &:last-child {
-        width: 300px !important;
-        margin-right: 200px !important;
-      }
-    }
-  }
+  // .swiper-slide {
+  //   @media screen and (max-width: $sm) {
+  //     &:last-child {
+  //       width: 300px !important;
+  //       margin-right: 200px !important;
+  //     }
+  //   }
+  // }
 }
