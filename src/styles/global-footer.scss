@@ -5,6 +5,7 @@ $raleway: "Raleway", sans-serif;
 $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
+$sm-md: 750px;
 $sm: 550px;
 
 $tablet-media-query: 850px;
@@ -28,12 +29,15 @@ $domine: "Domine", serif;
 .global-footer-2022 {
   background-color: $dark-tcnj-blue;
   width: 100%;
-  padding: 40px 0 20px;
+  padding: 60px 0;
   .inner-width {
     max-width: 1128px;
 
     margin: 0 auto;
     width: 100%;
+    @media screen and (max-width: $sm-md) {
+      width: 90%;
+    }
   }
   .bottom-container {
     display: flex;
@@ -42,6 +46,7 @@ $domine: "Domine", serif;
       flex-direction: column;
       align-items: center;
       flex-wrap: wrap;
+      gap: 15px;
     }
   }
   .alignleft {
@@ -49,6 +54,9 @@ $domine: "Domine", serif;
     .copyright {
       display: flex;
       justify-content: space-between;
+      @media screen and (max-width: $lg) {
+        justify-content: center;
+      }
     }
   }
   .alignright {
@@ -58,14 +66,28 @@ $domine: "Domine", serif;
       gap: 10px;
     }
   }
+  #footer-hr {
+    background-color: white;
+    border-top: 1px solid white;
+    height: 1px;
+    margin: 20px 0px;
+    clear: both;
+    @media screen and (max-width: $lg) {
+      margin: 40px 0px 10px;
+      max-width: 750px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   .grid-wrapper {
     display: grid;
     grid-template-columns: auto auto auto auto;
     align-items: center;
+    align-items: start;
     @media screen and (max-width: $lg) {
       display: flex;
       flex-wrap: wrap;
-      gap: 75px 15%;
+      gap: 30px 12.5%;
       justify-content: center;
     }
     #logo-container {
@@ -105,17 +127,26 @@ $domine: "Domine", serif;
     &.no-tablet {
       max-width: 290px;
       width: 100%;
-      @media screen and (max-width: $lg) {
+      display: block;
+
+      @media screen and (min-width: $sm-md) {
         display: none;
       }
     }
     &.tablet-only {
       display: none;
       @media screen and (max-width: $lg) {
-        display: block;
         width: 100%;
         max-width: 550px;
       }
+      @media screen and (min-width: $sm-md) {
+        display: block;
+      }
+    }
+  }
+  .one-third {
+    @media screen and (max-width: $sm-md) {
+      display: none;
     }
   }
   a {
@@ -149,5 +180,8 @@ $domine: "Domine", serif;
     text-align: center;
     color: #9bd0f3;
     // margin: 20px;
+    @media screen and (max-width: $lg) {
+      flex: 100%;
+    }
   }
 }
