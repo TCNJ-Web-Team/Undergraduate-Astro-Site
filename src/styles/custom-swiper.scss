@@ -1,3 +1,13 @@
+$dark-blue: #293f6f;
+$off-white: #fffdf4;
+$item-grey: #f1f1f1;
+$domine: "Domine", sans-serif;
+$raleway: "Raleway", sans-serif;
+$xl: 1920px; // Custom size for extra-large screens
+$lg: 1250px; // Custom size for large screens
+$md: 900px;
+$sm: 550px;
+
 .swiper {
   //   h2 {
   //     position: absolute;
@@ -40,6 +50,9 @@
     .swiper-button-next:after {
       color: black;
       font-size: 0px;
+    }
+    @media screen and (max-width: $sm) {
+      display: none;
     }
   }
 }
