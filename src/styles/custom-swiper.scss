@@ -34,7 +34,7 @@ $sm: 550px;
       //   display: block;
       //   width: 35px;
       // }
-      width: calc(100% - 35px);
+      width: 70% !important;
     }
   }
   #swiper-navigation {
@@ -66,9 +66,12 @@ $sm: 550px;
       display: none;
     }
   }
-  // .swiper-slide {
-  //   @media screen and (max-width: $sm) {
-  //     width: 300px !important;
-  //   }
-  // }
+  .swiper-slide {
+    @media screen and (max-width: $sm) {
+      &:last-child {
+        width: 300px !important;
+        margin-right: 200px !important;
+      }
+    }
+  }
 }

@@ -42,12 +42,14 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
           250: {
             slidesPerView: 1.25,
             spaceBetween: 20,
-            width: 350,
+            // width: 350,
+            // setWrapperSize: true,
           },
           // when window width is >= 480px
           550: {
             slidesPerView: 2,
             spaceBetween: 20,
+            // setWrapperSize: false,
             // width: "auto",
           },
           // when window width is >= 640px
