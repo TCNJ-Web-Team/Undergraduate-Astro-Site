@@ -21,6 +21,10 @@ import AnimatedProgramAtAGlance from "../components/program-page/AnimatedProgram
 import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
 import TitleAndNav from "../components/TitleAndNav";
 import NavigationBar from "../components/NavigationBar";
+import "../styles/slug-page-styles.scss";
+
+
+
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
