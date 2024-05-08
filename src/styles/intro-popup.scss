@@ -44,4 +44,11 @@
     margin-top: 0;
     height: 100%;
   }
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 12px;
+    cursor: pointer;
+  }
 }

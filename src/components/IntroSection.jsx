@@ -95,16 +95,21 @@ export default function IntroSection() {
               <div
                 ref={accellText}
                 className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
-                max-w-[1128px] mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default
+                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default
                 "
               >
-                <p className="py-[45px] px-[45px] font-opensans text-[16px] leading-[24px] text-black">
+                <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
                   <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
                   are available in business, counseling, English, public health,
                   public policy, and teacher education. Admission into the
                   program’s graduate portion is based on undergraduate
                   performance.
                 </p>
+                <img
+                  className="close-button"
+                  src="/close-item.svg"
+                  onClick={() => setAccellOpen(false)}
+                />
               </div>
             </div>
             <img
