@@ -22,6 +22,7 @@ import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
 import TitleAndNav from "../components/TitleAndNav";
 import NavigationBar from "../components/NavigationBar";
 import "../styles/slug-page-styles.scss";
+import QuoteContent from "../components/QuoteContent";
 
 
 
@@ -68,6 +69,7 @@ export async function getStaticPaths() {
           title
           body
         }
+        quoteContentArea
         learnMoreList {
           title
           slug
@@ -100,6 +102,7 @@ export async function getStaticPaths() {
 
         careers: string;
         programOfStudy: string;
+        quoteContentArea: string;
         lowerContent: [];
         learnMoreList: [];
         slug: string;
@@ -125,6 +128,7 @@ export async function getStaticPaths() {
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
+        quoteContentArea: program.program.quoteContentArea,
         learnMoreList: program.program.learnMoreList,
               metaTitle:program.program.metaTitle,
         metaDescription:program.program.metaDescription,
@@ -200,6 +204,7 @@ interface AstroProps {
     body: string;
   };
   lowerContent: any;
+  quoteContentArea: string;
   learnMoreList: string;
       metaTitle:string;
         metaDescription:string;
@@ -234,6 +239,7 @@ const {
     body: programOfStudyBody,
   },
   lowerContent,
+  quoteContentArea,
   learnMoreList,
   metaTitle,
 metaDescription,
@@ -532,13 +538,15 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           client:load/>
       </div>
     </div>
+   
     <div
       class=" px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
       id="lower-content-and-related-progras"
     >
       <div class="m-auto bg-white pb-[75px] sm:pb-[100px] md:pb-[150px]">
         <div class="max-w-[70.5rem] m-auto">
-          {lowerContent && <LowerContent lowerContent={lowerContent} />}
+
+          {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
           {
             learnMoreList && (
