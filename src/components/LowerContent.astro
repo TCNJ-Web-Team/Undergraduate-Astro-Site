@@ -1,14 +1,16 @@
 ---
 import Accordion from "./Accordion";
+import QuoteContent from "./QuoteContent";
 
 type Props = {
   lowerContent: {
     title: string;
     body: string;
   }[];
+  quote?: string;
 };
 
-const { lowerContent } = Astro.props;
+const { lowerContent, quote } = Astro.props;
 ---
 
 <div
@@ -27,6 +29,7 @@ md:pb-[150px]
 lg:pl-[0px]
 lg:pr-[0px]"
 >
+  {quote && <QuoteContent content={quote} />}
   <hr class="bg-[#BFBFBF] h-[1px] w-auto border-0" />
   {
     lowerContent.map((content) => {
