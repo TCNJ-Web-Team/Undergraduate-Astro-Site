@@ -18,7 +18,7 @@ function QuoteContent({ content }) {
     h2Content.length > 100
       ? "text-[18px] leading-[30px] md:text-[26px] md:leading-[45px]"
       : "text-[26px] leading-[40px] md:text-[45px] md:leading-[65px]";
-  console.log("H2 Content length", h2Content.length);
+  //   console.log("H2 Content length", h2Content.length);
   //   console.log("P Content:", pContent);
 
   return (
