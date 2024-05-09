@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime.b9e88e07.js";import"./index.03be2d59.js";import{f as s}from"./fadeInVariant.c8779cc6.js";import{m as x}from"./motion.9b287751.js";function m({copy:n,id:a}){return e.jsx(x.div,{id:a,className:`
+import{j as e}from"./jsx-runtime.b9e88e07.js";import"./index.03be2d59.js";import{f as s}from"./fadeInVariant.284d47c4.js";import{m as x}from"./motion.9b287751.js";function m({copy:n,id:a}){return e.jsx(x.div,{id:a,className:`
       text-[20px]
           leading-[35px]
           text-center
