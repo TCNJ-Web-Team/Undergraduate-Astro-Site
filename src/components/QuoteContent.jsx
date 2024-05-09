@@ -24,7 +24,7 @@ function QuoteContent({ content }) {
   return (
     <div className="large-quote flex flex-col items-end mb-[100px]">
       <h2
-        className={`font-alfaslab ${headingLengthCheck} text-left sm:text-left text-tcnjblue`}
+        className={`font-alfaslab ${headingLengthCheck} text-left sm:text-left text-tcnjblue mb-[11px]`}
       >
         {h2Content}
       </h2>
