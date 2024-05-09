@@ -22,6 +22,7 @@ import AnimatedRightImage from "../components/program-page/AnimatedRightImage";
 import TitleAndNav from "../components/TitleAndNav";
 import NavigationBar from "../components/NavigationBar";
 import "../styles/slug-page-styles.scss";
+import QuoteContent from "../components/QuoteContent";
 
 
 
@@ -544,13 +545,10 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
     >
       <div class="m-auto bg-white pb-[75px] sm:pb-[100px] md:pb-[150px]">
         <div class="max-w-[70.5rem] m-auto">
-           {quoteContentArea && <div>
-      <h2>Quote Area</h2>
-            <div set:html={quoteContentArea} />
-
-      </div>
+           {quoteContentArea && 
+      <QuoteContent content={quoteContentArea}/>
     }
-          {lowerContent && <LowerContent lowerContent={lowerContent} />}
+          {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
           {
             learnMoreList && (
