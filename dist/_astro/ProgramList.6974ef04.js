@@ -5,7 +5,7 @@ import{j as e}from"./jsx-runtime.b9e88e07.js";import{r as a}from"./index.03be2d5
         sm:px-[35px]
         lg:px-[50px]
         lg:pt-[48px]
-         ${c&&"md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]  lg:pt-[35px]"}
+         ${c&&"md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]  lg:!pt-[35px]"}
         `,href:n||`./${N}`,target:n?"_blank":"_self",initial:h?{opacity:0,y:5}:{opacity:1,y:0},animate:{opacity:1,y:0},transition:{delay:(l+.25)*.15,ease:"easeOut",duration:.3},children:[e.jsx("h2",{className:`font-domine font-bold 
         text-[19px] leading-[28px]
         sm:text-[21px] sm:leading-[30px]
