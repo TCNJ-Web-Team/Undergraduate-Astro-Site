@@ -47,7 +47,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
         lg:pt-[48px]
          ${
            listOnly &&
-           "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]  lg:pt-[35px]"
+           "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]  lg:!pt-[35px]"
          }
         `}
         href={redirecturl ? redirecturl : `./${slug}`}
