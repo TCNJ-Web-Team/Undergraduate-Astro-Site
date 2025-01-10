@@ -8,9 +8,9 @@ function QuoteContent({ content }) {
   useEffect(() => {
     if (headingRef.current) {
       const fittyInstance = fitty(headingRef.current, {
-        minSize: 16, // Minimum font size in pixels
-        maxSize: 48, // Maximum font size in pixels
-        multiLine: false, // Ensure the text stays on one line
+        minSize: 23, // Minimum font size in pixels
+        maxSize: 45, // Maximum font size in pixels
+        multiLine: true, // Ensure the text stays on one line
       });
 
       return () => fittyInstance.unsubscribe(); // Clean up on unmount
