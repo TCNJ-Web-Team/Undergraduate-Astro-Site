@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import fitty from "fitty";
+import { decode } from "html-entities";
+
 function QuoteContent({ content }) {
   console.log(content);
 
@@ -25,8 +27,8 @@ function QuoteContent({ content }) {
   const pMatch = content.match(pPattern);
 
   // Extracted content
-  const h2Content = h2Match ? h2Match[1] : "";
-  const pContent = pMatch ? pMatch[1] : "";
+  const h2Content = h2Match ? decode(h2Match[1]) : "";
+  const pContent = pMatch ? decode(pMatch[1]) : "";
 
   // const headingLengthCheck =
   //   h2Content.length > 100
