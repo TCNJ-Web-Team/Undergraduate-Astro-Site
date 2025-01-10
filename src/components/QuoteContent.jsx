@@ -3,7 +3,7 @@ import fitty from "fitty";
 import { decode } from "html-entities";
 
 function QuoteContent({ content }) {
-  console.log(content);
+  // console.log(content);
 
   const headingRef = useRef(null);
 
