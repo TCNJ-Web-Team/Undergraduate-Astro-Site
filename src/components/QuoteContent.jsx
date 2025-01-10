@@ -3,26 +3,30 @@ import fitty from "fitty";
 function QuoteContent({ content }) {
   console.log(content);
 
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    if (headingRef.current) {
+      const fittyInstance = fitty(headingRef.current, {
+        minSize: 16, // Minimum font size in pixels
+        maxSize: 48, // Maximum font size in pixels
+        multiLine: false, // Ensure the text stays on one line
+      });
+
+      return () => fittyInstance.unsubscribe(); // Clean up on unmount
+    }
+  }, []);
+
   const h2Pattern = /<h2>(.*?)<\/h2>/;
   const pPattern = /<p[^>]*>(.*?)<\/p>/;
   // Extracting content from <h2> and <p> tags
-
-  // Function to decode HTML entities
-  const decodeHTMLEntities = (text) => {
-    const parser = new DOMParser();
-    const dom = parser.parseFromString(
-      "<!doctype html><body>" + text,
-      "text/html"
-    );
-    return dom.body.textContent;
-  };
 
   const h2Match = content.match(h2Pattern);
   const pMatch = content.match(pPattern);
 
   // Extracted content
-  const h2Content = h2Match ? decodeHTMLEntities(h2Match[1]) : "";
-  const pContent = pMatch ? decodeHTMLEntities(pMatch[1]) : "";
+  const h2Content = h2Match ? h2Match[1] : "";
+  const pContent = pMatch ? pMatch[1] : "";
 
   // const headingLengthCheck =
   //   h2Content.length > 100
@@ -34,6 +38,7 @@ function QuoteContent({ content }) {
   return (
     <div className="large-quote flex flex-col items-end mb-[100px]">
       <h2
+        ref={headingRef}
         className={`font-alfaslab  text-left sm:text-left text-tcnjblue mb-[11px]`}
       >
         {h2Content}
