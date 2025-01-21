@@ -4,49 +4,17 @@ import ProgramGlanceCopy from "./ProgramGlanceCopy";
 
 type Props = {
   left?: string;
-  right?: string;
+  right: string;
   body?: string;
-  heading: string;
 };
-const { left, right, body, heading } = Astro.props;
-// console.log(left);
-const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
+const { left, right, body } = Astro.props;
+// console.log(right);
 ---
 
-<div
-  id={headingLower}
-  class={`relative ${heading === "Careers" ? "sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]" : ""}`}
->
-  {
-    heading != `Careers` ? (
-      <h2
-        class="
-      text-[23px] 
-      leading-[33px] 
-      pb-[20px]
-      sm:pb-[25px] 
-      sm:text-[30px] 
-      sm:leading-[60px] 
-      md:pb-[35px] 
-      md:leading-[40px]
-      font-chunkfive 
-      text-tcnjblue"
-      >
-        {heading}
-      </h2>
-    ) : (
-      <ProgramCareersHeading heading="Careers" />
-
-      // <h2 class="text-[4.063rem] leading-[4.688rem] pb-[50px] font-chunkfive text-tcnjblue">
-      //   {heading}
-      // </h2>
-    )
-  }
-  {
-    body && heading == `Careers` && (
-      <ProgramGlanceCopy id={`${headingLower}-body`} copy={body} />
-    )
-  }
+<script define:vars={{ right }}>
+  console.log(right);
+</script>
+<div id="programs-of-study" class={`relative `}>
   <div
     class="flex
   gap-[60px]
@@ -56,30 +24,18 @@ const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
   inner-body-copy-white
   flex-col"
   >
-    <div
-      class={heading === "Careers"
-        ? "flex flex-col sm:flex-row pb-[100px] sm:pb-[125px] md:pb-[200px] gap-[50px] sm:gap-[40px]"
-        : ""}
-    >
+    <div class="">
       {
         left && (
           <div
-            id={`${headingLower}-left`}
-            class="md:max-w-[45%] lg:max-w-[40%]"
+            id={`programs-of-study-left`}
+            class={`${right ? "md:max-w-[45%] lg:max-w-[40%]" : ""}`}
             set:html={left}
           />
         )
       }
-      {
-        heading == `Careers` && (
-          <div id={`${headingLower}-right`} set:html={right} />
-        )
-      }
     </div>
-    {
-      body && heading != `Careers` && (
-        <div class="" id={`${headingLower}-body`} set:html={body} />
-      )
-    }
+
+    <div class="" id={`programs-of-study-body`} set:html={body} />
   </div>
 </div>
