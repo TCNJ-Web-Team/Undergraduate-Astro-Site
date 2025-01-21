@@ -196,7 +196,7 @@ interface AstroProps {
   };
   programOfStudy: {
     left: string;
-    rightImage: {
+    rightImage?: {
       sourceUrl: string;
     };
     rightImageHorizontalPosition: number;
@@ -228,16 +228,13 @@ const {
   heroImgMobile,
   content,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
-  programOfStudy: {
-    left: programOfStudyLeft,
-    rightImage: { sourceUrl: programOfStudyRight } = {
-      sourceUrl:
-        "",
-    },
-    rightImageHorizontalPosition,
-    rightImageVerticalPosition,
-    body: programOfStudyBody,
-  },
+ programOfStudy: {
+  left: programOfStudyLeft,
+  rightImage,  // Get the rightImage object without destructuring
+  rightImageHorizontalPosition,
+  rightImageVerticalPosition,
+  body: programOfStudyBody,
+},
   lowerContent,
   quoteContentArea,
   learnMoreList,
@@ -245,6 +242,7 @@ const {
 metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
+const programOfStudyRight = rightImage?.sourceUrl ?? "";
 
 const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
 
@@ -471,7 +469,7 @@ const { sourceUrl } = heroImgDesktop ?? {
       "
       >
         {
-          programOfStudyRight && (
+  programOfStudyRight && programOfStudyRight !== null && (
           <AnimatedRightImage programOfStudyRight={programOfStudyRight}
 rightImageHorizontalPosition={rightImageHorizontalPosition} 
 rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
