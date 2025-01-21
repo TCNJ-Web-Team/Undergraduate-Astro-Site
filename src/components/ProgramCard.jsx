@@ -29,6 +29,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
     Undeclared: 7,
     Prelaw: 8,
     Premed: 9,
+    Premed: 9,
   };
 
   return (
