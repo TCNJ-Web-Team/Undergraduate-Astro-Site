@@ -19,6 +19,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
 
   const progOptionSort = {
     Major: 0,
+    "Major/Specialization": 0,
     Minor: 1,
     Certificate: 2,
     "Three-Year Bachelor's": 3,
