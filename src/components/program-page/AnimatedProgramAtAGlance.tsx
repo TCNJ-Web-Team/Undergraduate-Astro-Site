@@ -49,7 +49,7 @@ md:pt-[200px]"
           variants={fadeInAnimationVariant}
           custom={1}
         >
-          Program at a Glance
+          At a Glance
         </motion.h2>
 
         <motion.div

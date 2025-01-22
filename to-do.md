@@ -1,4 +1,6 @@
 FIX GLOBAL RIGHT SITE DRAWER
+Add top nav jump link headers
+Update Labels
 
 ## Hosting and Launch pla
 
