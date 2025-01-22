@@ -30,7 +30,7 @@ const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
   return (
     <>
       <div
-        id="spacer"
+        id="program-at-a-glance-intro"
         className="pt-[100px]
 md:pt-[200px]"
       ></div>
