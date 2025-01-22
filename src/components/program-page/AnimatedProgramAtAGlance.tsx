@@ -66,7 +66,7 @@ md:pt-[200px]"
           custom={3}
         >
           <a
-            href=""
+            href="https://admissions.tcnj.edu/apply/"
             className="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
                 hover:bg-tcnjblue hover:text-white transition-all
                 "
@@ -74,7 +74,7 @@ md:pt-[200px]"
             Apply
           </a>
           <a
-            href=""
+            href="https://connect.tcnj.edu/register/prospect"
             className="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
                 hover:bg-tcnjblue hover:text-white
                 transition-all
