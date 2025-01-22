@@ -29,7 +29,7 @@ md:pb-[150px]
 lg:pl-[0px]
 lg:pr-[0px]"
 >
-  {quote && <QuoteContent content={quote} />}
+  {quote && <QuoteContent content={quote} client:load />}
   <hr class="bg-[#BFBFBF] h-[1px] w-auto border-0" />
   {
     lowerContent.map((content) => {

@@ -82,7 +82,7 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
   sm:pr-[0px]
         absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue"
         >
-          Related programs
+          Related Programs
         </h2>
         {learnMoreListRender.map((content) => {
           return (

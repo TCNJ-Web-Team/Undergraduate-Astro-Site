@@ -1,3 +1,18 @@
+FIX GLOBAL RIGHT SITE DRAWER
+Add top nav jump link headers
+Update Labels
+
+## Hosting and Launch pla
+
+Subdomains and location of pages?
+academics.tcnj.edu/programs/
+academics.tcnj.edu/programs/biology
+academics.tcnj.edu/programs/chemistry
+
+undergraduate.tcnj.edu/biology
+
+CNAME records change for academics
+
 ## Structure of site
 
 - i still don understand structure of undergraduate site
