@@ -8,8 +8,8 @@ function NavigationBar() {
   };
 
   return (
-    <div className="bg-gray-100  px-8" id="menu">
-      <div className="max-w-6xl mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
+    <div className="bg-gray-100  px-8 " id="menu">
+      <div className="max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
         <button
           onClick={toggleMenu}
           className="md:hidden font-sans text-sm leading-9 uppercase py-[12.5px] md:py-0"
@@ -24,7 +24,7 @@ function NavigationBar() {
           transition-all duration-300 ease-in-out 
           md:flex flex-col md:flex-row md:gap-12  top-20 md:top-0 left-0  bg-gray-100 md:bg-transparent md:p-0 w-[100%] md:relative md:items-center`}
         >
-          <hr className="mb-[10px]" />
+          <hr className="mb-[10px] md:hidden" />
           <a
             href="#program-at-a-glance-intro"
             onClick={(e) => {
