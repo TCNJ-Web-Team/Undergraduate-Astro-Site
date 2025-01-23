@@ -34,6 +34,9 @@ export async function getStaticPaths() {
       program {
         fullProgramTitle
         degreeType
+        repeaterDegrees{
+          degreeName
+        }
         slug
         school
         programAtAGlance
@@ -93,6 +96,7 @@ export async function getStaticPaths() {
         title: string;
         programAtAGlance: string;
         degreeType: string[];
+        repeaterDegrees: string[];
         school: string;
         departmentRepeater: string[];
         heroImgDesktop: string;
@@ -120,6 +124,7 @@ export async function getStaticPaths() {
         horizontalPositionDesktopHero:
           program.program.horizontalPositionDesktopHero,
         degreeType: program.program.degreeType,
+        repeaterDegrees: program.program.repeaterDegrees,
         school: program.program.school,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
@@ -176,6 +181,7 @@ interface AstroProps {
   slug: string;
   programAtAGlance: string;
   degreeType: string[]; // Assuming degreeType is an array of strings
+  repeaterDegrees: {degreeName:string}[];
   school: string[];
   department: { deptUrl: string; deptTitle: string }[];
   horizontalPositionDesktopHero: number;
@@ -220,6 +226,7 @@ const {
   slug,
   programAtAGlance,
   degreeType,
+  repeaterDegrees,
   school,
   department,
   heroImgDesktop,
@@ -243,7 +250,7 @@ metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
-
+console.log(repeaterDegrees);
 const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
 
 // console.log(metaTitle);
@@ -411,6 +418,15 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
+          <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+            {
+              Array.isArray(degreeType)
+                ? degreeType.map((degree: string) => (
+                    <span class="block">{degree}</span>
+                  ))
+                : { degreeType }
+            }
+          </TopOption>
           <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(degreeType)
