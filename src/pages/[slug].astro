@@ -280,7 +280,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(department);
 // console.log(degreeType.length);
 // console.log(department);
-console.log(careersTitle);
+// console.log(careersTitle);
 ---
 
 <Layout title={title} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -452,7 +452,7 @@ console.log(careersTitle);
               Array.isArray(department)
                 ? department.map((degree) => 
                     degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
-                      <a class="text-[#33739F] underline">Any</a>
+                      <a class="text-[#33739F] underline">Any Department</a>
                     ) : (
                       <a class="text-[#33739F] underline" href={degree.deptUrl}>
                         <span class="block">{degree.deptTitle}</span>
@@ -557,7 +557,6 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
         /> -->
         <AnimatedBodyCopy
           heading={careersTitle ? careersTitle : "Careers"}
-          careerCheck={false}
           left={careersLeft}
           right={careersRight}
           body={careersBody}
