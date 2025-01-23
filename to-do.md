@@ -1,3 +1,15 @@
+- x Hover state on jump nav
+- x Add menu icon to nav
+- Review hero photo sizing
+- Program Finder Nav
+- x Allow multiple schools
+- Program Any school in listing with popup
+- x Allow multiple departments add S for multi
+- Configure social data
+- Configure meta data
+- Fix sidenav
+- top white bar spacing, review with Lauren
+
 FIX GLOBAL RIGHT SITE DRAWER
 Add top nav jump link headers
 Update Labels
