@@ -16,7 +16,7 @@ function NavigationBar() {
         >
           <span>
             <img
-              class="w-[17px] h-[14px] "
+              className="w-[17px] h-[14px] "
               src={`https://tcnj.edu/custom/icon-library/${isMenuOpen ? "menu-close" : "menu-icon"}.svg`}
               alt="menu icon"
             />

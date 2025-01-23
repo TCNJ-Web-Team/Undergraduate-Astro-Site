@@ -6,10 +6,10 @@ type Props = {
 };
 
 let schoolLink: string;
-let secondSchoolLink: string;
+// let secondSchoolLink: string;
 const { heading, imgSrc, school } = Astro.props;
-// console.log(school?.length);
-
+console.log(school?.length);
+console.log(school);
 // Check if school is an array and has at least one element
 if (Array.isArray(school) && school.length > 0) {
   switch (school[0]) {
@@ -34,41 +34,44 @@ if (Array.isArray(school) && school.length > 0) {
     case "Science":
       schoolLink = "https://science.tcnj.edu/";
       break;
+    case "Graduate, Global, and Online Education":
+      schoolLink = "https://ggoe.tcnj.edu/";
+      break;
     default:
       schoolLink = "https://tcnj.edu";
   }
 } else {
   schoolLink = "https://tcnj.edu";
 }
-if (Array.isArray(school) && school.length === 2) {
-  switch (school[1]) {
-    case "Arts and Communication":
-      secondSchoolLink = "https://artscomm.tcnj.edu/";
-      break;
-    case "Business":
-      secondSchoolLink = "https://business.tcnj.edu/";
-      break;
-    case "Education":
-      secondSchoolLink = "https://education.tcnj.edu/";
-      break;
-    case "Engineering":
-      secondSchoolLink = "https://engineering.tcnj.edu/";
-      break;
-    case "Humanities and Social Sciences":
-      secondSchoolLink = "https://hss.tcnj.edu/";
-      break;
-    case "Nursing and Health Sciences":
-      secondSchoolLink = "https://nhs.tcnj.edu/";
-      break;
-    case "Science":
-      secondSchoolLink = "https://science.tcnj.edu/";
-      break;
-    default:
-      secondSchoolLink = "https://tcnj.edu";
-  }
-} else {
-  secondSchoolLink = "https://tcnj.edu";
-}
+// if (Array.isArray(school) && school.length === 2) {
+//   switch (school[1]) {
+//     case "Arts and Communication":
+//       secondSchoolLink = "https://artscomm.tcnj.edu/";
+//       break;
+//     case "Business":
+//       secondSchoolLink = "https://business.tcnj.edu/";
+//       break;
+//     case "Education":
+//       secondSchoolLink = "https://education.tcnj.edu/";
+//       break;
+//     case "Engineering":
+//       secondSchoolLink = "https://engineering.tcnj.edu/";
+//       break;
+//     case "Humanities and Social Sciences":
+//       secondSchoolLink = "https://hss.tcnj.edu/";
+//       break;
+//     case "Nursing and Health Sciences":
+//       secondSchoolLink = "https://nhs.tcnj.edu/";
+//       break;
+//     case "Science":
+//       secondSchoolLink = "https://science.tcnj.edu/";
+//       break;
+//     default:
+//       secondSchoolLink = "https://tcnj.edu";
+//   }
+// } else {
+//   secondSchoolLink = "https://tcnj.edu";
+// }
 
 // console.log(secondSchoolLink);
 ---
@@ -95,21 +98,44 @@ if (Array.isArray(school) && school.length === 2) {
     </h3>
     <p class="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
       {
-        heading == "School" && school?.length == 1 ? (
-          <a class="text-[#33739F] underline" href={schoolLink}>
-            <slot />
-          </a>
-        ) : heading == "School" && school?.length == 2 ? (
-          <>
+        heading && (school?.length ?? 0) >= 1 ? (
+          school?.length === 1 ? (
             <a class="text-[#33739F] underline" href={schoolLink}>
-              {school[0]}
+              <slot />
             </a>
-            <br />
-
-            <a class="text-[#33739F] underline" href={secondSchoolLink}>
-              {school[1]}
-            </a>
-          </>
+          ) : (school?.length ?? 0) < 8 ? (
+            school?.map((item, index) => {
+              const link = (() => {
+                switch (item) {
+                  case "Arts and Communication":
+                    return "https://artscomm.tcnj.edu/";
+                  case "Business":
+                    return "https://business.tcnj.edu/";
+                  case "Education":
+                    return "https://education.tcnj.edu/";
+                  case "Engineering":
+                    return "https://engineering.tcnj.edu/";
+                  case "Humanities and Social Sciences":
+                    return "https://hss.tcnj.edu/";
+                  case "Nursing and Health Sciences":
+                    return "https://nhs.tcnj.edu/";
+                  case "Science":
+                    return "https://science.tcnj.edu/";
+                  case "Graduate, Global, and Online Education":
+                    return "https://ggoe.tcnj.edu/";
+                  default:
+                    return "https://tcnj.edu";
+                }
+              })();
+              return (
+                <a class="text-[#33739F] underline block" href={link}>
+                  {item}
+                </a>
+              );
+            })
+          ) : (
+            <a class="text-[#33739F] underline">Any</a>
+          )
         ) : (
           <slot />
         )

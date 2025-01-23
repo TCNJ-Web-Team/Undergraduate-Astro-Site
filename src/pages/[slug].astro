@@ -436,7 +436,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                 : null
             }
           </TopOption>
-          <TopOption school={school} heading="School" imgSrc="building">
+          <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOption>
           <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
