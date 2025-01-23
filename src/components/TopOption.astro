@@ -101,12 +101,11 @@ if (Array.isArray(school) && school.length === 2) {
           </a>
         ) : heading == "School" && school?.length == 2 ? (
           <>
-            <>
-              <a class="text-[#33739F] underline" href={schoolLink}>
-                {school[0]}
-              </a>
-              <br />
-            </>
+            <a class="text-[#33739F] underline" href={schoolLink}>
+              {school[0]}
+            </a>
+            <br />
+
             <a class="text-[#33739F] underline" href={secondSchoolLink}>
               {school[1]}
             </a>

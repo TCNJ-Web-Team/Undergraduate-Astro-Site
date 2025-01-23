@@ -12,8 +12,15 @@ function NavigationBar() {
       <div className="max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
         <button
           onClick={toggleMenu}
-          className="md:hidden font-sans text-sm leading-9 uppercase py-[12.5px] md:py-0"
+          className="md:hidden font-sans text-[14px] leading-9 uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
         >
+          <span>
+            <img
+              class="w-[17px] h-[14px] "
+              src={`https://tcnj.edu/custom/icon-library/${isMenuOpen ? "menu-close" : "menu-icon"}.svg`}
+              alt="menu icon"
+            />
+          </span>
           Menu
         </button>
 
@@ -38,9 +45,10 @@ function NavigationBar() {
               //   setIsMenuOpen(false);
               // }, 300);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Overview
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#programs-of-study-container"
@@ -53,9 +61,10 @@ function NavigationBar() {
               }, 100);
               // setIsMenuOpen(false);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Program Options
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#careers-intro"
@@ -68,9 +77,10 @@ function NavigationBar() {
               }, 100);
               // setIsMenuOpen(false);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Careers
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#additional-information"
@@ -83,9 +93,10 @@ function NavigationBar() {
                   .scrollIntoView({ behavior: "smooth" });
               }, 100);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Additional Information
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <div className="flex gap-2 flex-row justify-items-start items-center md:absolute md:right-0 mt-[15px] md:mt-0">
             <a

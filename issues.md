@@ -1,0 +1,9 @@
+- Hover state on jump nav
+- Add menu icon to nav
+- Review hero photo sizing
+- Program Finder Nav
+- Allow multiple schools
+- Allow multiple departments add S for multi
+- Configure social data
+- Configure meta data
+- Fix sidenav
