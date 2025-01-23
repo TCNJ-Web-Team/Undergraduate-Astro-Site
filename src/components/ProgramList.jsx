@@ -249,7 +249,7 @@ export default function ProgramList({
                 handleProgramOptionCheckboxChange,
                 selectedProgramOptionFilters
               )}
-              title="Degree"
+              title="Programs"
               isOpen={openAccordion === 1}
               onToggle={() => handleAccordionToggle(1)}
               index={1}
