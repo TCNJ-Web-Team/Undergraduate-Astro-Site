@@ -90,6 +90,9 @@ export default function IntroSection() {
             duration: 0.35,
           }}
         >
+          TCNJ allows you to craft an education that's uniquely yours, with
+          flexible options across majors, minors, and concentration areas.
+          <br />
           Search by keyword or browse programs by selecting an area of study,
           degree type, and/or format. TCNJ students also have an option to
           pursue accelerated programs
@@ -105,11 +108,8 @@ export default function IntroSection() {
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className="accell-text-block py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
-                  <strong>Accelerated bachelor’s to master’s degrees</strong>{" "}
-                  are available in business, counseling, English, public health,
-                  public policy, and teacher education. Admission into the
-                  program’s graduate portion is based on undergraduate
-                  performance.
+                  <strong>Accelerated programs</strong> are designed to condense
+                  the completion timeline.
                 </p>
                 <img
                   className="close-button"
@@ -137,11 +137,10 @@ export default function IntroSection() {
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
-                  <strong>Dual degrees</strong> from affiliated universities are
-                  available in law, medicine, optometry, pharmacy, physical
-                  therapy, social service, and speech-language pathology.
-                  Admission into the program's graduate portion is based on
-                  undergraduate performance.
+                  <strong>Dual degree</strong> programs are designed to provide
+                  a streamlined pathway to a master’s or professional degree.
+                  TCNJ offers both direct entry and early assurance programs.
+                  See the program descriptions for details.
                 </p>
 
                 <img

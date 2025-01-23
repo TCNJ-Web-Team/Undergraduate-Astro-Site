@@ -34,6 +34,9 @@ export async function getStaticPaths() {
       program {
         fullProgramTitle
         degreeType
+        repeaterDegrees{
+          degreeName
+        }
         slug
         school
         programAtAGlance
@@ -93,6 +96,7 @@ export async function getStaticPaths() {
         title: string;
         programAtAGlance: string;
         degreeType: string[];
+        repeaterDegrees: string[];
         school: string;
         departmentRepeater: string[];
         heroImgDesktop: string;
@@ -120,6 +124,7 @@ export async function getStaticPaths() {
         horizontalPositionDesktopHero:
           program.program.horizontalPositionDesktopHero,
         degreeType: program.program.degreeType,
+        repeaterDegrees: program.program.repeaterDegrees,
         school: program.program.school,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
@@ -176,6 +181,7 @@ interface AstroProps {
   slug: string;
   programAtAGlance: string;
   degreeType: string[]; // Assuming degreeType is an array of strings
+  repeaterDegrees: {degreeName:string}[];
   school: string[];
   department: { deptUrl: string; deptTitle: string }[];
   horizontalPositionDesktopHero: number;
@@ -220,6 +226,7 @@ const {
   slug,
   programAtAGlance,
   degreeType,
+  repeaterDegrees,
   school,
   department,
   heroImgDesktop,
@@ -243,7 +250,7 @@ metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
-
+// console.log(repeaterDegrees);
 const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
 
 // console.log(metaTitle);
@@ -268,6 +275,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(school);
 // console.log(department);
 // console.log(degreeType.length);
+// console.log(department);
 ---
 
 <Layout title={title} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -411,7 +419,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
-          <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+          <!-- <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(degreeType)
                 ? degreeType.map((degree: string) => (
@@ -419,8 +427,17 @@ const { sourceUrl } = heroImgDesktop ?? {
                   ))
                 : { degreeType }
             }
+          </TopOption> -->
+          <TopOption heading={repeaterDegrees && repeaterDegrees.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+            {
+              Array.isArray(repeaterDegrees)
+                ? repeaterDegrees.map((degree) => (
+                    <span class="block">{degree.degreeName}</span>
+                  ))
+                : null
+            }
           </TopOption>
-          <TopOption school={school} heading="School" imgSrc="building">
+          <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOption>
           <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
@@ -428,13 +445,17 @@ const { sourceUrl } = heroImgDesktop ?? {
              -->
             {
               Array.isArray(department)
-                ? department.map((degree) => (
-                    <a class="text-[#33739F] underline" href={degree.deptUrl}>
-                      <span class="block">{degree.deptTitle}</span>
-                    </a>
-                  ))
+                ? department.map((degree) => 
+                    degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
+                      <a class="text-[#33739F] underline">Any</a>
+                    ) : (
+                      <a class="text-[#33739F] underline" href={degree.deptUrl}>
+                        <span class="block">{degree.deptTitle}</span>
+                      </a>
+                    )
+                  )
                 : department
-            }
+              }
           </TopOption>
         </div>
       </div>
@@ -515,6 +536,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
         </div>
       </div>
     </div>
+    {(careersLeft || careersRight || careersBody) && (
     <div class="px-[35px] m-auto bg-tcnjyellow" id="careers-intro">
       <div
         class="max-w-[70.5rem] m-auto
@@ -536,7 +558,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           client:load/>
       </div>
     </div>
-   
+   )}
     <div
       class=" px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
       id="lower-content-and-related-progras"
