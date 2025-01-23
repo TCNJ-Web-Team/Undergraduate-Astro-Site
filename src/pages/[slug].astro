@@ -275,6 +275,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(school);
 // console.log(department);
 // console.log(degreeType.length);
+// console.log(department);
 ---
 
 <Layout title={title} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -444,13 +445,17 @@ const { sourceUrl } = heroImgDesktop ?? {
              -->
             {
               Array.isArray(department)
-                ? department.map((degree) => (
-                    <a class="text-[#33739F] underline" href={degree.deptUrl}>
-                      <span class="block">{degree.deptTitle}</span>
-                    </a>
-                  ))
+                ? department.map((degree) => 
+                    degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
+                      <a class="text-[#33739F] underline">Any</a>
+                    ) : (
+                      <a class="text-[#33739F] underline" href={degree.deptUrl}>
+                        <span class="block">{degree.deptTitle}</span>
+                      </a>
+                    )
+                  )
                 : department
-            }
+              }
           </TopOption>
         </div>
       </div>
