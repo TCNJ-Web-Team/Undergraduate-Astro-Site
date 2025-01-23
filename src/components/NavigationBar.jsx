@@ -12,8 +12,15 @@ function NavigationBar() {
       <div className="max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
         <button
           onClick={toggleMenu}
-          className="md:hidden font-sans text-sm leading-9 uppercase py-[12.5px] md:py-0"
+          className="md:hidden font-sans text-[14px] leading-9 uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
         >
+          <span>
+            <img
+              class="w-[17px] h-[14px] "
+              src={`https://tcnj.edu/custom/icon-library/${isMenuOpen ? "menu-close" : "menu-icon"}.svg`}
+              alt="menu icon"
+            />
+          </span>
           Menu
         </button>
 
