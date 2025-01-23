@@ -17,37 +17,14 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   return (
     <motion.div
       id={headingLower}
-      className={`relative ${
-        heading === "Careers"
-          ? "sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]"
-          : ""
-      }`}
+      className={`relative sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]`}
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
     >
-      {heading !== "Careers" ? (
-        <motion.h2
-          className="
-          text-[23px] 
-          leading-[33px] 
-          pb-[20px]
-          sm:pb-[25px] 
-          sm:text-[30px] 
-          sm:leading-[60px] 
-          md:pb-[35px] 
-          md:leading-[40px]
-          font-chunkfive 
-          text-tcnjblue"
-          variants={fadeInAnimationVariant}
-          custom={1}
-        >
-          {heading}
-        </motion.h2>
-      ) : (
-        <motion.h2
-          className={`text-center
+      <motion.h2
+        className={`text-center
       font-chunkfive 
       text-tcnjblue
       text-[45px]
@@ -62,15 +39,13 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
 
       md:pb-[50px]
             `}
-          variants={fadeInAnimationVariant}
-          custom={1}
-        >
-          Careers
-        </motion.h2>
-      )}
-      {body && heading === "Careers" && (
-        <ProgramGlanceCopy id={`${headingLower}-body`} copy={body} />
-      )}
+        variants={fadeInAnimationVariant}
+        custom={1}
+      >
+        {heading}
+      </motion.h2>
+
+      {body && <ProgramGlanceCopy id={`${headingLower}-body`} copy={body} />}
       <div
         className="flex
       gap-[60px]
@@ -80,13 +55,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       inner-body-copy-white
       flex-col"
       >
-        <div
-          className={
-            heading === "Careers"
-              ? "flex flex-col sm:flex-row pb-[100px] sm:pb-[125px] md:pb-[200px] gap-[50px] sm:gap-[40px]"
-              : ""
-          }
-        >
+        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[125px] md:pb-[200px] gap-[50px] sm:gap-[40px]">
           {left && (
             <motion.div
               id={`${headingLower}-left`}
@@ -96,22 +65,14 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
               custom={3}
             />
           )}
-          {heading === "Careers" && (
-            <motion.div
-              id={`${headingLower}-right`}
-              dangerouslySetInnerHTML={{ __html: right || "" }}
-              variants={fadeInAnimationVariant}
-              custom={4}
-            />
-          )}
-        </div>
-        {body && heading !== "Careers" && (
-          <div
-            className=""
-            id={`${headingLower}-body`}
-            dangerouslySetInnerHTML={{ __html: body }}
+
+          <motion.div
+            id={`${headingLower}-right`}
+            dangerouslySetInnerHTML={{ __html: right || "" }}
+            variants={fadeInAnimationVariant}
+            custom={4}
           />
-        )}
+        </div>
       </div>
     </motion.div>
   );

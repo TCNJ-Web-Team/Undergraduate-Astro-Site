@@ -237,7 +237,7 @@ export default function ProgramList({
                 handleSchoolCheckboxChange,
                 selectedSchoolFilters
               )}
-              title="Area of Study"
+              title="Schools"
               isOpen={openAccordion === 0}
               onToggle={() => handleAccordionToggle(0)}
               index={0}
