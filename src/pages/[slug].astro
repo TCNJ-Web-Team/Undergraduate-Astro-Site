@@ -250,7 +250,7 @@ metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
-console.log(repeaterDegrees);
+// console.log(repeaterDegrees);
 const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
 
 // console.log(metaTitle);
@@ -418,7 +418,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
-          <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+          <!-- <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(degreeType)
                 ? degreeType.map((degree: string) => (
@@ -426,14 +426,14 @@ const { sourceUrl } = heroImgDesktop ?? {
                   ))
                 : { degreeType }
             }
-          </TopOption>
-          <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+          </TopOption> -->
+          <TopOption heading={repeaterDegrees && repeaterDegrees.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
-              Array.isArray(degreeType)
-                ? degreeType.map((degree: string) => (
-                    <span class="block">{degree}</span>
+              Array.isArray(repeaterDegrees)
+                ? repeaterDegrees.map((degree) => (
+                    <span class="block">{degree.degreeName}</span>
                   ))
-                : { degreeType }
+                : null
             }
           </TopOption>
           <TopOption school={school} heading="School" imgSrc="building">
