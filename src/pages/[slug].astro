@@ -54,6 +54,7 @@ export async function getStaticPaths() {
           deptTitle
           deptUrl
         }
+        careersTitle
         careers {
           left
           right
@@ -103,7 +104,7 @@ export async function getStaticPaths() {
         horizontalPositionDesktopHero: number;
         heroImgTablet: string;
         heroImgMobile: string;
-
+        careersTitle: string;
         careers: string;
         programOfStudy: string;
         quoteContentArea: string;
@@ -130,6 +131,7 @@ export async function getStaticPaths() {
         heroImgDesktop: program.program.heroImgDesktop,
         heroImgTablet: program.program.heroImgTablet,
         heroImgMobile: program.program.heroImgMobile,
+        careersTitle: program.program.careersTitle,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
         lowerContent: program.program.lowerContent,
@@ -195,6 +197,7 @@ interface AstroProps {
     sourceUrl: string;
   };
   content: string;
+  careersTitle: string;
   careers: {
     left: string;
     right: string;
@@ -234,6 +237,7 @@ const {
   heroImgTablet,
   heroImgMobile,
   content,
+  careersTitle,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
  programOfStudy: {
   left: programOfStudyLeft,
@@ -276,6 +280,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(department);
 // console.log(degreeType.length);
 // console.log(department);
+console.log(careersTitle);
 ---
 
 <Layout title={title} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -551,7 +556,8 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           body={careersBody}
         /> -->
         <AnimatedBodyCopy
-          heading="Careers"
+          heading={careersTitle ? careersTitle : "Careers"}
+          careerCheck={false}
           left={careersLeft}
           right={careersRight}
           body={careersBody}
