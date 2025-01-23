@@ -26,7 +26,7 @@ function NavigationBar() {
 
         <div
           className={`overflow-hidden transition-all md:transition-none duration-300 ease-in-out
-          ${isMenuOpen ? "h-[250px] opacity-100" : "h-[0px] md:h-[60px] opacity-0 md:opacity-100"} 
+          ${isMenuOpen ? "h-[250px] opacity-100 md:h-[60px]" : "h-[0px] md:h-[60px] opacity-0 md:opacity-100"} 
           flex
           transition-all duration-300 ease-in-out 
           md:flex flex-col md:flex-row md:gap-12  top-20 md:top-0 left-0  bg-gray-100 md:bg-transparent md:p-0 w-[100%] md:relative md:items-center`}
