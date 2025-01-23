@@ -45,9 +45,10 @@ function NavigationBar() {
               //   setIsMenuOpen(false);
               // }, 300);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Overview
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#programs-of-study-container"
@@ -60,9 +61,10 @@ function NavigationBar() {
               }, 100);
               // setIsMenuOpen(false);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Program Options
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#careers-intro"
@@ -75,9 +77,10 @@ function NavigationBar() {
               }, 100);
               // setIsMenuOpen(false);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Careers
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             href="#additional-information"
@@ -90,9 +93,10 @@ function NavigationBar() {
                   .scrollIntoView({ behavior: "smooth" });
               }, 100);
             }}
-            className="font-sans text-sm leading-9 uppercase"
+            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Additional Information
+            <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <div className="flex gap-2 flex-row justify-items-start items-center md:absolute md:right-0 mt-[15px] md:mt-0">
             <a
