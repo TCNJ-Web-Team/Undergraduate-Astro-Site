@@ -103,7 +103,7 @@ if (Array.isArray(school) && school.length > 0) {
             <a class="text-[#33739F] underline" href={schoolLink}>
               <slot />
             </a>
-          ) : (school?.length ?? 0) < 8 ? (
+          ) : (school?.length ?? 0) < 3 ? (
             school?.map((item, index) => {
               const link = (() => {
                 switch (item) {
@@ -128,20 +128,20 @@ if (Array.isArray(school) && school.length > 0) {
                 }
               })();
               return (
-                <a class="text-[#33739F] underline block" href={link}>
+                <a class="text-primarylinkblue underline block" href={link}>
                   {item}
                 </a>
               );
             })
+          ) : (school?.length ?? 0) >= 3 && (school?.length ?? 0) < 8 ? (
+            <a class="text-primarylinkblue underline block">View Schools</a>
           ) : (
-            // THIS LINK ACTIVATES THE POPUP
-            <a class="text-[#33739F] underline">Any School</a>
+            <a class="text-primarylinkblue underline">Any School</a>
           )
         ) : (
           <slot />
         )
       }
-      <!-- <slot /> -->
     </p>
   </div>
 </div>
