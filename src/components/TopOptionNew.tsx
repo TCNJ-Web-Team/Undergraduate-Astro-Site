@@ -1,11 +1,42 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
 
-const TopOptionNew = ({ heading, imgSrc, school, department }) => {
-  const [popupContent, setPopupContent] = useState(null);
-  const [popupHeading, setPopupHeading] = useState(null);
+type School = string[];
 
-  const handleLinkClick = (content, popupTitle) => {
+type Department = {
+  deptTitle: string;
+  deptUrl: string;
+}[];
+
+interface TopOptionNewProps {
+  heading: string;
+  imgSrc: string;
+  school?: School;
+  department?: Department;
+}
+
+// TopOptionNew.tsx
+import type { FC } from "react";
+
+const TopOptionNew: FC<TopOptionNewProps> = ({
+  heading,
+  imgSrc,
+  school,
+  department,
+}) => {
+  const [popupContent, setPopupContent] = useState<string | string[] | null>(
+    null
+  );
+  const [popupHeading, setPopupHeading] = useState<string | string[] | null>(
+    null
+  );
+
+  interface HandleLinkClickProps {
+    content: string | string[];
+    popupTitle: string;
+  }
+
+  const handleLinkClick = ({ content, popupTitle }: HandleLinkClickProps) => {
     setPopupContent(content);
     setPopupHeading(popupTitle); // Set the heading for the popup
   };
@@ -114,14 +145,24 @@ const TopOptionNew = ({ heading, imgSrc, school, department }) => {
               })
             ) : school && school.length >= 3 && school.length < 8 ? (
               <button
-                onClick={() => handleLinkClick(school, "Available Schools")}
+                onClick={() =>
+                  handleLinkClick({
+                    content: school,
+                    popupTitle: "Available Schools",
+                  })
+                }
                 className="text-primarylinkblue underline block text-start"
               >
                 View Schools
               </button>
             ) : school && school.length >= 8 ? (
               <button
-                onClick={() => handleLinkClick(anySchoolText, "Any School")}
+                onClick={() =>
+                  handleLinkClick({
+                    content: anySchoolText,
+                    popupTitle: "Any School",
+                  })
+                }
                 className="text-primarylinkblue underline text-start"
               >
                 Any School
