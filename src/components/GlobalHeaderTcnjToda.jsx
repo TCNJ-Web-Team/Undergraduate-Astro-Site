@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from "react";
-// import "../styles/accordion-styles.scss";
-import "../styles/global-nav.scss";
+import { useState, useEffect } from "react";
+import "./styles/global-nav.scss";
+
 export default function GlobalHeader() {
   const [open, setOpen] = useState(false);
 
@@ -20,23 +20,19 @@ export default function GlobalHeader() {
     const handleKeyPress = (event) => {
       if (event.key === "Escape") {
         setOpen(false);
-        // console.log("test key");
       }
     };
 
     if (open) {
-      // Attach the event listener
       document.addEventListener("keydown", handleKeyPress);
     } else {
-      // Detach the event listener
       document.removeEventListener("keydown", handleKeyPress);
     }
 
-    // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
     };
-  }, [open]); // Dependency on 'open' ensures the effect is re-run when 'open' changes
+  }, [open]);
 
   return (
     <>
@@ -179,12 +175,7 @@ export default function GlobalHeader() {
             >
               Offices
             </a>
-            <a
-              className="desktop-global-nav-item"
-              href="https://today.tcnj.edu/"
-            >
-              TCNJ Today
-            </a>
+
             <img
               id="open-sidebar-button"
               src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/menu-icon.svg"
@@ -192,15 +183,6 @@ export default function GlobalHeader() {
               onClick={openSideNav}
             />
           </div>
-        </div>
-      </div>
-
-      <div id="site-header">
-        <div id="site-title" className="inner">
-          <a id="parent-site"></a>
-        </div>
-        <div id="site-nav">
-          <div className="inner"></div>
         </div>
       </div>
     </>
