@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
 
-const TopOptionNew = ({ heading, imgSrc, school }) => {
+const TopOptionNew = ({ heading, imgSrc, school, department }) => {
   const [popupContent, setPopupContent] = useState(null);
   const [popupHeading, setPopupHeading] = useState(null);
 
