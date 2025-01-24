@@ -1,10 +1,11 @@
 import type { FC } from "react";
+import Popup from "./Popup";
+import React, { useState } from "react";
 
 type Department = {
   deptTitle: string;
   deptUrl: string;
 };
-
 interface Props {
   heading: string;
   imgSrc: string;
@@ -16,6 +17,29 @@ const anyDepartmentText =
   "This program is open to students in any department and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
 
 const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
+  console.log(department);
+
+  const [popupContent, setPopupContent] = useState<
+    string | string[] | Department[] | null
+  >(null);
+  const [popupHeading, setPopupHeading] = useState<string | string[] | null>(
+    null
+  );
+
+  interface HandleLinkClickProps {
+    content: string | string[] | Department[];
+    popupTitle: string;
+  }
+
+  const handleLinkClick = ({ content, popupTitle }: HandleLinkClickProps) => {
+    setPopupContent(content);
+    setPopupHeading(popupTitle); // Set the heading for the popup
+  };
+
+  const handleClosePopup = () => {
+    setPopupContent(null);
+    setPopupHeading(null); // Clear the heading when the popup is closed
+  };
   return (
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img
@@ -27,14 +51,23 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
         <h3 className="text-[17px] leading-[23px] md:text-[20px] md:leading-[30px] font-interstate not-italic uppercase font-extrabold">
           {heading}
         </h3>
-        <p className="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px]">
+        <p className="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px] text-start">
           {department && (
-            <p className="text-[17px] leading-[23px] md:text-[19px] md:leading-[30px] text-start">
+            <span>
               {department.length < 3 ? (
-                department[0].deptTitle.toLowerCase() === "any" ? (
-                  <a className="text-primarylinkblue underline block text-start">
-                    Any Department
-                  </a>
+                department[0].deptTitle.toLowerCase() === "any" ||
+                department[0].deptTitle.toLowerCase() === "any department" ? (
+                  <button
+                    onClick={() =>
+                      handleLinkClick({
+                        content: anyDepartmentText,
+                        popupTitle: "Any Department",
+                      })
+                    }
+                    className="text-primarylinkblue  block text-start"
+                  >
+                    <span className="underline">Any Department</span> (i)
+                  </button>
                 ) : (
                   department.map((dept, index) => (
                     <a
@@ -47,17 +80,38 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                   ))
                 )
               ) : department.length >= 3 ? (
-                <button className="text-primarylinkblue underline block text-start">
-                  View Departments
+                <button
+                  onClick={() =>
+                    handleLinkClick({
+                      content: department.map((dept) => ({
+                        deptTitle: dept.deptTitle,
+                        deptUrl: dept.deptUrl,
+                      })),
+                      popupTitle: "Departments",
+                    })
+                  }
+                  className="text-primarylinkblue  block text-start"
+                >
+                  <span className="underline">View Departments</span> (i)
                 </button>
               ) : (
                 <span>No department available</span>
               )}
-            </p>
+            </span>
           )}
           {children}
+          {!department && (
+            <span className="text-black block text-start">
+              No department listed
+            </span>
+          )}
         </p>
       </div>
+      <Popup
+        content={popupContent}
+        onClose={handleClosePopup}
+        heading={popupHeading}
+      />
     </div>
   );
 };

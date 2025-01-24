@@ -149,9 +149,9 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                     popupTitle: "Available Schools",
                   })
                 }
-                className="text-primarylinkblue underline block text-start"
+                className="text-primarylinkblue  block text-start"
               >
-                View Schools
+                <span className="underline">View Schools</span> (i)
               </button>
             ) : school && school.length >= 8 ? (
               <button
@@ -161,9 +161,9 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                     popupTitle: "Any School",
                   })
                 }
-                className="text-primarylinkblue underline text-start"
+                className="text-primarylinkblue text-start"
               >
-                Any School
+                <span className="underline">Any School</span> (i)
               </button>
             ) : (
               <span>No school or department available</span>

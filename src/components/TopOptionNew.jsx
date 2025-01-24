@@ -117,7 +117,7 @@ const TopOptionNew = ({ heading, imgSrc, school, department }) => {
                 onClick={() => handleLinkClick(school, "Available Schools")}
                 className="text-primarylinkblue underline block text-start"
               >
-                View Schools
+                View Schools (i)
               </button>
             ) : school && school.length >= 8 ? (
               <button
