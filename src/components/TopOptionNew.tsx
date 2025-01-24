@@ -172,7 +172,18 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
             )}
           </p>
         )}
-        {department && <p>Department</p>}
+        {department &&
+          (Array.isArray(department)
+            ? department.map((degree) =>
+                degree.deptTitle === "Any" || degree.deptTitle === "any" ? (
+                  <a className="text-[#33739F] underline">Any Department</a>
+                ) : (
+                  <a className="text-[#33739F] underline" href={degree.deptUrl}>
+                    <span className="block">{degree.deptTitle}</span>
+                  </a>
+                )
+              )
+            : department)}
       </div>
       <Popup
         content={popupContent}

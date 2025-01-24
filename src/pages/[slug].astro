@@ -450,7 +450,10 @@ const { sourceUrl } = heroImgDesktop ?? {
           <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOptionNew>
-          <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+          <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+            {school}
+          </TopOptionNew> -->
+          <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} department={department} imgSrc="departments">
             <!-- {deptTitle}
              -->
             {
