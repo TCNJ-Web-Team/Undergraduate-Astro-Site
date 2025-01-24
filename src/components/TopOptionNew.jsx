@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
 
-const SchoolComponent = ({ heading, imgSrc, school }) => {
+const TopOptionNew = ({ heading, imgSrc, school }) => {
   const [popupContent, setPopupContent] = useState(null);
   const [popupHeading, setPopupHeading] = useState(null);
 
@@ -141,4 +141,4 @@ const SchoolComponent = ({ heading, imgSrc, school }) => {
   );
 };
 
-export default SchoolComponent;
+export default TopOptionNew;
