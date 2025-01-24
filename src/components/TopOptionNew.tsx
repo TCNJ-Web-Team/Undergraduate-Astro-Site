@@ -82,8 +82,6 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
   const anySchoolText =
     "This program is open to students in any school and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
 
-  const anyDepartmentText =
-    "This program is open to students in any department and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
   return (
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img

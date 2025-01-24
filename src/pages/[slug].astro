@@ -6,7 +6,7 @@ import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
 import RelatedProgSlider from "../components/RelatedProgSlider";
 import NextStepFooter from "../components/NextStepFooter";
-import TopOption from "../components/TopOption.astro";
+import TopOption from "../components/TopOption";
 import TopOptionNew from "../components/TopOptionNew";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
@@ -456,7 +456,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} department={department} imgSrc="departments">
             <!-- {deptTitle}
              -->
-            {
+            <!-- {
               Array.isArray(department)
                 ? department.map((degree) => 
                     degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
@@ -468,7 +468,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                     )
                   )
                 : department
-              }
+              } -->
           </TopOption>
         </div>
       </div>
