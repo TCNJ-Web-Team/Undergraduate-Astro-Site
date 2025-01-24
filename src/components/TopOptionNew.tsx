@@ -1,11 +1,42 @@
 import React, { useState } from "react";
 import Popup from "./Popup";
 
-const TopOptionNew = ({ heading, imgSrc, school, department }) => {
-  const [popupContent, setPopupContent] = useState(null);
-  const [popupHeading, setPopupHeading] = useState(null);
+type School = string[];
 
-  const handleLinkClick = (content, popupTitle) => {
+type Department = {
+  deptTitle: string;
+  deptUrl: string;
+}[];
+
+interface TopOptionNewProps {
+  heading: string;
+  imgSrc: string;
+  school?: School;
+  department?: Department;
+}
+
+// TopOptionNew.tsx
+import type { FC } from "react";
+
+const TopOptionNew: FC<TopOptionNewProps> = ({
+  heading,
+  imgSrc,
+  school,
+  department,
+}) => {
+  const [popupContent, setPopupContent] = useState<string | string[] | null>(
+    null
+  );
+  const [popupHeading, setPopupHeading] = useState<string | string[] | null>(
+    null
+  );
+
+  interface HandleLinkClickProps {
+    content: string | string[];
+    popupTitle: string;
+  }
+
+  const handleLinkClick = ({ content, popupTitle }: HandleLinkClickProps) => {
     setPopupContent(content);
     setPopupHeading(popupTitle); // Set the heading for the popup
   };
@@ -51,8 +82,6 @@ const TopOptionNew = ({ heading, imgSrc, school, department }) => {
   const anySchoolText =
     "This program is open to students in any school and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
 
-  const anyDepartmentText =
-    "This program is open to students in any department and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
   return (
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img
@@ -114,24 +143,45 @@ const TopOptionNew = ({ heading, imgSrc, school, department }) => {
               })
             ) : school && school.length >= 3 && school.length < 8 ? (
               <button
-                onClick={() => handleLinkClick(school, "Available Schools")}
-                className="text-primarylinkblue underline block text-start"
+                onClick={() =>
+                  handleLinkClick({
+                    content: school,
+                    popupTitle: "Available Schools",
+                  })
+                }
+                className="text-primarylinkblue  block text-start"
               >
-                View Schools (i)
+                <span className="underline">View Schools</span> (i)
               </button>
             ) : school && school.length >= 8 ? (
               <button
-                onClick={() => handleLinkClick(anySchoolText, "Any School")}
-                className="text-primarylinkblue underline text-start"
+                onClick={() =>
+                  handleLinkClick({
+                    content: anySchoolText,
+                    popupTitle: "Any School",
+                  })
+                }
+                className="text-primarylinkblue text-start"
               >
-                Any School
+                <span className="underline">Any School</span> (i)
               </button>
             ) : (
               <span>No school or department available</span>
             )}
           </p>
         )}
-        {department && <p>Department</p>}
+        {department &&
+          (Array.isArray(department)
+            ? department.map((degree) =>
+                degree.deptTitle === "Any" || degree.deptTitle === "any" ? (
+                  <a className="text-[#33739F] underline">Any Department</a>
+                ) : (
+                  <a className="text-[#33739F] underline" href={degree.deptUrl}>
+                    <span className="block">{degree.deptTitle}</span>
+                  </a>
+                )
+              )
+            : department)}
       </div>
       <Popup
         content={popupContent}

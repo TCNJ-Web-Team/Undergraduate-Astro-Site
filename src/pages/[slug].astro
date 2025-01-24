@@ -6,8 +6,8 @@ import LowerContent from "../components/LowerContent.astro";
 import LearnMoreList from "../components/LearnMoreList.astro";
 import RelatedProgSlider from "../components/RelatedProgSlider";
 import NextStepFooter from "../components/NextStepFooter";
-import TopOption from "../components/TopOption.astro";
-import TopOptionNew from "../components/TopOptionNew";
+import TopOption from "../components/TopOption";
+import TopOptionNew from "../components/TopOptionNew.tsx";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
 import "../styles/inner-body-copy.scss";
@@ -258,7 +258,8 @@ const programOfStudyRight = rightImage?.sourceUrl ?? "";
 // console.log(repeaterDegrees);
 const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
 
-// console.log(metaTitle);
+// console.log(department);
+// console.log(school);
 // console.log(metaDescription);
 // console.log(socialSourceUrl);
 // console.log(rightImageHorizontalPosition, rightImageVerticalPosition);
@@ -449,10 +450,13 @@ const { sourceUrl } = heroImgDesktop ?? {
           <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOptionNew>
-          <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+          <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+            {school}
+          </TopOptionNew> -->
+          <TopOption client:load  heading={department && department.length > 1 ? 'Departments' : "Department"} department={department} imgSrc="departments">
             <!-- {deptTitle}
              -->
-            {
+            <!-- {
               Array.isArray(department)
                 ? department.map((degree) => 
                     degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
@@ -464,7 +468,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                     )
                   )
                 : department
-              }
+              } -->
           </TopOption>
         </div>
       </div>
