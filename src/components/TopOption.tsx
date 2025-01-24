@@ -17,7 +17,7 @@ const anyDepartmentText =
   "This program is open to students in any department and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
 
 const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
-  console.log(department);
+  // console.log(department);
 
   const [popupContent, setPopupContent] = useState<
     string | string[] | Department[] | null
@@ -100,10 +100,8 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
             </span>
           )}
           {children}
-          {!department && (
-            <span className="text-black block text-start">
-              No department listed
-            </span>
+          {!department && !children && (
+            <span className="text-black block text-start">Not listed</span>
           )}
         </p>
       </div>
