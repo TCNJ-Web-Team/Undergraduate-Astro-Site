@@ -7,6 +7,7 @@ import LearnMoreList from "../components/LearnMoreList.astro";
 import RelatedProgSlider from "../components/RelatedProgSlider";
 import NextStepFooter from "../components/NextStepFooter";
 import TopOption from "../components/TopOption.astro";
+import TopOptionNew from "../components/TopOptionNew";
 import ProgramCareersHeading from "../components/ProgramCareersHeading";
 import ProgramGlanceCopy from "../components/ProgramGlanceCopy";
 import "../styles/inner-body-copy.scss";
@@ -442,9 +443,12 @@ const { sourceUrl } = heroImgDesktop ?? {
                 : null
             }
           </TopOption>
-          <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
+          <!-- <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
-          </TopOption>
+          </TopOption> -->
+          <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
+            {school}
+          </TopOptionNew>
           <TopOption heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             <!-- {deptTitle}
              -->
