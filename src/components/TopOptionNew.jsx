@@ -48,7 +48,11 @@ const SchoolComponent = ({ heading, imgSrc, school }) => {
   } else {
     schoolLink = "https://tcnj.edu";
   }
+  const anySchoolText =
+    "This program is open to students in any school and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
 
+  const anyDepartmentText =
+    "This program is open to students in any department and offers guidance from the Medical Careers Advisory Committee for those exploring and preparing for careers in health professions.";
   return (
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img
@@ -117,13 +121,13 @@ const SchoolComponent = ({ heading, imgSrc, school }) => {
               </button>
             ) : school && school.length >= 8 ? (
               <button
-                onClick={() => handleLinkClick(school, "Any School")}
+                onClick={() => handleLinkClick(anySchoolText, "Any School")}
                 className="text-primarylinkblue underline text-start"
               >
                 Any School
               </button>
             ) : (
-              <span>No school available</span>
+              <span>No school or department available</span>
             )}
           </p>
         )}
