@@ -29,8 +29,8 @@ function QuoteContent({ content }) {
   // Extracted content
   const h2Content = h2Match ? decode(h2Match[1]) : "";
   const pContent = pMatch ? pMatch[1] : ""; // Remove decode here since we want to keep HTML tags
-  console.log("H2 Content:", h2Content);
-  console.log("P Content:", pContent);
+  // console.log("H2 Content:", h2Content);
+  // console.log("P Content:", pContent);
   // const headingLengthCheck =
   //   h2Content.length > 100
   //     ? "text-[18px] leading-[30px] md:text-[26px] md:leading-[45px]"
