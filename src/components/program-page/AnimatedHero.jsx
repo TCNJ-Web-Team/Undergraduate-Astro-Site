@@ -12,7 +12,7 @@ function AnimatedHero({
     <div className="relative w-full overflow-hidden">
       <picture>
         {heroImgMobile && (
-          <source media="(max-width: 550px)" srcSet={heroImgMobile.sourceUrl} />
+          <source media="(max-width: 428px)" srcSet={heroImgMobile.sourceUrl} />
         )}
         {heroImgTablet && (
           <source media="(max-width: 900px)" srcSet={heroImgTablet.sourceUrl} />

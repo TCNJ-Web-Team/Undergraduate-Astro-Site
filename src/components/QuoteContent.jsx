@@ -28,8 +28,9 @@ function QuoteContent({ content }) {
 
   // Extracted content
   const h2Content = h2Match ? decode(h2Match[1]) : "";
-  const pContent = pMatch ? decode(pMatch[1]) : "";
-
+  const pContent = pMatch ? pMatch[1] : ""; // Remove decode here since we want to keep HTML tags
+  // console.log("H2 Content:", h2Content);
+  // console.log("P Content:", pContent);
   // const headingLengthCheck =
   //   h2Content.length > 100
   //     ? "text-[18px] leading-[30px] md:text-[26px] md:leading-[45px]"
@@ -45,7 +46,10 @@ function QuoteContent({ content }) {
       >
         {h2Content}
       </h2>
-      <p className="font-domine text-[20px] leading-[35px]">{pContent}</p>
+      <p
+        className="font-domine text-[20px] leading-[35px]"
+        dangerouslySetInnerHTML={{ __html: pContent }}
+      />
       {/* <p className="font-domine text-[20px] leading-[35px]">{pPattern}</p> */}
     </div>
   );

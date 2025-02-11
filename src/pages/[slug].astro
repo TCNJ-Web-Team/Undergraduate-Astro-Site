@@ -256,8 +256,8 @@ metaDescription,
 } = Astro.props as AstroProps; // Add the type assertion here
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
 // console.log(repeaterDegrees);
-const socialSourceUrl = socialImage ? socialImage.sourceUrl : "";
-
+// const socialSourceUrl = socialImage ? socialImage.sourceUrl ? heroImgDesktop : "";
+const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : heroImgDesktop;
 // console.log(department);
 // console.log(school);
 // console.log(metaDescription);
@@ -339,7 +339,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                 <picture>
                   {heroImgMobile && (
                     <source
-                      media="(max-width: 550px)"
+                      media="(max-width: 430px)"
                       srcset={heroImgMobile.sourceUrl}
                     />
                   )}

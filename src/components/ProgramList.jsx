@@ -26,7 +26,9 @@ export default function ProgramList({
       title: item.title,
     }))
   );
-  // console.log(combinedData);
+  // console.log(
+  //   combinedData.filter((item) => item.title === "Integrative STEM Education")
+  // );
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
   const [animatedCards, setAnimatedCards] = useState(false);
@@ -99,18 +101,33 @@ export default function ProgramList({
     setFilteredData(newData);
   };
 
+  // const filterByText = (program) => {
+  //   const lowerCaseText = searchText.toLowerCase();
+  //   return (
+  //     program.title.toLowerCase().includes(lowerCaseText) ||
+  //     program.program.school.toString().toLowerCase().includes(lowerCaseText)
+  //   );
+  // };
   const filterByText = (program) => {
     const lowerCaseText = searchText.toLowerCase();
+    const schoolArray = Array.isArray(program.program.school)
+      ? program.program.school
+      : [program.program.school];
+
     return (
       program.title.toLowerCase().includes(lowerCaseText) ||
-      program.program.school.toString().toLowerCase().includes(lowerCaseText)
+      schoolArray.some((school) =>
+        school.toString().toLowerCase().includes(lowerCaseText)
+      )
     );
   };
+  const filterBySelectedSchools = (program) => {
+    const schoolArray = Array.isArray(program.program.school)
+      ? program.program.school
+      : [program.program.school];
 
-  const filterBySelectedSchools = (program) =>
-    // selectedSchoolFilters.includes(program.program.school.toString());
-    (selectedSchoolFilters ?? []).includes(program.program.school.toString());
-
+    return selectedSchoolFilters.some((filter) => schoolArray.includes(filter));
+  };
   const filterBySelectedProgramOptions = (program) =>
     selectedProgramOptionFilters.some((filter) =>
       // program.program.programOptions.includes(filter)
