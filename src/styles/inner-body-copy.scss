@@ -62,10 +62,10 @@ $sm: 550px;
         padding-bottom: 0;
       }
       @media screen and (max-width: $sm) {
-        padding-top: 45px;
-        padding-bottom: 15px;
+        padding-top: 40px;
+        padding-bottom: 10px;
         font-size: 20px;
-        line-height: 28px;
+        line-height: 20px;
       }
     }
     h2 {
@@ -79,18 +79,23 @@ $sm: 550px;
       padding-bottom: 25px;
       @media screen and (max-width: $sm) {
         font-size: 23px;
-        line-height: 33px;
+        line-height: 23px;
         padding-bottom: 0px;
       }
     }
     p {
       margin: 0;
+      font-size: 19px;
+      line-height: 22px;
+      // &::first-line {
+      //   line-height: 19px;
+      // }
     }
   }
   #programs-of-study-body {
     h2 {
       @media screen and (max-width: $sm) {
-        padding-bottom: 35px;
+        padding-bottom: 26px;
       }
     }
   }

@@ -43,7 +43,7 @@ md:pt-[200px]"
         viewport={{ once: true }}
       >
         <motion.h2
-          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[50px] pb-[35px] sm:pb-[20px] sm:text-[60px] sm:leading-[70px] sm:text-left md:text-[65px] md:leading-[75px] md:pb-[50px]
+          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[50px] pb-[28px] sm:pb-[20px] sm:text-[60px] sm:leading-[70px] sm:text-left md:text-[65px] md:leading-[75px] md:pb-[50px]
         
         `}
           variants={fadeInAnimationVariant}
@@ -61,7 +61,7 @@ md:pt-[200px]"
         />
 
         <motion.div
-          className="flex flex-col gap-[20px] sm:flex-row sm:mt-[75px] sm:gap-[28px] md:gap-5 md:flex-row mt-[50px]"
+          className="flex flex-col gap-[20px] sm:flex-row sm:mt-[75px] sm:gap-[28px] md:gap-5 md:flex-row mt-[43px]"
           variants={fadeInAnimationVariant}
           custom={3}
         >
