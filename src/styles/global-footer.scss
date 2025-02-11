@@ -30,6 +30,9 @@ $domine: "Domine", serif;
   background-color: $dark-tcnj-blue;
   width: 100%;
   padding: 60px 0;
+  @media screen and (max-width: $sm) {
+    padding: 75px 0;
+  }
   .inner-width {
     max-width: 1128px;
 
@@ -72,11 +75,17 @@ $domine: "Domine", serif;
     height: 1px;
     margin: 20px 0px;
     clear: both;
+    opacity: 20%;
     @media screen and (max-width: $lg) {
       margin: 40px 0px 10px;
       max-width: 750px;
       margin-left: auto;
       margin-right: auto;
+    }
+    @media screen and (max-width: $sm) {
+      margin-top: 75px;
+      margin-bottom: 0;
+      max-width: 375px;
     }
   }
   .grid-wrapper {
@@ -190,6 +199,10 @@ $domine: "Domine", serif;
     // margin: 20px;
     @media screen and (max-width: $lg) {
       flex: 100%;
+    }
+    @media screen and (max-width: $lg) {
+      padding-top: 25px;
+      padding-bottom: 25px;
     }
   }
 }

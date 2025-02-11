@@ -36,8 +36,8 @@ $sm: 550px;
 
     display: block;
     @media screen and (max-width: $sm) {
-      font-size: 18px;
-      line-height: 25px;
+      font-size: 20px;
+      line-height: 24px;
       // padding-top: 30px;
     }
     .arrow {
@@ -99,7 +99,9 @@ $sm: 550px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:
+      max-height 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
 
     p,
     li {

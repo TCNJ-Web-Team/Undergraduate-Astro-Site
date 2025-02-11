@@ -29,7 +29,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       text-tcnjblue
       text-[45px]
       leading-[50px]
-      pb-[50px]
+      pb-[35px]
       sm:pb-[20px]
       sm:text-[60px]
       sm:leading-[70px]

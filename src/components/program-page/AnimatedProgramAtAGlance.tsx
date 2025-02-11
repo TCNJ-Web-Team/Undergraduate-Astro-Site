@@ -36,14 +36,14 @@ md:pt-[200px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className="text-left pb-[150px]  sm:pb-[200px] md:pb-[200px] "
+        className="text-left pb-[145px]  sm:pb-[200px] md:pb-[200px] "
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       >
         <motion.h2
-          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[50px] pb-[50px] sm:pb-[20px] sm:text-[60px] sm:leading-[70px] sm:text-left md:text-[65px] md:leading-[75px] md:pb-[50px]
+          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[50px] pb-[35px] sm:pb-[20px] sm:text-[60px] sm:leading-[70px] sm:text-left md:text-[65px] md:leading-[75px] md:pb-[50px]
         
         `}
           variants={fadeInAnimationVariant}

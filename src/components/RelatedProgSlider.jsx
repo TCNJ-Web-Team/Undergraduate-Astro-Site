@@ -93,12 +93,12 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
               <a className="p-[35px] min-h-[237px] block" href={content.slug}>
-                <p className="font-bitter font-semibold text-[18px] leading-[28px] ">
+                <p className="font-domine font-semibold text-[18px] leading-[28px] ">
                   {content.title}
                 </p>
                 <hr className="m-[25px] mr-0 ml-0" />
                 {content.schoolOrAdditionalLabel && (
-                  <p className="font-opensans">
+                  <p className="font-opensans text-[14px] leading-[20px] ">
                     {content.schoolOrAdditionalLabel}
                   </p>
                 )}
