@@ -9,7 +9,7 @@ function AnimatedTitle({ title }) {
           text-[45px]
           leading-[62px]
           sm:text-[55px]
-          sm:leading-[75px]
+          sm:leading-[60px]
          
           md:text-custom-16.25
           md:leading-[4.688rem]"
