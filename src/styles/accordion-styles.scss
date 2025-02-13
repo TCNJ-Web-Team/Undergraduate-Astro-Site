@@ -17,6 +17,9 @@ $sm: 550px;
   // border: 1px solid #ccc;
   // margin-bottom: 10px;
   margin-bottom: 50px;
+  @media screen and (max-width: $md) {
+    margin-bottom: 45px;
+  }
   &.top-open {
     // margin-bottom: 25px;
     // transition: margin-bottom 0.05s ease-in;
@@ -35,9 +38,15 @@ $sm: 550px;
     position: relative;
 
     display: block;
-    @media screen and (max-width: $sm) {
-      font-size: 18px;
+    @media screen and (max-width: $md) {
+      padding-top: 45px;
+      font-size: 21px;
       line-height: 25px;
+      // padding-top: 30px;
+    }
+    @media screen and (max-width: $sm) {
+      font-size: 20px;
+      line-height: 24px;
       // padding-top: 30px;
     }
     .arrow {
@@ -99,7 +108,9 @@ $sm: 550px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition:
+      max-height 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
 
     p,
     li {

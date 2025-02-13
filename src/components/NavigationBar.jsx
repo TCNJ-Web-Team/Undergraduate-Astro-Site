@@ -12,7 +12,7 @@ function NavigationBar() {
       <div className="max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
         <button
           onClick={toggleMenu}
-          className="md:hidden font-sans text-[14px] leading-9 uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
+          className="md:hidden font-sans text-[14px] leading-[40px] uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
         >
           <span>
             <img

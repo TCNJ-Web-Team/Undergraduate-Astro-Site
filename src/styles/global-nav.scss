@@ -34,6 +34,8 @@ $domine: "Domine", serif;
     padding-right: 35px;
   }
   @media screen and (max-width: $md) {
+    padding-top: 25px;
+    padding-bottom: 25px;
     .desktop-global-nav-item {
       display: none;
     }
@@ -45,21 +47,28 @@ $domine: "Domine", serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media screen and (min-width: $lg) {
+      margin: 15px 30px;
+    }
     @media screen and (max-width: $sm) {
+      margin: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
       grid-gap: 14px;
       gap: 14px;
-      margin: 15px 30px;
+      // margin: 15px 30px;
     }
     #tcnj-logo {
       min-height: 42px;
+      width: 203px;
+      @media screen and (min-width: $sm) {
+      }
     }
     .nav-menu {
       display: flex;
-      gap: 14px;
+      gap: 24px;
       align-items: center;
       #open-sidebar-button {
         cursor: pointer;
@@ -74,6 +83,12 @@ $domine: "Domine", serif;
         line-height: 0.01px;
         text-transform: uppercase;
         text-decoration: none;
+        @media screen and (max-width: $md) {
+          font-size: 14px;
+        }
+        @media screen and (max-width: $sm) {
+          font-size: 12px;
+        }
         &:hover {
           text-decoration: none;
           color: #9ccff0;

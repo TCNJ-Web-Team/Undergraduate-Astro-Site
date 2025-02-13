@@ -43,19 +43,22 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           }}
           id="prog-study-img"
           className="relative z-30 
-     top-[-50px]
+     top-[-45px]
           object-cover
           object-left
           w-[100%]
-          h-[400px]
+          h-[350px]
           max-w-none
-          sm:h-[550px]
-          sm:top-[-50px]
+          sm:h-[500px]
+          sm:top-[-45px]
           
       
           md:right-[-82px]
           md:h-[650px]
-          md:absolute"
+          md:absolute
+          mb-[5px]
+          sm:mb-0
+          "
         />
       )}
       {/* <div
