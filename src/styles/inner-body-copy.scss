@@ -37,7 +37,8 @@ $sm: 550px;
     // width: 46%;
   }
   @media screen and (min-width: $sm) and (max-width: $md) {
-    width: calc(100% + 82px);
+    // width: calc(100% + 82px);
+    width: calc(100% + 80px);
   }
 }
 .inner-body-copy-white {
