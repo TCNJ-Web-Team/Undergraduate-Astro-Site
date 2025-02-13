@@ -47,7 +47,7 @@ $domine: "Domine", serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media screen and (max-width: $md) {
+    @media screen and (min-width: $lg) {
       margin: 15px 30px;
     }
     @media screen and (max-width: $sm) {
@@ -62,6 +62,9 @@ $domine: "Domine", serif;
     }
     #tcnj-logo {
       min-height: 42px;
+      width: 203px;
+      @media screen and (min-width: $sm) {
+      }
     }
     .nav-menu {
       display: flex;

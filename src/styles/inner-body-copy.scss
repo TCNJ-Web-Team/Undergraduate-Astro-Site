@@ -1,3 +1,5 @@
+$domine: "Domine", sans-serif;
+
 // #careers-body {
 //   p {
 //     font-family: "Bitter";
@@ -128,6 +130,7 @@ $sm: 550px;
     list-style-position: outside;
     margin-left: 20px;
     li {
+      font-family: $domine;
       font-weight: normal;
       font-size: 19px;
       line-height: 30px;

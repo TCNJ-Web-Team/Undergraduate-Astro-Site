@@ -49,7 +49,7 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           w-[100%]
           h-[350px]
           max-w-none
-          sm:h-[550px]
+          sm:h-[500px]
           sm:top-[-45px]
           
       
