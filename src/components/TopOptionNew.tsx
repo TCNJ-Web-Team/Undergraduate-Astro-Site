@@ -91,13 +91,13 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
       />
       <div className="flex-col flex gap-[4px]  md:gap-[5px]">
         <h3
-          className="text-[17px] leading-[20px] md:text-[20px] md:leading-[30px]
+          className="text-[17px] leading-[20px]  sm:leading-[23px]  md:text-[20px] md:leading-[30px]
           font-interstate not-italic uppercase font-extrabold"
         >
           {heading}
         </h3>
         {school && (
-          <p className="text-[17px] leading-[19px] md:text-[19px] md:leading-[30px] text-start">
+          <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px] text-start">
             {school && school.length === 1 ? (
               <a
                 className="text-[#33739F] underline"

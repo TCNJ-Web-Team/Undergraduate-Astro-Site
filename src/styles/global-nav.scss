@@ -34,6 +34,8 @@ $domine: "Domine", serif;
     padding-right: 35px;
   }
   @media screen and (max-width: $md) {
+    padding-top: 25px;
+    padding-bottom: 25px;
     .desktop-global-nav-item {
       display: none;
     }
