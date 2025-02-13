@@ -17,7 +17,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   return (
     <motion.div
       id={headingLower}
-      className={`relative sm:pl-[47px] sm:pr-[47px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]`}
+      className={`relative sm:px-[45px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]`}
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"

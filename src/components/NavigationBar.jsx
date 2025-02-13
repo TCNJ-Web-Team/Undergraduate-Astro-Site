@@ -8,7 +8,7 @@ function NavigationBar() {
   };
 
   return (
-    <div className="bg-gray-100  px-8 " id="menu">
+    <div className="bg-gray-100  px-8 sm:px-[80px] md:px-8" id="menu">
       <div className="max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col">
         <button
           onClick={toggleMenu}
