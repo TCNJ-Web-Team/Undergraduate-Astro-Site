@@ -36,7 +36,7 @@ md:pt-[200px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className="text-left pb-[145px]  sm:pb-[200px] md:pb-[200px] "
+        className="text-left pb-[145px]  sm:pb-[157.75] md:pb-[200px] "
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"

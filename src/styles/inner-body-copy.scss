@@ -57,9 +57,15 @@ $sm: 550px;
       padding-top: 40px;
       &:first-of-type {
         padding-top: 27px;
+        @media screen and (max-width: $md) {
+          padding-top: 26px;
+        }
       }
-      @media screen and (min-width: $md) {
+      @media screen and (max-width: $md) {
         padding-bottom: 0;
+        font-size: 21px;
+        line-height: 25px;
+        padding-bottom: 8px;
       }
       @media screen and (max-width: $sm) {
         padding-top: 40px;
@@ -76,7 +82,10 @@ $sm: 550px;
       line-height: 40px;
       text-align: left;
       color: #293f6f;
-      padding-bottom: 25px;
+      // padding-bottom: 25px;
+      @media screen and (max-width: $md) {
+      }
+      line-height: 41px;
       @media screen and (max-width: $sm) {
         font-size: 23px;
         line-height: 31px;
@@ -93,6 +102,9 @@ $sm: 550px;
     h2 {
       @media screen and (max-width: $sm) {
         padding-bottom: 24px;
+      }
+      @media screen and (max-width: $md) {
+        padding-bottom: 22px;
       }
     }
   }
