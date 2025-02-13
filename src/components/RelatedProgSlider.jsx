@@ -92,8 +92,11 @@ sm:pr-[47px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
               id={content.title.replace(/\s+/g, "-").toLowerCase()}
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
-              <a className="p-[35px] min-h-[237px] block" href={content.slug}>
-                <p className="font-domine font-semibold text-[18px] leading-[28px] ">
+              <a
+                className="p-[35px] sm:py-[45px] sm:px-[25px] min-h-[250px] block"
+                href={content.slug}
+              >
+                <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] ">
                   {content.title}
                 </p>
                 <hr className="m-[25px] mr-0 ml-0" />
