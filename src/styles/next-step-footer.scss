@@ -29,6 +29,11 @@ $sm: 550px;
     text-align: center;
     color: $tcnj-blue;
     margin: 50px 0;
+    @media screen and (max-width: $md) {
+      font-size: 55px;
+      line-height: 75px;
+      margin: 40px 0;
+    }
     @media screen and (max-width: $sm) {
       // font-size: px;
       // line-height: 60px;
