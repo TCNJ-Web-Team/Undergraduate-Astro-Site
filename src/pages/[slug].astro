@@ -585,13 +585,16 @@ md:pt-[135px]"
 
           {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+          </div>
+                  <div class="lg:max-w-[70.5rem] lg:m-auto">
+
           {
             learnMoreList && (
               <RelatedProgSlider learnMoreList={learnMoreList} client:load />
             )
           }
+          </div>
         </div>
-      </div>
     </div>
     <NextStepFooter />
   </main>
