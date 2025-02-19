@@ -52,7 +52,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
             },
             550: { slidesPerView: 2, spaceBetween: 20, slidesOffsetAfter: 0 },
             900: {
-              slidesPerView: 2,
+              slidesPerView: 2.75,
               spaceBetween: 27,
               slidesOffsetBefore: marginLeft,
               slidesOffsetAfter: marginLeft,
@@ -69,10 +69,6 @@ export default function RelatedProgSlider({ learnMoreList }) {
             <h2 className="pl-[35px] pr-[35px] sm:pl-[0px] sm:pr-[0px]  font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue">
               Related Programs
             </h2>
-            <div id="swiper-navigation">
-              <div className="swiper-button-next"></div>
-              <div className="swiper-button-prev"></div>
-            </div>
           </div>
           {learnMoreList.map((content) => (
             <SwiperSlide
@@ -81,7 +77,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
               <a
-                className="p-[35px] sm:py-[45px] sm:px-[25px] min-h-[250px] block"
+                className="p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] lg:px-[25px] min-h-[250px] block"
                 href={content.slug}
               >
                 <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
@@ -95,7 +91,11 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 )}
               </a>
             </SwiperSlide>
-          ))}
+          ))}{" "}
+          <div id="swiper-navigation" style={{ right: marginLeft }}>
+            <div className="swiper-button-next"></div>
+            <div className="swiper-button-prev"></div>
+          </div>
         </Swiper>
       </div>
     </>
