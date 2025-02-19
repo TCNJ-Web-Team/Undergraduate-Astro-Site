@@ -17,7 +17,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
       if (containerRef.current) {
         const computedStyle = window.getComputedStyle(containerRef.current);
         const ml = parseFloat(computedStyle.marginLeft);
-        console.log("Computed margin left:", ml); // Log the computed margin here
+        // console.log("Computed margin left:", ml); // Log the computed margin here
         setMarginLeft(ml);
       }
     }
@@ -29,7 +29,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
 
   // Log updated marginLeft when it changes
   useEffect(() => {
-    console.log("Updated marginLeft:", marginLeft);
+    // console.log("Updated marginLeft:", marginLeft);
   }, [marginLeft]);
 
   return (
