@@ -3,7 +3,7 @@ $off-white: #fffdf4;
 $domine: "Domine", sans-serif;
 $raleway: "Raleway", sans-serif;
 $xl: 1920px; // Custom size for extra-large screens
-$lg: 1250px; // Custom size for large screens
+$lg: 1280px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
 
@@ -53,8 +53,11 @@ $domine: "Domine", serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @media screen and (min-width: $lg) {
-      margin: 15px 30px;
+    @media screen and (max-width: $xl) {
+    }
+    @media screen and (max-width: $lg) {
+      max-width: 920px;
+      // margin: 15px 30px;
     }
     @media screen and (max-width: $sm) {
       margin: 0;

@@ -17,28 +17,16 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   return (
     <motion.div
       id={headingLower}
-      className={`relative sm:px-[45px] md:pl-[20px] md:pr-[20px]  lg:pl-[0px] lg:pr-[0px]`}
+      className={`relative sm:px-[45px] md:pl-[20px] md:pr-[20px] lgMd:pl-0  lg:pl-[0px] lg:pr-[0px]`}
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
     >
       <motion.h2
-        className={`text-center
-      font-chunkfive 
-      text-tcnjblue
-      text-[45px]
-      leading-[62px]
-      pb-[15px]
-      sm:pb-[27px]
-      sm:text-[55px]
-      sm:leading-[75px]
-      sm:text-left
-      md:text-[65px]
-      md:leading-[75px]
-
-      md:pb-[50px]
-            `}
+        className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[25px] sm:pb-[20px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
+        
+        `}
         variants={fadeInAnimationVariant}
         custom={1}
       >
@@ -55,7 +43,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       inner-body-copy-white
       flex-col"
       >
-        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[200px] gap-[50px] sm:gap-[40px]">
+        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[150px] gap-[50px] sm:gap-[40px]">
           {left && (
             <motion.div
               id={`${headingLower}-left`}

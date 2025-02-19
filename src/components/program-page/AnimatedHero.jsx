@@ -26,9 +26,11 @@ function AnimatedHero({
                 w-[100%]
           h-[450px]
           sm:h-[600px]
+          md:h-[500px]
+          lg:h-[700px]
           object-cover
           pl-[35px]
-          
+             
           lg:pl-[100px]
           lg:w-[100%]
           xl:pl-[200px]"

@@ -3,7 +3,7 @@ $off-white: #fffdf4;
 $domine: "Domine", sans-serif;
 $raleway: "Raleway", sans-serif;
 $xl: 1920px; // Custom size for extra-large screens
-$lg: 1250px; // Custom size for large screens
+$lg: 1281px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
 /**
@@ -38,7 +38,10 @@ $sm: 550px;
     position: relative;
 
     display: block;
-    @media screen and (max-width: $md) {
+
+    @media screen and (min-width: $md) and (max-width: $lg) {
+    }
+    @media screen and (max-width: $lg) {
       padding-top: 45px;
       font-size: 21px;
       line-height: 25px;
@@ -123,6 +126,9 @@ $sm: 550px;
       // text-align: center;
       // color: $off-white;
       padding-top: 35px;
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        padding-top: 23px;
+      }
       @media screen and (max-width: $sm) {
         font-size: 18px;
         line-height: 25px;
