@@ -95,10 +95,13 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 className="p-[35px] sm:py-[45px] sm:px-[25px] min-h-[250px] block"
                 href={content.slug}
               >
-                <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] ">
+                <p
+                  className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px]
+                md:text-[21px] md:leading-[24px]"
+                >
                   {content.title}
                 </p>
-                <hr className="m-[25px] mr-0 ml-0" />
+                <hr className="m-[25px] mr-0 ml-0 md:mt-[27px]" />
                 {content.schoolOrAdditionalLabel && (
                   <p className="font-opensans text-[14px] leading-[20px] ">
                     {content.schoolOrAdditionalLabel}
