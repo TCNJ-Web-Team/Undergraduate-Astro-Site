@@ -38,6 +38,8 @@ $sm: 550px;
     position: relative;
 
     display: block;
+    @media screen and (max-width: $lg) {
+    }
     @media screen and (max-width: $md) {
       padding-top: 45px;
       font-size: 21px;
