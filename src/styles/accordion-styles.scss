@@ -39,7 +39,9 @@ $sm: 550px;
 
     display: block;
 
-    @media screen and (max-width: $md) {
+    @media screen and (min-width: $md) and (max-width: $lg) {
+    }
+    @media screen and (max-width: $lg) {
       padding-top: 45px;
       font-size: 21px;
       line-height: 25px;
@@ -124,6 +126,9 @@ $sm: 550px;
       // text-align: center;
       // color: $off-white;
       padding-top: 35px;
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        padding-top: 23px;
+      }
       @media screen and (max-width: $sm) {
         font-size: 18px;
         line-height: 25px;
