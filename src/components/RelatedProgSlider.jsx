@@ -77,16 +77,19 @@ export default function RelatedProgSlider({ learnMoreList }) {
         }}
         // autoHeight={true}
       >
-        <h2
-          className="
-        pl-[35px]
-  pr-[35px]
-  sm:pl-[0px]
-  sm:pr-[0px]
-        absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue"
-        >
-          Related Programs
-        </h2>
+        <div className="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
+          <h2
+            className="
+          pl-[35px]
+          pr-[35px]
+          sm:pl-[0px]
+          sm:pr-[0px]
+          absolute top-0 left-0 font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue
+          "
+          >
+            Related Programs
+          </h2>
+        </div>
         {learnMoreListRender.map((content) => {
           return (
             <SwiperSlide
