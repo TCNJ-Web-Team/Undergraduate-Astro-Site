@@ -12,7 +12,7 @@ $domine: "Domine", sans-serif;
 //   padding-bottom: 100px;
 // }
 $xl: 1920px; // Custom size for extra-large screens
-$lg: 1250px; // Custom size for large screens
+$lg: 1281px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
 #hero-img {
@@ -63,11 +63,17 @@ $sm: 550px;
       padding-top: 40px;
       &:first-of-type {
         padding-top: 27px;
+        @media screen and (min-width: $md) and (max-width: $lg) {
+          padding-top: 35px;
+        }
         @media screen and (max-width: $md) {
           padding-top: 26px;
         }
       }
-      @media screen and (max-width: $md) {
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        padding-top: 45px;
+      }
+      @media screen and (max-width: $lg) {
         padding-bottom: 0;
         font-size: 21px;
         line-height: 25px;
@@ -102,6 +108,11 @@ $sm: 550px;
       margin: 0;
       font-size: 18px;
       line-height: 21px;
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        font-size: 19px;
+        line-height: 22px;
+        padding-top: 1px;
+      }
     }
   }
   #programs-of-study-body {
@@ -119,6 +130,10 @@ $sm: 550px;
     font-size: 18px;
     line-height: 21px;
     text-align: left;
+    @media screen and (min-width: $md) and (max-width: $lg) {
+      font-size: 19px;
+      line-height: 22px;
+    }
     @media screen and (max-width: $sm) {
       // text-align: center;
       font-size: 18px;
@@ -133,6 +148,9 @@ $sm: 550px;
     list-style-type: disc;
     list-style-position: outside;
     margin-left: 20px;
+    @media screen and (min-width: $md) and (max-width: $lg) {
+      padding-top: 22px;
+    }
     li {
       font-family: $domine;
       font-weight: normal;
@@ -143,6 +161,10 @@ $sm: 550px;
       padding-bottom: 19px;
       &:last-of-type {
         padding-bottom: 0 !important;
+      }
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        line-height: 22px;
+        padding-bottom: 23px !important;
       }
       @media screen and (min-width: $md) {
         padding-bottom: 15px;
