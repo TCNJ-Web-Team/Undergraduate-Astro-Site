@@ -57,6 +57,10 @@ export default function RelatedProgSlider({ learnMoreList }) {
           },
           // when window width is >= 640px
           900: {
+            slidesPerView: 2.75,
+            spaceBetween: 26,
+          },
+          1280: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
