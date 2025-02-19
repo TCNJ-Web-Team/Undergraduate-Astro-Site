@@ -60,6 +60,10 @@ export default function RelatedProgSlider({ learnMoreList }) {
             slidesPerView: 3,
             spaceBetween: 20,
           },
+          1281: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
         }}
         modules={[Navigation]}
         // slidesPerView={3.5}
