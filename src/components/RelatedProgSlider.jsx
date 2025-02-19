@@ -33,7 +33,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
       id="learn-more-list"
       className="
  
-  sm:px-[45px] md:pl-[20px] md:pr-[20px] lg:pl-0 lg:pr-0"
+  sm:px-[45px] md:px-[20px] lgMd:px-0 lg:px-0"
     >
       <Swiper
         breakpoints={{
