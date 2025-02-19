@@ -582,15 +582,17 @@ md:pt-[135px]"
     >
       <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
         <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
-
+          
           {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
-          <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+        </div>
+        <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+        <div class="md:max-w-[1145px] lg:max-w-[70.5rem] lg:mx-auto">
           {
             learnMoreList && (
               <RelatedProgSlider learnMoreList={learnMoreList} client:load />
             )
           }
-        </div>
+          </div>
       </div>
     </div>
     <NextStepFooter />
