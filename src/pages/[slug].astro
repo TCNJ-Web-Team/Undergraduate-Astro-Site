@@ -293,7 +293,10 @@ const { sourceUrl } = heroImgDesktop ?? {
       <div
         class="pl-[35px]
       pr-[35px]
-      max-w-[70.5rem]
+
+
+      lg:max-w-[70.5rem]
+      md:max-w-[990px]
       pt-[31px]
       sm:pt-[47px]
       md:pt-[58px]
@@ -363,7 +366,7 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:h-[600px]
           object-cover
           pl-[35px]
-          
+      
           lg:pl-[100px]
           lg:w-[100%]
           xl:pl-[200px]
@@ -413,7 +416,7 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pt-[50px]
     md:pb-[50px]"
     >
-      <div class="max-w-[70.5rem] bg-white m-auto">
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px]  bg-white m-auto">
         <div
           id="degree-school-department"
           class="flex
@@ -485,7 +488,7 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pl-[35px]
     md:pr-[35px]"
     >
-      <div class="max-w-[70.5rem] m-auto">
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
        
             <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} client:load>
 
@@ -534,7 +537,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           )
         }
         <div
-          class="max-w-[70.5rem]
+          class="lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
@@ -554,7 +557,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
     {(careersLeft || careersRight || careersBody) && (
     <div class="px-[35px] m-auto bg-tcnjyellow" id="careers-intro">
       <div
-        class="max-w-[70.5rem] m-auto
+        class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto
       pt-[92px]
       sm:pt-[103px]
       md:pt-[200px]"
@@ -579,7 +582,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
       id="lower-content-and-related-progras"
     >
       <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
-        <div class="max-w-[70.5rem] m-auto">
+        <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
 
           {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
