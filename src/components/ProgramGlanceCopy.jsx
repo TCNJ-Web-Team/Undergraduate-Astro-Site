@@ -5,15 +5,7 @@ export default function ProgramGlanceCopy({ copy, id }) {
   return (
     <motion.div
       id={id}
-      className={`
-      text-[20px]
-          leading-[35px]
-          text-center
-          sm:text-[23px]
-          sm:leading-[45px]
-          sm:text-left
-          md:text-[23px]
-          md:leading-[45px]
+      className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] lg:text-[23px] lg:leading-[45px]
           
           ${id === "careers-body" ? "" : ""}  
 
