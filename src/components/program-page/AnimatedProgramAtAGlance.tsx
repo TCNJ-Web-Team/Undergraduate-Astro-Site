@@ -55,7 +55,7 @@ md:pt-[135px] lg:pt-[187px]"
 
         <motion.div
           id="program-glance"
-          className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] lg:text-[23px] lg:leading-[45px]`}
+          className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px]`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
           custom={2}
