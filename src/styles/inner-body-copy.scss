@@ -47,10 +47,6 @@ $sm: 550px;
   }
 }
 .inner-body-copy-white {
-  #careers-left,
-  #careers-right {
-    width: 100%;
-  }
   #programs-of-study-left,
   #programs-of-study-body {
     h3 {
@@ -225,15 +221,37 @@ $sm: 550px;
   }
   #careers-right,
   #careers-left {
+    width: 100%;
     h3,
-    p {
+    li {
       @media screen and (max-width: $sm) {
         text-align: center;
       }
     }
-    p {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-top: 19px;
+    }
+    h3 {
+      font-family: "Interstate-Condensed";
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: #000;
+      padding-top: 45px;
+      // padding-top: 17px;
+    }
+    li {
       font-size: 18px;
-      line-height: 40px;
+      line-height: 25px;
+      padding-bottom: 15px;
+    }
+  }
+  #careers-right {
+    h3 {
+      padding-top: 37px;
     }
   }
 }

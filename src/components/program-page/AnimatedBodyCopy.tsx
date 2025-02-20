@@ -44,7 +44,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       inner-body-copy-white
       flex-col"
       >
-        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[150px] gap-[50px] sm:gap-[40px] lg:pb-[200px] ">
+        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[150px] gap-[0px] sm:gap-[40px] lg:pb-[200px] ">
           {left && (
             <motion.div
               id={`${headingLower}-left`}
