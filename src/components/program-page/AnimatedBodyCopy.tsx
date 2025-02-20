@@ -25,6 +25,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
     >
       <motion.h2
         className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[25px] sm:pb-[20px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
+          lg:pb-[15px]
         
         `}
         variants={fadeInAnimationVariant}
@@ -43,7 +44,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       inner-body-copy-white
       flex-col"
       >
-        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[150px] gap-[50px] sm:gap-[40px]">
+        <div className="flex flex-col sm:flex-row pb-[100px] sm:pb-[110px] md:pb-[150px] gap-[50px] sm:gap-[40px] lg:pb-[200px] ">
           {left && (
             <motion.div
               id={`${headingLower}-left`}
