@@ -144,7 +144,11 @@ $sm: 550px;
         font-size: 19px;
         line-height: 30px;
         margin-top: -15px;
+        font-family: $domine;
         // padding-top: 10px;
+        @media screen and (min-width: $md) {
+          margin-top: 7px;
+        }
       }
     }
   }
@@ -216,6 +220,7 @@ $sm: 550px;
       @media screen and (min-width: $md) {
         // padding-bottom: 15px;
         // padding-bottom: 0;
+        font-size: 19px;
       }
       @media screen and (max-width: $sm) {
         font-size: 18px;

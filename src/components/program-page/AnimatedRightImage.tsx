@@ -52,14 +52,14 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           sm:h-[500px]
           sm:top-[-45px]
           
-       md:top-[-80px]
+       md:top-[-50px]
           md:right-[-82px]
           md:h-[425px]
           md:absolute
           mb-[5px]
           lg:w-[51%]
           lg:h-[600px]
-lg:top-[-50px]
+
           sm:mb-0
           "
         />

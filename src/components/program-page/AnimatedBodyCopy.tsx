@@ -50,6 +50,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           sm:pt-[70px]
           sm:pb-[110px]
           sm:gap-[40px] 
+          md:pt-[89px]
           md:pb-[150px]
         lg:pb-[200px] "
         >
