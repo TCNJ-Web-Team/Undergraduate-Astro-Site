@@ -47,7 +47,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           {left && (
             <motion.div
               id={`${headingLower}-left`}
-              className="md:max-w-[45%] lg:max-w-[40%]"
+              className="md:max-w-[45%] lg:max-w-[50%]"
               dangerouslySetInnerHTML={{ __html: left }}
               variants={fadeInAnimationVariant}
               custom={3}
