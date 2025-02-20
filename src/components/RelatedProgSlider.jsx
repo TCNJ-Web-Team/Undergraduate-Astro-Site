@@ -72,7 +72,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
               key={content.title.replace(/\s+/g, "-").toLowerCase()}
             >
               <a
-                className="p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] lg:px-[25px] min-h-[250px] block"
+                className="p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] min-h-[250px] block"
                 href={content.slug}
               >
                 <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
