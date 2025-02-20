@@ -78,6 +78,11 @@ $sm: 550px;
         padding-bottom: 8px;
         padding-top: 40px;
       }
+      @media screen and (min-width: $sm) {
+        font-size: 21px;
+        line-height: 25px;
+        padding-bottom: 7px;
+      }
       @media screen and (max-width: $sm) {
         padding-top: 40px;
         padding-bottom: 9px;
@@ -241,17 +246,27 @@ $sm: 550px;
       text-transform: uppercase;
       color: #000;
       padding-top: 45px;
+      @media screen and (min-width: $sm) {
+        font-size: 21px;
+        padding-top: 0px;
+      }
       // padding-top: 17px;
     }
     li {
       font-size: 18px;
       line-height: 25px;
       padding-bottom: 15px;
+      @media screen and (min-width: $sm) {
+        padding-bottom: 18px;
+      }
     }
   }
   #careers-right {
     h3 {
       padding-top: 37px;
+      @media screen and (min-width: $sm) {
+        padding-top: 0px;
+      }
     }
   }
 }

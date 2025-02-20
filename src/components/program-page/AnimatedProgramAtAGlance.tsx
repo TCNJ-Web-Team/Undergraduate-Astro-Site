@@ -36,7 +36,7 @@ md:pt-[135px] lg:pt-[187px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className="text-left pb-[145px]  sm:pb-[157.75] md:pb-[150px] lg:pb-[200px]  "
+        className="text-left pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]  "
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"
@@ -55,7 +55,7 @@ md:pt-[135px] lg:pt-[187px]"
 
         <motion.div
           id="program-glance"
-          className={`text-[20px] leading-[35px] text-center sm:text-[23px] sm:leading-[45px] sm:text-left md:text-[23px] md:leading-[45px]`}
+          className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] lg:text-[23px] lg:leading-[45px]`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
           custom={2}
