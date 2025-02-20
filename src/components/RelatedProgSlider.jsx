@@ -27,11 +27,6 @@ export default function RelatedProgSlider({ learnMoreList }) {
     return () => window.removeEventListener("resize", updateMargin);
   }, []);
 
-  // Log updated marginLeft when it changes
-  useEffect(() => {
-    // console.log("Updated marginLeft:", marginLeft);
-  }, [marginLeft]);
-
   return (
     <>
       <div
