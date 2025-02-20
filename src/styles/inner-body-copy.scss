@@ -157,7 +157,7 @@ $sm: 550px;
           padding-top: 92px;
         }
       }
-      &:last-of-type:not(:first-of-type) {
+      &:last-of-type {
         // Styles for the last h2 instance
         padding-top: 69px;
         @media screen and (min-width: $sm) {
