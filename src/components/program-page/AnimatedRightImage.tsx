@@ -57,7 +57,9 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
           md:h-[425px]
           md:absolute
           mb-[5px]
-          lg:h-[650px]
+          lg:w-[51%]
+          lg:h-[600px]
+lg:top-[-50px]
           sm:mb-0
           "
         />

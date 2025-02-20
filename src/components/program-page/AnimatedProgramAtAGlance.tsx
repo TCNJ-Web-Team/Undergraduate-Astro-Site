@@ -32,11 +32,11 @@ const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
       <div
         id="program-at-a-glance-intro"
         className="pt-[91px] sm:pt-[103px]
-md:pt-[135px]"
+md:pt-[135px] lg:pt-[187px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className="text-left pb-[145px]  sm:pb-[157.75] md:pb-[150px] "
+        className="text-left pb-[145px]  sm:pb-[157.75] md:pb-[150px] lg:pb-[200px]  "
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"

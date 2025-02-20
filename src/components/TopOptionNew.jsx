@@ -63,7 +63,7 @@ const TopOptionNew = ({ heading, imgSrc, school, department }) => {
       <div className="flex-col flex md:gap-[5px]">
         <h3
           className="text-[17px] leading-[20px] sm:leading-[23px] 
-        md:text-[20px] md:leading-[24px] lg:leading-[30px] font-interstate not-italic uppercase font-extrabold"
+        md:text-[20px] md:leading-[24px] lg:leading-[24px] font-interstate not-italic uppercase font-extrabold"
         >
           {heading}
         </h3>
