@@ -47,6 +47,8 @@ $sm: 550px;
   }
 }
 .inner-body-copy-white {
+  h2 {
+  }
   #careers-left,
   #careers-right {
     width: 100%;
@@ -138,6 +140,12 @@ $sm: 550px;
           display: block;
           padding-top: 17px;
         }
+      }
+      &.large-para {
+        font-size: 19px;
+        line-height: 30px;
+        margin-top: -15px;
+        // padding-top: 10px;
       }
     }
   }
