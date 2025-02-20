@@ -47,8 +47,6 @@ $sm: 550px;
   }
 }
 .inner-body-copy-white {
-  h2 {
-  }
   #careers-left,
   #careers-right {
     width: 100%;
@@ -156,6 +154,19 @@ $sm: 550px;
       }
       @media screen and (max-width: $md) {
         padding-bottom: 22px;
+      }
+      &:first-of-type {
+        padding-top: 46px;
+        @media screen and (min-width: $sm) {
+          padding-top: 92px;
+        }
+      }
+      &:last-of-type:not(:first-of-type) {
+        // Styles for the last h2 instance
+        padding-top: 69px;
+        @media screen and (min-width: $sm) {
+          padding-top: 92px;
+        }
       }
     }
   }
