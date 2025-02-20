@@ -16,6 +16,9 @@ $sm: 550px;
   //   margin-top: 150px;
   padding: 50px 100px 100px;
   background-color: $tcnj-yellow;
+  @media screen and (min-width: $lg) {
+    padding-top: 37px;
+  }
   h2,
   .link-wrapper {
     @media screen and (min-width: $sm) and (max-width: 1280px) {

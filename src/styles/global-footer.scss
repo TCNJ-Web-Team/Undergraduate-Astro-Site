@@ -79,6 +79,9 @@ $domine: "Domine", serif;
     margin: 20px 0px;
     clear: both;
     opacity: 20%;
+    @media screen and (min-width: $lg) {
+      margin-top: 70px;
+    }
     @media screen and (max-width: $lg) {
       margin: 40px 0px 10px;
       max-width: 750px;

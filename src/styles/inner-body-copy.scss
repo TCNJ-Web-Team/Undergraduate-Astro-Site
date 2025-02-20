@@ -29,7 +29,7 @@ $sm: 550px;
   width: calc(100% + 35px);
 
   @media screen and (min-width: $lg) {
-    width: 57.5%;
+    width: 51%;
     max-width: 1335px;
   }
   @media screen and (min-width: 1050px) and (max-width: $lg) {
@@ -63,7 +63,7 @@ $sm: 550px;
       padding-top: 40px;
       &:first-of-type {
         padding-top: 27px;
-        @media screen and (min-width: $md) and (max-width: $lg) {
+        @media screen and (min-width: $md) {
           padding-top: 35px;
         }
         @media screen and (max-width: $md) {
@@ -73,11 +73,12 @@ $sm: 550px;
       @media screen and (min-width: $md) and (max-width: $lg) {
         padding-top: 45px;
       }
-      @media screen and (max-width: $lg) {
-        padding-bottom: 0;
+      @media screen and (min-width: $lg) {
+        // padding-bottom: 0;
         font-size: 21px;
         line-height: 25px;
         padding-bottom: 8px;
+        padding-top: 40px;
       }
       @media screen and (max-width: $sm) {
         padding-top: 40px;
@@ -108,10 +109,13 @@ $sm: 550px;
       margin: 0;
       font-size: 18px;
       line-height: 21px;
-      @media screen and (min-width: $md) and (max-width: $lg) {
+      @media screen and (min-width: $md) {
         font-size: 19px;
         line-height: 22px;
         padding-top: 1px;
+      }
+      @media screen and (min-width: $lg) {
+        padding-top: 0;
       }
     }
   }
@@ -130,7 +134,7 @@ $sm: 550px;
     font-size: 18px;
     line-height: 21px;
     text-align: left;
-    @media screen and (min-width: $md) and (max-width: $lg) {
+    @media screen and (min-width: $md) {
       font-size: 19px;
       line-height: 22px;
     }
@@ -148,7 +152,7 @@ $sm: 550px;
     list-style-type: disc;
     list-style-position: outside;
     margin-left: 20px;
-    @media screen and (min-width: $md) and (max-width: $lg) {
+    @media screen and (min-width: $md) {
       padding-top: 22px;
     }
     li {
@@ -162,12 +166,13 @@ $sm: 550px;
       &:last-of-type {
         padding-bottom: 0 !important;
       }
-      @media screen and (min-width: $md) and (max-width: $lg) {
+
+      @media screen and (min-width: $md) {
         line-height: 22px;
         padding-bottom: 23px !important;
       }
       @media screen and (min-width: $md) {
-        padding-bottom: 15px;
+        // padding-bottom: 15px;
         // padding-bottom: 0;
       }
       @media screen and (max-width: $sm) {
