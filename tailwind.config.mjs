@@ -18,6 +18,8 @@ export default {
         yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
         yellowWhiteGradientMd:
           "linear-gradient(to top, white 75px, #FDD700 75px)",
+        yellowWhiteGradientLg:
+          "linear-gradient(to top, white 100px, #FDD700 100px)",
       },
 
       fontFamily: {

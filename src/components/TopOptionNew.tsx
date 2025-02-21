@@ -97,7 +97,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
           {heading}
         </h3>
         {school && (
-          <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[22px]  text-start">
+          <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
             {school && school.length === 1 ? (
               <a
                 className="text-[#33739F] underline"
