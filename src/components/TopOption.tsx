@@ -48,12 +48,12 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
         alt={`${heading} icon`}
       />
       <div className="flex-col flex gap-[4px] md:gap-[5px]">
-        <h3
+        <h2
           className="text-[17px] leading-[20px] sm:leading-[23px] 
         md:text-[20px] md:leading-[24px] lg:leading-[24px] font-interstate not-italic uppercase font-extrabold"
         >
           {heading}
-        </h3>
+        </h2>
         <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
           {department && (
             <span>
@@ -74,6 +74,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                 ) : (
                   department.map((dept, index) => (
                     <a
+                      target="_blank"
                       key={index}
                       href={dept.deptUrl}
                       className="text-primarylinkblue underline block text-start"

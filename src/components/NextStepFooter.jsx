@@ -8,18 +8,21 @@ export default function NextStepFooter() {
         <a
           className="program-next-step-button-gtm"
           href="https://admissions.tcnj.edu/apply/"
+          target="_blank"
         >
           Apply
         </a>
         <a
           className="program-next-step-button-gtm"
           href="https://admissions.tcnj.edu/visit/"
+          target="_blank"
         >
           Visit
         </a>
         <a
           className="program-next-step-button-gtm"
           href="https://connect.tcnj.edu/register/prospect"
+          target="_blank"
         >
           Request Info
         </a>

@@ -55,7 +55,7 @@ md:pt-[135px] lg:pt-[187px]"
 
         <motion.div
           id="program-glance"
-          className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px]`}
+          className={`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
           custom={2}
@@ -68,6 +68,7 @@ md:pt-[135px] lg:pt-[187px]"
         >
           <a
             href="https://admissions.tcnj.edu/apply/"
+            target="_blank"
             className="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
                 hover:bg-tcnjblue hover:text-white transition-all
                 "
@@ -76,6 +77,7 @@ md:pt-[135px] lg:pt-[187px]"
           </a>
           <a
             href="https://connect.tcnj.edu/register/prospect"
+            target="_blank"
             className="border-2 border-tcnjblue p-4 pt-[40px] pb-[40px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
                 hover:bg-tcnjblue hover:text-white
                 transition-all

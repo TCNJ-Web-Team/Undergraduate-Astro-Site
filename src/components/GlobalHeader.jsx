@@ -47,6 +47,7 @@ export default function GlobalHeader() {
           className={open ? "open" : ""}
         >
           <img
+            alt="Close"
             id="close-button"
             src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg"
             onClick={openSideNav}
