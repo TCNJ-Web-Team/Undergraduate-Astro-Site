@@ -54,7 +54,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
         >
           {heading}
         </h3>
-        <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[22px]  text-start">
+        <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
           {department && (
             <span>
               {department.length < 3 ? (
