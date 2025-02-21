@@ -101,12 +101,14 @@ function NavigationBar() {
           <div className="flex gap-2 flex-row justify-items-start items-center md:absolute md:right-0 mt-[15px] md:mt-0">
             <a
               href="https://admissions.tcnj.edu/apply/"
+              target="_blank"
               className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-sans text-sm leading-5 uppercase font-bold"
             >
               Apply
             </a>
             <a
               href="https://connect.tcnj.edu/register/prospect"
+              target="_blank"
               className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-sans text-sm leading-5 uppercase font-bold"
             >
               Get Info

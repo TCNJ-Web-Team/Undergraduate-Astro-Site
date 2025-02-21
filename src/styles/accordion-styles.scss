@@ -138,8 +138,12 @@ $sm: 550px;
       }
 
       a {
-        // color: $off-white;
         text-decoration: underline;
+        color: #33739f;
+        transition: all 0.25s;
+        &:hover {
+          color: #293f6f;
+        }
       }
     }
     li {

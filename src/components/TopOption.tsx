@@ -74,6 +74,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                 ) : (
                   department.map((dept, index) => (
                     <a
+                      target="_blank"
                       key={index}
                       href={dept.deptUrl}
                       className="text-primarylinkblue underline block text-start"
