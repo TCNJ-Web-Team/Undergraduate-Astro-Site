@@ -214,6 +214,33 @@ $sm: 550px;
       }
     }
   }
+  h2,
+  h3 {
+    &.split-line-laptop {
+      @media screen and (min-width: $lg) {
+        max-width: 50%;
+      }
+    }
+    &.split-line-tablet {
+      @media screen and (min-width: $md) {
+        max-width: 50%;
+      }
+    }
+  }
+  span {
+    &.split-line-laptop {
+      @media screen and (min-width: $lg) {
+        max-width: 50%;
+        display: block;
+      }
+    }
+    &.split-line-tablet {
+      @media screen and (min-width: $md) {
+        max-width: 50%;
+        display: block;
+      }
+    }
+  }
   p {
     font-weight: normal;
     font-size: 18px;
