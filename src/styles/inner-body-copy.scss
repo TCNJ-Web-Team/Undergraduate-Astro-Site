@@ -243,6 +243,16 @@ $sm: 550px;
         color: #293f6f;
       }
     }
+    &.split-line-laptop {
+      @media screen and (min-width: $lg) {
+        max-width: 50%;
+      }
+    }
+    &.split-line-tablet {
+      @media screen and (min-width: $md) {
+        max-width: 50%;
+      }
+    }
   }
   // .split-list-top {
   //   padding-top: 69px;
