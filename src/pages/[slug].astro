@@ -305,15 +305,16 @@ const { sourceUrl } = heroImgDesktop ?? {
       lg:pr-0"
       >
         <p
-          class="text-[17px] leading-[26px] pb-[13px] font-bitter
-          sm:pb-[25px] 
+          class="text-[17px] leading-[26px] pb-[18px] font-bitter
+          sm:pb-[30px] 
         sm:text-[17px] 
         sm:leading-[19px]
         sm:px-[45px] 
         md:text-[18px] 
         md:leading-[21px]
-        md:pb-[23px] 
+        md:pb-[30px] 
         md:px-0
+        lg:pb-[26px] 
         lg:text-[18px]
                 lg:leading-[21px]
         "
@@ -341,9 +342,9 @@ const { sourceUrl } = heroImgDesktop ?? {
       </div>
       <div
         class="w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
-      mt-[37px]
-      sm:mt-[33px]
-      md:mt-[42px]"
+      mt-[42px]
+      sm:mt-[40px]
+      md:mt-[50px]"
       >
         {
           sourceUrl && (
@@ -512,7 +513,9 @@ const { sourceUrl } = heroImgDesktop ?? {
       bg-white
       relative
       pb-[75px]
+      sm:pb-[93px]
       sm:px-[45px]
+      lg:pb-[105px]
       "
       >
         {
@@ -545,16 +548,14 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           )
         }
         <div
-          class="lg:max-w-[70.5rem] md:max-w-[920px] 
+          class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
         sm:pt-[20px]
-        sm:pb-[15px]
         md:pt-[119px]
-        md:pb-[52px]
-        lg:pb-[75px]
-        lg:pt-[144px]"
+        lg:pt-[144px]
+        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[15px] md:pb-[33px] lg:pb-[75px]" : ""}`
         >
           <BodyCopy
             left={programOfStudyLeft}
@@ -593,7 +594,7 @@ md:pt-[135px] lg:pt-[187px]"
       <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
         <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
 
-          {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} />}
+          {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} careerContent={careersBody}/>}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
           </div>
                   <div class="lg:max-w-[70.5rem] lg:m-auto">

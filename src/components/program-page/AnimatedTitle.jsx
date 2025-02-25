@@ -7,12 +7,12 @@ function AnimatedTitle({ title }) {
       className="font-chunkfive
           text-tcnjblue
           text-[45px]
-          leading-[62px]
+          leading-[50px]
           sm:text-[55px]
-          sm:leading-[75px]
+          sm:leading-[60px]
          sm:px-[45px] md:px-0
           md:text-[65px]
-          md:leading-[89px]"
+          md:leading-[75px]"
     >
       {title}
     </h1>

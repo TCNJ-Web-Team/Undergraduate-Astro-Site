@@ -325,17 +325,20 @@ $sm: 550px;
       }
 
       @media screen and (min-width: $md) {
-        line-height: 22px;
-        padding-bottom: 23px !important;
-      }
-      @media screen and (min-width: $md) {
-        // padding-bottom: 15px;
-        // padding-bottom: 0;
+        line-height: 30px;
+        padding-bottom: 15px !important;
         font-size: 19px;
+      }
+
+      @media screen and (min-width: $sm) and (max-width: $md) {
+        font-size: 18px;
+        line-height: 25px;
+        padding-bottom: 20px;
       }
       @media screen and (max-width: $sm) {
         font-size: 18px;
         // line-height: 23px;
+        padding-bottom: 15px;
         line-height: 25px;
       }
       &.split-line-laptop {

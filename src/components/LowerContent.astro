@@ -8,25 +8,26 @@ type Props = {
     body: string;
   }[];
   quote?: string;
+  careerContent?: string;
 };
 
-const { lowerContent, quote } = Astro.props;
+const { lowerContent, quote, careerContent } = Astro.props;
 // console.log(quote);
 ---
 
 <div
   id="additional-information"
-  class="pl-[35px]
+  class=`pl-[35px]
   pr-[35px]
-  pt-[75px] pb-[94px]
+   pb-[94px]
   sm:px-[45px]
-sm:pt-[75px]
+
 sm:pb-[94px]
 md:px-[20px]
-md:pt-[150px]
+
 md:pb-[145px]
 lgMd:px-[0px]
-lg:px-[0px]"
+lg:px-[0px] ${careerContent ? "pt-[75px] sm:pt-[75px] md:pt-[150px]" : ""}`
 >
   {quote && <QuoteContent content={quote} client:load />}
   <hr class="bg-[#BFBFBF] h-[1px] w-auto border-0" />
