@@ -548,16 +548,14 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           )
         }
         <div
-          class="lg:max-w-[70.5rem] md:max-w-[920px] 
+          class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
         sm:pt-[20px]
-        sm:pb-[15px]
         md:pt-[119px]
-        md:pb-[33px]
-        lg:pb-[75px]
-        lg:pt-[144px]"
+        lg:pt-[144px]
+        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[15px] md:pb-[33px] lg:pb-[75px]" : ""}`
         >
           <BodyCopy
             left={programOfStudyLeft}
