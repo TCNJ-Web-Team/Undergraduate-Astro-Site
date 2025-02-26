@@ -40,6 +40,7 @@ export async function getStaticPaths() {
         }
         slug
         school
+        acceleratedSubtitle
         programAtAGlance
         heroImgDesktop {
           sourceUrl
@@ -100,6 +101,7 @@ export async function getStaticPaths() {
         degreeType: string[];
         repeaterDegrees: string[];
         school: string;
+        acceleratedSubtitle:string[];
         departmentRepeater: string[];
         heroImgDesktop: string;
         horizontalPositionDesktopHero: number;
@@ -128,6 +130,7 @@ export async function getStaticPaths() {
         degreeType: program.program.degreeType,
         repeaterDegrees: program.program.repeaterDegrees,
         school: program.program.school,
+        acceleratedSubtitle: program.program.acceleratedSubtitle,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
         heroImgTablet: program.program.heroImgTablet,
@@ -186,6 +189,7 @@ interface AstroProps {
   degreeType: string[]; // Assuming degreeType is an array of strings
   repeaterDegrees: {degreeName:string}[];
   school: string[];
+  acceleratedSubtitle: string[];
   department: { deptUrl: string; deptTitle: string }[];
   horizontalPositionDesktopHero: number;
   heroImgDesktop: {
@@ -232,6 +236,7 @@ const {
   degreeType,
   repeaterDegrees,
   school,
+  acceleratedSubtitle,
   department,
   heroImgDesktop,
   horizontalPositionDesktopHero,
@@ -257,7 +262,8 @@ metaDescription,
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
 // console.log(repeaterDegrees);
 // const socialSourceUrl = socialImage ? socialImage.sourceUrl ? heroImgDesktop : "";
-const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : heroImgDesktop;
+// const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : heroImgDesktop;
+const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 // console.log(department);
 // console.log(school);
 // console.log(metaDescription);
@@ -266,6 +272,7 @@ const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourc
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+// console.log(acceleratedSubtitle);
 // console.log(heroImgTablet, heroImgMobile);
 // const {programOfStudyLeft} = programOfStudy ?? {
 //   programOfStudyLeft: "",
@@ -312,7 +319,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         sm:px-[45px] 
         md:text-[18px] 
         md:leading-[21px]
-        md:pb-[30px] 
+        md:pb-[25px] 
         md:px-0
         lg:pb-[26px] 
         lg:text-[18px]
@@ -338,13 +345,11 @@ const { sourceUrl } = heroImgDesktop ?? {
         >
           {title}
         </h1> -->
-        <AnimatedTitle title={title} client:load />
+        <AnimatedTitle title={title} subtitle={acceleratedSubtitle} client:load />
       </div>
       <div
-        class="w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
-      mt-[42px]
-      sm:mt-[40px]
-      md:mt-[50px]"
+        class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
+      ${acceleratedSubtitle ? "mt-[35px] sm:mt-[39px] md:mt-[55px]" : "mt-[42px] sm:mt-[40px] md:mt-[50px] "}`
       >
         {
           sourceUrl && (
