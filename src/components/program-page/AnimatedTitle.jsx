@@ -17,7 +17,7 @@ function AnimatedTitle({ title,subtitle }) {
       >
       {title}
       {subtitle && (<span className="block
-      text-black leading-[75px] text-[18px]">{subtitle}</span>)}
+      text-black leading-[30px] text-[18px] sm:text-[23px] md:leading-[22px]">{subtitle}</span>)}
     </h1>
 
   );
