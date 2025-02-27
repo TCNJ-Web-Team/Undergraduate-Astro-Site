@@ -43,10 +43,11 @@ function AnimatedHero({
       {badge && (
         <img
           src={badge.sourceUrl}
-          className="absolute right-[14px] bottom-[21px] z-40 h-auto w-[193px]
-      sm:right-[50px] sm:bottom-[50px] sm:w-[180px]
-      md:right-[50px] md:bottom-[40px] md:w-[180px]
-      lg:right-[60px] lg:bottom-[50px] lg:w-[200px]
+          className="absolute right-[10px] bottom-[12px] z-40 h-auto w-[208px]
+      sm:right-[41px] sm:bottom-[27px] sm:w-[215px]
+      md:right-[35px] md:bottom-[7px] md:w-[215px]
+      lg:right-[70px] lg:bottom-[37px] lg:w-[236px]
+ 
       "
           alt={`Badge ` + title}
         />
