@@ -52,6 +52,9 @@ export async function getStaticPaths() {
         heroImgMobile{
           sourceUrl
         }
+        badge{
+          sourceUrl
+        }
         departmentRepeater {
           deptTitle
           deptUrl
@@ -107,6 +110,7 @@ export async function getStaticPaths() {
         horizontalPositionDesktopHero: number;
         heroImgTablet: string;
         heroImgMobile: string;
+        badge: string[];
         careersTitle: string;
         careers: string;
         programOfStudy: string;
@@ -135,6 +139,7 @@ export async function getStaticPaths() {
         heroImgDesktop: program.program.heroImgDesktop,
         heroImgTablet: program.program.heroImgTablet,
         heroImgMobile: program.program.heroImgMobile,
+        badge: program.program.badge,
         careersTitle: program.program.careersTitle,
         careers: program.program.careers,
         programOfStudy: program.program.programOfStudy,
@@ -201,6 +206,9 @@ interface AstroProps {
   heroImgMobile: {
     sourceUrl: string;
   };
+  badge: {
+    sourceUrl: string;
+  };
   content: string;
   careersTitle: string;
   careers: {
@@ -242,6 +250,7 @@ const {
   horizontalPositionDesktopHero,
   heroImgTablet,
   heroImgMobile,
+  badge,
   content,
   careersTitle,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
@@ -411,6 +420,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                 sourceUrl={sourceUrl}
                 horizontalPositionDesktopHero={horizontalPositionDesktopHero}
                 title={title}
+                badge={badge}
                 client:load
               />
             </>
