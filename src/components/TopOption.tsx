@@ -47,14 +47,14 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
         src={`https://tcnj.edu/custom/icon-library/micro/${imgSrc}.svg`}
         alt={`${heading} icon`}
       />
-      <div className="flex-col flex gap-[4px] md:gap-[5px]">
+      <div className="flex-col flex gap-[2px] md:gap-[5px]">
         <h2
-          className="text-[17px] leading-[20px] sm:leading-[23px] 
+          className="text-[17px] leading-[22px] sm:leading-[23px] 
         md:text-[20px] md:leading-[24px] lg:leading-[24px] font-interstate not-italic uppercase font-extrabold"
         >
           {heading}
         </h2>
-        <p className="text-[17px] leading-[19px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
+        <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
           {department && (
             <span>
               {department.length < 3 ? (

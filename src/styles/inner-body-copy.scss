@@ -168,7 +168,8 @@ $sm: 550px;
       &.large-para {
         font-size: 19px;
         line-height: 30px;
-        margin-top: -15px;
+        // margin-top: -15px;
+        //  negative margin
         font-family: $domine;
         // padding-top: 10px;
         @media screen and (min-width: $md) {

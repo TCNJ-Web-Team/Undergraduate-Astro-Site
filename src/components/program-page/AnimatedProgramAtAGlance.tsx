@@ -4,10 +4,12 @@ import { fadeInAnimationVariant } from "../../animations/fadeInVariant";
 
 interface AnimatedProgramProps {
   programAtAGlance: string;
+  programImageCheck?: string;
 }
 
 const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
   programAtAGlance,
+  programImageCheck,
 }) => {
   // const fadeInAnimationVariant = {
   //   initial: {
@@ -27,6 +29,7 @@ const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
   //     },
   //   }),
   // };
+  console.log(programImageCheck);
   return (
     <>
       <div
@@ -36,14 +39,14 @@ md:pt-[135px] lg:pt-[187px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className="text-left pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]  "
+        className={`text-left ${programImageCheck ? "pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]" : "pb-[100px]  sm:pb-[115px] md:pb-[150px] lg:pb-[200px]"}   `}
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       >
         <motion.h2
-          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[25px] sm:pb-[20px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
+          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[20px] sm:pb-[20px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
             lg:pb-[14px]
         
         `}
