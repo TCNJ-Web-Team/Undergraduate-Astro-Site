@@ -7,7 +7,9 @@ function AnimatedHero({
   sourceUrl,
   horizontalPositionDesktopHero,
   title,
+  badge,
 }) {
+  // console.log(badge);
   return (
     <div className="relative w-full overflow-hidden">
       <picture>
@@ -17,7 +19,7 @@ function AnimatedHero({
         {heroImgTablet && (
           <source media="(max-width: 900px)" srcSet={heroImgTablet.sourceUrl} />
         )}
-        <motion.img
+        <img
           src={sourceUrl}
           style={{
             objectPosition: `${horizontalPositionDesktopHero}%`,
@@ -36,38 +38,20 @@ function AnimatedHero({
           xl:pl-[200px]"
           id="hero-img"
           alt={title}
-          // initial={{ opacity: 1, y: 35 }}
-          // animate={{ opacity: 1, y: 0 }}
-          // transition={{
-          //   // delay: 0.045,
-          //   ease: "easeInOut",
-          //   // ease: [0.12, 0, 0.39, 0],
-          //   // ease: "easeInOut",
-          //   // duration: 0.55,
-          //   // ease: [0.22, 0, 0.36, 1],
-
-          //   duration: 0.45,
-          //   // type: "spring",
-          //   // stiffness: 50,
-          // }}
-          // whileInView="animate"
-          // viewport={{ once: true }}
         />
       </picture>
-      {/* <div
-        className="absolute top-0 
-                bg-lightgrey
-                w-[100%]
-          h-[450px]
-          sm:h-[600px]
-    
-          left-[35px]
-          
-          lg:left-[100px]
-          xl:left-[200px]
-          z-10
-          "
-      /> */}
+      {badge && (
+        <img
+          src={badge.sourceUrl}
+          className="absolute right-[10px] bottom-[12px] z-40 h-auto w-[208px]
+      sm:right-[41px] sm:bottom-[27px] sm:w-[215px]
+      md:right-[35px] md:bottom-[7px] md:w-[215px]
+      lg:right-[70px] lg:bottom-[37px] lg:w-[236px]
+ 
+      "
+          alt={`Badge ` + title}
+        />
+      )}
     </div>
   );
 }
