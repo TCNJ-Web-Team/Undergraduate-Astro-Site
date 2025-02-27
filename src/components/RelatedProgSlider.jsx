@@ -87,7 +87,11 @@ export default function RelatedProgSlider({ learnMoreList }) {
               </a>
             </SwiperSlide>
           ))}{" "}
-          <div id="swiper-navigation" style={{ right: marginLeft }}>
+          <div
+            id="swiper-navigation"
+            className="lg:!right-0"
+            style={{ right: marginLeft }}
+          >
             <div className="swiper-button-next"></div>
             <div className="swiper-button-prev"></div>
           </div>
