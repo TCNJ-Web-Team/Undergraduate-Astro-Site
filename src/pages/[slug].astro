@@ -299,6 +299,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(degreeType.length);
 // console.log(department);
 // console.log(careersTitle);
+console.log(programOfStudyRight)
 ---
 
 <Layout title={metaTitle} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -538,30 +539,11 @@ const { sourceUrl } = heroImgDesktop ?? {
           <AnimatedRightImage programOfStudyRight={programOfStudyRight}
 rightImageHorizontalPosition={rightImageHorizontalPosition} 
 rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
-          //   <img
-          //     src={programOfStudyRight}
-          //     alt=""
-          //     style={{
-          //       objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
-          //     }}
-          //     id="prog-study-img"
-          //     class="relative
-          // top-[-50px]
-          // object-cover
-          // object-left
-          // w-[100%]
-          // h-[400px]
-          // max-w-none
-          // sm:h-[550px]
-          // sm:top-[-50px]
-          
-      
-          // md:right-[-35px]
-          // md:h-[650px]
-          // md:absolute"
-          //   />
           )
         }
+        {  !programOfStudyRight && (
+        <div id="no-photo-spacer" class="h-[75px] sm:h-[92px] md:h-[0]"></div>
+)}
         <div
           class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
