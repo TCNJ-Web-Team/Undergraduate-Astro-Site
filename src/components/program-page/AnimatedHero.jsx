@@ -7,9 +7,9 @@ function AnimatedHero({
   sourceUrl,
   horizontalPositionDesktopHero,
   title,
-  badge
+  badge,
 }) {
-  console.log(badge);
+  // console.log(badge);
   return (
     <div className="relative w-full overflow-hidden">
       <picture>
@@ -38,16 +38,19 @@ function AnimatedHero({
           xl:pl-[200px]"
           id="hero-img"
           alt={title}
-               />
+        />
       </picture>
-      {badge && (<img
-      src={badge.sourceUrl}
-      className="absolute right-[25px] bottom-[30px] z-40 h-[175px] w-auto
-      sm:right-[50px] sm:bottom-[50px] sm:h-[180px]
-      md:right-[50px] md:bottom-[40px] md:h-[180px]
-      lg:right-[60px] lg:bottom-[50px] lg:h-[200px]
+      {badge && (
+        <img
+          src={badge.sourceUrl}
+          className="absolute right-[14px] bottom-[21px] z-40 h-auto w-[193px]
+      sm:right-[50px] sm:bottom-[50px] sm:w-[180px]
+      md:right-[50px] md:bottom-[40px] md:w-[180px]
+      lg:right-[60px] lg:bottom-[50px] lg:w-[200px]
       "
-      alt={`Badge ` + title}/>)}
+          alt={`Badge ` + title}
+        />
+      )}
     </div>
   );
 }
