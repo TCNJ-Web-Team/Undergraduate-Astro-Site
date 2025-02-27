@@ -151,9 +151,15 @@ export default function IntroSection() {
               onClick={() => openAccellPop(dualText)}
             />
           </span>
-          A full list of graduate and certificate programs is also available.
-          Search by keyword or browse programs by selecting a school, program
-          type, and/or options.
+          A full list of{" "}
+          <a
+            href="https://graduate.tcnj.edu/explore-programs/"
+            className="underline"
+          >
+            graduate and certificate programs
+          </a>{" "}
+          is also available. Search by keyword or browse programs by selecting a
+          school, program type, and/or options.
         </motion.div>
       </div>
 

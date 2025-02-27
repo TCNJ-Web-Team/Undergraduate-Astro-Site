@@ -112,7 +112,7 @@ $sm: 550px;
       line-height: 41px;
       @media screen and (max-width: $sm) {
         font-size: 23px;
-        line-height: 31px;
+        line-height: 28px;
         padding-bottom: 0px;
       }
     }
@@ -138,20 +138,20 @@ $sm: 550px;
       em {
         font-family: $open-sans;
         font-size: 17px;
-        line-height: 23px;
+        line-height: 26px;
         padding-top: 7px;
-        padding-bottom: 0px;
         display: block;
+        padding-bottom: 19px;
         @media screen and (min-width: $lg) {
           padding-top: 5px;
           line-height: 26px;
+          padding-bottom: 0px;
         }
       }
       &:has(+ p) {
         em {
-          padding-bottom: 19px;
+          padding-bottom: 0px;
           @media screen and (min-width: $lg) {
-            padding-bottom: 15px;
           }
         }
       }
@@ -170,10 +170,12 @@ $sm: 550px;
         line-height: 30px;
         // margin-top: -15px;
         //  negative margin
+        padding-top: 13px;
         font-family: $domine;
         // padding-top: 10px;
         @media screen and (min-width: $md) {
           margin-top: 7px;
+          padding-top: 5px;
         }
       }
     }
