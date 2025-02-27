@@ -24,7 +24,10 @@ $sm: 550px;
   //     color: #293f6f;
   //   }
   .swiper-wrapper {
-    padding-top: 70px;
+    padding-top: 62px;
+    @media screen and (min-width: $sm) {
+      padding-top: 70px;
+    }
     @media screen and (max-width: $sm) {
       // display: none;
       padding-left: 35px;
