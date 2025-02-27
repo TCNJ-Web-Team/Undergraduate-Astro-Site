@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function AnimatedTitle({ title,subtitle }) {
+function AnimatedTitle({ title, subtitle }) {
   return (
-
     <h1
       className="font-chunkfive
       text-tcnjblue
@@ -14,12 +13,17 @@ function AnimatedTitle({ title,subtitle }) {
       sm:px-[45px] md:px-0
       md:text-[65px]
       md:leading-[75px]"
-      >
+    >
       {title}
-      {subtitle && (<span className="block
-      text-black leading-[30px] text-[18px] sm:text-[23px] md:leading-[22px]">{subtitle}</span>)}
+      {subtitle && (
+        <span
+          className="block
+      text-black leading-[30px] text-[18px] sm:pt-[10px] sm:text-[23px] md:leading-[22px] md:pt-[0]"
+        >
+          {subtitle}
+        </span>
+      )}
     </h1>
-
   );
 }
 

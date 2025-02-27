@@ -67,15 +67,15 @@ $sm: 550px;
       text-transform: uppercase;
       padding-bottom: 10px;
       padding-top: 40px;
-      &:first-of-type {
-        padding-top: 27px;
-        @media screen and (min-width: $md) {
-          padding-top: 35px;
-        }
-        @media screen and (max-width: $md) {
-          padding-top: 26px;
-        }
+
+      padding-top: 27px;
+      @media screen and (min-width: $md) {
+        padding-top: 35px;
       }
+      @media screen and (max-width: $md) {
+        padding-top: 34px;
+      }
+
       @media screen and (min-width: $md) and (max-width: $lg) {
         padding-top: 45px;
       }
@@ -131,6 +131,9 @@ $sm: 550px;
       &.more-spacing {
         display: block;
         padding-top: 17px;
+        @media screen and (min-width: $sm) and (max-width: $md) {
+          padding-top: 14px;
+        }
         @media screen and (min-width: $lg) {
           padding-top: 15px;
         }
@@ -173,6 +176,9 @@ $sm: 550px;
         padding-top: 13px;
         font-family: $domine;
         // padding-top: 10px;
+        @media screen and (min-width: $sm) {
+          padding-top: 15px;
+        }
         @media screen and (min-width: $md) {
           margin-top: 7px;
           padding-top: 5px;
