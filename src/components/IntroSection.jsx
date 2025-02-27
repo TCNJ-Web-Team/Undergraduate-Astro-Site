@@ -91,11 +91,8 @@ export default function IntroSection() {
           }}
         >
           TCNJ allows you to craft an education that's uniquely yours, with
-          flexible options across majors, minors, and concentration areas.
-          <br />
-          Search by keyword or browse programs by selecting an area of study,
-          degree type, and/or format. TCNJ students also have an option to
-          pursue accelerated programs
+          flexible options across majors, minors, concentration areas, and
+          certificates. You can also pursue accelerated
           <span className="inline-block mr-[5px] ml-[-1px]">
             <div
               className={`popup-container fixed top-0 left-0
@@ -139,8 +136,6 @@ export default function IntroSection() {
                 <p className=" py-[45px] px-[15px] sm:px-[45px] font-opensans text-[16px] leading-[24px] text-black">
                   <strong>Dual degree</strong> programs are designed to provide
                   a streamlined pathway to a master’s or professional degree.
-                  TCNJ offers both direct entry and early assurance programs.
-                  See the program descriptions for details.
                 </p>
 
                 <img
@@ -156,6 +151,9 @@ export default function IntroSection() {
               onClick={() => openAccellPop(dualText)}
             />
           </span>
+          A full list of graduate and certificate programs is also available.
+          Search by keyword or browse programs by selecting a school, program
+          type, and/or options.
         </motion.div>
       </div>
 
