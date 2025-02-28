@@ -45,15 +45,13 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
       flex-col"
       >
         <div
-          className="flex flex-col  pb-[100px] gap-[0px]
+          className={`flex flex-col  pb-[100px] gap-[0px]
           sm:flex-row
-          sm:pt-[70px]
           sm:pb-[110px]
           sm:gap-[40px] 
-          md:pt-[89px]
           md:pb-[150px]
-          lg:pt-[85px]
-        lg:pb-[200px] "
+          lg:pb-[200px] 
+          ${left ? "sm:pt-[70px] md:pt-[89px] lg:pt-[85px]" : "pt-0"}`}
         >
           {left && (
             <motion.div

@@ -29,7 +29,7 @@ const AnimatedProgramAtAGlance: React.FC<AnimatedProgramProps> = ({
   //     },
   //   }),
   // };
-  console.log(programImageCheck);
+  // console.log(programImageCheck);
   return (
     <>
       <div
