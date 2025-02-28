@@ -77,7 +77,8 @@ $sm: 550px;
       }
 
       @media screen and (min-width: $md) and (max-width: $lg) {
-        padding-top: 45px;
+        // padding-top: 45px;
+        padding-top: 36px;
       }
       @media screen and (min-width: $lg) {
         // padding-bottom: 0;
@@ -131,11 +132,25 @@ $sm: 550px;
       &.more-spacing {
         display: block;
         padding-top: 17px;
+        @media screen and (min-width: $lg) {
+          padding-top: 15px;
+        }
+        @media screen and (min-width: $md) {
+          padding-top: 13px;
+        }
         @media screen and (min-width: $sm) and (max-width: $md) {
           padding-top: 14px;
         }
-        @media screen and (min-width: $lg) {
-          padding-top: 15px;
+        &.first {
+          @media screen and (min-width: $lg) {
+            padding-top: 15px;
+          }
+          @media screen and (min-width: $md) {
+            padding-top: 8px;
+          }
+          @media screen and (min-width: $sm) and (max-width: $md) {
+            padding-top: 6px;
+          }
         }
       }
       em {
@@ -180,8 +195,18 @@ $sm: 550px;
           padding-top: 15px;
         }
         @media screen and (min-width: $md) {
-          margin-top: 7px;
-          padding-top: 5px;
+          margin-top: 3px;
+          padding-top: 12px;
+        }
+        &.first {
+          @media screen and (min-width: $md) {
+            margin-top: 0px;
+          }
+        }
+        &:first-of-type {
+          @media screen and (min-width: $md) {
+            margin-top: 0px;
+          }
         }
       }
     }
