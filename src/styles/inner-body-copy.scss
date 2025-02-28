@@ -16,6 +16,34 @@ $xl: 1920px; // Custom size for extra-large screens
 $lg: 1281px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
+
+// Define the height values you want available (the key is used in the class name)
+$height-values: (
+  5: 5px,
+  8: 8px,
+  10: 10px,
+  15: 15px,
+);
+
+// Loop over the map to generate utility classes
+@each $key, $value in $height-values {
+  .h-#{$key}-md {
+    @media (min-width: $md) and (max-width: $lg) {
+      height: $value;
+    }
+  }
+  .h-#{$key}-md-lg {
+    @media (min-width: $md) and (min-width: $xl) {
+      height: $value;
+    }
+  }
+  .h-#{$key}-md-up {
+    @media (min-width: $md) {
+      height: $value;
+    }
+  }
+}
+
 .yellow-body-copy {
   p {
     a {
