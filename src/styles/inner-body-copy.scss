@@ -176,7 +176,7 @@ $height-values: (
           @media screen and (min-width: $md) {
             padding-top: 8px;
           }
-          @media screen and (min-width: $sm) and (max-width: $md) {
+          @media screen and (max-width: $md) {
             padding-top: 6px;
           }
         }
@@ -373,6 +373,9 @@ $height-values: (
     margin-left: 20px;
     @media screen and (min-width: $md) {
       padding-top: 22px;
+    }
+    @media screen and (max-width: $md) {
+      padding-top: 25px;
     }
     li {
       font-family: $domine;
