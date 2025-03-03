@@ -2,28 +2,38 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function AnimatedTitle({ title, subtitle }) {
+  // console.log(title);
+  // console.log(title.length);
   return (
-    <h1
-      className="font-chunkfive
+    <>
+      <h1
+        className={`font-chunkfive
       text-tcnjblue
-      text-[45px]
-      leading-[50px]
+      
       sm:text-[55px]
       sm:leading-[60px]
       sm:px-[45px] md:px-0
       md:text-[65px]
-      md:leading-[75px]"
-    >
-      {title}
+      md:leading-[75px]
+      ${title.length >= 30 ? "text-[30px] leading-[40px]" : "text-[45px] leading-[50px]"}`}
+      >
+        {title}
+      </h1>
       {subtitle && (
         <span
           className="block
-      text-black leading-[30px] text-[18px] sm:pt-[10px] sm:text-[23px] md:leading-[22px] md:pt-[0]"
+          font-chunkfive
+      text-black 
+      sm:px-[45px] md:px-0
+      leading-[25px] text-[18px] 
+      sm:mt-[9px] sm:text-[23px] sm:leading-[35px]
+      md:mt-[14px] md:leading-[22px] md:pt-[0]
+      "
         >
           {subtitle}
         </span>
       )}
-    </h1>
+    </>
   );
 }
 
