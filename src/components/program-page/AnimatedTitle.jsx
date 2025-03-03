@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function AnimatedTitle({ title, subtitle }) {
+  console.log(title);
   return (
     <h1
       className="font-chunkfive
