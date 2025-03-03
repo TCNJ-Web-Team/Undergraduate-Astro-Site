@@ -529,7 +529,7 @@ console.log(programOfStudyRight)
         class="m-auto
       bg-white
       relative
-      pb-[75px]
+      pb-[71px]
       sm:pb-[93px]
       sm:px-[45px]
       lg:pb-[105px]
@@ -543,17 +543,17 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           )
         }
         {  !programOfStudyRight && (
-        <div id="no-photo-spacer" class="h-[75px] sm:h-[92px] md:h-[0]"></div>
+        <div id="no-photo-spacer" class="h-[75px] sm:h-[70px] md:h-[0]"></div>
 )}
         <div
           class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
-        sm:pt-[20px]
-        md:pt-[119px]
-        lg:pt-[144px]
-        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[15px] md:pb-[33px] lg:pb-[75px]" : ""}`
+        
+        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[15px] md:pb-[33px] lg:pb-[75px]" : ""}
+        ${programOfStudyRight ? "sm:pt-[20px] md:pt-[119px] lg:pt-[144px]" : "md:pt-[119px] lg:pt-[144px]"}
+        `
         >
           <BodyCopy
             left={programOfStudyLeft}

@@ -61,7 +61,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
           }}
         >
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 md:max-w-[920px] lg:max-w-[70.5rem] w-full">
-            <h2 className="pl-[35px] pr-[35px] sm:pl-[0px] sm:pr-[0px]  font-alfaslab font-normal text-[30px] leading-[40px] text-tcnjblue">
+            <h2 className="pl-[35px] pr-[35px] sm:pl-[0px] sm:pr-[0px]  font-alfaslab font-normal text-[23px] sm:text-[30px] leading-[28px] sm:leading-[40px] text-tcnjblue">
               Related Programs
             </h2>
           </div>

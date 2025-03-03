@@ -16,6 +16,34 @@ $xl: 1920px; // Custom size for extra-large screens
 $lg: 1281px; // Custom size for large screens
 $md: 900px;
 $sm: 550px;
+
+// Define the height values you want available (the key is used in the class name)
+$height-values: (
+  5: 5px,
+  8: 8px,
+  10: 10px,
+  15: 15px,
+);
+
+// Loop over the map to generate utility classes
+@each $key, $value in $height-values {
+  .h-#{$key}-md {
+    @media (min-width: $md) and (max-width: $lg) {
+      height: $value;
+    }
+  }
+  .h-#{$key}-md-lg {
+    @media (min-width: $md) and (min-width: $xl) {
+      height: $value;
+    }
+  }
+  .h-#{$key}-md-up {
+    @media (min-width: $md) {
+      height: $value;
+    }
+  }
+}
+
 .yellow-body-copy {
   p {
     a {
@@ -67,17 +95,18 @@ $sm: 550px;
       text-transform: uppercase;
       padding-bottom: 10px;
       padding-top: 40px;
-      &:first-of-type {
-        padding-top: 27px;
-        @media screen and (min-width: $md) {
-          padding-top: 35px;
-        }
-        @media screen and (max-width: $md) {
-          padding-top: 26px;
-        }
+
+      padding-top: 27px;
+      @media screen and (min-width: $md) {
+        padding-top: 35px;
       }
+      @media screen and (max-width: $md) {
+        padding-top: 34px;
+      }
+
       @media screen and (min-width: $md) and (max-width: $lg) {
-        padding-top: 45px;
+        // padding-top: 45px;
+        padding-top: 36px;
       }
       @media screen and (min-width: $lg) {
         // padding-bottom: 0;
@@ -112,7 +141,7 @@ $sm: 550px;
       line-height: 41px;
       @media screen and (max-width: $sm) {
         font-size: 23px;
-        line-height: 31px;
+        line-height: 28px;
         padding-bottom: 0px;
       }
     }
@@ -134,24 +163,41 @@ $sm: 550px;
         @media screen and (min-width: $lg) {
           padding-top: 15px;
         }
+        @media screen and (min-width: $md) {
+          padding-top: 13px;
+        }
+        @media screen and (min-width: $sm) and (max-width: $md) {
+          padding-top: 14px;
+        }
+        &.first {
+          @media screen and (min-width: $lg) {
+            padding-top: 15px;
+          }
+          @media screen and (min-width: $md) {
+            padding-top: 8px;
+          }
+          @media screen and (max-width: $md) {
+            padding-top: 6px;
+          }
+        }
       }
       em {
         font-family: $open-sans;
         font-size: 17px;
-        line-height: 23px;
-        padding-top: 7px;
-        padding-bottom: 0px;
+        line-height: 26px;
+        padding-top: 4px;
         display: block;
+        // padding-bottom: 19px;
         @media screen and (min-width: $lg) {
-          padding-top: 5px;
+          padding-top: 0px;
           line-height: 26px;
+          padding-bottom: 0px;
         }
       }
       &:has(+ p) {
         em {
-          padding-bottom: 19px;
+          padding-bottom: 0px;
           @media screen and (min-width: $lg) {
-            padding-bottom: 15px;
           }
         }
       }
@@ -170,10 +216,25 @@ $sm: 550px;
         line-height: 30px;
         // margin-top: -15px;
         //  negative margin
+        padding-top: 13px;
         font-family: $domine;
         // padding-top: 10px;
+        @media screen and (min-width: $sm) {
+          padding-top: 15px;
+        }
         @media screen and (min-width: $md) {
-          margin-top: 7px;
+          margin-top: 3px;
+          padding-top: 12px;
+        }
+        &.first {
+          @media screen and (min-width: $md) {
+            margin-top: 0px;
+          }
+        }
+        &:first-of-type {
+          @media screen and (min-width: $md) {
+            margin-top: 0px;
+          }
         }
       }
     }
@@ -198,7 +259,7 @@ $sm: 550px;
         padding-bottom: 24px;
       }
       @media screen and (max-width: $md) {
-        padding-bottom: 22px;
+        padding-bottom: 0px;
       }
       &:first-of-type {
         padding-top: 46px;
@@ -312,6 +373,9 @@ $sm: 550px;
     margin-left: 20px;
     @media screen and (min-width: $md) {
       padding-top: 22px;
+    }
+    @media screen and (max-width: $md) {
+      padding-top: 25px;
     }
     li {
       font-family: $domine;
