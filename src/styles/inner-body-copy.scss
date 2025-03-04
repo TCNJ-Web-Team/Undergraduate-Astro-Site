@@ -104,16 +104,16 @@ $height-values: (
         padding-top: 34px;
       }
 
-      @media screen and (min-width: $md) and (max-width: $lg) {
-        // padding-top: 45px;
-        padding-top: 36px;
-      }
       @media screen and (min-width: $lg) {
         // padding-bottom: 0;
         font-size: 21px;
         line-height: 25px;
         padding-bottom: 8px;
-        padding-top: 40px;
+        padding-top: 35px;
+      }
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        // padding-top: 45px;
+        padding-top: 36px;
       }
       @media screen and (min-width: $sm) {
         font-size: 21px;
@@ -125,6 +125,18 @@ $height-values: (
         padding-bottom: 9px;
         font-size: 20px;
         line-height: 24px;
+      }
+      + p.more-spacing {
+        // Your specific styles for the first p.more-spacing after h3
+        // For example:
+        padding-top: 200px;
+
+        @media screen and (min-width: $md) {
+          padding-top: 100px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 4px;
+        }
       }
     }
     h2 {
@@ -145,6 +157,20 @@ $height-values: (
         padding-bottom: 0px;
       }
     }
+    p.more-spacing {
+      + h3 {
+        // Your specific styles for h3 following p.more-spacing
+        // For example:
+        padding-top: 100px;
+
+        @media screen and (min-width: $md) {
+          padding-top: 200px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 41px;
+        }
+      }
+    }
     p {
       margin: 0;
       font-size: 19px;
@@ -160,27 +186,17 @@ $height-values: (
       &.more-spacing {
         display: block;
         padding-top: 17px;
-        @media screen and (min-width: $lg) {
-          padding-top: 15px;
-        }
         @media screen and (min-width: $md) {
           padding-top: 13px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 13.85px;
         }
         @media screen and (min-width: $sm) and (max-width: $md) {
           padding-top: 14px;
         }
-        &.first {
-          @media screen and (min-width: $lg) {
-            padding-top: 15px;
-          }
-          @media screen and (min-width: $md) {
-            padding-top: 8px;
-          }
-          @media screen and (max-width: $md) {
-            padding-top: 6px;
-          }
-        }
       }
+
       em {
         font-family: $open-sans;
         font-size: 17px;
@@ -226,16 +242,16 @@ $height-values: (
           margin-top: 3px;
           padding-top: 12px;
         }
-        &.first {
-          @media screen and (min-width: $md) {
-            margin-top: 0px;
-          }
-        }
-        &:first-of-type {
-          @media screen and (min-width: $md) {
-            margin-top: 0px;
-          }
-        }
+        // &.first {
+        //   @media screen and (min-width: $md) {
+        //     margin-top: 0px;
+        //   }
+        // }
+        // &:first-of-type {
+        //   @media screen and (min-width: $md) {
+        //     margin-top: 0px;
+        //   }
+        // }
       }
     }
   }
