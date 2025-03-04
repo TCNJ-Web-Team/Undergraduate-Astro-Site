@@ -551,7 +551,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
         bg-white
         pt-[0px]
         
-        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[115px] md:pb-[50px] lg:pb-[40px]" : ""}
+        ${(careersLeft || careersRight || careersBody) ? "pb-[199px] sm:pb-[3px] md:pb-[50px] lg:pb-[40px]" : ""}
         ${programOfStudyRight ? "sm:pt-[20px] md:pt-[119px] lg:pt-[144px]" : "md:pt-[119px] lg:pt-[144px]"}
         `
         >
@@ -598,8 +598,9 @@ md:pt-[135px] lg:pt-[187px]"
           {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} careerContent={careersBody}/>}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
           {!lowerContent && (      <div class="
-          h-[111px]
-          sm:h-[222px]
+          h-[0px]
+          mt-[-7px]
+          md:mt-[0px]
           md:h-[46px]
           lg:h-[33px]
           "></div>

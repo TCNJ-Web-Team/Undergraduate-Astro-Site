@@ -129,7 +129,8 @@ $height-values: (
       + p.more-spacing {
         // Your specific styles for the first p.more-spacing after h3
         // For example:
-        padding-top: 200px;
+        // padding-top: 200px;
+        padding-top: 5px;
 
         @media screen and (min-width: $md) {
           // padding-top: 100px;
@@ -160,8 +161,8 @@ $height-values: (
       + p.large-para {
         // Your specific styles for the first p.more-spacing after h3
         // For example:
-        padding-top: 200px;
-
+        // padding-top: 200px;
+        padding-top: 12px;
         @media screen and (min-width: $md) {
           padding-top: 10px;
         }
@@ -174,7 +175,7 @@ $height-values: (
       + h3 {
         // Your specific styles for h3 following p.more-spacing
         // For example:
-        padding-top: 100px;
+        padding-top: 40px;
 
         @media screen and (min-width: $md) {
           padding-top: 200px;
@@ -208,6 +209,7 @@ $height-values: (
         // For example:
         padding-top: 500px;
         @media screen and (min-width: $sm) {
+          padding-top: 35px;
         }
         @media screen and (min-width: $md) {
           padding-top: 34px;
@@ -252,8 +254,9 @@ $height-values: (
         padding-top: 4px;
         display: block;
         // padding-bottom: 19px;
+        margin-bottom: 100px;
         @media screen and (min-width: $sm) {
-          margin-bottom: 100px;
+          margin-bottom: 5px;
         }
         @media screen and (min-width: $md) {
           margin-bottom: 7px;
@@ -294,7 +297,7 @@ $height-values: (
       }
       padding-top: 46px;
       @media screen and (min-width: $sm) {
-        padding-top: 92px;
+        padding-top: 82px;
       }
     }
   }
@@ -309,14 +312,14 @@ $height-values: (
       &:first-of-type {
         padding-top: 46px;
         @media screen and (min-width: $sm) {
-          padding-top: 92px;
+          padding-top: 82px;
         }
       }
       &:last-of-type {
         // Styles for the last h2 instance
         padding-top: 69px;
         @media screen and (min-width: $sm) {
-          padding-top: 92px;
+          padding-top: 82px;
         }
       }
     }
