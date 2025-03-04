@@ -104,16 +104,16 @@ $height-values: (
         padding-top: 34px;
       }
 
-      @media screen and (min-width: $md) and (max-width: $lg) {
-        // padding-top: 45px;
-        padding-top: 36px;
-      }
       @media screen and (min-width: $lg) {
         // padding-bottom: 0;
         font-size: 21px;
         line-height: 25px;
         padding-bottom: 8px;
-        padding-top: 40px;
+        padding-top: 35px;
+      }
+      @media screen and (min-width: $md) and (max-width: $lg) {
+        // padding-top: 45px;
+        padding-top: 36px;
       }
       @media screen and (min-width: $sm) {
         font-size: 21px;
@@ -125,6 +125,20 @@ $height-values: (
         padding-bottom: 9px;
         font-size: 20px;
         line-height: 24px;
+      }
+      + p.more-spacing {
+        // Your specific styles for the first p.more-spacing after h3
+        // For example:
+        // padding-top: 200px;
+        padding-top: 5px;
+
+        @media screen and (min-width: $md) {
+          // padding-top: 100px;
+          padding-top: 4px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 4px;
+        }
       }
     }
     h2 {
@@ -144,6 +158,82 @@ $height-values: (
         line-height: 28px;
         padding-bottom: 0px;
       }
+      + p.large-para {
+        // Your specific styles for the first p.more-spacing after h3
+        // For example:
+        // padding-top: 200px;
+        padding-top: 12px;
+        @media screen and (min-width: $md) {
+          padding-top: 10px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 10px;
+        }
+      }
+    }
+    p.more-spacing {
+      + h3 {
+        // Your specific styles for h3 following p.more-spacing
+        // For example:
+        padding-top: 40px;
+
+        @media screen and (min-width: $md) {
+          padding-top: 200px;
+          padding-top: 44px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 41px;
+        }
+      }
+      display: block;
+      padding-top: 17px;
+      @media screen and (min-width: $md) {
+        padding-top: 13px;
+      }
+      @media screen and (min-width: $lg) {
+        padding-top: 13.85px;
+      }
+      @media screen and (min-width: $sm) and (max-width: $md) {
+        padding-top: 14px;
+      }
+      &:last-of-type em {
+        // Your styles for the em in the last p.more-spacing
+        // color: red; // Just an example
+        padding-bottom: 0px;
+        margin-bottom: 0;
+      }
+    }
+    p.large-para {
+      + p.more-spacing {
+        // Your specific styles for p.more-spacing following p.large-para
+        // For example:
+        padding-top: 500px;
+        padding-top: 25px;
+        @media screen and (min-width: $sm) {
+          padding-top: 35px;
+        }
+        @media screen and (min-width: $md) {
+          padding-top: 34px;
+          // padding-top: 200px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 36px;
+        }
+      }
+      font-size: 19px;
+      line-height: 30px;
+      // margin-top: -15px;
+      //  negative margin
+      padding-top: 13px;
+      font-family: $domine;
+      // padding-top: 10px;
+      @media screen and (min-width: $sm) {
+        padding-top: 15px;
+      }
+      @media screen and (min-width: $md) {
+        margin-top: 3px;
+        padding-top: 12px;
+      }
     }
     p {
       margin: 0;
@@ -157,30 +247,7 @@ $height-values: (
       @media screen and (min-width: $lg) {
         padding-top: 0;
       }
-      &.more-spacing {
-        display: block;
-        padding-top: 17px;
-        @media screen and (min-width: $lg) {
-          padding-top: 15px;
-        }
-        @media screen and (min-width: $md) {
-          padding-top: 13px;
-        }
-        @media screen and (min-width: $sm) and (max-width: $md) {
-          padding-top: 14px;
-        }
-        &.first {
-          @media screen and (min-width: $lg) {
-            padding-top: 15px;
-          }
-          @media screen and (min-width: $md) {
-            padding-top: 8px;
-          }
-          @media screen and (max-width: $md) {
-            padding-top: 6px;
-          }
-        }
-      }
+
       em {
         font-family: $open-sans;
         font-size: 17px;
@@ -188,16 +255,36 @@ $height-values: (
         padding-top: 4px;
         display: block;
         // padding-bottom: 19px;
+        margin-bottom: 0px;
+        @media screen and (min-width: $sm) {
+          margin-bottom: 5px;
+        }
+        @media screen and (min-width: $md) {
+          margin-bottom: 7px;
+        }
         @media screen and (min-width: $lg) {
           padding-top: 0px;
           line-height: 26px;
           padding-bottom: 0px;
+          margin-bottom: 5px;
         }
       }
-      &:has(+ p) {
+      &:has(+ p, h2, h3) {
         em {
           padding-bottom: 0px;
           @media screen and (min-width: $lg) {
+          }
+        }
+      }
+      // No Marging em with h2 or h3 after
+      &:has(em):has(+ h2),
+      &:has(em):has(+ h3) {
+        em {
+          // Special styling for em in paragraphs before headings
+          margin-bottom: 0; // Example - adjust as needed
+
+          @media screen and (min-width: $lg) {
+            margin-bottom: 0; // Example - adjust as needed
           }
         }
       }
@@ -208,32 +295,6 @@ $height-values: (
           padding-top: 17px;
           @media screen and (min-width: $lg) {
             padding-top: 15px;
-          }
-        }
-      }
-      &.large-para {
-        font-size: 19px;
-        line-height: 30px;
-        // margin-top: -15px;
-        //  negative margin
-        padding-top: 13px;
-        font-family: $domine;
-        // padding-top: 10px;
-        @media screen and (min-width: $sm) {
-          padding-top: 15px;
-        }
-        @media screen and (min-width: $md) {
-          margin-top: 3px;
-          padding-top: 12px;
-        }
-        &.first {
-          @media screen and (min-width: $md) {
-            margin-top: 0px;
-          }
-        }
-        &:first-of-type {
-          @media screen and (min-width: $md) {
-            margin-top: 0px;
           }
         }
       }
@@ -249,7 +310,7 @@ $height-values: (
       }
       padding-top: 46px;
       @media screen and (min-width: $sm) {
-        padding-top: 92px;
+        padding-top: 82px;
       }
     }
   }
@@ -262,16 +323,17 @@ $height-values: (
         padding-bottom: 0px;
       }
       &:first-of-type {
-        padding-top: 46px;
+        // padding-top: 46px;
+        padding-top: 69px;
         @media screen and (min-width: $sm) {
-          padding-top: 92px;
+          padding-top: 82px;
         }
       }
       &:last-of-type {
         // Styles for the last h2 instance
         padding-top: 69px;
         @media screen and (min-width: $sm) {
-          padding-top: 92px;
+          padding-top: 82px;
         }
       }
     }
@@ -372,7 +434,7 @@ $height-values: (
     list-style-position: outside;
     margin-left: 20px;
     @media screen and (min-width: $md) {
-      padding-top: 22px;
+      padding-top: 20px;
     }
     @media screen and (max-width: $md) {
       padding-top: 25px;
