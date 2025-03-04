@@ -78,7 +78,11 @@ const Popup = ({ content, onClose, heading }) => {
           onClick={onClose}
           className="absolute top-[20px] right-[20px] cursor-pointer"
         >
-          <img className="close-button" src="/close-item.svg" alt="Close" />
+          <img
+            className="close-button"
+            src={`${__BASE_URL__}/close-item.svg`}
+            alt="Close"
+          />
         </button>
       </div>
     </div>

@@ -110,14 +110,14 @@ export default function IntroSection() {
                 </p>
                 <img
                   className="close-button"
-                  src="/close-item.svg"
+                  src={`${__BASE_URL__}/close-item.svg`}
                   onClick={() => setAccellOpen(false)}
                 />
               </div>
             </div>
             <img
               className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
-              src="/info-icon.svg"
+              src={`${__BASE_URL__}/info-icon.svg`}
               onClick={() => openAccellPop(accellText)}
             />
           </span>
@@ -140,14 +140,15 @@ export default function IntroSection() {
 
                 <img
                   className="close-button"
-                  src="/close-item.svg"
+                  src={`${__BASE_URL__}/close-item.svg`}
                   onClick={() => setDualOpen(false)}
                 />
               </div>
             </div>
             <img
               className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
-              src="/info-icon.svg"
+              src={`${__BASE_URL__}/info-icon.svg`}
+              // src="/info-icon.svg"
               onClick={() => openAccellPop(dualText)}
             />
           </span>

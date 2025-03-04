@@ -11,7 +11,7 @@ $sm: 550px;
 #text-filter {
   // width: calc(100% - 103px);
   background-color: #fff;
-  background-image: url(/search-icon.svg);
+  background-image: url("#{$base}search-icon.svg");
   background-position-x: calc(100% - 34px);
   @media screen and (min-width: $lg) {
     background-position-x: calc(100% - 50px);
@@ -46,7 +46,7 @@ $sm: 550px;
     }
     width: 14.58px; // Adjust width and height as per your design
     height: 9px; // Adjust width and height as per your design
-    background-image: url(/filter-arrow.svg);
+    background-image: url("#{$base}filter-arrow.svg");
     background-repeat: no-repeat;
     transition: all 0.3s;
   }
@@ -103,7 +103,7 @@ $sm: 550px;
           right: 0; // Adjust this as per your design
           width: 20px; // Adjust width and height as per your design
           height: 20px; // Adjust width and height as per your design
-          background-image: url(/checkbox-selected.jpg);
+          background-image: url("#{$base}checkbox-selected.jpg");
         }
         &:hover {
           &::after {

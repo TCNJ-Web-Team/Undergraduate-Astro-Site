@@ -212,7 +212,7 @@ export default function ProgramList({
         onClick={() => onClickHandler({ target: { value: option } })}
       >
         {option}
-        <img className="close-button" src="/close-item.svg" />
+        <img className="close-button" src={`${__BASE_URL__}/close-item.svg`} />
       </p>
     ));
   // console.log(filteredData.length);
@@ -327,7 +327,10 @@ export default function ProgramList({
                 <div className="drop-down-item">
                   <p id="search-text-filter" onClick={clearSearchText}>
                     {searchText}
-                    <img className="close-button" src="/close-item.svg" />
+                    <img
+                      className="close-button"
+                      src={`${__BASE_URL__}/close-item.svg`}
+                    />
                   </p>
                 </div>
               )}
@@ -376,7 +379,8 @@ export default function ProgramList({
               Displaying <strong>{filteredData.length} results</strong>
             </p>
             <motion.img
-              src="/grid-icon.svg"
+              // src="/grid-icon.svg"
+              src={`${__BASE_URL__}/grid-icon.svg`}
               alt="Grid View"
               className="hidden md:block h-[20px] w-auto ml-[25px] cursor-pointer"
               onClick={() => setProgramView("")}
@@ -385,7 +389,8 @@ export default function ProgramList({
               animate={{ opacity: programView != "list" ? 1 : 0.5 }}
             />
             <motion.img
-              src="/list-icon.svg"
+              // src="/list-icon.svg"
+              src={`${__BASE_URL__}/list-icon.svg`}
               alt="List View"
               className="hidden md:block h-[20px] w-auto ml-[5px] cursor-pointer"
               onClick={() => setProgramView("list")}

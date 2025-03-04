@@ -100,7 +100,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
                     }`}
                   >
                     <img
-                      src={`/card-icons/${formatOption(option)}.svg`}
+                      src={`${__BASE_URL__}/card-icons/${formatOption(option)}.svg`}
                       alt={option}
                       className="max-h-[15px]"
                     />

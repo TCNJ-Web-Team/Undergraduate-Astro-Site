@@ -25,6 +25,7 @@ import "@fontsource/open-sans/800.css";
 // import "../components/GlobalHeader";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter.astro";
+const canonicalUrl = new URL(Astro.url, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -46,6 +47,8 @@ import GlobalFooter from "../components/GlobalFooter.astro";
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <!-- <meta property="og:image" content={image} /> -->
     <!-- <meta name="generator" content={Astro.generator} /> -->
+    <link rel="canonical" href={canonicalUrl} />
+
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

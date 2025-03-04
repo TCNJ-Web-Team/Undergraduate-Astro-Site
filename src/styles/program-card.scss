@@ -21,7 +21,7 @@
       right: 18px; // Adjust this as per your design
       width: 27px; // Adjust width and height as per your design
       height: 27px; // Adjust width and height as per your design
-      background-image: url(/yellow-active-arrow.svg);
+      background-image: url("#{$base}yellow-active-arrow.svg");
       background-repeat: no-repeat;
       // transition: all 0.3s;
     }
