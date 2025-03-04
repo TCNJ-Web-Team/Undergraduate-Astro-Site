@@ -208,6 +208,7 @@ $height-values: (
         // Your specific styles for p.more-spacing following p.large-para
         // For example:
         padding-top: 500px;
+        padding-top: 25px;
         @media screen and (min-width: $sm) {
           padding-top: 35px;
         }
@@ -254,7 +255,7 @@ $height-values: (
         padding-top: 4px;
         display: block;
         // padding-bottom: 19px;
-        margin-bottom: 100px;
+        margin-bottom: 0px;
         @media screen and (min-width: $sm) {
           margin-bottom: 5px;
         }
@@ -272,6 +273,18 @@ $height-values: (
         em {
           padding-bottom: 0px;
           @media screen and (min-width: $lg) {
+          }
+        }
+      }
+      // No Marging em with h2 or h3 after
+      &:has(em):has(+ h2),
+      &:has(em):has(+ h3) {
+        em {
+          // Special styling for em in paragraphs before headings
+          margin-bottom: 0; // Example - adjust as needed
+
+          @media screen and (min-width: $lg) {
+            margin-bottom: 0; // Example - adjust as needed
           }
         }
       }
@@ -310,7 +323,8 @@ $height-values: (
         padding-bottom: 0px;
       }
       &:first-of-type {
-        padding-top: 46px;
+        // padding-top: 46px;
+        padding-top: 69px;
         @media screen and (min-width: $sm) {
           padding-top: 82px;
         }
