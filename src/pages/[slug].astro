@@ -551,7 +551,7 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
         bg-white
         pt-[0px]
         
-        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[15px] md:pb-[33px] lg:pb-[75px]" : ""}
+        ${(careersLeft || careersRight || careersBody) ? "sm:pb-[115px] md:pb-[233px] lg:pb-[40px]" : ""}
         ${programOfStudyRight ? "sm:pt-[20px] md:pt-[119px] lg:pt-[144px]" : "md:pt-[119px] lg:pt-[144px]"}
         `
         >
@@ -562,7 +562,9 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
           />
         </div>
       </div>
+      <!-- <p>NO ACCORDION HERE</p> -->
     </div>
+
     {(careersLeft || careersRight || careersBody) && (
     <div class="px-[35px] m-auto bg-tcnjyellow" id="careers-intro">
       <div
@@ -595,6 +597,13 @@ md:pt-[135px] lg:pt-[187px]"
 
           {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} careerContent={careersBody}/>}
           <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+          {!lowerContent && (      <div class="
+          h-[111px]
+          sm:h-[222px]
+          md:h-[333px]
+          lg:h-[33px]
+          "></div>
+)}
           </div>
                   <div class="lg:max-w-[70.5rem] lg:m-auto">
 

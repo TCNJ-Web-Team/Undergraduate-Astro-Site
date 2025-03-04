@@ -156,6 +156,18 @@ $height-values: (
         line-height: 28px;
         padding-bottom: 0px;
       }
+      + p.large-para {
+        // Your specific styles for the first p.more-spacing after h3
+        // For example:
+        padding-top: 200px;
+
+        @media screen and (min-width: $md) {
+          padding-top: 100px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 10px;
+        }
+      }
     }
     p.more-spacing {
       + h3 {
@@ -170,6 +182,51 @@ $height-values: (
           padding-top: 41px;
         }
       }
+      display: block;
+      padding-top: 17px;
+      @media screen and (min-width: $md) {
+        padding-top: 13px;
+      }
+      @media screen and (min-width: $lg) {
+        padding-top: 13.85px;
+      }
+      @media screen and (min-width: $sm) and (max-width: $md) {
+        padding-top: 14px;
+      }
+      &:last-of-type em {
+        // Your styles for the em in the last p.more-spacing
+        // color: red; // Just an example
+        padding-bottom: 0px;
+        margin-bottom: 0;
+      }
+    }
+    p.large-para {
+      + p.more-spacing {
+        // Your specific styles for p.more-spacing following p.large-para
+        // For example:
+        padding-top: 500px;
+
+        @media screen and (min-width: $md) {
+          padding-top: 200px;
+        }
+        @media screen and (min-width: $lg) {
+          padding-top: 36px;
+        }
+      }
+      font-size: 19px;
+      line-height: 30px;
+      // margin-top: -15px;
+      //  negative margin
+      padding-top: 13px;
+      font-family: $domine;
+      // padding-top: 10px;
+      @media screen and (min-width: $sm) {
+        padding-top: 15px;
+      }
+      @media screen and (min-width: $md) {
+        margin-top: 3px;
+        padding-top: 12px;
+      }
     }
     p {
       margin: 0;
@@ -183,19 +240,6 @@ $height-values: (
       @media screen and (min-width: $lg) {
         padding-top: 0;
       }
-      &.more-spacing {
-        display: block;
-        padding-top: 17px;
-        @media screen and (min-width: $md) {
-          padding-top: 13px;
-        }
-        @media screen and (min-width: $lg) {
-          padding-top: 13.85px;
-        }
-        @media screen and (min-width: $sm) and (max-width: $md) {
-          padding-top: 14px;
-        }
-      }
 
       em {
         font-family: $open-sans;
@@ -204,13 +248,20 @@ $height-values: (
         padding-top: 4px;
         display: block;
         // padding-bottom: 19px;
+        @media screen and (min-width: $sm) {
+          margin-bottom: 100px;
+        }
+        @media screen and (min-width: $md) {
+          margin-bottom: 200px;
+        }
         @media screen and (min-width: $lg) {
           padding-top: 0px;
           line-height: 26px;
           padding-bottom: 0px;
+          margin-bottom: 5px;
         }
       }
-      &:has(+ p) {
+      &:has(+ p, h2, h3) {
         em {
           padding-bottom: 0px;
           @media screen and (min-width: $lg) {
@@ -226,32 +277,6 @@ $height-values: (
             padding-top: 15px;
           }
         }
-      }
-      &.large-para {
-        font-size: 19px;
-        line-height: 30px;
-        // margin-top: -15px;
-        //  negative margin
-        padding-top: 13px;
-        font-family: $domine;
-        // padding-top: 10px;
-        @media screen and (min-width: $sm) {
-          padding-top: 15px;
-        }
-        @media screen and (min-width: $md) {
-          margin-top: 3px;
-          padding-top: 12px;
-        }
-        // &.first {
-        //   @media screen and (min-width: $md) {
-        //     margin-top: 0px;
-        //   }
-        // }
-        // &:first-of-type {
-        //   @media screen and (min-width: $md) {
-        //     margin-top: 0px;
-        //   }
-        // }
       }
     }
   }
@@ -388,7 +413,7 @@ $height-values: (
     list-style-position: outside;
     margin-left: 20px;
     @media screen and (min-width: $md) {
-      padding-top: 22px;
+      padding-top: 20px;
     }
     @media screen and (max-width: $md) {
       padding-top: 25px;
