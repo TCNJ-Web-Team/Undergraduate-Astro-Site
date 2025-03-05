@@ -64,7 +64,7 @@ export default function IntroSection() {
       <div className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[67px] md:text-left lg:px-0">
         <div
           id="breadcrumbs"
-          className="font-bitter text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
+          className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
         >
           <a>Home</a> / Explore Undergraduate Programs
         </div>
