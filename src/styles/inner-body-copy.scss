@@ -450,7 +450,14 @@ $height-values: (
       &:last-of-type {
         padding-bottom: 0 !important;
       }
-
+      a {
+        text-decoration: underline;
+        color: #33739f;
+        transition: all 0.25s;
+        &:hover {
+          color: #293f6f;
+        }
+      }
       @media screen and (min-width: $md) {
         line-height: 30px;
         padding-bottom: 15px !important;
