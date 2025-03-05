@@ -447,6 +447,14 @@ $height-values: (
       text-align: left;
       color: #000;
       padding-bottom: 19px;
+      a {
+        text-decoration: underline;
+        color: #33739f;
+        transition: all 0.25s;
+        &:hover {
+          color: #293f6f;
+        }
+      }
       &:last-of-type {
         padding-bottom: 0 !important;
       }
