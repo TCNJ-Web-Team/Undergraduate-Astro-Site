@@ -69,6 +69,7 @@ export default function IntroSection() {
           <a>TCNJ Home</a> /{" "}
           <span className="font-[600]">Explore Undergraduate Programs</span>
         </div>
+
         <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
