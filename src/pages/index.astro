@@ -65,8 +65,11 @@ const programOptions = await wpquery({
 // console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
 // console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
 
-const areaOfStudy = programOptions.page.program.school;
+const areaOfStudy = programOptions.page.program.school.sort();
 // console.log(areaOfStudy);
+const areaOfStudyNoGrad = areaOfStudy.filter(
+  (item: string) => item !== "Graduate, Global, and Online Education"
+);
 const programOptionsClean = programOptions.page.program.programOptions;
 // console.log(programOptionsClean);
 const additionalOptions = programOptions.page.program.additionalOptions;
@@ -78,6 +81,7 @@ const combinedData = {
 // console.log(data);
 // console.log(combinedData.programs.nodes);
 // console.log(redirectData.programRedirects.nodes);
+// console.log(areaOfStudyNoGrad);
 ---
 
 <Layout title="Explore Programs | TCNJ">
@@ -93,7 +97,7 @@ const combinedData = {
       <ProgramList
         data={data}
         redirectData={redirectData}
-        areaOfStudy={areaOfStudy}
+        areaOfStudy={areaOfStudyNoGrad}
         programOptionsClean={programOptionsClean}
         additionalOptions={additionalOptions}
         client:load
