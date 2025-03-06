@@ -134,7 +134,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 return (
                   <a
                     key={index}
-                    className="text-primarylinkblue underline block"
+                    className={`text-primarylinkblue underline block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
                     href={link}
                   >
                     {item}
