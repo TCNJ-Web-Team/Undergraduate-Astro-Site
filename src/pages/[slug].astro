@@ -470,8 +470,8 @@ console.log(programOfStudyRight)
           <TopOption heading={repeaterDegrees && repeaterDegrees.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
             {
               Array.isArray(repeaterDegrees)
-                ? repeaterDegrees.map((degree) => (
-                    <span class="block">{degree.degreeName}</span>
+                ? repeaterDegrees.map((degree, index) => (
+                    <span class={`block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}>{degree.degreeName}</span>
                   ))
                 : null
             }

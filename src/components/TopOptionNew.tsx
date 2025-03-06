@@ -97,7 +97,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
           {heading}
         </h2>
         {school && (
-          <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[28px]  text-start">
+          <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[26px]  text-start">
             {school && school.length === 1 ? (
               <a
                 className="text-[#33739F] underline"
@@ -172,12 +172,18 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
         )}
         {department &&
           (Array.isArray(department)
-            ? department.map((degree) =>
+            ? department.map((degree, index) =>
                 degree.deptTitle === "Any" || degree.deptTitle === "any" ? (
                   <a className="text-[#33739F] underline">Any Department</a>
                 ) : (
                   <a className="text-[#33739F] underline" href={degree.deptUrl}>
-                    <span className="block">{degree.deptTitle}</span>
+                    <span
+                      className={`block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                    >
+                      {degree.deptTitle}
+                    </span>
+
+                    {/* <span className="block">{degree.deptTitle}</span> */}
                   </a>
                 )
               )
