@@ -66,7 +66,8 @@ export default function IntroSection() {
           id="breadcrumbs"
           className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
         >
-          <a>Home</a> / Explore Undergraduate Programs
+          <a>TCNJ Home</a> /{" "}
+          <span className="font-[600]">Explore Undergraduate Programs</span>
         </div>
         <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[85px]"
@@ -81,7 +82,8 @@ export default function IntroSection() {
           160+ Undergraduate Programs
         </motion.h1>
         <motion.div
-          className="font-domine text-[18px] leading-[24px] sm:text-[20px] sm:leading-[27px] md:leading-[35px] md:text-[23px] font-normal"
+          className="font-domine text-[18px] leading-[24px] sm:text-[20px] sm:leading-[27px] md:leading-[35px] md:text-[23px] font-normal
+          max-w-[1095px]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -118,6 +120,7 @@ export default function IntroSection() {
             <img
               className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
               src="/info-icon.svg"
+              style={{ marginLeft: "2px" }}
               onClick={() => openAccellPop(accellText)}
             />
           </span>
