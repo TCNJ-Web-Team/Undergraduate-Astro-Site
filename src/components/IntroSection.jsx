@@ -59,9 +59,9 @@ export default function IntroSection() {
       id="intro"
       className="w-[100%] h-[650px] relative 
       z-[1000]
-       border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[540px]"
+       border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[556px]"
     >
-      <div className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[67px] md:text-left lg:px-0">
+      <div className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[64px] md:text-left lg:px-0">
         <div
           id="breadcrumbs"
           className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
@@ -69,8 +69,9 @@ export default function IntroSection() {
           <a>TCNJ Home</a> /{" "}
           <span className="font-[600]">Explore Undergraduate Programs</span>
         </div>
+
         <motion.h1
-          className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[10px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[85px]"
+          className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -184,7 +185,7 @@ export default function IntroSection() {
         <img
           src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg"
           alt="TCNJ scenery"
-          className="w-[100%] h-[630px] sm:h-[665px] md:h-[505px] object-cover"
+          className="w-[100%] h-[630px] sm:h-[665px] md:h-[521px] object-cover"
         />
       </picture>
       <div className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"></div>
