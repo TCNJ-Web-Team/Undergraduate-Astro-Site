@@ -76,6 +76,8 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 "/inclusive-education-p-3",
               "Inclusive Education — Elementary Education (K–6)":
                 "/inclusive-education-k-6",
+              "Journalism and Professional Writing":
+                "/journalism-professional-writing",
               "Kinesiology and Health Sciences": "/kinesiology-health-sciences",
               "Mathematics and Statistics": "/mathematics",
               "Photography and Video": "/photography-video",
