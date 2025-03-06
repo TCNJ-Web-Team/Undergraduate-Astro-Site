@@ -1,4 +1,4 @@
-import{j as s}from"./jsx-runtime.C3nPk8XT.js";import"./index.Cq8P9Jm4.js";function n({heroImgMobile:t,heroImgTablet:x,sourceUrl:e,horizontalPositionDesktopHero:o,title:r,badge:p}){return s.jsxs("div",{className:"relative w-full overflow-hidden",children:[s.jsxs("picture",{children:[t&&s.jsx("source",{media:"(max-width: 428px)",srcSet:t.sourceUrl}),x&&s.jsx("source",{media:"(max-width: 900px)",srcSet:x.sourceUrl}),s.jsx("img",{src:e,style:{objectPosition:`${o}%`},className:`relative z-30
+import{j as s}from"./jsx-runtime.C3nPk8XT.js";import"./index.Cq8P9Jm4.js";function n({heroImgMobile:t,heroImgTablet:x,sourceUrl:e,horizontalPositionDesktopHero:o,title:r,badge:p}){return s.jsxs("div",{className:"relative w-full overflow-hidden",children:[s.jsxs("picture",{children:[t&&s.jsx("source",{media:"(max-width: 428px)",srcSet:t.sourceUrl}),x&&s.jsx("source",{media:"(max-width: 900px)",srcSet:x.sourceUrl}),s.jsx("img",{src:e,style:{objectPosition:`${o}% 0%`},className:`relative z-30
                 w-[100%]
           h-[450px]
           sm:h-[600px]
