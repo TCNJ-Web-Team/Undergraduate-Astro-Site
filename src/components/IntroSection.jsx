@@ -67,7 +67,7 @@ export default function IntroSection() {
           className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
         >
           <a>TCNJ Home</a> /{" "}
-          <span className="font-[600]">Explore Undergraduate Programs</span>
+          <span className="font-[600]">Explore Programs</span>
         </div>
 
         <motion.h1
