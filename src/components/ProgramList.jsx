@@ -234,7 +234,7 @@ export default function ProgramList({
           <input
             type="text"
             id="text-filter"
-            className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-light border-[1px] 
+            className=" w-[100%] font-opensans text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-[400] border-[1px] 
         border-[#bcbcbc] placeholder-[#000000]
         lg:px-[50px]"
             onChange={handleFilterChange}
