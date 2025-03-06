@@ -22,7 +22,7 @@ function AnimatedHero({
         <img
           src={sourceUrl}
           style={{
-            objectPosition: `${horizontalPositionDesktopHero}%`,
+            objectPosition: `${horizontalPositionDesktopHero}% 0%`,
           }}
           className="relative z-30
                 w-[100%]
