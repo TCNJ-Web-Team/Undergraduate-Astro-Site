@@ -18,7 +18,7 @@
     "@astrojs/tailwind": "^5.1.4",
     "@fontsource/bitter": "^5.0.15",
     "@fontsource/chunk-five": "^5.0.7",
-    "@fontsource/domine": "^5.0.17",
+    "@fontsource/domine": "^5.2.5",
     "@fontsource/open-sans": "^5.0.17",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",

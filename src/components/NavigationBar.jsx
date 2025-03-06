@@ -16,7 +16,7 @@ function NavigationBar({
       <div className="lg:max-w-[70.5rem] mx-auto flex justify-items-start items-start md:gap-12 md:flex-row flex-col md:max-w-[920px]">
         <button
           onClick={toggleMenu}
-          className="md:hidden font-sans text-[14px] leading-[40px] uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
+          className="md:hidden font-opensans text-[14px] leading-[40px] uppercase py-[12.5px] md:py-0 flex gap-[15px] items-center flex-row"
         >
           <span>
             <img
@@ -49,7 +49,7 @@ function NavigationBar({
               //   setIsMenuOpen(false);
               // }, 300);
             }}
-            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+            className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Overview
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
@@ -65,7 +65,7 @@ function NavigationBar({
               }, 100);
               // setIsMenuOpen(false);
             }}
-            className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+            className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Program Options
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
@@ -82,7 +82,7 @@ function NavigationBar({
                 }, 100);
                 // setIsMenuOpen(false);
               }}
-              className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+              className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
             >
               {teachingCareerCheck === "Teaching Careers"
                 ? "Teaching Careers"
@@ -102,7 +102,7 @@ function NavigationBar({
                     .scrollIntoView({ behavior: "smooth" });
                 }, 100);
               }}
-              className="font-sans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+              className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
             >
               Additional Information
               <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
@@ -112,14 +112,14 @@ function NavigationBar({
             <a
               href="https://admissions.tcnj.edu/apply/"
               target="_blank"
-              className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-sans text-sm leading-5 uppercase font-bold"
+              className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
             >
               Apply
             </a>
             <a
               href="https://connect.tcnj.edu/register/prospect"
               target="_blank"
-              className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-sans text-sm leading-5 uppercase font-bold"
+              className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
             >
               Get Info
             </a>

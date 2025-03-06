@@ -301,7 +301,7 @@ export default function ProgramList({
               <p
                 className="
               basis-[100%]
-              font-bitter 
+              font-domine 
               text-[14px]
               leading-[26px] font-normal pr-[15px]
               pt-[25px]
@@ -411,11 +411,11 @@ export default function ProgramList({
           <h3 className="font-domine font-[700] text-[21px] leading-[30px] md:mb-[15px]">
             Please try your search again
           </h3>
-          <p className="font-bitter font-normal leading-[35px] text-[18px] py-[18px]">
+          <p className="font-domine font-normal leading-[35px] text-[18px] py-[18px]">
             Your search results do not match any available programs.
           </p>
           <hr />
-          <p className="font-bitter font-normal leading-[35px] text-[18px] py-[18px]">
+          <p className="font-domine font-normal leading-[35px] text-[18px] py-[18px]">
             Need help finding a program? Contact{" "}
             <a
               className="underline text-primarylinkblue"

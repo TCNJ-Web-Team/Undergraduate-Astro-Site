@@ -1,6 +1,6 @@
 $domine: "Domine", sans-serif;
 $open-sans: "Open Sans", sans-serif;
-
+$dark-blue-link: #2b6388;
 // #careers-body {
 //   p {
 //     font-family: "Bitter";
@@ -25,6 +25,11 @@ $height-values: (
   15: 15px,
 );
 
+a.yellow-bg-text {
+  &:hover {
+    color: $dark-blue-link;
+  }
+}
 // Loop over the map to generate utility classes
 @each $key, $value in $height-values {
   .h-#{$key}-md {
@@ -394,6 +399,7 @@ $height-values: (
         color: #293f6f;
       }
     }
+
     &.split-line-laptop {
       @media screen and (min-width: $lg) {
         max-width: 50%;

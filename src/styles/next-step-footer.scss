@@ -5,7 +5,7 @@ $tcnj-yellow: #fdd700;
 $link-blue: #33739f;
 $alfa-slab: "Alfa Slab One", Georgia, serif;
 $open-sans: "Open Sans", sans-serif;
-$bitter: "Bitter", serif;
+$bitter: "Domine", serif;
 $domine: "Domine", serif;
 $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
@@ -90,7 +90,7 @@ $sm: 550px;
       font-size: 17px;
       line-height: 35px;
       font-family: $open-sans;
-      font-weight: bold;
+      font-weight: 600;
       text-transform: uppercase;
       transition: all 0.25s;
       &:hover {
