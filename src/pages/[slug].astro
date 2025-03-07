@@ -269,37 +269,12 @@ metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
-// console.log(repeaterDegrees);
-// const socialSourceUrl = socialImage ? socialImage.sourceUrl ? heroImgDesktop : "";
-// const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : heroImgDesktop;
 const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
-// console.log(department);
-// console.log(school);
-// console.log(metaDescription);
-// console.log(socialSourceUrl);
-// console.log(rightImageHorizontalPosition, rightImageVerticalPosition);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
-// console.log(acceleratedSubtitle);
-// console.log(heroImgTablet, heroImgMobile);
-// const {programOfStudyLeft} = programOfStudy ?? {
-//   programOfStudyLeft: "",
-// };
-// const {programOfStudyRight} = programOfStudy ?? {
-//   sourceUrl: "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2024/02/anthro-body-image.jpg",
-// };
-// const {programOfStudyBody} = programOfStudy ?? {
-//   programOfStudyBody: "",
-// };
 
-// console.log(degreeType);
-// console.log(school);
-// console.log(department);
-// console.log(degreeType.length);
-// console.log(department);
-// console.log(careersTitle);
-console.log(programOfStudyRight)
+// console.log(slug)
 ---
 
 <Layout title={metaTitle} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -479,7 +454,8 @@ console.log(programOfStudyRight)
           <!-- <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOption> -->
-          <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
+          <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building" 
+            techEdMarginCheck={slug === 'technology-engineering-education' ? true : false}>
             {school}
           </TopOptionNew>
           <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
