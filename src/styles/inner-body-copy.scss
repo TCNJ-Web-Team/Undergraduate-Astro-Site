@@ -243,6 +243,13 @@ a.yellow-bg-text {
         padding-top: 12px;
       }
     }
+    p.large-para.cert {
+      padding-top: 0px;
+      margin-top: -3px;
+      @media screen and (min-width: $md) {
+        margin-top: -1px;
+      }
+    }
     p {
       margin: 0;
       font-size: 19px;
