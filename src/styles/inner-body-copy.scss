@@ -65,6 +65,9 @@ a.yellow-bg-text {
   @media screen and (min-width: 1176px) and (max-width: 1280px) {
     padding-left: 125px;
   }
+  // @media screen and (max-width: $md) {
+  //   object-position: 0 50% !important;
+  // }
 }
 #prog-study-img,
 #prog-study-bg {
