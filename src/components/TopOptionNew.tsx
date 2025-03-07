@@ -13,6 +13,7 @@ interface TopOptionNewProps {
   imgSrc: string;
   school?: School;
   department?: Department;
+  techEdMarginCheck: boolean;
 }
 
 // TopOptionNew.tsx
@@ -23,6 +24,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
   imgSrc,
   school,
   department,
+  techEdMarginCheck,
 }) => {
   const [popupContent, setPopupContent] = useState<string | string[] | null>(
     null
@@ -134,7 +136,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 return (
                   <a
                     key={index}
-                    className={`text-primarylinkblue underline block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                    className={`text-primarylinkblue underline block ${techEdMarginCheck ? "" : index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
                     href={link}
                     target="_blank"
                   >
