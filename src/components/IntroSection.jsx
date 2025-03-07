@@ -57,11 +57,18 @@ export default function IntroSection() {
   return (
     <div
       id="intro"
-      className="w-[100%] h-[650px] relative 
+      className="w-[100%] relative 
       z-[1000]
-       border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow sm:h-[700px] md:h-[556px]"
+       border-[20px] sm:border-[35px] border-b-0 sm:border-b-0 border-tcnjyellow 
+       
+        "
     >
-      <div className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[64px] md:text-left lg:px-0">
+      <div
+        id="hero-text"
+        className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[64px] md:text-left lg:px-0
+        pb-[150px] sm:pb-[230px] md:pb-[115px]
+        "
+      >
         <div
           id="breadcrumbs"
           className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
@@ -71,7 +78,7 @@ export default function IntroSection() {
         </div>
 
         <motion.h1
-          className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[38px] pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
+          className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -83,7 +90,7 @@ export default function IntroSection() {
           160+ Undergraduate Programs
         </motion.h1>
         <motion.div
-          className="font-domine text-[18px] leading-[24px] sm:text-[20px] sm:leading-[27px] md:leading-[35px] md:text-[23px] font-normal
+          className="font-domine text-[20px] leading-[26px] sm:text-[20px] sm:leading-[35px] md:leading-[35px] md:text-[23px] font-normal
           max-w-[1095px]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
@@ -167,28 +174,34 @@ export default function IntroSection() {
         </motion.div>
       </div>
 
-      <picture id="hero-image" className="absolute top-0 left-0 z-0 w-[100%]">
+      <picture
+        id="hero-image"
+        className="absolute top-0 left-0 z-0 w-[100%] h-[100%]"
+      >
         <source
           srcSet="https://tcnj.edu/custom/undergraduate/img/hero-desktop.jpg"
           type="image/jpeg"
           media="(min-width: 901px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/hero-tablet.jpg"
+          srcSet="https://tcnj.edu/custom/undergraduate/img/ug-hero-tablet.jpg"
           type="image/jpeg"
           media="(min-width: 551px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg"
+          srcSet="https://tcnj.edu/custom/undergraduate/img/ug-hero-mobile.jpg"
           type="image/webp"
         />
         <img
-          src="https://tcnj.edu/custom/undergraduate/img/hero-mobile.jpg"
+          src="https://tcnj.edu/custom/undergraduate/img/ug-hero-mobile.jpg"
           alt="TCNJ scenery"
-          className="w-[100%] h-[630px] sm:h-[665px] md:h-[521px] object-cover"
+          className="w-[100%] object-cover h-[100%]"
         />
       </picture>
-      <div className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"></div>
+      <div
+        id="bg-overlay"
+        className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"
+      ></div>
     </div>
   );
 }
