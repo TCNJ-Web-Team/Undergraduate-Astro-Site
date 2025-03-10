@@ -72,7 +72,7 @@ md:pt-[135px] lg:pt-[187px]"
           <a
             href="https://admissions.tcnj.edu/apply/"
             target="_blank"
-            className="border-2 border-tcnjblue p-4 pt-[36px] pb-[36px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
+            className="program-button-glance-gtm border-2 border-tcnjblue p-4 pt-[36px] pb-[36px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
                 hover:bg-tcnjblue hover:text-white transition-all
                 "
           >

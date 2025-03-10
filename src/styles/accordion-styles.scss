@@ -41,7 +41,9 @@ $sm: 550px;
     position: relative;
 
     display: block;
-
+    .accordion-header-text {
+      max-width: 92%;
+    }
     @media screen and (min-width: $lg) {
       padding-top: 45px !important;
       font-size: 21px;
@@ -51,6 +53,7 @@ $sm: 550px;
     @media screen and (min-width: $sm) {
       font-size: 21px;
       padding-top: 40px;
+      line-height: 25px;
     }
     @media screen and (max-width: $sm) {
       font-size: 20px;
