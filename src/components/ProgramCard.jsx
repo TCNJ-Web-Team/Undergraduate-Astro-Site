@@ -42,7 +42,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
       // onMouseLeave={() => setIsHovered(false)}
     >
       <motion.a
-        className={`program-link block border-[1px] 
+        className={`program-card-gtm program-link block border-[1px] 
         border-[#bcbcbc] px-[30px] pt-[35px] pb-[40px] sm:min-h-[300px]
         sm:px-[35px]
         lg:px-[50px]
