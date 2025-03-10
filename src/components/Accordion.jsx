@@ -27,7 +27,9 @@ export default function Accodion({ children, header, idName, startOpen }) {
         } font-bold text-[1.438rem]`}
         onClick={onAccordionClick}
       >
-        <span ref={headerRef}>{header}</span>
+        <span ref={headerRef} className="accordion-header-text">
+          {header}
+        </span>
         <span className="arrow">
           {open ? (
             <img
