@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function AnimatedTitle({ title, subtitle }) {
-  // console.log(title);
+  console.log(title);
   // console.log(title.length);
   return (
     <>
@@ -15,7 +15,17 @@ function AnimatedTitle({ title, subtitle }) {
       sm:px-[45px] md:px-0
       md:text-[65px]
       md:leading-[75px]
-      ${title.length >= 30 ? "text-[30px] leading-[40px]" : "text-[45px] leading-[50px]"}`}
+      ${
+        title === "Anthropology" ||
+        title === "Communication Studies" ||
+        title === "Engineering Management" ||
+        title === "Environmental Studies"
+          ? "text-[30px] leading-[40px]"
+          : title.length >= 30
+            ? "text-[30px] leading-[40px]"
+            : "text-[45px] leading-[50px]"
+      }
+          `}
       >
         {title}
       </h1>
