@@ -14,8 +14,8 @@ function AnimatedHero({
     ? sourceUrl.replace("-scaled.jpg", ".jpg")
     : sourceUrl;
 
-  // console.log("Original:", sourceUrl);
-  // console.log("Cleaned:", cleanedSourceUrl);
+  console.log("Original:", sourceUrl);
+  console.log("Cleaned:", cleanedSourceUrl);
 
   // Do the same for mobile and tablet images if they exist
   const cleanedMobileUrl = heroImgMobile?.sourceUrl
