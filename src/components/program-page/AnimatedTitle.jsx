@@ -19,7 +19,8 @@ function AnimatedTitle({ title, subtitle }) {
         title === "Anthropology" ||
         title === "Communication Studies" ||
         title === "Engineering Management" ||
-        title === "Environmental Studies"
+        title === "Environmental Studies" ||
+        title === "Management and Organizations"
           ? "text-[30px] leading-[40px]"
           : title.length >= 30
             ? "text-[30px] leading-[40px]"
