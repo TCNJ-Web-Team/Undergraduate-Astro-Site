@@ -14,6 +14,19 @@ export default {
         sm: "550px", // Custom size for small screens
         // xs: "430px", // Custom size for extra-small screens
       },
+      objectPosition: {
+        "0-0": "0% 0%",
+        "10-0": "10% 0%",
+        "20-0": "20% 0%",
+        "30-0": "30% 0%",
+        "40-0": "40% 0%",
+        "50-0": "50% 0%",
+        "60-0": "60% 0%",
+        "70-0": "70% 0%",
+        "80-0": "80% 0%",
+        "90-0": "90% 0%",
+        "100-0": "100% 0%",
+      },
       backgroundImage: {
         yellowWhiteGradient: "linear-gradient(#FDD700 90%, white 90%)",
         yellowWhiteGradientMd:

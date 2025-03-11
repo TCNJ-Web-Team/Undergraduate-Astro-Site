@@ -10,38 +10,38 @@ function AnimatedHero({
   title,
   badge,
 }) {
-  const [windowWidth, setWindowWidth] = useState(null); // Start with null
+  // const [windowWidth, setWindowWidth] = useState(null); // Start with null
 
-  useEffect(() => {
-    setWindowWidth(window.innerWidth); // Set width after hydration
+  // useEffect(() => {
+  //   setWindowWidth(window.innerWidth); // Set width after hydration
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
-  const getObjectPosition = () => {
-    if (windowWidth === null) {
-      return "50% 0%"; // Provide a default safe value for SSR
-    }
+  // const getObjectPosition = () => {
+  //   if (windowWidth === null) {
+  //     return "50% 0%"; // Provide a default safe value for SSR
+  //   }
 
-    const mobilePosition = horizontalPositionMobile ?? 0;
-    const tabletPosition = horizontalPositionTablet ?? 0;
-    const desktopPosition = horizontalPositionDesktopHero ?? 0;
+  //   const mobilePosition = horizontalPositionMobile ?? 0;
+  //   const tabletPosition = horizontalPositionTablet ?? 0;
+  //   const desktopPosition = horizontalPositionDesktopHero ?? 0;
 
-    if (windowWidth <= 550) {
-      return `${mobilePosition}% 0%`;
-    } else if (windowWidth <= 900) {
-      return `${tabletPosition}% 0%`;
-    } else {
-      return `${desktopPosition}% 0%`;
-    }
-  };
+  //   if (windowWidth <= 550) {
+  //     return `${mobilePosition}% 0%`;
+  //   } else if (windowWidth <= 900) {
+  //     return `${tabletPosition}% 0%`;
+  //   } else {
+  //     return `${desktopPosition}% 0%`;
+  //   }
+  // };
 
   const cleanedSourceUrl =
     sourceUrl?.replace("-scaled.jpg", ".jpg") || sourceUrl;
@@ -63,10 +63,11 @@ function AnimatedHero({
         )}
         <img
           src={cleanedSourceUrl}
-          style={{
-            objectPosition: getObjectPosition(),
-          }}
-          className="relative z-30 w-[100%] h-[450px] sm:h-[600px] md:h-[500px] lg:h-[700px] object-cover pl-[35px] lg:pl-[100px] xl:pl-[200px]"
+          className={`relative z-30 w-[100%] h-[450px] sm:h-[600px] md:h-[500px] lg:h-[700px] object-cover pl-[35px] lg:pl-[100px] xl:pl-[200px]
+          object-${horizontalPositionMobile}-0
+          sm:object-${horizontalPositionTablet}-0
+          md:object-${horizontalPositionDesktopHero}-0
+         `}
           id="hero-img"
           alt={title}
         />
