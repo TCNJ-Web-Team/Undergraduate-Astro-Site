@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 function AnimatedHero({
   heroImgMobile,
   heroImgTablet,
   sourceUrl,
   horizontalPositionDesktopHero,
-  horizontalPositionMobile, // New prop for mobile screens
-  horizontalPositionTablet, // New prop for tablet screens
+  horizontalPositionMobile,
+  horizontalPositionTablet,
   title,
   badge,
 }) {
-  const [windowWidth, setWindowWidth] = useState(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [windowWidth, setWindowWidth] = useState(null); // Start with null
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth); // Set width after hydration
+
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -26,9 +25,11 @@ function AnimatedHero({
     };
   }, []);
 
-  // Determine the appropriate object position based on screen width
   const getObjectPosition = () => {
-    // Default values if not provided
+    if (windowWidth === null) {
+      return "50% 0%"; // Provide a default safe value for SSR
+    }
+
     const mobilePosition = horizontalPositionMobile ?? 0;
     const tabletPosition = horizontalPositionTablet ?? 0;
     const desktopPosition = horizontalPositionDesktopHero ?? 0;
@@ -42,19 +43,14 @@ function AnimatedHero({
     }
   };
 
-  // Remove '-scaled' from sourceUrl
-  const cleanedSourceUrl = sourceUrl
-    ? sourceUrl.replace("-scaled.jpg", ".jpg")
-    : sourceUrl;
-
-  // Do the same for mobile and tablet images if they exist
-  const cleanedMobileUrl = heroImgMobile?.sourceUrl
-    ? heroImgMobile.sourceUrl.replace("-scaled.jpg", ".jpg")
-    : heroImgMobile?.sourceUrl;
-
-  const cleanedTabletUrl = heroImgTablet?.sourceUrl
-    ? heroImgTablet.sourceUrl.replace("-scaled.jpg", ".jpg")
-    : heroImgTablet?.sourceUrl;
+  const cleanedSourceUrl =
+    sourceUrl?.replace("-scaled.jpg", ".jpg") || sourceUrl;
+  const cleanedMobileUrl =
+    heroImgMobile?.sourceUrl?.replace("-scaled.jpg", ".jpg") ||
+    heroImgMobile?.sourceUrl;
+  const cleanedTabletUrl =
+    heroImgTablet?.sourceUrl?.replace("-scaled.jpg", ".jpg") ||
+    heroImgTablet?.sourceUrl;
 
   return (
     <div className="relative w-full overflow-hidden">
@@ -70,16 +66,7 @@ function AnimatedHero({
           style={{
             objectPosition: getObjectPosition(),
           }}
-          className="relative z-30
-                w-[100%]
-                h-[450px]
-                sm:h-[600px]
-                md:h-[500px]
-                lg:h-[700px]
-                object-cover
-                pl-[35px]
-                lg:pl-[100px]
-                xl:pl-[200px]"
+          className="relative z-30 w-[100%] h-[450px] sm:h-[600px] md:h-[500px] lg:h-[700px] object-cover pl-[35px] lg:pl-[100px] xl:pl-[200px]"
           id="hero-img"
           alt={title}
         />
