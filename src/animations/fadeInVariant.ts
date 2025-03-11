@@ -12,4 +12,12 @@ export const fadeInAnimationVariant = {
       duration: 0.35,
     },
   }),
+  exit: {
+    opacity: 0,
+    y: 5, // Moves slightly down when exiting
+    transition: {
+      ease: "easeInOut",
+      duration: 0.25, // Slightly quicker exit
+    },
+  },
 };
