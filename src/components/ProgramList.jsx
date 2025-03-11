@@ -434,7 +434,7 @@ export default function ProgramList({
           </p>
         </div>
       )}
-      <motion.div
+      <div
         id="filtered-programs-wrapper"
         className={`${
           programView === "list"
@@ -474,7 +474,7 @@ export default function ProgramList({
               animationState={animatedCards}
             />
           ))}
-      </motion.div>
+      </div>
       {/* Display filtered data */}
     </div>
   );

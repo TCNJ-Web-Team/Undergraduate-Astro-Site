@@ -15,13 +15,13 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   const headingLower = heading.replace(/\s+/g, "-").toLowerCase();
 
   return (
-    <motion.div
+    <div
       id={headingLower}
       className={`relative sm:px-[45px] md:pl-[20px] md:pr-[20px] lgMd:pl-0  lg:pl-[0px] lg:pr-[0px]`}
-      variants={fadeInAnimationVariant}
-      initial="initial"
-      whileInView="animate"
-      viewport={{ once: true }}
+      // variants={fadeInAnimationVariant}
+      // initial="initial"
+      // whileInView="animate"
+      // viewport={{ once: true }}
     >
       <motion.h2
         className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[25px] sm:pb-[20px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
@@ -71,7 +71,7 @@ const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
           />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

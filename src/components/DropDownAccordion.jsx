@@ -22,7 +22,7 @@ export default function DropDownAccordion({
       }`}
     > */}
       <motion.div whileTap={{ scale: 0.975 }} className="z-30 relative">
-        <motion.div
+        <div
           className="h-[9px] w-[100%] bg-tcnjyellow origin-left"
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
@@ -40,8 +40,8 @@ export default function DropDownAccordion({
             // type: "spring",
             // stiffness: 50,
           }}
-        ></motion.div>
-        <motion.div
+        ></div>
+        <div
           initial={{ "--background-color": "#bcbcbc" }}
           animate={{ "--background-color": "#fdd700" }}
           className="
@@ -61,7 +61,7 @@ export default function DropDownAccordion({
             // type: "spring",
             // stiffness: 50,
           }}
-        ></motion.div>
+        ></div>
         <h3
           className={`
         select-none
