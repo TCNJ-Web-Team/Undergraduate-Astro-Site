@@ -7,6 +7,11 @@ export default function IntroSection() {
   const [dualOpen, setDualOpen] = useState(false);
   const accellText = useRef(null);
   const dualText = useRef(null);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const openAccellPop = (ref) => {
     if (ref === accellText) {
@@ -76,11 +81,11 @@ export default function IntroSection() {
           <a href="https://tcnj.edu">TCNJ Home</a> /{" "}
           <span className="font-[600]">Explore Programs</span>
         </div>
-
         <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
           transition={{
             delay: 0.25,
             ease: "easeOut",
@@ -94,6 +99,7 @@ export default function IntroSection() {
           max-w-[1095px]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
           transition={{
             delay: 0.75,
             ease: "easeOut",
