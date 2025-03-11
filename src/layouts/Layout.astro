@@ -61,7 +61,7 @@ import GlobalFooter from "../components/GlobalFooter.astro";
       @import url("https://use.typekit.net/czt7cge.css");
     </style>
     <!-- Google Tag Manager -->
-
+{import.meta.env.PROD && (
     <script>
       !(function (e, t, a, n) {
         (e[n] = e[n] || []),
@@ -72,22 +72,27 @@ import GlobalFooter from "../components/GlobalFooter.astro";
           e.parentNode.insertBefore(n, e);
       })(window, document, "script", "dataLayer");
     </script>
-    <!-- <script>
-      if (window.location.protocol !== "https:") {
-        window.location.replace(
-          "https://" +
-            window.location.host +
-            window.location.pathname +
-            window.location.search
-        );
-      }
-    </script> -->
-    <!-- End Google Tag Manager -->
+    )}
+{import.meta.env.PROD && (
+  <script>
+    if (window.location.protocol !== "https:") {
+      window.location.replace(
+        "https://" +
+          window.location.host +
+          window.location.pathname +
+          window.location.search
+      );
+    }
+  </script>
+)}
 
+    <!-- End Google Tag Manager -->
     <!-- Ping Script -->
+{import.meta.env.PROD && (
 
     <script async src="https://connect.tcnj.edu/ping"></script>
 
+  )}
     <!-- End Ping Script -->
   </head>
   <body>
@@ -95,7 +100,7 @@ import GlobalFooter from "../components/GlobalFooter.astro";
     <slot />
     <GlobalFooter />
     <!-- Google Tag Manager (noscript) -->
-
+{import.meta.env.PROD && (
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-M9FHLJS"
@@ -103,7 +108,7 @@ import GlobalFooter from "../components/GlobalFooter.astro";
         width="0"
         style="display:none;visibility:hidden"></iframe>
     </noscript>
-
+)}
     <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
