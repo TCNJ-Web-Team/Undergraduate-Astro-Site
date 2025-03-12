@@ -13,9 +13,17 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
   const { slug, redirecturl, programOptions, additionalOptions } =
     program.program;
   const { title } = program;
-  // console.log(animationState);
-  // console.log(redirecturl);
-  // console.log(programOptions);
+
+  // Process the redirecturl to remove the base URL if needed
+  const processedRedirectUrl = redirecturl
+    ? redirecturl.replace(
+        "https://undergraduate-astro-site-t6y1l.kinsta.page",
+        ""
+      )
+    : `./${slug}`;
+
+  // console.log("Original URL:", redirecturl);
+  // console.log("Processed URL:", processedRedirectUrl);
 
   const progOptionSort = {
     Major: 0,
@@ -34,9 +42,8 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
 
   return (
     <div
-      className={`program-card filter   drop-shadow-none transition-all duration-300 bg-white ${activeHover}
-      ${pulsing ? "pulse" : ""}  
-      `}
+      className={`program-card filter drop-shadow-none transition-all duration-300 bg-white ${activeHover}
+      ${pulsing ? "pulse" : ""}`}
       id={slug}
       // onMouseEnter={() => setIsHovered(true)}
       // onMouseLeave={() => setIsHovered(false)}
@@ -49,11 +56,11 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
         lg:pt-[48px]
          ${
            listOnly &&
-           "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px]  lg:!pt-[35px]"
-         }
-        `}
-        href={redirecturl ? redirecturl : `./${slug}`}
-        target={redirecturl ? "_blank" : "_self"}
+           "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px] lg:!pt-[35px]"
+         }`}
+        href={processedRedirectUrl}
+        target={processedRedirectUrl.includes("http") ? "_blank" : "_self"}
+        // target={redirecturl ? "_blank" : "_self"}
         initial={animationState ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -67,9 +74,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
         <h2
           className="font-domine font-bold 
         text-[19px] leading-[28px]
-        sm:text-[21px] sm:leading-[30px]
-
-        "
+        sm:text-[21px] sm:leading-[30px]"
         >
           {title}
         </h2>
@@ -77,7 +82,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
           className={`my-[20px] border-[#BCBCBC] ${listOnly && "md:hidden"}`}
         />
         <div
-          className={`icon-container flex flex-wrap gap-x-[20px] gap-y-[10px]  ${
+          className={`icon-container flex flex-wrap gap-x-[20px] gap-y-[10px] ${
             listOnly && "md:max-w-[260px] md:w-[100%]"
           }`}
         >
