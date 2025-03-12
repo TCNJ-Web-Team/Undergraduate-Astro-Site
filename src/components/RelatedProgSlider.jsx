@@ -70,6 +70,10 @@ export default function RelatedProgSlider({ learnMoreList }) {
             const slugMapping = {
               "Accelerated Second-Degree Bachelor of Science in Nursing":
                 "absn",
+              "Accounting and Business Analytics":
+                "accounting-business-analytics",
+              "Clinical Mental Health Counseling":
+                "/clinical-mental-health-accelerated",
               "Elementary Education of the Deaf and Hard of Hearing":
                 "/elementary-education-dhh",
               "Inclusive Education — Early Childhood Education (P–3)":
