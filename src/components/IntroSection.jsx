@@ -87,7 +87,7 @@ export default function IntroSection() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{
-            delay: 0.25,
+            delay: 0.15,
             ease: "easeOut",
             duration: 0.35,
           }}
@@ -101,7 +101,7 @@ export default function IntroSection() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{
-            delay: 0.75,
+            delay: 0.65,
             ease: "easeOut",
             duration: 0.35,
           }}
