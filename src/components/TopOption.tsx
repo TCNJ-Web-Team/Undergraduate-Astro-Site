@@ -77,7 +77,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                       target="_blank"
                       key={index}
                       href={dept.deptUrl}
-                      className={`text-primarylinkblue underline block text-start ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                      className={`text-primarylinkblue underline block text-start ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
                       {dept.deptTitle}
                     </a>

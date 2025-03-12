@@ -136,7 +136,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 return (
                   <a
                     key={index}
-                    className={`text-primarylinkblue underline block ${techEdMarginCheck ? "" : index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                    className={`text-primarylinkblue underline block ${techEdMarginCheck ? "" : index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     href={link}
                     target="_blank"
                   >
@@ -181,7 +181,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 ) : (
                   <a className="text-[#33739F] underline" href={degree.deptUrl}>
                     <span
-                      className={`block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                      className={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
                       {degree.deptTitle}
                     </span>
