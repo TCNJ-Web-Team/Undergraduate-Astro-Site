@@ -69,7 +69,12 @@ a.yellow-bg-text {
     }
   }
 }
-
+#popup-container {
+  .close-button {
+    width: 20px;
+    height: auto;
+  }
+}
 .yellow-body-copy {
   p {
     a {

@@ -55,13 +55,15 @@ const Popup = ({ content, onClose, heading }) => {
         className="bg-white shadow-lg p-6 relative z-[1000] left-0 w-[100%] max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto pl-[30px] pr-[30px] text-center md:text-left lg:px-0 cursor-default"
       >
         <div className="py-[45px] px-[15px] sm:px-[45px]">
-          <h2 className="text-lg font-bold mb-4">{heading}</h2>
+          <h2 className="text-[21px] leading-[25px] pb-[7px] font-interstate font-[900] uppercase text-left">
+            {heading}
+          </h2>
           <div className="text-gray-700 flex flex-col gap-2">
             {Array.isArray(content) ? (
               content.map((item, index) => (
                 <a
                   key={index}
-                  className="pb-[5px] font-opensans text-[16px] leading-[24px] text-primarylinkblue cursor-pointer underline"
+                  className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px]  text-start text-primarylinkblue underline"
                   href={getLink(item)}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -76,7 +78,7 @@ const Popup = ({ content, onClose, heading }) => {
         </div>
         <button
           onClick={onClose}
-          className="absolute top-[20px] right-[20px] cursor-pointer"
+          className="absolute top-[30px] right-[30px] cursor-pointer"
         >
           <img className="close-button" src="/close-item.svg" alt="Close" />
         </button>
