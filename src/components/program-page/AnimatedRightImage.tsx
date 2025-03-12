@@ -4,12 +4,14 @@ import { useInView } from "react-intersection-observer";
 
 interface AnimatedRightImageProps {
   programOfStudyRight: string;
+  imageAlt: string;
   rightImageHorizontalPosition: number;
   rightImageVerticalPosition: number;
 }
 
 const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
   programOfStudyRight,
+  imageAlt,
   rightImageHorizontalPosition,
   rightImageVerticalPosition,
 }) => {
@@ -37,7 +39,7 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
         <img
           ref={ref}
           src={programOfStudyRight}
-          alt=""
+          alt={imageAlt + " program image"}
           style={{
             objectPosition: `${rightImageHorizontalPosition}% ${rightImageVerticalPosition}%`,
           }}
