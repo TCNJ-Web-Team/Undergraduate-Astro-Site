@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import "../src/styles/hero-styles.scss";
 
 function AnimatedHero({
   heroImgMobile,
@@ -51,35 +52,38 @@ function AnimatedHero({
   const cleanedTabletUrl =
     heroImgTablet?.sourceUrl?.replace("-scaled.jpg", ".jpg") ||
     heroImgTablet?.sourceUrl;
-  const getObjectPositionClass = (position) => {
-    switch (position) {
-      case 0:
-        return "object-[0%0]";
-      case 10:
-        return "object-[10%0]";
-      case 20:
-        return "object-[20%0]";
-      case 30:
-        return "object-[30%0]";
-      case 40:
-        return "object-[40%0]";
-      case 50:
-        return "object-[50%0]";
-      case 60:
-        return "object-[60%0]";
-      case 70:
-        return "object-[70%0]";
-      case 80:
-        return "object-[80%0]";
-      case 90:
-        return "object-[90%0]";
-      case 100:
-        return "object-[100%0]";
-      default:
-        return "";
-    }
-  };
-
+  // const getObjectPositionClass = (position) => {
+  //   switch (position) {
+  //     case 0:
+  //       return "object-[0%0]";
+  //     case 10:
+  //       return "object-[10%0]";
+  //     case 20:
+  //       return "object-[20%0]";
+  //     case 30:
+  //       return "object-[30%0]";
+  //     case 40:
+  //       return "object-[40%0]";
+  //     case 50:
+  //       return "object-[50%0]";
+  //     case 60:
+  //       return "object-[60%0]";
+  //     case 70:
+  //       return "object-[70%0]";
+  //     case 80:
+  //       return "object-[80%0]";
+  //     case 90:
+  //       return "object-[90%0]";
+  //     case 100:
+  //       return "object-[100%0]";
+  //     default:
+  //       return "";
+  //   }
+  // };
+  // Default to 50 if values are null/undefined
+  const mobilePosition = horizontalPositionMobile || 0;
+  const tabletPosition = horizontalPositionTablet || 0;
+  const desktopPosition = horizontalPositionDesktopHero || 0;
   return (
     <div className="relative w-full overflow-hidden">
       <picture>
@@ -94,7 +98,9 @@ function AnimatedHero({
           //   className={`relative z-30 w-[100%] h-[450px] sm:h-[600px] md:h-[500px] lg:h-[700px] object-cover pl-[35px] lg:pl-[100px] xl:pl-[200px]
           //  `}
           className={`relative z-30 w-[100%] h-[450px] sm:h-[600px] md:h-[500px] lg:h-[700px] object-cover pl-[35px] lg:pl-[100px] xl:pl-[200px]
-    ${getObjectPositionClass(horizontalPositionDesktopHero)}
+    standard-object-position-${desktopPosition} 
+            mobile-object-position-${mobilePosition} 
+            tablet-object-position-${tabletPosition}
 
   `}
           id="hero-img"

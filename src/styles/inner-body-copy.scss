@@ -48,6 +48,27 @@ a.yellow-bg-text {
     }
   }
 }
+/* styles.scss or a component-specific SCSS file */
+
+@for $i from 0 through 10 {
+  $position: $i * 10;
+
+  .standard-object-position-#{$position} {
+    object-position: #{$position + "%"} 0%;
+  }
+
+  .mobile-object-position-#{$position} {
+    @media (max-width: 550px) {
+      object-position: #{$position + "%"} 0% !important;
+    }
+  }
+
+  .tablet-object-position-#{$position} {
+    @media (min-width: 551px) and (max-width: 900px) {
+      object-position: #{$position + "%"} 0% !important;
+    }
+  }
+}
 
 .yellow-body-copy {
   p {

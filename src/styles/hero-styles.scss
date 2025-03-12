@@ -1,0 +1,22 @@
+/* styles.scss or a component-specific SCSS file */
+
+// Generate object position classes for different positions
+@for $i from 0 through 10 {
+  $position: $i * 10;
+
+  .standard-object-position-#{$position} {
+    object-position: #{$position}% 0%;
+  }
+
+  .mobile-object-position-#{$position} {
+    @media (max-width: 550px) {
+      object-position: #{$position}% 0%;
+    }
+  }
+
+  .tablet-object-position-#{$position} {
+    @media (min-width: 551px) and (max-width: 900px) {
+      object-position: #{$position}% 0%;
+    }
+  }
+}
