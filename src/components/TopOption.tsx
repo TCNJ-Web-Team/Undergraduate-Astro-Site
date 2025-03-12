@@ -67,9 +67,13 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                         popupTitle: "Any Department",
                       })
                     }
-                    className="text-primarylinkblue  block text-start"
+                    className="text-primarylinkblue   text-start flex items-center gap-[6px]"
                   >
-                    <span className="underline">Any Department</span> (i)
+                    <span className="underline">Any Department</span>
+                    <img
+                      className="block w-[16px] h-[auto] cursor-pointer"
+                      src="/info-icon-blue.svg"
+                    />
                   </button>
                 ) : (
                   department.map((dept, index) => (
@@ -94,9 +98,13 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                       popupTitle: "Departments",
                     })
                   }
-                  className="text-primarylinkblue  block text-start"
+                  className="text-primarylinkblue   text-start flex items-center gap-[6px]"
                 >
-                  <span className="underline">View Departments (i)</span>
+                  <span className="underline relative">View Departments </span>
+                  <img
+                    className="block w-[16px] h-[auto] cursor-pointer"
+                    src="/info-icon-blue.svg"
+                  />
                 </button>
               ) : (
                 <span>No department available</span>
