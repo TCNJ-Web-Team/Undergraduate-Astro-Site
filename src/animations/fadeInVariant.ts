@@ -7,7 +7,7 @@ export const fadeInAnimationVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: delayNumber * 0.5,
+      delay: delayNumber * 0.3,
       ease: "easeOut",
       duration: 0.35,
     },

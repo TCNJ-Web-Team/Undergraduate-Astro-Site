@@ -54,7 +54,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
         >
           {heading}
         </h2>
-        <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[26px]  text-start">
+        <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px]  text-start">
           {department && (
             <span>
               {department.length < 3 ? (
@@ -77,7 +77,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                       target="_blank"
                       key={index}
                       href={dept.deptUrl}
-                      className={`text-primarylinkblue underline block text-start ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                      className={`text-primarylinkblue underline block text-start ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
                       {dept.deptTitle}
                     </a>

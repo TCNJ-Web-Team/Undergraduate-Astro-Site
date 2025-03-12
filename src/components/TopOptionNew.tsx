@@ -99,7 +99,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
           {heading}
         </h2>
         {school && (
-          <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[30px]  lg:leading-[26px]  text-start">
+          <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px]  text-start">
             {school && school.length === 1 ? (
               <a
                 className="text-[#33739F] underline"
@@ -136,7 +136,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 return (
                   <a
                     key={index}
-                    className={`text-primarylinkblue underline block ${techEdMarginCheck ? "" : index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                    className={`text-primarylinkblue underline block ${techEdMarginCheck ? "" : index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     href={link}
                     target="_blank"
                   >
@@ -181,7 +181,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 ) : (
                   <a className="text-[#33739F] underline" href={degree.deptUrl}>
                     <span
-                      className={`block ${index >= 1 ? "mt-[4px] lg:mt-[10px]" : ""}`}
+                      className={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
                       {degree.deptTitle}
                     </span>
