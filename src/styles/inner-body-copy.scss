@@ -57,6 +57,11 @@ a.yellow-bg-text {
     }
   }
 }
+.mobile-block {
+  @media screen and (max-width: $sm) {
+    display: block;
+  }
+}
 #hero-img {
   @media screen and (min-width: 1281px) and (max-width: 1375px) {
     // width: 54%;
