@@ -96,7 +96,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                   }
                   className="text-primarylinkblue  block text-start"
                 >
-                  <span className="underline">View Departments</span> (i)
+                  <span className="underline">View Departments (i)</span>
                 </button>
               ) : (
                 <span>No department available</span>

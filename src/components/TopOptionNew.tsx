@@ -154,7 +154,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 }
                 className="text-primarylinkblue  block text-start"
               >
-                <span className="underline">View Schools</span> (i)
+                <span className="underline">View Schools (i)</span>
               </button>
             ) : school && school.length >= 8 ? (
               <button
@@ -166,7 +166,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 }
                 className="text-primarylinkblue text-start"
               >
-                <span className="underline">Any School</span> (i)
+                <span className="underline">Any School (i)</span>
               </button>
             ) : (
               <span>No school or department available</span>
