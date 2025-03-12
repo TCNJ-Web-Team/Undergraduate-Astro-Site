@@ -120,7 +120,7 @@ export default function IntroSection() {
                 max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
-                <p className="accell-text-block py-[45px] sm:py-[60px] px-[15px] sm:px-[45px] font-domine text-[19px] leading-[30px] text-black">
+                <p className="accell-text-block py-[45px] sm:py-[60px] px-[15px] sm:px-[45px] font-domine text-[19px] leading-[30px] text-black text-left">
                   <strong>Accelerated programs</strong> are designed to condense
                   the completion timeline.
                 </p>
@@ -150,7 +150,7 @@ export default function IntroSection() {
                 max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
-                <p className=" py-[45px] sm:py-[60px] px-[15px] sm:px-[45px] font-domine text-[19px] leading-[30px] text-black">
+                <p className=" py-[45px] sm:py-[60px] px-[15px] sm:px-[45px] font-domine text-[19px] leading-[30px] text-black text-left">
                   <strong>Dual degree</strong> programs are designed to provide
                   a streamlined pathway to a master’s or professional degree.
                 </p>
