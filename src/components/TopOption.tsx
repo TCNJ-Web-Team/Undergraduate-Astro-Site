@@ -72,6 +72,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                     <span className="underline">Any Department</span>
                     <img
                       className="block w-[16px] h-[auto] cursor-pointer"
+                      alt="More Info"
                       src="/info-icon-blue.svg"
                     />
                   </button>
@@ -103,6 +104,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
                   <span className="underline relative">View Departments </span>
                   <img
                     className="block w-[16px] h-[auto] cursor-pointer"
+                    alt="More Info"
                     src="/info-icon-blue.svg"
                   />
                 </button>

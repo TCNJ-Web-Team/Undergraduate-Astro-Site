@@ -212,7 +212,7 @@ export default function ProgramList({
         onClick={() => onClickHandler({ target: { value: option } })}
       >
         {option}
-        <img className="close-button" src="/close-item.svg" />
+        <img className="close-button" alt="close" src="/close-item.svg" />
       </p>
     ));
   // console.log(filteredData.length);
@@ -318,7 +318,8 @@ export default function ProgramList({
                   <div className="drop-down-item">
                     <p id="all-text-filter">
                       All
-                      {/* <img className="close-button" src="/close-item.svg" /> */}
+                      {/* <img className="close-button" alt="close"
+src="/close-item.svg" /> */}
                     </p>
                   </div>
                 )}
@@ -327,7 +328,11 @@ export default function ProgramList({
                 <div className="drop-down-item">
                   <p id="search-text-filter" onClick={clearSearchText}>
                     {searchText}
-                    <img className="close-button" src="/close-item.svg" />
+                    <img
+                      className="close-button"
+                      alt="close"
+                      src="/close-item.svg"
+                    />
                   </p>
                 </div>
               )}

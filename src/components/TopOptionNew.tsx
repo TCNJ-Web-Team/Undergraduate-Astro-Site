@@ -157,6 +157,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 <span className="underline">View Schools</span>
                 <img
                   className="block w-[16px] h-[auto] cursor-pointer"
+                  alt="More Info"
                   src="/info-icon-blue.svg"
                 />
               </button>
@@ -173,6 +174,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
                 <span className="underline">Any School</span>
                 <img
                   className="block w-[16px] h-[auto] cursor-pointer"
+                  alt="More Info"
                   src="/info-icon-blue.svg"
                 />
               </button>
