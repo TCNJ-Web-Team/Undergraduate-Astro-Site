@@ -86,9 +86,9 @@ $sm: 550px;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      max-width: 215px;
+      // max-width: 215px;
       @media screen and (min-width: $sm) and (max-width: 750px) {
-        max-width: 70%;
+        // max-width: 70%;
       }
       width: 100%;
       .close-button {
@@ -99,7 +99,7 @@ $sm: 550px;
         // color: red;
         &::after {
           content: ""; // This is necessary for pseudo-elements
-          position: absolute;
+          position: relative;
           top: 0;
           right: 0; // Adjust this as per your design
           width: 20px; // Adjust width and height as per your design
@@ -109,7 +109,7 @@ $sm: 550px;
         &:hover {
           &::after {
             content: ""; // This is necessary for pseudo-elements
-            position: absolute;
+            position: relative;
             top: 0;
             right: 0; // Adjust this as per your design
             width: 20px; // Adjust width and height as per your design
@@ -125,7 +125,7 @@ $sm: 550px;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 150ms;
         content: ""; // This is necessary for pseudo-elements
-        position: absolute;
+        position: relative;
         top: 0;
         right: 0; // Adjust this as per your design
         width: 20px; // Adjust width and height as per your design
@@ -133,14 +133,15 @@ $sm: 550px;
         border: 1px solid #ccc; // Adjust border styles as per your design
         // border-radius: 4px; // Adjust border-radius as per your design
         background-color: #fff; // Adjust background-color as per your design
-        @media screen and (max-width: $sm) {
-          position: relative;
-        }
+        // @media screen and (max-width: $sm) {
+        //   position: relative;
+        // }
+        padding-left: 20px;
       }
       &:hover {
         &::after {
           content: ""; // This is necessary for pseudo-elements
-          position: absolute;
+          position: relative;
           top: 0;
           right: 0; // Adjust this as per your design
           width: 20px; // Adjust width and height as per your design
