@@ -38,6 +38,7 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
       {programOfStudyRight && (
         <img
           ref={ref}
+          loading="lazy"
           src={programOfStudyRight}
           alt={imageAlt + " program image"}
           style={{

@@ -156,6 +156,7 @@ export default function GlobalHeader({ indexCheck }) {
               id="tcnj-logo"
               src="https://graduate.tcnj.edu/explore-programs/_nuxt/img/tcnj-logo.3f4bf41.svg"
               alt="TCNJ"
+              className="w-[203px] h-[43.922px]"
             />
           </a>
           <div className="nav-menu">
@@ -192,6 +193,7 @@ export default function GlobalHeader({ indexCheck }) {
               src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/menu-icon.svg"
               alt="Global Nav Menu"
               onClick={openSideNav}
+              className="w-[17px] h-[14px]"
             />
           </div>
         </div>
