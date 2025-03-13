@@ -67,14 +67,15 @@ $sm: 550px;
 }
 .input-list {
   .drop-down-item {
-    // width: auto;
-    margin-bottom: 22px;
     margin-bottom: 11px;
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
 
     position: relative;
+    @media screen and (min-width: $sm) {
+      margin-bottom: 9px;
+    }
     .input-container {
       // display: block;
       // padding-left: 35px;
@@ -132,6 +133,9 @@ $sm: 550px;
         border: 1px solid #ccc; // Adjust border styles as per your design
         // border-radius: 4px; // Adjust border-radius as per your design
         background-color: #fff; // Adjust background-color as per your design
+        @media screen and (max-width: $sm) {
+          position: relative;
+        }
       }
       &:hover {
         &::after {

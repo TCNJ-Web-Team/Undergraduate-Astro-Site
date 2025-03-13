@@ -206,6 +206,7 @@ export default function ProgramList({
       <p
         className={`${onClickHandler.name}-filter input-container 
         font-opensans text-[13px] text-[#2e2e2e] leading-[16px] font-medium
+        flex items-center justify-between sm:block
         ${selectedFilters?.includes(option) ? "active" : ""}`}
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         key={option + index}
