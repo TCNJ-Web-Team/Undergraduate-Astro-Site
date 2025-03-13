@@ -46,6 +46,13 @@ $domine: "Domine", serif;
     padding-left: 0;
     padding-right: 0;
   }
+  &.index-nav {
+    @media screen and (min-width: $sm) and (max-width: $md) {
+      // background-color: yellow;
+      padding-right: 65px;
+      padding-left: 65px;
+    }
+  }
   .inner {
     max-width: 1130px;
     margin-left: auto;
@@ -102,6 +109,18 @@ $domine: "Domine", serif;
           text-decoration: none;
           color: #9ccff0;
         }
+      }
+    }
+    &.homepage-nav {
+      @media screen and (min-width: 1050px) and (max-width: $lg) {
+        // background-color: yellow;
+        max-width: 1128px;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      @media screen and (min-width: $sm) and (max-width: $md) {
+        // background-color: yellow;
       }
     }
   }

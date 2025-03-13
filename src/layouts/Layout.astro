@@ -29,6 +29,8 @@ import "@fontsource/domine/700.css";
 // import "../components/GlobalHeader";
 import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter.astro";
+const isRootPage = Astro.url.pathname === "/";
+// console.log(isRootPage)
 ---
 
 <!doctype html>
@@ -96,7 +98,9 @@ import GlobalFooter from "../components/GlobalFooter.astro";
     <!-- End Ping Script -->
   </head>
   <body>
-    <GlobalHeader client:load />
+    <!-- {isRootPage ? <h1>Welcome to the Homepage</h1> : <h1>Not the Homepage</h1>} -->
+
+    <GlobalHeader client:load indexCheck={isRootPage}/>
     <slot />
     <GlobalFooter />
     <!-- Google Tag Manager (noscript) -->

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 // import "../styles/accordion-styles.scss";
 import "../styles/global-nav.scss";
-export default function GlobalHeader() {
+export default function GlobalHeader({ indexCheck }) {
   const [open, setOpen] = useState(false);
 
   const openSideNav = (e) => {
@@ -40,7 +40,8 @@ export default function GlobalHeader() {
 
   return (
     <>
-      <div className="global-nav">
+      {/* {indexCheck && <p>THIS IS THE ROOT</p>} */}
+      <div className={`global-nav${indexCheck ? " index-nav" : ""}`}>
         <div
           id="slider-container"
           onClick={handleClickOutside}
@@ -149,7 +150,7 @@ export default function GlobalHeader() {
           </div>
         </div>
 
-        <div className="inner">
+        <div className={`inner${indexCheck ? " homepage-nav" : ""}`}>
           <a style={{ display: "flex" }} href="https://tcnj.edu/">
             <img
               id="tcnj-logo"
