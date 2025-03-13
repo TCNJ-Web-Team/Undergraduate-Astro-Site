@@ -31,6 +31,9 @@ import GlobalHeader from "../components/GlobalHeader";
 import GlobalFooter from "../components/GlobalFooter.astro";
 const isRootPage = Astro.url.pathname === "/";
 // console.log(isRootPage)
+const siteUrl = "https://programs.tcnj.edu"; // Your domain
+const path = Astro.url.pathname;
+const canonicalUrl = `${siteUrl}${path}`;
 ---
 
 <!doctype html>
@@ -48,6 +51,7 @@ const isRootPage = Astro.url.pathname === "/";
     <meta property="og:description" content={description} />
     <meta name="twitter:image" content={image} />
     <meta property="og:image" content={image} />
+  <link rel="canonical" href={canonicalUrl} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <!-- <meta property="og:image" content={image} /> -->
