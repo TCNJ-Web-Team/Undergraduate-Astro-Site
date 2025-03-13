@@ -108,7 +108,7 @@ export default function IntroSection() {
         >
           TCNJ allows you to craft an education that's uniquely yours, with
           flexible options across majors, minors, concentration areas, and
-          certificates. You can also pursue accelerated
+          certificates — including accelerated
           <span className="inline-block mr-[5px] ml-[-1px]">
             <div
               className={`popup-container fixed top-0 left-0
@@ -140,8 +140,8 @@ export default function IntroSection() {
               onClick={() => openAccellPop(accellText)}
             />
           </span>
-          and dual degrees.
-          <span className="inline-block mr-[5px] ml-[-2px] relative">
+          and dual degree
+          <span className="inline-block mr-[5px] ml-[2px] relative">
             <div
               className={`popup-container-two fixed top-0 left-0
               bg-slate-600 w-[100%] h-[100%] ${dualOpen && "active"}`}
@@ -153,7 +153,7 @@ export default function IntroSection() {
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className=" py-[45px] sm:py-[60px] px-[15px] sm:px-[45px] font-domine text-[19px] leading-[30px] text-black text-left">
-                  <strong>Dual degree</strong> programs are designed to provide
+                  <strong>Dual-degree</strong> programs are designed to provide
                   a streamlined pathway to a master’s or professional degree.
                 </p>
 
@@ -172,7 +172,8 @@ export default function IntroSection() {
               onClick={() => openAccellPop(dualText)}
             />
           </span>
-          A full list of{" "}
+          programs that can put you on the fast track to career success. A full
+          list of{" "}
           <a
             href="https://graduate.tcnj.edu/explore-programs/"
             className="underline"
@@ -180,7 +181,7 @@ export default function IntroSection() {
             graduate and certificate programs
           </a>{" "}
           is also available. Search by keyword or browse programs by selecting a
-          school, program type, and/or options.
+          school, program type, and/or other options.
         </motion.div>
       </div>
 
