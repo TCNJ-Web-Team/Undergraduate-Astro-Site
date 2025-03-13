@@ -52,7 +52,7 @@ const Popup = ({ content, onClose, heading }) => {
       <div
         ref={containerRef}
         id="popup-container"
-        className="bg-white shadow-lg p-6 relative z-[1000] left-0 w-[100%] max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto pl-[30px] pr-[30px] text-center md:text-left lg:px-0 cursor-default"
+        className="bg-white shadow-lg p-6 relative z-[1000] left-0 w-[100%] max-w-[900px] mx-[15px] sm:mx-[30px] lg:mx-auto pl-[30px] pr-[30px] text-center md:text-left lg:px-0 cursor-default"
       >
         <div className="py-[45px] px-[15px] sm:px-[45px]">
           <h2 className="text-[21px] leading-[25px] pb-[7px] font-interstate font-[900] uppercase text-left">

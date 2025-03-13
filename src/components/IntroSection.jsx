@@ -117,7 +117,7 @@ export default function IntroSection() {
               <div
                 ref={accellText}
                 className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
-                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                max-w-[900px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className="accell-text-block py-[45px] sm:py-[60px] px-[0px] sm:px-[45px] font-domine text-[16px] leading-[25px] sm:text-[19px] sm:leading-[30px] text-black text-left">
@@ -149,7 +149,7 @@ export default function IntroSection() {
               <div
                 ref={dualText}
                 className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
-                max-w-[1128px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                max-w-[900px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
                 onClick={handlePopupClick} // Add click event handler to prevent propagation
               >
                 <p className=" py-[45px] sm:py-[60px] px-[0px] sm:px-[45px] font-domine text-[16px] leading-[25px] sm:text-[19px] sm:leading-[30px] text-black text-left">
