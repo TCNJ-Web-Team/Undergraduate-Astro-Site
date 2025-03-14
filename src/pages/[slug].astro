@@ -456,7 +456,7 @@ const { sourceUrl } = heroImgDesktop ?? {
     >
       <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
        
-            <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} programImageCheck={programOfStudyRight} client:load>
+            <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} programImageCheck={programOfStudyRight} client:idle>
 
       </div>
     </div>
@@ -479,7 +479,7 @@ const { sourceUrl } = heroImgDesktop ?? {
   programOfStudyRight && programOfStudyRight !== null && (
           <AnimatedRightImage programOfStudyRight={programOfStudyRight}
 rightImageHorizontalPosition={rightImageHorizontalPosition} imageAlt={title}
-rightImageVerticalPosition={rightImageVerticalPosition} client:load/>
+rightImageVerticalPosition={rightImageVerticalPosition} client:idle/>
           )
         }
         {  !programOfStudyRight && (
@@ -523,7 +523,7 @@ md:pt-[135px] lg:pt-[187px]"
           left={careersLeft}
           right={careersRight}
           body={careersBody}
-          client:load/>
+          client:idle/>
           
       </div>
     </div>
@@ -550,7 +550,7 @@ md:pt-[135px] lg:pt-[187px]"
 
           {
             learnMoreList && (
-              <RelatedProgSlider learnMoreList={learnMoreList} client:load />
+              <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
             )
           }
           </div>
