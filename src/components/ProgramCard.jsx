@@ -143,6 +143,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
                     }`}
                   >
                     <img
+                      loading="lazy"
                       src={`/card-icons/${formatOption(option)}.svg`}
                       alt={option}
                       className={`${getImageDimensions(option)} object-contain`}
