@@ -109,7 +109,7 @@ const canonicalUrl = `${siteUrl}${path}`;
 
     <GlobalHeader client:load indexCheck={isRootPage}/>
     <slot />
-    <GlobalFooter />
+    <GlobalFooter client:visible/>
     <!-- Google Tag Manager (noscript) -->
 {import.meta.env.PROD && (
     <noscript>
