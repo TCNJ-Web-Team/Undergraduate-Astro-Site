@@ -1,4 +1,4 @@
-import{j as t}from"./jsx-runtime.C3nPk8XT.js";import"./index.Cq8P9Jm4.js";import{f as e}from"./fadeInVariant.DzfY0fgq.js";import{m as p}from"./motion.C8JOvv4d.js";const l=({programAtAGlance:a,programImageCheck:n})=>t.jsxs(t.Fragment,{children:[t.jsx("div",{id:"program-at-a-glance-intro",className:`pt-[91px] sm:pt-[103px]
+import{j as t}from"./jsx-runtime.C3nPk8XT.js";import"./index.Cq8P9Jm4.js";import{f as e}from"./fadeInVariant.DZRTaQ3B.js";import{m as p}from"./motion.C8JOvv4d.js";const l=({programAtAGlance:a,programImageCheck:n})=>t.jsxs(t.Fragment,{children:[t.jsx("div",{id:"program-at-a-glance-intro",className:`pt-[91px] sm:pt-[103px]
 md:pt-[135px] lg:pt-[187px]`}),t.jsxs(p.div,{id:"program-at-a-glance",className:`text-left ${n?"pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]":"pb-[100px]  sm:pb-[115px] md:pb-[150px] lg:pb-[200px]"}   `,variants:e,initial:"initial",whileInView:"animate",viewport:{once:!0},children:[t.jsx(p.h2,{className:`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[20px] sm:pb-[27px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
             lg:pb-[14px]
         
