@@ -1,0 +1,9 @@
+# Allow all search engines
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Allow: /
+
+# Sitemap files
+Sitemap: https://programs.tcnj.edu/sitemap-index.xml
+Sitemap: https://programs.tcnj.edu/sitemap-0.xml
