@@ -72,6 +72,7 @@ export default function IntroSection() {
         id="hero-text"
         className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[64px] md:text-left lg:px-0
         pb-[150px] sm:pb-[230px] md:pb-[115px]
+        lg:h-[556px]
         "
       >
         <div
