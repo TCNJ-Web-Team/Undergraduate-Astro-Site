@@ -292,26 +292,48 @@ export default function IntroSection() {
         id="hero-image"
         className="absolute top-0 left-0 z-0 w-[100%] h-[100%]"
       >
+        {/* WebP version for desktop */}
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/hero-desktop.jpg"
-          type="image/jpeg"
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero.webp"
+          type="image/webp"
           media="(min-width: 901px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/ug-hero-tablet.jpg"
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero.jpg"
           type="image/jpeg"
+          media="(min-width: 901px)"
+        />
+
+        {/* WebP version for tablet */}
+        <source
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-tablet.webp"
+          type="image/webp"
           media="(min-width: 551px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/ug-hero-mobile.jpg"
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-tablet.jpg"
+          type="image/jpeg"
+          media="(min-width: 551px)"
+        />
+
+        {/* WebP version for mobile */}
+        <source
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.webp"
           type="image/webp"
         />
+        <source
+          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.jpg"
+          type="image/jpeg"
+        />
+
+        {/* Fallback image */}
         <img
-          src="https://tcnj.edu/custom/undergraduate/img/ug-hero-mobile.jpg"
+          src="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.jpg"
           alt="TCNJ scenery"
           className="w-[100%] object-cover h-[100%]"
         />
       </picture>
+
       <div
         id="bg-overlay"
         className="bg-black absolute w-[100%] h-[100%] top-0 left-0 z-[5] opacity-[.5] sm:opacity-[.25]"

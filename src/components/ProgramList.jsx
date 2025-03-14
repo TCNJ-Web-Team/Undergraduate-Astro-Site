@@ -384,7 +384,7 @@ src="/close-item.svg" /> */}
             <motion.img
               src="/grid-icon.svg"
               alt="Grid View"
-              className="hidden md:block h-[20px] w-auto ml-[25px] cursor-pointer"
+              className="hidden md:block h-[20px] w-[24.781px] ml-[25px] cursor-pointer"
               onClick={() => setProgramView("")}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
@@ -393,7 +393,7 @@ src="/close-item.svg" /> */}
             <motion.img
               src="/list-icon.svg"
               alt="List View"
-              className="hidden md:block h-[20px] w-auto ml-[5px] cursor-pointer"
+              className="hidden md:block h-[20px] w-[25.406px] ml-[5px] cursor-pointer"
               onClick={() => setProgramView("list")}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
