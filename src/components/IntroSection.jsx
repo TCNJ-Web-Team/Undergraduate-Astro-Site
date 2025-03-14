@@ -72,6 +72,7 @@ export default function IntroSection() {
         id="hero-text"
         className="max-w-[1128px] mx-auto relative z-10 text-white p-[35px] pl-[30px] pr-[30px] text-center sm:pt-[77px] md:pt-[64px] md:text-left lg:px-0
         pb-[150px] sm:pb-[230px] md:pb-[115px]
+        lg:h-[556px]
         "
       >
         <div
@@ -81,7 +82,109 @@ export default function IntroSection() {
           <a href="https://tcnj.edu">TCNJ Home</a> /{" "}
           <span className="font-[600]">Explore Programs</span>
         </div>
-        <motion.h1
+        <h1
+          className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            delay: 0.15,
+            ease: "easeOut",
+            duration: 0.35,
+          }}
+        >
+          160+ Undergraduate Programs
+        </h1>
+        <div
+          className="font-domine text-[20px] leading-[26px] sm:text-[20px] sm:leading-[35px] md:leading-[35px] md:text-[23px] font-normal
+          max-w-[1095px]"
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0 }}
+          transition={{
+            delay: 0.65,
+            ease: "easeOut",
+            duration: 0.35,
+          }}
+        >
+          TCNJ allows you to craft an education that's uniquely yours, with
+          flexible options across majors, minors, concentration areas, and
+          certificates — including accelerated
+          <span className="inline-block mr-[5px] ml-[-1px]">
+            <div
+              className={`popup-container fixed top-0 left-0
+              bg-slate-600 w-[100%] h-[100%] ${accellOpen && "active"}`}
+            >
+              <div
+                ref={accellText}
+                className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
+                max-w-[900px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                onClick={handlePopupClick} // Add click event handler to prevent propagation
+              >
+                <p className="accell-text-block py-[45px] sm:py-[60px] px-[0px] sm:px-[45px] font-domine text-[16px] leading-[25px] sm:text-[19px] sm:leading-[30px] text-black text-left">
+                  <strong>Accelerated programs</strong> are designed to condense
+                  the completion timeline.
+                </p>
+                <img
+                  className="close-button"
+                  alt="close"
+                  src="/close-item.svg"
+                  onClick={() => setAccellOpen(false)}
+                />
+              </div>
+            </div>
+            <img
+              className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
+              alt="More Info"
+              src="/info-icon.svg"
+              style={{ marginLeft: "2px" }}
+              onClick={() => openAccellPop(accellText)}
+            />
+          </span>
+          and dual degree
+          <span className="inline-block mr-[5px] ml-[2px] relative">
+            <div
+              className={`popup-container-two fixed top-0 left-0
+              bg-slate-600 w-[100%] h-[100%] ${dualOpen && "active"}`}
+            >
+              <div
+                ref={dualText}
+                className="top-arrow-popup relative z-[1000] left-0 bg-white w-[100%]
+                max-w-[900px] mx-[15px] sm:mx-[30px] lg:mx-auto text-white  pl-[30px] pr-[30px] text-center  md:text-left lg:px-0 cursor-default"
+                onClick={handlePopupClick} // Add click event handler to prevent propagation
+              >
+                <p className=" py-[45px] sm:py-[60px] px-[0px] sm:px-[45px] font-domine text-[16px] leading-[25px] sm:text-[19px] sm:leading-[30px] text-black text-left">
+                  <strong>Dual-degree</strong> programs are designed to provide
+                  a streamlined pathway to a master’s or professional degree.
+                </p>
+
+                <img
+                  className="close-button"
+                  alt="close"
+                  src="/close-item.svg"
+                  onClick={() => setDualOpen(false)}
+                />
+              </div>
+            </div>
+            <img
+              className="info-button one w-[12px] h-[12px] mt-[-22px] cursor-pointer"
+              alt="More Info"
+              src="/info-icon.svg"
+              onClick={() => openAccellPop(dualText)}
+            />
+          </span>
+          programs that can put you on the fast track to career success. A full
+          list of{" "}
+          <a
+            href="https://graduate.tcnj.edu/explore-programs/"
+            className="underline"
+          >
+            graduate and certificate programs
+          </a>{" "}
+          is also available. Search by keyword or browse programs by selecting a
+          school, program type, and/or other options.
+        </div>
+        {/* <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
@@ -182,7 +285,7 @@ export default function IntroSection() {
           </a>{" "}
           is also available. Search by keyword or browse programs by selecting a
           school, program type, and/or other options.
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <picture
