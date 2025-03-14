@@ -24,7 +24,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
 
   // console.log("Original URL:", redirecturl);
   // console.log("Processed URL:", processedRedirectUrl);
-
+  // console.log(option);
   const progOptionSort = {
     Major: 0,
     "Major/Specialization": 0,
@@ -92,11 +92,49 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
               .sort((a, b) => progOptionSort[a] - progOptionSort[b]) // Sort the combined array
               .map((option, index) => {
                 const formatOption = (option) => {
+                  // console.log(option);
                   return option
                     .toLowerCase()
                     .replace(/\s+/g, "-")
                     .replace(/[^\w-]/g, "");
                 };
+
+                const getImageDimensions = (optionType) => {
+                  // console.log(optionType);
+                  const sanitizedOption = optionType
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                    .replace(/[^\w-]/g, ""); // Sanitize and lowercase
+                  switch (sanitizedOption) {
+                    case "accelerated":
+                      return "w-[23.658px] h-[15px]";
+                    case "certificate":
+                      return "w-[14.881px] h-[15px]";
+                    case "dual-degree":
+                      return "w-[15.343px] h-[15px]";
+                    case "major":
+                      return "w-[13.865px] h-[15px]";
+                    case "majorspecialization":
+                      return "w-[13.865px] h-[15px]";
+                    case "minor":
+                      return "w-[14.041px] h-[11px]";
+                    case "prelaw":
+                      return "w-[18.63px] h-[15px]";
+                    case "premed":
+                      return "w-[15px] h-[15px]";
+                    case "premedprehealth":
+                      return "w-[15px] h-[15px]";
+                    case "teacher-education":
+                      return "w-[14.236px] h-[15px]";
+                    case "three-year-bachelors":
+                      return "w-[13.391px] h-[15px]";
+                    case "undeclared-option":
+                      return "w-[11.223px] h-[15px]";
+                    default:
+                      return "w-auto h-auto max-h-[15px]"; // default size
+                  }
+                };
+
                 return (
                   <p
                     key={index}
@@ -107,7 +145,7 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
                     <img
                       src={`/card-icons/${formatOption(option)}.svg`}
                       alt={option}
-                      className="max-h-[15px]"
+                      className={`${getImageDimensions(option)} object-contain`}
                     />
                     {option}
                   </p>
