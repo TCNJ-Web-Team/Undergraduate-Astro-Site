@@ -70,7 +70,7 @@ const canonicalUrl = `${siteUrl}${path}`;
       @import url("https://use.typekit.net/czt7cge.css");
     </style>
     <!-- Google Tag Manager -->
-{import.meta.env.PROD && (
+<!-- {import.meta.env.PROD && (
     <script>
       !(function (e, t, a, n) {
         (e[n] = e[n] || []),
@@ -81,7 +81,7 @@ const canonicalUrl = `${siteUrl}${path}`;
           e.parentNode.insertBefore(n, e);
       })(window, document, "script", "dataLayer");
     </script>
-    )}
+    )} -->
 {import.meta.env.PROD && (
   <script>
     if (window.location.protocol !== "https:") {
@@ -97,11 +97,11 @@ const canonicalUrl = `${siteUrl}${path}`;
 
     <!-- End Google Tag Manager -->
     <!-- Ping Script -->
-{import.meta.env.PROD && (
+<!-- {import.meta.env.PROD && (
 
     <script async src="https://connect.tcnj.edu/ping"></script>
 
-  )}
+  )} -->
     <!-- End Ping Script -->
   </head>
   <body>
@@ -111,7 +111,7 @@ const canonicalUrl = `${siteUrl}${path}`;
     <slot />
     <GlobalFooter/>
     <!-- Google Tag Manager (noscript) -->
-{import.meta.env.PROD && (
+<!-- {import.meta.env.PROD && (
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-M9FHLJS"
@@ -119,7 +119,7 @@ const canonicalUrl = `${siteUrl}${path}`;
         width="0"
         style="display:none;visibility:hidden"></iframe>
     </noscript>
-)}
+)} -->
     <!-- End Google Tag Manager (noscript) -->
   </body>
 </html>
