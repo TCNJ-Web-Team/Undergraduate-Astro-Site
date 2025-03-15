@@ -54,6 +54,9 @@ export async function getStaticPaths() {
         heroImgMobile{
           sourceUrl
         }
+    heroImgMobileWebp{
+          sourceUrl
+        }
         badge{
           sourceUrl
         }
@@ -114,6 +117,7 @@ export async function getStaticPaths() {
         horizontalPositionMobile: number;
         heroImgTablet: string;
         heroImgMobile: string;
+        heroImgMobileWebp: string;
         badge: string[];
         careersTitle: string;
         careers: string;
@@ -147,6 +151,7 @@ export async function getStaticPaths() {
         heroImgDesktop: program.program.heroImgDesktop,
         heroImgTablet: program.program.heroImgTablet,
         heroImgMobile: program.program.heroImgMobile,
+        heroImgMobileWebp: program.program.heroImgMobileWebp,
         badge: program.program.badge,
         careersTitle: program.program.careersTitle,
         careers: program.program.careers,
@@ -216,6 +221,9 @@ interface AstroProps {
   heroImgMobile: {
     sourceUrl: string;
   };
+  heroImgMobileWebp: {
+    sourceUrl: string;
+  };
   badge: {
     sourceUrl: string;
   };
@@ -262,6 +270,7 @@ const {
         horizontalPositionMobile,
   heroImgTablet,
   heroImgMobile,
+  heroImgMobileWebp,
   badge,
   content,
   careersTitle,
@@ -280,6 +289,7 @@ const {
 metaDescription,
     socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
+// console.log(heroImgMobileWebp)
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
 const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
@@ -353,6 +363,7 @@ const { sourceUrl } = heroImgDesktop ?? {
             <>
            
               <AnimatedHero
+              heroImgMobileWebp={heroImgMobileWebp}
                 heroImgMobile={heroImgMobile}
                 heroImgTablet={heroImgTablet}
                 sourceUrl={sourceUrl}

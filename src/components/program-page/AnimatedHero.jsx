@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import "../src/styles/hero-styles.scss";
 
 function AnimatedHero({
+  heroImgMobileWebp,
   heroImgMobile,
   heroImgTablet,
   sourceUrl,
@@ -11,39 +12,6 @@ function AnimatedHero({
   title,
   badge,
 }) {
-  // const [windowWidth, setWindowWidth] = useState(null); // Start with null
-
-  // useEffect(() => {
-  //   setWindowWidth(window.innerWidth); // Set width after hydration
-
-  //   const handleResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
-
-  // const getObjectPosition = () => {
-  //   if (windowWidth === null) {
-  //     return "50% 0%"; // Provide a default safe value for SSR
-  //   }
-
-  //   const mobilePosition = horizontalPositionMobile ?? 0;
-  //   const tabletPosition = horizontalPositionTablet ?? 0;
-  //   const desktopPosition = horizontalPositionDesktopHero ?? 0;
-
-  //   if (windowWidth <= 550) {
-  //     return `${mobilePosition}% 0%`;
-  //   } else if (windowWidth <= 900) {
-  //     return `${tabletPosition}% 0%`;
-  //   } else {
-  //     return `${desktopPosition}% 0%`;
-  //   }
-  // };
-
   const cleanedSourceUrl =
     sourceUrl?.replace("-scaled.jpg", ".jpg") || sourceUrl;
   const cleanedMobileUrl =
@@ -52,41 +20,19 @@ function AnimatedHero({
   const cleanedTabletUrl =
     heroImgTablet?.sourceUrl?.replace("-scaled.jpg", ".jpg") ||
     heroImgTablet?.sourceUrl;
-  // const getObjectPositionClass = (position) => {
-  //   switch (position) {
-  //     case 0:
-  //       return "object-[0%0]";
-  //     case 10:
-  //       return "object-[10%0]";
-  //     case 20:
-  //       return "object-[20%0]";
-  //     case 30:
-  //       return "object-[30%0]";
-  //     case 40:
-  //       return "object-[40%0]";
-  //     case 50:
-  //       return "object-[50%0]";
-  //     case 60:
-  //       return "object-[60%0]";
-  //     case 70:
-  //       return "object-[70%0]";
-  //     case 80:
-  //       return "object-[80%0]";
-  //     case 90:
-  //       return "object-[90%0]";
-  //     case 100:
-  //       return "object-[100%0]";
-  //     default:
-  //       return "";
-  //   }
-  // };
-  // Default to 50 if values are null/undefined
+  // console.log(heroImgMobileWebp);
   const mobilePosition = horizontalPositionMobile || 0;
   const tabletPosition = horizontalPositionTablet || 0;
   const desktopPosition = horizontalPositionDesktopHero || 0;
   return (
     <div className="relative w-full overflow-hidden">
       <picture>
+        {heroImgMobileWebp && (
+          <source
+            media="(max-width: 550px)"
+            srcSet={heroImgMobileWebp.sourceUrl}
+          />
+        )}
         {heroImgMobile && (
           <source media="(max-width: 550px)" srcSet={cleanedMobileUrl} />
         )}
