@@ -25,8 +25,6 @@ import NavigationBar from "../components/NavigationBar";
 import "../styles/slug-page-styles.scss";
 import QuoteContent from "../components/QuoteContent";
 
-
-
 export async function getStaticPaths() {
   const data = await wpquery({
     query: `query ProgramsListing {
@@ -109,11 +107,11 @@ export async function getStaticPaths() {
         degreeType: string[];
         repeaterDegrees: string[];
         school: string;
-        acceleratedSubtitle:string[];
+        acceleratedSubtitle: string[];
         departmentRepeater: string[];
         heroImgDesktop: string;
         horizontalPositionDesktopHero: number;
-          horizontalPositionTablet: number;
+        horizontalPositionTablet: number;
         horizontalPositionMobile: number;
         heroImgTablet: string;
         heroImgMobile: string;
@@ -126,9 +124,9 @@ export async function getStaticPaths() {
         lowerContent: [];
         learnMoreList: [];
         slug: string;
-            metaTitle:string;
-        metaDescription:string;
-        socialImage:[];
+        metaTitle: string;
+        metaDescription: string;
+        socialImage: [];
       };
       title: string;
     }) => ({
@@ -139,10 +137,8 @@ export async function getStaticPaths() {
         programAtAGlance: program.program.programAtAGlance,
         horizontalPositionDesktopHero:
           program.program.horizontalPositionDesktopHero,
-        horizontalPositionTablet:
-          program.program.horizontalPositionTablet,
-        horizontalPositionMobile:
-          program.program.horizontalPositionMobile,
+        horizontalPositionTablet: program.program.horizontalPositionTablet,
+        horizontalPositionMobile: program.program.horizontalPositionMobile,
         degreeType: program.program.degreeType,
         repeaterDegrees: program.program.repeaterDegrees,
         school: program.program.school,
@@ -159,9 +155,9 @@ export async function getStaticPaths() {
         lowerContent: program.program.lowerContent,
         quoteContentArea: program.program.quoteContentArea,
         learnMoreList: program.program.learnMoreList,
-              metaTitle:program.program.metaTitle,
-        metaDescription:program.program.metaDescription,
-        socialImage:program.program.socialImage,
+        metaTitle: program.program.metaTitle,
+        metaDescription: program.program.metaDescription,
+        socialImage: program.program.socialImage,
       },
     })
   );
@@ -205,13 +201,13 @@ interface AstroProps {
   slug: string;
   programAtAGlance: string;
   degreeType: string[]; // Assuming degreeType is an array of strings
-  repeaterDegrees: {degreeName:string}[];
+  repeaterDegrees: { degreeName: string }[];
   school: string[];
   acceleratedSubtitle: string[];
   department: { deptUrl: string; deptTitle: string }[];
   horizontalPositionDesktopHero: number;
   horizontalPositionTablet: number;
-        horizontalPositionMobile: number;
+  horizontalPositionMobile: number;
   heroImgDesktop: {
     sourceUrl: string;
   };
@@ -246,11 +242,11 @@ interface AstroProps {
   lowerContent: any;
   quoteContentArea: string;
   learnMoreList: string;
-      metaTitle:string;
-        metaDescription:string;
-        socialImage:{
-          sourceUrl:string;
-        }
+  metaTitle: string;
+  metaDescription: string;
+  socialImage: {
+    sourceUrl: string;
+  };
 }
 
 // Destructure with the defined interface
@@ -267,7 +263,7 @@ const {
   heroImgDesktop,
   horizontalPositionDesktopHero,
   horizontalPositionTablet,
-        horizontalPositionMobile,
+  horizontalPositionMobile,
   heroImgTablet,
   heroImgMobile,
   heroImgMobileWebp,
@@ -275,23 +271,28 @@ const {
   content,
   careersTitle,
   careers: { left: careersLeft, right: careersRight, body: careersBody },
- programOfStudy: {
-  left: programOfStudyLeft,
-  rightImage,  // Get the rightImage object without destructuring
-  rightImageHorizontalPosition,
-  rightImageVerticalPosition,
-  body: programOfStudyBody,
-},
+  programOfStudy: {
+    left: programOfStudyLeft,
+    rightImage, // Get the rightImage object without destructuring
+    rightImageHorizontalPosition,
+    rightImageVerticalPosition,
+    body: programOfStudyBody,
+  },
   lowerContent,
   quoteContentArea,
   learnMoreList,
   metaTitle,
-metaDescription,
-    socialImage,
+  metaDescription,
+  socialImage,
 } = Astro.props as AstroProps; // Add the type assertion here
 // console.log(heroImgMobileWebp)
 const programOfStudyRight = rightImage?.sourceUrl ?? "";
-const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
+const socialSourceUrl =
+  socialImage && socialImage.sourceUrl
+    ? socialImage.sourceUrl
+    : typeof heroImgDesktop === "string"
+      ? heroImgDesktop
+      : heroImgDesktop.sourceUrl;
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
@@ -299,16 +300,24 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(slug)
 ---
 
-<Layout title={metaTitle} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
-      <!-- <TitleAndNav /> -->
-<NavigationBar careerCheck={careersBody} additionalInfoCheck={lowerContent} teachingCareerCheck={careersTitle} client:load/>
+<Layout
+  title={metaTitle}
+  description={metaDescription}
+  image={socialSourceUrl}
+  metaTitle={metaTitle}
+>
+  <!-- <TitleAndNav /> -->
+  <NavigationBar
+    careerCheck={careersBody}
+    additionalInfoCheck={lowerContent}
+    teachingCareerCheck={careersTitle}
+    client:load
+  />
   <main class="font-domine text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div
         class="pl-[35px]
       pr-[35px]
-
-
       lg:max-w-[70.5rem]
       md:max-w-[990px]
       pt-[31px]
@@ -320,22 +329,22 @@ const { sourceUrl } = heroImgDesktop ?? {
       >
         <p
           class="text-[17px] leading-[26px] pb-[18px] font-domine
-          sm:pb-[30px] 
-        sm:text-[17px] 
+          sm:pb-[30px]
+        sm:text-[17px]
         sm:leading-[19px]
-        sm:px-[45px] 
-        md:text-[18px] 
+        sm:px-[45px]
+        md:text-[18px]
         md:leading-[21px]
-        md:pb-[25px] 
+        md:pb-[25px]
         md:px-0
-        lg:pb-[26px] 
+        lg:pb-[26px]
         lg:text-[18px]
-                lg:leading-[21px]
-        "
+                lg:leading-[21px]"
         >
-          <a href="https://tcnj.edu" class="yellow-bg-text">TCNJ Home</a> / <a href="/" class="yellow-bg-text">Explore Programs</a> / <span
-            class="font-bold"
-          >
+          <a href="https://tcnj.edu" class="yellow-bg-text">TCNJ Home</a> / <a
+            href="/"
+            class="yellow-bg-text">Explore Programs</a
+          > / <span class="font-bold">
             {title}
           </span>
         </p>
@@ -352,7 +361,7 @@ const { sourceUrl } = heroImgDesktop ?? {
         >
           {title}
         </h1> -->
-        <AnimatedTitle title={title} subtitle={acceleratedSubtitle} client:load />
+        <AnimatedTitle title={title} subtitle={acceleratedSubtitle} />
       </div>
       <div
         class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
@@ -361,9 +370,8 @@ const { sourceUrl } = heroImgDesktop ?? {
         {
           sourceUrl && (
             <>
-           
               <AnimatedHero
-              heroImgMobileWebp={heroImgMobileWebp}
+                heroImgMobileWebp={heroImgMobileWebp}
                 heroImgMobile={heroImgMobile}
                 heroImgTablet={heroImgTablet}
                 sourceUrl={sourceUrl}
@@ -391,7 +399,7 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pt-[50px]
     md:pb-[50px]"
     >
-      <div class="lg:max-w-[70.5rem] md:max-w-[920px]  bg-white m-auto">
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px] bg-white m-auto">
         <div
           id="degree-school-department"
           class="flex
@@ -417,11 +425,20 @@ const { sourceUrl } = heroImgDesktop ?? {
                 : { degreeType }
             }
           </TopOption> -->
-          <TopOption heading={repeaterDegrees && repeaterDegrees.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+          <TopOption
+            heading={repeaterDegrees && repeaterDegrees.length > 1
+              ? "Degrees"
+              : "Degree"}
+            imgSrc="ribbon"
+          >
             {
               Array.isArray(repeaterDegrees)
                 ? repeaterDegrees.map((degree, index) => (
-                    <span class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}>{degree.degreeName}</span>
+                    <span
+                      class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
+                    >
+                      {degree.degreeName}
+                    </span>
                   ))
                 : null
             }
@@ -429,14 +446,28 @@ const { sourceUrl } = heroImgDesktop ?? {
           <!-- <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
             {school}
           </TopOption> -->
-          <TopOptionNew client:load school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building" 
-            techEdMarginCheck={slug === 'technology-engineering-education' ? true : false}>
+          <TopOptionNew
+            client:load
+            school={school}
+            heading={school && school.length > 1 ? "Schools" : "School"}
+            imgSrc="building"
+            techEdMarginCheck={slug === "technology-engineering-education"
+              ? true
+              : false}
+          >
             {school}
           </TopOptionNew>
           <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             {school}
           </TopOptionNew> -->
-          <TopOption client:load  heading={department && department.length > 1 ? 'Departments' : "Department"} department={department} imgSrc="departments">
+          <TopOption
+            client:load
+            heading={department && department.length > 1
+              ? "Departments"
+              : "Department"}
+            department={department}
+            imgSrc="departments"
+          >
             <!-- {deptTitle}
              -->
             <!-- {
@@ -465,39 +496,44 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pl-[35px]
     md:pr-[35px]"
     >
-      <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
-       
-            <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} programImageCheck={programOfStudyRight} client:idle>
-
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+        <AnimatedProgramAtAGlance
+          programAtAGlance={programAtAGlance}
+          programImageCheck={programOfStudyRight}
+          client:idle
+        />
       </div>
-    </div>
-    <div
-      id="programs-of-study-container"
-      class="px-[35px] w-auto sm:bg-tcnjyellow  
-     "
-    >
       <div
-        class="m-auto
+        id="programs-of-study-container"
+        class="px-[35px] w-auto sm:bg-tcnjyellow"
+      >
+        <div
+          class="m-auto
       bg-white
       relative
       pb-[71px]
       sm:pb-[93px]
       sm:px-[45px]
-      lg:pb-[105px]
-      "
-      >
-        {
-  programOfStudyRight && programOfStudyRight !== null && (
-          <AnimatedRightImage programOfStudyRight={programOfStudyRight}
-rightImageHorizontalPosition={rightImageHorizontalPosition} imageAlt={title}
-rightImageVerticalPosition={rightImageVerticalPosition} client:idle/>
-          )
-        }
-        {  !programOfStudyRight && (
-        <div id="no-photo-spacer" class="h-[75px] sm:h-[70px] md:h-[0]"></div>
-)}
-        <div
-          class=`lg:max-w-[70.5rem] md:max-w-[920px] 
+      lg:pb-[105px]"
+        >
+          {
+            programOfStudyRight && programOfStudyRight !== null && (
+              <AnimatedRightImage
+                programOfStudyRight={programOfStudyRight}
+                rightImageHorizontalPosition={rightImageHorizontalPosition}
+                imageAlt={title}
+                rightImageVerticalPosition={rightImageVerticalPosition}
+                client:idle
+              />
+            )
+          }
+          {
+            !programOfStudyRight && (
+              <div id="no-photo-spacer" class="h-[75px] sm:h-[70px] md:h-[0]" />
+            )
+          }
+          <div
+            class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
@@ -505,68 +541,76 @@ rightImageVerticalPosition={rightImageVerticalPosition} client:idle/>
         ${(careersLeft || careersRight || careersBody) ? "pb-[0] sm:pb-[3px] md:pb-[50px] lg:pb-[40px]" : ""}
         ${programOfStudyRight ? "sm:pt-[20px] md:pt-[119px] lg:pt-[144px]" : "md:pt-[119px] lg:pt-[144px]"}
         `
-        >
-          <BodyCopy
-            left={programOfStudyLeft}
-            body={programOfStudyBody}
-            right={programOfStudyRight}
-          />
+          >
+            <BodyCopy
+              left={programOfStudyLeft}
+              body={programOfStudyBody}
+              right={programOfStudyRight}
+            />
+          </div>
         </div>
+        <!-- <p>NO ACCORDION HERE</p> -->
       </div>
-      <!-- <p>NO ACCORDION HERE</p> -->
-    </div>
 
-    {(careersLeft || careersRight || careersBody) && (
-    <div class="px-[35px] m-auto bg-tcnjyellow" id="careers-intro">
-      <div
-        class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto
+      {
+        (careersLeft || careersRight || careersBody) && (
+          <div class="px-[35px] m-auto bg-tcnjyellow" id="careers-intro">
+            <div
+              class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto
       pt-[91px] sm:pt-[103px]
 md:pt-[135px] lg:pt-[187px]"
+            >
+              <AnimatedBodyCopy
+                heading={careersTitle ? careersTitle : "Careers"}
+                left={careersLeft}
+                right={careersRight}
+                body={careersBody}
+                client:idle
+              />
+            </div>
+          </div>
+        )
+      }
+      <div
+        class="px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
+        id="lower-content-and-related-progras"
       >
-        <!-- <BodyCopy
-          heading="Careers"
-          left={careersLeft}
-          right={careersRight}
-          body={careersBody}
-        /> -->
-        <AnimatedBodyCopy
-          heading={careersTitle ? careersTitle : "Careers"}
-          left={careersLeft}
-          right={careersRight}
-          body={careersBody}
-          client:idle/>
-          
-      </div>
-    </div>
-   )}
-    <div
-      class=" px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
-      id="lower-content-and-related-progras"
-    >
-      <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
-        <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
-
-          {lowerContent && <LowerContent lowerContent={lowerContent} quote={quoteContentArea} careerContent={careersBody}/>}
-          <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
-          {!lowerContent && (      <div class="
+        <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
+          <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+            {
+              lowerContent && (
+                <LowerContent
+                  lowerContent={lowerContent}
+                  quote={quoteContentArea}
+                  careerContent={careersBody}
+                />
+              )
+            }
+            <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+            {
+              !lowerContent && (
+                <div
+                  class="
           h-[0px]
           mt-[-7px]
           md:mt-[0px]
           md:h-[46px]
           lg:h-[33px]
-          "></div>
-)}
+          "
+                />
+              )
+            }
           </div>
-                  <div class="lg:max-w-[70.5rem] lg:m-auto">
-
-          {
-            learnMoreList && (
-              <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
-            )
-          }
+          <div class="lg:max-w-[70.5rem] lg:m-auto">
+            {
+              learnMoreList && (
+                <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
+              )
+            }
           </div>
         </div>
+      </div>
+      <NextStepFooter />
     </div>
-    <NextStepFooter />
   </main>
 </Layout>
