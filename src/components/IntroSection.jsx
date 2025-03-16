@@ -294,41 +294,35 @@ export default function IntroSection() {
       >
         {/* WebP version for desktop */}
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero.webp"
+          srcSet="/homepage-hero/hero.webp"
           type="image/webp"
           media="(min-width: 901px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero.jpg"
+          srcSet="/homepage-hero/hero.jpg"
           type="image/jpeg"
           media="(min-width: 901px)"
         />
 
         {/* WebP version for tablet */}
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-tablet.webp"
+          srcSet="/homepage-hero/hero-tablet.webp"
           type="image/webp"
           media="(min-width: 551px)"
         />
         <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-tablet.jpg"
+          srcSet="/homepage-hero/hero-tablet.jpg"
           type="image/jpeg"
           media="(min-width: 551px)"
         />
 
         {/* WebP version for mobile */}
-        <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.webp"
-          type="image/webp"
-        />
-        <source
-          srcSet="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.jpg"
-          type="image/jpeg"
-        />
+        <source srcSet="/homepage-hero/hero-mobile.webp" type="image/webp" />
+        <source srcSet="/homepage-hero/hero-mobile.jpg" type="image/jpeg" />
 
         {/* Fallback image */}
         <img
-          src="https://tcnj.edu/custom/undergraduate/img/final-hero-2/hero-mobile.jpg"
+          src="/homepage-hero/hero-mobile.jpg"
           alt="TCNJ scenery"
           className="w-[100%] object-cover h-[100%]"
         />

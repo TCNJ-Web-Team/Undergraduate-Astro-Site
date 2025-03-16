@@ -50,7 +50,7 @@ export default function GlobalHeader({ indexCheck }) {
           <img
             alt="Close"
             id="close-button"
-            src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg"
+            src="/close-button.svg"
             onClick={openSideNav}
           />
           <div id="nav-container">
@@ -110,7 +110,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="facebook icon"
-                    src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/facebook-4-32.png"
+                    src="./facebook-4-32.png"
                   />
                 </a>
                 <a href="http://twitter.com/tcnj">
@@ -118,7 +118,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="twitter icon"
-                    src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/twitter-4-32.png"
+                    src="./twitter-4-32.png"
                   />
                 </a>
                 <a href="https://www.linkedin.com/school/the-college-of-new-jersey/">
@@ -126,7 +126,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="linkedin icon"
-                    src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/linkedin-4-32.png"
+                    src="./linkedin-4-32.png"
                   />
                 </a>
                 <a href="http://instagram.com/tcnj_official">
@@ -134,7 +134,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="instagram icon"
-                    src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/instagram-4-32.png"
+                    src="./instagram-4-32.png"
                   />
                 </a>
                 <a href="http://www.youtube.com/tcnjvideo">
@@ -142,7 +142,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="youtube icon"
-                    src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/youtube-32-rev.png"
+                    src="./youtube-32-rev.png"
                   />
                 </a>
               </div>
@@ -190,7 +190,7 @@ export default function GlobalHeader({ indexCheck }) {
             </a>
             <img
               id="open-sidebar-button"
-              src="https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/menu-icon.svg"
+              src="/menu-icon-white.svg"
               alt="Global Nav Menu"
               onClick={openSideNav}
               className="w-[17px] h-[14px]"

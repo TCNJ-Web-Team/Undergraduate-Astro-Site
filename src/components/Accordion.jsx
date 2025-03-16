@@ -33,13 +33,13 @@ export default function Accodion({ children, header, idName, startOpen }) {
         <span className="arrow">
           {open ? (
             <img
-              src="https://tcnj.edu/custom/icon-library/minus-dark.svg"
+              src="/minus-dark.svg"
               alt="close"
               className="h-[20px] w-[20px]"
             />
           ) : (
             <img
-              src="https://tcnj.edu/custom/icon-library/plus-dark.svg"
+              src="/plus-dark.svg"
               alt="open"
               className="h-[20px] w-[20px]"
             />
