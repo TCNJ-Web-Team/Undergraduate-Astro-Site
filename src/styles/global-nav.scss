@@ -171,7 +171,8 @@ $domine: "Domine", serif;
       display: inline-block;
       background-repeat: no-repeat;
       background-size: 16px;
-      background-image: url("https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg");
+      // background-image: url("https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg");
+      background-image: url("./close-button.svg");
     }
   }
   .content {
@@ -317,7 +318,8 @@ $domine: "Domine", serif;
         display: inline-block;
         background-repeat: no-repeat;
         background-size: 16px;
-        background-image: url("https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg");
+        // background-image: url("https://brand.tcnj.edu/wp-content/uploads/sites/11/2023/07/close-button.svg");
+        background-image: url("./close-button.svg");
       }
     }
     .content {
@@ -426,8 +428,8 @@ $domine: "Domine", serif;
 
   .search-icon {
     border: 1px solid #eaeaea;
-    background: url("https://brand.tcnj.edu/wp-content/uploads/sites/11/2018/10/search30.png")
-      left no-repeat;
+    background: url("https://programs.tcnj.edu/search30.png") left no-repeat;
+
     color: #eaeaea;
     font-size: 18px;
     padding: 10px 0;
