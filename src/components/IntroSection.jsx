@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import "../styles/intro-popup.scss";
 export default function IntroSection() {
   const [accellOpen, setAccellOpen] = useState(false);
   const [dualOpen, setDualOpen] = useState(false);
   const accellText = useRef(null);
   const dualText = useRef(null);
+  // const [setIsMounted] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -87,11 +88,7 @@ export default function IntroSection() {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{
-            delay: 0.15,
-            ease: "easeOut",
-            duration: 0.35,
-          }}
+          transition={{ delay: 0.15, ease: "easeOut", duration: 0.35 }}
         >
           160+ Undergraduate Programs
         </h1>
@@ -101,11 +98,7 @@ export default function IntroSection() {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{
-            delay: 0.65,
-            ease: "easeOut",
-            duration: 0.35,
-          }}
+          transition={{ delay: 0.65, ease: "easeOut", duration: 0.35 }}
         >
           TCNJ allows you to craft an education that's uniquely yours, with
           flexible options across majors, minors, concentration areas, and

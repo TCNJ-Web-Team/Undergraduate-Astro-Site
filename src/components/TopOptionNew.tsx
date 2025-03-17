@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Popup from "./Popup";
 
 type School = string[];
 
-type Department = {
-  deptTitle: string;
-  deptUrl: string;
-}[];
+type Department = { deptTitle: string; deptUrl: string }[];
 
 interface TopOptionNewProps {
   heading: string;

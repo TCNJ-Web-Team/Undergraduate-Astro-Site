@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import "../styles/program-card.scss";
 const ProgramCard = ({ program, listType, index, animationState }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
   const activeHover = isHovered ? "active-hover" : "";
   const listOnly = listType == "list" ? true : false;

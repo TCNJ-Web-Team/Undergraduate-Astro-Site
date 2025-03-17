@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 
-export const FilterDisplayBox = ({ filteredData, boxId, checkboxContent }) => {
+export const FilterDisplayBox = ({ boxId, checkboxContent }) => {
   //   console.log(filteredData);
   //   console.log(boxId);
   return (

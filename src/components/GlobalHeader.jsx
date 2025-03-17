@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+// import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 // import "../styles/accordion-styles.scss";
 import "../styles/global-nav.scss";
 export default function GlobalHeader({ indexCheck }) {

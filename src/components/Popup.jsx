@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Popup = ({ content, onClose, heading }) => {
   const containerRef = useRef();
