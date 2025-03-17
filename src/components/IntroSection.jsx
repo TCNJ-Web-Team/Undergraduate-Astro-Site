@@ -228,7 +228,7 @@ export default function IntroSection() {
               onClick={() => openAccellPop(accellText)}
             />
           </span>
-          and dual degree
+          and dual-degree
           <span className="inline-block mr-[5px] ml-[2px] relative">
             <div
               className={`popup-container-two fixed top-0 left-0
