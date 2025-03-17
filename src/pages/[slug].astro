@@ -45,10 +45,16 @@ export async function getStaticPaths() {
         heroImgDesktop {
           sourceUrl
         }
+        heroImgDesktopWebp{
+          sourceUrl
+        }
         horizontalPositionDesktopHero
         horizontalPositionTablet
         horizontalPositionMobile
         heroImgTablet{
+          sourceUrl
+        }
+        heroImgTabletWebp{
           sourceUrl
         }
         heroImgMobile{
@@ -112,10 +118,12 @@ export async function getStaticPaths() {
         acceleratedSubtitle:string[];
         departmentRepeater: string[];
         heroImgDesktop: string;
+        heroImgDesktopWebp: string;
         horizontalPositionDesktopHero: number;
           horizontalPositionTablet: number;
         horizontalPositionMobile: number;
         heroImgTablet: string;
+        heroImgTabletWebp: string;
         heroImgMobile: string;
         heroImgMobileWebp: string;
         badge: string[];
@@ -149,7 +157,9 @@ export async function getStaticPaths() {
         acceleratedSubtitle: program.program.acceleratedSubtitle,
         department: program.program.departmentRepeater,
         heroImgDesktop: program.program.heroImgDesktop,
+        heroImgDesktopWebp: program.program.heroImgDesktopWebp,
         heroImgTablet: program.program.heroImgTablet,
+        heroImgTabletWebp: program.program.heroImgTabletWebp,
         heroImgMobile: program.program.heroImgMobile,
         heroImgMobileWebp: program.program.heroImgMobileWebp,
         badge: program.program.badge,
@@ -215,7 +225,13 @@ interface AstroProps {
   heroImgDesktop: {
     sourceUrl: string;
   };
+  heroImgDesktopWebp: {
+    sourceUrl: string;
+  };
   heroImgTablet: {
+    sourceUrl: string;
+  };
+  heroImgTabletWebp: {
     sourceUrl: string;
   };
   heroImgMobile: {
@@ -265,10 +281,12 @@ const {
   acceleratedSubtitle,
   department,
   heroImgDesktop,
+  heroImgDesktopWebp,
   horizontalPositionDesktopHero,
   horizontalPositionTablet,
         horizontalPositionMobile,
   heroImgTablet,
+  heroImgTabletWebp,
   heroImgMobile,
   heroImgMobileWebp,
   badge,
@@ -363,9 +381,11 @@ const { sourceUrl } = heroImgDesktop ?? {
             <>
            
               <AnimatedHero
-              heroImgMobileWebp={heroImgMobileWebp}
+                heroImgMobileWebp={heroImgMobileWebp}
                 heroImgMobile={heroImgMobile}
+                heroImgTabletWebp={heroImgTabletWebp}
                 heroImgTablet={heroImgTablet}
+                heroImgDesktopWebp={heroImgDesktopWebp}
                 sourceUrl={sourceUrl}
                 horizontalPositionDesktopHero={horizontalPositionDesktopHero}
                 horizontalPositionTablet={horizontalPositionTablet}
