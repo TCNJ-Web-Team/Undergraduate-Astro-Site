@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 // import "../src/styles/hero-styles.scss";
 
 function AnimatedHero({

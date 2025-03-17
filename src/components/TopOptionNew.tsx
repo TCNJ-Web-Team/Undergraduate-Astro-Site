@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Popup from "./Popup";
 
 type School = string[];
 
-type Department = {
-  deptTitle: string;
-  deptUrl: string;
-}[];
+type Department = { deptTitle: string; deptUrl: string }[];
 
 interface TopOptionNewProps {
   heading: string;
@@ -88,7 +85,7 @@ const TopOptionNew: FC<TopOptionNewProps> = ({
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img
         className="w-[26px] h-auto mt-[3px]"
-        src={`https://tcnj.edu/custom/icon-library/micro/${imgSrc}.svg`}
+        src={`/micro/${imgSrc}.svg`}
         alt={`${heading} icon`}
       />
       <div className="flex-col flex gap-[2px]  md:gap-[5px]">

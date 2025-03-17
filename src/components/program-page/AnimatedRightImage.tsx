@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 interface AnimatedRightImageProps {
@@ -15,20 +15,21 @@ const AnimatedRightImage: React.FC<AnimatedRightImageProps> = ({
   rightImageHorizontalPosition,
   rightImageVerticalPosition,
 }) => {
-  const fadeInAnimationVariant = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
+  // const fadeInAnimationVariant = {
+  //   hidden: { opacity: 0 },
+  //   show: {
+  //     opacity: 1,
 
-      transition: {
-        delay: 0.25,
-        ease: "easeOut",
-        duration: 0.75,
-      },
-    },
-  };
+  //     transition: {
+  //       delay: 0.25,
+  //       ease: "easeOut",
+  //       duration: 0.75,
+  //     },
+  //   },
+  // };
 
-  const { ref, inView } = useInView({
+  // const { ref, inView } = useInView({
+  const { ref } = useInView({
     triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
     threshold: 0.35, // 35% of the element is in view
   });

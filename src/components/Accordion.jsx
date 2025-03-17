@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import "../styles/accordion-styles.scss";
 
 export default function Accodion({ children, header, idName, startOpen }) {

@@ -1,11 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
-import { A11y, Pagination, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { SwiperNavButtons } from "./SwiperNavButton";
+// import { SwiperNavButtons } from "./SwiperNavButton";
 import "../styles/custom-swiper.scss";
 
 export default function RelatedProgSlider({ learnMoreList }) {

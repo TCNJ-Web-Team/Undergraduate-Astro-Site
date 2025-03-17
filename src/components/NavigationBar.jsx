@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function NavigationBar({
   careerCheck,
@@ -21,7 +21,7 @@ function NavigationBar({
           <span>
             <img
               className="w-[17px] h-[14px] "
-              src={`https://tcnj.edu/custom/icon-library/${isMenuOpen ? "menu-close" : "menu-icon"}.svg`}
+              src={`/micro/${isMenuOpen ? "menu-close" : "menu-icon"}.svg`}
               alt="menu icon"
             />
           </span>

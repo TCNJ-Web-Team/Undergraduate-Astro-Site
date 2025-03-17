@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { wpquery } from "../data/wordpress";
-import TitleAndNav from "../components/TitleAndNav";
+// import TitleAndNav from "../components/TitleAndNav";
 import ProgramList from "../components/ProgramList";
 import NextStepFooter from "../components/NextStepFooter";
 import "@fontsource/domine/400.css";
@@ -74,10 +74,10 @@ const programOptionsClean = programOptions.page.program.programOptions;
 // console.log(programOptionsClean);
 const additionalOptions = programOptions.page.program.additionalOptions;
 // console.log(additionalOptions);
-const combinedData = {
-  ...data,
-  ...redirectData,
-};
+// const combinedData = {
+//   ...data,
+//   ...redirectData,
+// };
 // console.log(data);
 // console.log(combinedData.programs.nodes);
 // console.log(redirectData.programRedirects.nodes);

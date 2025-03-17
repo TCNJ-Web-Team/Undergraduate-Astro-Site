@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import fitty from "fitty";
+// import React, { useEffect, useRef } from "react";
+// import fitty from "fitty";
 import { decode } from "html-entities";
 
 function QuoteContent({ content }) {

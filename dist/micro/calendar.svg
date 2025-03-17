@@ -1,0 +1,11 @@
+<svg id="calendar" xmlns="http://www.w3.org/2000/svg" width="22.428" height="25.139" viewBox="0 0 22.428 25.139">
+  <g id="calendar-micro-icon" transform="translate(0)">
+    <path id="Path_1781" data-name="Path 1781" d="M430.042,281H426.3v-3.4h-2.859V281h-7.394v-3.4h-2.81V281h-3.648a.989.989,0,0,0-.986.986v19.766a.989.989,0,0,0,.986.986h20.456a.989.989,0,0,0,.986-.986V281.987A.989.989,0,0,0,430.042,281Zm-.986,19.766H410.572V285.881h18.484Z" transform="translate(-408.6 -277.6)" fill="#010101"/>
+    <rect id="Rectangle_89" data-name="Rectangle 89" width="3.352" height="3.352" transform="translate(9.562 11.83)" fill="#010101"/>
+    <rect id="Rectangle_90" data-name="Rectangle 90" width="3.352" height="3.352" transform="translate(14.344 11.83)" fill="#010101"/>
+    <rect id="Rectangle_91" data-name="Rectangle 91" width="3.352" height="3.352" transform="translate(4.88 11.83)" fill="#010101"/>
+    <rect id="Rectangle_92" data-name="Rectangle 92" width="3.352" height="3.352" transform="translate(9.562 16.611)" fill="#010101"/>
+    <rect id="Rectangle_93" data-name="Rectangle 93" width="3.352" height="3.352" transform="translate(14.344 16.611)" fill="#010101"/>
+    <rect id="Rectangle_94" data-name="Rectangle 94" width="3.352" height="3.352" transform="translate(4.88 16.611)" fill="#010101"/>
+  </g>
+</svg>

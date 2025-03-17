@@ -1,15 +1,10 @@
 import React from "react";
 import ProgramGlanceCopy from "../ProgramGlanceCopy";
-import ProgramCareersHeading from "../ProgramCareersHeading";
+// import ProgramCareersHeading from "../ProgramCareersHeading";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariant } from "../../animations/fadeInVariant";
 
-type Props = {
-  left?: string;
-  right?: string;
-  body?: string;
-  heading: string;
-};
+type Props = { left?: string; right?: string; body?: string; heading: string };
 
 const AnimatedBodyCopy: React.FC<Props> = ({ left, right, body, heading }) => {
   const headingLower = heading.replace(/\s+/g, "-").toLowerCase();

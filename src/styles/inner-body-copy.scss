@@ -191,11 +191,13 @@ a.yellow-bg-text {
       // padding-bottom: 25px;
       @media screen and (max-width: $md) {
       }
-      line-height: 41px;
       @media screen and (max-width: $sm) {
         font-size: 23px;
         line-height: 28px;
         padding-bottom: 0px;
+      }
+      & {
+        line-height: 41px;
       }
       + p.large-para {
         // Your specific styles for the first p.more-spacing after h3
@@ -224,8 +226,12 @@ a.yellow-bg-text {
           padding-top: 41px;
         }
       }
-      display: block;
-      padding-top: 17px;
+
+      & {
+        display: block;
+        padding-top: 17px;
+      }
+
       @media screen and (min-width: $md) {
         padding-top: 13px;
       }
@@ -259,12 +265,14 @@ a.yellow-bg-text {
           padding-top: 36px;
         }
       }
-      font-size: 19px;
-      line-height: 30px;
-      // margin-top: -15px;
-      //  negative margin
-      padding-top: 13px;
-      font-family: $domine;
+      & {
+        font-size: 19px;
+        line-height: 30px;
+        // margin-top: -15px;
+        //  negative margin
+        padding-top: 13px;
+        font-family: $domine;
+      }
       // padding-top: 10px;
       @media screen and (min-width: $sm) {
         padding-top: 15px;
@@ -354,9 +362,11 @@ a.yellow-bg-text {
       @media screen and (max-width: $md) {
         padding-bottom: 22px;
       }
-      padding-top: 46px;
       @media screen and (min-width: $sm) {
         padding-top: 82px;
+      }
+      & {
+        padding-top: 46px;
       }
     }
   }
