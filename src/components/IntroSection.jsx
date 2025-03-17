@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import "../styles/intro-popup.scss";
 export default function IntroSection() {
   const [accellOpen, setAccellOpen] = useState(false);
@@ -83,7 +83,7 @@ export default function IntroSection() {
           <a href="https://tcnj.edu">TCNJ Home</a> /{" "}
           <span className="font-[600]">Explore Programs</span>
         </div>
-        <h1
+        {/* <h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
@@ -176,17 +176,13 @@ export default function IntroSection() {
           </a>{" "}
           is also available. Search by keyword or browse programs by selecting a
           school, program type, and/or other options.
-        </div>
-        {/* <motion.h1
+        </div> */}
+        <motion.h1
           className="pt-[100px] font-alfaslab text-tcnjyellow text-[32px] leading-[37px] pb-[18px] sm:pb-[18px] sm:pt-[150px] sm:text-[40px] sm:leading-[45px] md:text-[60px] md:leading-[65px] md:pt-[93px] font-[400]"
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{
-            delay: 0.15,
-            ease: "easeOut",
-            duration: 0.35,
-          }}
+          transition={{ delay: 0.15, ease: "easeOut", duration: 0.35 }}
         >
           160+ Undergraduate Programs
         </motion.h1>
@@ -196,11 +192,7 @@ export default function IntroSection() {
           initial={{ opacity: 0, y: -5 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{
-            delay: 0.65,
-            ease: "easeOut",
-            duration: 0.35,
-          }}
+          transition={{ delay: 0.65, ease: "easeOut", duration: 0.35 }}
         >
           TCNJ allows you to craft an education that's uniquely yours, with
           flexible options across majors, minors, concentration areas, and
@@ -236,7 +228,7 @@ export default function IntroSection() {
               onClick={() => openAccellPop(accellText)}
             />
           </span>
-          and dual degree
+          and dual-degree
           <span className="inline-block mr-[5px] ml-[2px] relative">
             <div
               className={`popup-container-two fixed top-0 left-0
@@ -278,7 +270,7 @@ export default function IntroSection() {
           </a>{" "}
           is also available. Search by keyword or browse programs by selecting a
           school, program type, and/or other options.
-        </motion.div> */}
+        </motion.div>
       </div>
 
       <picture

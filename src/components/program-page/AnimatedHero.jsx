@@ -4,14 +4,17 @@
 function AnimatedHero({
   heroImgMobileWebp,
   heroImgMobile,
+  heroImgTabletWebp,
   heroImgTablet,
   sourceUrl,
+  heroImgDesktopWebp,
   horizontalPositionDesktopHero,
   horizontalPositionMobile,
   horizontalPositionTablet,
   title,
   badge,
 }) {
+  // console.log(heroImgTabletWebp, heroImgDesktopWebp);
   const cleanedSourceUrl =
     sourceUrl?.replace("-scaled.jpg", ".jpg") || sourceUrl;
   const cleanedMobileUrl =
@@ -36,8 +39,18 @@ function AnimatedHero({
         {heroImgMobile && (
           <source media="(max-width: 550px)" srcSet={cleanedMobileUrl} />
         )}
+        {heroImgTabletWebp && (
+          <source
+            media="(max-width: 900px)"
+            srcSet={heroImgTabletWebp.sourceUrl}
+            type="image/webp"
+          />
+        )}
         {heroImgTablet && (
           <source media="(max-width: 900px)" srcSet={cleanedTabletUrl} />
+        )}
+        {heroImgDesktopWebp && (
+          <source srcSet={heroImgDesktopWebp.sourceUrl} type="image/webp" />
         )}
         <img
           src={cleanedSourceUrl}
