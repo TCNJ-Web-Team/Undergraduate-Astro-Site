@@ -155,7 +155,7 @@ export default function GlobalHeader({ indexCheck }) {
           <a style={{ display: "flex" }} href="https://tcnj.edu/">
             <img
               id="tcnj-logo"
-              src="https://graduate.tcnj.edu/explore-programs/_nuxt/img/tcnj-logo.3f4bf41.svg"
+              src="/tcnj-logo.svg"
               alt="TCNJ"
               className="w-[203px] h-[43.922px]"
             />
