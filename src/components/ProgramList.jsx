@@ -108,6 +108,8 @@ export default function ProgramList({
   //     program.program.school.toString().toLowerCase().includes(lowerCaseText)
   //   );
   // };
+
+  // CHANGE BELOW FOR KEYWORD SEARCH
   const filterByText = (program) => {
     const lowerCaseText = searchText.toLowerCase();
     const schoolArray = Array.isArray(program.program.school)
