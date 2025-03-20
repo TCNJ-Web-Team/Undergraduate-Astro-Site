@@ -100,7 +100,13 @@ const programListSchema = {
     (
       program: {
         title: any;
-        program: { description: any; school: any[]; slug: any; keywords: any };
+        program: {
+          [x: string]: any;
+          description: any;
+          school: any[];
+          slug: any;
+          keywords: any;
+        };
       },
       index: number
     ) => ({
@@ -118,8 +124,8 @@ const programListSchema = {
             : program.program.school,
         },
 
-        url: `https://programs.tcnj.edu/${program.program.slug}`, // Update with your actual URL pattern
-        keywords: program.program.keywords || "",
+        url: `${program.program.redirecturl} || https://programs.tcnj.edu/${program.program.slug}`, // Update with your actual URL pattern
+        // keywords: program.program.keywords || "",
       },
     })
   ),
