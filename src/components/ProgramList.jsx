@@ -31,6 +31,13 @@ export default function ProgramList({
   // );
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
+  // console.log(dataNodes);
+  const abbreviatedData = dataNodes
+    .sort((a, b) => a.title.localeCompare(b.title))
+    .slice(0, 12);
+  // console.log(abbreviatedData);
+
+  const [displayFullList, setDisplayFullList] = useState(false);
   const [animatedCards, setAnimatedCards] = useState(false);
   // console.log(animatedCards);
   const [filteredData, setFilteredData] = useState(dataNodes);
@@ -199,8 +206,11 @@ export default function ProgramList({
 
     setSelectedFilters(updatedFilters);
   };
-
+  const handleFullListClick = () => {
+    setDisplayFullList(true);
+  };
   const handleFilterChange = (event) => {
+    handleFullListClick();
     setSearchText(event.target.value);
     setAnimatedCards(true);
   };
@@ -262,6 +272,7 @@ export default function ProgramList({
         border-[#bcbcbc] placeholder-[#000000]
         lg:px-[50px]"
             onChange={handleFilterChange}
+            onClick={() => handleFullListClick()}
             placeholder="Search by keyword"
           />
           <div
@@ -271,6 +282,7 @@ export default function ProgramList({
             sm:grid sm:grid-cols-2
             md:flex
             md:gap-[40px] md:flex-row"
+            onClick={() => handleFullListClick()}
           >
             <DropDownAccordion
               checkboxContent={renderCheckboxes(
@@ -318,6 +330,7 @@ export default function ProgramList({
           "
         >
           <div
+            onClick={() => setDisplayFullList(true)}
             id="left-content"
             className="flex flex-row flex-wrap  gap-[10px]"
           >
@@ -390,6 +403,7 @@ src="/close-item.svg" /> */}
             </div>
           </div>
           <div
+            onClick={() => setDisplayFullList(true)}
             id="right-content"
             className="flex flex-row sm:h-[50px] items-center 
      
@@ -493,7 +507,7 @@ src="/close-item.svg" /> */}
           // stiffness: 50,
         }}
       >
-        {filteredData &&
+        {/* {filteredData &&
           filteredData.map((program, index) => (
             <ProgramCard
               program={program}
@@ -502,7 +516,26 @@ src="/close-item.svg" /> */}
               index={index}
               animationState={animatedCards}
             />
-          ))}
+          ))} */}
+        {!displayFullList && abbreviatedData
+          ? abbreviatedData.map((program, index) => (
+              <ProgramCard
+                program={program}
+                key={program.program.slug + index}
+                listType={programView}
+                index={index}
+                animationState={animatedCards}
+              />
+            ))
+          : filteredData.map((program, index) => (
+              <ProgramCard
+                program={program}
+                key={program.program.slug + index}
+                listType={programView}
+                index={index}
+                animationState={animatedCards}
+              />
+            ))}
       </motion.div>
       {/* Display filtered data */}
     </div>
