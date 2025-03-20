@@ -83,64 +83,64 @@ export default function ProgramList({
       try {
         const savedScrollY = sessionStorage.getItem("programListScrollY");
         if (savedScrollY !== null) {
-          window.scrollTo(0, parseInt(savedScrollY, 10));
-
-          // If we're restoring a scroll position beyond our threshold,
-          // also restore the full list display
+          // Don't immediately scroll on mount - can cause mobile issues
+          // Instead, just set displayFullList if needed
           if (parseInt(savedScrollY, 10) > 100) {
             setDisplayFullList(true);
           }
         }
       } catch (e) {
-        // Session storage not available, fallback to just checking current scroll
-        const scrollThreshold = 100;
-        if (window.scrollY > scrollThreshold) {
-          setDisplayFullList(true);
-        }
+        // Fallback is not needed here
       }
     };
 
-    // Only run this after the component has fully mounted
     if (hasMounted) {
       tryToRestoreScroll();
     }
 
-    // Also set up scroll event listener to save position and expand list when scrolling
+    // Create a throttled scroll handler to reduce firing frequency
+    let ticking = false;
     const handleScroll = () => {
-      try {
-        // Save current scroll position whenever user scrolls
-        sessionStorage.setItem("programListScrollY", window.scrollY.toString());
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Only save position if we've scrolled significantly
+          if (window.scrollY > 20) {
+            try {
+              sessionStorage.setItem(
+                "programListScrollY",
+                window.scrollY.toString()
+              );
+            } catch (e) {
+              // Silently handle errors
+            }
+          }
 
-        // Also expand list if scrolled past threshold
-        const scrollThreshold = 1;
-        if (window.scrollY > scrollThreshold && !displayFullList) {
-          setDisplayFullList(true);
-        }
-      } catch (e) {
-        // Session storage not available, just handle the list expansion
-        const scrollThreshold = 1;
-        if (window.scrollY > scrollThreshold && !displayFullList) {
-          setDisplayFullList(true);
-        }
+          // Use a higher threshold to prevent accidental triggers
+          const scrollThreshold = 100;
+          if (window.scrollY > scrollThreshold && !displayFullList) {
+            setDisplayFullList(true);
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener for better mobile performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Clean up
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [hasMounted, displayFullList]); // Include both in dependencies
-  // // Add this useEffect hook at the same level as your other useEffect hooks
-  // useEffect(() => {
-  //   // Scroll to the top of the page when component mounts
-  //   window.scrollTo(0, 0);
-
-  //   // You could also set displayFullList back to false here if desired
-  //   setDisplayFullList(false);
-  // }, []); // Empty dependency array means this runs only once when component mounts
+  }, [hasMounted, displayFullList]);
+  useEffect(() => {
+    // Preload full list data
+    const fullListData = dataNodes.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+    setFilteredData(fullListData);
+  }, []);
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     document.addEventListener("keydown", handleClickOutside);
@@ -159,25 +159,7 @@ export default function ProgramList({
     selectedAdditionalOptionFilters,
     searchText,
   ]);
-  // Inside your component, add a new useEffect for scroll detection
-  useEffect(() => {
-    const handleScroll = () => {
-      // You can adjust this value to determine when to trigger the full list display
-      const scrollThreshold = 100; // pixels scrolled from top
 
-      if (window.scrollY > scrollThreshold && !displayFullList) {
-        setDisplayFullList(true);
-      }
-    };
-
-    // Add the scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [displayFullList]); // Add displayFullList as a dependency
   const filterData = () => {
     let newData = dataNodes.filter(filterByText);
 
@@ -585,14 +567,30 @@ src="/close-item.svg" /> */}
         md:pb-[100px]
         lg:px-0
         `}
-        initial={!animatedCards ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
+        initial={
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            typeof navigator !== "undefined" ? navigator.userAgent : ""
+          )
+            ? { opacity: 1, y: 0 }
+            : !animatedCards
+              ? { opacity: 0, y: 5 }
+              : { opacity: 1, y: 0 }
+        }
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.15,
+          delay:
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              typeof navigator !== "undefined" ? navigator.userAgent : ""
+            )
+              ? 0
+              : 0.15,
           ease: "easeOut",
-          duration: 0.3,
-          // type: "spring",
-          // stiffness: 50,
+          duration:
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              typeof navigator !== "undefined" ? navigator.userAgent : ""
+            )
+              ? 0
+              : 0.3,
         }}
       >
         {/* {filteredData &&
