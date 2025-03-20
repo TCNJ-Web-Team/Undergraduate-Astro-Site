@@ -23,9 +23,9 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
       )
     : `./${slug}`;
   // console.log(additionalOptions);
-  const filteredAdditionalOptions = Array.isArray(additionalOptions)
-    ? additionalOptions.filter((option) => option !== "Languages")
-    : [];
+  // const filteredAdditionalOptions = Array.isArray(additionalOptions)
+  //   ? additionalOptions.filter((option) => option !== "Languages")
+  //   : [];
   // SWAP additionalOptions for filteredAdditionalOptions when language icon added
   // console.log(filteredAdditionalOptions);
   // console.log("Original URL:", redirecturl);
@@ -92,8 +92,8 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
             listOnly && "md:max-w-[260px] md:w-[100%]"
           }`}
         >
-          {(programOptions || filteredAdditionalOptions) &&
-            [...(programOptions || []), ...(filteredAdditionalOptions || [])] // Combine programOptions and additionalOptions
+          {(programOptions || additionalOptions) &&
+            [...(programOptions || []), ...(additionalOptions || [])] // Combine programOptions and additionalOptions
               .slice() // Create a shallow copy to avoid mutating the original array
               .sort((a, b) => progOptionSort[a] - progOptionSort[b]) // Sort the combined array
               .map((option, index) => {
