@@ -82,9 +82,54 @@ const additionalOptions = programOptions.page.program.additionalOptions;
 // console.log(combinedData.programs.nodes);
 // console.log(redirectData.programRedirects.nodes);
 // console.log(areaOfStudyNoGrad);
+
+// STRUCTURED DATA START
+const combinedData = data.programs.nodes.concat(
+  redirectData.programRedirects.nodes.map(
+    (item: { redirectProgram: any; title: any }) => ({
+      program: item.redirectProgram,
+      title: item.title,
+    })
+  )
+);
+// console.log(combinedData.length);
+const programListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: combinedData.map(
+    (
+      program: {
+        title: any;
+        program: { description: any; school: any[]; slug: any; keywords: any };
+      },
+      index: number
+    ) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CollegeOrUniversityDegree", // or "Course" depending on what fits better
+        name: program.title,
+        description: program.program.description || "",
+        provider: {
+          "@type": "EducationalOrganization",
+          name: "The College of New Jersey", // Your school name
+          department: Array.isArray(program.program.school)
+            ? program.program.school.join(", ")
+            : program.program.school,
+        },
+        url: `https://programs.tcnj.edu/${program.program.slug}`, // Update with your actual URL pattern
+        keywords: program.program.keywords || "",
+      },
+    })
+  ),
+};
+
+const schemaString = JSON.stringify(programListSchema);
 ---
 
 <Layout title="160+ Undergraduate Programs | TCNJ">
+  <script type="application/ld+json" set:html={schemaString} />
+
   <header>
     <!-- <TitleAndNav /> -->
     <IntroSection client:load />
