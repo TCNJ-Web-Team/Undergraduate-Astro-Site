@@ -124,8 +124,7 @@ const programListSchema = {
             : program.program.school,
         },
 
-        url: `${program.program.redirecturl} || https://programs.tcnj.edu/${program.program.slug}`, // Update with your actual URL pattern
-        // keywords: program.program.keywords || "",
+        url: `${program.program.redirecturl != null ? program.program.redirecturl : `https://programs.tcnj.edu/${program.program.slug}`}`, // keywords: program.program.keywords || "",
       },
     })
   ),
