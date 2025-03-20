@@ -12,7 +12,7 @@ import IntroSection from "../components/IntroSection";
 // import "../styles/homepage.scss";
 const data = await wpquery({
   query: ` query ProgramsListing {
-              programs(first:120) {
+              programs(first:220) {
                 nodes {
                   program {
                     degreeType
@@ -20,7 +20,7 @@ const data = await wpquery({
                     school
                     programOptions
                     additionalOptions
-         
+                    keywords
                   }
                   title
                 }
@@ -29,7 +29,7 @@ const data = await wpquery({
 });
 const redirectData = await wpquery({
   query: `query RedirectList {
-            programRedirects(first:120) {
+            programRedirects(first:220) {
               nodes {
                   redirectProgram {
                     degreeType
@@ -38,7 +38,7 @@ const redirectData = await wpquery({
                     school
                     programOptions
                     additionalOptions
-              
+                    keywords
                   }
                   title
                 }

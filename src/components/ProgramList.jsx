@@ -27,7 +27,7 @@ export default function ProgramList({
     }))
   );
   // console.log(
-  //   combinedData.filter((item) => item.title === "Integrative STEM Education")
+  //   combinedData.filter((item) => item.title === "Interactive Multimedia")
   // );
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
@@ -110,19 +110,40 @@ export default function ProgramList({
   // };
 
   // CHANGE BELOW FOR KEYWORD SEARCH
+  // const filterByText = (program) => {
+  //   const lowerCaseText = searchText.toLowerCase();
+  //   const schoolArray = Array.isArray(program.program.school)
+  //     ? program.program.school
+  //     : [program.program.school];
+
+  //   return (
+  //     program.title.toLowerCase().includes(lowerCaseText) ||
+  //     schoolArray.some((school) =>
+  //       school.toString().toLowerCase().includes(lowerCaseText)
+  //     )
+  //   );
+  // };
+
   const filterByText = (program) => {
     const lowerCaseText = searchText.toLowerCase();
     const schoolArray = Array.isArray(program.program.school)
       ? program.program.school
       : [program.program.school];
 
+    // Check for keywords
+    const hasMatchingKeywords = program.program.keywords
+      ? program.program.keywords.toLowerCase().includes(lowerCaseText)
+      : false;
+
     return (
       program.title.toLowerCase().includes(lowerCaseText) ||
       schoolArray.some((school) =>
         school.toString().toLowerCase().includes(lowerCaseText)
-      )
+      ) ||
+      hasMatchingKeywords
     );
   };
+
   const filterBySelectedSchools = (program) => {
     const schoolArray = Array.isArray(program.program.school)
       ? program.program.school
