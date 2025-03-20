@@ -112,13 +112,13 @@ export default function ProgramList({
         sessionStorage.setItem("programListScrollY", window.scrollY.toString());
 
         // Also expand list if scrolled past threshold
-        const scrollThreshold = 100;
+        const scrollThreshold = 1;
         if (window.scrollY > scrollThreshold && !displayFullList) {
           setDisplayFullList(true);
         }
       } catch (e) {
         // Session storage not available, just handle the list expansion
-        const scrollThreshold = 100;
+        const scrollThreshold = 1;
         if (window.scrollY > scrollThreshold && !displayFullList) {
           setDisplayFullList(true);
         }
