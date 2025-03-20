@@ -22,7 +22,12 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
         ""
       )
     : `./${slug}`;
-
+  // console.log(additionalOptions);
+  // const filteredAdditionalOptions = Array.isArray(additionalOptions)
+  //   ? additionalOptions.filter((option) => option !== "Languages")
+  //   : [];
+  // SWAP additionalOptions for filteredAdditionalOptions when language icon added
+  // console.log(filteredAdditionalOptions);
   // console.log("Original URL:", redirecturl);
   // console.log("Processed URL:", processedRedirectUrl);
   // console.log(option);
@@ -129,6 +134,8 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
                       return "w-[14.236px] h-[15px]";
                     case "three-year-bachelors":
                       return "w-[13.391px] h-[15px]";
+                    case "language":
+                      return "w-[17.641px] h-[14.984px]";
                     case "undeclared-option":
                       return "w-[11.223px] h-[15px]";
                     default:
