@@ -70,7 +70,77 @@ export default function ProgramList({
       }
     }
   };
+  // Add these to the top of your component with other state variables
+  const [hasMounted, setHasMounted] = useState(false);
 
+  // Add this useEffect to handle the scroll position restoration
+  useEffect(() => {
+    // Mark component as mounted
+    setHasMounted(true);
+
+    // Try to restore scroll position from sessionStorage
+    const tryToRestoreScroll = () => {
+      try {
+        const savedScrollY = sessionStorage.getItem("programListScrollY");
+        if (savedScrollY !== null) {
+          window.scrollTo(0, parseInt(savedScrollY, 10));
+
+          // If we're restoring a scroll position beyond our threshold,
+          // also restore the full list display
+          if (parseInt(savedScrollY, 10) > 100) {
+            setDisplayFullList(true);
+          }
+        }
+      } catch (e) {
+        // Session storage not available, fallback to just checking current scroll
+        const scrollThreshold = 100;
+        if (window.scrollY > scrollThreshold) {
+          setDisplayFullList(true);
+        }
+      }
+    };
+
+    // Only run this after the component has fully mounted
+    if (hasMounted) {
+      tryToRestoreScroll();
+    }
+
+    // Also set up scroll event listener to save position and expand list when scrolling
+    const handleScroll = () => {
+      try {
+        // Save current scroll position whenever user scrolls
+        sessionStorage.setItem("programListScrollY", window.scrollY.toString());
+
+        // Also expand list if scrolled past threshold
+        const scrollThreshold = 100;
+        if (window.scrollY > scrollThreshold && !displayFullList) {
+          setDisplayFullList(true);
+        }
+      } catch (e) {
+        // Session storage not available, just handle the list expansion
+        const scrollThreshold = 100;
+        if (window.scrollY > scrollThreshold && !displayFullList) {
+          setDisplayFullList(true);
+        }
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasMounted, displayFullList]); // Include both in dependencies
+  // // Add this useEffect hook at the same level as your other useEffect hooks
+  // useEffect(() => {
+  //   // Scroll to the top of the page when component mounts
+  //   window.scrollTo(0, 0);
+
+  //   // You could also set displayFullList back to false here if desired
+  //   setDisplayFullList(false);
+  // }, []); // Empty dependency array means this runs only once when component mounts
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     document.addEventListener("keydown", handleClickOutside);
@@ -89,7 +159,25 @@ export default function ProgramList({
     selectedAdditionalOptionFilters,
     searchText,
   ]);
+  // Inside your component, add a new useEffect for scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      // You can adjust this value to determine when to trigger the full list display
+      const scrollThreshold = 100; // pixels scrolled from top
 
+      if (window.scrollY > scrollThreshold && !displayFullList) {
+        setDisplayFullList(true);
+      }
+    };
+
+    // Add the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [displayFullList]); // Add displayFullList as a dependency
   const filterData = () => {
     let newData = dataNodes.filter(filterByText);
 
