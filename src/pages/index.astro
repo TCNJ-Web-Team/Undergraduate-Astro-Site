@@ -82,9 +82,82 @@ const additionalOptions = programOptions.page.program.additionalOptions;
 // console.log(combinedData.programs.nodes);
 // console.log(redirectData.programRedirects.nodes);
 // console.log(areaOfStudyNoGrad);
+
+// STRUCTURED DATA START
+const combinedData = data.programs.nodes.concat(
+  redirectData.programRedirects.nodes.map(
+    (item: { redirectProgram: any; title: any }) => ({
+      program: item.redirectProgram,
+      title: item.title,
+    })
+  )
+);
+// console.log(combinedData.length);
+// Function to replace staging URLs with production URLs
+// Function to replace staging URLs with production URLs
+const getProductionUrl = (url: string) => {
+  if (url && typeof url === "string") {
+    return url.replace(
+      "https://undergraduate-astro-site-t6y1l.kinsta.page/",
+      "https://programs.tcnj.edu/"
+    );
+  }
+  return null; // Return null instead of the original URL if empty or not a string
+};
+
+// Create a simpler schema (for testing)
+const programListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: combinedData.map(
+    (
+      program: {
+        program: {
+          redirecturl: any;
+          slug: any;
+          description: any;
+          school: any[];
+        };
+        title: any;
+      },
+      index: number
+    ) => {
+      // Create a more readable URL construction
+      let programUrl = null;
+      if (program.program.redirecturl) {
+        programUrl = getProductionUrl(program.program.redirecturl);
+      }
+      if (!programUrl && program.program.slug) {
+        programUrl = `https://programs.tcnj.edu/${program.program.slug}`;
+      }
+
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "EducationalOccupationalProgram",
+          name: program.title,
+          description: program.program.description || "",
+          provider: {
+            "@type": "CollegeOrUniversity",
+            name: "The College of New Jersey",
+            department: Array.isArray(program.program.school)
+              ? program.program.school.join(", ")
+              : program.program.school,
+          },
+          url: programUrl || "https://programs.tcnj.edu/",
+        },
+      };
+    }
+  ),
+};
+
+const schemaString = JSON.stringify(programListSchema);
 ---
 
 <Layout title="160+ Undergraduate Programs | TCNJ">
+  <script type="application/ld+json" set:html={schemaString} />
+
   <header>
     <!-- <TitleAndNav /> -->
     <IntroSection client:load />

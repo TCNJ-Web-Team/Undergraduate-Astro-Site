@@ -31,6 +31,13 @@ export default function ProgramList({
   // );
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
+  // console.log(dataNodes);
+  const abbreviatedData = dataNodes
+    .sort((a, b) => a.title.localeCompare(b.title))
+    .slice(0, 12);
+  // console.log(abbreviatedData);
+
+  const [displayFullList, setDisplayFullList] = useState(false);
   const [animatedCards, setAnimatedCards] = useState(false);
   // console.log(animatedCards);
   const [filteredData, setFilteredData] = useState(dataNodes);
@@ -63,7 +70,77 @@ export default function ProgramList({
       }
     }
   };
+  // Add these to the top of your component with other state variables
+  const [hasMounted, setHasMounted] = useState(false);
 
+  // Add this useEffect to handle the scroll position restoration
+  useEffect(() => {
+    // Mark component as mounted
+    setHasMounted(true);
+
+    // Try to restore scroll position from sessionStorage
+    const tryToRestoreScroll = () => {
+      try {
+        const savedScrollY = sessionStorage.getItem("programListScrollY");
+        if (savedScrollY !== null) {
+          // Don't immediately scroll on mount - can cause mobile issues
+          // Instead, just set displayFullList if needed
+          if (parseInt(savedScrollY, 10) > 100) {
+            setDisplayFullList(true);
+          }
+        }
+      } catch (e) {
+        // Fallback is not needed here
+      }
+    };
+
+    if (hasMounted) {
+      tryToRestoreScroll();
+    }
+
+    // Create a throttled scroll handler to reduce firing frequency
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Only save position if we've scrolled significantly
+          if (window.scrollY > 20) {
+            try {
+              sessionStorage.setItem(
+                "programListScrollY",
+                window.scrollY.toString()
+              );
+            } catch (e) {
+              // Silently handle errors
+            }
+          }
+
+          // Use a higher threshold to prevent accidental triggers
+          const scrollThreshold = 100;
+          if (window.scrollY > scrollThreshold && !displayFullList) {
+            setDisplayFullList(true);
+          }
+
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Use passive listener for better mobile performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasMounted, displayFullList]);
+  useEffect(() => {
+    // Preload full list data
+    const fullListData = dataNodes.sort((a, b) =>
+      a.title.localeCompare(b.title)
+    );
+    setFilteredData(fullListData);
+  }, []);
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     document.addEventListener("keydown", handleClickOutside);
@@ -199,8 +276,11 @@ export default function ProgramList({
 
     setSelectedFilters(updatedFilters);
   };
-
+  const handleFullListClick = () => {
+    setDisplayFullList(true);
+  };
   const handleFilterChange = (event) => {
+    handleFullListClick();
     setSearchText(event.target.value);
     setAnimatedCards(true);
   };
@@ -262,6 +342,7 @@ export default function ProgramList({
         border-[#bcbcbc] placeholder-[#000000]
         lg:px-[50px]"
             onChange={handleFilterChange}
+            onClick={() => handleFullListClick()}
             placeholder="Search by keyword"
           />
           <div
@@ -271,6 +352,7 @@ export default function ProgramList({
             sm:grid sm:grid-cols-2
             md:flex
             md:gap-[40px] md:flex-row"
+            onClick={() => handleFullListClick()}
           >
             <DropDownAccordion
               checkboxContent={renderCheckboxes(
@@ -318,6 +400,7 @@ export default function ProgramList({
           "
         >
           <div
+            onClick={() => setDisplayFullList(true)}
             id="left-content"
             className="flex flex-row flex-wrap  gap-[10px]"
           >
@@ -390,6 +473,7 @@ src="/close-item.svg" /> */}
             </div>
           </div>
           <div
+            onClick={() => setDisplayFullList(true)}
             id="right-content"
             className="flex flex-row sm:h-[50px] items-center 
      
@@ -483,17 +567,33 @@ src="/close-item.svg" /> */}
         md:pb-[100px]
         lg:px-0
         `}
-        initial={!animatedCards ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
+        initial={
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            typeof navigator !== "undefined" ? navigator.userAgent : ""
+          )
+            ? { opacity: 1, y: 0 }
+            : !animatedCards
+              ? { opacity: 0, y: 5 }
+              : { opacity: 1, y: 0 }
+        }
         animate={{ opacity: 1, y: 0 }}
         transition={{
-          delay: 0.15,
+          delay:
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              typeof navigator !== "undefined" ? navigator.userAgent : ""
+            )
+              ? 0
+              : 0.15,
           ease: "easeOut",
-          duration: 0.3,
-          // type: "spring",
-          // stiffness: 50,
+          duration:
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              typeof navigator !== "undefined" ? navigator.userAgent : ""
+            )
+              ? 0
+              : 0.3,
         }}
       >
-        {filteredData &&
+        {/* {filteredData &&
           filteredData.map((program, index) => (
             <ProgramCard
               program={program}
@@ -502,7 +602,26 @@ src="/close-item.svg" /> */}
               index={index}
               animationState={animatedCards}
             />
-          ))}
+          ))} */}
+        {!displayFullList && abbreviatedData
+          ? abbreviatedData.map((program, index) => (
+              <ProgramCard
+                program={program}
+                key={program.program.slug + index}
+                listType={programView}
+                index={index}
+                animationState={animatedCards}
+              />
+            ))
+          : filteredData.map((program, index) => (
+              <ProgramCard
+                program={program}
+                key={program.program.slug + index}
+                listType={programView}
+                index={index}
+                animationState={animatedCards}
+              />
+            ))}
       </motion.div>
       {/* Display filtered data */}
     </div>
