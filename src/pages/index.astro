@@ -94,53 +94,61 @@ const combinedData = data.programs.nodes.concat(
 );
 // console.log(combinedData.length);
 // Function to replace staging URLs with production URLs
+// Function to replace staging URLs with production URLs
 const getProductionUrl = (url: string) => {
   if (url && typeof url === "string") {
-    // Replace the staging domain with the production domain
     return url.replace(
       "https://undergraduate-astro-site-t6y1l.kinsta.page/",
       "https://programs.tcnj.edu/"
     );
   }
-  return url;
+  return null; // Return null instead of the original URL if empty or not a string
 };
 
-// Then in your schema:
+// Create a simpler schema (for testing)
 const programListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   itemListElement: combinedData.map(
     (
       program: {
-        title: any;
         program: {
-          description: any;
-          school: any[];
           redirecturl: any;
           slug: any;
+          description: any;
+          school: any[];
         };
+        title: any;
       },
       index: number
-    ) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "EducationalOccupationalProgram",
-        name: program.title,
-        description: program.program.description || "",
-        provider: {
-          "@type": "CollegeOrUniversity",
-          name: "The College of New Jersey",
-          department: Array.isArray(program.program.school)
-            ? program.program.school.join(", ")
-            : program.program.school,
+    ) => {
+      // Create a more readable URL construction
+      let programUrl = null;
+      if (program.program.redirecturl) {
+        programUrl = getProductionUrl(program.program.redirecturl);
+      }
+      if (!programUrl && program.program.slug) {
+        programUrl = `https://programs.tcnj.edu/${program.program.slug}`;
+      }
+
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "EducationalOccupationalProgram",
+          name: program.title,
+          description: program.program.description || "",
+          provider: {
+            "@type": "CollegeOrUniversity",
+            name: "The College of New Jersey",
+            department: Array.isArray(program.program.school)
+              ? program.program.school.join(", ")
+              : program.program.school,
+          },
+          url: programUrl || "https://programs.tcnj.edu/",
         },
-        // Apply the URL replacement function
-        url:
-          getProductionUrl(program.program.redirecturl) ||
-          `https://programs.tcnj.edu/${program.program.slug}`,
-      },
-    })
+      };
+    }
   ),
 };
 
