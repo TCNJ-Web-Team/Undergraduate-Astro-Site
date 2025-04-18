@@ -13,5 +13,5 @@ export default defineConfig({
   // site: "https://statictest.kinsta.cloud/",
   // base: "/undergraduate",
   output: "static", // Ensures static generation
-  trailingSlash: "never", // Ensures no trailing slash in the URL
+  trailingSlash: "always", // Ensures no trailing slash in the URL
 });
