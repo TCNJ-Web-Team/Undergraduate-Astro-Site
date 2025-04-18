@@ -111,7 +111,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="facebook icon"
-                    src="./facebook-4-32.png"
+                    src="https://programs.tcnj.edu/facebook-4-32.png"
                   />
                 </a>
                 <a href="http://twitter.com/tcnj">
@@ -119,7 +119,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="twitter icon"
-                    src="./twitter-4-32.png"
+                    src="https://programs.tcnj.edu/twitter-4-32.png"
                   />
                 </a>
                 <a href="https://www.linkedin.com/school/the-college-of-new-jersey/">
@@ -127,7 +127,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="linkedin icon"
-                    src="./linkedin-4-32.png"
+                    src="https://programs.tcnj.edu/linkedin-4-32.png"
                   />
                 </a>
                 <a href="http://instagram.com/tcnj_official">
@@ -135,7 +135,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="instagram icon"
-                    src="./instagram-4-32.png"
+                    src="https://programs.tcnj.edu/instagram-4-32.png"
                   />
                 </a>
                 <a href="http://www.youtube.com/tcnjvideo">
@@ -143,7 +143,7 @@ export default function GlobalHeader({ indexCheck }) {
                     width="24"
                     height="24"
                     alt="youtube icon"
-                    src="./youtube-32-rev.png"
+                    src="https://programs.tcnj.edu/youtube-32-rev.png"
                   />
                 </a>
               </div>
