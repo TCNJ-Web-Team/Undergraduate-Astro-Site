@@ -114,7 +114,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
               >
                 <a
                   className="program-rp-link-gtm p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] min-h-[250px] block"
-                  href={content.slug}
+                  href={"https://programs.tcnj.edu/" + content.slug}
                 >
                   <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
                     {content.title}
