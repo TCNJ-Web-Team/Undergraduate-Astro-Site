@@ -35,3 +35,12 @@ import Layout from "../layouts/Layout.astro";
     </main>
   </div>
 </Layout>
+<script is:inline>
+  // If user lands here from a non-existing route (e.g. /bad-path), redirect to /404.html
+  if (
+    !location.pathname.endsWith("/404.html") &&
+    !location.search.includes("fromError")
+  ) {
+    window.location.replace("/404.html?fromError=1");
+  }
+</script>
