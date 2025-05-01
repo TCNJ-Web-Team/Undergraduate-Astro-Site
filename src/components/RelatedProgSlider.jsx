@@ -73,29 +73,29 @@ export default function RelatedProgSlider({ learnMoreList }) {
               "Accounting and Business Analytics":
                 "accounting-business-analytics",
               "Clinical Mental Health Counseling":
-                "/clinical-mental-health-accelerated",
+                "clinical-mental-health-accelerated",
               "Elementary Education of the Deaf and Hard of Hearing":
-                "/elementary-education-dhh",
+                "elementary-education-dhh",
               "Inclusive Education — Early Childhood Education (P–3)":
-                "/inclusive-education-p-3",
+                "inclusive-education-p-3",
               "Inclusive Education — Elementary Education (K–6)":
-                "/inclusive-education-k-6",
+                "inclusive-education-k-6",
               "Journalism and Professional Writing":
-                "/journalism-professional-writing",
-              "Kinesiology and Health Sciences": "/kinesiology-health-sciences",
-              "Mathematics and Statistics": "/mathematics",
-              "Photography and Video": "/photography-video",
-              Robotics: "/robotics-engineering-science",
-              "Spanish — World Languages and Linguistics": "/spanish-wll",
-              "Spanish and ESL/Bilingual Education": "/spanish-esl",
+                "journalism-professional-writing",
+              "Kinesiology and Health Sciences": "kinesiology-health-sciences",
+              "Mathematics and Statistics": "mathematics",
+              "Photography and Video": "photography-video",
+              Robotics: "robotics-engineering-science",
+              "Spanish — World Languages and Linguistics": "spanish-wll",
+              "Spanish and ESL/Bilingual Education": "spanish-esl",
               "Speech-Language Pathology and Audiology":
-                "/speech-pathology-audiology",
-              "Speech-Language Pathology": "/slp",
-              "Teaching English as a Second Language": "/tesl",
+                "speech-pathology-audiology",
+              "Speech-Language Pathology": "slp",
+              "Teaching English as a Second Language": "tesl",
               "Technology and Engineering Education":
-                "/technology-engineering-education",
-              "Women’s, Gender, and Sexuality Studies": "/wgss",
-              "World Languages and Linguistics": "/world-languages-linguistics",
+                "technology-engineering-education",
+              "Women’s, Gender, and Sexuality Studies": "wgss",
+              "World Languages and Linguistics": "world-languages-linguistics",
             };
 
             // Assign the slug based on mapping or generate from title if slug is "#"
@@ -104,6 +104,9 @@ export default function RelatedProgSlider({ learnMoreList }) {
               (content.slug === "#"
                 ? content.title.replace(/\s+/g, "-").toLowerCase()
                 : content.slug);
+            if (content.slug.startsWith("/")) {
+              content.slug = content.slug.slice(1);
+            }
 
             // console.log(content.title);
             return (
