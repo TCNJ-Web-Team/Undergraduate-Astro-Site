@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { wpquery } from "../../data/wordpress";
+// import TitleAndNav from "../components/TitleAndNav";
+import ProgramList from "../../components/ProgramList";
+import NextStepFooter from "../../components/NextStepFooter";
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/500.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/domine/700.css";
+import IntroSection from "../../components/IntroSection";
+// import "../styles/homepage.scss";
+---
+
+<Layout title="160+ Undergraduate Programs | TCNJ">
+  <header>
+    <!-- <TitleAndNav /> -->
+    <IntroSection client:load />
+    <!-- <Intro /> -->
+  </header>
+  <main>
+    <div
+      class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
+    >
+      <p>Grad Program finder here</p>
+    </div>
+    <NextStepFooter />
+  </main>
+</Layout>

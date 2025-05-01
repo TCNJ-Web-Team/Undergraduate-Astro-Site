@@ -1,0 +1,200 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { wpquery } from "../../data/wordpress";
+import BodyCopy from "../../components/BodyCopy.astro";
+import LowerContent from "../../components/LowerContent.astro";
+// import LearnMoreList from "../../components/LearnMoreList.astro";
+import RelatedProgSlider from "../../components/RelatedProgSlider";
+import NextStepFooter from "../../components/NextStepFooter";
+import TopOption from "../../components/TopOption";
+// import ProgramCareersHeading from "../../components/ProgramCareersHeading";
+// import ProgramGlanceCopy from "../../components/ProgramGlanceCopy";
+import "../../styles/inner-body-copy.scss";
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/500.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/domine/700.css";
+import AnimatedTitle from "../../components/program-page/AnimatedTitle";
+import AnimatedHero from "../../components/program-page/AnimatedHero";
+import AnimatedBodyCopy from "../../components/program-page/AnimatedBodyCopy";
+import AnimatedProgramAtAGlance from "../../components/program-page/AnimatedProgramAtAGlance";
+import AnimatedRightImage from "../../components/program-page/AnimatedRightImage";
+// import TitleAndNav from "../../components/TitleAndNav";
+import NavigationBar from "../../components/NavigationBar";
+import "../../styles/slug-page-styles.scss";
+// import QuoteContent from "../../components/QuoteContent";
+
+export async function getStaticPaths() {
+  const data = await wpquery({
+    query: `query GraduateProgramLising {
+  graduatePrograms(first:120) {
+    nodes {
+      graduateProgram {
+        school
+        slug
+        acceleratedSubtitle
+        announcementBar {
+          accouncementLink
+          announcementEndDate
+          announcementLinkText
+          announcementStartDate
+          announcementText
+        }
+        customCtaButtons {
+          buttonLink {
+            url
+          }
+          buttonText
+        }
+        degreeType
+        departmentRepeater {
+          deptTitle
+          deptUrl
+        }
+        heroImgDesktop {
+          altText
+          mediaItemUrl
+        }
+      }
+      title
+    }
+  }
+}`,
+  });
+  console.log(data);
+  // console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
+  const paths = data.graduatePrograms.nodes.map(
+    (program: {
+      graduateProgram: {
+        title: string;
+        programAtAGlance: string;
+        degreeType: string[];
+        repeaterDegrees: string[];
+        school: string;
+        acceleratedSubtitle: string[];
+        departmentRepeater: string[];
+        heroImgDesktop: string;
+        heroImgDesktopWebp: string;
+        horizontalPositionDesktopHero: number;
+        horizontalPositionTablet: number;
+        horizontalPositionMobile: number;
+        heroImgTablet: string;
+        heroImgTabletWebp: string;
+        heroImgMobile: string;
+        heroImgMobileWebp: string;
+        badge: string[];
+        careersTitle: string;
+        careers: string;
+        programOfStudy: string;
+        quoteContentArea: string;
+        lowerContent: [];
+        learnMoreList: [];
+        slug: string;
+        metaTitle: string;
+        metaDescription: string;
+        socialImage: [];
+      };
+      title: string;
+    }) => ({
+      params: { slug: program.graduateProgram.slug },
+      props: {
+        slug: program.graduateProgram.slug,
+        title: program.title,
+        programAtAGlance: program.graduateProgram.programAtAGlance,
+        horizontalPositionDesktopHero:
+          program.graduateProgram.horizontalPositionDesktopHero,
+        horizontalPositionTablet:
+          program.graduateProgram.horizontalPositionTablet,
+        horizontalPositionMobile:
+          program.graduateProgram.horizontalPositionMobile,
+        degreeType: program.graduateProgram.degreeType,
+        repeaterDegrees: program.graduateProgram.repeaterDegrees,
+        school: program.graduateProgram.school,
+        acceleratedSubtitle: program.graduateProgram.acceleratedSubtitle,
+        department: program.graduateProgram.departmentRepeater,
+        heroImgDesktop: program.graduateProgram.heroImgDesktop,
+        heroImgDesktopWebp: program.graduateProgram.heroImgDesktopWebp,
+        heroImgTablet: program.graduateProgram.heroImgTablet,
+        heroImgTabletWebp: program.graduateProgram.heroImgTabletWebp,
+        heroImgMobile: program.graduateProgram.heroImgMobile,
+        heroImgMobileWebp: program.graduateProgram.heroImgMobileWebp,
+        badge: program.graduateProgram.badge,
+        careersTitle: program.graduateProgram.careersTitle,
+        careers: program.graduateProgram.careers,
+        programOfStudy: program.graduateProgram.programOfStudy,
+        lowerContent: program.graduateProgram.lowerContent,
+        quoteContentArea: program.graduateProgram.quoteContentArea,
+        learnMoreList: program.graduateProgram.learnMoreList,
+        metaTitle: program.graduateProgram.metaTitle,
+        metaDescription: program.graduateProgram.metaDescription,
+        socialImage: program.graduateProgram.socialImage,
+      },
+    })
+  );
+  return paths;
+}
+
+// Define an interface for your props
+interface AstroProps {
+  slug: string;
+  title: string;
+  programAtAGlance: string;
+  horizontalPositionDesktopHero: number;
+  horizontalPositionTablet: number;
+  horizontalPositionMobile: number;
+  degreeType: string[];
+  repeaterDegrees: string[]; // You had this as object[] earlier, but it's string[] in your query
+  school: string;
+  acceleratedSubtitle: string[];
+  department: { deptTitle: string; deptUrl: string }[];
+  heroImgDesktop: { altText: string; mediaItemUrl: string };
+  heroImgDesktopWebp: string; // was just a URL in query
+  heroImgTablet: string;
+  heroImgTabletWebp: string;
+  heroImgMobile: string;
+  heroImgMobileWebp: string;
+  badge: any[]; // clarify structure if known
+  careersTitle: string;
+  careers: string;
+  programOfStudy: string;
+  lowerContent: any;
+  quoteContentArea: string;
+  learnMoreList: any[];
+  metaTitle: string;
+  metaDescription: string;
+  socialImage: any[];
+}
+
+// Destructure with the defined interface
+const {
+  slug,
+  title,
+  programAtAGlance,
+  horizontalPositionDesktopHero,
+  horizontalPositionTablet,
+  horizontalPositionMobile,
+  degreeType,
+  repeaterDegrees,
+  school,
+  acceleratedSubtitle,
+  department,
+  heroImgDesktop,
+  heroImgDesktopWebp,
+  heroImgTablet,
+  heroImgTabletWebp,
+  heroImgMobile,
+  heroImgMobileWebp,
+  badge,
+  careersTitle,
+  careers,
+  programOfStudy,
+  lowerContent,
+  quoteContentArea,
+  learnMoreList,
+  metaTitle,
+  metaDescription,
+  socialImage,
+} = Astro.props as AstroProps;
+---
+
+<p>Working</p>
