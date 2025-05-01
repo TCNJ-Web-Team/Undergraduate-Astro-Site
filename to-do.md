@@ -1,3 +1,15 @@
+## Graduate Pages
+
+- separate program finder
+  - How do the breadcrumbs work?
+- pages at /graduate/name-of-program
+- Program details
+  - popup available for each section? or lower details
+  - https://graduate.tcnj.edu/explore-programs/acct-business-analytics-ms/
+- Internal Nav, standard or unqiue?
+
+  - directing to individual faq
+
 - x Hover state on jump nav
 - x Add menu icon to nav
 - Review hero photo sizing
