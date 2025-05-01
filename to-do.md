@@ -1,5 +1,6 @@
 ## Graduate Pages
 
+- department instead of Next class
 - separate program finder
   - How do the breadcrumbs work?
 - pages at /graduate/name-of-program
