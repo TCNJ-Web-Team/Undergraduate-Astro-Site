@@ -7,6 +7,8 @@ import LowerContent from "../../components/LowerContent.astro";
 import RelatedProgSlider from "../../components/RelatedProgSlider";
 import NextStepFooter from "../../components/NextStepFooter";
 import TopOption from "../../components/TopOption";
+import TopOptionNew from "../../components/TopOptionNew.tsx";
+
 // import ProgramCareersHeading from "../../components/ProgramCareersHeading";
 // import ProgramGlanceCopy from "../../components/ProgramGlanceCopy";
 import "../../styles/inner-body-copy.scss";
@@ -22,6 +24,7 @@ import AnimatedRightImage from "../../components/program-page/AnimatedRightImage
 // import TitleAndNav from "../../components/TitleAndNav";
 import NavigationBar from "../../components/NavigationBar";
 import "../../styles/slug-page-styles.scss";
+import NavigationBarGrad from "../../components/graduate-components/NavigationBarGrad";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -51,9 +54,9 @@ export async function getStaticPaths() {
           deptTitle
           deptUrl
         }
-        heroImgDesktop {
+         heroImgDesktop {
           altText
-          mediaItemUrl
+          sourceUrl
         }
       }
       title
@@ -147,7 +150,7 @@ interface AstroProps {
   school: string;
   acceleratedSubtitle: string[];
   department: { deptTitle: string; deptUrl: string }[];
-  heroImgDesktop: { altText: string; mediaItemUrl: string };
+  heroImgDesktop: { altText: string; sourceUrl: string };
   heroImgDesktopWebp: string; // was just a URL in query
   heroImgTablet: string;
   heroImgTabletWebp: string;
@@ -195,6 +198,210 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
+console.log(repeaterDegrees);
+// const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
+const { sourceUrl } = heroImgDesktop ?? {
+  sourceUrl: "",
+};
 ---
 
-<p>Working</p>
+<Layout title={title} description={metaDescription} metaTitle={title}>
+  <NavigationBarGrad />
+  <main class="font-domine text-darkgrey overflow-hidden">
+    <div class="bg-tcnjyellow w-auto">
+      <div
+        class="pl-[35px]
+      pr-[35px]
+      lg:max-w-[70.5rem]
+      md:max-w-[990px]
+      pt-[31px]
+      sm:pt-[47px]
+      md:pt-[56px]
+      m-auto
+      lg:pl-0
+      lg:pr-0"
+      >
+        <p
+          class="text-[17px] leading-[26px] pb-[18px] font-domine
+          sm:pb-[30px]
+        sm:text-[17px]
+        sm:leading-[19px]
+        sm:px-[45px]
+        md:text-[18px]
+        md:leading-[21px]
+        md:pb-[25px]
+        md:px-0
+        lg:pb-[26px]
+        lg:text-[18px]
+                lg:leading-[21px]"
+        >
+          <a href="https://tcnj.edu" class="yellow-bg-text">TCNJ Home</a> / <a
+            href="/"
+            class="yellow-bg-text">Explore Programs</a
+          > / <span class="font-bold">
+            {title}
+          </span>
+        </p>
+        <!-- <h1
+          class="font-chunkfive
+          text-tcnjblue
+          text-[45px]
+          leading-[50px]
+          sm:text-[60px]
+          sm:leading-[60px]
+         
+          md:text-custom-16.25
+          md:leading-[4.688rem]"
+        >
+          {title}
+        </h1> -->
+        <AnimatedTitle
+          title={title}
+          subtitle={acceleratedSubtitle}
+          client:load
+        />
+      </div>
+      <div
+        class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
+      ${acceleratedSubtitle ? "mt-[35px] sm:mt-[39px] md:mt-[55px]" : "mt-[42px] sm:mt-[40px] md:mt-[50px] "}`
+      >
+        {
+          sourceUrl && (
+            <>
+              <AnimatedHero
+                heroImgMobileWebp={heroImgMobileWebp}
+                heroImgMobile={heroImgMobile}
+                heroImgTabletWebp={heroImgTabletWebp}
+                heroImgTablet={heroImgTablet}
+                heroImgDesktopWebp={heroImgDesktopWebp}
+                sourceUrl={sourceUrl}
+                horizontalPositionDesktopHero={horizontalPositionDesktopHero}
+                horizontalPositionTablet={horizontalPositionTablet}
+                horizontalPositionMobile={horizontalPositionMobile}
+                title={title}
+                badge={badge}
+                client:load
+              />
+            </>
+          )
+        }
+      </div>
+    </div>
+    <div
+      class="bg-white
+    w-auto
+    pt-[45px]
+    pb-[43px]
+    sm:pt-[35px]
+    sm:pb-[35px]
+    pl-[35px]
+    pr-[35px]
+    md:pt-[50px]
+    md:pb-[50px]"
+    >
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px] bg-white m-auto">
+        <div
+          id="degree-school-department"
+          class="flex
+          
+          items-start
+          flex-col
+          gap-[31px]
+          sm:gap-[35px]
+          sm:max-w-[685px]
+          sm:m-auto
+          sm:flex-row
+          sm:flex-nowrap
+        
+          sm:justify-between
+          md:max-w-none"
+        >
+          <!-- <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
+            {
+              Array.isArray(degreeType)
+                ? degreeType.map((degree: string) => (
+                    <span class="block">{degree}</span>
+                  ))
+                : { degreeType }
+            }
+          </TopOption> -->
+          <TopOption
+            heading={repeaterDegrees && repeaterDegrees.length > 1
+              ? "Degrees"
+              : "Degree"}
+            imgSrc="ribbon"
+          >
+            {
+              Array.isArray(repeaterDegrees)
+                ? repeaterDegrees.map((degree, index) => (
+                    <span
+                      class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
+                    >
+                      {degree}
+                    </span>
+                  ))
+                : null
+            }
+          </TopOption>
+          <!-- <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
+            {school}
+          </TopOption> -->
+          <TopOptionNew
+            client:load
+            school={school}
+            heading={school && school.length > 1 ? "Schools" : "School"}
+            imgSrc="building"
+            techEdMarginCheck={slug === "technology-engineering-education"
+              ? true
+              : false}
+          >
+            {school}
+          </TopOptionNew>
+          <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+            {school}
+          </TopOptionNew> -->
+          <TopOption
+            client:load
+            heading={department && department.length > 1
+              ? "Departments"
+              : "Department"}
+            department={department}
+            imgSrc="departments"
+          >
+            <!-- {deptTitle}
+             -->
+            <!-- {
+              Array.isArray(department)
+                ? department.map((degree) => 
+                    degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
+                      <a class="text-[#33739F] underline">Any Department</a>
+                    ) : (
+                      <a class="text-[#33739F] underline" href={degree.deptUrl}>
+                        <span class="block">{degree.deptTitle}</span>
+                      </a>
+                    )
+                  )
+                : department
+              } -->
+          </TopOption>
+        </div>
+      </div>
+    </div>
+    <div
+      class="bg-tcnjyellow w-auto
+    pl-[35px]
+    pr-[35px]
+    sm:pl-[80px]
+    sm:pr-[80px]
+    md:pl-[35px]
+    md:pr-[35px]"
+    >
+      <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+        <AnimatedProgramAtAGlance
+          programAtAGlance={programAtAGlance}
+          client:idle
+        />
+      </div>
+    </div>
+  </main></Layout
+>
