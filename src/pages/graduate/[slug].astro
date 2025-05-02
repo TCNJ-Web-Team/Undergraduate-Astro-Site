@@ -74,7 +74,7 @@ export async function getStaticPaths() {
 }`,
   });
   // console.log(data);
-  console.log(data.graduatePrograms.nodes[0].graduateProgram.programDetails);
+  // console.log(data.graduatePrograms.nodes[0].graduateProgram.programDetails);
   const paths = data.graduatePrograms.nodes.map(
     (program: {
       graduateProgram: {
@@ -254,7 +254,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-console.log(programDetails);
+// console.log(programDetails);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -464,6 +464,32 @@ const { sourceUrl } = heroImgDesktop ?? {
         />
         <ProgramDetailsGrad programDetails={programDetails} client:load />
       </div>
+    </div>
+    <div
+      id="programs-of-study-container"
+      class="px-[35px] w-auto sm:bg-tcnjyellow"
+    >
+      <div
+        class="m-auto
+      bg-white
+      relative
+      pb-[71px]
+      sm:pb-[93px]
+      sm:px-[45px]
+      lg:pb-[105px]"
+      >
+        <div
+          class=`lg:max-w-[70.5rem] md:max-w-[920px] 
+        m-auto
+        bg-white
+        pt-[0px]
+        pb-[0] sm:pb-[3px] md:pb-[50px] lg:pb-[40px] md:pt-[119px] lg:pt-[144px]
+        `
+        >
+          Body copy here
+        </div>
+      </div>
+      <!-- <p>NO ACCORDION HERE</p> -->
     </div>
   </main></Layout
 >
