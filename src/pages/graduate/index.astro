@@ -43,17 +43,29 @@ const tempGradData = data.graduatePrograms.nodes;
     >
       <p>Grad Program finder here</p>
       {
-        tempGradData.map((program) => (
-          <div class="text-left pt-[25px]">
-            <h2 class="text-1xl font-bold">
-              <a href={"/graduate/" + program.program.slug}>{program.title}</a>
-            </h2>
-            <p>{program.program.degreeType}</p>
-            <p>{program.program.school}</p>
-            <p>{program.program.slug}</p>
-            <p>{program.program.keywords}</p>
-          </div>
-        ))
+        tempGradData.map(
+          (program: {
+            program: {
+              slug: unknown;
+              degreeType: unknown;
+              school: unknown;
+              keywords: unknown;
+            };
+            title: unknown;
+          }) => (
+            <div class="text-left pt-[25px]">
+              <h2 class="text-1xl font-bold">
+                <a href={"/graduate/" + program.program.slug}>
+                  {program.title}
+                </a>
+              </h2>
+              <p>{program.program.degreeType}</p>
+              <p>{program.program.school}</p>
+              <p>{program.program.slug}</p>
+              <p>{program.program.keywords}</p>
+            </div>
+          )
+        )
       }
     </div>
     <NextStepFooter />
