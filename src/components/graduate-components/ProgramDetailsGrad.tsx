@@ -53,10 +53,15 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               <div className="text-[17px] leading-[22px] sm:leading-[23px] md:text-[20px] md:leading-[24px] lg:leading-[24px] font-interstate not-italic uppercase font-extrabold">
                 <h3>{detail.detailTitle}</h3>
               </div>
-              <div
-                className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center"
-                dangerouslySetInnerHTML={{ __html: detail.detailContent || "" }}
-              />
+              <div>
+                <div
+                  className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center"
+                  dangerouslySetInnerHTML={{
+                    __html: detail.detailContent || "",
+                  }}
+                />
+                {detail.popupContent && <span>*</span>}
+              </div>
             </motion.div>
           ))}
         {/* <motion.div className="flex flex-col gap-[20px] sm:flex-row sm:mt-[64px] sm:gap-[28px] md:gap-5 md:flex-row mt-[50px]">
