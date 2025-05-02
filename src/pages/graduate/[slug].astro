@@ -67,6 +67,15 @@ export async function getStaticPaths() {
           detailContent
           popupContent
         }
+               lowerContent {
+          title
+          body
+        }
+        learnMoreList {
+          title
+          slug
+          schoolOrAdditionalLabel
+        }
       }
       title
     }
@@ -99,6 +108,8 @@ export async function getStaticPaths() {
           };
           buttonText: string;
         }[];
+        learnMoreList: [];
+
         degreeType: string[];
         repeaterDegrees: string[];
         school: string[];
@@ -120,7 +131,6 @@ export async function getStaticPaths() {
         programOfStudy: string;
         quoteContentArea: string;
         lowerContent: [];
-        learnMoreList: [];
         slug: string;
         metaTitle: string;
         metaDescription: string;
@@ -254,7 +264,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-// console.log(programDetails);
+console.log(lowerContent);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -490,5 +500,47 @@ const { sourceUrl } = heroImgDesktop ?? {
         </div>
       </div>
     </div>
+    <div
+      class="px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
+      id="lower-content-and-related-progras"
+    >
+      <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
+        <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+          {
+            lowerContent && (
+              <LowerContent
+                lowerContent={lowerContent}
+                quote={quoteContentArea}
+              />
+            )
+          }
+          <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
+          {
+            !lowerContent && (
+              <>
+                <div
+                  class="
+          h-[0px]
+          mt-[-7px]
+          md:mt-[0px]
+          md:h-[46px]
+          lg:h-[33px]
+          "
+                />
+                <p>NO LOWER CONTENT</p>
+              </>
+            )
+          }
+        </div>
+        <div class="lg:max-w-[70.5rem] lg:m-auto">
+          {
+            learnMoreList && (
+              <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
+            )
+          }
+        </div>
+      </div>
+    </div>
+    <NextStepFooter />
   </main></Layout
 >
