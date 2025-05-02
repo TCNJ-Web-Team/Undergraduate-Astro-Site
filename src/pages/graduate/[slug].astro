@@ -25,6 +25,8 @@ import AnimatedRightImage from "../../components/program-page/AnimatedRightImage
 import NavigationBar from "../../components/NavigationBar";
 import "../../styles/slug-page-styles.scss";
 import NavigationBarGrad from "../../components/graduate-components/NavigationBarGrad";
+import AtAGlanceGrad from "../../components/graduate-components/AtAGlanceGrad";
+import ProgramDetailsGrad from "../../components/graduate-components/ProgramDetailsGrad";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -58,22 +60,48 @@ export async function getStaticPaths() {
           altText
           sourceUrl
         }
+        programAtAGlance
+        programCoordinators
+        programDetails {
+          detailTitle
+          detailContent
+          popupContent
+        }
       }
       title
     }
   }
 }`,
   });
-  console.log(data);
-  // console.log(data.programs.nodes[0].program.heroImgDesktop.sourceUrl);
+  // console.log(data);
+  console.log(data.graduatePrograms.nodes[0].graduateProgram.programDetails);
   const paths = data.graduatePrograms.nodes.map(
     (program: {
       graduateProgram: {
         title: string;
         programAtAGlance: string;
+        programCoordinators: string;
+        programDetails: {
+          detailTitle: string;
+          detailContent: string;
+          popupContent: string;
+        }[];
+        announcementBar: {
+          accouncementLink: string;
+          announcementEndDate: string;
+          announcementLinkText: string;
+          announcementStartDate: string;
+          announcementText: string;
+        };
+        customCtaButtons: {
+          buttonLink: {
+            url: string;
+          };
+          buttonText: string;
+        }[];
         degreeType: string[];
         repeaterDegrees: string[];
-        school: string;
+        school: string[];
         acceleratedSubtitle: string[];
         departmentRepeater: string[];
         heroImgDesktop: string;
@@ -85,6 +113,7 @@ export async function getStaticPaths() {
         heroImgTabletWebp: string;
         heroImgMobile: string;
         heroImgMobileWebp: string;
+
         badge: string[];
         careersTitle: string;
         careers: string;
@@ -104,6 +133,10 @@ export async function getStaticPaths() {
         slug: program.graduateProgram.slug,
         title: program.title,
         programAtAGlance: program.graduateProgram.programAtAGlance,
+        programCoordinators: program.graduateProgram.programCoordinators,
+        programDetails: program.graduateProgram.programDetails,
+        announcementBar: program.graduateProgram.announcementBar,
+        customCtaButtons: program.graduateProgram.customCtaButtons,
         horizontalPositionDesktopHero:
           program.graduateProgram.horizontalPositionDesktopHero,
         horizontalPositionTablet:
@@ -142,12 +175,31 @@ interface AstroProps {
   slug: string;
   title: string;
   programAtAGlance: string;
+  programCoordinators: string;
+  programDetails: {
+    detailTitle: string;
+    detailContent: string;
+    popupContent: string;
+  }[];
+  announcementBar: {
+    accouncementLink: string;
+    announcementEndDate: string;
+    announcementLinkText: string;
+    announcementStartDate: string;
+    announcementText: string;
+  };
+  customCtaButtons: {
+    buttonLink: {
+      url: string;
+    };
+    buttonText: string;
+  }[];
   horizontalPositionDesktopHero: number;
   horizontalPositionTablet: number;
   horizontalPositionMobile: number;
   degreeType: string[];
   repeaterDegrees: string[]; // You had this as object[] earlier, but it's string[] in your query
-  school: string;
+  school: string[];
   acceleratedSubtitle: string[];
   department: { deptTitle: string; deptUrl: string }[];
   heroImgDesktop: { altText: string; sourceUrl: string };
@@ -173,6 +225,10 @@ const {
   slug,
   title,
   programAtAGlance,
+  programCoordinators,
+  programDetails,
+  announcementBar,
+  customCtaButtons,
   horizontalPositionDesktopHero,
   horizontalPositionTablet,
   horizontalPositionMobile,
@@ -198,7 +254,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-console.log(repeaterDegrees);
+console.log(programDetails);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -397,10 +453,16 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pr-[35px]"
     >
       <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
-        <AnimatedProgramAtAGlance
+        <!-- <AnimatedProgramAtAGlance
           programAtAGlance={programAtAGlance}
           client:idle
+        /> -->
+        <AtAGlanceGrad
+          programAtAGlance={programAtAGlance}
+          programCoordinators={programCoordinators}
+          client:load
         />
+        <ProgramDetailsGrad programDetails={programDetails} client:load />
       </div>
     </div>
   </main></Layout
