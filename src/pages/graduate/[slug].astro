@@ -67,9 +67,11 @@ export async function getStaticPaths() {
           detailContent
           popupContent
         }
-               lowerContent {
+        lowerContent {
           title
           body
+          abbreviatedNavTitle
+          includeInNav
         }
         learnMoreList {
           title
@@ -272,7 +274,7 @@ const { sourceUrl } = heroImgDesktop ?? {
 ---
 
 <Layout title={title} description={metaDescription} metaTitle={title}>
-  <NavigationBarGrad />
+  <NavigationBarGrad additionalMenuItems={lowerContent} />
   <main class="font-domine text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div

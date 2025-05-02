@@ -1,6 +1,11 @@
 import { useState } from "react";
 
-const NavigationBarGrad = () => {
+interface NavigationBarGradProps {
+  additionalMenuItems: any[]; // Replace 'any[]' with the appropriate type if known
+}
+
+const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
+  console.log("additionalMenuItems", additionalMenuItems);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
