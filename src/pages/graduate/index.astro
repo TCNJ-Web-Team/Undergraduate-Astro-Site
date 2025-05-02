@@ -10,6 +10,25 @@ import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
 import IntroSection from "../../components/IntroSection";
 // import "../styles/homepage.scss";
+const data = await wpquery({
+  query: ` query GraduateProgramsListing {
+  graduatePrograms(first:220) {
+    nodes {
+      program {
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        keywords
+      }
+      title
+    }
+  }
+}`,
+});
+console.log(data.graduatePrograms.nodes);
+const tempGradData = data.graduatePrograms.nodes;
 ---
 
 <Layout title="160+ Undergraduate Programs | TCNJ">
@@ -23,6 +42,19 @@ import IntroSection from "../../components/IntroSection";
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
       <p>Grad Program finder here</p>
+      {
+        tempGradData.map((program) => (
+          <div class="text-left pt-[25px]">
+            <h2 class="text-1xl font-bold">
+              <a href={"/graduate/" + program.program.slug}>{program.title}</a>
+            </h2>
+            <p>{program.program.degreeType}</p>
+            <p>{program.program.school}</p>
+            <p>{program.program.slug}</p>
+            <p>{program.program.keywords}</p>
+          </div>
+        ))
+      }
     </div>
     <NextStepFooter />
   </main>
