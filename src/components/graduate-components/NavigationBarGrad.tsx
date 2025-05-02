@@ -5,7 +5,7 @@ interface NavigationBarGradProps {
 }
 
 const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
-  console.log("additionalMenuItems", additionalMenuItems);
+  // console.log("additionalMenuItems", additionalMenuItems);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -50,6 +50,19 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
             Program Options
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
+          {additionalMenuItems &&
+            additionalMenuItems
+              .filter((item) => item.includeInNav === true)
+              .map((item, index) => (
+                <a
+                  key={index}
+                  href={"#" + item.title.replace(/\s+/g, "-").toLowerCase()}
+                  className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+                >
+                  {item.title}
+                  <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
+                </a>
+              ))}
 
           <div className="flex gap-2 flex-row justify-items-start items-center md:absolute md:right-0 mt-[15px] md:mt-0">
             <a

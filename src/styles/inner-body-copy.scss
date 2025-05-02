@@ -1,5 +1,12 @@
-$domine: "Domine", sans-serif;
+$tcnj-blue: #293f6f;
+$tcnj-grey: #f1f1f1;
+$tcnj-dark-grey: #d9d9d9;
+$tcnj-yellow: #fdd700;
+$link-blue: #33739f;
+$alfa-slab: "Alfa Slab One", Georgia, serif;
 $open-sans: "Open Sans", sans-serif;
+$bitter: "Domine", serif;
+$domine: "Domine", sans-serif;
 $dark-blue-link: #2b6388;
 // #careers-body {
 //   p {
@@ -66,6 +73,24 @@ a.yellow-bg-text {
   .tablet-object-position-#{$position} {
     @media (min-width: 551px) and (max-width: 900px) {
       object-position: #{$position + "%"} 0% !important;
+    }
+  }
+}
+
+#program-body-copy {
+  h2 {
+    color: $tcnj-blue;
+    font-family: $alfa-slab;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 40px;
+    padding-bottom: 15px;
+    padding-top: 100px;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    @media screen and (max-width: $xl) {
+      padding-top: 75px;
     }
   }
 }

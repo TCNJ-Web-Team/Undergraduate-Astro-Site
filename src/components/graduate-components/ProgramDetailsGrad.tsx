@@ -50,9 +50,9 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               variants={fadeInAnimationVariant}
               custom={index + 1}
             >
-              <div className="text-[17px] leading-[22px] sm:leading-[23px] md:text-[20px] md:leading-[24px] lg:leading-[24px] font-interstate not-italic uppercase font-extrabold">
-                <h3>{detail.detailTitle}</h3>
-              </div>
+              <h3 className="text-[17px] leading-[22px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
+                {detail.detailTitle}
+              </h3>
               <div>
                 <div
                   className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center"

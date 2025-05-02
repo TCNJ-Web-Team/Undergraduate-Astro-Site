@@ -27,6 +27,7 @@ import "../../styles/slug-page-styles.scss";
 import NavigationBarGrad from "../../components/graduate-components/NavigationBarGrad";
 import AtAGlanceGrad from "../../components/graduate-components/AtAGlanceGrad";
 import ProgramDetailsGrad from "../../components/graduate-components/ProgramDetailsGrad";
+import AnnouncementBar from "../../components/graduate-components/AnnouncementBar";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -67,6 +68,7 @@ export async function getStaticPaths() {
           detailContent
           popupContent
         }
+        programHighlights
         lowerContent {
           title
           body
@@ -97,6 +99,7 @@ export async function getStaticPaths() {
           detailContent: string;
           popupContent: string;
         }[];
+        programHighlights: string;
         announcementBar: {
           accouncementLink: string;
           announcementEndDate: string;
@@ -147,6 +150,7 @@ export async function getStaticPaths() {
         programAtAGlance: program.graduateProgram.programAtAGlance,
         programCoordinators: program.graduateProgram.programCoordinators,
         programDetails: program.graduateProgram.programDetails,
+        programHighlights: program.graduateProgram.programHighlights,
         announcementBar: program.graduateProgram.announcementBar,
         customCtaButtons: program.graduateProgram.customCtaButtons,
         horizontalPositionDesktopHero:
@@ -200,6 +204,7 @@ interface AstroProps {
     announcementStartDate: string;
     announcementText: string;
   };
+  programHighlights: string;
   customCtaButtons: {
     buttonLink: {
       url: string;
@@ -239,6 +244,7 @@ const {
   programAtAGlance,
   programCoordinators,
   programDetails,
+  programHighlights,
   announcementBar,
   customCtaButtons,
   horizontalPositionDesktopHero,
@@ -266,7 +272,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-console.log(lowerContent);
+// console.log(announcementBar);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -455,6 +461,16 @@ const { sourceUrl } = heroImgDesktop ?? {
         </div>
       </div>
     </div>
+
+    <AnnouncementBar
+      copy={announcementBar.announcementText}
+      start={announcementBar.announcementStartDate}
+      end={announcementBar.announcementEndDate}
+      link={announcementBar.accouncementLink}
+      linkText={announcementBar.announcementLinkText}
+      client:idle
+    />
+
     <div
       class="bg-tcnjyellow w-auto
     pl-[35px]
@@ -498,7 +514,11 @@ const { sourceUrl } = heroImgDesktop ?? {
         pb-[0] sm:pb-[3px] md:pb-[50px] lg:pb-[40px] md:pt-[119px] lg:pt-[144px]
         `
         >
-          Body copy here
+          <div
+            class="font-domine text-[19px] leading-[30px]"
+            id="program-body-copy"
+            set:html={programHighlights || ""}
+          />
         </div>
       </div>
     </div>
