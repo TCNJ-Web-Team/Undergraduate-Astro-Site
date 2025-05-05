@@ -53,6 +53,9 @@ export async function getStaticPaths() {
           buttonText
         }
         degreeType
+        repeaterDegrees {
+          degreeName
+        }
         departmentRepeater {
           deptTitle
           deptUrl
@@ -116,7 +119,7 @@ export async function getStaticPaths() {
         learnMoreList: [];
 
         degreeType: string[];
-        repeaterDegrees: string[];
+        repeaterDegrees: { degreeName: string }[];
         school: string[];
         acceleratedSubtitle: string[];
         departmentRepeater: string[];
@@ -215,7 +218,7 @@ interface AstroProps {
   horizontalPositionTablet: number;
   horizontalPositionMobile: number;
   degreeType: string[];
-  repeaterDegrees: string[]; // You had this as object[] earlier, but it's string[] in your query
+  repeaterDegrees: { degreeName: string }[];
   school: string[];
   acceleratedSubtitle: string[];
   department: { deptTitle: string; deptUrl: string }[];
@@ -272,7 +275,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-// console.log(announcementBar);
+console.log(repeaterDegrees);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -411,7 +414,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                     <span
                       class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
-                      {degree}
+                      {degree.degreeName}
                     </span>
                   ))
                 : null
