@@ -35,14 +35,14 @@ const programOptions = await wpquery({
   query: ` query GradProgramOptions {
   page(idType: DATABASE_ID, id: "4015") {
     graduateProgram {
-      formatOptions
+      additionalOptions
       programOptions
       school
     }
   }
 }`,
 });
-// console.log(programOptions);
+console.log(programOptions);
 // console.log(data);
 // console.log(data.programs.program);
 // console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
@@ -53,7 +53,7 @@ const areaOfStudy = programOptions.page.graduateProgram.school.sort();
 
 const programOptionsClean = programOptions.page.graduateProgram.programOptions;
 // console.log(programOptionsClean);
-const additionalOptions = programOptions.page.graduateProgram.formatOptions;
+const additionalOptions = programOptions.page.graduateProgram.additionalOptions;
 // console.log(additionalOptions);
 ---
 
