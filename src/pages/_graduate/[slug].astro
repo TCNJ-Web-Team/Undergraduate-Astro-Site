@@ -53,6 +53,9 @@ export async function getStaticPaths() {
           buttonText
         }
         degreeType
+        repeaterDegrees {
+          degreeName
+        }
         departmentRepeater {
           deptTitle
           deptUrl
@@ -116,7 +119,7 @@ export async function getStaticPaths() {
         learnMoreList: [];
 
         degreeType: string[];
-        repeaterDegrees: string[];
+        repeaterDegrees: { degreeName: string }[];
         school: string[];
         acceleratedSubtitle: string[];
         departmentRepeater: string[];
@@ -215,7 +218,7 @@ interface AstroProps {
   horizontalPositionTablet: number;
   horizontalPositionMobile: number;
   degreeType: string[];
-  repeaterDegrees: string[]; // You had this as object[] earlier, but it's string[] in your query
+  repeaterDegrees: { degreeName: string }[];
   school: string[];
   acceleratedSubtitle: string[];
   department: { deptTitle: string; deptUrl: string }[];
@@ -272,7 +275,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-// console.log(announcementBar);
+console.log(repeaterDegrees);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -309,9 +312,10 @@ const { sourceUrl } = heroImgDesktop ?? {
         lg:text-[18px]
                 lg:leading-[21px]"
         >
-          <a href="https://tcnj.edu" class="yellow-bg-text">TCNJ Home</a> / <a
-            href="/"
-            class="yellow-bg-text">Explore Programs</a
+          <a href="https://graduate.tcnj.edu" class="yellow-bg-text"
+            >Graduate Home</a
+          > / <a href="/graduate" class="yellow-bg-text"
+            >Explore Graduate Programs</a
           > / <span class="font-bold">
             {title}
           </span>
@@ -411,7 +415,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                     <span
                       class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
                     >
-                      {degree}
+                      {degree.degreeName}
                     </span>
                   ))
                 : null
@@ -462,14 +466,19 @@ const { sourceUrl } = heroImgDesktop ?? {
       </div>
     </div>
 
-    <AnnouncementBar
-      copy={announcementBar.announcementText}
-      start={announcementBar.announcementStartDate}
-      end={announcementBar.announcementEndDate}
-      link={announcementBar.accouncementLink}
-      linkText={announcementBar.announcementLinkText}
-      client:idle
-    />
+    {
+      announcementBar.announcementStartDate &&
+        announcementBar.announcementText && (
+          <AnnouncementBar
+            copy={announcementBar.announcementText}
+            start={announcementBar.announcementStartDate}
+            end={announcementBar.announcementEndDate}
+            link={announcementBar.accouncementLink}
+            linkText={announcementBar.announcementLinkText}
+            client:idle
+          />
+        )
+    }
 
     <div
       class="bg-tcnjyellow w-auto

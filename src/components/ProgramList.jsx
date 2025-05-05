@@ -10,7 +10,9 @@ export default function ProgramList({
   areaOfStudy,
   programOptionsClean,
   additionalOptions,
+  gradCheck,
 }) {
+  // console.log("Data:", data);
   // const combinedData = data.programs.nodes.concat(
   //   redirectData.programRedirects.nodes.map(item => ({
   //     program: item.redirectProgram
@@ -20,12 +22,27 @@ export default function ProgramList({
   //   console.log(combinedData);
 
   // console.log(data.programs.nodes);
-  const combinedData = data.programs.nodes.concat(
-    redirectData.programRedirects.nodes.map((item) => ({
-      program: item.redirectProgram,
-      title: item.title,
-    }))
-  );
+  // const combinedData = data.programs.nodes.concat(
+  //   redirectData.programRedirects.nodes.map((item) => ({
+  //     program: item.redirectProgram,
+  //     title: item.title,
+  //   }))
+  // );
+
+  let combinedData;
+  let gradCheckCard = false; // Set this to true or false based on your condition
+  if (gradCheck) {
+    combinedData = data.graduatePrograms.nodes;
+    gradCheckCard = true; // or any alternate logic for grad programs
+  } else {
+    combinedData = data.programs.nodes.concat(
+      redirectData.programRedirects.nodes.map((item) => ({
+        program: item.redirectProgram,
+        title: item.title,
+      }))
+    );
+  }
+
   // console.log(
   //   combinedData.filter((item) => item.title === "Interactive Multimedia")
   // );
@@ -611,6 +628,7 @@ src="/close-item.svg" /> */}
                 listType={programView}
                 index={index}
                 animationState={animatedCards}
+                gradCheckCard={gradCheckCard}
               />
             ))
           : filteredData.map((program, index) => (
@@ -620,6 +638,7 @@ src="/close-item.svg" /> */}
                 listType={programView}
                 index={index}
                 animationState={animatedCards}
+                gradCheckCard={gradCheckCard}
               />
             ))}
       </motion.div>

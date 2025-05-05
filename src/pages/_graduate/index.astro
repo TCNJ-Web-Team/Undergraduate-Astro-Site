@@ -8,21 +8,74 @@ import "@fontsource/domine/400.css";
 import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
-import IntroSection from "../../components/IntroSection";
+// import IntroSection from "../../components/IntroSection";
+import IntroSectionUpdated from "../../components/IntroSectionUpdated";
 // import "../styles/homepage.scss";
+const data = await wpquery({
+  query: ` query GraduateProgramsListing {
+  graduatePrograms(first:220) {
+    nodes {
+      program {
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        keywords
+      }
+      title
+    }
+  }
+}`,
+});
+// console.log(data.graduatePrograms.nodes);
+// const tempGradData = data.graduatePrograms.nodes;
+
+const programOptions = await wpquery({
+  query: ` query GradProgramOptions {
+  page(idType: DATABASE_ID, id: "4015") {
+    graduateProgram {
+      additionalOptions
+      programOptions
+      school
+    }
+  }
+}`,
+});
+console.log(programOptions);
+// console.log(data);
+// console.log(data.programs.program);
+// console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
+// console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
+
+const areaOfStudy = programOptions.page.graduateProgram.school.sort();
+// console.log(areaOfStudy);
+
+const programOptionsClean = programOptions.page.graduateProgram.programOptions;
+// console.log(programOptionsClean);
+const additionalOptions = programOptions.page.graduateProgram.additionalOptions;
+// console.log(additionalOptions);
 ---
 
-<Layout title="160+ Undergraduate Programs | TCNJ">
+<Layout title="Explore Programs - TCNJ Graduate Studies">
   <header>
     <!-- <TitleAndNav /> -->
-    <IntroSection client:load />
+    <IntroSectionUpdated client:load />
     <!-- <Intro /> -->
   </header>
   <main>
     <div
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
-      <p>Grad Program finder here</p>
+      <ProgramList
+        gradCheck={true}
+        data={data}
+        redirectData={data}
+        areaOfStudy={areaOfStudy}
+        programOptionsClean={programOptionsClean}
+        additionalOptions={additionalOptions}
+        client:visible
+      />
     </div>
     <NextStepFooter />
   </main>

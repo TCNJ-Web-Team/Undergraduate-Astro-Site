@@ -1,0 +1,47 @@
+graduateProgram {
+        school
+        slug
+        acceleratedSubtitle
+        announcementBar {
+          accouncementLink
+          announcementEndDate
+          announcementLinkText
+          announcementStartDate
+          announcementText
+        }
+        customCtaButtons {
+          buttonLink {
+            url
+          }
+          buttonText
+        }
+        degreeType
+        departmentRepeater {
+          deptTitle
+          deptUrl
+        }
+         heroImgDesktop {
+          altText
+          sourceUrl
+        }
+        programAtAGlance
+        programCoordinators
+        programDetails {
+          detailTitle
+          detailContent
+          popupContent
+        }
+        programHighlights
+        lowerContent {
+          title
+          body
+          abbreviatedNavTitle
+          includeInNav
+        }
+        learnMoreList {
+          title
+          slug
+          schoolOrAdditionalLabel
+        }
+      }
+      title

@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import "../styles/program-card.scss";
-const ProgramCard = ({ program, listType, index, animationState }) => {
+const ProgramCard = ({
+  program,
+  listType,
+  index,
+  animationState,
+  gradCheckCard,
+}) => {
+  // console.log("ProgramCard: ", program);
   const [isHovered] = useState(false);
   // const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
@@ -64,7 +71,11 @@ const ProgramCard = ({ program, listType, index, animationState }) => {
            listOnly &&
            "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px] lg:!pt-[35px]"
          }`}
-        href={processedRedirectUrl}
+        href={
+          gradCheckCard
+            ? `./graduate/${processedRedirectUrl}`
+            : processedRedirectUrl
+        }
         target={processedRedirectUrl.includes("http") ? "_blank" : "_self"}
         // target={redirecturl ? "_blank" : "_self"}
         initial={animationState ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
