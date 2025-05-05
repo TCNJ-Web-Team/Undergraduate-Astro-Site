@@ -12,7 +12,7 @@ export default function ProgramList({
   additionalOptions,
   gradCheck,
 }) {
-  // console.log("Data:", data);
+  // console.log("Data:", additionalOptions);
   // const combinedData = data.programs.nodes.concat(
   //   redirectData.programRedirects.nodes.map(item => ({
   //     program: item.redirectProgram
@@ -28,19 +28,21 @@ export default function ProgramList({
   //     title: item.title,
   //   }))
   // );
-
+  // console.log(additionalOptions);
   let combinedData;
-  let gradCheckCard = false; // Set this to true or false based on your condition
-  if (gradCheck) {
+  let gradCheckCard;
+  if (gradCheck && data?.graduatePrograms?.nodes) {
     combinedData = data.graduatePrograms.nodes;
-    gradCheckCard = true; // or any alternate logic for grad programs
-  } else {
+    gradCheckCard = true;
+  } else if (data?.programs?.nodes && redirectData?.programRedirects?.nodes) {
     combinedData = data.programs.nodes.concat(
       redirectData.programRedirects.nodes.map((item) => ({
         program: item.redirectProgram,
         title: item.title,
       }))
     );
+  } else {
+    combinedData = []; // fallback to avoid errors
   }
 
   // console.log(

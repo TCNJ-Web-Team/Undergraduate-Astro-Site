@@ -9,7 +9,7 @@ const ProgramCard = ({
   animationState,
   gradCheckCard,
 }) => {
-  console.log("ProgramCard: ", program);
+  // console.log("ProgramCard: ", program);
   const [isHovered] = useState(false);
   // const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
@@ -18,8 +18,13 @@ const ProgramCard = ({
   useEffect(() => {
     setTimeout(() => setPulsing(false), 1200);
   });
-  const { slug, redirecturl, programOptions, additionalOptions } =
-    program.program;
+  const {
+    slug,
+    redirecturl,
+    programOptions,
+    additionalOptions,
+    formatOptions,
+  } = program.program;
   const { title } = program;
 
   // Process the redirecturl to remove the base URL if needed
