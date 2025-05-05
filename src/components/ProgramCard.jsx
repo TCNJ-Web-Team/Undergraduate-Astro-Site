@@ -9,6 +9,7 @@ const ProgramCard = ({
   animationState,
   gradCheckCard,
 }) => {
+  console.log("ProgramCard: ", program);
   const [isHovered] = useState(false);
   // const [isHovered, setIsHovered] = useState(false);
   const [pulsing, setPulsing] = useState(true);
