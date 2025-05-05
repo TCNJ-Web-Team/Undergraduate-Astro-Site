@@ -8,7 +8,8 @@ import "@fontsource/domine/400.css";
 import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
-import IntroSection from "../../components/IntroSection";
+// import IntroSection from "../../components/IntroSection";
+import IntroSectionUpdated from "../../components/IntroSectionUpdated";
 // import "../styles/homepage.scss";
 const data = await wpquery({
   query: ` query GraduateProgramsListing {
@@ -28,7 +29,7 @@ const data = await wpquery({
 }`,
 });
 // console.log(data.graduatePrograms.nodes);
-const tempGradData = data.graduatePrograms.nodes;
+// const tempGradData = data.graduatePrograms.nodes;
 
 const programOptions = await wpquery({
   query: ` query GradProgramOptions {
@@ -56,10 +57,10 @@ const additionalOptions = programOptions.page.graduateProgram.formatOptions;
 // console.log(additionalOptions);
 ---
 
-<Layout title="160+ Undergraduate Programs | TCNJ">
+<Layout title="Explore Programs - TCNJ Graduate Studies">
   <header>
     <!-- <TitleAndNav /> -->
-    <IntroSection client:load />
+    <IntroSectionUpdated client:load />
     <!-- <Intro /> -->
   </header>
   <main>
@@ -67,6 +68,7 @@ const additionalOptions = programOptions.page.graduateProgram.formatOptions;
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
       <ProgramList
+        gradCheck={true}
         data={data}
         redirectData={data}
         areaOfStudy={areaOfStudy}
@@ -74,32 +76,6 @@ const additionalOptions = programOptions.page.graduateProgram.formatOptions;
         additionalOptions={additionalOptions}
         client:visible
       />
-      <p>Grad Program finder here</p>
-      {
-        tempGradData.map(
-          (program: {
-            program: {
-              slug: unknown;
-              degreeType: unknown;
-              school: unknown;
-              keywords: unknown;
-            };
-            title: unknown;
-          }) => (
-            <div class="text-left pt-[25px]">
-              <h2 class="text-1xl font-bold">
-                <a href={"/graduate/" + program.program.slug}>
-                  {program.title}
-                </a>
-              </h2>
-              <p>{program.program.degreeType}</p>
-              <p>{program.program.school}</p>
-              <p>{program.program.slug}</p>
-              <p>{program.program.keywords}</p>
-            </div>
-          )
-        )
-      }
     </div>
     <NextStepFooter />
   </main>
