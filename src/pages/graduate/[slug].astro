@@ -462,14 +462,19 @@ const { sourceUrl } = heroImgDesktop ?? {
       </div>
     </div>
 
-    <AnnouncementBar
-      copy={announcementBar.announcementText}
-      start={announcementBar.announcementStartDate}
-      end={announcementBar.announcementEndDate}
-      link={announcementBar.accouncementLink}
-      linkText={announcementBar.announcementLinkText}
-      client:idle
-    />
+    {
+      announcementBar.announcementStartDate &&
+        announcementBar.announcementText && (
+          <AnnouncementBar
+            copy={announcementBar.announcementText}
+            start={announcementBar.announcementStartDate}
+            end={announcementBar.announcementEndDate}
+            link={announcementBar.accouncementLink}
+            linkText={announcementBar.announcementLinkText}
+            client:idle
+          />
+        )
+    }
 
     <div
       class="bg-tcnjyellow w-auto
