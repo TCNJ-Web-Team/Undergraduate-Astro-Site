@@ -11,6 +11,7 @@ export default function ProgramList({
   programOptionsClean,
   additionalOptions,
 }) {
+  console.log("Data:", data);
   // const combinedData = data.programs.nodes.concat(
   //   redirectData.programRedirects.nodes.map(item => ({
   //     program: item.redirectProgram

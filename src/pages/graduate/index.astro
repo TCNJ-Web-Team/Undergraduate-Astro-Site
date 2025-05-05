@@ -27,7 +27,7 @@ const data = await wpquery({
   }
 }`,
 });
-console.log(data.graduatePrograms.nodes);
+// console.log(data.graduatePrograms.nodes);
 const tempGradData = data.graduatePrograms.nodes;
 
 const programOptions = await wpquery({
@@ -41,18 +41,19 @@ const programOptions = await wpquery({
   }
 }`,
 });
-console.log(programOptions);
+// console.log(programOptions);
 // console.log(data);
 // console.log(data.programs.program);
 // console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
 // console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
 
-const areaOfStudy = programOptions.page.program.school.sort();
-console.log(areaOfStudy);
+const areaOfStudy = programOptions.page.graduateProgram.school.sort();
+// console.log(areaOfStudy);
 
-const programOptionsClean = programOptions.page.program.programOptions;
+const programOptionsClean = programOptions.page.graduateProgram.programOptions;
 // console.log(programOptionsClean);
-const additionalOptions = programOptions.page.program.additionalOptions;
+const additionalOptions = programOptions.page.graduateProgram.formatOptions;
+// console.log(additionalOptions);
 ---
 
 <Layout title="160+ Undergraduate Programs | TCNJ">
@@ -65,6 +66,14 @@ const additionalOptions = programOptions.page.program.additionalOptions;
     <div
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
+      <ProgramList
+        data={data}
+        redirectData={data}
+        areaOfStudy={areaOfStudy}
+        programOptionsClean={programOptionsClean}
+        additionalOptions={additionalOptions}
+        client:visible
+      />
       <p>Grad Program finder here</p>
       {
         tempGradData.map(
