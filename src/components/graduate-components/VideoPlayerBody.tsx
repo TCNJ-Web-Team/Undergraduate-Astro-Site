@@ -1,23 +1,34 @@
-interface VideoPlayerProps {
-  programAtAGlance: string;
-  programImageCheck?: string;
-  programCoordinators?: string;
-}
+import React, { useRef, useState } from "react";
+import "../../styles/gradient-styles.scss";
 
-const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
-  programAtAGlance,
-  programImageCheck,
-  programCoordinators,
-}) => {
+const VideoPlayerBody: React.FC = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = async () => {
+    const video = videoRef.current;
+    if (video) {
+      try {
+        await video.play();
+        video.controls = true;
+        setIsPlaying(true);
+      } catch (err) {
+        console.error("Autoplay/play failed:", err);
+      }
+    }
+  };
+
   return (
-    <div id="video-player-container">
+    <div className="video-player-container relative w-full h-full">
       <video
-        controls
-        controlsList="nodownload noplaybackrate"
-        disablePictureInPicture
-        disableRemotePlayback
+        ref={videoRef}
+        className="w-full h-auto"
+        controls={false}
         playsInline
         preload="auto"
+        disablePictureInPicture
+        disableRemotePlayback
+        controlsList="nodownload noplaybackrate"
         poster="https://tcnj.edu/custom/homepage/img/compressed/anthem/anthem-thumbnail.jpg"
       >
         <source
@@ -32,13 +43,21 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
         />
         Your browser does not support the video tag.
       </video>
-      <div id="popup-close">
-        <img
-          src="https://tcnj.edu/custom/homepage/img/compressed/anthem/close-item-white.svg"
-          alt="Close"
-        />
-      </div>
+
+      {!isPlaying && (
+        <button
+          onClick={handlePlayClick}
+          className="absolute inset-0 z-10 flex items-center justify-center bg-black/20"
+        >
+          <img
+            src="../../video-play-button.svg"
+            alt="Play"
+            className="w-[125px] h-[125px]"
+          />
+        </button>
+      )}
     </div>
   );
 };
+
 export default VideoPlayerBody;

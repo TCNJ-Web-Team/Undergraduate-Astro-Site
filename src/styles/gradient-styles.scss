@@ -1,0 +1,11 @@
+$tcnj-yellow: #fdd700;
+
+.gradient-yellow-white {
+  background: linear-gradient(
+    to bottom,
+    $tcnj-yellow 0%,
+    $tcnj-yellow 50%,
+    white 50%,
+    white 100%
+  );
+}

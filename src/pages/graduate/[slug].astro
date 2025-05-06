@@ -12,6 +12,7 @@ import TopOptionNew from "../../components/TopOptionNew";
 // import ProgramCareersHeading from "../../components/ProgramCareersHeading";
 // import ProgramGlanceCopy from "../../components/ProgramGlanceCopy";
 import "../../styles/inner-body-copy.scss";
+
 import "@fontsource/domine/400.css";
 import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
@@ -28,6 +29,7 @@ import NavigationBarGrad from "../../components/graduate-components/NavigationBa
 import AtAGlanceGrad from "../../components/graduate-components/AtAGlanceGrad";
 import ProgramDetailsGrad from "../../components/graduate-components/ProgramDetailsGrad";
 import AnnouncementBar from "../../components/graduate-components/AnnouncementBar";
+import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBody";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -456,6 +458,15 @@ const { sourceUrl } = heroImgDesktop ?? {
           client:load
         />
         <ProgramDetailsGrad programDetails={programDetails} client:load />
+      </div>
+    </div>
+    <div class="px-[35px] bg-tcnjyellow">
+      <div class="gradient-yellow-white w-full">
+        <div
+          class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[45px] md:px-0"
+        >
+          <VideoPlayerBody client:visible />
+        </div>
       </div>
     </div>
     <div
