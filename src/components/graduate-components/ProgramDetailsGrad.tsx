@@ -84,7 +84,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                   {detail.popupContent && activePopupIndex === index && (
                     <div
                       ref={(el) => (popupRefs.current[index] = el)}
-                      className="popup-detail absolute top-1/2 left-[-75%] transform -translate-y-1/2 bg-white w-[320px] p-[20px] shadow-lg z-10 ml-[15px] mt-[-5px]"
+                      className="popup-detail absolute top-1/2 left-[-75%] transform -translate-y-1/2 bg-white w-[320px] p-[20px] shadow-lg z-[1000] ml-[15px] mt-[-5px]"
                       dangerouslySetInnerHTML={{
                         __html: detail.popupContent || "",
                       }}
