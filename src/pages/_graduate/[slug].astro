@@ -7,7 +7,7 @@ import LowerContent from "../../components/LowerContent.astro";
 import RelatedProgSlider from "../../components/RelatedProgSlider";
 import NextStepFooter from "../../components/NextStepFooter";
 import TopOption from "../../components/TopOption";
-import TopOptionNew from "../../components/TopOptionNew.tsx";
+import TopOptionNew from "../../components/TopOptionNew";
 
 // import ProgramCareersHeading from "../../components/ProgramCareersHeading";
 // import ProgramGlanceCopy from "../../components/ProgramGlanceCopy";
@@ -89,8 +89,7 @@ export async function getStaticPaths() {
   }
 }`,
   });
-  // console.log(data);
-  // console.log(data.graduatePrograms.nodes[0].graduateProgram.programDetails);
+
   const paths = data.graduatePrograms.nodes.map(
     (program: {
       graduateProgram: {
@@ -275,7 +274,7 @@ const {
   metaDescription,
   socialImage,
 } = Astro.props as AstroProps;
-console.log(repeaterDegrees);
+// console.log(repeaterDegrees);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -320,19 +319,7 @@ const { sourceUrl } = heroImgDesktop ?? {
             {title}
           </span>
         </p>
-        <!-- <h1
-          class="font-chunkfive
-          text-tcnjblue
-          text-[45px]
-          leading-[50px]
-          sm:text-[60px]
-          sm:leading-[60px]
-         
-          md:text-custom-16.25
-          md:leading-[4.688rem]"
-        >
-          {title}
-        </h1> -->
+
         <AnimatedTitle
           title={title}
           subtitle={acceleratedSubtitle}
@@ -394,15 +381,6 @@ const { sourceUrl } = heroImgDesktop ?? {
           sm:justify-between
           md:max-w-none"
         >
-          <!-- <TopOption heading={degreeType && degreeType.length > 1 ? 'Degrees' : 'Degree'} imgSrc="ribbon">
-            {
-              Array.isArray(degreeType)
-                ? degreeType.map((degree: string) => (
-                    <span class="block">{degree}</span>
-                  ))
-                : { degreeType }
-            }
-          </TopOption> -->
           <TopOption
             heading={repeaterDegrees && repeaterDegrees.length > 1
               ? "Degrees"
@@ -421,9 +399,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                 : null
             }
           </TopOption>
-          <!-- <TopOption school={school} heading={school && school.length > 1 ? 'Schools' : 'School'} imgSrc="building">
-            {school}
-          </TopOption> -->
+
           <TopOptionNew
             client:load
             school={school}
@@ -445,23 +421,7 @@ const { sourceUrl } = heroImgDesktop ?? {
               : "Department"}
             department={department}
             imgSrc="departments"
-          >
-            <!-- {deptTitle}
-             -->
-            <!-- {
-              Array.isArray(department)
-                ? department.map((degree) => 
-                    degree.deptTitle === 'Any' || degree.deptTitle === 'any' ? (
-                      <a class="text-[#33739F] underline">Any Department</a>
-                    ) : (
-                      <a class="text-[#33739F] underline" href={degree.deptUrl}>
-                        <span class="block">{degree.deptTitle}</span>
-                      </a>
-                    )
-                  )
-                : department
-              } -->
-          </TopOption>
+          />
         </div>
       </div>
     </div>
@@ -490,10 +450,6 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pr-[35px]"
     >
       <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
-        <!-- <AnimatedProgramAtAGlance
-          programAtAGlance={programAtAGlance}
-          client:idle
-        /> -->
         <AtAGlanceGrad
           programAtAGlance={programAtAGlance}
           programCoordinators={programCoordinators}
@@ -545,7 +501,6 @@ const { sourceUrl } = heroImgDesktop ?? {
               />
             )
           }
-          <!-- {learnMoreList && <LearnMoreList learnMoreList={learnMoreList} />} -->
           {
             !lowerContent && (
               <div
