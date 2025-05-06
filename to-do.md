@@ -1,5 +1,10 @@
 ## Graduate Pages
 
+- video module, allow up to 3 videos
+- configure popup for figures section
+- add smooth scroll and open animation for top nav menu
+- go back to relative links in learn more section
+
 - department instead of Next class
 - separate program finder
   - How do the breadcrumbs work?

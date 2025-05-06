@@ -28,7 +28,6 @@ const data = await wpquery({
   }
 }`,
 });
-// console.log(data.graduatePrograms.nodes);
 // const tempGradData = data.graduatePrograms.nodes;
 
 const programOptions = await wpquery({
@@ -42,19 +41,11 @@ const programOptions = await wpquery({
   }
 }`,
 });
-// console.log(programOptions);
-// console.log(data);
-// console.log(data.programs.program);
-// console.log(JSON.stringify(data.programs.nodes, null, 2)); // Log the entire list
-// console.log(JSON.stringify(programOptions.page.program, null, 2)); // Log the entire list
 
 const areaOfStudy = programOptions.page.graduateProgram.school.sort();
-// console.log(areaOfStudy);
 
 const programOptionsClean = programOptions.page.graduateProgram.programOptions;
-// console.log(programOptionsClean);
 const additionalOptions = programOptions.page.graduateProgram.additionalOptions;
-// console.log(additionalOptions);
 ---
 
 <Layout title="Explore Programs - TCNJ Graduate Studies">
