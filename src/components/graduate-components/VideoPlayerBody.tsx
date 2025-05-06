@@ -1,7 +1,16 @@
 import React, { useRef, useState } from "react";
 import "../../styles/gradient-styles.scss";
+interface VideoPlayerProps {
+  videoUrl?: string;
+  posterImage?: string;
+  captions?: string;
+}
 
-const VideoPlayerBody: React.FC = () => {
+const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
+  videoUrl = "https://player.vimeo.com/progressive_redirect/playback/1045005215/rendition/1080p/file.mp4?loc=external&signature=aab76518d4c1b73210f37b990644114d81f4f8d6a84d7bd97a95bfef8f5abbf1",
+  posterImage = "https://tcnj.edu/custom/homepage/img/compressed/anthem/anthem-thumbnail.jpg",
+  captions = "https://tcnj.edu/custom/homepage/captions/anthem-video-captions2.vtt",
+}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -29,18 +38,10 @@ const VideoPlayerBody: React.FC = () => {
         disablePictureInPicture
         disableRemotePlayback
         controlsList="nodownload noplaybackrate"
-        poster="https://tcnj.edu/custom/homepage/img/compressed/anthem/anthem-thumbnail.jpg"
+        poster={posterImage}
       >
-        <source
-          src="https://player.vimeo.com/progressive_redirect/playback/1045005215/rendition/1080p/file.mp4?loc=external&signature=aab76518d4c1b73210f37b990644114d81f4f8d6a84d7bd97a95bfef8f5abbf1"
-          type="video/mp4"
-        />
-        <track
-          kind="captions"
-          label="English"
-          src="https://tcnj.edu/custom/homepage/captions/anthem-video-captions2.vtt"
-          srcLang="en"
-        />
+        <source src={videoUrl} type="video/mp4" />
+        <track kind="captions" label="English" src={captions} srcLang="en" />
         Your browser does not support the video tag.
       </video>
 
