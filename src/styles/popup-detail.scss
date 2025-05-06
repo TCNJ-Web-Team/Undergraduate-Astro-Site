@@ -1,0 +1,15 @@
+.popup-detail {
+  :before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    top: calc(50% - 10px);
+    border-color: transparent #fff transparent transparent;
+    border-width: 11px;
+    z-index: 100;
+  }
+}

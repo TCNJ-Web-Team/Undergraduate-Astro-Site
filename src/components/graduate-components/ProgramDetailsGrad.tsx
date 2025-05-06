@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInAnimationVariant } from "../../animations/fadeInVariant";
+import "../../styles/popup-detail.scss";
 
 interface ProgramDetailsGrad {
   programDetails?: {
@@ -32,6 +33,18 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   //   }),
   // };
   // console.log(programImageCheck);
+  const [activePopupIndex, setActivePopupIndex] = useState<number | null>(null);
+
+  const handleClick = (index: number) => {
+    setActivePopupIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  // const handleOutsideClick = (event: React.MouseEvent) => {
+  //   const target = event.target as HTMLElement;
+  //   if (target.classList.contains("popup-detail")) {
+  //     setShowPopupDetail(false);
+  //   }
+  // };
   return (
     <>
       <motion.div
@@ -55,14 +68,26 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                 <h3 className="text-[17px] leading-[22px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
                   {detail.detailTitle}
                 </h3>
-                <div>
+                <div className="inline-flex items-center justify-center gap-1">
                   <div
-                    className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center"
+                    className={`text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
+                      detail.detailContent ? `detail-popup-show` : ``
+                    }`}
                     dangerouslySetInnerHTML={{
                       __html: detail.detailContent || "",
                     }}
+                    onClick={() => handleClick(index)}
                   />
-                  {detail.popupContent && <span>*</span>}
+                  <div className="popup-detail-container relative">
+                    {detail.popupContent && activePopupIndex === index && (
+                      <div
+                        className="popup-detail absolute top-[-50%] h-auto bg-white w-[320px] p-[20px] shadow-lg z-10"
+                        dangerouslySetInnerHTML={{
+                          __html: detail.popupContent || "",
+                        }}
+                      ></div>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             );
