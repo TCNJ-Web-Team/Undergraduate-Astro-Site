@@ -63,14 +63,15 @@ md:pt-[135px] lg:pt-[187px]"
           className={`text-[20px] leading-[35px] text-center sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
-          custom={2}
+          custom={1}
         />
         <motion.div
           id="program-coordinators"
-          className={`text-[20px] leading-[35px] text-center sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
+          className={`text-[19px] leading-[27px] text-center yellow-body-copy
+            pt-[37px]`}
           dangerouslySetInnerHTML={{ __html: programCoordinators || "" }}
           variants={fadeInAnimationVariant}
-          custom={3}
+          custom={1}
         />
 
         {/* <motion.div

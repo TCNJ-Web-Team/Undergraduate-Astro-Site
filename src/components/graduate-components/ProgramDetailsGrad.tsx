@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-3 gap-[20px] sm:gap-[30px] md:gap-[40px] lg:gap-[50px]"
+      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] md:gap-[40px] lg:gap-[50px] pb-[100px]"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
@@ -63,16 +63,16 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
           return (
             <motion.div
               key={index}
-              className="flex flex-col gap-[20px] text-center relative"
+              className="flex flex-col gap-[10px] text-center relative items-center"
               variants={fadeInAnimationVariant}
-              custom={index + 1}
+              custom={index + 2}
             >
-              <h3 className="text-[17px] leading-[22px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
+              <h3 className="text-[45px] leading-[55px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
                 {detail.detailTitle}
               </h3>
               <div className="inline-flex items-center justify-center gap-1">
                 <div
-                  className={`text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
+                  className={`text-[21px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
                     detail.detailContent ? "detail-popup-show" : ""
                   }`}
                   dangerouslySetInnerHTML={{
@@ -92,6 +92,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                   )}
                 </div>
               </div>
+              <hr className="h-[4px] w-[200px] bg-white mt-[13px]" />
             </motion.div>
           );
         })}
