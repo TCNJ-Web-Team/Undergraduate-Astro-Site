@@ -1,5 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { useVideoStore } from "../../stores/useVideoStore"; // adjust path
 import "../../styles/gradient-styles.scss";
+import { v4 as uuidv4 } from "uuid";
+
 interface VideoPlayerProps {
   videoUrl?: string;
   posterImage?: string;
@@ -13,6 +16,18 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const { currentVideoId, setCurrentVideoId } = useVideoStore();
+
+  const thisVideoId = useRef(uuidv4()).current;
+
+  // Pause if another video starts
+  useEffect(() => {
+    if (currentVideoId !== thisVideoId && isPlaying) {
+      videoRef.current?.pause();
+      videoRef.current!.controls = false;
+      setIsPlaying(false);
+    }
+  }, [currentVideoId, isPlaying, thisVideoId]);
 
   const handlePlayClick = async () => {
     const video = videoRef.current;
@@ -21,6 +36,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
         await video.play();
         video.controls = true;
         setIsPlaying(true);
+        setCurrentVideoId(thisVideoId);
       } catch (err) {
         console.error("Autoplay/play failed:", err);
       }
