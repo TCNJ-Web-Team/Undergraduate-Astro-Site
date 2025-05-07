@@ -21,6 +21,7 @@
     "@fontsource/chunk-five": "^5.0.7",
     "@fontsource/domine": "^5.2.5",
     "@fontsource/open-sans": "^5.0.17",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "astro": "^5.7.10",

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { useVideoStore } from "../../stores/useVideoStore"; // adjust path
+import { useVideoStore } from "../../stores/useVideoStore";
 import "../../styles/gradient-styles.scss";
 import { v4 as uuidv4 } from "uuid";
 
@@ -17,7 +17,6 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const { currentVideoId, setCurrentVideoId } = useVideoStore();
-
   const thisVideoId = useRef(uuidv4()).current;
 
   // Pause if another video starts
@@ -44,43 +43,47 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   };
 
   return (
-    <div className="video-player-container relative w-full h-full">
-      <video
-        ref={videoRef}
-        className="w-full h-[500px] sm:h-auto aspect-w-16 aspect-h-9"
-        controls={false}
-        playsInline
-        muted
-        preload="auto"
-        disablePictureInPicture
-        disableRemotePlayback
-        controlsList="nodownload noplaybackrate"
-        poster={posterImage ? posterImage : undefined}
-      >
-        <source src={videoUrl ? videoUrl : undefined} type="video/mp4" />
-        {captionUrl && (
-          <track
-            kind="captions"
-            label="English"
-            src={captionUrl}
-            srcLang="en"
-          />
-        )}
-        Your browser does not support the video tag.
-      </video>
-
-      {!isPlaying && (
-        <button
-          onClick={handlePlayClick}
-          className="absolute inset-0 z-10 flex items-center justify-center bg-black/20"
+    <div className="video-player-container relative w-full max-w-[1200px] mx-auto">
+      {/* Wrapper to maintain aspect ratio for playing video */}
+      <div className="relative w-full h-[500px] sm:h-auto sm:aspect-w-16 sm:aspect-h-9 bg-black overflow-hidden">
+        <video
+          ref={videoRef}
+          className={`absolute inset-0 w-full h-full ${
+            isPlaying ? "object-contain" : "object-cover"
+          }`}
+          controls={false}
+          playsInline
+          preload="auto"
+          disablePictureInPicture
+          disableRemotePlayback
+          controlsList="nodownload noplaybackrate"
+          poster={posterImage}
         >
-          <img
-            src="../../video-play-button.svg"
-            alt="Play"
-            className="w-[100px] sm:w-[125px] h-[100px] sm:h-[125px]"
-          />
-        </button>
-      )}
+          <source src={videoUrl} type="video/mp4" />
+          {captionUrl && (
+            <track
+              kind="captions"
+              label="English"
+              src={captionUrl}
+              srcLang="en"
+            />
+          )}
+          Your browser does not support the video tag.
+        </video>
+
+        {!isPlaying && (
+          <button
+            onClick={handlePlayClick}
+            className="absolute inset-0 z-10 flex items-center justify-center bg-black/30"
+          >
+            <img
+              src="../../video-play-button.svg"
+              alt="Play"
+              className="w-[100px] sm:w-[125px] h-[100px] sm:h-[125px]"
+            />
+          </button>
+        )}
+      </div>
     </div>
   );
 };
