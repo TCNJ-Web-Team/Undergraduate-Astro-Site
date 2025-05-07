@@ -30,6 +30,7 @@ import AtAGlanceGrad from "../../components/graduate-components/AtAGlanceGrad";
 import ProgramDetailsGrad from "../../components/graduate-components/ProgramDetailsGrad";
 import AnnouncementBar from "../../components/graduate-components/AnnouncementBar";
 import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBody";
+import { video } from "framer-motion/client";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -84,6 +85,13 @@ export async function getStaticPaths() {
           title
           slug
           schoolOrAdditionalLabel
+        }
+        videos {
+          captionUrl
+          posterImage {
+            sourceUrl
+          }
+          videoUrl
         }
       }
       title
@@ -144,6 +152,13 @@ export async function getStaticPaths() {
         metaTitle: string;
         metaDescription: string;
         socialImage: [];
+        videos: {
+          captionUrl: string;
+          posterImage: {
+            sourceUrl: string;
+          };
+          videoUrl: string;
+        }[];
       };
       title: string;
     }) => ({
@@ -184,6 +199,7 @@ export async function getStaticPaths() {
         metaTitle: program.graduateProgram.metaTitle,
         metaDescription: program.graduateProgram.metaDescription,
         socialImage: program.graduateProgram.socialImage,
+        videos: program.graduateProgram.videos,
       },
     })
   );
@@ -239,6 +255,13 @@ interface AstroProps {
   metaTitle: string;
   metaDescription: string;
   socialImage: any[];
+  videos: {
+    captionUrl: string;
+    posterImage: {
+      sourceUrl: string;
+    };
+    videoUrl: string;
+  }[];
 }
 
 // Destructure with the defined interface
@@ -275,8 +298,9 @@ const {
   metaTitle,
   metaDescription,
   socialImage,
+  videos,
 } = Astro.props as AstroProps;
-// console.log(repeaterDegrees);
+console.log(videos);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
@@ -459,17 +483,27 @@ const { sourceUrl } = heroImgDesktop ?? {
         />
         <ProgramDetailsGrad programDetails={programDetails} client:load />
       </div>
-    </div>
-    <div class="px-[35px] bg-tcnjyellow">
-      <div class="gradient-yellow-white w-full">
-        <div
-          class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[45px] md:px-0"
-        >
-          <VideoPlayerBody client:visible />
-          <VideoPlayerBody client:visible />
+    </div>{
+      videos && videos.length > 0 && videos[0].videoUrl && (
+        <div class="sm:px-[35px] bg-tcnjyellow">
+          <div class="gradient-yellow-white w-full">
+            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[45px] md:px-0">
+              <div class="mb-0">
+                {videos.map((video, index) => (
+                  <VideoPlayerBody
+                    data-key={index}
+                    videoUrl={video.videoUrl}
+                    posterImage={video.posterImage.sourceUrl}
+                    captionUrl={video.captionUrl}
+                    client:load
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )
+    }
     <div
       id="programs-of-study-container"
       class="px-[35px] w-auto sm:bg-tcnjyellow"
