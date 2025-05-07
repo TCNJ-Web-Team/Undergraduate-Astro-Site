@@ -7,13 +7,14 @@ interface VideoPlayerProps {
   videoUrl?: string;
   posterImage?: string;
   captionUrl?: string;
-  indexNumber: number;
+  indexNumber?: number;
 }
 
 const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   videoUrl = "https://player.vimeo.com/progressive_redirect/playback/1045005215/rendition/1080p/file.mp4?loc=external&signature=aab76518d4c1b73210f37b990644114d81f4f8d6a84d7bd97a95bfef8f5abbf1",
   posterImage = "https://tcnj.edu/custom/homepage/img/compressed/anthem/anthem-thumbnail.jpg",
   captionUrl = "https://tcnj.edu/custom/homepage/captions/anthem-video-captions2.vtt",
+  indexNumber,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -21,11 +22,29 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   const thisVideoId = useRef(uuidv4()).current;
 
   // Pause if another video starts
+  // useEffect(() => {
+  //   if (currentVideoId !== thisVideoId && isPlaying) {
+  //     videoRef.current?.pause();
+  //     videoRef.current!.currentTime = 0; // Reset to start
+  //     videoRef.current!.controls = false;
+  //     videoRef.current!.load(); // Reload the video
+  //     setIsPlaying(false);
+  //   }
+  // }, [currentVideoId, isPlaying, thisVideoId]);
+
   useEffect(() => {
     if (currentVideoId !== thisVideoId && isPlaying) {
-      videoRef.current?.pause();
-      videoRef.current!.controls = false;
-      setIsPlaying(false);
+      const video = videoRef.current;
+
+      if (video) {
+        video.pause();
+        video.controls = false;
+
+        // Reassign the poster to ensure it displays
+        video.setAttribute("poster", posterImage);
+
+        setIsPlaying(false);
+      }
     }
   }, [currentVideoId, isPlaying, thisVideoId]);
 
@@ -44,7 +63,12 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   };
 
   return (
-    <div className="video-player-container relative w-full max-w-[1200px] mx-auto">
+    <div
+      className={`video-player-container relative w-full ${
+        indexNumber === 0 ? "sm:col-span-2" : ""
+      }`}
+      id={`video-number-${indexNumber}`}
+    >
       {/* Wrapper to maintain aspect ratio for playing video */}
       <div className="relative w-full h-[500px] sm:h-auto sm:aspect-w-16 sm:aspect-h-9 bg-black overflow-hidden">
         <video
