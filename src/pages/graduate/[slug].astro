@@ -483,26 +483,33 @@ const { sourceUrl } = heroImgDesktop ?? {
         />
         <ProgramDetailsGrad programDetails={programDetails} client:load />
       </div>
-    </div>{
+    </div>
+    {
       videos && videos.length > 0 && videos[0].videoUrl && (
         <div class="sm:px-[35px] bg-tcnjyellow ">
           <div class="gradient-yellow-white w-full ">
-            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] md:px-0 flex flex-col gap-[25px] md:flex-row">
-              {videos.map((video, index) => (
-                <VideoPlayerBody
-                  data-key={index}
-                  videoUrl={video.videoUrl}
-                  posterImage={video.posterImage.sourceUrl}
-                  captionUrl={video.captionUrl}
-                  client:load
-                />
-              ))}
-            </div>
+            {videos.length < 3 ? (
+              <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] md:px-0 flex flex-col gap-[25px] md:flex-row">
+                {videos.map((video, index) => (
+                  <VideoPlayerBody
+                    data-key={index}
+                    videoUrl={video.videoUrl}
+                    posterImage={video.posterImage.sourceUrl}
+                    captionUrl={video.captionUrl}
+                    indexNumber={index}
+                    client:load
+                  />
+                ))}
+              </div>
+            ) : (
+              <div>3 videos</div>
+            )}
             <div class="sm:px-[35px] bg-white w-full h-[75px] md:h-0" />
           </div>
         </div>
       )
     }
+
     <div
       id="programs-of-study-container"
       class="px-[35px] w-auto sm:bg-tcnjyellow"

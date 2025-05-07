@@ -7,6 +7,7 @@ interface VideoPlayerProps {
   videoUrl?: string;
   posterImage?: string;
   captionUrl?: string;
+  indexNumber: number;
 }
 
 const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
