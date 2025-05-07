@@ -1,11 +1,60 @@
 $tcnj-yellow: #fdd700;
 
-.gradient-yellow-white {
-  background: linear-gradient(
-    to bottom,
-    $tcnj-yellow 0%,
-    $tcnj-yellow 50%,
-    white 50%,
-    white 100%
-  );
+// Define gradients without media queries first
+@mixin define-gradients {
+  @for $i from 0 through 20 {
+    $percent: $i * 5;
+    .gradient-yellow-white-#{$percent} {
+      background: linear-gradient(
+        to bottom,
+        $tcnj-yellow 0%,
+        $tcnj-yellow #{$percent + "%"},
+        white #{$percent + "%"},
+        white 100%
+      );
+    }
+  }
 }
+
+// Then define media queries in ascending order
+@mixin responsive-gradients {
+  // Base gradients
+  @include define-gradients;
+
+  // SM breakpoint (550px)
+  @media (min-width: 550px) {
+    @for $i from 0 through 100 {
+      $percent: $i * 1;
+      .sm\:gradient-yellow-white-#{$percent} {
+        background: linear-gradient(
+          to bottom,
+          $tcnj-yellow 0%,
+          $tcnj-yellow #{$percent + "%"},
+          white #{$percent + "%"},
+          white 100%
+        );
+      }
+    }
+  }
+
+  // MD breakpoint (900px) - Will override SM
+  @media (min-width: 900px) {
+    @for $i from 0 through 100 {
+      $percent: $i * 1;
+      .md\:gradient-yellow-white-#{$percent} {
+        background: linear-gradient(
+          to bottom,
+          $tcnj-yellow 0%,
+          $tcnj-yellow #{$percent + "%"},
+          white #{$percent + "%"},
+          white 100%
+        );
+      }
+    }
+  }
+
+  // Repeat for other breakpoints...
+}
+
+// Call the mixin to generate all styles
+@include responsive-gradients;

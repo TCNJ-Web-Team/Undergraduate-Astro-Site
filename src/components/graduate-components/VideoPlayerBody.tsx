@@ -104,7 +104,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
             <img
               src="../../video-play-button.svg"
               alt="Play"
-              className="w-[100px] sm:w-[125px] h-[100px] sm:h-[125px]"
+              className="w-[100px] h-[100px] sm:w-[75px]  sm:h-[75px] md:w-[125px]  md:h-[125px]"
             />
           </button>
         )}

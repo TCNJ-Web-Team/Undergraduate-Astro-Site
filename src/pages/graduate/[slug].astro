@@ -300,11 +300,12 @@ const {
   socialImage,
   videos,
 } = Astro.props as AstroProps;
-console.log(videos);
+// console.log(videos);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+// console.log(videos.length);
 ---
 
 <Layout title={title} description={metaDescription} metaTitle={title}>
@@ -487,8 +488,16 @@ const { sourceUrl } = heroImgDesktop ?? {
     {
       videos && videos.length > 0 && videos[0].videoUrl && (
         <div class="sm:px-[35px] bg-tcnjyellow ">
-          <div class="gradient-yellow-white w-full ">
-            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] lgMd::px-0 ">
+          <div
+            class={`w-full ${
+              videos.length === 2
+                ? " gradient-yellow-white-25 sm:gradient-yellow-white-75  md:gradient-yellow-white-50 "
+                : videos.length === 3
+                  ? "gradient-yellow-white-50 sm:gradient-yellow-white-85  md:gradient-yellow-white-82"
+                  : "gradient-yellow-white-50"
+            }`}
+          >
+            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] lgMd:px-0 ">
               {videos.length < 3 ? (
                 <div class="flex flex-col gap-[25px] md:flex-row">
                   {videos.map((video, index) => (
@@ -516,11 +525,16 @@ const { sourceUrl } = heroImgDesktop ?? {
                 </div>
               )}
             </div>
-            <div class="sm:px-[35px] bg-white w-full h-[75px] md:h-0" />
           </div>
         </div>
       )
     }
+    <!-- <div class="bg-tcnjyellow w-auto"> -->
+    <div
+      class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] md:h-0"
+    >
+    </div>
+    <!-- </div> -->
 
     <div
       id="programs-of-study-container"
