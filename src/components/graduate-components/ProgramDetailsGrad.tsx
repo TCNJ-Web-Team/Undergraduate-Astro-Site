@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] md:gap-[40px] lg:gap-[50px] pb-[100px] items-stretch"
+      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-[40px] lg:gap-[50px] pb-[100px] sm:pb-[125px] items-stretch"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
@@ -63,12 +63,12 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
           return (
             <motion.div
               key={index}
-              className="flex flex-col justify-between items-center gap-[10px] text-center relative h-full"
+              className="flex flex-col justify-between items-center gap-[10px] text-center relative h-full sm:min-h-[138px]"
               variants={fadeInAnimationVariant}
               custom={index + 2}
             >
               {/* Content Container with flex-grow to push hr to the bottom */}
-              <div className="flex-grow flex flex-col items-center justify-start">
+              <div className="flex-grow flex flex-col items-center justify-start gap-[10px] sm:gap-[7px]">
                 <h3 className="text-[45px] leading-[55px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
                   {detail.detailTitle}
                 </h3>
@@ -99,7 +99,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               </div>
 
               {/* hr aligned at the bottom */}
-              <hr className="h-[4px] w-[200px] bg-white mt-auto" />
+              <hr className="h-[4px] w-[200px] bg-white mt-[11px]" />
             </motion.div>
           );
         })}
