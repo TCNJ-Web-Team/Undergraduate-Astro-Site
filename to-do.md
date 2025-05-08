@@ -5,19 +5,20 @@
 
 ## Graduate Pages
 
-- video module, allow up to 3 videos
-- configure popup for figures section
+- x video module, allow up to 3 videos
+- x configure popup for figures section
+- style popup at diff resolution
 - add smooth scroll and open animation for top nav menu
 - go back to relative links in learn more section
-
-- department instead of Next class
-- separate program finder
+- add custom CTA buttons
+- x department instead of Next class
+- z separate program finder
   - How do the breadcrumbs work?
-- pages at /graduate/name-of-program
-- Program details
+- x pages at /graduate/name-of-program
+- x Program details
   - popup available for each section? or lower details
   - https://graduate.tcnj.edu/explore-programs/acct-business-analytics-ms/
-- Internal Nav, standard or unqiue?
+- x Internal Nav, standard or unqiue?
 
   - directing to individual faq
 
