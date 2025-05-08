@@ -5,6 +5,9 @@
 
 ## Graduate Pages
 
+- mobile program details, add character counter and lower font for more than 12 characters
+- add Apply and Learn more buttons
+- fix mobile nav
 - x video module, allow up to 3 videos
 - x configure popup for figures section
 - style popup at diff resolution
