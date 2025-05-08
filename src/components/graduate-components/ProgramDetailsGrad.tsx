@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-[40px] lg:gap-[50px] pb-[100px] sm:pb-[125px] items-stretch"
+      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  md:pb-[200px] items-stretch"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
@@ -68,14 +68,14 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               custom={index + 2}
             >
               {/* Content Container with flex-grow to push hr to the bottom */}
-              <div className="flex-grow flex flex-col items-center justify-start gap-[10px] sm:gap-[7px]">
-                <h3 className="text-[45px] leading-[55px] sm:leading-[53px] sm:text-[40px] font-alfaslab text-tcnjblue">
+              <div className="flex-grow flex flex-col items-center justify-start gap-[10px] sm:gap-[7px] md:gap-[10px] lg:gap-[16px]">
+                <h3 className="text-[45px] leading-[55px] sm:leading-[53px] sm:text-[40px]  font-alfaslab text-tcnjblue">
                   {detail.detailTitle}
                 </h3>
 
                 <div className="inline-flex items-center justify-center gap-1">
                   <div
-                    className={`text-[21px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
+                    className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
                       detail.detailContent ? "detail-popup-show" : ""
                     }`}
                     dangerouslySetInnerHTML={{

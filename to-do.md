@@ -1,3 +1,8 @@
+## Design Review
+
+- Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
+- height for details matches, min-height set
+
 ## Graduate Pages
 
 - video module, allow up to 3 videos
