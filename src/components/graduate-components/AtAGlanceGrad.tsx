@@ -41,14 +41,14 @@ md:pt-[135px] lg:pt-[187px]"
       ></div>
       <motion.div
         id="program-at-a-glance"
-        className={`${programImageCheck ? "pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]" : "pb-[100px]  sm:pb-[115px] md:pb-[150px] lg:pb-[200px]"}   `}
+        className={`${programImageCheck ? "pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]" : "pb-[100px]  sm:pb-[123px] md:pb-[150px] lg:pb-[198px]"}   `}
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"
         viewport={{ once: true }}
       >
         <motion.h2
-          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[20px] sm:pb-[27px] sm:text-[55px] sm:leading-[75px] md:text-[65px] md:leading-[89px] md:pb-[23px]
+          className={`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[20px] sm:pb-[27px] sm:text-[55px] sm:leading-[75px] md:text-[65px] md:leading-[89px] md:pb-[17px]
             lg:pb-[14px]
         
         `}
@@ -63,14 +63,15 @@ md:pt-[135px] lg:pt-[187px]"
           className={`text-[20px] leading-[35px] text-center sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
-          custom={2}
+          custom={1}
         />
         <motion.div
           id="program-coordinators"
-          className={`text-[20px] leading-[35px] text-center sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
+          className={`text-[19px] leading-[27px] text-center yellow-body-copy flex flex-col gap-[10px]
+            pt-[37px] sm:pt-[26px] md:pt-[38px] lg:pt-[42px]`}
           dangerouslySetInnerHTML={{ __html: programCoordinators || "" }}
           variants={fadeInAnimationVariant}
-          custom={3}
+          custom={1}
         />
 
         {/* <motion.div

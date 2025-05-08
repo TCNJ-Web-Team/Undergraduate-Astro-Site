@@ -12,6 +12,8 @@ import TopOptionNew from "../../components/TopOptionNew";
 // import ProgramCareersHeading from "../../components/ProgramCareersHeading";
 // import ProgramGlanceCopy from "../../components/ProgramGlanceCopy";
 import "../../styles/inner-body-copy.scss";
+import "../../styles/grad-styles.scss";
+
 import "@fontsource/domine/400.css";
 import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
@@ -28,6 +30,8 @@ import NavigationBarGrad from "../../components/graduate-components/NavigationBa
 import AtAGlanceGrad from "../../components/graduate-components/AtAGlanceGrad";
 import ProgramDetailsGrad from "../../components/graduate-components/ProgramDetailsGrad";
 import AnnouncementBar from "../../components/graduate-components/AnnouncementBar";
+import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBody";
+import { video } from "framer-motion/client";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -82,6 +86,13 @@ export async function getStaticPaths() {
           title
           slug
           schoolOrAdditionalLabel
+        }
+        videos {
+          captionUrl
+          posterImage {
+            sourceUrl
+          }
+          videoUrl
         }
       }
       title
@@ -142,6 +153,13 @@ export async function getStaticPaths() {
         metaTitle: string;
         metaDescription: string;
         socialImage: [];
+        videos: {
+          captionUrl: string;
+          posterImage: {
+            sourceUrl: string;
+          };
+          videoUrl: string;
+        }[];
       };
       title: string;
     }) => ({
@@ -182,6 +200,7 @@ export async function getStaticPaths() {
         metaTitle: program.graduateProgram.metaTitle,
         metaDescription: program.graduateProgram.metaDescription,
         socialImage: program.graduateProgram.socialImage,
+        videos: program.graduateProgram.videos,
       },
     })
   );
@@ -237,6 +256,13 @@ interface AstroProps {
   metaTitle: string;
   metaDescription: string;
   socialImage: any[];
+  videos: {
+    captionUrl: string;
+    posterImage: {
+      sourceUrl: string;
+    };
+    videoUrl: string;
+  }[];
 }
 
 // Destructure with the defined interface
@@ -273,12 +299,14 @@ const {
   metaTitle,
   metaDescription,
   socialImage,
+  videos,
 } = Astro.props as AstroProps;
-// console.log(repeaterDegrees);
+// console.log(videos);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+// console.log(videos.length);
 ---
 
 <Layout title={title} description={metaDescription} metaTitle={title}>
@@ -458,6 +486,57 @@ const { sourceUrl } = heroImgDesktop ?? {
         <ProgramDetailsGrad programDetails={programDetails} client:load />
       </div>
     </div>
+    {
+      videos && videos.length > 0 && videos[0].videoUrl && (
+        <div class="sm:px-[35px] bg-tcnjyellow ">
+          <div
+            class={`w-full ${
+              videos.length === 2
+                ? " gradient-yellow-white-25 sm:gradient-yellow-white-75  md:gradient-yellow-white-50 "
+                : videos.length === 3
+                  ? "gradient-yellow-white-50 sm:gradient-yellow-white-85  md:gradient-yellow-white-82"
+                  : "gradient-yellow-white-50"
+            }`}
+          >
+            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] lgMd:px-0 ">
+              {videos.length < 3 ? (
+                <div class="flex flex-col gap-[25px] md:flex-row">
+                  {videos.map((video, index) => (
+                    <VideoPlayerBody
+                      data-key={index}
+                      videoUrl={video.videoUrl}
+                      posterImage={video.posterImage.sourceUrl}
+                      captionUrl={video.captionUrl}
+                      client:load
+                    />
+                  ))}
+                </div>
+              ) : (
+                <div class="flex flex-col sm:grid sm:grid-cols-2 gap-[25px] ">
+                  {videos.map((video, index) => (
+                    <VideoPlayerBody
+                      data-key={index}
+                      videoUrl={video.videoUrl}
+                      posterImage={video.posterImage.sourceUrl}
+                      captionUrl={video.captionUrl}
+                      indexNumber={index}
+                      client:load
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )
+    }
+    <!-- <div class="bg-tcnjyellow w-auto"> -->
+    <div
+      class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] md:h-0"
+    >
+    </div>
+    <!-- </div> -->
+
     <div
       id="programs-of-study-container"
       class="px-[35px] w-auto sm:bg-tcnjyellow"
