@@ -40,6 +40,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
     setPopupContent(null);
     setPopupHeading(null); // Clear the heading when the popup is closed
   };
+  // console.log(department);
   return (
     <div className="flex-row flex items-start gap-[18px] md:gap-[15px] sm:max-w-[33%]">
       <img
@@ -55,7 +56,7 @@ const TopOption: FC<Props> = ({ heading, imgSrc, department, children }) => {
           {heading}
         </h2>
         <p className="text-[17px] leading-[23px] sm:text-[17px] sm:leading-[23px] md:text-[19px] md:leading-[25px] md:mt-[4px] lg:mt-0 lg:leading-[26px]  text-start">
-          {department && (
+          {department && department[0].deptTitle && (
             <span>
               {department.length < 3 ? (
                 department[0].deptTitle.toLowerCase() === "any" ||

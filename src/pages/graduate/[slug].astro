@@ -442,14 +442,20 @@ const { sourceUrl } = heroImgDesktop ?? {
           <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             {school}
           </TopOptionNew> -->
-          <TopOption
-            client:load
-            heading={department && department.length > 1
-              ? "Departments"
-              : "Department"}
-            department={department}
-            imgSrc="departments"
-          />
+          {
+            department && (
+              <TopOption
+                client:load
+                heading={
+                  department && department.length > 1
+                    ? "Departments"
+                    : "Department"
+                }
+                department={department}
+                imgSrc="departments"
+              />
+            )
+          }
         </div>
       </div>
     </div>
