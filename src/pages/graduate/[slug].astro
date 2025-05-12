@@ -518,7 +518,9 @@ const { sourceUrl } = heroImgDesktop ?? {
                   ))}
                 </div>
               ) : (
-                <div class="flex flex-col sm:grid sm:grid-cols-2 gap-[25px] ">
+                <div
+                  class={`flex flex-col sm:grid gap-[25px] sm:grid-cols-2 lg:grid-cols-3 ${videos.length === 3 ? `lg:gap-x-[40px] lg:gap-y-[22px]` : ``}`}
+                >
                   {videos.map((video, index) => (
                     <VideoPlayerBody
                       data-key={index}
@@ -526,6 +528,7 @@ const { sourceUrl } = heroImgDesktop ?? {
                       posterImage={video.posterImage.sourceUrl}
                       captionUrl={video.captionUrl}
                       indexNumber={index}
+                      videosLength={videos.length}
                       client:load
                     />
                   ))}
