@@ -73,7 +73,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                   {detail.detailTitle}
                 </h3>
 
-                <div className="inline-flex items-center justify-center gap-1">
+                <div className="inline-flex items-center justify-center gap-1 flex-col">
                   <div
                     className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
                       detail.detailContent ? "detail-popup-show" : ""
@@ -84,11 +84,13 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                     onClick={() => handleClick(index)}
                   />
 
-                  <div className="popup-detail-container relative">
+                  <div className="popup-detail-container relative w-full h-[1px] mt-[-1px]">
                     {detail.popupContent && activePopupIndex === index && (
                       <div
                         ref={(el) => (popupRefs.current[index] = el)}
-                        className="popup-detail absolute top-1/2 left-[-75%] transform -translate-y-1/2 bg-white w-[320px] p-[20px] shadow-lg z-[1000] ml-[15px] mt-[-5px]"
+                        className="popup-detail  bg-white w-[320px] p-[20px] shadow-lg z-[1000]  mt-[-5px]
+                       absolute left-1/2 transform -translate-x-1/2 top-[20px] 
+                    "
                         dangerouslySetInnerHTML={{
                           __html: detail.popupContent || "",
                         }}
