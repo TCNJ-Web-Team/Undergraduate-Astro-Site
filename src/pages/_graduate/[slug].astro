@@ -442,14 +442,20 @@ const { sourceUrl } = heroImgDesktop ?? {
           <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             {school}
           </TopOptionNew> -->
-          <TopOption
-            client:load
-            heading={department && department.length > 1
-              ? "Departments"
-              : "Department"}
-            department={department}
-            imgSrc="departments"
-          />
+          {
+            department && (
+              <TopOption
+                client:load
+                heading={
+                  department && department.length > 1
+                    ? "Departments"
+                    : "Department"
+                }
+                department={department}
+                imgSrc="departments"
+              />
+            )
+          }
         </div>
       </div>
     </div>
@@ -532,7 +538,7 @@ const { sourceUrl } = heroImgDesktop ?? {
     }
     <!-- <div class="bg-tcnjyellow w-auto"> -->
     <div
-      class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] md:h-0"
+      class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] sm:h-[100px] md:h-0"
     >
     </div>
     <!-- </div> -->
@@ -545,17 +551,17 @@ const { sourceUrl } = heroImgDesktop ?? {
         class="m-auto
       bg-white
       relative
-      pb-[71px]
+      pb-[75px]
       sm:pb-[93px]
       sm:px-[45px]
-      lg:pb-[105px]"
+      md:pb-[120px]"
       >
         <div
           class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
-        pb-[0] sm:pb-[3px] md:pb-[50px] lg:pb-[40px] md:pt-[119px] lg:pt-[144px]
+        pb-[0] md:pt-[127px]
         `
         >
           <div

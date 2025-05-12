@@ -51,12 +51,14 @@ const AnnouncementBar: React.FC<AnnouncementBarProps> = ({
     <div className="bg-lightgrey pl-[35px] pr-[35px] sm:pl-[80px] sm:pr-[80px] md:pl-[35px] md:pr-[35px]">
       <div
         id="announcement-bar"
-        className="flex flex-row gap-[20px] mx-auto py-[30px] text-center justify-center lg:max-w-[70.5rem] md:max-w-[920px]"
+        className="flex flex-col md:flex-row md:gap-[20px] mx-auto py-[30px] text-center justify-center lg:max-w-[70.5rem] md:max-w-[920px] text-[17px] leading-[25px]"
       >
         <p dangerouslySetInnerHTML={{ __html: copy }} />
         {link && linkText && (
           <p>
-            <a href={link}>{linkText}</a>
+            <a href={link} className="underline text-primarylinkblue">
+              {linkText}
+            </a>
           </p>
         )}
       </div>
