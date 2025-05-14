@@ -1,3 +1,8 @@
+$xl: 1920px; // Custom size for extra-large screens
+$lg: 1281px; // Custom size for large screens
+$md: 900px;
+$sm: 550px;
+
 // .popup-detail {
 //   :before {
 //     content: "";
@@ -51,6 +56,9 @@
   }
 }
 .detail-listing-text {
+  // .popup-detail-container {
+  //   display: none;
+  // }
   &.has-popup-tag {
     // text-decoration: underline;
     cursor: pointer;
@@ -64,6 +72,9 @@
     // span {
     //   text-decoration: underline;
     // }
+    // .popup-detail-container {
+    //   display: block;
+    // }
   }
   // p:has(.popup-tag) {
   //   text-decoration: underline;
@@ -71,10 +82,18 @@
   // }
   p {
     span {
+      // padding-top: 2px;
       font-size: 16px;
       line-height: 20px;
       display: inline-block;
-      padding-top: 6px;
+      padding-top: 8px;
+      @media screen and (min-width: $md) {
+        font-size: 17px;
+        line-height: 24px;
+      }
+      @media screen and (min-width: $xl) {
+        padding-top: 4px;
+      }
     }
     span.popup-tag {
       font-size: inherit;
