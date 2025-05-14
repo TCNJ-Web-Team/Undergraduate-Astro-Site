@@ -5,8 +5,8 @@
 
 ## Graduate Pages
 
-- mobile program details,
-- add character counter and lower font for more than 12 characters
+- x mobile program details,
+- add character counter and lower font for more than 12 characters, on title?
 - add Apply and Learn more buttons
 - fix mobile nav
 - x video module, allow up to 3 videos
