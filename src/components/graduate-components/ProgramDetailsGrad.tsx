@@ -60,6 +60,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
     >
       {programDetails &&
         programDetails.map((detail, index) => {
+          // console.log("Detail:", detail);
           return (
             <motion.div
               key={index}
@@ -76,7 +77,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
                 <div className="inline-flex items-center justify-center gap-1 flex-col">
                   <div
                     className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center detail-listing-text ${
-                      detail.detailContent ? "detail-popup-show" : ""
+                      detail.popupContent ? " has-popup-tag" : ""
                     }`}
                     dangerouslySetInnerHTML={{
                       __html: detail.detailContent || "",
