@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  md:pb-[200px] items-start"
+      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[100px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  lg:pb-[200px] items-start"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
@@ -69,16 +69,17 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               custom={index + 2}
             >
               {/* Content Container with flex-grow to push hr to the bottom */}
-              <div className="flex-grow flex flex-col items-center justify-start gap-[10px] sm:gap-[7px] md:gap-[10px] lg:gap-[16px]">
+              <div className="flex-grow flex flex-col items-center justify-start gap-[10px] sm:gap-[7px] md:gap-[10px] lg:gap-[16px] sm:min-h-[139px]">
                 <h3 className="text-[45px] leading-[55px] sm:leading-[53px] sm:text-[40px]  font-alfaslab text-tcnjblue">
                   {detail.detailTitle}
                 </h3>
 
                 <div className="inline-flex items-center justify-center gap-1 flex-col">
                   <div
-                    className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center detail-listing-text ${
-                      detail.popupContent ? " has-popup-tag" : ""
-                    }`}
+                    className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center detail-listing-text 
+                     max-w-[250px] sm:max-w-[none] ${
+                       detail.popupContent ? " has-popup-tag" : ""
+                     }`}
                     dangerouslySetInnerHTML={{
                       __html: detail.detailContent || "",
                     }}
