@@ -2,12 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 import { useVideoStore } from "../../stores/useVideoStore";
 import "../../styles/gradient-styles.scss";
 import { v4 as uuidv4 } from "uuid";
+import { video } from "framer-motion/client";
 
 interface VideoPlayerProps {
   videoUrl?: string;
   posterImage?: string;
   captionUrl?: string;
   indexNumber?: number;
+  videosLength?: number;
 }
 
 const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
@@ -15,12 +17,13 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   posterImage = "https://tcnj.edu/custom/homepage/img/compressed/anthem/anthem-thumbnail.jpg",
   captionUrl = "https://tcnj.edu/custom/homepage/captions/anthem-video-captions2.vtt",
   indexNumber,
+  videosLength,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const { currentVideoId, setCurrentVideoId } = useVideoStore();
   const thisVideoId = useRef(uuidv4()).current;
-
+  // console.log(videosLength);
   // Pause if another video starts
   // useEffect(() => {
   //   if (currentVideoId !== thisVideoId && isPlaying) {
@@ -65,12 +68,15 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
   return (
     <div
       className={`video-player-container relative w-full ${
-        indexNumber === 0 ? "sm:col-span-2" : ""
+        indexNumber === 0 ? `sm:col-span-2 lg:row-span-3 ` : ""
       }`}
       id={`video-number-${indexNumber}`}
     >
       {/* Wrapper to maintain aspect ratio for playing video */}
-      <div className="relative w-full h-[500px] sm:h-auto sm:aspect-w-16 sm:aspect-h-9 bg-black overflow-hidden">
+      <div
+        className={`relative w-full h-[500px] sm:h-auto sm:aspect-w-16 sm:aspect-h-9 bg-black overflow-hidden`}
+        // className={`relative w-full h-[500px] sm:h-auto sm:aspect-w-16 sm:aspect-h-9 bg-black overflow-hidden ${videosLength === 3 ? (indexNumber === 0 ? "lg:col-span-2 lg:aspect-h-[9.225] " : "") : ""}`}
+      >
         <video
           ref={videoRef}
           className={`absolute inset-0 w-full h-full ${
@@ -104,7 +110,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
             <img
               src="../../video-play-button.svg"
               alt="Play"
-              className="w-[100px] h-[100px] sm:w-[75px]  sm:h-[75px] md:w-[125px]  md:h-[125px]"
+              className={`w-[100px] h-[100px] sm:w-[75px]  sm:h-[75px] md:w-[125px]  md:h-[125px] ${videosLength === 3 ? (indexNumber && indexNumber > 0 ? "lg:w-[75px] lg:h-[75px]" : "") : ""}`}
             />
           </button>
         )}

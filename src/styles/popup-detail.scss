@@ -1,15 +1,49 @@
+// .popup-detail {
+//   :before {
+//     content: "";
+//     display: block;
+//     position: absolute;
+//     bottom: 100%;
+//     width: 0;
+//     height: 0;
+//     border-style: solid;
+//     left: calc(50% - 10px);
+//     border-color: transparent #fff transparent transparent;
+//     border-width: 11px;
+//     z-index: 100;
+//     // content: "";
+//     // display: block;
+//     // position: absolute;
+//     // right: 100%;
+//     // width: 0;
+//     // height: 0;
+//     // border-style: solid;
+//     // top: calc(50% - 10px);
+//     // border-color: transparent #fff transparent transparent;
+//     // border-width: 11px;
+//     // z-index: 100;
+//   }
+// }
+
 .popup-detail {
-  :before {
+  // position: relative; // make sure the parent is the positioning context
+
+  &:before {
     content: "";
-    display: block;
     position: absolute;
-    right: 100%;
+    bottom: 100%; // place it above the box
+    left: 50%; // center it
+    transform: translateX(-50%);
     width: 0;
     height: 0;
+
+    // border widths: top 0, right 11px, bottom 11px, left 11px
+    border-width: 0 11px 11px 11px;
     border-style: solid;
-    top: calc(50% - 10px);
-    border-color: transparent #fff transparent transparent;
-    border-width: 11px;
+
+    // only bottom border is white; the others are transparent
+    border-color: transparent transparent #fff transparent;
+
     z-index: 100;
   }
 }
