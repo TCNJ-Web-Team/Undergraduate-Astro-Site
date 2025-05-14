@@ -37,14 +37,31 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
         >
           <hr className="mb-[10px] md:hidden" />
           <a
-            href="#program-at-a-glance-intro"
+            href="javascript:void(0)"
+            onClick={(e) => {
+              e.preventDefault();
+              const targetId = "program-at-a-glance-intro";
+              const targetElement = document.getElementById(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Overview
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
-            href="#programs-of-study-container"
+            // href="#"
+            href="javascript:void(0)"
+            onClick={(e) => {
+              e.preventDefault();
+              const targetId = "programs-of-study-container";
+              const targetElement = document.getElementById(targetId);
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Program Options
@@ -56,7 +73,17 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
               .map((item, index) => (
                 <a
                   key={index}
-                  href={"#" + item.title.replace(/\s+/g, "-").toLowerCase()}
+                  href="javascript:void(0)"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const targetId = item.title
+                      .replace(/\s+/g, "-")
+                      .toLowerCase();
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                      targetElement.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
                   className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
                 >
                   {item.title}
