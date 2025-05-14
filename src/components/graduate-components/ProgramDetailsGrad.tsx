@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  md:pb-[200px] items-stretch"
+      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[103px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  md:pb-[200px] items-start"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"
@@ -63,7 +63,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
           return (
             <motion.div
               key={index}
-              className="flex flex-col justify-between items-center gap-[10px] text-center relative h-full sm:min-h-[138px]"
+              className="flex flex-col justify-between items-center gap-[10px] text-center relative"
               variants={fadeInAnimationVariant}
               custom={index + 2}
             >
@@ -75,7 +75,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
 
                 <div className="inline-flex items-center justify-center gap-1 flex-col">
                   <div
-                    className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center ${
+                    className={`text-[21px] md:text-[23px] leading-[30px] md:mt-[4px] lg:mt-0 lg:leading-[26px] text-center detail-listing-text ${
                       detail.detailContent ? "detail-popup-show" : ""
                     }`}
                     dangerouslySetInnerHTML={{
@@ -101,7 +101,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
               </div>
 
               {/* hr aligned at the bottom */}
-              <hr className="h-[4px] w-[200px] bg-white mt-[11px]" />
+              <hr className="h-[5px] w-[200px] bg-white mt-[8px]" />
             </motion.div>
           );
         })}

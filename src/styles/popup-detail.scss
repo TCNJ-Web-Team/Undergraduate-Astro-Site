@@ -47,3 +47,13 @@
     z-index: 100;
   }
 }
+.detail-listing-text {
+  p {
+    span {
+      font-size: 16px;
+      line-height: 20px;
+      display: inline-block;
+      padding-top: 6px;
+    }
+  }
+}
