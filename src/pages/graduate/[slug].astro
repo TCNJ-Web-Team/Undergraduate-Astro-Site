@@ -32,6 +32,7 @@ import ProgramDetailsGrad from "../../components/graduate-components/ProgramDeta
 import AnnouncementBar from "../../components/graduate-components/AnnouncementBar";
 import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBody";
 import { video } from "framer-motion/client";
+import { custom } from "astro:schema";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -301,6 +302,7 @@ const {
   socialImage,
   videos,
 } = Astro.props as AstroProps;
+console.log(customCtaButtons);
 // console.log(videos);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
 const { sourceUrl } = heroImgDesktop ?? {
@@ -310,7 +312,11 @@ const { sourceUrl } = heroImgDesktop ?? {
 ---
 
 <Layout title={title} description={metaDescription} metaTitle={title}>
-  <NavigationBarGrad additionalMenuItems={lowerContent} client:visible />
+  <NavigationBarGrad
+    additionalMenuItems={lowerContent}
+    customCtaButtons={customCtaButtons}
+    client:visible
+  />
   <main class="font-domine text-darkgrey overflow-hidden">
     <div class="bg-tcnjyellow w-auto">
       <div
@@ -612,6 +618,6 @@ const { sourceUrl } = heroImgDesktop ?? {
         </div>
       </div>
     </div>
-    <NextStepFooter />
+    <NextStepFooter customCtaButtons={customCtaButtons} />
   </main></Layout
 >

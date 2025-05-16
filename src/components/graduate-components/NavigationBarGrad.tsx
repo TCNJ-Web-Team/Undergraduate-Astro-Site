@@ -3,9 +3,18 @@ import { useAccordionTrackStore } from "../../stores/useAccordionTrackStore";
 
 interface NavigationBarGradProps {
   additionalMenuItems: any[]; // Replace 'any[]' with the appropriate type if known
+  customCtaButtons: {
+    buttonLink: {
+      url: string;
+    };
+    buttonText: string;
+  }[];
 }
 
-const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
+const NavigationBarGrad = ({
+  additionalMenuItems,
+  customCtaButtons,
+}: NavigationBarGradProps) => {
   const { currentAccordionId, setCurrentAccordionId } =
     useAccordionTrackStore();
   // console.log("additionalMenuItems", additionalMenuItems.length);
@@ -105,20 +114,36 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
               ))}
 
           <div className="flex gap-2 flex-row justify-items-start items-center md:absolute md:right-0 mt-[15px] md:mt-0">
-            <a
-              href="https://admissions.tcnj.edu/apply/"
-              target="_blank"
-              className="program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
-            >
-              Apply
-            </a>
-            <a
-              href="https://connect.tcnj.edu/register/prospect"
-              target="_blank"
-              className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
-            >
-              Get Info
-            </a>
+            {customCtaButtons ? (
+              customCtaButtons.map((button, index) => (
+                <a
+                  key={index}
+                  href={button.buttonLink.url}
+                  target="_blank"
+                  className="program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
+                >
+                  {button.buttonText}
+                </a>
+              ))
+            ) : (
+              <>
+                {" "}
+                <a
+                  href="https://admissions.tcnj.edu/apply/"
+                  target="_blank"
+                  className="program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
+                >
+                  Apply
+                </a>
+                <a
+                  href="https://connect.tcnj.edu/register/prospect"
+                  target="_blank"
+                  className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
+                >
+                  Get Info
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>
