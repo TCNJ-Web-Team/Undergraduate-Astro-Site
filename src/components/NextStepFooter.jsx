@@ -1,7 +1,7 @@
 import "../styles/next-step-footer.scss";
 
 export default function NextStepFooter({ customCtaButtons }) {
-  console.log(customCtaButtons);
+  // console.log(customCtaButtons);
   return (
     <div id="next-step-footer">
       <h2>Take the next step</h2>
