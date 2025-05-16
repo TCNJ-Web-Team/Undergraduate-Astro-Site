@@ -13,8 +13,9 @@ Tagboard
 - add character counter and lower font for more than 12 characters, on title?
 - add Apply and Learn more buttons
 - go back to relative links in learn more section
-- x fix mobile nav
 - check existing photos for hero
+- add grad redirect cards
+- x fix mobile nav
 - x open animation for top nav menu
 - x add smooth scroll and
 - x mobile program details,

@@ -97,7 +97,7 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
                       targetElement.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+                  className={`cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit ${index === 2 ? "block md:hidden lg:block" : ""}`}
                 >
                   {item.title}
                   <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
