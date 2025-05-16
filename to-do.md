@@ -1,3 +1,8 @@
+# Commencement Video Takeovers
+
+BSC Digital Signage
+Tagboard
+
 ## Design Review
 
 - Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
