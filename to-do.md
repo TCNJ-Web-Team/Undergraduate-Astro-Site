@@ -5,15 +5,17 @@
 
 ## Graduate Pages
 
-- x mobile program details,
 - add character counter and lower font for more than 12 characters, on title?
 - add Apply and Learn more buttons
 - fix mobile nav
+- open animation for top nav menu
+- go back to relative links in learn more section
+- check existing photos for hero
+- x add smooth scroll and
+- x mobile program details,
 - x video module, allow up to 3 videos
 - x configure popup for figures section
 - x style popup at diff resolution
-- add smooth scroll and open animation for top nav menu
-- go back to relative links in learn more section
 - add custom CTA buttons
 - x department instead of Next class
 - z separate program finder
