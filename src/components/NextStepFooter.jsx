@@ -41,13 +41,6 @@ export default function NextStepFooter({ customCtaButtons }) {
               {button.buttonText}
             </a>
           ))}
-          <a
-            className="program-next-step-button-gtm"
-            href="https://admissions.tcnj.edu/visit/"
-            target="_blank"
-          >
-            Visit
-          </a>
         </div>
       )}
     </div>
