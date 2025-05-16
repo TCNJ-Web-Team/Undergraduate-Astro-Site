@@ -37,7 +37,7 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
         >
           <hr className="mb-[10px] md:hidden" />
           <a
-            href="javascript:void(0)"
+            // href="javascript:void(0)"
             onClick={(e) => {
               e.preventDefault();
               const targetId = "program-at-a-glance-intro";
@@ -46,14 +46,14 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
                 targetElement.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+            className="cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Overview
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
           <a
             // href="#"
-            href="javascript:void(0)"
+            // href="javascript:void(0)"
             onClick={(e) => {
               e.preventDefault();
               const targetId = "programs-of-study-container";
@@ -62,7 +62,7 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
                 targetElement.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+            className="cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
           >
             Program Options
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
@@ -73,7 +73,7 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
               .map((item, index) => (
                 <a
                   key={index}
-                  href="javascript:void(0)"
+                  // href="javascript:void(0)"
                   onClick={(e) => {
                     e.preventDefault();
                     const targetId = item.title
@@ -84,7 +84,7 @@ const NavigationBarGrad = ({ additionalMenuItems }: NavigationBarGradProps) => {
                       targetElement.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className="font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
+                  className="cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit"
                 >
                   {item.title}
                   <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
