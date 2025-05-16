@@ -59,27 +59,40 @@ $sm: 550px;
   // .popup-detail-container {
   //   display: none;
   // }
-  &.has-popup-tag {
-    // text-decoration: underline;
-    cursor: pointer;
-    position: relative;
-    :hover {
-      text-decoration: underline;
-      .popup-tag {
-        text-decoration: underline;
-      }
-    }
-    // span {
-    //   text-decoration: underline;
-    // }
-    // .popup-detail-container {
-    //   display: block;
-    // }
-  }
+  // &.has-popup-tag {
+  //    cursor: pointer;
+  //   position: relative;
+  //   :hover {
+  //     text-decoration: underline;
+  //     .popup-tag {
+  //       text-decoration: underline;
+  //     }
+  //   }
+
+  // }
   // p:has(.popup-tag) {
   //   text-decoration: underline;
   //   cursor: pointer;
   // }
+  // *:has(> span.popup-tag) {
+  //   cursor: pointer;
+  //   position: relative;
+  //   :hover {
+  //     text-decoration: underline;
+  //     .popup-tag {
+  //       text-decoration: underline;
+  //     }
+  //   }
+  // }
+  *:has(> span.popup-tag):hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  // *:has(> span.popup-tag):hover > span.popup-tag {
+  //   text-decoration: underline;
+  // }
+
   p,
   li {
     span {
