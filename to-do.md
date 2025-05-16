@@ -10,10 +10,11 @@ Tagboard
 
 ## Graduate Pages
 
-- add character counter and lower font for more than 12 characters, on title?
 - go back to relative links in learn more section
 - check existing photos for hero
+- add character counter and lower font for more than 12 characters, on title?
 - add grad redirect cards
+- need off-campus icon
 - x add Apply and Learn more buttons
 - x fix mobile nav
 - x open animation for top nav menu
