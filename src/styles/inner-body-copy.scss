@@ -82,6 +82,12 @@ a.yellow-bg-text {
     color: $link-blue;
     text-decoration: underline;
   }
+  li {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
   h2,
   h3 {
     color: $tcnj-blue;

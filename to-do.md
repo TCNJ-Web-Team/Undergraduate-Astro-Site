@@ -1,3 +1,8 @@
+# Commencement Video Takeovers
+
+BSC Digital Signage
+Tagboard
+
 ## Design Review
 
 - Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
@@ -5,14 +10,19 @@
 
 ## Graduate Pages
 
-- mobile program details, add character counter and lower font for more than 12 characters
-- add Apply and Learn more buttons
-- fix mobile nav
+- go back to relative links in learn more section
+- check existing photos for hero
+- add character counter and lower font for more than 12 characters, on title?
+- add grad redirect cards
+- need off-campus icon
+- x add Apply and Learn more buttons
+- x fix mobile nav
+- x open animation for top nav menu
+- x add smooth scroll and
+- x mobile program details,
 - x video module, allow up to 3 videos
 - x configure popup for figures section
-- style popup at diff resolution
-- add smooth scroll and open animation for top nav menu
-- go back to relative links in learn more section
+- x style popup at diff resolution
 - add custom CTA buttons
 - x department instead of Next class
 - z separate program finder

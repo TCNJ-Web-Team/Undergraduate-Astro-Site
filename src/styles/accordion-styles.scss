@@ -186,7 +186,24 @@ $sm: 550px;
       margin-left: auto;
       margin-right: auto;
     }
-
+    .alignright {
+      float: right;
+      margin-left: 25px;
+      @media screen and (max-width: $sm) {
+        float: none;
+        margin-bottom: 25px;
+        margin-left: 0;
+      }
+    }
+    .alignleft {
+      float: left;
+      margin-right: 25px;
+      @media screen and (max-width: $sm) {
+        float: none;
+        margin-bottom: 25px;
+        margin-right: 0;
+      }
+    }
     &.active {
       max-height: 2000px; /* Adjust this value to suit your content */
       opacity: 1;

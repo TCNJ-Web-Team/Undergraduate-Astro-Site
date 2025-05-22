@@ -1,9 +1,28 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "../styles/accordion-styles.scss";
-
+import { useAccordionTrackStore } from "../stores/useAccordionTrackStore";
 export default function Accodion({ children, header, idName, startOpen }) {
   const [open, setOpen] = useState(startOpen);
   const headerRef = useRef(null);
+  const { currentAccordionId, setCurrentAccordionId } =
+    useAccordionTrackStore();
+  // console.log(videosLength);
+  // Pause if another video starts
+  // useEffect(() => {
+  //   if (currentAccordionId !== thisAccordionId && isPlaying) {
+  //     videoRef.current?.pause();
+  //     videoRef.current!.currentTime = 0; // Reset to start
+  //     videoRef.current!.controls = false;
+  //     videoRef.current!.load(); // Reload the video
+  //     setIsPlaying(false);
+  //   }
+  // }, [currentAccordionId, isPlaying, thisAccordionId]);
+
+  useEffect(() => {
+    if (currentAccordionId === idName) {
+      setOpen(true);
+    }
+  }, [currentAccordionId, idName]);
 
   // useEffect(() => {
   //   if (scholarship && headerRef.current) {
@@ -14,6 +33,7 @@ export default function Accodion({ children, header, idName, startOpen }) {
   //     )}`;
   //   }
   // }, [scholarship]);
+  // console.log(idName);
   const onAccordionClick = () => {
     // console.log(event);
     setOpen(!open);
