@@ -10,6 +10,7 @@ Tagboard
 
 ## Graduate Pages
 
+- ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
 - go back to relative links in learn more section
 - check existing photos for hero
 - add character counter and lower font for more than 12 characters, on title?
