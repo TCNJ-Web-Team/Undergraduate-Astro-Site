@@ -33,6 +33,7 @@ import AnnouncementBar from "../../components/graduate-components/AnnouncementBa
 import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBody";
 import { video } from "framer-motion/client";
 import { custom } from "astro:schema";
+import GraduateHero from "../../components/graduate-components/GraduateHero";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -65,8 +66,25 @@ export async function getStaticPaths() {
           deptTitle
           deptUrl
         }
-         heroImgDesktop {
-          altText
+   heroImgDesktop {
+          sourceUrl
+        }
+        heroImgDesktopWebp{
+          sourceUrl
+        }
+        horizontalPositionDesktopHero
+        horizontalPositionTablet
+        horizontalPositionMobile
+        heroImgTablet{
+          sourceUrl
+        }
+        heroImgTabletWebp{
+          sourceUrl
+        }
+        heroImgMobile{
+          sourceUrl
+        }
+    heroImgMobileWebp{
           sourceUrl
         }
         programAtAGlance
@@ -242,11 +260,11 @@ interface AstroProps {
   acceleratedSubtitle: string[];
   department: { deptTitle: string; deptUrl: string }[];
   heroImgDesktop: { altText: string; sourceUrl: string };
-  heroImgDesktopWebp: string; // was just a URL in query
-  heroImgTablet: string;
-  heroImgTabletWebp: string;
-  heroImgMobile: string;
-  heroImgMobileWebp: string;
+  heroImgDesktopWebp: { sourceUrl: string }; // was just a URL in query
+  heroImgTablet: { sourceUrl: string };
+  heroImgTabletWebp: { sourceUrl: string };
+  heroImgMobile: { sourceUrl: string };
+  heroImgMobileWebp: { sourceUrl: string };
   badge: any[]; // clarify structure if known
   careersTitle: string;
   careers: string;
@@ -308,6 +326,18 @@ const {
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+console.log(
+  heroImgDesktop,
+  heroImgMobileWebp,
+  heroImgMobile,
+  heroImgTabletWebp,
+  heroImgTablet,
+  heroImgDesktopWebp,
+  "Postions",
+  horizontalPositionDesktopHero,
+  horizontalPositionTablet,
+  horizontalPositionMobile
+);
 // console.log(videos.length);
 ---
 
@@ -367,18 +397,17 @@ const { sourceUrl } = heroImgDesktop ?? {
         {
           sourceUrl && (
             <>
-              <AnimatedHero
+              <GraduateHero
                 heroImgMobileWebp={heroImgMobileWebp}
                 heroImgMobile={heroImgMobile}
                 heroImgTabletWebp={heroImgTabletWebp}
                 heroImgTablet={heroImgTablet}
                 heroImgDesktopWebp={heroImgDesktopWebp}
-                sourceUrl={sourceUrl}
+                heroImgDesktop={heroImgDesktop}
                 horizontalPositionDesktopHero={horizontalPositionDesktopHero}
                 horizontalPositionTablet={horizontalPositionTablet}
                 horizontalPositionMobile={horizontalPositionMobile}
                 title={title}
-                badge={badge}
                 client:load
               />
             </>
