@@ -394,25 +394,19 @@ console.log(
         class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
       ${acceleratedSubtitle ? "mt-[35px] sm:mt-[39px] md:mt-[55px]" : "mt-[42px] sm:mt-[40px] md:mt-[50px] "}`
       >
-        {
-          sourceUrl && (
-            <>
-              <GraduateHero
-                heroImgMobileWebp={heroImgMobileWebp}
-                heroImgMobile={heroImgMobile}
-                heroImgTabletWebp={heroImgTabletWebp}
-                heroImgTablet={heroImgTablet}
-                heroImgDesktopWebp={heroImgDesktopWebp}
-                heroImgDesktop={heroImgDesktop}
-                horizontalPositionDesktopHero={horizontalPositionDesktopHero}
-                horizontalPositionTablet={horizontalPositionTablet}
-                horizontalPositionMobile={horizontalPositionMobile}
-                title={title}
-                client:load
-              />
-            </>
-          )
-        }
+        <GraduateHero
+          heroImgMobileWebp={heroImgMobileWebp}
+          heroImgMobile={heroImgMobile}
+          heroImgTabletWebp={heroImgTabletWebp}
+          heroImgTablet={heroImgTablet}
+          heroImgDesktopWebp={heroImgDesktopWebp}
+          heroImgDesktop={heroImgDesktop}
+          horizontalPositionDesktopHero={horizontalPositionDesktopHero}
+          horizontalPositionTablet={horizontalPositionTablet}
+          horizontalPositionMobile={horizontalPositionMobile}
+          title={title}
+          client:load
+        />
       </div>
     </div>
     <div

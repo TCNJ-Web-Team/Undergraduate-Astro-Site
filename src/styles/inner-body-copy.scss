@@ -75,6 +75,21 @@ a.yellow-bg-text {
       object-position: #{$position + "%"} 0% !important;
     }
   }
+  .graduate-standard-object-position-#{$position} {
+    object-position: #{$position + "%"} 33.33%;
+  }
+
+  .graduate-mobile-object-position-#{$position} {
+    @media (max-width: 550px) {
+      object-position: #{$position + "%"} 33.33% !important;
+    }
+  }
+
+  .graduate-tablet-object-position-#{$position} {
+    @media (min-width: 551px) and (max-width: 900px) {
+      object-position: #{$position + "%"} 33.33% !important;
+    }
+  }
 }
 
 #program-body-copy {
