@@ -34,6 +34,7 @@ import VideoPlayerBody from "../../components/graduate-components/VideoPlayerBod
 import { video } from "framer-motion/client";
 import { custom } from "astro:schema";
 import GraduateHero from "../../components/graduate-components/GraduateHero";
+import GradRelatedPrograms from "../../components/graduate-components/GradRelatedPrograms";
 // import QuoteContent from "../../components/QuoteContent";
 
 export async function getStaticPaths() {
@@ -102,9 +103,31 @@ export async function getStaticPaths() {
           includeInNav
         }
         learnMoreList {
-          title
-          slug
-          schoolOrAdditionalLabel
+          localLink {
+            ... on GraduateProgram {
+              id
+              title
+              slug
+              graduateProgram {
+                school
+              }
+            }
+            ... on Program {
+              id
+              slug
+              title
+              program {
+                school
+              }
+            }
+          }
+          additionalLabel
+          externalUrlOrRedirectLink {
+            pageTitleAndUrl {
+              title
+              url
+            }
+          }
         }
         videos {
           captionUrl
@@ -325,6 +348,7 @@ const {
   videos,
   oldHeroName,
 } = Astro.props as AstroProps;
+// console.log(learnMoreList);
 // console.log(customCtaButtons);
 // console.log(videos);
 // const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
@@ -640,9 +664,14 @@ const { sourceUrl } = heroImgDesktop ?? {
           }
         </div>
         <div class="lg:max-w-[70.5rem] lg:m-auto">
-          {
+          <!-- {
             learnMoreList && (
               <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
+            )
+          } -->
+          {
+            learnMoreList && (
+              <GradRelatedPrograms learnMoreList={learnMoreList} client:idle />
             )
           }
         </div>
