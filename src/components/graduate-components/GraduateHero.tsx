@@ -9,6 +9,7 @@ interface GraduateHeroProps {
   horizontalPositionTablet: number;
   horizontalPositionMobile: number;
   title: string;
+  oldHeroName?: string;
 }
 const GraduateHero: React.FC<GraduateHeroProps> = ({
   heroImgMobileWebp,
@@ -21,6 +22,7 @@ const GraduateHero: React.FC<GraduateHeroProps> = ({
   horizontalPositionMobile,
   horizontalPositionTablet,
   title,
+  oldHeroName,
 }) => {
   // console.log(heroImgTabletWebp, heroImgDesktopWebp);
   // console.log("TITLE", title);
