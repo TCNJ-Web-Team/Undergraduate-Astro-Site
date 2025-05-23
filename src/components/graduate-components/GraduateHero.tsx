@@ -26,12 +26,14 @@ const GraduateHero: React.FC<GraduateHeroProps> = ({
 }) => {
   // console.log(heroImgTabletWebp, heroImgDesktopWebp);
   // console.log("TITLE", title);
-  const strippedTitle = title
-    .replace(/online/gi, "") // remove "online" (case-insensitive)
-    .replace(/[^\w\s-]/g, "") // remove all special characters EXCEPT dashes
-    .trim() // trim whitespace
-    .replace(/\s+/g, "-") // replace spaces with dashes
-    .toLowerCase(); // lowercase
+  const strippedTitle = oldHeroName
+    ? oldHeroName
+    : title
+        .replace(/online/gi, "") // remove "online" (case-insensitive)
+        .replace(/[^\w\s-]/g, "") // remove all special characters EXCEPT dashes
+        .trim() // trim whitespace
+        .replace(/\s+/g, "-") // replace spaces with dashes
+        .toLowerCase(); // lowercase
 
   // console.log("STRIPPED TITLE", strippedTitle);
   const mobilePosition = horizontalPositionMobile || 0;

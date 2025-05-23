@@ -81,7 +81,7 @@ a.yellow-bg-text {
 
   .graduate-mobile-object-position-#{$position} {
     @media (max-width: 550px) {
-      object-position: #{$position + "%"} 33.33% !important;
+      object-position: #{$position + "%"} 0% !important;
     }
   }
 
