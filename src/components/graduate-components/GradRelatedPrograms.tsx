@@ -8,33 +8,46 @@ import "swiper/css/navigation";
 // import { SwiperNavButtons } from "./SwiperNavButton";
 import "../../styles/custom-swiper.scss";
 // Interfaces for program types
-interface GraduateProgramType {
-  school: string[];
-}
+// interface GraduateProgramDetails {
+//   slug: string;
+//   school: string;
+// }
 
-interface ProgramType {
-  school: string[];
-}
+// interface ProgramDetails {
+//   slug: string;
+//   school: string;
+// }
 
-// Union type for localLink
+// interface GraduateProgramLink {
+//   id: string;
+//   title: string;
+//   graduateProgram: GraduateProgramDetails[];
+// }
+
+// interface ProgramLink {
+//   id: string;
+//   title: string;
+//   program: ProgramDetails[];
+// }
+
+// type LocalLink = GraduateProgramLink | ProgramLink;
 interface LocalLink {
   id: string;
   title: string;
-  slug: string;
-  graduateProgram?: GraduateProgramType[];
-  program?: ProgramType[];
+  program?: { slug?: string; school?: string };
+  graduateProgram?: { slug?: string; school?: string };
 }
 
-interface PageTitleAndUrl {
-  title: string;
-  url: string;
-}
+// interface PageTitleAndUrl {
+//   title: string;
+//   url: string;
+// }
 
 interface LearnMoreItem {
   localLink: LocalLink;
   additionalLabel?: string;
   externalUrlOrRedirectLink?: {
-    pageTitleAndUrl: PageTitleAndUrl[];
+    pageTitleAndUrl: { title: string; url: string };
   };
 }
 
@@ -103,7 +116,7 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
           </div>
           {learnMoreList.map((content) => {
             // console.log(content.title);
-            console.log(content?.localLink?.graduateProgram);
+            // console.log(content?.localLink?.graduateProgram);
             return (
               //   <div>Test</div>
               <SwiperSlide
@@ -120,17 +133,35 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
                 <a
                   className="program-rp-link-gtm p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] min-h-[250px] block"
                   href={
-                    content?.localLink?.graduateProgram?.school[0]
-                      ? content?.localLink?.slug
-                      : ""
+                    (content?.localLink?.graduateProgram?.slug &&
+                      `/graduate/${content?.localLink?.graduateProgram?.slug}`) ||
+                    (content?.localLink?.program?.slug &&
+                      `/${content?.localLink?.program?.slug}`) ||
+                    content?.externalUrlOrRedirectLink?.pageTitleAndUrl?.url
                   }
                 >
                   <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
                     {content?.localLink?.title ||
-                      content?.externalUrlOrRedirectLink?.pageTitleAndUrl[0]
-                        .title}
+                      content?.externalUrlOrRedirectLink?.pageTitleAndUrl.title}
                   </p>
                   <hr className="m-[25px] mr-0 ml-0 md:mt-[27px]" />
+                  {content?.additionalLabel && (
+                    <p className="font-opensans text-[14px] leading-[20px]">
+                      {content.additionalLabel}
+                    </p>
+                  )}
+                  {content?.localLink && !content?.additionalLabel && (
+                    <p className="font-opensans text-[14px] leading-[20px]">
+                      {content?.localLink?.graduateProgram?.school?.[0] ||
+                        content?.localLink?.program?.school?.[0]}
+                    </p>
+                  )}
+                  {/* {content?.localLink?.program && (
+                    <p className="font-opensans text-[14px] leading-[20px]">
+                      {content?.localLink?.program?.school?.[0]}
+                    </p>
+                  )} */}
+
                   {/* {content.schoolOrAdditionalLabel && (
                     <p className="font-opensans text-[14px] leading-[20px]">
                       {content.schoolOrAdditionalLabel}

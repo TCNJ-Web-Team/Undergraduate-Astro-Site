@@ -107,16 +107,16 @@ export async function getStaticPaths() {
             ... on GraduateProgram {
               id
               title
-              slug
               graduateProgram {
+                slug
                 school
               }
             }
             ... on Program {
               id
-              slug
               title
               program {
+                slug
                 school
               }
             }
