@@ -10,10 +10,11 @@ Tagboard
 
 ## Graduate Pages
 
-- go back to relative links in learn more section
 - add grad redirect cards
+- add undergrad and graduate redirects as options for related programs
 - add character counter and lower font for more than 12 characters, on title?
 - review breadcrumbs with lauren
+- x go back to relative links in learn more section
 - x ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
 - x check existing photos for hero
 - x need off-campus icon
