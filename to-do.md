@@ -10,12 +10,13 @@ Tagboard
 
 ## Graduate Pages
 
-- ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
 - go back to relative links in learn more section
-- check existing photos for hero
-- add character counter and lower font for more than 12 characters, on title?
 - add grad redirect cards
-- need off-campus icon
+- add character counter and lower font for more than 12 characters, on title?
+- review breadcrumbs with lauren
+- x ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
+- x check existing photos for hero
+- x need off-campus icon
 - x add Apply and Learn more buttons
 - x fix mobile nav
 - x open animation for top nav menu
@@ -24,7 +25,7 @@ Tagboard
 - x video module, allow up to 3 videos
 - x configure popup for figures section
 - x style popup at diff resolution
-- add custom CTA buttons
+- x add custom CTA buttons
 - x department instead of Next class
 - z separate program finder
   - How do the breadcrumbs work?
