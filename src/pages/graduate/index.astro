@@ -42,6 +42,42 @@ const programOptions = await wpquery({
 }`,
 });
 
+const gradRedirectList = await wpquery({
+  query: `query GradRedirectList {
+  gradProgramsRedirects(first: 220) {
+    nodes {
+      graduateProgramRedirect {
+        redirectUrl
+        programOptions
+        degreeType
+        additionalOptions
+        school
+      }
+      title
+    }
+  }
+}`,
+});
+// console.log(data);
+// console.log("gradRedirectList", gradRedirectList);
+// const gradPrograms = data.graduatePrograms.nodes.map(
+//   (item: { title: any; program: any }) => ({
+//     title: item.title,
+//     ...item.program,
+//     isRedirect: false,
+//   })
+// );
+
+// const gradRedirectPrograms = gradRedirectList.gradProgramsRedirects.nodes.map(
+//   (item: { title: any; graduateProgramRedirect: any }) => ({
+//     title: item.title, // comes from outside graduateProgramRedirect
+//     ...item.graduateProgramRedirect,
+//     isRedirect: true,
+//   })
+// );
+
+// const combinedPrograms = [...gradPrograms, ...gradRedirectPrograms];
+// console.log("combinedPrograms", combinedPrograms);
 const areaOfStudy = programOptions.page.graduateProgram.school.sort();
 
 const programOptionsClean = programOptions.page.graduateProgram.programOptions;
@@ -61,7 +97,7 @@ const additionalOptions = programOptions.page.graduateProgram.additionalOptions;
       <ProgramList
         gradCheck={true}
         data={data}
-        redirectData={data}
+        redirectData={gradRedirectList}
         areaOfStudy={areaOfStudy}
         programOptionsClean={programOptionsClean}
         additionalOptions={additionalOptions}
