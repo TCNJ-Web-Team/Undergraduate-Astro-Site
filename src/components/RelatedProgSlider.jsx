@@ -11,7 +11,7 @@ import "../styles/custom-swiper.scss";
 export default function RelatedProgSlider({ learnMoreList }) {
   const [marginLeft, setMarginLeft] = useState(0);
   const containerRef = useRef(null);
-  console.log(learnMoreList);
+  // console.log(learnMoreList);
   useEffect(() => {
     function updateMargin() {
       if (containerRef.current) {

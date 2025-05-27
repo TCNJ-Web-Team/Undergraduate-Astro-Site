@@ -72,7 +72,13 @@ const ProgramCard = ({
            listOnly &&
            "md:flex md:flex-row md:justify-between md:min-h-0 md:items-center md:py-[35px] lg:!pt-[35px]"
          }`}
-        href={processedRedirectUrl}
+        href={
+          gradCheckCard
+            ? processedRedirectUrl.includes("https")
+              ? processedRedirectUrl
+              : `./graduate/${processedRedirectUrl}`
+            : processedRedirectUrl
+        }
         target={processedRedirectUrl.includes("http") ? "_blank" : "_self"}
         // target={redirecturl ? "_blank" : "_self"}
         initial={animationState ? { opacity: 0, y: 5 } : { opacity: 1, y: 0 }}
