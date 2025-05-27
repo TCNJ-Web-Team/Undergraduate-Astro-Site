@@ -60,7 +60,7 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
 }) => {
   const [marginLeft, setMarginLeft] = useState(0);
   const containerRef = useRef(null);
-  //   console.log(learnMoreList);
+  // console.log(learnMoreList);
   useEffect(() => {
     function updateMargin() {
       if (containerRef.current) {
@@ -152,8 +152,15 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
                   )}
                   {content?.localLink && !content?.additionalLabel && (
                     <p className="font-opensans text-[14px] leading-[20px]">
-                      {content?.localLink?.graduateProgram?.school?.[0] ||
-                        content?.localLink?.program?.school?.[0]}
+                      {/* {content?.localLink?.graduateProgram?.map(
+                        (schoolContent, index) => {
+                          console.log(schoolContent);
+                          return <span key={index}>{schoolContent}</span>;
+                        }
+                      )} */}
+                      {(content?.localLink?.graduateProgram?.school?.[0] &&
+                        `School of ${content?.localLink?.graduateProgram?.school?.[0]}`) ||
+                        `School of ${content?.localLink?.program?.school?.[0]}`}
                     </p>
                   )}
                   {/* {content?.localLink?.program && (
