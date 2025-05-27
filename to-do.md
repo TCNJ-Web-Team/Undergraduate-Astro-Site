@@ -12,6 +12,7 @@ Tagboard
 
 - add grad redirect cards
 - add undergrad and graduate redirects as options for related programs
+- add meta description
 - add character counter and lower font for more than 12 characters, on title?
 - review breadcrumbs with lauren
 - x go back to relative links in learn more section
