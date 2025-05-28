@@ -10,11 +10,17 @@ Tagboard
 
 ## Graduate Pages
 
-- add grad redirect cards
-- add undergrad and graduate redirects as options for related programs
-- add meta description
-- add character counter and lower font for more than 12 characters, on title?
+- finish adding meta and keyword
+  - todo: Ed iStem and Business
 - review breadcrumbs with lauren
+- schedule review session w lauren
+- add meta description
+- add social images
+- add grad data to site map
+-
+- x add grad redirect cards
+- x add undergrad and graduate redirects as options for related programs
+- x add character counter and lower font for more than 12 characters, on title?
 - x go back to relative links in learn more section
 - x ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
 - x check existing photos for hero
