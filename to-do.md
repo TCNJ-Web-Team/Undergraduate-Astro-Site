@@ -1,3 +1,6 @@
+Check my blues
+Bitter to domine
+
 # Commencement Video Takeovers
 
 BSC Digital Signage
