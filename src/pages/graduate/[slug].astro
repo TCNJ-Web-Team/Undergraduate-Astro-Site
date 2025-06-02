@@ -121,6 +121,7 @@ export async function getStaticPaths() {
               }
             }
           }
+      
           additionalLabel
           externalUrlOrRedirectLink {
             pageTitleAndUrl {
@@ -128,6 +129,11 @@ export async function getStaticPaths() {
               url
             }
           }
+        }
+        metaTitle
+        metaDescription
+        socialImage{
+          sourceUrl
         }
         videos {
           captionUrl
@@ -300,7 +306,7 @@ interface AstroProps {
   learnMoreList: any[];
   metaTitle: string;
   metaDescription: string;
-  socialImage: any[];
+  socialImage: { sourceUrl?: string } | null;
   videos: {
     captionUrl: string;
     posterImage: {
@@ -351,7 +357,23 @@ const {
 // console.log(learnMoreList);
 // console.log(customCtaButtons);
 // console.log(videos);
-// const socialSourceUrl = socialImage && socialImage.sourceUrl ? socialImage.sourceUrl : (typeof heroImgDesktop === 'string' ? heroImgDesktop : heroImgDesktop.sourceUrl);
+// const socialSourceUrl =
+//   socialImage &&
+//   typeof socialImage === "object" &&
+//   "sourceUrl" in socialImage &&
+//   socialImage.sourceUrl
+//     ? socialImage.sourceUrl
+//     : typeof heroImgDesktop === "string"
+//       ? heroImgDesktop
+//       : heroImgDesktop.sourceUrl;
+
+const socialSourceUrl =
+  socialImage && socialImage.sourceUrl
+    ? socialImage.sourceUrl
+    : heroImgDesktop && heroImgDesktop.sourceUrl
+      ? heroImgDesktop.sourceUrl
+      : "";
+
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
@@ -371,7 +393,12 @@ const { sourceUrl } = heroImgDesktop ?? {
 // console.log(videos.length);
 ---
 
-<Layout title={title} description={metaDescription} metaTitle={title}>
+<Layout
+  title={title}
+  description={metaDescription}
+  metaTitle={title}
+  image={socialSourceUrl}
+>
   <NavigationBarGrad
     additionalMenuItems={lowerContent}
     customCtaButtons={customCtaButtons}
