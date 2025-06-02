@@ -13,12 +13,12 @@ Tagboard
 
 ## Graduate Pages
 
-- finish adding meta and keyword
+- x finish adding meta and keyword
   - todo: Ed iStem and Business
 - review breadcrumbs with lauren
 - schedule review session w lauren
-- add meta description
-- add social images
+- x add meta description
+- x add social images
 - add grad data to site map
 -
 - x add grad redirect cards
