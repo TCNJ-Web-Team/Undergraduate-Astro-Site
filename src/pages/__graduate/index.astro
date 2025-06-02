@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { wpquery } from "../../data/wordpress";
+// import TitleAndNav from "../components/TitleAndNav";
+import ProgramList from "../../components/ProgramList";
+import NextStepFooter from "../../components/NextStepFooter";
+import "@fontsource/domine/400.css";
+import "@fontsource/domine/500.css";
+import "@fontsource/domine/600.css";
+import "@fontsource/domine/700.css";
+// import IntroSection from "../../components/IntroSection";
+import IntroSectionUpdated from "../../components/IntroSectionUpdated";
+// import "../styles/homepage.scss";
+const data = await wpquery({
+  query: ` query GraduateProgramsListing {
+  graduatePrograms(first:220) {
+    nodes {
+      program {
+        degreeType
+        slug
+        school
+        programOptions
+        additionalOptions
+        keywords
+      }
+      title
+    }
+  }
+}`,
+});
+// const tempGradData = data.graduatePrograms.nodes;
+
+const programOptions = await wpquery({
+  query: ` query GradProgramOptions {
+  page(idType: DATABASE_ID, id: "4015") {
+    graduateProgram {
+      additionalOptions
+      programOptions
+      school
+    }
+  }
+}`,
+});
+
+const gradRedirectList = await wpquery({
+  query: `query GradRedirectList {
+  gradProgramsRedirects(first: 220) {
+    nodes {
+      graduateProgramRedirect {
+        redirectUrl
+        programOptions
+        degreeType
+        additionalOptions
+        school
+      }
+      title
+    }
+  }
+}`,
+});
+// console.log(data);
+// console.log("gradRedirectList", gradRedirectList);
+// const gradPrograms = data.graduatePrograms.nodes.map(
+//   (item: { title: any; program: any }) => ({
+//     title: item.title,
+//     ...item.program,
+//     isRedirect: false,
+//   })
+// );
+
+// const gradRedirectPrograms = gradRedirectList.gradProgramsRedirects.nodes.map(
+//   (item: { title: any; graduateProgramRedirect: any }) => ({
+//     title: item.title, // comes from outside graduateProgramRedirect
+//     ...item.graduateProgramRedirect,
+//     isRedirect: true,
+//   })
+// );
+
+// const combinedPrograms = [...gradPrograms, ...gradRedirectPrograms];
+// console.log("combinedPrograms", combinedPrograms);
+const areaOfStudy = programOptions.page.graduateProgram.school.sort();
+
+const programOptionsClean = programOptions.page.graduateProgram.programOptions;
+const additionalOptions = programOptions.page.graduateProgram.additionalOptions;
+---
+
+<Layout title="Explore Programs - TCNJ Graduate Studies">
+  <header>
+    <!-- <TitleAndNav /> -->
+    <IntroSectionUpdated client:load />
+    <!-- <Intro /> -->
+  </header>
+  <main>
+    <div
+      class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
+    >
+      <ProgramList
+        gradCheck={true}
+        data={data}
+        redirectData={gradRedirectList}
+        areaOfStudy={areaOfStudy}
+        programOptionsClean={programOptionsClean}
+        additionalOptions={additionalOptions}
+        client:visible
+      />
+    </div>
+    <NextStepFooter customCtaButtons={null} />
+  </main>
+</Layout>

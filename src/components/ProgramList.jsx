@@ -28,12 +28,32 @@ export default function ProgramList({
   //     title: item.title,
   //   }))
   // );
-
+  // console.log(data.graduatePrograms.nodes);
+  // console.log(redirectData.gradProgramsRedirects.nodes);
+  // console.log(data);
+  // console.log(redirectData);
   let combinedData;
   let gradCheckCard = false; // Set this to true or false based on your condition
   if (gradCheck) {
-    combinedData = data.graduatePrograms.nodes;
+    // combinedData = data.graduatePrograms.nodes;
     gradCheckCard = true; // or any alternate logic for grad programs
+    // console.log(data.graduatePrograms.nodes);
+    combinedData = data.graduatePrograms.nodes.concat(
+      redirectData.gradProgramsRedirects.nodes.map((item) => {
+        return {
+          program: {
+            slug: item.graduateProgramRedirect.redirectUrl,
+            redirecturl: item.graduateProgramRedirect.redirectUrl,
+            programOptions: item.graduateProgramRedirect.programOptions,
+            additionalOptions: item.graduateProgramRedirect.additionalOptions,
+            degreeType: item.graduateProgramRedirect.degreeType,
+            school: item.graduateProgramRedirect.school,
+            keywords: null,
+          },
+          title: item.title,
+        };
+      })
+    );
   } else {
     combinedData = data.programs.nodes.concat(
       redirectData.programRedirects.nodes.map((item) => ({
@@ -43,9 +63,7 @@ export default function ProgramList({
     );
   }
 
-  // console.log(
-  //   combinedData.filter((item) => item.title === "Interactive Multimedia")
-  // );
+  // console.log(combinedData);
   // console.log(redirectData.programRedirects.nodes);
   const dataNodes = combinedData;
   // console.log(dataNodes);

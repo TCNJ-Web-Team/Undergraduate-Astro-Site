@@ -1,3 +1,6 @@
+Check my blues
+Bitter to domine
+
 # Commencement Video Takeovers
 
 BSC Digital Signage
@@ -10,11 +13,21 @@ Tagboard
 
 ## Graduate Pages
 
-- go back to relative links in learn more section
-- check existing photos for hero
-- add character counter and lower font for more than 12 characters, on title?
-- add grad redirect cards
-- need off-campus icon
+- finish adding meta and keyword
+  - todo: Ed iStem and Business
+- review breadcrumbs with lauren
+- schedule review session w lauren
+- add meta description
+- add social images
+- add grad data to site map
+-
+- x add grad redirect cards
+- x add undergrad and graduate redirects as options for related programs
+- x add character counter and lower font for more than 12 characters, on title?
+- x go back to relative links in learn more section
+- x ADD OLD IMAGE NAME ACF FOR IMAGES WITH OLD NAME
+- x check existing photos for hero
+- x need off-campus icon
 - x add Apply and Learn more buttons
 - x fix mobile nav
 - x open animation for top nav menu
@@ -23,7 +36,7 @@ Tagboard
 - x video module, allow up to 3 videos
 - x configure popup for figures section
 - x style popup at diff resolution
-- add custom CTA buttons
+- x add custom CTA buttons
 - x department instead of Next class
 - z separate program finder
   - How do the breadcrumbs work?

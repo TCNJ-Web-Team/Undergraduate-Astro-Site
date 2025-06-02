@@ -20,6 +20,7 @@ const ProgramCard = ({
   });
   const { slug, redirecturl, programOptions, additionalOptions } =
     program.program;
+  // console.log(redirecturl);
   const { title } = program;
 
   // Process the redirecturl to remove the base URL if needed
@@ -73,7 +74,9 @@ const ProgramCard = ({
          }`}
         href={
           gradCheckCard
-            ? `./graduate/${processedRedirectUrl}`
+            ? processedRedirectUrl.includes("https")
+              ? processedRedirectUrl
+              : `./graduate/${processedRedirectUrl}`
             : processedRedirectUrl
         }
         target={processedRedirectUrl.includes("http") ? "_blank" : "_self"}
