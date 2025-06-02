@@ -374,8 +374,11 @@ const {
 //       ? heroImgDesktop
 //       : "";
 
-const socialSourceUrl = `https://tcnj.edu/custom/graduate-programs/img/facebook/${oldHeroName || slug}-FACEBOOK.jpg`;
-console.log(socialSourceUrl, "socialSourceUrl");
+const socialSourceUrl =
+  socialImage?.sourceUrl ||
+  `https://tcnj.edu/custom/graduate-programs/img/facebook/${oldHeroName || slug}-FACEBOOK.jpg`;
+
+// console.log(socialSourceUrl, "socialSourceUrl");
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
