@@ -115,10 +115,14 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
             </h2>
           </div>
           {learnMoreList.map((content) => {
-            // console.log(content.title);
+            // console.log(content);
             // console.log(content?.localLink?.graduateProgram);
+            const hasLink =
+              content?.localLink?.id ||
+              content?.externalUrlOrRedirectLink?.pageTitleAndUrl?.url;
+
+            if (!hasLink) return null;
             return (
-              //   <div>Test</div>
               <SwiperSlide
                 className="border border-[#BFBFBF] w-auto"
                 id={
@@ -142,7 +146,8 @@ const GradRelatedPrograms: React.FC<GradRelatedProgramsProps> = ({
                 >
                   <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
                     {content?.localLink?.title ||
-                      content?.externalUrlOrRedirectLink?.pageTitleAndUrl.title}
+                      content?.externalUrlOrRedirectLink?.pageTitleAndUrl
+                        ?.title}
                   </p>
                   <hr className="m-[25px] mr-0 ml-0 md:mt-[27px]" />
                   {content?.additionalLabel && (
