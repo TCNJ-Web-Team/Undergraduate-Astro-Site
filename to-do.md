@@ -19,7 +19,7 @@ Tagboard
 - schedule review session w lauren
 - x add meta description
 - x add social images
-- add grad data to site map
+- x add grad data to site map
 -
 - x add grad redirect cards
 - x add undergrad and graduate redirects as options for related programs
