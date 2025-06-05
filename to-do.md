@@ -5,9 +5,22 @@ Bitter to domine
 
 BSC Digital Signage
 Tagboard
+FDD700 for yellow
+overview program options check fonts and font weights
+Check Videos - see if custom fields added
+MBA page in programs or MBA site?
+Possible adjust arrow on popup
+Check Titles on 6-up title
+Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
+Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
+At a Glace \*\*
+Related Program make cards taller for graduate
 
 ## Design Review
 
+mobile check related programs
+
+- X in explore programs needs more spacing
 - Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
 - height for details matches, min-height set
 
