@@ -14,6 +14,9 @@ Bitter to domine
 
 ## Design Review
 
+- Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
+- height for details matches, min-height set
+- Related Programs Slider height check design
 - missing meta data & keywords
   - Educational Leadership, Post Master’s Certificate (Global)
   - Elementary Education, MEd (Global)
@@ -42,8 +45,6 @@ Bitter to domine
 mobile check related programs
 
 - X in explore programs needs more spacing
-- Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
-- height for details matches, min-height set
 
 ## Graduate Pages
 
