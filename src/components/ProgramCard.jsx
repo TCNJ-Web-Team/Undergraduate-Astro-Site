@@ -56,15 +56,15 @@ const ProgramCard = ({
 
   return (
     <div
-      className={`program-card filter drop-shadow-none transition-all duration-300 bg-white ${activeHover}
+      className={`program-card filter border-[1px] 
+        border-[#bcbcbc] drop-shadow-none transition-all duration-300 bg-white ${activeHover}
       ${pulsing ? "pulse" : ""}`}
       id={slug}
       // onMouseEnter={() => setIsHovered(true)}
       // onMouseLeave={() => setIsHovered(false)}
     >
       <motion.a
-        className={`program-card-gtm program-link block border-[1px] 
-        border-[#bcbcbc] px-[30px] pt-[35px] pb-[40px] sm:min-h-[300px]
+        className={`program-card-gtm program-link block  px-[30px] pt-[35px] pb-[40px] sm:min-h-[300px]
         sm:px-[35px]
         lg:px-[50px]
         lg:pt-[48px]

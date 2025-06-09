@@ -52,6 +52,7 @@ const gradRedirectList = await wpquery({
         degreeType
         additionalOptions
         school
+        keywords
       }
       title
     }
@@ -59,7 +60,7 @@ const gradRedirectList = await wpquery({
 }`,
 });
 // console.log(data);
-// console.log("gradRedirectList", gradRedirectList);
+
 // const gradPrograms = data.graduatePrograms.nodes.map(
 //   (item: { title: any; program: any }) => ({
 //     title: item.title,

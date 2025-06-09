@@ -48,7 +48,7 @@ export default function ProgramList({
             additionalOptions: item.graduateProgramRedirect.additionalOptions,
             degreeType: item.graduateProgramRedirect.degreeType,
             school: item.graduateProgramRedirect.school,
-            keywords: null,
+            keywords: item.graduateProgramRedirect.keywords,
           },
           title: item.title,
         };
