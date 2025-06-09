@@ -13,7 +13,7 @@ Possible adjust arrow on popup
 Check Titles on 6-up title
 Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
 Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
-At a Glace \*\*
+At a Glace, what are the asteerisks pointing to ? \*\*
 
 Related Program make cards taller for graduate
 
