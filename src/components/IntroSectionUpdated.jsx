@@ -79,8 +79,8 @@ export default function IntroSectionUpdated() {
           id="breadcrumbs"
           className="font-domine text-[17px] leading-[20px] sm:text-[18px] sm:leading-[26px] sm:text-left"
         >
-          <a href="https://tcnj.edu">TCNJ Home</a> /{" "}
-          <span className="font-[600]">Explore Programs</span>
+          <a href="https://graduate.tcnj.edu">Graduate Home</a> /{" "}
+          <span className="font-[600]">Explore Graduate Programs</span>
         </div>
 
         <motion.h1
