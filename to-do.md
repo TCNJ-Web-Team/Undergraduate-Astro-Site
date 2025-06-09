@@ -5,12 +5,17 @@ Bitter to domine
 
 - BSC Digital Signage
 - Tagboard
+
+## Design Review
+
+- pages need meta data, keywords
+- videos need to be added
 - FDD700 for yellow
 - overview program options check fonts and font weights
 - Check Videos - see if custom fields added
 - MBA page in programs or MBA site?
 - Possible adjust arrow on popup
-- breadcrumbs for grad
+- x breadcrumbs for grad
 - x Check Titles on 6-up title
 
   - Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
@@ -18,8 +23,6 @@ Bitter to domine
   - At a Glace, what are the asteerisks pointing to ? \*\*
 
 - Related Program make cards taller for graduate
-
-## Design Review
 
 mobile check related programs
 
