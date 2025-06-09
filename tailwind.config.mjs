@@ -11,6 +11,7 @@ export default {
         lg: "1281px", // Custom size for large screens
         lgMd: "1050px", // Custom size for medium screens
         md: "900px", // Custom size for medium screens
+        smMd: "650px", // Custom size for small screens
         sm: "550px", // Custom size for small screens
         // xs: "430px", // Custom size for extra-small screens
       },

@@ -3,19 +3,21 @@ Bitter to domine
 
 # Commencement Video Takeovers
 
-BSC Digital Signage
-Tagboard
-FDD700 for yellow
-overview program options check fonts and font weights
-Check Videos - see if custom fields added
-MBA page in programs or MBA site?
-Possible adjust arrow on popup
-Check Titles on 6-up title
-Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
-Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
-At a Glace, what are the asteerisks pointing to ? \*\*
+- BSC Digital Signage
+- Tagboard
+- FDD700 for yellow
+- overview program options check fonts and font weights
+- Check Videos - see if custom fields added
+- MBA page in programs or MBA site?
+- Possible adjust arrow on popup
 
-Related Program make cards taller for graduate
+- x Check Titles on 6-up title
+
+  - Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
+  - Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
+  - At a Glace, what are the asteerisks pointing to ? \*\*
+
+- Related Program make cards taller for graduate
 
 ## Design Review
 
