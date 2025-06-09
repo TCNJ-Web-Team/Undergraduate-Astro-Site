@@ -8,8 +8,16 @@ Bitter to domine
 
 ## Design Review
 
+- missing meta data & keywords
+  - Educational Leadership, Post Master’s Certificate (Global)
+  - Elementary Education, MEd (Global)
+  - Integrative STEM Education
+  - Paraprofessional to Teacher
+  - School Counseling, MA (Global)
+  - Secondary Education, MEd (Global)
+  - Teaching English as a Second Language Certificate (Global)
 - pages need meta data, keywords
-- videos need to be added
+- x - videos need to be added
 - FDD700 for yellow
 - overview program options check fonts and font weights
 - Check Videos - see if custom fields added
