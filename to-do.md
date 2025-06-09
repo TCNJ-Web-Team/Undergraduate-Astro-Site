@@ -16,6 +16,7 @@ Bitter to domine
   - School Counseling, MA (Global)
   - Secondary Education, MEd (Global)
   - Teaching English as a Second Language Certificate (Global)
+  - Teaching English as a Second Language, MEd (Global)
 - pages need meta data, keywords
 - x - videos need to be added
 - FDD700 for yellow
