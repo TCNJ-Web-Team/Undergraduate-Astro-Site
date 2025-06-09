@@ -6,6 +6,12 @@ Bitter to domine
 - BSC Digital Signage
 - Tagboard
 
+## Matt Todos
+
+- redirect existing pages
+- MBA and global pages?
+- slug page navigation links
+
 ## Design Review
 
 - missing meta data & keywords
@@ -17,7 +23,7 @@ Bitter to domine
   - Secondary Education, MEd (Global)
   - Teaching English as a Second Language Certificate (Global)
   - Teaching English as a Second Language, MEd (Global)
-- pages need meta data, keywords
+- x pages need meta data, keywords
 - x - videos need to be added
 - FDD700 for yellow
 - overview program options check fonts and font weights
