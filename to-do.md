@@ -32,6 +32,12 @@ mobile check related programs
 
 ## Graduate Pages
 
+video pages
+https://tcnj.edu/custom/graduate-programs/captions/
+ed-leadership
+business-analytics
+strategy-innovation-leadership
+
 - x finish adding meta and keyword
   - todo: Ed iStem and Business
 - review breadcrumbs with lauren
