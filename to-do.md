@@ -11,6 +11,7 @@ Bitter to domine
 - redirect existing pages
 - MBA and global pages?
 - slug page navigation links
+- rmove program options from nav
 
 ## Design Review
 
