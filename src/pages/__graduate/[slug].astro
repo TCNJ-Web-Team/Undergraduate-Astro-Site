@@ -603,8 +603,8 @@ const { sourceUrl } = heroImgDesktop ?? {
                     <VideoPlayerBody
                       data-key={index}
                       videoUrl={video.videoUrl}
-                      posterImage={video.posterImage.sourceUrl}
-                      captionUrl={video.captionUrl}
+                      posterImage={video?.posterImage?.sourceUrl}
+                      captionUrl={video?.captionUrl}
                       client:load
                     />
                   ))}

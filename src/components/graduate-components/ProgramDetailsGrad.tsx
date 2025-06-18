@@ -52,7 +52,7 @@ const ProgramDetailsGrad: React.FC<ProgramDetailsGrad> = ({
   return (
     <motion.div
       id="program-details"
-      className="text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[100px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  lg:pb-[200px] items-start"
+      className="text-center grid grid-cols-1 smMd:grid-cols-2 md:grid-cols-3 gap-[78px] sm:gap-[30px] sm:gap-y-[100px] md:gap-y-[112px]  pb-[100px] sm:pb-[125px] md:pb-[150px]  lg:pb-[200px] items-start"
       variants={fadeInAnimationVariant}
       initial="initial"
       whileInView="animate"

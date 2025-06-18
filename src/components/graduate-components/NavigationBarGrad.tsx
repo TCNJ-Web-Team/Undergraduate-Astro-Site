@@ -71,7 +71,7 @@ const NavigationBarGrad = ({
             Overview
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
           </a>
-          <a
+          {/* <a
             // href="#"
             // href="javascript:void(0)"
             onClick={(e) => {
@@ -86,7 +86,7 @@ const NavigationBarGrad = ({
           >
             Program Options
             <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
-          </a>
+          </a> */}
           {additionalMenuItems &&
             additionalMenuItems
               .filter((item) => item.includeInNav === true)

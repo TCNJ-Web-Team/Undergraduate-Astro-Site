@@ -3,29 +3,57 @@ Bitter to domine
 
 # Commencement Video Takeovers
 
-BSC Digital Signage
-Tagboard
-FDD700 for yellow
-overview program options check fonts and font weights
-Check Videos - see if custom fields added
-MBA page in programs or MBA site?
-Possible adjust arrow on popup
-Check Titles on 6-up title
-Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
-Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
-At a Glace \*\*
+- BSC Digital Signage
+- Tagboard
 
-Related Program make cards taller for graduate
+## Matt Todos
+
+- redirect existing pages
+- MBA and global pages?
+- slug page navigation links
+- rmove program options from nav
 
 ## Design Review
+
+- Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
+- height for details matches, min-height set
+- Related Programs Slider height check design
+- missing meta data & keywords
+  - Educational Leadership, Post Master’s Certificate (Global)
+  - Elementary Education, MEd (Global)
+  - Integrative STEM Education
+  - Paraprofessional to Teacher
+  - School Counseling, MA (Global)
+  - Secondary Education, MEd (Global)
+  - Teaching English as a Second Language Certificate (Global)
+  - Teaching English as a Second Language, MEd (Global)
+- x pages need meta data, keywords
+- x - videos need to be added
+- FDD700 for yellow
+- overview program options check fonts and font weights
+- Check Videos - see if custom fields added
+- MBA page in programs or MBA site?
+- Possible adjust arrow on popup
+- x breadcrumbs for grad
+- x Check Titles on 6-up title
+
+  - Business MBA in accordion lists add header instead of p tag for closer relationshiop to list
+  - Check with matt https://grad-landing-pages-dev-qja3l.kinsta.page/graduate/ed-leadership
+  - At a Glace, what are the asteerisks pointing to ? \*\*
+
+- Related Program make cards taller for graduate
 
 mobile check related programs
 
 - X in explore programs needs more spacing
-- Lauren at laptop size program detail headers numbers are bigger than text headers, uniform or no?
-- height for details matches, min-height set
 
 ## Graduate Pages
+
+video pages
+https://tcnj.edu/custom/graduate-programs/captions/
+ed-leadership
+business-analytics
+strategy-innovation-leadership
 
 - x finish adding meta and keyword
   - todo: Ed iStem and Business
