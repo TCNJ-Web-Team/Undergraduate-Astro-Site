@@ -72,8 +72,11 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 "absn",
               "Accounting and Business Analytics":
                 "accounting-business-analytics",
+              "American Sign Language":
+                "https://specialeducation.tcnj.edu/programs/deaf-education/program-for-education-of-the-deaf-and-hard-of-hearing/american-sign-language/",
               "Clinical Mental Health Counseling":
                 "clinical-mental-health-accelerated",
+              "Data Science and Statistics": "mathematics",
               "Elementary Education of the Deaf and Hard of Hearing":
                 "elementary-education-dhh",
               "Inclusive Education — Early Childhood Education (P–3)":
