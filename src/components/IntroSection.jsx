@@ -262,10 +262,7 @@ export default function IntroSection() {
           </span>
           programs that can put you on the fast track to career success. A full
           list of{" "}
-          <a
-            href="https://graduate.tcnj.edu/explore-programs/"
-            className="underline"
-          >
+          <a href="/graduate" className="underline">
             graduate and certificate programs
           </a>{" "}
           is also available. Search by keyword or browse programs by selecting a
