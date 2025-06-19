@@ -72,8 +72,6 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 "absn",
               "Accounting and Business Analytics":
                 "accounting-business-analytics",
-              "American Sign Language":
-                "https://specialeducation.tcnj.edu/programs/deaf-education/program-for-education-of-the-deaf-and-hard-of-hearing/american-sign-language/",
               "Clinical Mental Health Counseling":
                 "clinical-mental-health-accelerated",
               "Data Science and Statistics": "mathematics",
@@ -120,7 +118,11 @@ export default function RelatedProgSlider({ learnMoreList }) {
               >
                 <a
                   className="program-rp-link-gtm p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] min-h-[250px] block"
-                  href={"https://programs.tcnj.edu/" + content.slug}
+                  href={
+                    content.slug.includes("http")
+                      ? content.slug
+                      : `https://programs.tcnj.edu/${content.slug}`
+                  }
                 >
                   <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
                     {content.title}
