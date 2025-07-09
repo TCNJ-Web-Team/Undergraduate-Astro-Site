@@ -24,4 +24,5 @@ export default defineConfig({
       status: 301,
     },
   },
+  build: { redirects: false },
 });
