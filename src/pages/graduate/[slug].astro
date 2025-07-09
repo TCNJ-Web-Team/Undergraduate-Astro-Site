@@ -255,7 +255,36 @@ export async function getStaticPaths() {
       },
     })
   );
-  return paths;
+
+  /* 2. ------------- redirects to external URLs ------------- */
+  const { gradProgramsRedirects } = await wpquery({
+    query: `query GradRedirectList {
+      gradProgramsRedirects(first: 220) {
+       nodes {
+          graduateProgramRedirect {
+            redirectUrl
+            slug
+          }
+        }
+      }
+    }`,
+  });
+  type RedirectNode = {
+    graduateProgramRedirect: {
+      redirectUrl: string;
+      slug: string; // now typed here
+    };
+  };
+
+  const redirectPaths = gradProgramsRedirects.nodes.map(
+    (node: RedirectNode) => ({
+      params: { slug: node.graduateProgramRedirect.slug },
+      redirect: node.graduateProgramRedirect.redirectUrl.startsWith("http")
+        ? node.graduateProgramRedirect.redirectUrl
+        : `https://${node.graduateProgramRedirect.redirectUrl}`,
+    })
+  );
+  return [...redirectPaths, ...paths]; // redirects win
 }
 
 // Define an interface for your props
