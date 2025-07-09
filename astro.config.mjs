@@ -20,7 +20,7 @@ export default defineConfig({
 
     // explicit status code
     "/graduate/test": {
-      destination: "https://programs.tcnj.edu",
+      destination: "https://tcnj.edu",
       status: 301,
     },
   },
