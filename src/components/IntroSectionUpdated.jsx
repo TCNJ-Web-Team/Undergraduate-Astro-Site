@@ -101,21 +101,11 @@ export default function IntroSectionUpdated() {
           transition={{ delay: 0.65, ease: "easeOut", duration: 0.35 }}
         >
           Search by keyword or browse programs by selecting an area of study,
-          degree type, and/or format. TCNJ students also have an option to
-          pursue{" "}
-          <a
-            className="underline"
-            href="https://academics.tcnj.edu/undergraduate-study/?program=accelerated"
-          >
-            <span>accelerated</span>
+          degree type, and/or format. A full list of{" "}
+          <a href="/" className="underline">
+            undergraduate accelerated/dual degree programs
           </a>{" "}
-          and{" "}
-          <a
-            className="underline"
-            href="https://academics.tcnj.edu/undergraduate-study/?program=dual-degree"
-          >
-            <span>dual degrees</span>.
-          </a>
+          is also available.
         </motion.div>
       </div>
 

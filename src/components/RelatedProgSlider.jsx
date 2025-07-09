@@ -74,6 +74,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
                 "accounting-business-analytics",
               "Clinical Mental Health Counseling":
                 "clinical-mental-health-accelerated",
+              "Data Science and Statistics": "mathematics",
               "Elementary Education of the Deaf and Hard of Hearing":
                 "elementary-education-dhh",
               "Inclusive Education — Early Childhood Education (P–3)":
@@ -117,7 +118,11 @@ export default function RelatedProgSlider({ learnMoreList }) {
               >
                 <a
                   className="program-rp-link-gtm p-[35px] sm:py-[45px] sm:px-[25px] md:px-[50px] min-h-[250px] block"
-                  href={"https://programs.tcnj.edu/" + content.slug}
+                  href={
+                    content.slug.includes("http")
+                      ? content.slug
+                      : `https://programs.tcnj.edu/${content.slug}`
+                  }
                 >
                   <p className="font-domine font-semibold text-[18px] leading-[28px] sm:leading-[21px] md:text-[21px] md:leading-[24px]">
                     {content.title}
