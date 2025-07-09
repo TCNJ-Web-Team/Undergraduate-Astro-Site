@@ -19,10 +19,12 @@ export default defineConfig({
     // "/graduate/test": "https://programs.tcnj.edu",
 
     // explicit status code
-    "/graduate/test": {
-      destination: "https://tcnj.edu",
-      status: 301,
-    },
+    "/graduate/clinical-mental-health-counseling-post-masters-certificate-online":
+      {
+        destination:
+          "https://programs.tcnj.edu/graduate/clinical-mental-health-counseling-certificate",
+        status: 301,
+      },
   },
-  build: { redirects: false },
+  // build: { redirects: false },
 });
