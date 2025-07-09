@@ -14,4 +14,14 @@ export default defineConfig({
   // base: "/undergraduate",
   output: "static", // Ensures static generation
   trailingSlash: "never", // Ensures no trailing slash in the URL
+  redirects: {
+    // simplest form → 302 by default
+    // "/graduate/test": "https://programs.tcnj.edu",
+
+    // explicit status code
+    "/graduate/test": {
+      destination: "https://programs.tcnj.edu",
+      status: 301,
+    },
+  },
 });
