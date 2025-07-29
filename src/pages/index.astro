@@ -21,6 +21,15 @@ const data = await wpquery({
                     programOptions
                     additionalOptions
                     keywords
+                    programOfStudy {
+                      left
+                      rightImage {
+                        sourceUrl
+                      }
+                      rightImageHorizontalPosition
+                      rightImageVerticalPosition
+                      body
+                    }
                   }
                   title
                 }
@@ -45,7 +54,11 @@ const redirectData = await wpquery({
             }
           }`,
 });
-
+const rightImageCount = data.programs.nodes.filter(
+  (item: { program: { programOfStudy: any } }) =>
+    item.program.programOfStudy?.rightImage?.sourceUrl // check if it exists
+).length;
+console.log(`Number of programs with right image: ${rightImageCount}`); // Log the count of programs with right images
 // console.log(data.programs.nodes);
 // console.log(redirectData.programRedirects.nodes);
 const programOptions = await wpquery({
