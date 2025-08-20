@@ -90,7 +90,7 @@ export default function IntroSectionUpdated() {
           exit={{ opacity: 0 }}
           transition={{ delay: 0.15, ease: "easeOut", duration: 0.35 }}
         >
-          Explore Graduate Programs
+          Explore 50+ Graduate Programs
         </motion.h1>
         <motion.div
           className="font-domine text-[20px] leading-[26px] sm:text-[20px] sm:leading-[35px] md:leading-[35px] md:text-[23px] font-normal
@@ -100,8 +100,10 @@ export default function IntroSectionUpdated() {
           exit={{ opacity: 0 }}
           transition={{ delay: 0.65, ease: "easeOut", duration: 0.35 }}
         >
-          Search by keyword or browse programs by selecting an area of study,
-          degree type, and/or format. A full list of{" "}
+          Search by keyword or browse programs by selecting a school, program
+          type, and/or options. Graduate programs are offered by the School of
+          Graduate, Global, and Online Education in partnership with several of
+          TCNJ's seven other schools. A full list of{" "}
           <a href="/" className="underline">
             undergraduate accelerated/dual degree programs
           </a>{" "}

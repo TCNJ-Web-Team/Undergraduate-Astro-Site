@@ -1,3 +1,15 @@
+# Matt notes 8/20
+
+- grad intro text
+- remove Global filter and Off-campus
+
+- can't find change to graduate contact info
+
+- Apply Button for grad push to connect, graduate
+- Change Programs to Program Types
+
+---
+
 Check my blues
 Bitter to domine
 
