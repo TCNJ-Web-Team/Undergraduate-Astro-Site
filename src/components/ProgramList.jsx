@@ -565,19 +565,39 @@ src="/close-item.svg" /> */}
           <hr />
           <p className="font-domine font-normal leading-[35px] text-[18px] py-[18px]">
             Need help finding a program? Contact{" "}
-            <a
-              className="underline text-primarylinkblue"
-              href="mailto:admiss@tcnj.edu"
-            >
-              admiss@tcnj.edu
-            </a>
-            ,{" "}
-            <a
-              className="underline text-primarylinkblue"
-              href="tel:1-609-771-2131"
-            >
-              609.771.2131
-            </a>
+            {gradCheck ? (
+              <>
+                <a
+                  className="underline text-primarylinkblue"
+                  href="mailto:graduate@tcnj.edu"
+                >
+                  graduate@tcnj.edu
+                </a>
+                ,{" "}
+                <a
+                  className="underline text-primarylinkblue"
+                  href="tel:1-609-771-2300"
+                >
+                  609.771.2300
+                </a>
+              </>
+            ) : (
+              <>
+                <a
+                  className="underline text-primarylinkblue"
+                  href="mailto:admiss@tcnj.edu"
+                >
+                  admiss@tcnj.edu
+                </a>
+                ,{" "}
+                <a
+                  className="underline text-primarylinkblue"
+                  href="tel:1-609-771-2131"
+                >
+                  609.771.2131
+                </a>
+              </>
+            )}
             , to get more information.
           </p>
         </div>

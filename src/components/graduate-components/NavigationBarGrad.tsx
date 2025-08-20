@@ -129,7 +129,8 @@ const NavigationBarGrad = ({
               <>
                 {" "}
                 <a
-                  href="https://admissions.tcnj.edu/apply/"
+                  // href="https://admissions.tcnj.edu/apply/"
+                  href="https://connect.tcnj.edu/apply/"
                   target="_blank"
                   className="program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
                 >
