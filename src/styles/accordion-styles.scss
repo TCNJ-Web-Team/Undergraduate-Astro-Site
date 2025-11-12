@@ -205,7 +205,8 @@ $sm: 550px;
       }
     }
     &.active {
-      max-height: 2000px; /* Adjust this value to suit your content */
+      // max-height: 2000px; /* Adjust this value to suit your content */
+      max-height: 4000px; /* Adjust this value to suit your content */
       opacity: 1;
     }
   }
