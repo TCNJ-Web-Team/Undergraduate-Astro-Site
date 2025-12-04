@@ -96,7 +96,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
             <track
               kind="captions"
               label="English"
-              src={captionUrl}
+              src={`../video-captions/${captionUrl}`}
               srcLang="en"
             />
           )}
