@@ -88,6 +88,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
           disablePictureInPicture
           disableRemotePlayback
           controlsList="nodownload noplaybackrate"
+          crossOrigin="anonymous"
           poster={posterImage}
         >
           <source src={videoUrl} type="video/mp4" />
@@ -95,7 +96,7 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
             <track
               kind="captions"
               label="English"
-              src={captionUrl}
+              src={`../video-captions/${captionUrl}`}
               srcLang="en"
             />
           )}
@@ -110,7 +111,13 @@ const VideoPlayerBody: React.FC<VideoPlayerProps> = ({
             <img
               src="../../video-play-button.svg"
               alt="Play"
-              className={`w-[100px] h-[100px] sm:w-[75px]  sm:h-[75px] md:w-[125px]  md:h-[125px] ${videosLength === 3 ? (indexNumber && indexNumber > 0 ? "lg:w-[75px] lg:h-[75px]" : "") : ""}`}
+              className={`w-[100px] h-[100px] sm:w-[75px]  sm:h-[75px] md:w-[125px]  md:h-[125px] ${
+                videosLength === 3
+                  ? indexNumber && indexNumber > 0
+                    ? "lg:w-[75px] lg:h-[75px]"
+                    : ""
+                  : ""
+              }`}
             />
           </button>
         )}
