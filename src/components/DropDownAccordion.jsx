@@ -7,14 +7,14 @@ export default function DropDownAccordion({
   onToggle,
   index,
 }) {
-  const handleKeyDown = (e) => {
-    console.log(e.key);
-    if (e.key === "Enter") {
-      // Use 'e.key' for modern, readable code
-      onToggle();
-      // Call your specific function here
-    }
-  };
+  // const handleKeyDown = (e) => {
+  //   console.log(e.key);
+  //   if (e.key === "Enter") {
+  //     // Use 'e.key' for modern, readable code
+  //     onToggle();
+  //     // Call your specific function here
+  //   }
+  // };
   // console.log(index);
   return (
     <div
@@ -33,7 +33,7 @@ export default function DropDownAccordion({
         whileTap={{ scale: 0.975 }}
         className="z-30 relative"
         onKeyDown={(e) => {
-          console.log(e.key);
+          // console.log(e.key);
           if (e.key === "Enter" || e.key === " ") {
             e.preventDefault(); // prevent page scroll on Space
             onToggle();

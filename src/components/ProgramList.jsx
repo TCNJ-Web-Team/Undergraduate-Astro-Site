@@ -467,8 +467,20 @@ src="/close-item.svg" /> */}
                 )}
 
               {searchText && (
-                <div className="drop-down-item">
-                  <p id="search-text-filter" onClick={clearSearchText}>
+                <div
+                  className="drop-down-item"
+                  onClick={clearSearchText}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    // console.log(e.key);
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault(); // prevent page scroll on Space
+                      clearSearchText();
+                    }
+                  }}
+                  role="button"
+                >
+                  <p id="search-text-filter">
                     {searchText}
                     <img
                       className="close-button"
@@ -531,6 +543,13 @@ src="/close-item.svg" /> */}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
               animate={{ opacity: programView != "list" ? 1 : 0.5 }}
+              onKeyDown={(e) => {
+                // console.log(e.key);
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault(); // prevent page scroll on Space
+                  setProgramView("");
+                }
+              }}
             />
             <motion.img
               src="/list-icon.svg"
@@ -540,6 +559,13 @@ src="/close-item.svg" /> */}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
               animate={{ opacity: programView === "list" ? 1 : 0.5 }}
+              onKeyDown={(e) => {
+                // console.log(e.key);
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault(); // prevent page scroll on Space
+                  setProgramView("list");
+                }
+              }}
             />
 
             {/* Toggle Buttons go here */}
@@ -608,8 +634,8 @@ src="/close-item.svg" /> */}
           )
             ? { opacity: 1, y: 0 }
             : !animatedCards
-              ? { opacity: 0, y: 5 }
-              : { opacity: 1, y: 0 }
+            ? { opacity: 0, y: 5 }
+            : { opacity: 1, y: 0 }
         }
         animate={{ opacity: 1, y: 0 }}
         transition={{
