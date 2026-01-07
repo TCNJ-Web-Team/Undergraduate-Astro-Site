@@ -13,7 +13,7 @@ export const FilterDisplayBox = ({ boxId, checkboxContent }) => {
             tabIndex={0}
             role="button"
           >
-            {checkbox} sdfsdf
+            {checkbox}
           </div>
         ))}
     </>

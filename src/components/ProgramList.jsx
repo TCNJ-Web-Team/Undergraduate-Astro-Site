@@ -349,6 +349,14 @@ export default function ProgramList({
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         key={option + index}
         onClick={() => onClickHandler({ target: { value: option } })}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault(); // prevent page scroll on Space
+            onClickHandler({ target: { value: option } });
+          }
+        }}
       >
         {option}
         <img className="close-button" alt="close" src="/close-item.svg" />
@@ -495,8 +503,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedSchoolFilters}
                 checkboxContent={renderCheckboxes(
                   selectedSchoolFilters,
-                  handleSchoolCheckboxChange,
-                  selectedSchoolFilters
+                  handleSchoolCheckboxChange
                 )}
               />
               <FilterDisplayBox
@@ -504,8 +511,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedProgramOptionFilters}
                 checkboxContent={renderCheckboxes(
                   selectedProgramOptionFilters,
-                  handleProgramOptionCheckboxChange,
-                  selectedProgramOptionFilters
+                  handleProgramOptionCheckboxChange
                 )}
               />
               <FilterDisplayBox
@@ -513,8 +519,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedAdditionalOptionFilters}
                 checkboxContent={renderCheckboxes(
                   selectedAdditionalOptionFilters,
-                  handleAdditionalOptionCheckboxChange,
-                  selectedAdditionalOptionFilters
+                  handleAdditionalOptionCheckboxChange
                 )}
               />
             </div>
