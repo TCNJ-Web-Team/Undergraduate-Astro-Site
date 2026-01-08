@@ -39,9 +39,13 @@ const AtAGlanceGrad: React.FC<AnimatedProgramProps> = ({
         className="pt-[91px] sm:pt-[103px]
 md:pt-[135px] lg:pt-[187px]"
       ></div>
-      <motion.div
+      <motion.section
         id="program-at-a-glance"
-        className={`${programImageCheck ? "pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]" : "pb-[100px]  sm:pb-[123px] md:pb-[150px] lg:pb-[198px]"}   `}
+        className={`${
+          programImageCheck
+            ? "pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]"
+            : "pb-[100px]  sm:pb-[123px] md:pb-[150px] lg:pb-[198px]"
+        }   `}
         variants={fadeInAnimationVariant}
         initial="initial"
         whileInView="animate"
@@ -58,14 +62,14 @@ md:pt-[135px] lg:pt-[187px]"
           At a Glance
         </motion.h2>
 
-        <motion.div
+        <motion.section
           id="program-glance"
           className={`text-[20px] leading-[35px] text-center sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`}
           dangerouslySetInnerHTML={{ __html: programAtAGlance }}
           variants={fadeInAnimationVariant}
           custom={1}
         />
-        <motion.div
+        <motion.section
           id="program-coordinators"
           className={`text-[19px] leading-[27px] text-center yellow-body-copy flex flex-col gap-[10px]
             pt-[37px] sm:pt-[26px] md:pt-[38px] lg:pt-[42px]`}
@@ -74,7 +78,7 @@ md:pt-[135px] lg:pt-[187px]"
           custom={1}
         />
 
-        {/* <motion.div
+        {/* <motion.section
           className="flex flex-col gap-[20px] sm:flex-row sm:mt-[64px] sm:gap-[28px] md:gap-5 md:flex-row mt-[50px]"
           variants={fadeInAnimationVariant}
           custom={4}
@@ -98,8 +102,8 @@ md:pt-[135px] lg:pt-[187px]"
           >
             Request Info
           </a>
-        </motion.div> */}
-      </motion.div>
+        </motion.section> */}
+      </motion.section>
     </>
   );
 };

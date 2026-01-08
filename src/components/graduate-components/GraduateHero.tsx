@@ -41,7 +41,7 @@ const GraduateHero: React.FC<GraduateHeroProps> = ({
   const desktopPosition = horizontalPositionDesktopHero || 0;
   // console.log(heroImgDesktop);
   return (
-    <div className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       {heroImgDesktop &&
       heroImgDesktop.sourceUrl &&
       heroImgDesktop.sourceUrl !==
@@ -133,7 +133,7 @@ const GraduateHero: React.FC<GraduateHeroProps> = ({
           />
         </picture>
       )}
-    </div>
+    </section>
   );
 };
 

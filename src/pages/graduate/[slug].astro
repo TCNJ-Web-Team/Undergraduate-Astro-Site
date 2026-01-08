@@ -410,9 +410,10 @@ const { sourceUrl } = heroImgDesktop ?? {
     client:visible
   />
   <main class="font-domine text-darkgrey overflow-hidden">
-    <div class="bg-tcnjyellow w-auto">
-      <div
-        class="pl-[35px]
+    <article>
+      <section class="bg-tcnjyellow w-auto">
+        <div
+          class="pl-[35px]
       pr-[35px]
       lg:max-w-[70.5rem]
       md:max-w-[990px]
@@ -422,9 +423,9 @@ const { sourceUrl } = heroImgDesktop ?? {
       m-auto
       lg:pl-0
       lg:pr-0"
-      >
-        <p
-          class="text-[17px] leading-[26px] pb-[18px] font-domine
+        >
+          <p
+            class="text-[17px] leading-[26px] pb-[18px] font-domine
           sm:pb-[30px]
         sm:text-[17px]
         sm:leading-[19px]
@@ -436,44 +437,44 @@ const { sourceUrl } = heroImgDesktop ?? {
         lg:pb-[26px]
         lg:text-[18px]
                 lg:leading-[21px]"
-        >
-          <a href="https://graduate.tcnj.edu" class="yellow-bg-text"
-            >Graduate Home</a
-          > / <a href="/graduate" class="yellow-bg-text"
-            >Explore Graduate Programs</a
-          > / <span class="font-bold">
-            {title}
-          </span>
-        </p>
+          >
+            <a href="https://graduate.tcnj.edu" class="yellow-bg-text"
+              >Graduate Home</a
+            > / <a href="/graduate" class="yellow-bg-text"
+              >Explore Graduate Programs</a
+            > / <span class="font-bold">
+              {title}
+            </span>
+          </p>
 
-        <AnimatedTitle
-          title={title}
-          subtitle={acceleratedSubtitle}
-          client:load
-        />
-      </div>
-      <div
-        class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
+          <AnimatedTitle
+            title={title}
+            subtitle={acceleratedSubtitle}
+            client:load
+          />
+        </div>
+        <div
+          class=`w-auto bg-tcnjyellow md:bg-yellowWhiteGradientMd lg:bg-yellowWhiteGradientLg
       ${acceleratedSubtitle ? "mt-[35px] sm:mt-[39px] md:mt-[55px]" : "mt-[42px] sm:mt-[40px] md:mt-[50px] "}`
-      >
-        <GraduateHero
-          oldHeroName={oldHeroName}
-          heroImgMobileWebp={heroImgMobileWebp}
-          heroImgMobile={heroImgMobile}
-          heroImgTabletWebp={heroImgTabletWebp}
-          heroImgTablet={heroImgTablet}
-          heroImgDesktopWebp={heroImgDesktopWebp}
-          heroImgDesktop={heroImgDesktop}
-          horizontalPositionDesktopHero={horizontalPositionDesktopHero}
-          horizontalPositionTablet={horizontalPositionTablet}
-          horizontalPositionMobile={horizontalPositionMobile}
-          title={title}
-          client:load
-        />
-      </div>
-    </div>
-    <div
-      class="bg-white
+        >
+          <GraduateHero
+            oldHeroName={oldHeroName}
+            heroImgMobileWebp={heroImgMobileWebp}
+            heroImgMobile={heroImgMobile}
+            heroImgTabletWebp={heroImgTabletWebp}
+            heroImgTablet={heroImgTablet}
+            heroImgDesktopWebp={heroImgDesktopWebp}
+            heroImgDesktop={heroImgDesktop}
+            horizontalPositionDesktopHero={horizontalPositionDesktopHero}
+            horizontalPositionTablet={horizontalPositionTablet}
+            horizontalPositionMobile={horizontalPositionMobile}
+            title={title}
+            client:load
+          />
+        </div>
+      </section>
+      <section
+        class="bg-white
     w-auto
     pt-[45px]
     pb-[43px]
@@ -483,11 +484,11 @@ const { sourceUrl } = heroImgDesktop ?? {
     pr-[35px]
     md:pt-[50px]
     md:pb-[50px]"
-    >
-      <div class="lg:max-w-[70.5rem] md:max-w-[920px] bg-white m-auto">
-        <div
-          id="degree-school-department"
-          class="flex
+      >
+        <div class="lg:max-w-[70.5rem] md:max-w-[920px] bg-white m-auto">
+          <div
+            id="degree-school-department"
+            class="flex
           
           items-start
           flex-col
@@ -500,215 +501,221 @@ const { sourceUrl } = heroImgDesktop ?? {
         
           sm:justify-between
           md:max-w-none"
-        >
-          <TopOption
-            heading={repeaterDegrees && repeaterDegrees.length > 1
-              ? "Degrees"
-              : "Degree"}
-            imgSrc="ribbon"
           >
-            {
-              Array.isArray(repeaterDegrees)
-                ? repeaterDegrees.map((degree, index) => (
-                    <span
-                      class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
-                    >
-                      {degree.degreeName}
-                    </span>
-                  ))
-                : null
-            }
-          </TopOption>
+            <TopOption
+              heading={repeaterDegrees && repeaterDegrees.length > 1
+                ? "Degrees"
+                : "Degree"}
+              imgSrc="ribbon"
+            >
+              {
+                Array.isArray(repeaterDegrees)
+                  ? repeaterDegrees.map((degree, index) => (
+                      <span
+                        class={`block ${index >= 1 ? "mt-[4px] lg:mt-[6px]" : ""}`}
+                      >
+                        {degree.degreeName}
+                      </span>
+                    ))
+                  : null
+              }
+            </TopOption>
 
-          <TopOptionNew
-            client:load
-            school={school}
-            heading={school && school.length > 1 ? "Schools" : "School"}
-            imgSrc="building"
-            techEdMarginCheck={slug === "technology-engineering-education"
-              ? true
-              : false}
-          >
-            {school}
-          </TopOptionNew>
-          <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
+            <TopOptionNew
+              client:load
+              school={school}
+              heading={school && school.length > 1 ? "Schools" : "School"}
+              imgSrc="building"
+              techEdMarginCheck={slug === "technology-engineering-education"
+                ? true
+                : false}
+            >
+              {school}
+            </TopOptionNew>
+            <!-- <TopOptionNew client:load department={department} heading={department && department.length > 1 ? 'Departments' : "Department"} imgSrc="departments">
             {school}
           </TopOptionNew> -->
-          {
-            department && (
-              <TopOption
-                client:load
-                heading={
-                  department && department.length > 1
-                    ? "Departments"
-                    : "Department"
-                }
-                department={department}
-                imgSrc="departments"
-              />
-            )
-          }
+            {
+              department && (
+                <TopOption
+                  client:load
+                  heading={
+                    department && department.length > 1
+                      ? "Departments"
+                      : "Department"
+                  }
+                  department={department}
+                  imgSrc="departments"
+                />
+              )
+            }
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    {
-      announcementBar.announcementStartDate &&
-        announcementBar.announcementText && (
-          <AnnouncementBar
-            copy={announcementBar.announcementText}
-            start={announcementBar.announcementStartDate}
-            end={announcementBar.announcementEndDate}
-            link={announcementBar.accouncementLink}
-            linkText={announcementBar.announcementLinkText}
-            client:idle
-          />
-        )
-    }
+      {
+        announcementBar.announcementStartDate &&
+          announcementBar.announcementText && (
+            <AnnouncementBar
+              copy={announcementBar.announcementText}
+              start={announcementBar.announcementStartDate}
+              end={announcementBar.announcementEndDate}
+              link={announcementBar.accouncementLink}
+              linkText={announcementBar.announcementLinkText}
+              client:idle
+            />
+          )
+      }
 
-    <div
-      class="bg-tcnjyellow w-auto
+      <section
+        class="bg-tcnjyellow w-auto
     pl-[35px]
     pr-[35px]
     sm:pl-[80px]
     sm:pr-[80px]
     md:pl-[35px]
     md:pr-[35px]"
-    >
-      <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
-        <AtAGlanceGrad
-          programAtAGlance={programAtAGlance}
-          programCoordinators={programCoordinators}
-          client:load
-        />
-        <ProgramDetailsGrad programDetails={programDetails} client:load />
-      </div>
-    </div>
-    {
-      videos && videos.length > 0 && videos[0].videoUrl && (
-        <div class="sm:px-[35px] bg-tcnjyellow ">
-          <div
-            class={`w-full ${
-              videos.length === 2
-                ? " gradient-yellow-white-25 sm:gradient-yellow-white-75  md:gradient-yellow-white-50 "
-                : videos.length === 3
-                  ? "gradient-yellow-white-50 sm:gradient-yellow-white-85  md:gradient-yellow-white-82"
-                  : "gradient-yellow-white-50"
-            }`}
-          >
-            <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] lgMd:px-0 ">
-              {videos.length < 3 ? (
-                <div class="flex flex-col gap-[25px] md:flex-row">
-                  {videos.map((video, index) => (
-                    <VideoPlayerBody
-                      data-key={index}
-                      videoUrl={video.videoUrl}
-                      posterImage={video?.posterImage?.sourceUrl}
-                      captionUrl={video?.captionUrl}
-                      client:load
-                    />
-                  ))}
-                </div>
-              ) : (
-                <div
-                  class={`flex flex-col sm:grid gap-[25px] sm:grid-cols-2 lg:grid-cols-3 ${videos.length === 3 ? `lg:gap-x-[40px] lg:gap-y-[22px]` : ``}`}
-                >
-                  {videos.map((video, index) => (
-                    <VideoPlayerBody
-                      data-key={index}
-                      videoUrl={video.videoUrl}
-                      posterImage={video.posterImage.sourceUrl}
-                      captionUrl={video.captionUrl}
-                      indexNumber={index}
-                      videosLength={videos.length}
-                      client:load
-                    />
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
+      >
+        <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+          <AtAGlanceGrad
+            programAtAGlance={programAtAGlance}
+            programCoordinators={programCoordinators}
+            client:load
+          />
+          <ProgramDetailsGrad programDetails={programDetails} client:load />
         </div>
-      )
-    }
-    <!-- <div class="bg-tcnjyellow w-auto"> -->
-    <div
-      class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] sm:h-[100px] md:h-0"
-    >
-    </div>
-    <!-- </div> -->
-
-    <div
-      id="programs-of-study-container"
-      class="px-[35px] w-auto sm:bg-tcnjyellow"
-    >
+      </section>
+      {
+        videos && videos.length > 0 && videos[0].videoUrl && (
+          <section class="sm:px-[35px] bg-tcnjyellow ">
+            <div
+              class={`w-full ${
+                videos.length === 2
+                  ? " gradient-yellow-white-25 sm:gradient-yellow-white-75  md:gradient-yellow-white-50 "
+                  : videos.length === 3
+                    ? "gradient-yellow-white-50 sm:gradient-yellow-white-85  md:gradient-yellow-white-82"
+                    : "gradient-yellow-white-50"
+              }`}
+            >
+              <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto px-[35px] sm:px-[45px] lgMd:px-0 ">
+                {videos.length < 3 ? (
+                  <div class="flex flex-col gap-[25px] md:flex-row">
+                    {videos.map((video, index) => (
+                      <VideoPlayerBody
+                        data-key={index}
+                        videoUrl={video.videoUrl}
+                        posterImage={video?.posterImage?.sourceUrl}
+                        captionUrl={video?.captionUrl}
+                        client:load
+                      />
+                    ))}
+                  </div>
+                ) : (
+                  <div
+                    class={`flex flex-col sm:grid gap-[25px] sm:grid-cols-2 lg:grid-cols-3 ${videos.length === 3 ? `lg:gap-x-[40px] lg:gap-y-[22px]` : ``}`}
+                  >
+                    {videos.map((video, index) => (
+                      <VideoPlayerBody
+                        data-key={index}
+                        videoUrl={video.videoUrl}
+                        posterImage={video.posterImage.sourceUrl}
+                        captionUrl={video.captionUrl}
+                        indexNumber={index}
+                        videosLength={videos.length}
+                        client:load
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )
+      }
+      <!-- <div class="bg-tcnjyellow w-auto"> -->
       <div
-        class="m-auto
+        class="sm:border-x-[35px] border-tcnjyellow bg-white w-full h-[75px] sm:h-[100px] md:h-0"
+      >
+      </div>
+      <!-- </div> -->
+
+      <section
+        id="programs-of-study-container"
+        class="px-[35px] w-auto sm:bg-tcnjyellow"
+      >
+        <div
+          class="m-auto
       bg-white
       relative
       pb-[75px]
       sm:pb-[93px]
       sm:px-[45px]
       md:pb-[120px]"
-      >
-        <div
-          class=`lg:max-w-[70.5rem] md:max-w-[920px] 
+        >
+          <div
+            class=`lg:max-w-[70.5rem] md:max-w-[920px] 
         m-auto
         bg-white
         pt-[0px]
         pb-[0] md:pt-[127px]
         `
-        >
-          <div
-            class="font-domine text-[19px] leading-[30px]"
-            id="program-body-copy"
-            set:html={programHighlights || ""}
-          />
+          >
+            <div
+              class="font-domine text-[19px] leading-[30px]"
+              id="program-body-copy"
+              set:html={programHighlights || ""}
+            />
+          </div>
         </div>
-      </div>
-    </div>
-    <div
-      class="px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
-      id="lower-content-and-related-progras"
-    >
-      <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
-        <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
-          {
-            lowerContent && (
-              <LowerContent
-                lowerContent={lowerContent}
-                quote={quoteContentArea}
-              />
-            )
-          }
-          {
-            !lowerContent && (
-              <div
-                class="
+      </section>
+      <section
+        class="px-[0] sm:px-[35px] w-auto sm:bg-tcnjyellow"
+        id="lower-content-and-related-progras"
+      >
+        <div class="m-auto bg-white pb-[75px] sm:pb-[75px] md:pb-[150px]">
+          <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
+            {
+              lowerContent && (
+                <LowerContent
+                  lowerContent={lowerContent}
+                  quote={quoteContentArea}
+                />
+              )
+            }
+            {
+              !lowerContent && (
+                <div
+                  class="
           h-[0px]
           mt-[-7px]
           md:mt-[0px]
           md:h-[46px]
           lg:h-[33px]
           "
-              />
-            )
-          }
-        </div>
-        <div class="lg:max-w-[70.5rem] lg:m-auto">
-          <!-- {
+                />
+              )
+            }
+          </div>
+          <div class="lg:max-w-[70.5rem] lg:m-auto">
+            <!-- {
             learnMoreList && (
               <RelatedProgSlider learnMoreList={learnMoreList} client:idle />
             )
           } -->
-          {
-            learnMoreList && (
-              <GradRelatedPrograms learnMoreList={learnMoreList} client:idle />
-            )
-          }
+            {
+              learnMoreList && (
+                <GradRelatedPrograms
+                  learnMoreList={learnMoreList}
+                  client:idle
+                />
+              )
+            }
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </article>
+  </main>
+  <footer role="term">
     <NextStepFooter customCtaButtons={customCtaButtons} />
-  </main></Layout
->
+  </footer>
+</Layout>
