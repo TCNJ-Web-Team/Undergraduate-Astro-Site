@@ -37,11 +37,10 @@ export default {
       },
 
       fontFamily: {
-        bitter: ["Bitter", ...defaultTheme.fontFamily.sans],
-        domine: ["Domine", ...defaultTheme.fontFamily.sans],
-        chunkfive: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
-        alfaslab: ["Alfa Slab One", ...defaultTheme.fontFamily.sans],
-        opensans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+        domine: ["var(--font-domine)"],
+        chunkfive: ["var(--font-alfaslab)"],
+        alfaslab: ["var(--font-alfaslab)"],
+        opensans: ["var(--font-opensans)"],
         interstate: ["Interstate-Condensed", ...defaultTheme.fontFamily.sans],
       },
       fontSize: {

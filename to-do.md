@@ -1,3 +1,10 @@
+# Fonts
+
+bitter
+chunk-five
+domine
+open-sans
+
 # Finish tab content navigation for search and dropdowns
 
 # Screen Readers
