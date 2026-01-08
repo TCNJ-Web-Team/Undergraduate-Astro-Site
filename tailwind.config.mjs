@@ -37,11 +37,11 @@ export default {
       },
 
       fontFamily: {
-        domine: ["var(--font-domine)"],
-        chunkfive: ["var(--font-alfaslab)"],
         alfaslab: ["var(--font-alfaslab)"],
-        opensans: ["var(--font-opensans)"],
+        chunkfive: ["var(--font-alfaslab)"],
+        domine: ["var(--font-domine)"],
         interstate: ["Interstate-Condensed", ...defaultTheme.fontFamily.sans],
+        opensans: ["var(--font-opensans)"],
       },
       fontSize: {
         "custom-16.25": "4.063rem",

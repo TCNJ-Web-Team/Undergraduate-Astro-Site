@@ -1,3 +1,7 @@
+$alfa-slab: var(--font-alfaslab);
+$open-sans: var(--font-opensans);
+$bitter: var(--font-domine);
+$domine: var(--font-domine);
 $yellow: #fdd700;
 body {
   margin: 0;
@@ -29,7 +33,7 @@ header {
     top: 0;
   }
   h1 {
-    font-family: "Alfa Slab One", Georgia, serif;
+    font-family: $alfa-slab;
     font-weight: 400;
     font-size: 70px;
     line-height: 80px;
@@ -39,7 +43,7 @@ header {
     color: #fdd700;
   }
   p {
-    font-family: Domine, serif;
+    font-family: $domine;
     font-weight: 400;
     font-size: 23px;
     line-height: 40px;
@@ -67,7 +71,7 @@ header {
     }
     .program-link {
       pointer-events: all;
-      font-family: Domine, serif;
+      font-family: $domine;
       font-weight: 700;
       font-size: 21px;
       line-height: 30px;
@@ -102,7 +106,7 @@ header {
           display: flex;
           align-items: center;
           pointer-events: none;
-          font-family: "Open Sans", sans-serif;
+          font-family: $open-sans;
           font-weight: 400;
           font-size: 14px;
           line-height: 25px;
