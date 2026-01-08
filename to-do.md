@@ -1,3 +1,10 @@
+# Screen Readers
+
+## Grad
+
+- review slug pages
+- update index with search form
+
 Check my blues
 Bitter to domine
 
