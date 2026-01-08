@@ -367,9 +367,10 @@ export default function ProgramList({
   // console.log(selectedSchoolFilters);
   // console.log(programView);
   return (
-    <div className="program-wrapper inner-width">
+    <article className="program-wrapper inner-width">
       <div id="input-and-filter-wrapper" className="">
-        <div
+        <form
+          role="search"
           id="filters-bg"
           className="bg-lightgrey sm:bg-transparent flex flex-col gap-[20px] p-[35px] max-w-[1128px] mx-auto
           sm:gap-[25px]
@@ -379,6 +380,7 @@ export default function ProgramList({
         lg:px-0"
         >
           <input
+            name="search"
             type="text"
             id="text-filter"
             className=" w-[100%] font-opensans text-[16px] sm:text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-[400] border-[1px] 
@@ -433,7 +435,7 @@ export default function ProgramList({
             />
           </div>
           <hr className="hidden sm:block border-[#bcbcbc]" />
-        </div>
+        </form>
         {/* Filter boxes go here */}
         <div
           id="display-box-wrapper"
@@ -613,7 +615,7 @@ src="/close-item.svg" /> */}
           </p>
         </div>
       )}
-      <motion.div
+      <motion.section
         id="filtered-programs-wrapper"
         className={`${
           programView === "list"
@@ -690,8 +692,8 @@ src="/close-item.svg" /> */}
                 gradCheckCard={gradCheckCard}
               />
             ))}
-      </motion.div>
+      </motion.section>
       {/* Display filtered data */}
-    </div>
+    </article>
   );
 }

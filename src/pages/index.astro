@@ -165,7 +165,7 @@ const schemaString = JSON.stringify(programListSchema);
     <!-- <Intro /> -->
   </header>
   <main>
-    <div
+    <section
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
       <ProgramList
@@ -177,7 +177,9 @@ const schemaString = JSON.stringify(programListSchema);
         additionalOptions={additionalOptions}
         client:visible
       />
-    </div>
-    <NextStepFooter customCtaButtons={null} />
+    </section>
   </main>
+  <footer role="contentinfo">
+    <NextStepFooter customCtaButtons={null} />
+  </footer>
 </Layout>
