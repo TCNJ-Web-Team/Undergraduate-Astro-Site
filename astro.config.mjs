@@ -4,7 +4,10 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 
 import sitemap from "@astrojs/sitemap";
+import { loadEnv } from "vite";
 
+const env = loadEnv(process.env.NODE_ENV ?? "development", process.cwd(), "");
+const ADOBE_PROJECT_ID = env.ADOBE_PROJECT_ID;
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), sitemap()],
@@ -29,6 +32,16 @@ export default defineConfig({
 
   experimental: {
     fonts: [
+      {
+        provider: fontProviders.adobe({ id: ADOBE_PROJECT_ID }),
+
+        name: "Interstate Condensed",
+        cssVariable: "--font-interstate",
+        weights: [400, 700],
+        styles: ["normal", "italic"],
+        // formats: ["woff2", "woff"],
+        optimizedFallbacks: true,
+      },
       {
         provider: fontProviders.google(),
         name: "Domine",

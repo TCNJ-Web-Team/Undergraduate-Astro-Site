@@ -41,7 +41,7 @@ export default {
         chunkfive: ["var(--font-alfaslab)"],
         alfaslab: ["var(--font-alfaslab)"],
         opensans: ["var(--font-opensans)"],
-        interstate: ["Interstate-Condensed", ...defaultTheme.fontFamily.sans],
+        interstate: ["var(--font-interstate)"],
       },
       fontSize: {
         "custom-16.25": "4.063rem",
