@@ -10,6 +10,7 @@ import "@fontsource/domine/500.css";
 import "@fontsource/domine/600.css";
 import "@fontsource/domine/700.css";
 import IntroSection from "../components/IntroSection";
+import PageFindSearch from "../components/PageFindSearch.astro";
 // import "../styles/homepage.scss";
 const data = await wpquery({
   query: ` query ProgramsListing {
@@ -168,6 +169,7 @@ const schemaString = JSON.stringify(programListSchema);
     <section
       class="border-[20px] sm:border-[35px] border-t-0 sm:border-t-0 border-tcnjyellow"
     >
+      <PageFindSearch />
       <ProgramList
         gradCheck={false}
         data={data}

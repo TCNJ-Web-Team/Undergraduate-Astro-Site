@@ -2,12 +2,13 @@ import { defineConfig, fontProviders } from "astro/config";
 import react from "@astrojs/react";
 
 import tailwind from "@astrojs/tailwind";
+import pagefind from "astro-pagefind";
 
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), sitemap()],
+  integrations: [react(), tailwind(), sitemap(), pagefind()],
   site: "https://programs.tcnj.edu",
 
   // site: "https://statictest.kinsta.cloud/",
