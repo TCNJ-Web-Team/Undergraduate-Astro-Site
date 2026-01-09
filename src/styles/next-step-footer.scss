@@ -3,10 +3,10 @@ $tcnj-grey: #f1f1f1;
 $tcnj-dark-grey: #d9d9d9;
 $tcnj-yellow: #fdd700;
 $link-blue: #33739f;
-$alfa-slab: "Alfa Slab One", Georgia, serif;
-$open-sans: "Open Sans", sans-serif;
-$bitter: "Domine", serif;
-$domine: "Domine", serif;
+$alfa-slab: var(--font-alfaslab);
+$open-sans: var(--font-opensans);
+$bitter: var(--font-domine);
+$domine: var(--font-domine);
 $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
