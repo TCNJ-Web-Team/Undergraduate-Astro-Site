@@ -7,7 +7,12 @@ export const FilterDisplayBox = ({ boxId, checkboxContent }) => {
     <>
       {checkboxContent &&
         checkboxContent.map((checkbox, index) => (
-          <div key={index} className={`drop-down-item ${boxId}`}>
+          <div
+            key={index}
+            className={`drop-down-item ${boxId}`}
+            tabIndex={0}
+            role="button"
+          >
             {checkbox}
           </div>
         ))}

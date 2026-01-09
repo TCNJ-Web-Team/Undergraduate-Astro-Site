@@ -7,6 +7,14 @@ export default function DropDownAccordion({
   onToggle,
   index,
 }) {
+  // const handleKeyDown = (e) => {
+  //   console.log(e.key);
+  //   if (e.key === "Enter") {
+  //     // Use 'e.key' for modern, readable code
+  //     onToggle();
+  //     // Call your specific function here
+  //   }
+  // };
   // console.log(index);
   return (
     <div
@@ -21,7 +29,20 @@ export default function DropDownAccordion({
         isOpen ? "open-drop" : ""
       }`}
     > */}
-      <motion.div whileTap={{ scale: 0.975 }} className="z-30 relative">
+      <motion.div
+        whileTap={{ scale: 0.975 }}
+        className="z-30 relative"
+        onKeyDown={(e) => {
+          // console.log(e.key);
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault(); // prevent page scroll on Space
+            onToggle();
+          }
+        }}
+        tabIndex={0}
+        onClick={onToggle}
+        role="button"
+      >
         <motion.div
           className="h-[9px] w-[100%] bg-tcnjyellow origin-left"
           initial={{ scaleX: 0, opacity: 0 }}
@@ -81,7 +102,6 @@ export default function DropDownAccordion({
      cursor-pointer
      lg:px-[50px]
         ${isOpen ? "open" : ""}`}
-          onClick={onToggle}
         >
           {title}
         </h3>

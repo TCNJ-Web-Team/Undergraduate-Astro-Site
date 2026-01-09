@@ -40,14 +40,19 @@ export default function Accodion({ children, header, idName, startOpen }) {
   };
 
   return (
-    <div className={open ? "accordion top-open" : "accordion"} id={idName}>
+    <section className={open ? "accordion top-open" : "accordion"} id={idName}>
       <h2
         className={`${
           open ? "accordion-header start-open active" : "accordion-header"
         } font-bold text-[1.438rem]`}
         onClick={onAccordionClick}
       >
-        <span ref={headerRef} className="accordion-header-text">
+        <span
+          ref={headerRef}
+          className="accordion-header-text"
+          role="heading"
+          aria-level={2}
+        >
           {header}
         </span>
         <span className="arrow">
@@ -73,6 +78,6 @@ export default function Accodion({ children, header, idName, startOpen }) {
       >
         {children}
       </div>
-    </div>
+    </section>
   );
 }

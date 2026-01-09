@@ -1,3 +1,19 @@
+# Fonts
+
+bitter
+chunk-five
+domine
+open-sans
+
+# Finish tab content navigation for search and dropdowns
+
+# Screen Readers
+
+## Grad
+
+- review slug pages
+- update index with search form
+
 Check my blues
 Bitter to domine
 

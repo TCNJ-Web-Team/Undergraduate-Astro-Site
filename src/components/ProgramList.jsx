@@ -349,6 +349,14 @@ export default function ProgramList({
         id={`${option.replace(/\s+/g, "-").toLowerCase()}-filter`}
         key={option + index}
         onClick={() => onClickHandler({ target: { value: option } })}
+        tabIndex={0}
+        role="button"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault(); // prevent page scroll on Space
+            onClickHandler({ target: { value: option } });
+          }
+        }}
       >
         {option}
         <img className="close-button" alt="close" src="/close-item.svg" />
@@ -359,9 +367,10 @@ export default function ProgramList({
   // console.log(selectedSchoolFilters);
   // console.log(programView);
   return (
-    <div className="program-wrapper inner-width">
+    <article className="program-wrapper inner-width">
       <div id="input-and-filter-wrapper" className="">
-        <div
+        <form
+          role="search"
           id="filters-bg"
           className="bg-lightgrey sm:bg-transparent flex flex-col gap-[20px] p-[35px] max-w-[1128px] mx-auto
           sm:gap-[25px]
@@ -371,6 +380,7 @@ export default function ProgramList({
         lg:px-0"
         >
           <input
+            name="search"
             type="text"
             id="text-filter"
             className=" w-[100%] font-opensans text-[16px] sm:text-[17px] p-[22px] pr-[34px] pl-[34px] uppercase font-[400] border-[1px] 
@@ -425,7 +435,7 @@ export default function ProgramList({
             />
           </div>
           <hr className="hidden sm:block border-[#bcbcbc]" />
-        </div>
+        </form>
         {/* Filter boxes go here */}
         <div
           id="display-box-wrapper"
@@ -467,8 +477,20 @@ src="/close-item.svg" /> */}
                 )}
 
               {searchText && (
-                <div className="drop-down-item">
-                  <p id="search-text-filter" onClick={clearSearchText}>
+                <div
+                  className="drop-down-item"
+                  onClick={clearSearchText}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    // console.log(e.key);
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault(); // prevent page scroll on Space
+                      clearSearchText();
+                    }
+                  }}
+                  role="button"
+                >
+                  <p id="search-text-filter">
                     {searchText}
                     <img
                       className="close-button"
@@ -483,8 +505,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedSchoolFilters}
                 checkboxContent={renderCheckboxes(
                   selectedSchoolFilters,
-                  handleSchoolCheckboxChange,
-                  selectedSchoolFilters
+                  handleSchoolCheckboxChange
                 )}
               />
               <FilterDisplayBox
@@ -492,8 +513,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedProgramOptionFilters}
                 checkboxContent={renderCheckboxes(
                   selectedProgramOptionFilters,
-                  handleProgramOptionCheckboxChange,
-                  selectedProgramOptionFilters
+                  handleProgramOptionCheckboxChange
                 )}
               />
               <FilterDisplayBox
@@ -501,8 +521,7 @@ src="/close-item.svg" /> */}
                 // filteredData={selectedAdditionalOptionFilters}
                 checkboxContent={renderCheckboxes(
                   selectedAdditionalOptionFilters,
-                  handleAdditionalOptionCheckboxChange,
-                  selectedAdditionalOptionFilters
+                  handleAdditionalOptionCheckboxChange
                 )}
               />
             </div>
@@ -531,6 +550,13 @@ src="/close-item.svg" /> */}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
               animate={{ opacity: programView != "list" ? 1 : 0.5 }}
+              onKeyDown={(e) => {
+                // console.log(e.key);
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault(); // prevent page scroll on Space
+                  setProgramView("");
+                }
+              }}
             />
             <motion.img
               src="/list-icon.svg"
@@ -540,6 +566,13 @@ src="/close-item.svg" /> */}
               whileHover={{ scale: 1.025, opacity: 1 }}
               whileTap={{ scale: 0.9 }}
               animate={{ opacity: programView === "list" ? 1 : 0.5 }}
+              onKeyDown={(e) => {
+                // console.log(e.key);
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault(); // prevent page scroll on Space
+                  setProgramView("list");
+                }
+              }}
             />
 
             {/* Toggle Buttons go here */}
@@ -582,7 +615,7 @@ src="/close-item.svg" /> */}
           </p>
         </div>
       )}
-      <motion.div
+      <motion.section
         id="filtered-programs-wrapper"
         className={`${
           programView === "list"
@@ -608,8 +641,8 @@ src="/close-item.svg" /> */}
           )
             ? { opacity: 1, y: 0 }
             : !animatedCards
-              ? { opacity: 0, y: 5 }
-              : { opacity: 1, y: 0 }
+            ? { opacity: 0, y: 5 }
+            : { opacity: 1, y: 0 }
         }
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -659,8 +692,8 @@ src="/close-item.svg" /> */}
                 gradCheckCard={gradCheckCard}
               />
             ))}
-      </motion.div>
+      </motion.section>
       {/* Display filtered data */}
-    </div>
+    </article>
   );
 }

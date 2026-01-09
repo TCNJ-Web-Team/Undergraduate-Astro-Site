@@ -28,7 +28,7 @@ function AnimatedHero({
   const tabletPosition = horizontalPositionTablet || 0;
   const desktopPosition = horizontalPositionDesktopHero || 0;
   return (
-    <div className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden">
       <picture>
         {heroImgMobileWebp && (
           <source
@@ -76,7 +76,7 @@ function AnimatedHero({
           alt={`Badge ` + title}
         />
       )}
-    </div>
+    </section>
   );
 }
 

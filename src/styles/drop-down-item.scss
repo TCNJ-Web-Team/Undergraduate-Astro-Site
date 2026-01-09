@@ -3,6 +3,8 @@ $off-white: #fffdf4;
 $item-grey: #f1f1f1;
 $domine: "Domine", sans-serif;
 $raleway: "Raleway", sans-serif;
+$open-sans: var(--font-opensans);
+
 $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
@@ -245,7 +247,7 @@ $sm: 550px;
         cursor: pointer;
         text-transform: uppercase;
         position: relative;
-        font-family: "Open Sans";
+        font-family: $open-sans;
         font-weight: 600;
         font-size: 12px;
         line-height: 30px;
