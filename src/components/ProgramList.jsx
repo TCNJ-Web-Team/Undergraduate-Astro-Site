@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import ProgramCard from "./ProgramCard"; // Import the new component
 import DropDownAccordion from "./DropDownAccordion";
 import { FilterDisplayBox } from "./FilterDisplayBox";
 import { motion } from "framer-motion";
+import Fuse from "fuse.js";
 
 export default function ProgramList({
   data,
@@ -194,10 +195,39 @@ export default function ProgramList({
     selectedAdditionalOptionFilters,
     searchText,
   ]);
+  const fuse = useMemo(() => {
+    // Flatten the fields Fuse should search (helps with arrays + optional fields)
+    const fuseData = dataNodes.map((p) => {
+      const schoolArray = Array.isArray(p.program.school)
+        ? p.program.school
+        : [p.program.school].filter(Boolean);
 
+      return {
+        ...p,
+        __schoolText: schoolArray.join(" "),
+        __keywordsText: (p.program.keywords ?? "").toString(),
+      };
+    });
+
+    return new Fuse(fuseData, {
+      includeScore: true,
+      threshold: 0.35, // lower = stricter, higher = fuzzier (try 0.3–0.45)
+      ignoreLocation: true, // don’t penalize matches far into the string
+      minMatchCharLength: 2,
+      keys: [
+        { name: "title", weight: 0.6 },
+        { name: "__schoolText", weight: 0.25 },
+        { name: "__keywordsText", weight: 0.15 },
+      ],
+    });
+  }, [dataNodes]);
   const filterData = () => {
-    let newData = dataNodes.filter(filterByText);
+    const q = searchText.trim();
 
+    // 1) TEXT FILTER (FUZZY)
+    let newData = q ? fuse.search(q).map((r) => r.item) : [...dataNodes];
+
+    // 2) YOUR EXISTING CHECKBOX FILTERS
     if (selectedSchoolFilters.length > 0) {
       newData = newData.filter(filterBySelectedSchools);
     }
@@ -209,6 +239,7 @@ export default function ProgramList({
     if (selectedAdditionalOptionFilters.length > 0) {
       newData = newData.filter(filterBySelectedAdditionalOptions);
     }
+
     newData = newData.sort((a, b) => a.title.localeCompare(b.title));
     setFilteredData(newData);
   };
@@ -366,6 +397,7 @@ export default function ProgramList({
   // console.log(filteredData);
   // console.log(selectedSchoolFilters);
   // console.log(programView);
+
   return (
     <article className="program-wrapper inner-width">
       <div id="input-and-filter-wrapper" className="">
