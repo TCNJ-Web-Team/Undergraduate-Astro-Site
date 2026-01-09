@@ -211,7 +211,7 @@ export default function ProgramList({
 
     return new Fuse(fuseData, {
       includeScore: true,
-      threshold: 0.35, // lower = stricter, higher = fuzzier (try 0.3–0.45)
+      threshold: 0.3, // lower = stricter, higher = fuzzier (try 0.3–0.45)
       ignoreLocation: true, // don’t penalize matches far into the string
       minMatchCharLength: 2,
       keys: [
