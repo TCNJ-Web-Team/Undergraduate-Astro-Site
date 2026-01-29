@@ -1,0 +1,118 @@
+// Redirected urls also must be pout in programcard component
+
+export default function (ctx) {
+  // 4-11-25 redirects
+  if (
+    ctx.route.fullPath === '/acct-business-analytics' ||
+    ctx.route.fullPath === '/acct-business-analytics/'
+  ) {
+    ctx.redirect(
+      301,
+      'https://programs.tcnj.edu/accounting-business-analytics/'
+    )
+  }
+  if (
+    ctx.route.fullPath === '/management-organizations' ||
+    ctx.route.fullPath === '/management-organizations/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/management-and-organizations/')
+  }
+  if (
+    ctx.route.fullPath === '/special-ece' ||
+    ctx.route.fullPath === '/special-ece/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/special-education/')
+  }
+  if (
+    ctx.route.fullPath === '/special-ele' ||
+    ctx.route.fullPath === '/special-ele/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/special-education/')
+  }
+  if (
+    ctx.route.fullPath === '/special-sec' ||
+    ctx.route.fullPath === '/special-sec/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/special-education/')
+  }
+  if (ctx.route.fullPath === '/dhh-ele' || ctx.route.fullPath === '/dhh-ele/') {
+    ctx.redirect(301, 'https://programs.tcnj.edu/elementary-education-dhh/')
+  }
+  if (
+    ctx.route.fullPath === '/clinical-mental-health-accelerated' ||
+    ctx.route.fullPath === '/clinical-mental-health-accelerated/'
+  ) {
+    ctx.redirect(
+      301,
+      'https://programs.tcnj.edu/clinical-mental-health-accelerated/'
+    )
+  }
+  if (
+    ctx.route.fullPath === '/school-counseling-accelerated' ||
+    ctx.route.fullPath === '/school-counseling-accelerated/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/school-counseling/')
+  }
+  if (
+    ctx.route.fullPath === '/clinical-mental-health-certificate-online' ||
+    ctx.route.fullPath === '/clinical-mental-health-certificate-online/'
+  ) {
+    ctx.redirect(
+      301,
+      'https://graduate.tcnj.edu/clinical-mental-health-counseling-post-masters-certificate-online/'
+    )
+  }
+  if (
+    ctx.route.fullPath === '/mph-accelerated' ||
+    ctx.route.fullPath === '/mph-accelerated/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/public-health/')
+  }
+  if (
+    ctx.route.fullPath === '/mpp-accelerated' ||
+    ctx.route.fullPath === '/mpp-accelerated/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/public-policy/')
+  }
+  if (
+    ctx.route.fullPath === '/english-accelerated' ||
+    ctx.route.fullPath === '/english-accelerated/'
+  ) {
+    ctx.redirect(301, 'https://programs.tcnj.edu/english/')
+  }
+  // Early Education Dual Cert Redirect
+  // if (
+  //   ctx.route.fullPath === '/ecee-dual-cert' ||
+  //   ctx.route.fullPath === '/ecee-dual-cert/'
+  // ) {
+  //   ctx.redirect(301, 'https://graduate.tcnj.edu/explore-programs/')
+  // }
+  // Clinical Mental Health Redirect
+  if (
+    ctx.route.fullPath === '/clinical-mental-health-online' ||
+    ctx.route.fullPath === '/clinical-mental-health-online/'
+  ) {
+    ctx.redirect(
+      301,
+      'https://graduate.tcnj.edu/clinical-mental-health-counseling-ma-online/'
+    )
+  }
+  if (
+    ctx.route.fullPath === '/career-technical-education' ||
+    ctx.route.fullPath === '/career-technical-education/'
+  ) {
+    ctx.redirect(
+      301,
+      'https://ggoe.tcnj.edu/teacher-certification-career-and-technical-education-cte/'
+    )
+  }
+  if (
+    ctx.route.fullPath === '/data-analytics-certificate' ||
+    ctx.route.fullPath === '/data-analytics-certificate/'
+  ) {
+    ctx.redirect(301, 'https://graduate.tcnj.edu/data-analytics/')
+  }
+  if (ctx.route.fullPath === '/cnl' || ctx.route.fullPath === '/cnl/') {
+    ctx.redirect(301, 'https://graduate.tcnj.edu/explore-programs/')
+  }
+}
