@@ -3,6 +3,7 @@ import { useAccordionTrackStore } from "../../stores/useAccordionTrackStore";
 
 interface NavigationBarGradProps {
   additionalMenuItems: any[]; // Replace 'any[]' with the appropriate type if known
+  cmhcCheck: boolean;
   customCtaButtons: {
     buttonLink: {
       url: string;
@@ -13,6 +14,7 @@ interface NavigationBarGradProps {
 
 const NavigationBarGrad = ({
   additionalMenuItems,
+  cmhcCheck,
   customCtaButtons,
 }: NavigationBarGradProps) => {
   const { currentAccordionId, setCurrentAccordionId } =
@@ -50,7 +52,11 @@ const NavigationBarGrad = ({
 
         <div
           className={`overflow-hidden transition-all md:transition-none duration-300 ease-in-out
-          ${isMenuOpen ? `${getMenuHeight()} opacity-100 md:h-[60px]` : "h-[0px] md:h-[60px] opacity-0 md:opacity-100"} 
+          ${
+            isMenuOpen
+              ? `${getMenuHeight()} opacity-100 md:h-[60px]`
+              : "h-[0px] md:h-[60px] opacity-0 md:opacity-100"
+          } 
           flex
           transition-all duration-300 ease-in-out 
           md:flex flex-col md:flex-row md:gap-12  top-20 md:top-0 left-0  bg-gray-100 md:bg-transparent md:p-0 w-[100%] md:relative md:items-center`}
@@ -106,7 +112,9 @@ const NavigationBarGrad = ({
                       targetElement.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
-                  className={`cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit ${index === 2 ? "block md:hidden lg:block" : ""}`}
+                  className={`cursor-pointer font-opensans text-sm leading-9 uppercase hover:text-primarylinkblue transition-all duration-300 ease-in-out group relative w-fit ${
+                    index === 2 ? "block md:hidden lg:block" : ""
+                  }`}
                 >
                   {item.title}
                   <span className="absolute left-0 bottom-[-2px] md:bottom-[-25px] opacity-0 group-hover:opacity-100 group-hover:bottom-0 group-hover:md:bottom-[-18px] transition-all duration-300 ease-in-out w-[100%] h-[2px] md:h-[10px] bg-primarylinkblue"></span>
@@ -131,14 +139,20 @@ const NavigationBarGrad = ({
                 <a
                   href="https://admissions.tcnj.edu/apply/"
                   target="_blank"
-                  className="program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
+                  className={`program-button-nav-gtm py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600] ${
+                    cmhcCheck ? "edu-form-trigger-inq-cmhc" : ""
+                  }`}
+                  role="button"
                 >
                   Apply
                 </a>
                 <a
                   href="https://connect.tcnj.edu/register/prospect"
                   target="_blank"
-                  className="py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600]"
+                  className={`py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600] ${
+                    cmhcCheck ? "edu-form-trigger-inq-cmhc" : ""
+                  }`}
+                  role="button"
                 >
                   Get Info
                 </a>

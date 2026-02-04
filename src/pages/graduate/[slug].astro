@@ -253,7 +253,7 @@ export async function getStaticPaths() {
         videos: program.graduateProgram.videos,
         oldHeroName: program.graduateProgram.oldHeroName,
       },
-    })
+    }),
   );
   return paths;
 }
@@ -407,6 +407,9 @@ const { sourceUrl } = heroImgDesktop ?? {
   <NavigationBarGrad
     additionalMenuItems={lowerContent}
     customCtaButtons={customCtaButtons}
+    cmhcCheck={slug === "clinical-mental-health-counseling-ma-online"
+      ? true
+      : false}
     client:visible
   />
   <main class="font-domine text-darkgrey overflow-hidden">
@@ -575,6 +578,16 @@ const { sourceUrl } = heroImgDesktop ?? {
     md:pl-[35px]
     md:pr-[35px]"
     >
+      <!-- CLINICAL MENTAL HEALTH COUNSELING MA ONLINE -->
+      {
+        slug === "clinical-mental-health-counseling-ma-online" && (
+          // <script src="https://admiss.info/edu/v1/form.js?display=modal&pid=13292&formname=inq-cmhc" defer></script>
+          <script
+            src="https://admiss.info/edu/v1/form.js?pid=13292&formname=inq-cmhc"
+            defer
+          />
+        )
+      }
       <div class="lg:max-w-[70.5rem] md:max-w-[920px] m-auto">
         <AtAGlanceGrad
           programAtAGlance={programAtAGlance}

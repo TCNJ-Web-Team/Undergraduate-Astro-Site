@@ -314,7 +314,10 @@ const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
 
+// const clinicalMHC = Astro.url.pathname === "/graduate/clinical-mental-health-counseling-ma-online";
+// console.log('MHC ' + clinicalMHC)
 // console.log(slug)
+// console.log("TEST")
 ---
 
 <Layout title={metaTitle} description={metaDescription} image={socialSourceUrl} metaTitle={metaTitle}>
@@ -489,9 +492,9 @@ const { sourceUrl } = heroImgDesktop ?? {
         <div class="lg:max-w-[70.5rem] md:max-w-[920px]  m-auto">
         
               <AnimatedProgramAtAGlance programAtAGlance={programAtAGlance} programImageCheck={programOfStudyRight} client:idle>
-
         </div>
       </section>
+
       <section
         id="programs-of-study-container"
         class="px-[35px] w-auto sm:bg-tcnjyellow  

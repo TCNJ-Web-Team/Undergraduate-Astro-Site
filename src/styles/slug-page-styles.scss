@@ -3,6 +3,7 @@ $off-white: #fffdf4;
 $item-grey: #f1f1f1;
 $domine: "Domine", sans-serif;
 $raleway: "Raleway", sans-serif;
+$open-sans: "Open Sans", sans-serif;
 $xl: 1920px; // Custom size for extra-large screens
 $lg: 1250px; // Custom size for large screens
 $md: 900px;
@@ -90,6 +91,42 @@ p {
     margin-top: 15px;
     &:first-child {
       margin-top: 0;
+    }
+  }
+}
+.edu-mm-content-wrapper {
+  .mauticform-label {
+    font-size: 17px;
+    line-height: 28px;
+    font-family: $domine;
+  }
+  .edu-mm-header {
+    @media screen and (min-width: $md) {
+      float: right;
+    }
+  }
+  .mauticform-button {
+    font-size: 18px;
+    background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
+    line-height: 25px;
+    font-family: $open-sans;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 25px;
+  }
+  input {
+    border-color: rgb(188, 188, 188, var(--tw-border-opacity, 1));
+    border-width: 1px;
+    background-color: #fff;
+    width: 500px;
+    padding: 4px;
+    @media screen and (max-width: $md) {
+      width: 100%;
     }
   }
 }
