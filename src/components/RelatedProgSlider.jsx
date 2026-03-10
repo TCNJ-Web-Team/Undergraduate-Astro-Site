@@ -54,6 +54,7 @@ export default function RelatedProgSlider({ learnMoreList }) {
             },
             1281: { slidesPerView: 3, spaceBetween: 20 },
           }}
+          
           modules={[Navigation]}
           navigation={{
             nextEl: ".swiper-button-next",
