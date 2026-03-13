@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 import "../styles/global-nav.scss";
 export default function GlobalHeader({ indexCheck }) {
   const [open, setOpen] = useState(false);
+  const [applyHref, setApplyHref] = useState(
+    "https://admissions.tcnj.edu/apply/",
+  );
+
+  useEffect(() => {
+    if (window.location.pathname.includes("/graduate")) {
+      setApplyHref("https://connect.tcnj.edu/apply/ ");
+    }
+  }, []);
 
   const openSideNav = (e) => {
     e.stopPropagation(); // Prevent event from bubbling up
@@ -161,7 +170,8 @@ export default function GlobalHeader({ indexCheck }) {
             />
           </a>
           <div className="nav-menu">
-            <a href="https://admissions.tcnj.edu/apply/">Apply</a>
+            <a href={applyHref}>Apply</a>
+
             <a href="https://admissions.tcnj.edu/visit/">Visit</a>
             <a href="https://give.tcnj.edu/">Give</a>
             <span className="desktop-global-nav-item">|</span>

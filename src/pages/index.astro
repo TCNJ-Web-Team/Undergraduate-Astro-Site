@@ -69,7 +69,7 @@ const programOptions = await wpquery({
 const areaOfStudy = programOptions.page.program.school.sort();
 // console.log(areaOfStudy);
 const areaOfStudyNoGrad = areaOfStudy.filter(
-  (item: string) => item !== "Graduate, Global, and Online Education"
+  (item: string) => item !== "Graduate, Global, and Online Education",
 );
 const programOptionsClean = programOptions.page.program.programOptions;
 // console.log(programOptionsClean);
@@ -90,8 +90,8 @@ const combinedData = data.programs.nodes.concat(
     (item: { redirectProgram: any; title: any }) => ({
       program: item.redirectProgram,
       title: item.title,
-    })
-  )
+    }),
+  ),
 );
 // console.log(combinedData.length);
 // Function to replace staging URLs with production URLs
@@ -100,7 +100,7 @@ const getProductionUrl = (url: string) => {
   if (url && typeof url === "string") {
     return url.replace(
       "https://undergraduate-astro-site-t6y1l.kinsta.page/",
-      "https://programs.tcnj.edu/"
+      "https://programs.tcnj.edu/",
     );
   }
   return null; // Return null instead of the original URL if empty or not a string
@@ -121,7 +121,7 @@ const programListSchema = {
         };
         title: any;
       },
-      index: number
+      index: number,
     ) => {
       // Create a more readable URL construction
       let programUrl = null;
@@ -149,7 +149,7 @@ const programListSchema = {
           url: programUrl || "https://programs.tcnj.edu/",
         },
       };
-    }
+    },
   ),
 };
 
@@ -180,6 +180,6 @@ const schemaString = JSON.stringify(programListSchema);
     </section>
   </main>
   <footer role="contentinfo">
-    <NextStepFooter customCtaButtons={null} />
+    <NextStepFooter customCtaButtons={null} client:visible />
   </footer>
 </Layout>
