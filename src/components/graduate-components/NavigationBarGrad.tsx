@@ -145,6 +145,8 @@ const NavigationBarGrad = ({
                   Apply
                 </a>
                 <a
+                  href="https://connect.tcnj.edu/register/prospect"
+                  target="_blank"
                   className={`py-3 px-6 bg-yellow-400 hover:bg-yellow-500 transition-all duration-300 ease-in-out text-black font-opensans text-[14px] leading-5 uppercase font-[600] ${
                     cmhcCheck ? "edu-form-trigger-inq-cmhc" : ""
                   }`}
