@@ -1,6 +1,20 @@
 import "../styles/next-step-footer.scss";
+import { useState, useEffect } from "react";
 
 export default function NextStepFooter({ customCtaButtons }) {
+  const [applyHref, setApplyHref] = useState(
+    "https://admissions.tcnj.edu/apply/",
+  );
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.location.pathname.includes("/graduate")
+    ) {
+      setApplyHref("https://connect.tcnj.edu/apply/");
+    }
+  }, []);
+
   // console.log(customCtaButtons);
   return (
     <div id="next-step-footer">
@@ -9,7 +23,7 @@ export default function NextStepFooter({ customCtaButtons }) {
         <div className="link-wrapper">
           <a
             className="program-next-step-button-gtm"
-            href="https://admissions.tcnj.edu/apply/"
+            href={applyHref}
             target="_blank"
           >
             Apply
