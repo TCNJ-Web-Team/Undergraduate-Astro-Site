@@ -27,7 +27,11 @@ export default defineConfig({
       },
     "/absn": {
       destination: "https://programs.tcnj.edu/graduate/absn",
-      status: 302,
+      status: 301,
+    },
+    "/rn-to-bsn": {
+      destination: "https://programs.tcnj.edu/graduate/rn-to-bsn",
+      status: 301,
     },
   },
 
