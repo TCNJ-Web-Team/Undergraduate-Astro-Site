@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
+    "autoprefixer": "^10.4.20",
     "@astrojs/react": "^6.0.0",
     "@astrojs/sitemap": "^3.7.3",
-    "@astrojs/tailwind": "^6.0.2",
     "@fontsource/bitter": "^5.0.15",
     "@fontsource/chunk-five": "^5.0.7",
     "@fontsource/domine": "^5.2.5",
