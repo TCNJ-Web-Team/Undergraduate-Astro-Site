@@ -1,0 +1,10 @@
+import{t as e}from"./react.BRNZa73l.js";import{t}from"./jsx-runtime.C8BoMr6r.js";import{t as n}from"./proxy.CWBPg_rw.js";import{t as r}from"./fadeInVariant.D5GvbrB7.js";e();var i=t(),a=({programAtAGlance:e,programImageCheck:t})=>(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(`div`,{id:`program-at-a-glance-intro`,className:`pt-[91px] sm:pt-[103px]
+md:pt-[135px] lg:pt-[187px]`}),(0,i.jsxs)(n.div,{id:`program-at-a-glance`,className:`text-left ${t?`pb-[145px]  sm:pb-[160px] md:pb-[150px] lg:pb-[200px]`:`pb-[100px]  sm:pb-[115px] md:pb-[150px] lg:pb-[200px]`}   `,variants:r,initial:`initial`,whileInView:`animate`,viewport:{once:!0},children:[(0,i.jsx)(n.h2,{className:`text-center font-chunkfive text-tcnjblue text-[45px] leading-[62px] pb-[20px] sm:pb-[27px] sm:text-[55px] sm:leading-[75px] sm:text-left md:text-[65px] md:leading-[89px] md:pb-[23px]
+            lg:pb-[14px]
+        
+        `,variants:r,custom:1,children:`At a Glance`}),(0,i.jsx)(n.div,{id:`program-glance`,className:`text-[20px] leading-[35px] text-center sm:text-left sm:text-[21px] sm:leading-[40px] md:text-[23px] md:leading-[45px] yellow-body-copy`,dangerouslySetInnerHTML:{__html:e},variants:r,custom:2}),(0,i.jsxs)(n.div,{className:`flex flex-col gap-[20px] sm:flex-row sm:mt-[64px] sm:gap-[28px] md:gap-5 md:flex-row mt-[50px]`,variants:r,custom:3,children:[(0,i.jsx)(`a`,{href:`https://admissions.tcnj.edu/apply/`,target:`_blank`,className:`program-button-glance-gtm border-2 border-tcnjblue p-4 pt-[36px] pb-[36px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
+                hover:bg-tcnjblue hover:text-white transition-all
+                `,children:`Apply`}),(0,i.jsx)(`a`,{href:`https://connect.tcnj.edu/register/prospect`,target:`_blank`,className:`border-2 border-tcnjblue p-4 pt-[36px] pb-[36px] sm:w-[100%] text-center font-opensans uppercase text-tcnjblue font-semibold text-base md:max-w-[300px]
+                hover:bg-tcnjblue hover:text-white
+                transition-all
+                `,children:`Request Info`})]})]})]});export{a as default};
