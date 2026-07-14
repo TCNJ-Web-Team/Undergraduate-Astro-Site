@@ -1,0 +1,1 @@
+import{t as e}from"./react.CjWiWpeU.js";var t=e(e=>({currentAccordionId:null,setCurrentAccordionId:t=>e({currentAccordionId:t})}));export{t};

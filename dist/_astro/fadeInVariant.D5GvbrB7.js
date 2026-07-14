@@ -1,0 +1,1 @@
+var e={initial:{opacity:0,y:-5},animate:e=>({opacity:1,y:0,transition:{delay:e*.35,ease:`easeOut`,duration:.35}}),exit:{opacity:0,y:5,transition:{ease:`easeInOut`,duration:.25}}};export{e as t};
