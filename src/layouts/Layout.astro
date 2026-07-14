@@ -4,6 +4,7 @@ interface Props {
   description?: string;
   image?: string;
   metaTitle?: string;
+  includeHubSpot?: boolean;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description = "Craft an education that's uniquely yours with flexible options across in-demand majors and minors — including accelerated and dual-degree programs.",
   image = "https://ceva6.tcnj.edu/wp-content/uploads/sites/9/2025/03/program-explorer-FACEBOOK.jpg",
   metaTitle,
+  includeHubSpot = false,
 } = Astro.props;
 
 
@@ -123,6 +125,12 @@ const canonicalUrl = `${siteUrl}${path}`;
     <!-- Ping Script -->
 
     <!-- End Ping Script -->
+
+    {/* Start of HubSpot Embed Code */}
+    {includeHubSpot && (
+      <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/51267205.js"></script>
+    )}
+    {/* End of HubSpot Embed Code */}
   </head>
   <body>
     <!-- {isRootPage ? <h1>Welcome to the Homepage</h1> : <h1>Not the Homepage</h1>} -->
