@@ -132,6 +132,14 @@ a.yellow-bg-text {
     //   padding-top: 75px;
     // }
   }
+  h2 {
+    + p + p {
+      padding-top: 15px;
+      @media (min-width: 551px) {
+        padding-top: 11px;
+      }
+    }
+  }
 }
 #popup-container {
   .close-button {
