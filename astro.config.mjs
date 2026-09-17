@@ -23,6 +23,11 @@ export default defineConfig({
           "https://programs.tcnj.edu/graduate/clinical-mental-health-counseling-certificate",
         status: 301,
       },
+    "/accounting-business-analytics": {
+      destination:
+        "https://programs.tcnj.edu/graduate/acct-business-analytics-ms",
+      status: 301,
+    },
     "/absn": {
       destination: "https://programs.tcnj.edu/graduate/absn",
       status: 301,
