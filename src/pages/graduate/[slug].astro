@@ -143,6 +143,7 @@ export async function getStaticPaths() {
           videoUrl
         }
         oldHeroName
+        graduateSchema
       }
       title
     }
@@ -210,6 +211,7 @@ export async function getStaticPaths() {
           videoUrl: string;
         }[];
         oldHeroName?: string;
+        graduateSchema?: string;
       };
       title: string;
     }) => ({
@@ -252,6 +254,7 @@ export async function getStaticPaths() {
         socialImage: program.graduateProgram.socialImage,
         videos: program.graduateProgram.videos,
         oldHeroName: program.graduateProgram.oldHeroName,
+        graduateSchema: program.graduateProgram.graduateSchema,
       },
     }),
   );
@@ -315,6 +318,7 @@ interface AstroProps {
     videoUrl: string;
   }[];
   oldHeroName?: string;
+  graduateSchema?: string;
 }
 
 // Destructure with the defined interface
@@ -353,6 +357,7 @@ const {
   socialImage,
   videos,
   oldHeroName,
+  graduateSchema,
 } = Astro.props as AstroProps;
 // console.log(learnMoreList);
 // console.log(customCtaButtons);
@@ -382,6 +387,7 @@ const socialSourceUrl =
 const { sourceUrl } = heroImgDesktop ?? {
   sourceUrl: "",
 };
+
 // console.log(
 //   heroImgDesktop,
 //   heroImgMobileWebp,
@@ -396,6 +402,13 @@ const { sourceUrl } = heroImgDesktop ?? {
 // );
 // console.log(oldHeroName);
 // console.log(videos.length);
+
+// `graduateSchema` from ACF holds just the comma-separated "@graph"
+// node objects (no surrounding array brackets, no "@context"/"@graph"
+// keys) — rebuild the full JSON-LD object around it here.
+const schemaJson = graduateSchema
+  ? `{"@context":"https://schema.org","@graph":[${graduateSchema}]}`
+  : null;
 ---
 
 <Layout
@@ -405,6 +418,15 @@ const { sourceUrl } = heroImgDesktop ?? {
   image={socialSourceUrl}
   includeHubSpot={true}
 >
+  {
+    schemaJson && (
+      <script
+        type="application/ld+json"
+        is:inline
+        set:html={schemaJson}
+      />
+    )
+  }
   <NavigationBarGrad
     additionalMenuItems={lowerContent}
     customCtaButtons={customCtaButtons}
